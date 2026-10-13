@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: elusim-v1
+    runtime: docker
+    plan: free
+    region: singapore
+    branch: feature/elusim-v1
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /api/health
+    autoDeployTrigger: checksPass
+    envVars:
+      - key: OPENBLAS_NUM_THREADS
+        value: "1"
+      - key: OMP_NUM_THREADS
+        value: "1"

@@ -1,0 +1,12 @@
+.git
+.venv
+**/node_modules
+frontend/dist
+**/__pycache__
+.pytest_cache
+.env
+*.zip
+artifacts/source.tar.gz
+test-results
+playwright-report
+*.db

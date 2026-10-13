@@ -1,0 +1,19 @@
+{
+  "repo": "jraysajulga/High-Performance-Liquid-Chromatography-Research-Programs",
+  "sha": "4165fe30cd067c1545c13142d03562c1d258ab31",
+  "snapshot": "C:\\Users\\T22016\\AppData\\Local\\Temp\\lc-gradient-research-20261013\\jraysajulga__High-Performance-Liquid-Chromatography-Research-Programs",
+  "paths": [
+    "ColumnVisualizer.java",
+    "README.md",
+    "SixPortVisualizer.java",
+    "TubingVisualizer.java",
+    "craigGUI.java",
+    "matrix.java",
+    "parameterTable.java",
+    "profiles.java",
+    "simulation.java",
+    "steppingSlider.java",
+    "toolTipPane.java"
+  ],
+  "commit_patch_header": "From 4165fe30cd067c1545c13142d03562c1d258ab31 Mon Sep 17 00:00:00 2001\nFrom: jraysajulga <32586466+jraysajulga@users.noreply.github.com>\nDate: Wed, 11 Oct 2017 12:20:26 -0500\nSubject: [PATCH] Update README.md\n"
+}

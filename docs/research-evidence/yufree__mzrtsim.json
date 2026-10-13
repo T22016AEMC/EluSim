@@ -1,0 +1,991 @@
+{
+  "repo": "yufree/mzrtsim",
+  "metadata": {
+    "id": 129319854,
+    "node_id": "MDEwOlJlcG9zaXRvcnkxMjkzMTk4NTQ=",
+    "name": "mzrtsim",
+    "full_name": "yufree/mzrtsim",
+    "private": false,
+    "owner": {
+      "login": "yufree",
+      "id": 2356936,
+      "node_id": "MDQ6VXNlcjIzNTY5MzY=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/2356936?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/yufree",
+      "html_url": "https://github.com/yufree",
+      "followers_url": "https://api.github.com/users/yufree/followers",
+      "following_url": "https://api.github.com/users/yufree/following{/other_user}",
+      "gists_url": "https://api.github.com/users/yufree/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/yufree/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/yufree/subscriptions",
+      "organizations_url": "https://api.github.com/users/yufree/orgs",
+      "repos_url": "https://api.github.com/users/yufree/repos",
+      "events_url": "https://api.github.com/users/yufree/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/yufree/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "html_url": "https://github.com/yufree/mzrtsim",
+    "description": "Raw data and peaks list simulation for GC/LC-MS based data",
+    "fork": false,
+    "url": "https://api.github.com/repos/yufree/mzrtsim",
+    "forks_url": "https://api.github.com/repos/yufree/mzrtsim/forks",
+    "keys_url": "https://api.github.com/repos/yufree/mzrtsim/keys{/key_id}",
+    "collaborators_url": "https://api.github.com/repos/yufree/mzrtsim/collaborators{/collaborator}",
+    "teams_url": "https://api.github.com/repos/yufree/mzrtsim/teams",
+    "hooks_url": "https://api.github.com/repos/yufree/mzrtsim/hooks",
+    "issue_events_url": "https://api.github.com/repos/yufree/mzrtsim/issues/events{/number}",
+    "events_url": "https://api.github.com/repos/yufree/mzrtsim/events",
+    "assignees_url": "https://api.github.com/repos/yufree/mzrtsim/assignees{/user}",
+    "branches_url": "https://api.github.com/repos/yufree/mzrtsim/branches{/branch}",
+    "tags_url": "https://api.github.com/repos/yufree/mzrtsim/tags",
+    "blobs_url": "https://api.github.com/repos/yufree/mzrtsim/git/blobs{/sha}",
+    "git_tags_url": "https://api.github.com/repos/yufree/mzrtsim/git/tags{/sha}",
+    "git_refs_url": "https://api.github.com/repos/yufree/mzrtsim/git/refs{/sha}",
+    "trees_url": "https://api.github.com/repos/yufree/mzrtsim/git/trees{/sha}",
+    "statuses_url": "https://api.github.com/repos/yufree/mzrtsim/statuses/{sha}",
+    "languages_url": "https://api.github.com/repos/yufree/mzrtsim/languages",
+    "stargazers_url": "https://api.github.com/repos/yufree/mzrtsim/stargazers",
+    "contributors_url": "https://api.github.com/repos/yufree/mzrtsim/contributors",
+    "subscribers_url": "https://api.github.com/repos/yufree/mzrtsim/subscribers",
+    "subscription_url": "https://api.github.com/repos/yufree/mzrtsim/subscription",
+    "commits_url": "https://api.github.com/repos/yufree/mzrtsim/commits{/sha}",
+    "git_commits_url": "https://api.github.com/repos/yufree/mzrtsim/git/commits{/sha}",
+    "comments_url": "https://api.github.com/repos/yufree/mzrtsim/comments{/number}",
+    "issue_comment_url": "https://api.github.com/repos/yufree/mzrtsim/issues/comments{/number}",
+    "contents_url": "https://api.github.com/repos/yufree/mzrtsim/contents/{+path}",
+    "compare_url": "https://api.github.com/repos/yufree/mzrtsim/compare/{base}...{head}",
+    "merges_url": "https://api.github.com/repos/yufree/mzrtsim/merges",
+    "archive_url": "https://api.github.com/repos/yufree/mzrtsim/{archive_format}{/ref}",
+    "downloads_url": "https://api.github.com/repos/yufree/mzrtsim/downloads",
+    "issues_url": "https://api.github.com/repos/yufree/mzrtsim/issues{/number}",
+    "pulls_url": "https://api.github.com/repos/yufree/mzrtsim/pulls{/number}",
+    "milestones_url": "https://api.github.com/repos/yufree/mzrtsim/milestones{/number}",
+    "notifications_url": "https://api.github.com/repos/yufree/mzrtsim/notifications{?since,all,participating}",
+    "labels_url": "https://api.github.com/repos/yufree/mzrtsim/labels{/name}",
+    "releases_url": "https://api.github.com/repos/yufree/mzrtsim/releases{/id}",
+    "deployments_url": "https://api.github.com/repos/yufree/mzrtsim/deployments",
+    "created_at": "2018-04-12T22:56:39Z",
+    "updated_at": "2026-08-25T23:01:23Z",
+    "pushed_at": "2026-04-10T00:19:42Z",
+    "git_url": "git://github.com/yufree/mzrtsim.git",
+    "ssh_url": "git@github.com:yufree/mzrtsim.git",
+    "clone_url": "https://github.com/yufree/mzrtsim.git",
+    "svn_url": "https://github.com/yufree/mzrtsim",
+    "homepage": "https://yufree.github.io/mzrtsim/",
+    "size": 60983,
+    "stargazers_count": 6,
+    "watchers_count": 6,
+    "language": "R",
+    "has_issues": true,
+    "has_projects": true,
+    "has_downloads": false,
+    "has_wiki": true,
+    "has_pages": true,
+    "has_discussions": false,
+    "forks_count": 1,
+    "mirror_url": null,
+    "archived": false,
+    "disabled": false,
+    "open_issues_count": 0,
+    "license": null,
+    "allow_forking": true,
+    "is_template": false,
+    "web_commit_signoff_required": false,
+    "has_pull_requests": true,
+    "pull_request_creation_policy": "all",
+    "topics": [
+      "metabolomics",
+      "mzml",
+      "simulation"
+    ],
+    "visibility": "public",
+    "forks": 1,
+    "open_issues": 0,
+    "watchers": 6,
+    "default_branch": "master",
+    "temp_clone_token": null,
+    "network_count": 1,
+    "subscribers_count": 1
+  },
+  "commit": {
+    "sha": "9735e7b692b1ce88b6305420ae0568ea12128e96",
+    "node_id": "C_kwDOB7VDrtoAKDk3MzVlN2I2OTJiMWNlODhiNjMwNTQyMGFlMDU2OGVhMTIxMjhlOTY",
+    "commit": {
+      "author": {
+        "name": "yufree",
+        "email": "yufree@live.cn",
+        "date": "2026-04-10T00:19:36Z"
+      },
+      "committer": {
+        "name": "yufree",
+        "email": "yufree@live.cn",
+        "date": "2026-04-10T00:19:36Z"
+      },
+      "message": "feat: add MSn parameters to simmzml documentation for advanced scan simulation",
+      "tree": {
+        "sha": "8ab916dba3b8d97cc98adfdc8d13f20f5373f79f",
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/trees/8ab916dba3b8d97cc98adfdc8d13f20f5373f79f"
+      },
+      "url": "https://api.github.com/repos/yufree/mzrtsim/git/commits/9735e7b692b1ce88b6305420ae0568ea12128e96",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/yufree/mzrtsim/commits/9735e7b692b1ce88b6305420ae0568ea12128e96",
+    "html_url": "https://github.com/yufree/mzrtsim/commit/9735e7b692b1ce88b6305420ae0568ea12128e96",
+    "comments_url": "https://api.github.com/repos/yufree/mzrtsim/commits/9735e7b692b1ce88b6305420ae0568ea12128e96/comments",
+    "author": {
+      "login": "yufree",
+      "id": 2356936,
+      "node_id": "MDQ6VXNlcjIzNTY5MzY=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/2356936?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/yufree",
+      "html_url": "https://github.com/yufree",
+      "followers_url": "https://api.github.com/users/yufree/followers",
+      "following_url": "https://api.github.com/users/yufree/following{/other_user}",
+      "gists_url": "https://api.github.com/users/yufree/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/yufree/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/yufree/subscriptions",
+      "organizations_url": "https://api.github.com/users/yufree/orgs",
+      "repos_url": "https://api.github.com/users/yufree/repos",
+      "events_url": "https://api.github.com/users/yufree/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/yufree/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "yufree",
+      "id": 2356936,
+      "node_id": "MDQ6VXNlcjIzNTY5MzY=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/2356936?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/yufree",
+      "html_url": "https://github.com/yufree",
+      "followers_url": "https://api.github.com/users/yufree/followers",
+      "following_url": "https://api.github.com/users/yufree/following{/other_user}",
+      "gists_url": "https://api.github.com/users/yufree/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/yufree/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/yufree/subscriptions",
+      "organizations_url": "https://api.github.com/users/yufree/orgs",
+      "repos_url": "https://api.github.com/users/yufree/repos",
+      "events_url": "https://api.github.com/users/yufree/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/yufree/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "5b7809aaab76ae55dbd737190a6ebf8d6772b904",
+        "url": "https://api.github.com/repos/yufree/mzrtsim/commits/5b7809aaab76ae55dbd737190a6ebf8d6772b904",
+        "html_url": "https://github.com/yufree/mzrtsim/commit/5b7809aaab76ae55dbd737190a6ebf8d6772b904"
+      }
+    ],
+    "stats": {
+      "total": 25,
+      "additions": 24,
+      "deletions": 1
+    },
+    "files": [
+      {
+        "sha": "a16dd274a1b8816519053893f25170445e459efd",
+        "filename": "man/simmzml.Rd",
+        "status": "modified",
+        "additions": 24,
+        "deletions": 1,
+        "changes": 25,
+        "blob_url": "https://github.com/yufree/mzrtsim/blob/9735e7b692b1ce88b6305420ae0568ea12128e96/man%2Fsimmzml.Rd",
+        "raw_url": "https://github.com/yufree/mzrtsim/raw/9735e7b692b1ce88b6305420ae0568ea12128e96/man%2Fsimmzml.Rd",
+        "contents_url": "https://api.github.com/repos/yufree/mzrtsim/contents/man%2Fsimmzml.Rd?ref=9735e7b692b1ce88b6305420ae0568ea12128e96",
+        "patch": "@@ -29,7 +29,14 @@ simmzml(\n   unique = FALSE,\n   matrix = FALSE,\n   matrixmz = NULL,\n-  background = NULL\n+  background = NULL,\n+  ms_level = 1L,\n+  precursor_mz = NULL,\n+  precursor_charge = NULL,\n+  precursor_intensity = NULL,\n+  collision_energy = NULL,\n+  isolation_window = 0.7,\n+  activation = \"CID\"\n )\n }\n \\arguments{\n@@ -82,6 +89,22 @@ simmzml(\n \\item{matrixmz}{custom matrix m/z vector, default NULL and predefined list from serum blank will be used.}\n \n \\item{background}{mzML file path for background simulation, default NULL}\n+\n+\\item{ms_level}{integer vector of MS levels per scan, or scalar (default 1L)}\n+\n+\\item{precursor_mz}{numeric vector of precursor m/z per scan (NA for MS1)}\n+\n+\\item{precursor_charge}{integer vector of charge states (optional, NA ok)}\n+\n+\\item{precursor_intensity}{numeric vector of precursor intensities (optional)}\n+\n+\\item{collision_energy}{numeric vector of collision energies (optional, NA ok)}\n+\n+\\item{isolation_window}{numeric scalar or vector for half-width of\n+isolation window in m/z (default 0.7)}\n+\n+\\item{activation}{character activation method: \"CID\", \"HCD\", \"ETD\",\n+\"ECD\", \"IRMPD\", or \"SID\" (default \"CID\"). Can be a vector per scan.}\n }\n \\value{\n one mzML file for simulated data and one csv file the simulated compounds with retention time, m/z and name"
+      }
+    ]
+  },
+  "tree": {
+    "sha": "9735e7b692b1ce88b6305420ae0568ea12128e96",
+    "url": "https://api.github.com/repos/yufree/mzrtsim/git/trees/9735e7b692b1ce88b6305420ae0568ea12128e96",
+    "tree": [
+      {
+        "path": ".Rbuildignore",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "eca64e898254c59c4df905dee11259f29500105e",
+        "size": 135,
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/blobs/eca64e898254c59c4df905dee11259f29500105e"
+      },
+      {
+        "path": ".github",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "3ddd931984c1f6882c4e4a95f1282b322e83e0c8",
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/trees/3ddd931984c1f6882c4e4a95f1282b322e83e0c8"
+      },
+      {
+        "path": ".github/.gitignore",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "2d19fc766d98a08d9d1437896bfb008a7b15f340",
+        "size": 7,
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/blobs/2d19fc766d98a08d9d1437896bfb008a7b15f340"
+      },
+      {
+        "path": ".github/workflows",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "077ab0f034494ecdf8fba51867b50b632fd81f5d",
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/trees/077ab0f034494ecdf8fba51867b50b632fd81f5d"
+      },
+      {
+        "path": ".github/workflows/R-CMD-check.yaml",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "74d8c97434aac7c7d30f71ae94af7327a00d4bd3",
+        "size": 1326,
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/blobs/74d8c97434aac7c7d30f71ae94af7327a00d4bd3"
+      },
+      {
+        "path": ".gitignore",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "ab4b05050a42526baed49385a92018289fee1b4d",
+        "size": 104,
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/blobs/ab4b05050a42526baed49385a92018289fee1b4d"
+      },
+      {
+        "path": "DESCRIPTION",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "f35b5e48442637d71393c12e7a6600aa7d38efd8",
+        "size": 1029,
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/blobs/f35b5e48442637d71393c12e7a6600aa7d38efd8"
+      },
+      {
+        "path": "NAMESPACE",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "8200aa23685f12cd8a4a57aec39bb4c5a2f1e8ce",
+        "size": 288,
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/blobs/8200aa23685f12cd8a4a57aec39bb4c5a2f1e8ce"
+      },
+      {
+        "path": "NEWS.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "f2b84dce27d231a19c8c5e2e0ec864c7598867c5",
+        "size": 913,
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/blobs/f2b84dce27d231a19c8c5e2e0ec864c7598867c5"
+      },
+      {
+        "path": "R",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "ad7947e9d18cd3972f8e28bad70ec6742e998d69",
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/trees/ad7947e9d18cd3972f8e28bad70ec6742e998d69"
+      },
+      {
+        "path": "R/mzmlsim.R",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "24dad3ed3a653de9aab96cfd0ea677a14c68baa8",
+        "size": 29290,
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/blobs/24dad3ed3a653de9aab96cfd0ea677a14c68baa8"
+      },
+      {
+        "path": "R/mzrtsim.R",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "46b375a4b1d352476bb0c2a0e922e543c1b0c1c7",
+        "size": 11376,
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/blobs/46b375a4b1d352476bb0c2a0e922e543c1b0c1c7"
+      },
+      {
+        "path": "R/qcbc.R",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "b61f47856edb4e1ca50e4e11de4cb0fedf343f3e",
+        "size": 7549,
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/blobs/b61f47856edb4e1ca50e4e11de4cb0fedf343f3e"
+      },
+      {
+        "path": "R/shiny.R",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "14ee2c60bc03dc1f38ed78fbdfc3789c703e5b21",
+        "size": 742,
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/blobs/14ee2c60bc03dc1f38ed78fbdfc3789c703e5b21"
+      },
+      {
+        "path": "README.Rmd",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "795e413d8cd75275ad3d1faa664d8a6553386375",
+        "size": 12141,
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/blobs/795e413d8cd75275ad3d1faa664d8a6553386375"
+      },
+      {
+        "path": "README.html",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "72119c3c0652a1e2b751928dee385f77105e404c",
+        "size": 132586,
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/blobs/72119c3c0652a1e2b751928dee385f77105e404c"
+      },
+      {
+        "path": "README.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "588d992334b672cc9491647abd6a0552d18b7a73",
+        "size": 17851,
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/blobs/588d992334b672cc9491647abd6a0552d18b7a73"
+      },
+      {
+        "path": "_pkgdown.yaml",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "683c232842d92e7dd8227e7f0dd56ed34d3188b3",
+        "size": 69,
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/blobs/683c232842d92e7dd8227e7f0dd56ed34d3188b3"
+      },
+      {
+        "path": "data",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "3193384eec42737dc6a79e4bb3299f307d891532",
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/trees/3193384eec42737dc6a79e4bb3299f307d891532"
+      },
+      {
+        "path": "data/hmdbcms.rda",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "046800884dc45094fbed317a26ec4040afabafa5",
+        "size": 1590567,
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/blobs/046800884dc45094fbed317a26ec4040afabafa5"
+      },
+      {
+        "path": "data/monahrms1.rda",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "5580597d45216b6f22d7396474bd6f096a4f7509",
+        "size": 974140,
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/blobs/5580597d45216b6f22d7396474bd6f096a4f7509"
+      },
+      {
+        "path": "data/monams1.rda",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "6b6880e3ae47e5c04f3b24cac629989284ffe310",
+        "size": 1799476,
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/blobs/6b6880e3ae47e5c04f3b24cac629989284ffe310"
+      },
+      {
+        "path": "data/mzm.rda",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "2dd9a0ab7124b8b04f387f8563bde63c322e7eac",
+        "size": 12492,
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/blobs/2dd9a0ab7124b8b04f387f8563bde63c322e7eac"
+      },
+      {
+        "path": "docs",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "7ef8a8aa02e0f10e7502bef1c7a7eb4cb6bddda9",
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/trees/7ef8a8aa02e0f10e7502bef1c7a7eb4cb6bddda9"
+      },
+      {
+        "path": "docs/404.html",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "ee82fdc63a24f714b67448980494d07f52e509a2",
+        "size": 5019,
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/blobs/ee82fdc63a24f714b67448980494d07f52e509a2"
+      },
+      {
+        "path": "docs/articles",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "b91d90a4cfbea4c57a92dd2efba05a448ffcb1d3",
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/trees/b91d90a4cfbea4c57a92dd2efba05a448ffcb1d3"
+      },
+      {
+        "path": "docs/articles/demo.html",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "25724b1b5f1ff7bded1190d21cec76e8ff735a33",
+        "size": 13652,
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/blobs/25724b1b5f1ff7bded1190d21cec76e8ff735a33"
+      },
+      {
+        "path": "docs/articles/index.html",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "9cd7a0226cf8976192f9210245cbe5d068e0b79c",
+        "size": 4931,
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/blobs/9cd7a0226cf8976192f9210245cbe5d068e0b79c"
+      },
+      {
+        "path": "docs/authors.html",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "908684891de40e3e219dbd3d2c3abcaa2a54abdb",
+        "size": 5939,
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/blobs/908684891de40e3e219dbd3d2c3abcaa2a54abdb"
+      },
+      {
+        "path": "docs/bootstrap-toc.css",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "5a859415c1f7eacfd94920968bc910e2f1f1427e",
+        "size": 1843,
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/blobs/5a859415c1f7eacfd94920968bc910e2f1f1427e"
+      },
+      {
+        "path": "docs/bootstrap-toc.js",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "1cdd573b20f53b3ebe31c021e154c4338ca456af",
+        "size": 4764,
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/blobs/1cdd573b20f53b3ebe31c021e154c4338ca456af"
+      },
+      {
+        "path": "docs/docsearch.css",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e5f1fe1dfa2c34c51fe941829b511acd8c763301",
+        "size": 11758,
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/blobs/e5f1fe1dfa2c34c51fe941829b511acd8c763301"
+      },
+      {
+        "path": "docs/docsearch.js",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "b35504cd3a282816130a16881f3ebeead9c1bcb4",
+        "size": 2018,
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/blobs/b35504cd3a282816130a16881f3ebeead9c1bcb4"
+      },
+      {
+        "path": "docs/index.html",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "2634fb0a5aee18170515b9e00b1814c7591635ee",
+        "size": 42949,
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/blobs/2634fb0a5aee18170515b9e00b1814c7591635ee"
+      },
+      {
+        "path": "docs/link.svg",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "88ad82769b87f10725c57dca6fcf41b4bffe462c",
+        "size": 810,
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/blobs/88ad82769b87f10725c57dca6fcf41b4bffe462c"
+      },
+      {
+        "path": "docs/pkgdown.css",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "80ea5b838a4d8f24ae023bbf3582a8079aadbf66",
+        "size": 7308,
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/blobs/80ea5b838a4d8f24ae023bbf3582a8079aadbf66"
+      },
+      {
+        "path": "docs/pkgdown.js",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "6f0eee40bc3c69061d33fbed1bc9644f47c0eb8a",
+        "size": 3248,
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/blobs/6f0eee40bc3c69061d33fbed1bc9644f47c0eb8a"
+      },
+      {
+        "path": "docs/pkgdown.yml",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "2b07fcbe4cdfe2a1a5b2981586c3f2826806b009",
+        "size": 88,
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/blobs/2b07fcbe4cdfe2a1a5b2981586c3f2826806b009"
+      },
+      {
+        "path": "docs/reference",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "c3e2146a434c905d2ab4b202dd9b40444ac4a589",
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/trees/c3e2146a434c905d2ab4b202dd9b40444ac4a589"
+      },
+      {
+        "path": "docs/reference/bccenter.html",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "ab904caf9c75b2f66b7041d3db3271367b068096",
+        "size": 6276,
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/blobs/ab904caf9c75b2f66b7041d3db3271367b068096"
+      },
+      {
+        "path": "docs/reference/bclevel.html",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "27021e1eea1c6e1cdff6d4a622ac8f535822061c",
+        "size": 6292,
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/blobs/27021e1eea1c6e1cdff6d4a622ac8f535822061c"
+      },
+      {
+        "path": "docs/reference/bcpareto.html",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "b3efe42657c0cbdec8cd9ef681333388734076b0",
+        "size": 6301,
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/blobs/b3efe42657c0cbdec8cd9ef681333388734076b0"
+      },
+      {
+        "path": "docs/reference/bcrange.html",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "02b2b1be587f75fb35a3f4f5e559ac0502558b72",
+        "size": 6292,
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/blobs/02b2b1be587f75fb35a3f4f5e559ac0502558b72"
+      },
+      {
+        "path": "docs/reference/bcscaling.html",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "d3700f8deb70e72243993c6ba95638ce28ba27dc",
+        "size": 6270,
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/blobs/d3700f8deb70e72243993c6ba95638ce28ba27dc"
+      },
+      {
+        "path": "docs/reference/bcvast.html",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "8a6db5031a1ddf40a2813ca9151372379fd5f26b",
+        "size": 6283,
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/blobs/8a6db5031a1ddf40a2813ca9151372379fd5f26b"
+      },
+      {
+        "path": "docs/reference/hmdbcms.html",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "69c1d204ebe66012f001cdda05ffc6d489af3314",
+        "size": 5913,
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/blobs/69c1d204ebe66012f001cdda05ffc6d489af3314"
+      },
+      {
+        "path": "docs/reference/index.html",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c6cb11380737ab023d387b160c3f6ec9f9320fb4",
+        "size": 7939,
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/blobs/c6cb11380737ab023d387b160c3f6ec9f9320fb4"
+      },
+      {
+        "path": "docs/reference/monahrms1.html",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "b0ca080fdb024f1979322ecfd85183bd42cee33c",
+        "size": 5943,
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/blobs/b0ca080fdb024f1979322ecfd85183bd42cee33c"
+      },
+      {
+        "path": "docs/reference/monams1.html",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "b94669dac2dff751262bc02f4d6870f946752798",
+        "size": 5921,
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/blobs/b94669dac2dff751262bc02f4d6870f946752798"
+      },
+      {
+        "path": "docs/reference/mzm.html",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "615e98714bc76ae6e050f89268cb3c41f8360730",
+        "size": 5874,
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/blobs/615e98714bc76ae6e050f89268cb3c41f8360730"
+      },
+      {
+        "path": "docs/reference/mzmlviz.html",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "a7919cbd6b5e8d0894f4c2705a05003f40ec1d45",
+        "size": 6792,
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/blobs/a7919cbd6b5e8d0894f4c2705a05003f40ec1d45"
+      },
+      {
+        "path": "docs/reference/mzrtsim.html",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "d94133cce473344d3e82845ec7a96617119ef92a",
+        "size": 10099,
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/blobs/d94133cce473344d3e82845ec7a96617119ef92a"
+      },
+      {
+        "path": "docs/reference/runmzMLsim.html",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "88fc681446a1b1c82b6ea7fe974cf16b750ec44f",
+        "size": 5671,
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/blobs/88fc681446a1b1c82b6ea7fe974cf16b750ec44f"
+      },
+      {
+        "path": "docs/reference/runmzrtsim.html",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "64370c4175df4c2b23672c75f46b6a9a964b1842",
+        "size": 5826,
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/blobs/64370c4175df4c2b23672c75f46b6a9a964b1842"
+      },
+      {
+        "path": "docs/reference/simdata.html",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "234f620f74310170ec0c8b229b019f721b8224e9",
+        "size": 6175,
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/blobs/234f620f74310170ec0c8b229b019f721b8224e9"
+      },
+      {
+        "path": "docs/reference/simmzml.html",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c82465713b074abfb306146d816da4fe641c25f3",
+        "size": 13585,
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/blobs/c82465713b074abfb306146d816da4fe641c25f3"
+      },
+      {
+        "path": "docs/reference/simmzrt.html",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "673ec2cc06f39c6c151797708fa392a4068bd832",
+        "size": 10019,
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/blobs/673ec2cc06f39c6c151797708fa392a4068bd832"
+      },
+      {
+        "path": "docs/reference/test.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "13b473134dde402c97a98de5ade3d802d700baf4",
+        "size": 51286,
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/blobs/13b473134dde402c97a98de5ade3d802d700baf4"
+      },
+      {
+        "path": "docs/reference/test.mzML",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "691148a0affa80952a582c819fc5c9c0309a52a6",
+        "size": 56093023,
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/blobs/691148a0affa80952a582c819fc5c9c0309a52a6"
+      },
+      {
+        "path": "docs/sitemap.xml",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "d73b01e554d57800317bff4432647fb15514d881",
+        "size": 1094,
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/blobs/d73b01e554d57800317bff4432647fb15514d881"
+      },
+      {
+        "path": "inst",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "5fb4c54d4bf6f161e590bbf8557ab871e0048c72",
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/trees/5fb4c54d4bf6f161e590bbf8557ab871e0048c72"
+      },
+      {
+        "path": "inst/mzMLsim.Rmd",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c005250d955b8d363b5fc60f68ec1cfe8fd09e53",
+        "size": 6749,
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/blobs/c005250d955b8d363b5fc60f68ec1cfe8fd09e53"
+      },
+      {
+        "path": "inst/sim.Rmd",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "df571c42ba7244e70de699ed9e3ce8558aa5ee0c",
+        "size": 4303,
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/blobs/df571c42ba7244e70de699ed9e3ce8558aa5ee0c"
+      },
+      {
+        "path": "man",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "c1c9a74420d17e2ef958b4cce9f6de4aa783ff98",
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/trees/c1c9a74420d17e2ef958b4cce9f6de4aa783ff98"
+      },
+      {
+        "path": "man/bccenter.Rd",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "b0e5b1707d6d254de45a833cb8b6776cd6f70783",
+        "size": 416,
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/blobs/b0e5b1707d6d254de45a833cb8b6776cd6f70783"
+      },
+      {
+        "path": "man/bclevel.Rd",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "5e2cd0bcebc8ccdf6be6a0e3f15b9c0f515762c3",
+        "size": 421,
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/blobs/5e2cd0bcebc8ccdf6be6a0e3f15b9c0f515762c3"
+      },
+      {
+        "path": "man/bcpareto.Rd",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "9f21f622a2f8bec980316082fa6ee5c4b878bdd0",
+        "size": 426,
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/blobs/9f21f622a2f8bec980316082fa6ee5c4b878bdd0"
+      },
+      {
+        "path": "man/bcrange.Rd",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c59b1d078de6164348211bed10c617f25deff9b9",
+        "size": 421,
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/blobs/c59b1d078de6164348211bed10c617f25deff9b9"
+      },
+      {
+        "path": "man/bcscaling.Rd",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "416228b7ca01b49477993c31e8384b4b234c3eee",
+        "size": 415,
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/blobs/416228b7ca01b49477993c31e8384b4b234c3eee"
+      },
+      {
+        "path": "man/bcvast.Rd",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "aa48f63e24919cfd242923a78722759a11c614cb",
+        "size": 416,
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/blobs/aa48f63e24919cfd242923a78722759a11c614cb"
+      },
+      {
+        "path": "man/hmdbcms.Rd",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "fb7488f653850ddda600cdd22b1a375dd9c4b0db",
+        "size": 363,
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/blobs/fb7488f653850ddda600cdd22b1a375dd9c4b0db"
+      },
+      {
+        "path": "man/monahrms1.Rd",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "6bcd802cff4e8e784c462cc67a3e7498ce81b626",
+        "size": 394,
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/blobs/6bcd802cff4e8e784c462cc67a3e7498ce81b626"
+      },
+      {
+        "path": "man/monams1.Rd",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "3d87cbe976407be68274ffac035e0ddf432cc681",
+        "size": 380,
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/blobs/3d87cbe976407be68274ffac035e0ddf432cc681"
+      },
+      {
+        "path": "man/mzm.Rd",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "3743de2d9a74796d91e5685b30d5becf4f122c82",
+        "size": 349,
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/blobs/3743de2d9a74796d91e5685b30d5becf4f122c82"
+      },
+      {
+        "path": "man/mzmlviz.Rd",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "a5cc1fc782ced0441f1a492b2f90e4fce8542041",
+        "size": 567,
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/blobs/a5cc1fc782ced0441f1a492b2f90e4fce8542041"
+      },
+      {
+        "path": "man/mzrtsim.Rd",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "b25ffba4ddcb5817e6de685b7674bfd53b8b9969",
+        "size": 1751,
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/blobs/b25ffba4ddcb5817e6de685b7674bfd53b8b9969"
+      },
+      {
+        "path": "man/mzrtsim_se.Rd",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c80252a2680d26dc5af7a86d24f4bfe65251ae54",
+        "size": 2192,
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/blobs/c80252a2680d26dc5af7a86d24f4bfe65251ae54"
+      },
+      {
+        "path": "man/runmzMLsim.Rd",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "622b8736fa92875e836e8ad1c9f1b07abe387a8e",
+        "size": 254,
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/blobs/622b8736fa92875e836e8ad1c9f1b07abe387a8e"
+      },
+      {
+        "path": "man/runmzrtsim.Rd",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "085d289f88c9090bf1de0491f1d91a21bef27279",
+        "size": 316,
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/blobs/085d289f88c9090bf1de0491f1d91a21bef27279"
+      },
+      {
+        "path": "man/simdata.Rd",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "ff028979b9fd1aeb9e96934124ce27a87c09d7fe",
+        "size": 358,
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/blobs/ff028979b9fd1aeb9e96934124ce27a87c09d7fe"
+      },
+      {
+        "path": "man/simmzml.Rd",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "a16dd274a1b8816519053893f25170445e459efd",
+        "size": 4014,
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/blobs/a16dd274a1b8816519053893f25170445e459efd"
+      },
+      {
+        "path": "man/simmzml_blank.Rd",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "63fcb5f126364b5b5a678fe0941f742942b97c72",
+        "size": 1184,
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/blobs/63fcb5f126364b5b5a678fe0941f742942b97c72"
+      },
+      {
+        "path": "mzrtsim.Rproj",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "07cb5f04c33ac92670c796626c5b6aa95178653e",
+        "size": 403,
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/blobs/07cb5f04c33ac92670c796626c5b6aa95178653e"
+      },
+      {
+        "path": "tests",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "7172ae5d8a7c497b27a07b17400d08b5b96aae4d",
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/trees/7172ae5d8a7c497b27a07b17400d08b5b96aae4d"
+      },
+      {
+        "path": "tests/testthat.R",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "64963e3be0c0ba7f9160627ee68639918dc36763",
+        "size": 58,
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/blobs/64963e3be0c0ba7f9160627ee68639918dc36763"
+      },
+      {
+        "path": "tests/testthat",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "0deb6027c7e88789daf1e1c3f4a9804d2017797b",
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/trees/0deb6027c7e88789daf1e1c3f4a9804d2017797b"
+      },
+      {
+        "path": "tests/testthat/test-ms2-capability.R",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "3c4d9bd4e92a0800a8695a7dc2c379fca6ec9033",
+        "size": 2998,
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/blobs/3c4d9bd4e92a0800a8695a7dc2c379fca6ec9033"
+      },
+      {
+        "path": "tests/testthat/test-mzml-integrity.R",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "80f8d122150fe1fca5c4c78e1a61aad646bc2d0f",
+        "size": 2757,
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/blobs/80f8d122150fe1fca5c4c78e1a61aad646bc2d0f"
+      },
+      {
+        "path": "tests/testthat/test-mzrtsim-se.R",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "97488280f2a5bd072dd4aefaf4cbf64ac8a4eae8",
+        "size": 1009,
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/blobs/97488280f2a5bd072dd4aefaf4cbf64ac8a4eae8"
+      },
+      {
+        "path": "tests/testthat/test-mzrtsim.R",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "1f60071a690b7b68b6ab1d4089739064de4581f5",
+        "size": 1183,
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/blobs/1f60071a690b7b68b6ab1d4089739064de4581f5"
+      },
+      {
+        "path": "tests/testthat/test-qcbc.R",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "5ffe2bb4ff87409c4f3bd6cc4597e576fcc89d51",
+        "size": 1866,
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/blobs/5ffe2bb4ff87409c4f3bd6cc4597e576fcc89d51"
+      },
+      {
+        "path": "tests/testthat/test-simmzml-ms2.R",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "941e4a42805fb4396ff5146ca143d410dbc23f84",
+        "size": 1046,
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/blobs/941e4a42805fb4396ff5146ca143d410dbc23f84"
+      },
+      {
+        "path": "tests/testthat/test-simmzml.R",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "64a2c1ce4015802c0c457e9d3b3ff81641932d74",
+        "size": 2080,
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/blobs/64a2c1ce4015802c0c457e9d3b3ff81641932d74"
+      },
+      {
+        "path": "vignettes",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "355a96246a85feed5068d7ec66382f106f592384",
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/trees/355a96246a85feed5068d7ec66382f106f592384"
+      },
+      {
+        "path": "vignettes/mzrtsim.Rmd",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "1806de4d216d8f3dc5b3c120d60d354c0e24e1f4",
+        "size": 5282,
+        "url": "https://api.github.com/repos/yufree/mzrtsim/git/blobs/1806de4d216d8f3dc5b3c120d60d354c0e24e1f4"
+      }
+    ],
+    "truncated": false
+  },
+  "issues": [],
+  "file_errors": [],
+  "snapshot": "C:\\Users\\T22016\\AppData\\Local\\Temp\\lc-gradient-research-20261013\\yufree__mzrtsim",
+  "downloaded_text_paths": [
+    ".github/workflows/R-CMD-check.yaml",
+    "NEWS.md",
+    "R/mzmlsim.R",
+    "R/mzrtsim.R",
+    "R/qcbc.R",
+    "R/shiny.R",
+    "README.md",
+    "_pkgdown.yaml",
+    "docs/pkgdown.yml",
+    "tests/testthat.R",
+    "tests/testthat/test-ms2-capability.R",
+    "tests/testthat/test-mzml-integrity.R",
+    "tests/testthat/test-mzrtsim-se.R",
+    "tests/testthat/test-mzrtsim.R",
+    "tests/testthat/test-qcbc.R",
+    "tests/testthat/test-simmzml-ms2.R",
+    "tests/testthat/test-simmzml.R"
+  ]
+}

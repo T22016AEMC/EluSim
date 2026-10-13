@@ -1,0 +1,14 @@
+.venv/
+node_modules/
+frontend/dist/
+__pycache__/
+*.pyc
+.pytest_cache/
+.env
+*.db
+artifacts/source.tar.gz
+artifacts/*.png
+調查報告.zip
+調查報告/
+playwright-report/
+test-results/

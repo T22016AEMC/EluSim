@@ -1,0 +1,411 @@
+{
+  "repo": "sartorius-research/STLC",
+  "metadata": {
+    "id": 551498822,
+    "node_id": "R_kgDOIN80Rg",
+    "name": "STLC",
+    "full_name": "sartorius-research/STLC",
+    "private": false,
+    "owner": {
+      "login": "sartorius-research",
+      "id": 51911901,
+      "node_id": "MDEyOk9yZ2FuaXphdGlvbjUxOTExOTAx",
+      "avatar_url": "https://avatars.githubusercontent.com/u/51911901?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/sartorius-research",
+      "html_url": "https://github.com/sartorius-research",
+      "followers_url": "https://api.github.com/users/sartorius-research/followers",
+      "following_url": "https://api.github.com/users/sartorius-research/following{/other_user}",
+      "gists_url": "https://api.github.com/users/sartorius-research/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/sartorius-research/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/sartorius-research/subscriptions",
+      "organizations_url": "https://api.github.com/users/sartorius-research/orgs",
+      "repos_url": "https://api.github.com/users/sartorius-research/repos",
+      "events_url": "https://api.github.com/users/sartorius-research/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/sartorius-research/received_events",
+      "type": "Organization",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "html_url": "https://github.com/sartorius-research/STLC",
+    "description": "A simulation testbed package for liquid chromatography",
+    "fork": false,
+    "url": "https://api.github.com/repos/sartorius-research/STLC",
+    "forks_url": "https://api.github.com/repos/sartorius-research/STLC/forks",
+    "keys_url": "https://api.github.com/repos/sartorius-research/STLC/keys{/key_id}",
+    "collaborators_url": "https://api.github.com/repos/sartorius-research/STLC/collaborators{/collaborator}",
+    "teams_url": "https://api.github.com/repos/sartorius-research/STLC/teams",
+    "hooks_url": "https://api.github.com/repos/sartorius-research/STLC/hooks",
+    "issue_events_url": "https://api.github.com/repos/sartorius-research/STLC/issues/events{/number}",
+    "events_url": "https://api.github.com/repos/sartorius-research/STLC/events",
+    "assignees_url": "https://api.github.com/repos/sartorius-research/STLC/assignees{/user}",
+    "branches_url": "https://api.github.com/repos/sartorius-research/STLC/branches{/branch}",
+    "tags_url": "https://api.github.com/repos/sartorius-research/STLC/tags",
+    "blobs_url": "https://api.github.com/repos/sartorius-research/STLC/git/blobs{/sha}",
+    "git_tags_url": "https://api.github.com/repos/sartorius-research/STLC/git/tags{/sha}",
+    "git_refs_url": "https://api.github.com/repos/sartorius-research/STLC/git/refs{/sha}",
+    "trees_url": "https://api.github.com/repos/sartorius-research/STLC/git/trees{/sha}",
+    "statuses_url": "https://api.github.com/repos/sartorius-research/STLC/statuses/{sha}",
+    "languages_url": "https://api.github.com/repos/sartorius-research/STLC/languages",
+    "stargazers_url": "https://api.github.com/repos/sartorius-research/STLC/stargazers",
+    "contributors_url": "https://api.github.com/repos/sartorius-research/STLC/contributors",
+    "subscribers_url": "https://api.github.com/repos/sartorius-research/STLC/subscribers",
+    "subscription_url": "https://api.github.com/repos/sartorius-research/STLC/subscription",
+    "commits_url": "https://api.github.com/repos/sartorius-research/STLC/commits{/sha}",
+    "git_commits_url": "https://api.github.com/repos/sartorius-research/STLC/git/commits{/sha}",
+    "comments_url": "https://api.github.com/repos/sartorius-research/STLC/comments{/number}",
+    "issue_comment_url": "https://api.github.com/repos/sartorius-research/STLC/issues/comments{/number}",
+    "contents_url": "https://api.github.com/repos/sartorius-research/STLC/contents/{+path}",
+    "compare_url": "https://api.github.com/repos/sartorius-research/STLC/compare/{base}...{head}",
+    "merges_url": "https://api.github.com/repos/sartorius-research/STLC/merges",
+    "archive_url": "https://api.github.com/repos/sartorius-research/STLC/{archive_format}{/ref}",
+    "downloads_url": "https://api.github.com/repos/sartorius-research/STLC/downloads",
+    "issues_url": "https://api.github.com/repos/sartorius-research/STLC/issues{/number}",
+    "pulls_url": "https://api.github.com/repos/sartorius-research/STLC/pulls{/number}",
+    "milestones_url": "https://api.github.com/repos/sartorius-research/STLC/milestones{/number}",
+    "notifications_url": "https://api.github.com/repos/sartorius-research/STLC/notifications{?since,all,participating}",
+    "labels_url": "https://api.github.com/repos/sartorius-research/STLC/labels{/name}",
+    "releases_url": "https://api.github.com/repos/sartorius-research/STLC/releases{/id}",
+    "deployments_url": "https://api.github.com/repos/sartorius-research/STLC/deployments",
+    "created_at": "2022-10-14T14:11:31Z",
+    "updated_at": "2025-10-18T06:19:30Z",
+    "pushed_at": "2023-03-13T21:22:57Z",
+    "git_url": "git://github.com/sartorius-research/STLC.git",
+    "ssh_url": "git@github.com:sartorius-research/STLC.git",
+    "clone_url": "https://github.com/sartorius-research/STLC.git",
+    "svn_url": "https://github.com/sartorius-research/STLC",
+    "homepage": null,
+    "size": 40,
+    "stargazers_count": 9,
+    "watchers_count": 9,
+    "language": "Python",
+    "has_issues": true,
+    "has_projects": true,
+    "has_downloads": false,
+    "has_wiki": true,
+    "has_pages": false,
+    "has_discussions": false,
+    "forks_count": 6,
+    "mirror_url": null,
+    "archived": false,
+    "disabled": false,
+    "open_issues_count": 0,
+    "license": {
+      "key": "gpl-3.0",
+      "name": "GNU General Public License v3.0",
+      "spdx_id": "GPL-3.0",
+      "url": "https://api.github.com/licenses/gpl-3.0",
+      "node_id": "MDc6TGljZW5zZTk="
+    },
+    "allow_forking": true,
+    "is_template": false,
+    "web_commit_signoff_required": false,
+    "has_pull_requests": true,
+    "pull_request_creation_policy": "all",
+    "topics": [],
+    "visibility": "public",
+    "forks": 6,
+    "open_issues": 0,
+    "watchers": 9,
+    "default_branch": "main",
+    "temp_clone_token": null,
+    "custom_properties": {},
+    "organization": {
+      "login": "sartorius-research",
+      "id": 51911901,
+      "node_id": "MDEyOk9yZ2FuaXphdGlvbjUxOTExOTAx",
+      "avatar_url": "https://avatars.githubusercontent.com/u/51911901?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/sartorius-research",
+      "html_url": "https://github.com/sartorius-research",
+      "followers_url": "https://api.github.com/users/sartorius-research/followers",
+      "following_url": "https://api.github.com/users/sartorius-research/following{/other_user}",
+      "gists_url": "https://api.github.com/users/sartorius-research/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/sartorius-research/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/sartorius-research/subscriptions",
+      "organizations_url": "https://api.github.com/users/sartorius-research/orgs",
+      "repos_url": "https://api.github.com/users/sartorius-research/repos",
+      "events_url": "https://api.github.com/users/sartorius-research/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/sartorius-research/received_events",
+      "type": "Organization",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "network_count": 6,
+    "subscribers_count": 0
+  },
+  "commit": {
+    "sha": "e482802bdd311a615c963c2adc65694e8f488cf3",
+    "node_id": "C_kwDOIN80RtoAKGU0ODI4MDJiZGQzMTFhNjE1Yzk2M2MyYWRjNjU2OTRlOGY0ODhjZjM",
+    "commit": {
+      "author": {
+        "name": "davidanderssoncr",
+        "email": "115615969+davidanderssoncr@users.noreply.github.com",
+        "date": "2023-03-13T21:22:57Z"
+      },
+      "committer": {
+        "name": "GitHub",
+        "email": "noreply@github.com",
+        "date": "2023-03-13T21:22:57Z"
+      },
+      "message": "Update README.md",
+      "tree": {
+        "sha": "c5afc8584d729e53d451ca2e84d2f8b55e663a81",
+        "url": "https://api.github.com/repos/sartorius-research/STLC/git/trees/c5afc8584d729e53d451ca2e84d2f8b55e663a81"
+      },
+      "url": "https://api.github.com/repos/sartorius-research/STLC/git/commits/e482802bdd311a615c963c2adc65694e8f488cf3",
+      "comment_count": 0,
+      "verification": {
+        "verified": true,
+        "reason": "valid",
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsBcBAABCAAQBQJkD5QxCRBK7hj4Ov3rIwAA/GEIAK9wOt0cVJVS+G3zOwFrmsRE\nqtSNJyWBVqqxuqOruEZoiOBdxRKxmAci5jfJ5j7islIscL2cfrs+YbgWNkUif26+\nUaYnWHJM+lk9vsxKsHwcvy8qZmZZVkin30qGUFAgBOeqTgkV1v55JDt1HLJTKJD2\neqv/gsRUAEvH2HN/zapwrMNmfjKcOCg/A7nOBQwo6ttpboYhA4UCyfLqD5NgCEud\nbBu7IWH/9t1oHCrQ/rQo9EOr+Wxom9rOE1n8/ewJ9PIKjjcEWlalE+4HxarftiZX\nGv/AH0ZCyddWUo4y2BeJYrihxMNnuaH4G7yuvApnJ/HlvFQHn+mkwrhMPN8Q+LQ=\n=qn2P\n-----END PGP SIGNATURE-----\n",
+        "payload": "tree c5afc8584d729e53d451ca2e84d2f8b55e663a81\nparent b3fa786bba7b75b4ff2112b3ed6b8697b4aef096\nauthor davidanderssoncr <115615969+davidanderssoncr@users.noreply.github.com> 1678742577 +0100\ncommitter GitHub <noreply@github.com> 1678742577 +0100\n\nUpdate README.md",
+        "verified_at": "2024-01-16T19:59:59Z"
+      }
+    },
+    "url": "https://api.github.com/repos/sartorius-research/STLC/commits/e482802bdd311a615c963c2adc65694e8f488cf3",
+    "html_url": "https://github.com/sartorius-research/STLC/commit/e482802bdd311a615c963c2adc65694e8f488cf3",
+    "comments_url": "https://api.github.com/repos/sartorius-research/STLC/commits/e482802bdd311a615c963c2adc65694e8f488cf3/comments",
+    "author": {
+      "login": "davidanderssoncr",
+      "id": 115615969,
+      "node_id": "U_kgDOBuQo4Q",
+      "avatar_url": "https://avatars.githubusercontent.com/u/115615969?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/davidanderssoncr",
+      "html_url": "https://github.com/davidanderssoncr",
+      "followers_url": "https://api.github.com/users/davidanderssoncr/followers",
+      "following_url": "https://api.github.com/users/davidanderssoncr/following{/other_user}",
+      "gists_url": "https://api.github.com/users/davidanderssoncr/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/davidanderssoncr/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/davidanderssoncr/subscriptions",
+      "organizations_url": "https://api.github.com/users/davidanderssoncr/orgs",
+      "repos_url": "https://api.github.com/users/davidanderssoncr/repos",
+      "events_url": "https://api.github.com/users/davidanderssoncr/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/davidanderssoncr/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "web-flow",
+      "id": 19864447,
+      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/web-flow",
+      "html_url": "https://github.com/web-flow",
+      "followers_url": "https://api.github.com/users/web-flow/followers",
+      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+      "organizations_url": "https://api.github.com/users/web-flow/orgs",
+      "repos_url": "https://api.github.com/users/web-flow/repos",
+      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/web-flow/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "b3fa786bba7b75b4ff2112b3ed6b8697b4aef096",
+        "url": "https://api.github.com/repos/sartorius-research/STLC/commits/b3fa786bba7b75b4ff2112b3ed6b8697b4aef096",
+        "html_url": "https://github.com/sartorius-research/STLC/commit/b3fa786bba7b75b4ff2112b3ed6b8697b4aef096"
+      }
+    ],
+    "stats": {
+      "total": 2,
+      "additions": 1,
+      "deletions": 1
+    },
+    "files": [
+      {
+        "sha": "f3c5c4f11d19adabb2f8fc4f6c46cdf83450c522",
+        "filename": "README.md",
+        "status": "modified",
+        "additions": 1,
+        "deletions": 1,
+        "changes": 2,
+        "blob_url": "https://github.com/sartorius-research/STLC/blob/e482802bdd311a615c963c2adc65694e8f488cf3/README.md",
+        "raw_url": "https://github.com/sartorius-research/STLC/raw/e482802bdd311a615c963c2adc65694e8f488cf3/README.md",
+        "contents_url": "https://api.github.com/repos/sartorius-research/STLC/contents/README.md?ref=e482802bdd311a615c963c2adc65694e8f488cf3",
+        "patch": "@@ -57,7 +57,7 @@ doi = {https://doi.org/10.1016/j.compchemeng.2022.108068},\n ```\n \n ## References\n-Code implementing Orthogoanl collocation discretization: Larry C. Young 2019, [Orthogonal collocation revisited](https://doi.org/10.1016/j.cma.2018.10.019), Computer Methods in Applied Mechanics and Engineering.\n+Code implementing orthogonal collocation discretization: Larry C. Young 2019, [Orthogonal collocation revisited](https://doi.org/10.1016/j.cma.2018.10.019), Computer Methods in Applied Mechanics and Engineering.\n \n ## License\n "
+      }
+    ]
+  },
+  "tree": {
+    "sha": "e482802bdd311a615c963c2adc65694e8f488cf3",
+    "url": "https://api.github.com/repos/sartorius-research/STLC/git/trees/e482802bdd311a615c963c2adc65694e8f488cf3",
+    "tree": [
+      {
+        "path": ".gitignore",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "a81c8ee121952cf06bfaf9ff9988edd8cded763c",
+        "size": 2035,
+        "url": "https://api.github.com/repos/sartorius-research/STLC/git/blobs/a81c8ee121952cf06bfaf9ff9988edd8cded763c"
+      },
+      {
+        "path": "ACKNOWLEDGMENTS",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "a0843390faeeedd31a7491e78730930a7936fb4f",
+        "size": 187,
+        "url": "https://api.github.com/repos/sartorius-research/STLC/git/blobs/a0843390faeeedd31a7491e78730930a7936fb4f"
+      },
+      {
+        "path": "LICENSE",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7",
+        "size": 35149,
+        "url": "https://api.github.com/repos/sartorius-research/STLC/git/blobs/f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
+      },
+      {
+        "path": "README.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "f3c5c4f11d19adabb2f8fc4f6c46cdf83450c522",
+        "size": 1757,
+        "url": "https://api.github.com/repos/sartorius-research/STLC/git/blobs/f3c5c4f11d19adabb2f8fc4f6c46cdf83450c522"
+      },
+      {
+        "path": "examples",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "f14b7a98727c710a21bbb05dc095ab39c6f70891",
+        "url": "https://api.github.com/repos/sartorius-research/STLC/git/trees/f14b7a98727c710a21bbb05dc095ab39c6f70891"
+      },
+      {
+        "path": "examples/grm",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "6575c4fa0961a56c654ed494cdb06d22d6af9fd7",
+        "url": "https://api.github.com/repos/sartorius-research/STLC/git/trees/6575c4fa0961a56c654ed494cdb06d22d6af9fd7"
+      },
+      {
+        "path": "examples/grm/multi_component.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "9e3088de26b537c5cae691e470b33c319925ce10",
+        "size": 2260,
+        "url": "https://api.github.com/repos/sartorius-research/STLC/git/blobs/9e3088de26b537c5cae691e470b33c319925ce10"
+      },
+      {
+        "path": "examples/grm/single_component.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "3024e71696555d06ac379075df2aa889f16824e2",
+        "size": 1894,
+        "url": "https://api.github.com/repos/sartorius-research/STLC/git/blobs/3024e71696555d06ac379075df2aa889f16824e2"
+      },
+      {
+        "path": "examples/lkm",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "8438665bca0acd1a7917b9b2617d5a87d585ded9",
+        "url": "https://api.github.com/repos/sartorius-research/STLC/git/trees/8438665bca0acd1a7917b9b2617d5a87d585ded9"
+      },
+      {
+        "path": "examples/lkm/multi_component.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "f8306c764c1461f2a9423bb6447e00eddb0d39f1",
+        "size": 1664,
+        "url": "https://api.github.com/repos/sartorius-research/STLC/git/blobs/f8306c764c1461f2a9423bb6447e00eddb0d39f1"
+      },
+      {
+        "path": "examples/lkm/single_component.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "14eac18db5c797dc25ec167a0ca84fa4a88afbe8",
+        "size": 761,
+        "url": "https://api.github.com/repos/sartorius-research/STLC/git/blobs/14eac18db5c797dc25ec167a0ca84fa4a88afbe8"
+      },
+      {
+        "path": "requirements.txt",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "5bb306afaa1d4d03ad7c4a6b41320de6c01351f7",
+        "size": 13,
+        "url": "https://api.github.com/repos/sartorius-research/STLC/git/blobs/5bb306afaa1d4d03ad7c4a6b41320de6c01351f7"
+      },
+      {
+        "path": "setup.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "6291515fddc9095fe4d0d8744317a882dc1fe2f3",
+        "size": 825,
+        "url": "https://api.github.com/repos/sartorius-research/STLC/git/blobs/6291515fddc9095fe4d0d8744317a882dc1fe2f3"
+      },
+      {
+        "path": "stlc",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "4c4193f88e81f6fb49ef042ae49754df783adfa9",
+        "url": "https://api.github.com/repos/sartorius-research/STLC/git/trees/4c4193f88e81f6fb49ef042ae49754df783adfa9"
+      },
+      {
+        "path": "stlc/__init__.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "79721d9990e2238db55b4a8458724e9a358cf659",
+        "size": 323,
+        "url": "https://api.github.com/repos/sartorius-research/STLC/git/blobs/79721d9990e2238db55b4a8458724e9a358cf659"
+      },
+      {
+        "path": "stlc/grm.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "87ab5c54793d7ed881abc9290d0656ee740d2738",
+        "size": 16691,
+        "url": "https://api.github.com/repos/sartorius-research/STLC/git/blobs/87ab5c54793d7ed881abc9290d0656ee740d2738"
+      },
+      {
+        "path": "stlc/lkm.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "d239737239a88cb034a61ca891a72bd9fb48f376",
+        "size": 17411,
+        "url": "https://api.github.com/repos/sartorius-research/STLC/git/blobs/d239737239a88cb034a61ca891a72bd9fb48f376"
+      },
+      {
+        "path": "stlc/lkm_langmuir.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "f2eba2a2ee370f906722913f0f161f899d764911",
+        "size": 17453,
+        "url": "https://api.github.com/repos/sartorius-research/STLC/git/blobs/f2eba2a2ee370f906722913f0f161f899d764911"
+      },
+      {
+        "path": "stlc/occ.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "d2397522d15a8e04d7fa9145b1da93fb552f54d7",
+        "size": 40888,
+        "url": "https://api.github.com/repos/sartorius-research/STLC/git/blobs/d2397522d15a8e04d7fa9145b1da93fb552f54d7"
+      }
+    ],
+    "truncated": false
+  },
+  "issues": [],
+  "file_errors": [],
+  "snapshot": "C:\\Users\\T22016\\AppData\\Local\\Temp\\lc-gradient-research-20261013\\sartorius-research__STLC",
+  "downloaded_text_paths": [
+    "LICENSE",
+    "README.md",
+    "examples/grm/multi_component.py",
+    "examples/grm/single_component.py",
+    "examples/lkm/multi_component.py",
+    "examples/lkm/single_component.py",
+    "requirements.txt",
+    "setup.py",
+    "stlc/__init__.py",
+    "stlc/grm.py",
+    "stlc/lkm.py",
+    "stlc/lkm_langmuir.py",
+    "stlc/occ.py"
+  ]
+}

@@ -1,0 +1,134 @@
+{
+  "project": "pylss",
+  "synthetic": true,
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "packages": {
+    "colorama": "0.4.6",
+    "contourpy": "1.4.0",
+    "cycler": "0.12.1",
+    "fonttools": "4.66.1",
+    "iniconfig": "2.3.1",
+    "kiwisolver": "1.5.1",
+    "matplotlib": "3.11.2",
+    "numpy": "2.5.4",
+    "packaging": "26.3",
+    "pillow": "12.3.0",
+    "pip": "25.0.1",
+    "pluggy": "1.6.0",
+    "Pygments": "2.21.0",
+    "pylss": "0.1.0",
+    "pyparsing": "3.3.3",
+    "pytest": "9.1.1",
+    "python-dateutil": "2.9.0.post0",
+    "PyYAML": "6.0.3",
+    "scipy": "1.18.1",
+    "setuptools": "84.0.0",
+    "six": "1.17.0",
+    "wheel": "0.48.0"
+  },
+  "cases": [
+    {
+      "L_mm": 100,
+      "tg_min": 10,
+      "phi_start": 0.05,
+      "t0_min": 0.7850840041320893,
+      "rt_min": [
+        5.627884082884763,
+        6.4078996069251355,
+        7.031319308471377
+      ],
+      "width_base_min": [
+        0.04925402659083184,
+        0.04514665490086966,
+        0.041900839580092844
+      ],
+      "critical_rs": [
+        [],
+        8.425687004190367
+      ],
+      "chrom_shape": [
+        4,
+        3001
+      ]
+    },
+    {
+      "L_mm": 100,
+      "tg_min": 20,
+      "phi_start": 0.05,
+      "t0_min": 0.7850840041320893,
+      "rt_min": [
+        8.521714598283467,
+        10.226215341414278,
+        11.610520575949764
+      ],
+      "width_base_min": [
+        0.08580459717329188,
+        0.07758166247913834,
+        0.07105099604155188
+      ],
+      "critical_rs": [
+        [],
+        10.957177310694831
+      ],
+      "chrom_shape": [
+        4,
+        3001
+      ]
+    },
+    {
+      "L_mm": 100,
+      "tg_min": 10,
+      "phi_start": 0.15,
+      "t0_min": 0.7850840041320893,
+      "rt_min": [
+        4.839449123829784,
+        5.69572129481053,
+        6.398597675640341
+      ],
+      "width_base_min": [
+        0.053970147148017115,
+        0.04924829546486518,
+        0.045552153823358484
+      ],
+      "critical_rs": [
+        [],
+        8.722673736465756
+      ],
+      "chrom_shape": [
+        4,
+        3001
+      ]
+    },
+    {
+      "L_mm": 150,
+      "tg_min": 10,
+      "phi_start": 0.05,
+      "t0_min": 1.177626006198134,
+      "rt_min": [
+        6.499959408883842,
+        7.232655612226217,
+        7.814472466457084
+      ],
+      "width_base_min": [
+        0.04550186163231206,
+        0.042162473645037245,
+        0.03953261287688844
+      ],
+      "critical_rs": [
+        [],
+        8.378599569246925
+      ],
+      "chrom_shape": [
+        4,
+        3001
+      ]
+    }
+  ],
+  "zero_gradient_result": 9999,
+  "nlss_import": {
+    "status": "FAILED",
+    "error": "ModuleNotFoundError(\"No module named 'optimizer'\")"
+  },
+  "status": "PASS_HEADLESS_API",
+  "caveat": "Requires supplied logKw/S, no structure prediction; GUI dependencies omitted."
+}
