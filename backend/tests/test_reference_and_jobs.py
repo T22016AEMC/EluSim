@@ -4,7 +4,7 @@ from test_engine import method
 from elusim.engine import retention,volume
 from elusim.schemas import Compound
 from elusim.jobs import compute
-sys.path.insert(0,str(pathlib.Path(__file__).resolve().parents[2].parent))
+sys.path.insert(0,str(pathlib.Path(__file__).resolve().parents[2]))
 
 def test_pinned_pylss_linear_reference_high_retention_limit():
  from third_party.pylss.ssengine import SSGenerator
