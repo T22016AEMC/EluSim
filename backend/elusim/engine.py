@@ -46,10 +46,11 @@ class Program:
   return self.composition(self.time_at_volume(self.pumped(t)-dwell-max(0,x)*vm))
 
 def retention(req,compound,rtol=1e-7,max_step=None):
+ from .retention_models import retention_model
+ model=retention_model(compound)
  p=Program(req); vm=volume(req.column);end=p.t[-1]
  def rhs(t,y):
-  exponent=compound.logkw-compound.s*p.local_phi(t,y[0],vm,req.mobile.dwell_ml)
-  k=10.**exponent
+  k=model.k(p.local_phi(t,y[0],vm,req.mobile.dwell_ml),req)
   return [p.flow(t)/(vm*(1+k))]
  def eluted(t,y):return y[0]-1
  eluted.terminal=True;eluted.direction=1
@@ -58,25 +59,32 @@ def retention(req,compound,rtol=1e-7,max_step=None):
  return float(sol.t_events[0][0]) if len(sol.t_events[0]) else None
 
 def eligibility(req,c):
- if req.mode!='RP': return 'Unsupported', f'{req.mode}: independent quantitative model not enabled'
- if req.workflow=='structure':return 'Insufficient data','目前缺少經驗證的 logKw / S 結構預測模型'
+ if req.mode!='RP':return 'Unsupported',f'{req.mode}: independent quantitative model not enabled'
+ if req.workflow=='structure':return 'Insufficient data','No compatible retention model for these structure/conditions'
  if c.kind in ['polymer','peptide','protein','oligomer']:return 'Unsupported','No validated LSS model for this entity kind'
  if c.logkw is None or c.s is None:return 'Insufficient data','Missing logKw / S'
  if req.workflow=='calibrated' and c.source!='Calibrated':return 'Insufficient data','No calibrated parameters for this component'
- if c.scope:
-  s=c.scope
-  if s.stationary_phase!=req.column.stationary_phase or s.mobile_a!=req.mobile.a or s.buffer!=req.mobile.buffer or s.mobile_b!=req.mobile.b or abs(s.ph-req.mobile.ph)>.01 or abs(s.temperature_c-req.column.temperature_c)>.01:
-   return 'Insufficient data','Parameters are outside their declared stationary phase / solvent / pH / temperature scope'
+ from .conditions import scope_matches
+ if c.scope and not scope_matches(c.scope,req):return 'Insufficient data','Parameters are outside their declared stationary phase / solvent / pH / temperature scope'
+ if c.parameter_origin in ['prediction','literature']:
+  from .features import molecular_features
+  if c.retention_provenance.get('scope') and not scope_matches(c.retention_provenance['scope'],req):return 'Insufficient data','Original model chemistry scope no longer matches'
+  if not c.smiles or molecular_features(c.smiles)[0]['canonical_smiles']!=c.retention_provenance.get('canonical_smiles'):return 'Insufficient data','Structure changed since parameters were obtained'
+  if c.retention_provenance.get('particle_um',req.column.particle_um)!=req.column.particle_um:return 'Insufficient data','Particle specification changed since prediction'
+  limits=c.retention_provenance.get('phi_range')
+  if limits and any(not limits[0]-1e-9<=n.b_percent/100<=limits[1]+1e-9 for n in req.gradient):return 'Insufficient data','Gradient outside the retention-curve organic-fraction range'
  return c.source,None
 
 def simulate(req:Simulation,deadline=None):
  from .prediction import prepare_structure
  original_input=req.model_dump();req,predictions=prepare_structure(req)
+ from .mixture import signal_amounts
+ signals=signal_amounts(req)
  p=Program(req); vm=volume(req.column); grid=np.linspace(0,p.t[-1],req.points);peaks=[];curves=[];warnings=[]
  for c in req.compounds:
   if deadline and time.monotonic()>deadline:raise TimeoutError('Computation budget exceeded')
   source,error=eligibility(req,c)
-  row={'id':c.id,'name':c.name,'source':source,'rt_min':None,'eluted':False,'warning':error,'sigma_min':None,'fwhm_min':None,'width_base_min':None}
+  row={'id':c.id,'name':c.name,'source':source,'rt_min':None,'eluted':False,'warning':error,'sigma_min':None,'fwhm_min':None,'width_base_min':None,**signals[c.id], 'peak_height':None,'retention_provenance':c.retention_provenance,'parameter_scope':c.scope.model_dump() if c.scope else None}
   if not error:
    rt=retention(req,c)
    row['rt_min']=rt;row['eluted']=rt is not None
@@ -84,7 +92,10 @@ def simulate(req:Simulation,deadline=None):
    elif req.column.plates:
     sigma=math.sqrt(rt*rt/req.column.plates+(req.mobile.injection_ul/1000/p.flow(0))**2/12+req.mobile.extra_sigma_min**2)
     row.update(sigma_min=sigma,fwhm_min=2*math.sqrt(2*math.log(2))*sigma,width_base_min=4*sigma)
-    curves.append({'id':c.id,'name':c.name,'y':(c.amplitude*np.exp(-.5*((grid-rt)/sigma)**2)).tolist()})
+    signal=signals[c.id]
+    height=signal['peak_area']/(math.sqrt(2*math.pi)*sigma)
+    row.update(**signal,peak_height=height)
+    curves.append({'id':c.id,'name':c.name,'y':(height*np.exp(-.5*((grid-rt)/sigma)**2)).tolist()})
    else:row['warning']='Efficiency missing: Rt only; peak / Rs not generated'
    if c.scope is None:warnings.append(c.name+': parameter scope undeclared; comparisons are conditional on these supplied parameters')
   peaks.append(row)
@@ -93,12 +104,16 @@ def simulate(req:Simulation,deadline=None):
   rs=2*(b['rt_min']-a['rt_min'])/(a['width_base_min']+b['width_base_min']) if a['width_base_min'] and b['width_base_min'] else None
   pairs.append({'ids':[a['id'],b['id']],'names':[a['name'],b['name']],'rs':rs,'coelution':rs is not None and rs<1.5})
  if len(grid)>1 and any(r['sigma_min'] and (grid[1]-grid[0])>r['sigma_min']/2 for r in peaks):warnings.append('Plot grid is coarse relative to some peak widths; use exported peak metrics')
- return {'input':original_input,'structure_predictions':predictions,'model':MODEL,'mode':req.mode,'peaks':peaks,'pairs':pairs,'order':[r['id'] for r in ordered],'min_rs':min((r['rs'] for r in pairs if r['rs'] is not None),default=None),'time_min':grid.tolist(),'traces':curves,'gradient':{'program_b_percent':[100*p.composition(t) for t in grid],'inlet_b_percent':[100*p.local_phi(t,0,vm,req.mobile.dwell_ml) for t in grid]},'void_ml':vm,'initial_t0_min':vm/p.flow(0),'total_solvent_ml':float(p.v[-1]),'warnings':list(dict.fromkeys(warnings)),'assumptions':['Dilute local equilibrium LSS; plug-flow solvent transport; no overload','Gaussian screening width sigma = Rt/sqrt(N) plus injection and extra-column variance; no validated gradient compression','Specified pH / temperature / solvent do not independently modify LSS parameters; parameter scope must match','No externally validated prediction error or confidence interval'],'uncertainty':{'quantified':False,'reason':'No external experimental validation dataset'},'pressure':{'available':False,'reason':'Missing viscosity, permeability and instrument pressure model'}}
+ return {'input':original_input,'structure_predictions':predictions,'model':MODEL,'mode':req.mode,'peaks':peaks,'pairs':pairs,'order':[r['id'] for r in ordered],'min_rs':min((r['rs'] for r in pairs if r['rs'] is not None),default=None),'time_min':grid.tolist(),'traces':curves,'gradient':{'program_b_percent':[100*p.composition(t) for t in grid],'inlet_b_percent':[100*p.local_phi(t,0,vm,req.mobile.dwell_ml) for t in grid]},'void_ml':vm,'initial_t0_min':vm/p.flow(0),'total_solvent_ml':float(p.v[-1]),'warnings':list(dict.fromkeys(warnings)),'assumptions':['Dilute local equilibrium LSS; plug-flow solvent transport; no overload','Peak area = injected amount × relative response; height = area / (sqrt(2π) sigma); not calibrated UV absorbance; legacy amplitude is ignored','Gaussian screening width sigma = Rt/sqrt(N) plus injection and extra-column variance; no validated gradient compression','Specified pH / temperature / solvent do not independently modify LSS parameters; parameter scope must match','No externally validated prediction error or confidence interval'],'uncertainty':{'quantified':False,'reason':'No external experimental validation dataset'},'pressure':{'available':False,'reason':'Missing viscosity, permeability and instrument pressure model'}}
 
 def optimize(req:Optimize):
  from .schemas import Node
- base=req.simulation
+ from .prediction import prepare_structure
+ base,_=prepare_structure(req.simulation)
  if base.mode!='RP' or any(eligibility(base,c)[1] for c in base.compounds) or not base.column.plates or len(base.compounds)<2:raise ValueError('Optimization needs ≥2 eligible RP components and column efficiency')
+ for c in base.compounds:
+  limits=c.retention_provenance.get('phi_range') if c.parameter_origin in ['prediction','literature'] else None
+  if limits and any(not limits[0]-1e-9<=v/100<=limits[1]+1e-9 for v in req.starts_percent+req.ends_percent):raise ValueError('Optimization candidate fractions exceed the retention model interval')
  deadline=time.monotonic()+20; results=[]
  for duration in req.durations_min:
   for start in req.starts_percent:
@@ -118,8 +133,8 @@ def calibrate(req:Calibration):
  if any(m.mode!='RP' for m in methods):raise ValueError('RP calibration only')
  signatures=[str((m.column.model_dump(),m.mobile.model_dump(),[n.model_dump() for n in m.gradient])) for m in methods]
  if len(set(signatures))<2:raise ValueError('Need at least two independent methods; duplicate Rt cannot identify two parameters')
- first=methods[0];scope=(first.column.stationary_phase,first.mobile.b,first.mobile.ph,first.column.temperature_c,first.mobile.a,first.mobile.buffer)
- if any((m.column.stationary_phase,m.mobile.b,m.mobile.ph,m.column.temperature_c,m.mobile.a,m.mobile.buffer)!=scope for m in methods):raise ValueError('Calibration methods must share stationary phase, solvents, buffer, pH and temperature')
+ first=methods[0];scope=(first.column.stationary_phase,first.mobile.b,first.mobile.ph,first.column.temperature_c,first.mobile.a,first.mobile.buffer,first.mobile.ph_control)
+ if any((m.column.stationary_phase,m.mobile.b,m.mobile.ph,m.column.temperature_c,m.mobile.a,m.mobile.buffer,m.mobile.ph_control)!=scope for m in methods):raise ValueError('Calibration methods must share stationary phase, solvents, buffer, pH and temperature')
  compounds=[]
  for m in methods:
   c=next((x for x in m.compounds if x.id==req.compound_id),None)
@@ -132,4 +147,4 @@ def calibrate(req:Calibration):
  fit=least_squares(residual,[2.,4.],bounds=([-3,0],[12,30]),max_nfev=100,diff_step=1e-4)
  if not fit.success or np.linalg.matrix_rank(fit.jac)<2 or np.linalg.cond(fit.jac)>1e6:raise ValueError('Parameters not identifiable / optimizer not converged')
  if any(retention(m,c.model_copy(update={'logkw':float(fit.x[0]),'s':float(fit.x[1])})) is None for m,c in zip(methods,compounds)):raise ValueError('Calibration predicts non-elution')
- return {'compound_id':req.compound_id,'logkw':float(fit.x[0]),'s':float(fit.x[1]),'source':'Calibrated','scope':{'stationary_phase':scope[0],'mobile_b':scope[1],'ph':scope[2],'temperature_c':scope[3],'mobile_a':scope[4],'buffer':scope[5]},'residuals_min':fit.fun.tolist(),'rmse_fit_min':float(np.sqrt(np.mean(fit.fun**2))),'jacobian_condition':float(np.linalg.cond(fit.jac)),'statistical_prediction_error':None,'warning':'Training fit residual is not external prediction accuracy; synthetic inputs remain synthetic','model':MODEL}
+ return {'compound_id':req.compound_id,'logkw':float(fit.x[0]),'s':float(fit.x[1]),'source':'Calibrated','scope':{'stationary_phase':scope[0],'mobile_b':scope[1],'ph':scope[2],'temperature_c':scope[3],'mobile_a':scope[4],'buffer':scope[5],'ph_control':scope[6]},'residuals_min':fit.fun.tolist(),'rmse_fit_min':float(np.sqrt(np.mean(fit.fun**2))),'jacobian_condition':float(np.linalg.cond(fit.jac)),'statistical_prediction_error':None,'warning':'Training fit residual is not external prediction accuracy; synthetic inputs remain synthetic','model':MODEL}

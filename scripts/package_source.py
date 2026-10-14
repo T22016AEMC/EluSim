@@ -2,7 +2,7 @@
 import pathlib,tarfile,os
 root=pathlib.Path(__file__).resolve().parents[1];out=root/'artifacts';out.mkdir(exist_ok=True)
 dirs=['backend','frontend','third_party','scripts','docs','.github','database','data']
-files=['LICENSE','NOTICE.md','README.md','Dockerfile','compose.yaml','render.yaml','.env.example','.dockerignore','.gitignore','pyproject.toml']
+files=['.gitattributes','LICENSE','NOTICE.md','README.md','Dockerfile','compose.yaml','render.yaml','.env.example','.dockerignore','.gitignore','pyproject.toml']
 paths=[root/f for f in files if (root/f).is_file()]
 for directory in dirs:
  for folder,subdirs,filenames in os.walk(root/directory):

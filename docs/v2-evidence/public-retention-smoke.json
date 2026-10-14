@@ -1,0 +1,44 @@
+{
+  "url": "https://elusim-v1.onrender.com",
+  "timestamp_utc": "2026-10-14T08:16:22Z",
+  "health": {
+    "status": "ok",
+    "app": "EluSim_V2",
+    "engine": "elusim-lss-migration/1.0.0",
+    "rdkit": "2026.09.1",
+    "revision": "30a0a3b9c9e95c8d22f2ee6f34c3ecd07a66679a"
+  },
+  "status": "PASS",
+  "real_curve_components": 3,
+  "rt_before": [
+    2.781214824906259,
+    1.2938959226555202,
+    5.407987942774131
+  ],
+  "rt_after_gradient": [
+    2.8584244247176116,
+    1.2947228200030507,
+    5.944867184962828
+  ],
+  "fractions": [
+    0.5,
+    0.3,
+    0.2
+  ],
+  "areas_after_ratio": [
+    0.6666666666666666,
+    0.2,
+    0.13333333333333333
+  ],
+  "optimized_candidates": 2,
+  "heldout_qsrr": {
+    "smiles": "CC(=O)Oc1cccc2[nH]ccc12",
+    "logkw": 1.7755413331552228,
+    "s": 3.79073384295148,
+    "status": "Experimental model prediction"
+  },
+  "license": "CC-BY-NC-SA-3.0-US",
+  "manual_protection": true,
+  "solvent_abstention": true,
+  "experimental_gradient_accuracy": "Not established"
+}

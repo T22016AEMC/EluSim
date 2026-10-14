@@ -2,3 +2,7 @@
 data/v2/*.csv -text
 data/v2/*.tsv -text
 backend/models/*.gz -text
+
+# Retention source files are checked against recorded raw SHA256 hashes
+data/retention/*.csv -text
+data/retention/*.smi -text

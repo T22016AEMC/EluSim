@@ -11,7 +11,7 @@ from .chemistry import describe,import_file
 from .jobs import compute
 
 ROOT=pathlib.Path(__file__).resolve().parents[2]
-app=FastAPI(title='EluSim_V2',version='2.0.0')
+app=FastAPI(title='EluSim_V2',version='2.1.0')
 _rates=OrderedDict();_rate_lock=threading.Lock()
 
 @app.middleware('http')
@@ -93,7 +93,7 @@ from .uv import predict_uv,import_spectrum
 class RetentionInput(Strict):
  smiles:str=Field(min_length=1,max_length=2000)
  method:Simulation
- model_id:Literal['report0259-rt']='report0259-rt'
+ model_id:Literal['report0259-rt','lss-parameters','auto']='report0259-rt'
 class UVInput(Strict):
  smiles:str=Field(min_length=1,max_length=2000)
  solvent:str|None=Field(default=None,max_length=120)
@@ -112,7 +112,26 @@ class SpectrumInput(Strict):
 @app.get('/api/models')
 def models():return model_library()
 @app.post('/api/retention/predict')
-def retention_prediction(req:RetentionInput):return predict_retention(req.smiles,req.method,req.model_id)
+def retention_prediction(req:RetentionInput):
+ if req.model_id in ['auto','lss-parameters']:
+  from .retention_registry import predict_curve
+  return predict_curve(req.smiles,req.method,use_literature=req.model_id=='auto')
+ return predict_retention(req.smiles,req.method,req.model_id)
+class ResolveRetention(Strict):
+ method:Simulation
+ overwrite_manual:bool=False
+@app.post('/api/retention/resolve')
+def resolve_retention(req:ResolveRetention):
+ from .retention_registry import resolve_compounds
+ prepared,records=resolve_compounds(req.method,req.overwrite_manual)
+ return {'compounds':[c.model_dump() for c in prepared.compounds],'records':records,'workflow':'known'}
+@app.get('/api/retention/database')
+def retention_database():
+ from .retention_registry import measured_curves
+ rows=measured_curves()
+ return {'scope':rows[0]['scope'],'phi_range':[.2,.5],'count':len(rows),'license':'CC-BY-NC-SA-3.0-US',
+         'examples':[{'smiles':r['smiles'],'logkw':r['logkw'],'s':r['s'],'observations':r['observations']} for r in rows[:3]],
+         'source':'https://www.retentionprediction.org/hplc/database/','noncommercial_only':True}
 @app.post('/api/uv/predict')
 def uv_prediction(req:UVInput):return predict_uv(**req.model_dump())
 @app.post('/api/uv/import')

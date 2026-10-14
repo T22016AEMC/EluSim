@@ -27,7 +27,8 @@ class Node(Strict):
 class Mobile(Strict):
     a: str = Field(default='Water', max_length=120)
     b: Literal['ACN', 'MeOH'] = 'ACN'
-    ph: float = Field(default=7, ge=0, le=14)
+    ph: float | None = Field(default=7, ge=0, le=14)
+    ph_control: Literal['fixed', 'formulation'] = 'fixed'
     buffer: str = Field(default='None', max_length=120)
     injection_ul: float = Field(default=1, ge=0, le=1000)
     dwell_ml: float = Field(default=.1, ge=0, le=20)
@@ -38,7 +39,8 @@ class Scope(Strict):
     mobile_a: str = Field(default='Water', max_length=120)
     buffer: str = Field(default='None', max_length=120)
     mobile_b: Literal['ACN', 'MeOH'] = 'ACN'
-    ph: float = Field(default=7, ge=0, le=14)
+    ph: float | None = Field(default=7, ge=0, le=14)
+    ph_control: Literal['fixed', 'formulation'] = 'fixed'
     temperature_c: float = Field(default=25, ge=0, le=100)
 
 class Compound(Strict):
@@ -50,6 +52,12 @@ class Compound(Strict):
     logkw: float | None = Field(default=None, ge=-3, le=12)
     s: float | None = Field(default=None, ge=0, le=30)
     amplitude: float = Field(default=1, gt=0, le=100)
+    mixture_parts: float = Field(default=1, ge=0, le=1000000)
+    concentration: float | None = Field(default=None, ge=0, le=1000000)
+    concentration_unit: Literal['mM', 'mg/mL'] = 'mM'
+    response_factor: float = Field(default=1, ge=0, le=1000000)
+    parameter_origin: Literal['manual', 'prediction', 'calibration', 'literature'] = 'manual'
+    retention_provenance: dict = Field(default_factory=dict)
     source: Literal['Measured','Calibrated','Model-based','Screening only','Insufficient data','Unsupported','Experimental','Literature-derived','Validated model prediction','Experimental model prediction','Qualitative screening'] = 'Model-based'
     scope: Scope | None = None
     mode_parameters: dict = Field(default_factory=dict)
@@ -62,6 +70,7 @@ class Simulation(Strict):
     mobile: Mobile = Field(default_factory=Mobile)
     gradient: list[Node] = Field(min_length=2, max_length=40)
     points: int = Field(default=1000, ge=100, le=2000)
+    mixture_basis: Literal['parts', 'concentration'] = 'parts'
 
     @model_validator(mode='after')
     def valid_gradient(self):

@@ -1,0 +1,199 @@
+[
+  {
+    "repo": "gmrandazzo/PyLSS",
+    "commit": "d2cda850fa0b0881fc3cf1cd68c4d93b59dac04f",
+    "license": {
+      "key": "agpl-3.0",
+      "name": "GNU Affero General Public License v3.0",
+      "spdx_id": "AGPL-3.0",
+      "url": "https://api.github.com/licenses/agpl-3.0",
+      "node_id": "MDc6TGljZW5zZTE="
+    },
+    "license_files": [
+      "LICENSE"
+    ],
+    "reviewed_core_files": [
+      {
+        "path": "src/pylss/nlssengine.py",
+        "sha256": "a17da7842c9cf13fbdc2eebf76540bb4b879aaa4073ce599b7d07d50e473aef8",
+        "bytes": 5062,
+        "output_markers": [
+          "logkw",
+          "logk",
+          "retention",
+          "rtpred",
+          "gradient"
+        ]
+      },
+      {
+        "path": "src/pylss/plotengine.py",
+        "sha256": "b591c7f4113ec20ca5d6d87a69cea81577cc6b57319b178c3067e219d4753006",
+        "bytes": 2718,
+        "output_markers": []
+      },
+      {
+        "path": "src/pylss/ssengine.py",
+        "sha256": "7d5b4e5c30ee46cf82c8c011cf922ef5ff112186ef7216e3f44d32f35b2cffa8",
+        "bytes": 8006,
+        "output_markers": [
+          "logkw",
+          "logk",
+          "retention",
+          "rtpred",
+          "gradient"
+        ]
+      }
+    ],
+    "weight_files": []
+  },
+  {
+    "repo": "gurevichlab/grip",
+    "commit": "4247e26580d6ad050125741833dedae8e9ba5370",
+    "license": null,
+    "license_files": [],
+    "reviewed_core_files": [
+      {
+        "path": "grip/models/__init__.py",
+        "sha256": "1101c2fa97da10f851de9b59933fd417d4c51d3a7d911d80335f5c681c174e62",
+        "bytes": 135,
+        "output_markers": []
+      },
+      {
+        "path": "grip/models/grip.py",
+        "sha256": "f71780ecbb736197044df0de4dc92c858b8fa9591c9a9418ecb795982302795f",
+        "bytes": 12827,
+        "output_markers": [
+          "rtpred"
+        ]
+      },
+      {
+        "path": "grip/models/layers.py",
+        "sha256": "cd33166ed2938a4b5fb1897af4de52d956f4079f761e69e2d97c83fd531a46ce",
+        "bytes": 9607,
+        "output_markers": [
+          "gradient"
+        ]
+      }
+    ],
+    "weight_files": [
+      "model/model-i6kwrq9u.ckpt"
+    ]
+  },
+  {
+    "repo": "josiehong/TIMPANI",
+    "commit": "6db95fa96129b27d7a8fb999f27ff4451553a92d",
+    "license": {
+      "key": "apache-2.0",
+      "name": "Apache License 2.0",
+      "spdx_id": "Apache-2.0",
+      "url": "https://api.github.com/licenses/apache-2.0",
+      "node_id": "MDc6TGljZW5zZTI="
+    },
+    "license_files": [
+      "LICENSE"
+    ],
+    "reviewed_core_files": [
+      {
+        "path": "baselines/ju2021/model.py",
+        "sha256": "0034988d540ea9e209767f9c067eb0c7d244ed5369b5d384fa20f8b61f1459ea",
+        "bytes": 4634,
+        "output_markers": []
+      },
+      {
+        "path": "baselines/li2025/model.py",
+        "sha256": "886ea0568b2b47292e4ee9e09580e199acc74899a1316914ce7cb8af8571675a",
+        "bytes": 1389,
+        "output_markers": []
+      },
+      {
+        "path": "baselines/wang2023/model.py",
+        "sha256": "c803986b2eb9d903b5cd04e3dbcf3a802f0157cb53278eebca22c25f7341911d",
+        "bytes": 2469,
+        "output_markers": []
+      }
+    ],
+    "weight_files": []
+  },
+  {
+    "repo": "compomics/DeepLC",
+    "commit": "e24a5822bdb5304fcb1beb9ee5b307e1ab643221",
+    "license": {
+      "key": "apache-2.0",
+      "name": "Apache License 2.0",
+      "spdx_id": "Apache-2.0",
+      "url": "https://api.github.com/licenses/apache-2.0",
+      "node_id": "MDc6TGljZW5zZTI="
+    },
+    "license_files": [
+      "LICENSE",
+      "docs/source/LICENSE.txt"
+    ],
+    "reviewed_core_files": [
+      {
+        "path": "deeplc/_model_ops.py",
+        "sha256": "911eda8c56d36542e139397252a08890cc82876f046e516f83c3a088d1faa0a1",
+        "bytes": 23387,
+        "output_markers": [
+          "retention"
+        ]
+      },
+      {
+        "path": "deeplc/package_data/models/__init__.py",
+        "sha256": "4d3b0b9ef3a7059372b38450521786ba52c9bc911b44f1f79e0d23aeca88c2d9",
+        "bytes": 42,
+        "output_markers": []
+      },
+      {
+        "path": "tests/test_model_ops.py",
+        "sha256": "b038acae571e5a4af6ed2ea2c380bebe816635bb4b409c158f42948b83922f29",
+        "bytes": 4302,
+        "output_markers": []
+      }
+    ],
+    "weight_files": [
+      "deeplc/package_data/models/full_hc_PXD005573_pub_1fd8363d9af9dcad3be7553c39396960.pt",
+      "deeplc/package_data/models/full_hc_PXD005573_pub_8c22d89667368f2f02ad996469ba157e.pt",
+      "deeplc/package_data/models/full_hc_PXD005573_pub_cb975cfdd4105f97efa0b3afffe075cc.pt",
+      "deeplc/package_data/models/multitask_flexcnn_model.pt",
+      "deeplc/package_data/models/multitask_model.pt"
+    ]
+  },
+  {
+    "repo": "boecker-lab/2-step",
+    "commit": "74c2675e8482f3d588bf8bb4bc47433f9200e68f",
+    "license": {
+      "key": "agpl-3.0",
+      "name": "GNU Affero General Public License v3.0",
+      "spdx_id": "AGPL-3.0",
+      "url": "https://api.github.com/licenses/agpl-3.0",
+      "node_id": "MDc6TGljZW5zZTE="
+    },
+    "license_files": [
+      "LICENSE"
+    ],
+    "reviewed_core_files": [
+      {
+        "path": "predict.py",
+        "sha256": "517a830cb878167976a454b9b3cb7fa47b0061a750d578b24e7120b54e64afe3",
+        "bytes": 7886,
+        "output_markers": [
+          "retention",
+          "smiles"
+        ]
+      },
+      {
+        "path": "repackage_model.py",
+        "sha256": "1eb6e81f2144086965fe963a01b993e903275171b30e55cc9ec43304cd56afa1",
+        "bytes": 1694,
+        "output_markers": [
+          "gradient"
+        ]
+      }
+    ],
+    "weight_files": [
+      "models/2-step0525.pt",
+      "models/2-step0525_nocolumn.pt",
+      "models/2-step0525_setupagnostic.pt"
+    ]
+  }
+]

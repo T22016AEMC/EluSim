@@ -1,5 +1,9 @@
 # Scientific model artifacts
-report0259-rt.json.gz: derived data/weights licensed CC-BY-SA-4.0; credit RepoRT authors as data/v2/README.md. pnnl-uv-shape.json.gz version2.0.1: CC-BY-4.0; credit UV-adVISor original data authors and PNNL preprocessing as data/v2/README.md; software BSD notice separately preserved. Model IDs/version, source and applicability are embedded.
-No executable pickle, external URL fetch or model upload. No GRIP / DeepLC / TIMPANI / 2-step pretrained weights shipped. No deployed logKw/S artifact. LSS optional artifact can only be produced offline from licensed identifiable curves after tests; its source data must accompany deployment.
 
-Training framework BSD-3-Clause license: third_party/SCIKIT_LEARN_LICENSE.txt. This framework is not installed in the production image.
+Application inference code is AGPL-3.0-or-later. Each independent JSON artifact has its own license and scope in metadata:
+
+- report0259-rt 2.0.0: CC BY-SA 4.0; exact RepoRT0259 method-specific Rt only.
+- pnnl-uv-shape 2.0.1: CC BY 4.0; 220–400 nm normalized experimental spectrum shape.
+- lss-parameters 2.1.0: CC BY-NC-SA 3.0 US; experimental QSRR from Boswell isocratic data via Wiczling curation. Non-commercial only. See ../../data/retention/LICENSE.md.
+
+LSS weights and experimental curve data are separate licensed data artifacts, not relicensed AGPL code. Preserve attribution, modifications and share-alike terms when distributing them. Safe JSON inference uses no pickle execution, Torch or server-side sklearn. Heldout errors are in docs/v2-evidence; no confidence percentages or external gradient Rt validation are claimed.

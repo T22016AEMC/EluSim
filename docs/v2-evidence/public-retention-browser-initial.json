@@ -1,0 +1,545 @@
+{
+  "config": {
+    "configFile": "C:\\Users\\T22016\\Desktop\\程式\\LC Gradient Studio\\EluSim_V2\\frontend\\playwright.config.ts",
+    "rootDir": "C:/Users/T22016/Desktop/程式/LC Gradient Studio/EluSim_V2/frontend/tests",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "../artifacts/browser-tests.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "C:/Users/T22016/Desktop/程式/LC Gradient Studio/EluSim_V2/frontend/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "desktop",
+        "name": "desktop",
+        "testDir": "C:/Users/T22016/Desktop/程式/LC Gradient Studio/EluSim_V2/frontend/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "C:/Users/T22016/Desktop/程式/LC Gradient Studio/EluSim_V2/frontend/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "mobile-emulation",
+        "name": "mobile-emulation",
+        "testDir": "C:/Users/T22016/Desktop/程式/LC Gradient Studio/EluSim_V2/frontend/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.56.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "retention-integration.spec.ts",
+      "file": "retention-integration.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "real curve compounds resolve by ID; 5:3:2 area composition; gradient and ratio dataflow",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "timedOut",
+                  "duration": 95877,
+                  "error": {
+                    "message": "\u001b[31mTest timeout of 90000ms exceeded.\u001b[39m",
+                    "stack": "\u001b[31mTest timeout of 90000ms exceeded.\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "message": "\u001b[31mTest timeout of 90000ms exceeded.\u001b[39m"
+                    },
+                    {
+                      "location": {
+                        "file": "C:\\Users\\T22016\\Desktop\\程式\\LC Gradient Studio\\EluSim_V2\\frontend\\tests\\retention-integration.spec.ts",
+                        "column": 42,
+                        "line": 8
+                      },
+                      "message": "Error: page.waitForResponse: Test timeout of 90000ms exceeded.\n\n   6 |  await page.getByRole('button',{name:'Resolve retention from structures'}).click();await expect(page.getByLabel('logKw Caffeine',{exact:true})).not.toHaveValue('',{timeout:30000});\n   7 |  const resolved=await page.evaluate(()=>JSON.parse(localStorage.getItem('elusim-project')!));expect(resolved.compounds.map((c:any)=>c.parameter_origin)).toEqual(['literature','literature','literature']);\n>  8 |  const run=async()=>{const response=page.waitForResponse(r=>r.url().endsWith('/api/simulate')&&r.request().method()==='POST');await page.getByRole('button',{name:'Run simulation',exact:false}).first().click();const r=await response;expect(r.ok()).toBeTruthy();return r.json();};\n     |                                          ^\n   9 |  const initial=await run();expect(initial.order).toHaveLength(3);expect(initial.peaks.map((p:any)=>p.mixture_fraction)).toEqual([.5,.3,.2]);expect(initial.peaks[0].peak_area).toBeCloseTo(.5,8);\n  10 |  await page.getByRole('button',{name:'Mobile Phase & Gradient',exact:false}).click();await page.getByLabel('Time (min) node 2',{exact:true}).fill('15');const changed=await run();expect(changed.peaks[0].rt_min).not.toBe(initial.peaks[0].rt_min);\n  11 |  await page.getByRole('navigation',{name:'Workspaces'}).getByRole('button',{name:'Compounds',exact:false}).click();await page.getByLabel('Batch relative parts').fill('10:3:2');await page.getByRole('button',{name:'Apply batch composition'}).click();const ratio=await run();expect(ratio.peaks[0].peak_area).toBeCloseTo(10/15,8);expect(ratio.peaks.map((p:any)=>p.rt_min)).toEqual(changed.peaks.map((p:any)=>p.rt_min));\n    at run (C:\\Users\\T22016\\Desktop\\程式\\LC Gradient Studio\\EluSim_V2\\frontend\\tests\\retention-integration.spec.ts:8:42)\n    at C:\\Users\\T22016\\Desktop\\程式\\LC Gradient Studio\\EluSim_V2\\frontend\\tests\\retention-integration.spec.ts:14:389"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T08:42:50.102Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\T22016\\Desktop\\程式\\LC Gradient Studio\\EluSim_V2\\frontend\\test-results\\retention-integration-real-0d481-gradient-and-ratio-dataflow-desktop\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Users\\T22016\\Desktop\\程式\\LC Gradient Studio\\EluSim_V2\\frontend\\test-results\\retention-integration-real-0d481-gradient-and-ratio-dataflow-desktop\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "a3c7e831f8d9ad61f1fe-d1715380e441c173f6c5",
+          "file": "retention-integration.spec.ts",
+          "line": 2,
+          "column": 1
+        },
+        {
+          "title": "scoped QSRR fills a heldout compound; manual edits remain protected",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8378,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T08:44:50.692Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a3c7e831f8d9ad61f1fe-c2130fcdc19290f3146b",
+          "file": "retention-integration.spec.ts",
+          "line": 128,
+          "column": 1
+        },
+        {
+          "title": "real curve compounds resolve by ID; 5:3:2 area composition; gradient and ratio dataflow",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-emulation",
+              "projectName": "mobile-emulation",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 64836,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T08:46:18.464Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a3c7e831f8d9ad61f1fe-0da39d7e47391938a47b",
+          "file": "retention-integration.spec.ts",
+          "line": 2,
+          "column": 1
+        },
+        {
+          "title": "scoped QSRR fills a heldout compound; manual edits remain protected",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-emulation",
+              "projectName": "mobile-emulation",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4995,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T08:47:23.890Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a3c7e831f8d9ad61f1fe-34998005d4cd6f7c07b7",
+          "file": "retention-integration.spec.ts",
+          "line": 128,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "v2.spec.ts",
+      "file": "v2.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "V2 real retention inference, method abstention and preserved manual workflow",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5881,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T08:45:00.981Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9f5cea1cd63f4d778102-a0db3381679baee0b060",
+          "file": "v2.spec.ts",
+          "line": 4,
+          "column": 1
+        },
+        {
+          "title": "V2 experimental full UV spectrum, imports, exports and qualitative abstention",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 9898,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T08:45:07.018Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9f5cea1cd63f4d778102-8afa6bcbd5d5bec7489b",
+          "file": "v2.spec.ts",
+          "line": 50,
+          "column": 1
+        },
+        {
+          "title": "V2 real retention inference, method abstention and preserved manual workflow",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-emulation",
+              "projectName": "mobile-emulation",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3111,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T08:47:28.965Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9f5cea1cd63f4d778102-892dc3af5aa264c670a8",
+          "file": "v2.spec.ts",
+          "line": 4,
+          "column": 1
+        },
+        {
+          "title": "V2 experimental full UV spectrum, imports, exports and qualitative abstention",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-emulation",
+              "projectName": "mobile-emulation",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8870,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T08:47:32.228Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9f5cea1cd63f4d778102-ba23af8267b723dc3bdc",
+          "file": "v2.spec.ts",
+          "line": 50,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "workbench.spec.ts",
+      "file": "workbench.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "RDKit, multi-node gradient, simulation, optimization and refresh",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 43009,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T08:45:17.091Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "921e070f285a8b470d11-53b580d14cecb73033f8",
+          "file": "workbench.spec.ts",
+          "line": 2,
+          "column": 1
+        },
+        {
+          "title": "unsupported modes never produce fictitious predictions",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 12592,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T08:46:00.165Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "921e070f285a8b470d11-299ab2d9f06e70496e39",
+          "file": "workbench.spec.ts",
+          "line": 85,
+          "column": 1
+        },
+        {
+          "title": "RDKit, multi-node gradient, simulation, optimization and refresh",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-emulation",
+              "projectName": "mobile-emulation",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 43926,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T08:47:41.415Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "921e070f285a8b470d11-bc142bd270ff8721ed7f",
+          "file": "workbench.spec.ts",
+          "line": 2,
+          "column": 1
+        },
+        {
+          "title": "unsupported modes never produce fictitious predictions",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-emulation",
+              "projectName": "mobile-emulation",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 12778,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-14T08:48:25.467Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "921e070f285a8b470d11-4b6870a53035aedb26ca",
+          "file": "workbench.spec.ts",
+          "line": 85,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-14T08:42:42.411Z",
+    "duration": 357747.816,
+    "expected": 11,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

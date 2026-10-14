@@ -1,0 +1,42 @@
+{
+  "origin": "https://elusim-v1.onrender.com",
+  "date_utc": "2026-10-14T08:16:24.721693+00:00",
+  "physical_phone_test": false,
+  "health": {
+    "status": "ok",
+    "app": "EluSim_V2",
+    "engine": "elusim-lss-migration/1.0.0",
+    "rdkit": "2026.09.1",
+    "revision": "30a0a3b9c9e95c8d22f2ee6f34c3ecd07a66679a"
+  },
+  "models": [
+    "report0259-rt",
+    "pnnl-uv-shape",
+    "lss-parameters"
+  ],
+  "retention": {
+    "rt_min": 0.8808036087638422,
+    "status": "Experimental model prediction",
+    "applicability": {
+      "accepted": true,
+      "max_training_tanimoto": 0.38095238095238093,
+      "threshold": 0.2963068181818182,
+      "descriptor_violations": [],
+      "rule": "10th percentile train leave-one-out maximum Morgan Tanimoto; descriptor min/max; not a confidence probability",
+      "seen_in_training": false
+    }
+  },
+  "method_abstention": true,
+  "uv": {
+    "model_id": "pnnl-uv-shape",
+    "model_version": "2.0.1",
+    "data_license": "CC-BY-4.0",
+    "window_max_nm": 260.0,
+    "points": 181,
+    "status": "Experimental model prediction",
+    "unit": "normalized relative absorption (dimensionless)"
+  },
+  "no_fake_uv": true,
+  "raw_import_preserved": true,
+  "status": "PASS_PUBLIC_V2_SMOKE"
+}

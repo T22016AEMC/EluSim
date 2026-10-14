@@ -1,5 +1,6 @@
 """RDKit only provides structure descriptors, never fabricated retention parameters."""
-import csv,io
+import csv,io,uuid
+from .schemas import Compound
 from .features import molecular_features
 from rdkit import Chem
 from rdkit.Chem import Descriptors, Crippen, rdMolDescriptors, Draw
@@ -19,7 +20,7 @@ def import_file(content,filename):
    if i>=20:raise ValueError('At most 20 compounds per import')
    name=row.get('name','Compound '+str(i+1));smiles=row.get('smiles') or None
    descriptors=describe(smiles,name) if smiles else None
-   rows.append({'id':'import-'+str(i),'name':name,'kind':'small_molecule' if smiles else 'parameterized','smiles':descriptors['smiles'] if descriptors else None,'logkw':float(row['logkw']) if row.get('logkw') else None,'s':float(row['s']) if row.get('s') else None,'source':'Model-based','amplitude':1,'descriptors':descriptors})
+   rows.append({'id':str(uuid.uuid4()),'name':name,'kind':'small_molecule' if smiles else 'parameterized','smiles':descriptors['smiles'] if descriptors else None,'logkw':float(row['logkw']) if row.get('logkw') else None,'s':float(row['s']) if row.get('s') else None,'source':'Model-based','amplitude':1,'descriptors':descriptors})
  elif suffix in ['mol','sdf']:
   supplier=[Chem.MolFromMolBlock(content)] if suffix=='mol' else Chem.ForwardSDMolSupplier(io.BytesIO(content.encode()),removeHs=True)
   for i,mol in enumerate(supplier):
@@ -29,5 +30,13 @@ def import_file(content,filename):
    descriptors=describe(smiles,name)
    rows.append({'id':'import-'+str(i),'name':name,'kind':'small_molecule','smiles':smiles,'logkw':None,'s':None,'source':'Insufficient data','amplitude':1,'descriptors':descriptors})
  else:raise ValueError('Only CSV, SDF, MOL are supported')
+ if suffix=='csv':
+  raw_rows=list(csv.DictReader(io.StringIO(content)))
+  for compound,raw in zip(rows,raw_rows):
+   for key in ['mixture_parts','concentration','response_factor']:
+    if raw.get(key):compound[key]=float(raw[key])
+   if raw.get('concentration_unit'):compound['concentration_unit']=raw['concentration_unit']
+ for row in rows:
+  Compound.model_validate({k:v for k,v in row.items() if k!='descriptors'})
  if not rows:raise ValueError('No records')
  return rows
