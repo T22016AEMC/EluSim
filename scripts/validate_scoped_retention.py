@@ -18,3 +18,12 @@ def errors(records):
  return {'logk_mae':float(np.mean(abs(a-b))),'logk_rmse':float(np.sqrt(np.mean((a-b)**2))),'k_mae':float(np.mean(abs(10**a-10**b))),'k_rmse':float(np.sqrt(np.mean((10**a-10**b)**2))),'logkw_mae':float(np.mean(abs(refs[:,0]-pred[:,0]))),'s_mae':float(np.mean(abs(refs[:,1]-pred[:,1]))),'retention_order_accuracy_phi_035':float(np.mean(((order_ref[:,None]-order_ref[None,:])*(order_pred[:,None]-order_pred[None,:])>0)[mask])) if mask.any() else None,'heldout_observations':len(a),'heldout_curves':len(records),'heldout_unique_structures':len({r['smiles'] for r in records})}
 report={**errors(records),'in_domain_only':errors([r for r in records if r['in_domain']]),'rt_mae_min':None,'rt_rmse_min':None,'reason_no_rt_error':'No independent gradient experiments / documented t0 in curated dataset; do not infer Rt accuracy from parameter fitting','heldout_parameters':records,'scientific_status':'Experimental QSRR; dataset-heldout curves, no independent laboratory / gradient validation'}
 (ROOT/'docs/v2-evidence/scoped-retention-errors.json').write_text(json.dumps(report,indent=2),encoding='utf8');print(json.dumps({k:v for k,v in report.items() if k!='heldout_parameters'}),flush=True)
+
+# Keep serving metadata reproducible; weights are unchanged.
+import gzip
+summary={k:v for k,v in report.items() if k!='heldout_parameters'}
+model['metadata']['curve_validation']=summary
+limitations=model['metadata']['limitations']
+for warning in ['Heldout order agreement at 35% ACN is about 0.57 (0.54 in-domain); predictions are experimental screening estimates, not validated method recommendations','Geometry scaling assumes equivalent packing phase ratio; column batch/pore selectivity and gradient Rt accuracy remain unverified']:
+ if warning not in limitations:limitations.append(warning)
+(ROOT/'backend/models/lss-parameters.json.gz').write_bytes(gzip.compress(json.dumps(model,separators=(',',':')).encode('utf8'),compresslevel=9,mtime=0))

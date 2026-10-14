@@ -1,5 +1,7 @@
 import {test,expect} from '@playwright/test';
 test('real curve compounds resolve by ID; 5:3:2 area composition; gradient and ratio dataflow',async({page})=>{
+ // End-to-end workflow makes several separately bounded public API calls.
+ test.setTimeout(180000);
  const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));await page.goto('/');
  await page.getByRole('button',{name:'Retention Prediction',exact:false}).click();await page.getByRole('button',{name:'Load three experimental curve compounds'}).click();
  await page.getByRole('navigation',{name:'Workspaces'}).getByRole('button',{name:'Compounds',exact:false}).click();await expect(page.getByLabel('Mixture parts Caffeine',{exact:true})).toHaveValue('3');

@@ -21,7 +21,7 @@ for identity,rows in curves.items():
   f=fit_retention_curve(rows)
   if f['fit_rmse_logk']>.1:raise ValueError('LSS representation error above 0.1 log10(k)')
   if molecular_features(f['smiles'])[0]['descriptors']['formal_charge']!=0:raise ValueError('Charged structures excluded: no independent ionization model')
-  f.update(original_compound_id=identity,phi_range=[.2,.5]);labels.append(f)
+  f.update(original_compound_id=identity,phi_range=[.2,.5],model_family='LSS',parameter_source='Least-squares fit of four measured isocratic log10(k) observations',reference=SOURCE,doi=None,applicability_domain={**SCOPE,'phi_range':[.2,.5],'particle_um':3.5},validation_status='Literature-derived; fit residual is not external gradient validation');labels.append(f)
  except ValueError as e:excluded.append({'id':identity,'reason':str(e)})
 (DATA/'curves.json').write_text(json.dumps(labels,indent=2),encoding='utf8')
 report={'scope':SCOPE,'phi_range':[.2,.5],'rows':sum(len(r['observations']) for r in labels),'curves':len(labels),'unique_structures':len({r['smiles'] for r in labels}),'excluded':excluded,'source':SOURCE,'license':'CC-BY-NC-SA-3.0-US','source_commit':'2951822d97bd76eeeb244989c9e1691ca4a1ff88','raw_sha256':{p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in DATA.glob('*.csv')},'limitations':['Original pH is formulation-defined and varies with solvent fraction; no pKa/logD estimated','LSS range limited to 20–50% ACN; pure-water intercept is extrapolation','Original isocratic Rt/t0 not supplied in curated logk data; no independent gradient accuracy claim']}
