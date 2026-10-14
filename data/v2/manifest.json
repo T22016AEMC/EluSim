@@ -1,0 +1,40 @@
+[
+  {
+    "file": "uv_spectra.csv",
+    "url": "https://raw.githubusercontent.com/PNNL-CompBio/ML_UVvisModels/b61855b53bdae841ac38b820554d8f8e2a412ace/Data/UV_w_SMILES.csv",
+    "sha256": "40d2e338904d370f53c481a35ba9ed5f9e7e145094bf1913cbba9338778fc97b",
+    "original_sha256": "0d6ff92d8d46b95ed005a27c746267abb35889e84c144972c213a9070f09a2e5",
+    "original_dataset_doi": "10.6084/m9.figshare.15217512.v3",
+    "data_license": "CC-BY-4.0",
+    "excluded_rows": [
+      308,
+      311
+    ],
+    "processing": "Remove only unmatched rows; numerical strings unmodified; full original retained in local artifacts and public upstream"
+  },
+  {
+    "file": "UV-LICENSE",
+    "url": "https://raw.githubusercontent.com/PNNL-CompBio/ML_UVvisModels/b61855b53bdae841ac38b820554d8f8e2a412ace/LICENSE",
+    "sha256": "f1ec5fb921067e106672562e7f421e8469200cf2b1721cda2e9ec03ce3c67e3d"
+  },
+  {
+    "file": "0259_rtdata.tsv",
+    "url": "https://raw.githubusercontent.com/michaelwitting/RepoRT/9de8d603377bbb6cc0f74e250eb7533fd8874df1/example/0259_rtdata.tsv",
+    "sha256": "2d92b19352527461600d3551c5adab9bce3a32ac059e6f80043405068f6db9c5"
+  },
+  {
+    "file": "0259_metadata.tsv",
+    "url": "https://raw.githubusercontent.com/michaelwitting/RepoRT/9de8d603377bbb6cc0f74e250eb7533fd8874df1/example/0259_metadata.tsv",
+    "sha256": "f109fa587b8769852044ceb4edb89234b35e6e411fc845b18465c540880a4e7a"
+  },
+  {
+    "file": "0259_gradient.tsv",
+    "url": "https://raw.githubusercontent.com/michaelwitting/RepoRT/9de8d603377bbb6cc0f74e250eb7533fd8874df1/example/0259_gradient.tsv",
+    "sha256": "118094cde7b0c3f244117927450307bec4024a226536108c6ed1fdc217025d79"
+  },
+  {
+    "file": "LC-LICENSE",
+    "url": "https://raw.githubusercontent.com/michaelwitting/RepoRT/9de8d603377bbb6cc0f74e250eb7533fd8874df1/LICENSE",
+    "sha256": "2835bab027f3352343175bc5c0b56ea955c8c981e60892368041aa75f3d24221"
+  }
+]

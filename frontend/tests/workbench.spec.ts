@@ -21,7 +21,7 @@ test('RDKit, multi-node gradient, simulation, optimization and refresh',async({p
  await expect(page.getByRole('heading',{name:'Candidate 1'})).toBeVisible({timeout:45000});
  await page.getByRole('button',{name:'Apply & simulate'}).first().click();
  await expect(page.getByRole('heading',{name:'Predicted chromatogram'})).toBeVisible({timeout:45000});
- expect(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth+1)).toBeTruthy();
+ expect(await page.evaluate(width=>document.documentElement.scrollWidth<=width+1,page.viewportSize()!.width)).toBeTruthy();
  await page.screenshot({path:'../artifacts/'+info.project.name+'-workbench.png',fullPage:true});
  await page.reload();await expect(page.getByRole('heading',{name:'Compounds',exact:true})).toBeVisible();
  await expect(page.getByLabel('logKw Synthetic A')).toHaveValue('2');

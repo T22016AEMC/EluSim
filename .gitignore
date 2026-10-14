@@ -12,3 +12,6 @@ artifacts/*.png
 調查報告/
 playwright-report/
 test-results/
+
+# QA evidence is uploaded by CI / retained locally, never production user data
+artifacts/

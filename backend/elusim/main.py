@@ -4,14 +4,14 @@ from typing import Literal
 from fastapi import FastAPI,UploadFile,File,HTTPException,Request
 from fastapi.responses import FileResponse,JSONResponse
 from fastapi.staticfiles import StaticFiles
-from pydantic import Field
+from pydantic import Field,model_validator
 from .schemas import Strict, Simulation, Optimize, Calibration
 from .engine import MODES,MODEL
 from .chemistry import describe,import_file
 from .jobs import compute
 
 ROOT=pathlib.Path(__file__).resolve().parents[2]
-app=FastAPI(title='EluSim_V1',version='1.0.0')
+app=FastAPI(title='EluSim_V2',version='2.0.0')
 _rates=OrderedDict();_rate_lock=threading.Lock()
 
 @app.middleware('http')
@@ -47,7 +47,7 @@ async def busy(request,exc):return JSONResponse({'detail':str(exc)},503)
 @app.get('/api/health')
 def health():
  from rdkit import rdBase
- return {'status':'ok','app':'EluSim_V1','engine':MODEL,'rdkit':rdBase.rdkitVersion,'revision':os.getenv('SOURCE_REVISION',os.getenv('RENDER_GIT_COMMIT','local-unreleased'))}
+ return {'status':'ok','app':'EluSim_V2','engine':MODEL,'rdkit':rdBase.rdkitVersion,'revision':os.getenv('SOURCE_REVISION',os.getenv('RENDER_GIT_COMMIT','local-unreleased'))}
 
 @app.get('/api/library')
 def library():return {'modes':MODES,'structure_models':[],'columns':[{'name':'Generic C18 100 × 2.1 mm','manufacturer':'Generic','stationary_phase':'Generic C18','length_mm':100,'diameter_mm':2.1,'particle_um':1.7,'pore_angstrom':100,'porosity':.68,'plates':12000,'temperature_c':25}],'notice':'Generic geometry only; no commercial selectivity claim'}
@@ -79,13 +79,44 @@ def calibration(req:Calibration):return compute('calibration',req.model_dump())
 def source():
  p=ROOT/'artifacts/source.tar.gz'
  if not p.exists():raise HTTPException(503,'Corresponding Source archive must be generated before release')
- return FileResponse(p,media_type='application/gzip',filename='EluSim_V1-source.tar.gz')
+ return FileResponse(p,media_type='application/gzip',filename='EluSim_V2-source.tar.gz')
 
 @app.get('/api/license')
 def license_text():return FileResponse(ROOT/'LICENSE',media_type='text/plain')
 
 @app.get('/api/reference/pylss')
 def reference():return {'upstream':'gmrandazzo/PyLSS','commit':'d2cda850fa0b0881fc3cf1cd68c4d93b59dac04f','role':'Pinned optional scientific reference; independent migration solver is production engine','nlss_enabled':False,'zero_gradient_sentinel_used':False}
+
+
+from .prediction import library as model_library,predict_retention
+from .uv import predict_uv,import_spectrum
+class RetentionInput(Strict):
+ smiles:str=Field(min_length=1,max_length=2000)
+ method:Simulation
+ model_id:Literal['report0259-rt']='report0259-rt'
+class UVInput(Strict):
+ smiles:str=Field(min_length=1,max_length=2000)
+ solvent:str|None=Field(default=None,max_length=120)
+ ph:float|None=Field(default=None,ge=0,le=14)
+ start_nm:float=Field(default=190,ge=100,le=1500)
+ end_nm:float=Field(default=800,ge=101,le=1600)
+ resolution_nm:float=Field(default=1,ge=.5,le=20)
+ @model_validator(mode='after')
+ def ordered(self):
+  if self.end_nm<=self.start_nm:raise ValueError('End wavelength must exceed start wavelength')
+  return self
+class SpectrumInput(Strict):
+ content:str=Field(max_length=180000)
+ name:str=Field(default='Experimental spectrum',max_length=160)
+ unit:Literal['absorbance','normalized relative absorption (dimensionless)','molar absorptivity (L mol^-1 cm^-1)']='absorbance'
+@app.get('/api/models')
+def models():return model_library()
+@app.post('/api/retention/predict')
+def retention_prediction(req:RetentionInput):return predict_retention(req.smiles,req.method,req.model_id)
+@app.post('/api/uv/predict')
+def uv_prediction(req:UVInput):return predict_uv(**req.model_dump())
+@app.post('/api/uv/import')
+def uv_import(req:SpectrumInput):return import_spectrum(req.content,req.name,req.unit)
 
 dist=ROOT/'frontend/dist'
 if dist.exists():

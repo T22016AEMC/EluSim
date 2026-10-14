@@ -1,0 +1,200 @@
+{
+  "files": [
+    {
+      "id": 31512017,
+      "name": "Paper supplementary data 2.zip",
+      "size": 6108474,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/31512017",
+      "supplied_md5": "62b69c37e3e6b03c69c9e84813381714",
+      "computed_md5": "62b69c37e3e6b03c69c9e84813381714",
+      "mimetype": "application/zip"
+    }
+  ],
+  "folder_structure": {},
+  "authors": [
+    {
+      "id": 11293062,
+      "full_name": "Fabio Urbina",
+      "first_name": "Fabio",
+      "last_name": "Urbina",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 9222845,
+      "full_name": "Kushal Batra",
+      "first_name": "Kushal",
+      "last_name": "Batra",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 11293030,
+      "full_name": "Kevin J. Luebke",
+      "first_name": "Kevin J.",
+      "last_name": "Luebke",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 11293033,
+      "full_name": "Jason D. White",
+      "first_name": "Jason D.",
+      "last_name": "White",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 11293038,
+      "full_name": "Daniel Matsiev",
+      "first_name": "Daniel",
+      "last_name": "Matsiev",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 11293044,
+      "full_name": "Lori L. Olson",
+      "first_name": "Lori L.",
+      "last_name": "Olson",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 11293053,
+      "full_name": "Jeremiah P. Malerich",
+      "first_name": "Jeremiah P.",
+      "last_name": "Malerich",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 11293056,
+      "full_name": "Maggie A.Z. Hupcey",
+      "first_name": "Maggie A.Z.",
+      "last_name": "Hupcey",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 399913,
+      "full_name": "Peter B. Madrid",
+      "first_name": "Peter B.",
+      "last_name": "Madrid",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 97122,
+      "full_name": "Sean Ekins",
+      "first_name": "Sean",
+      "last_name": "Ekins",
+      "is_active": true,
+      "url_name": "Sean_Ekins",
+      "orcid_id": "0000-0002-5691-5790"
+    }
+  ],
+  "custom_fields": [],
+  "figshare_url": "https://figshare.com/articles/dataset/UV-adVISor_Attention-Based_Recurrent_Neural_Networks_to_Predict_UV-Vis_Spectra/15217512",
+  "download_disabled": false,
+  "description": "Datasets for manuscript in Analytical Chemistry",
+  "funding": "DARPA HR0011-19-C-0108",
+  "funding_list": [
+    {
+      "id": 20990844,
+      "title": "DARPA HR0011-19-C-0108",
+      "grant_code": "",
+      "funder_name": null,
+      "is_user_defined": 1
+    },
+    {
+      "id": 20990847,
+      "title": "NIH NIGMS R44GM122196-02A1",
+      "grant_code": "",
+      "funder_name": null,
+      "is_user_defined": 1
+    },
+    {
+      "id": 20990850,
+      "title": "NIH NIEHS1R43ES031038-01",
+      "grant_code": "",
+      "funder_name": null,
+      "is_user_defined": 1
+    }
+  ],
+  "version": 3,
+  "status": "public",
+  "size": 6108474,
+  "created_date": "2021-11-17T22:44:47Z",
+  "modified_date": "2021-11-17T22:44:50Z",
+  "is_public": true,
+  "is_confidential": false,
+  "is_metadata_record": false,
+  "confidential_reason": "",
+  "metadata_reason": "",
+  "license": {
+    "value": 1,
+    "name": "CC BY 4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "tags": [
+    "UV-Vis spectra",
+    "Machine learning",
+    "Cheminformatics"
+  ],
+  "keywords": [
+    "UV-Vis spectra",
+    "Machine learning",
+    "Cheminformatics"
+  ],
+  "categories": [
+    {
+      "id": 25186,
+      "title": "Cheminformatics and quantitative structure-activity relationships",
+      "parent_id": 25174,
+      "path": "/25066/25174/25186",
+      "source_id": "340404",
+      "taxonomy_id": 100
+    }
+  ],
+  "references": [],
+  "has_linked_file": false,
+  "citation": "Urbina, Fabio; Batra, Kushal; Luebke, Kevin J.; White, Jason D.; Matsiev, Daniel; Olson, Lori L.; et al. (2021). UV-adVISor: Attention-Based Recurrent Neural Networks to Predict UV-Vis Spectra. figshare. Dataset. https://doi.org/10.6084/m9.figshare.15217512.v3",
+  "related_materials": [],
+  "is_embargoed": false,
+  "embargo_date": null,
+  "embargo_type": "file",
+  "embargo_title": "",
+  "embargo_reason": "",
+  "embargo_options": [],
+  "id": 15217512,
+  "title": "UV-adVISor: Attention-Based Recurrent Neural Networks to Predict UV-Vis Spectra",
+  "doi": "10.6084/m9.figshare.15217512.v3",
+  "handle": "",
+  "url": "https://api.figshare.com/v2/articles/15217512",
+  "published_date": "2021-11-17T22:44:47Z",
+  "thumb": "",
+  "defined_type": 3,
+  "defined_type_name": "dataset",
+  "group_id": null,
+  "url_private_api": "https://api.figshare.com/v2/account/articles/15217512",
+  "url_public_api": "https://api.figshare.com/v2/articles/15217512",
+  "url_private_html": "https://figshare.com/account/articles/15217512",
+  "url_public_html": "https://figshare.com/articles/dataset/UV-adVISor_Attention-Based_Recurrent_Neural_Networks_to_Predict_UV-Vis_Spectra/15217512",
+  "timeline": {
+    "posted": "2021-11-17T22:44:47",
+    "firstOnline": "2021-08-18"
+  },
+  "resource_title": null,
+  "resource_doi": null
+}

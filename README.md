@@ -1,3 +1,15 @@
+# EluSim_V2
+
+Incremental scientific prediction upgrade of EluSim_V1. Public entry remains https://elusim-v1.onrender.com/ .
+
+Two CPU models trained from real licensed public data: exact-method RepoRT0259 Rt (not logKw/S) and PNNL experimental relative UV shape 220–400nm. Both are **experimental**, scaffold-heldout tested, with descriptor/fingerprint applicability abstention. No universal C18 transfer, pKa, solvent UV correction or extinction coefficient claim. Known/calibrated V1 LSS, peaks, Rs and optimizer remain available.
+
+Model cards, licenses, validation and incomplete LSS structure-parameter path: [V2 scientific review](docs/elusim-v2-model-review.md). Raw data/source hashes: data/v2/manifest.json. Safe compressed JSON weights: backend/models. AGPL source archive includes data and training scripts.
+
+Train offline with backend requirements plus scripts/training-requirements.txt; run scripts/fetch_v2_data.py then scripts/train_v2_models.py. Serving requires only original backend lockfile. To train future LSS parameters from identifiable experimental curves, use scripts/train_lss_model.py; no synthetic production model is supplied.
+
+---
+
 # EluSim_V1
 
 **EluSim_V1 — LC Separation Simulation & Gradient Optimization**
