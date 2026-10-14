@@ -10,7 +10,7 @@ def describe(smiles=None,name=None,molblock=None):
  mol=Chem.MolFromMolBlock(molblock) if molblock else Chem.MolFromSmiles(resolved or '')
  if mol is None or mol.GetNumAtoms()==0:raise ValueError('Invalid structure / unknown local name; enter SMILES or MOL. No external lookup is required')
  if mol.GetNumAtoms()>300:raise ValueError('Small-molecule descriptor limit: 300 atoms')
- return {'name':name,'smiles':Chem.MolToSmiles(mol),'formula':rdMolDescriptors.CalcMolFormula(mol),'mw':Descriptors.MolWt(mol),'logp':Crippen.MolLogP(mol),'tpsa':rdMolDescriptors.CalcTPSA(mol),'hbd':rdMolDescriptors.CalcNumHBD(mol),'hba':rdMolDescriptors.CalcNumHBA(mol),'svg':Draw.MolsToGridImage([mol],molsPerRow=1,subImgSize=(250,180),useSVG=True),'retention_parameters':None,'prediction_status':'目前缺少經驗證的結構預測模型','source':'RDKit descriptors; not retention prediction',**molecular_features(Chem.MolToSmiles(mol))[0]}
+ return {'name':name,'smiles':Chem.MolToSmiles(mol),'formula':rdMolDescriptors.CalcMolFormula(mol),'mw':Descriptors.MolWt(mol),'logp':Crippen.MolLogP(mol),'tpsa':rdMolDescriptors.CalcTPSA(mol),'hbd':rdMolDescriptors.CalcNumHBD(mol),'hba':rdMolDescriptors.CalcNumHBA(mol),'svg':Draw.MolsToGridImage([mol],molsPerRow=1,subImgSize=(250,180),useSVG=True),'retention_parameters':None,'prediction_status':'Descriptors are not logKw/S; scoped Rt inference is available in Retention Prediction','source':'RDKit descriptors; not retention prediction',**molecular_features(Chem.MolToSmiles(mol))[0]}
 
 def import_file(content,filename):
  suffix=filename.rsplit('.',1)[-1].lower();rows=[]

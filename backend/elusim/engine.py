@@ -59,7 +59,7 @@ def retention(req,compound,rtol=1e-7,max_step=None):
 
 def eligibility(req,c):
  if req.mode!='RP': return 'Unsupported', f'{req.mode}: independent quantitative model not enabled'
- if req.workflow=='structure':return 'Insufficient data','目前缺少經驗證的結構預測模型'
+ if req.workflow=='structure':return 'Insufficient data','目前缺少經驗證的 logKw / S 結構預測模型'
  if c.kind in ['polymer','peptide','protein','oligomer']:return 'Unsupported','No validated LSS model for this entity kind'
  if c.logkw is None or c.s is None:return 'Insufficient data','Missing logKw / S'
  if req.workflow=='calibrated' and c.source!='Calibrated':return 'Insufficient data','No calibrated parameters for this component'
