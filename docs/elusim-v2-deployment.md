@@ -34,3 +34,11 @@ Render部署dep-db7fvq7avr4c73843ekg已於2026-10-14T04:08:14Z回報live，來�
 初次公開V2(b17)驗證：V1 PASS_PUBLIC_API_SMOKE、V2 PASS_PUBLIC_V2_SMOKE、公開桌面＋手機尺寸8項通過(2.5min)。public_v2_smoke首次在本機組裝40°C方法前誤用25°Cdefaultcolumn，Pydantic拒絕，並非伺服器計算失敗；已修正constructor順序，失敗JSON保留artifacts/public-v2-smoke-initial-failure.json。實測樣本Rt0.8808036088min（未見於train）；UV181points／窗內maximum260nm；方法／domain／無chromophore時拒絕假結果，原始匯入保留。
 
 授權收尾另核對原始FigshareCC-BY4，從PNNL932筆移除2筆數值不能對照的記錄，重訓UVmodel2.0.1。初版仅BSD標示不完整已更正。新的來源完整性測試及容器／公開測試將另行執行；不把初版public測試冒稱新版結果。線上採樣memory97–174MB、limit536870900bytes，非stress容量保證；查詢時無errorlogs。
+
+## 最終資料版公開验收
+最終部署b994d4406c1873d2373b19059e63bc5270a42d96、dep-db7hli59fdbs73e9vbvg於2026-10-14T06:02:50Z live。[CI38512241269](https://github.com/T22016AEMC/EluSim/actions/runs/38512241269)：Linuxbackend/frontend及Dockerbuild、512MiB容器30項通過（7.83s）與health成功。
+公開V1smoke於06:05:02Z、V2smoke於06:06:14Z通過，实际UV2.0.1/CCBY4、sourceb994；最终公开桌面＋Pixel7viewport全部8通過（2.7min）。177file相應原始碼解包核對正確UV版與930数据、完整資料license、沒有.venv/node_modules/.env。memory97–190MB採樣低於512MiB，沒有做压力容量保證。沒有實機手机／cellular测试。
+
+UI/C核心未重寫、main未合併；後續只提交驗收文件，不重新部署code。通用SMILES→LSS参数沒有可驗證／授權合適權重，仍未完成；不将directRt模型當作任意gradient参数。完整交付見elusim-v2-acceptance.md。
+
+Windows後續Gitcheckout使用.gitattributes將科學CSV/TSV與壓縮模型標為非文字，保留manifest原始byte/hash；這是Git交付設定，不改變已部署科學程式或數值。
