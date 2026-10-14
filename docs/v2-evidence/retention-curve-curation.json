@@ -1,0 +1,2806 @@
+{
+  "scope": {
+    "mode": "RP",
+    "stationary_phase": "Agilent Eclipse Plus C18",
+    "mobile_a": "Water + 0.100% formic acid",
+    "mobile_b": "ACN",
+    "buffer": "0.100% formic acid in A and B",
+    "ph": null,
+    "ph_control": "formulation",
+    "temperature_c": 35
+  },
+  "phi_range": [
+    0.2,
+    0.5
+  ],
+  "rows": 1092,
+  "curves": 273,
+  "unique_structures": 272,
+  "excluded": [
+    {
+      "id": 1,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 5,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 6,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 7,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 10,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 12,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 15,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 18,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 22,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 23,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 26,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 27,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 28,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 30,
+      "reason": "LSS representation error above 0.1 log10(k)"
+    },
+    {
+      "id": 38,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 39,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 57,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 59,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 60,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 61,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 64,
+      "reason": "LSS representation error above 0.1 log10(k)"
+    },
+    {
+      "id": 67,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 68,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 79,
+      "reason": "LSS representation error above 0.1 log10(k)"
+    },
+    {
+      "id": 80,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 81,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 86,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 88,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 91,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 92,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 93,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 94,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 96,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 97,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 105,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 106,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 107,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 108,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 109,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 110,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 120,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 122,
+      "reason": "Charged structures excluded: no independent ionization model"
+    },
+    {
+      "id": 124,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 126,
+      "reason": "LSS representation error above 0.1 log10(k)"
+    },
+    {
+      "id": 127,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 130,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 131,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 132,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 133,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 135,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 136,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 138,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 139,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 140,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 141,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 142,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 144,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 145,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 148,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 149,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 150,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 151,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 152,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 153,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 155,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 157,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 159,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 160,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 161,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 162,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 165,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 166,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 167,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 168,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 169,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 170,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 171,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 172,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 174,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 175,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 176,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 177,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 178,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 180,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 181,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 182,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 183,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 184,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 185,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 187,
+      "reason": "LSS representation error above 0.1 log10(k)"
+    },
+    {
+      "id": 188,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 190,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 191,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 192,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 196,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 197,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 199,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 200,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 201,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 202,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 203,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 205,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 207,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 209,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 210,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 211,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 212,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 214,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 215,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 216,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 217,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 219,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 220,
+      "reason": "LSS representation error above 0.1 log10(k)"
+    },
+    {
+      "id": 221,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 223,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 224,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 226,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 227,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 235,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 237,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 238,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 239,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 240,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 243,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 248,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 249,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 251,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 252,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 254,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 258,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 259,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 260,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 261,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 262,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 263,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 264,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 266,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 267,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 271,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 273,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 275,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 277,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 278,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 279,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 281,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 284,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 290,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 293,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 294,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 296,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 297,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 299,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 302,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 305,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 306,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 310,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 311,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 312,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 314,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 315,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 319,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 321,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 323,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 325,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 327,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 328,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 331,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 332,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 334,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 335,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 337,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 338,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 339,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 340,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 341,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 342,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 343,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 346,
+      "reason": "LSS representation error above 0.1 log10(k)"
+    },
+    {
+      "id": 348,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 349,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 350,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 351,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 352,
+      "reason": "LSS representation error above 0.1 log10(k)"
+    },
+    {
+      "id": 353,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 354,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 355,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 356,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 357,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 360,
+      "reason": "LSS representation error above 0.1 log10(k)"
+    },
+    {
+      "id": 362,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 364,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 366,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 367,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 368,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 369,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 370,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 371,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 372,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 374,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 377,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 378,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 379,
+      "reason": "LSS representation error above 0.1 log10(k)"
+    },
+    {
+      "id": 381,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 382,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 384,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 388,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 389,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 391,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 392,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 393,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 398,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 399,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 400,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 401,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 402,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 403,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 404,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 407,
+      "reason": "LSS representation error above 0.1 log10(k)"
+    },
+    {
+      "id": 408,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 409,
+      "reason": "LSS representation error above 0.1 log10(k)"
+    },
+    {
+      "id": 410,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 411,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 412,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 413,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 414,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 415,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 416,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 417,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 418,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 420,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 421,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 422,
+      "reason": "LSS representation error above 0.1 log10(k)"
+    },
+    {
+      "id": 423,
+      "reason": "LSS representation error above 0.1 log10(k)"
+    },
+    {
+      "id": 424,
+      "reason": "LSS representation error above 0.1 log10(k)"
+    },
+    {
+      "id": 425,
+      "reason": "LSS representation error above 0.1 log10(k)"
+    },
+    {
+      "id": 426,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 427,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 428,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 429,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 430,
+      "reason": "LSS representation error above 0.1 log10(k)"
+    },
+    {
+      "id": 431,
+      "reason": "LSS representation error above 0.1 log10(k)"
+    },
+    {
+      "id": 432,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 433,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 434,
+      "reason": "LSS representation error above 0.1 log10(k)"
+    },
+    {
+      "id": 435,
+      "reason": "LSS representation error above 0.1 log10(k)"
+    },
+    {
+      "id": 436,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 437,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 438,
+      "reason": "LSS representation error above 0.1 log10(k)"
+    },
+    {
+      "id": 439,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 440,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 441,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 442,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 443,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 444,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 445,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 446,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 447,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 448,
+      "reason": "LSS representation error above 0.1 log10(k)"
+    },
+    {
+      "id": 451,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 452,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 454,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 455,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 457,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 458,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 460,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 461,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 462,
+      "reason": "LSS representation error above 0.1 log10(k)"
+    },
+    {
+      "id": 463,
+      "reason": "LSS representation error above 0.1 log10(k)"
+    },
+    {
+      "id": 465,
+      "reason": "LSS representation error above 0.1 log10(k)"
+    },
+    {
+      "id": 466,
+      "reason": "Charged structures excluded: no independent ionization model"
+    },
+    {
+      "id": 468,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 469,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 470,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 472,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 473,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 474,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 475,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 476,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 477,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 478,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 479,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 480,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 482,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 483,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 486,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 487,
+      "reason": "LSS representation error above 0.1 log10(k)"
+    },
+    {
+      "id": 488,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 490,
+      "reason": "LSS representation error above 0.1 log10(k)"
+    },
+    {
+      "id": 491,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 492,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 493,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 494,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 495,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 496,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 498,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 500,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 501,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 502,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 503,
+      "reason": "LSS representation error above 0.1 log10(k)"
+    },
+    {
+      "id": 504,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 505,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 506,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 507,
+      "reason": "LSS representation error above 0.1 log10(k)"
+    },
+    {
+      "id": 509,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 510,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 512,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 513,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 514,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 515,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 516,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 517,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 520,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 521,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 523,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 524,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 525,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 526,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 527,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 528,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 529,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 532,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 533,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 534,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 535,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 536,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 537,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 538,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 541,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 543,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 545,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 548,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 549,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 550,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 551,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 554,
+      "reason": "LSS representation error above 0.1 log10(k)"
+    },
+    {
+      "id": 555,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 556,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 557,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 558,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 559,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 560,
+      "reason": "LSS representation error above 0.1 log10(k)"
+    },
+    {
+      "id": 562,
+      "reason": "LSS representation error above 0.1 log10(k)"
+    },
+    {
+      "id": 563,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 564,
+      "reason": "LSS representation error above 0.1 log10(k)"
+    },
+    {
+      "id": 565,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 566,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 567,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 568,
+      "reason": "LSS representation error above 0.1 log10(k)"
+    },
+    {
+      "id": 569,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 570,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 571,
+      "reason": "LSS representation error above 0.1 log10(k)"
+    },
+    {
+      "id": 572,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 573,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 576,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 579,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 580,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 582,
+      "reason": "LSS representation error above 0.1 log10(k)"
+    },
+    {
+      "id": 585,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 586,
+      "reason": "LSS representation error above 0.1 log10(k)"
+    },
+    {
+      "id": 587,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 588,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 589,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 590,
+      "reason": "LSS representation error above 0.1 log10(k)"
+    },
+    {
+      "id": 591,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 592,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 593,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 594,
+      "reason": "LSS representation error above 0.1 log10(k)"
+    },
+    {
+      "id": 595,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 596,
+      "reason": "LSS representation error above 0.1 log10(k)"
+    },
+    {
+      "id": 597,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 599,
+      "reason": "LSS representation error above 0.1 log10(k)"
+    },
+    {
+      "id": 600,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 604,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 606,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 607,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 608,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 609,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 610,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 611,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 612,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 613,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 614,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 615,
+      "reason": "LSS representation error above 0.1 log10(k)"
+    },
+    {
+      "id": 616,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 618,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 619,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 620,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 621,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 622,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 623,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 625,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 626,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 627,
+      "reason": "LSS representation error above 0.1 log10(k)"
+    },
+    {
+      "id": 628,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 630,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 631,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 632,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 634,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 635,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 636,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 637,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 638,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 640,
+      "reason": "LSS representation error above 0.1 log10(k)"
+    },
+    {
+      "id": 641,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 642,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 643,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 644,
+      "reason": "LSS representation error above 0.1 log10(k)"
+    },
+    {
+      "id": 645,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 646,
+      "reason": "LSS representation error above 0.1 log10(k)"
+    },
+    {
+      "id": 647,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 648,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 651,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 652,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 653,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 654,
+      "reason": "LSS representation error above 0.1 log10(k)"
+    },
+    {
+      "id": 655,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 656,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 657,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 660,
+      "reason": "LSS representation error above 0.1 log10(k)"
+    },
+    {
+      "id": 661,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 663,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 666,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 667,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 668,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 669,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 670,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 672,
+      "reason": "LSS representation error above 0.1 log10(k)"
+    },
+    {
+      "id": 673,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 674,
+      "reason": "LSS representation error above 0.1 log10(k)"
+    },
+    {
+      "id": 675,
+      "reason": "LSS representation error above 0.1 log10(k)"
+    },
+    {
+      "id": 677,
+      "reason": "LSS representation error above 0.1 log10(k)"
+    },
+    {
+      "id": 678,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 679,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 680,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 681,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 682,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 683,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 684,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 685,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 686,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 687,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 690,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 691,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 692,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 693,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 694,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 696,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 697,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 698,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 699,
+      "reason": "LSS representation error above 0.1 log10(k)"
+    },
+    {
+      "id": 700,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 701,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 702,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 703,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 704,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 707,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 709,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 710,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 711,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 712,
+      "reason": "LSS representation error above 0.1 log10(k)"
+    },
+    {
+      "id": 713,
+      "reason": "LSS representation error above 0.1 log10(k)"
+    },
+    {
+      "id": 714,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 716,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 717,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 719,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 720,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 722,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 723,
+      "reason": "LSS representation error above 0.1 log10(k)"
+    },
+    {
+      "id": 724,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 726,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 727,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 728,
+      "reason": "LSS representation error above 0.1 log10(k)"
+    },
+    {
+      "id": 730,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 731,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 732,
+      "reason": "LSS representation error above 0.1 log10(k)"
+    },
+    {
+      "id": 733,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 734,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 735,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 736,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 738,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 739,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 741,
+      "reason": "LSS representation error above 0.1 log10(k)"
+    },
+    {
+      "id": 743,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 744,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 745,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 746,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 748,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 750,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 751,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 752,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 753,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 755,
+      "reason": "LSS representation error above 0.1 log10(k)"
+    },
+    {
+      "id": 756,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 757,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 758,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 760,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 762,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 763,
+      "reason": "LSS representation error above 0.1 log10(k)"
+    },
+    {
+      "id": 764,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 765,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 766,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 767,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 768,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 769,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 770,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 771,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 772,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 773,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 774,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 775,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 776,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 777,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 778,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 782,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 783,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 785,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 786,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 787,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 788,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 789,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 790,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 791,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 792,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 794,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 795,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 796,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 797,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 798,
+      "reason": "LSS representation error above 0.1 log10(k)"
+    },
+    {
+      "id": 799,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 801,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 802,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 803,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 804,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 805,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 806,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 807,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 808,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 809,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 810,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 811,
+      "reason": "LSS representation error above 0.1 log10(k)"
+    },
+    {
+      "id": 812,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 813,
+      "reason": "LSS representation error above 0.1 log10(k)"
+    },
+    {
+      "id": 814,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 815,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 816,
+      "reason": "LSS representation error above 0.1 log10(k)"
+    },
+    {
+      "id": 817,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 819,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 820,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 821,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 822,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 823,
+      "reason": "LSS representation error above 0.1 log10(k)"
+    },
+    {
+      "id": 825,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 828,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 829,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 830,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 831,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 832,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 838,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 839,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 843,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 844,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 845,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 846,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 847,
+      "reason": "LSS representation error above 0.1 log10(k)"
+    },
+    {
+      "id": 848,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 849,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 850,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 852,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 853,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 855,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 856,
+      "reason": "Charged structures excluded: no independent ionization model"
+    },
+    {
+      "id": 857,
+      "reason": "LSS representation error above 0.1 log10(k)"
+    },
+    {
+      "id": 859,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 862,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 864,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 865,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 866,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 868,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 869,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 870,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 871,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 872,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 873,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 874,
+      "reason": "LSS representation error above 0.1 log10(k)"
+    },
+    {
+      "id": 876,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 877,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 878,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 879,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 880,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 883,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 885,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 886,
+      "reason": "LSS representation error above 0.1 log10(k)"
+    },
+    {
+      "id": 888,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 889,
+      "reason": "LSS representation error above 0.1 log10(k)"
+    },
+    {
+      "id": 890,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 891,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 892,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 893,
+      "reason": "LSS representation error above 0.1 log10(k)"
+    },
+    {
+      "id": 896,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 898,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 901,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 902,
+      "reason": "LSS representation error above 0.1 log10(k)"
+    },
+    {
+      "id": 903,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 904,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 908,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 909,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 910,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 914,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 915,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 916,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 917,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 918,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 919,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 921,
+      "reason": "LSS representation error above 0.1 log10(k)"
+    },
+    {
+      "id": 922,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 924,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 925,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 926,
+      "reason": "LSS representation error above 0.1 log10(k)"
+    },
+    {
+      "id": 927,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 928,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 930,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 932,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 934,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 936,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 937,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 939,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 940,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 941,
+      "reason": "LSS representation error above 0.1 log10(k)"
+    },
+    {
+      "id": 942,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 944,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 946,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 947,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 948,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 949,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 950,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 951,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 952,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 953,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 958,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 959,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 960,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 962,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 964,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 965,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 966,
+      "reason": "Charged structures excluded: no independent ionization model"
+    },
+    {
+      "id": 967,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 970,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 971,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 972,
+      "reason": "LSS representation error above 0.1 log10(k)"
+    },
+    {
+      "id": 973,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 975,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 976,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 977,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 978,
+      "reason": "LSS representation error above 0.1 log10(k)"
+    },
+    {
+      "id": 979,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 980,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 981,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 982,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 983,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 985,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 986,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 988,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 989,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 990,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 991,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 993,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 994,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 995,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 996,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 997,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 998,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 999,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 1000,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 1001,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 1002,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 1003,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 1005,
+      "reason": "LSS representation error above 0.1 log10(k)"
+    },
+    {
+      "id": 1007,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 1008,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 1011,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 1012,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 1013,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 1014,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 1016,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 1017,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 1019,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 1021,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 1022,
+      "reason": "LSS representation error above 0.1 log10(k)"
+    },
+    {
+      "id": 1023,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 1024,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 1025,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    },
+    {
+      "id": 1026,
+      "reason": "Fewer than four distinct measured compositions in 0.2–0.5"
+    }
+  ],
+  "source": "https://www.retentionprediction.org/hplc/database/",
+  "license": "CC-BY-NC-SA-3.0-US",
+  "source_commit": "2951822d97bd76eeeb244989c9e1691ca4a1ff88",
+  "raw_sha256": {
+    "database_logk_1026.csv": "d13f07329df6f6b94fbf0f0ec2f3f30d0800250451e09da9b6e749639065882a",
+    "pH.csv": "f903ecd0ff13f3e55b591f7a0ae727d45458448c4a5f7b5c74337b7a27e264cd",
+    "smiles1026.smi": "0c8236832f6161f8548e5776ee811c7fe4ac49ae5cfad46ad2b903f245230b56"
+  },
+  "limitations": [
+    "Original pH is formulation-defined and varies with solvent fraction; no pKa/logD estimated",
+    "LSS range limited to 20–50% ACN; pure-water intercept is extrapolation",
+    "Original isocratic Rt/t0 not supplied in curated logk data; no independent gradient accuracy claim"
+  ],
+  "source_access_notes": [
+    "Original download endpoint returned HTTP 403 in this environment; raw observations and structure mapping obtained from pinned author-curated GitHub snapshot. Original website method and NC-SA license were independently read.",
+    "pH.csv retained as curator ancillary data, not a validated pKa or ionization model."
+  ]
+}

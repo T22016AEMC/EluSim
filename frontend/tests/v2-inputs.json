@@ -1,1 +1,5 @@
-{"report0259-rt": "CC(C(=O)O)C(=O)O", "pnnl-uv-shape": "CC(=O)Nc1ccc(S(=O)(=O)N[C@@H](C(=O)O)c2ccccc2)cc1"}
+{
+  "report0259-rt": "CC(C(=O)O)C(=O)O",
+  "pnnl-uv-shape": "CC(=O)Nc1ccc(S(=O)(=O)N[C@@H](C(=O)O)c2ccccc2)cc1",
+  "lss-parameters": "CC(=O)Oc1cccc2[nH]ccc12"
+}

@@ -19,6 +19,7 @@ def metrics(y,p):
 def tree(t):
  a=t.tree_;return {'left':a.children_left.tolist(),'right':a.children_right.tolist(),'feature':a.feature.tolist(),'threshold':a.threshold.tolist(),'value':[a.value[i,:,0].tolist() if a.children_left[i]==-1 else None for i in range(a.node_count)]}
 def export(model):
+ if isinstance(model,MultiOutputRegressor):return {'kind':'multioutput','outputs':[export(m) for m in model.estimators_]}
  if hasattr(model,'estimators_') and isinstance(model,RandomForestRegressor):return {'kind':'forest','trees':[tree(t) for t in model.estimators_]}
  if isinstance(model,GradientBoostingRegressor):return {'kind':'boosting','initial':float(model.init_.constant_[0,0]),'rate':float(model.learning_rate),'trees':[tree(t[0]) for t in model.estimators_]}
  scaler,reg=model.steps[0][1],model.steps[1][1];return {'kind':'ridge','mean':scaler.mean_.tolist(),'scale':scaler.scale_.tolist(),'coef':np.atleast_2d(reg.coef_).tolist(),'intercept':np.atleast_1d(reg.intercept_).tolist()}
@@ -31,6 +32,7 @@ def train(name,smiles,targets,meta):
  sm=sorted(grouped);X=np.array([grouped[s]['x'] for s in sm]);Y=np.array([np.mean(grouped[s]['ys'],axis=0) for s in sm]);groups=[MurckoScaffold.MurckoScaffoldSmiles(smiles=s) or s for s in sm]
  trainval,test=next(GroupShuffleSplit(n_splits=1,test_size=.2,random_state=41).split(X,Y,groups));tr,va=next(GroupShuffleSplit(n_splits=1,test_size=.25,random_state=42).split(X[trainval],Y[trainval],np.array(groups)[trainval]));tr=trainval[tr];va=trainval[va]
  models={'ridge':make_pipeline(StandardScaler(),Ridge(alpha=10)),'random_forest':RandomForestRegressor(n_estimators=32,max_depth=8,min_samples_leaf=3,max_features=.7,random_state=42,n_jobs=1)}
+ if Y.ndim==2 and Y.shape[1]==2:models['gradient_boosting']=MultiOutputRegressor(GradientBoostingRegressor(n_estimators=80,max_depth=2,min_samples_leaf=4,random_state=42))
  if Y.ndim==1:models['gradient_boosting']=GradientBoostingRegressor(n_estimators=80,max_depth=2,min_samples_leaf=4,random_state=42)
  scores={};trained={}
  for kind,m in models.items():m.fit(X[tr],Y[tr]);scores[kind]={'validation':metrics(Y[va],m.predict(X[va]))};trained[kind]=m

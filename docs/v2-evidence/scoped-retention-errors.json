@@ -1,0 +1,1570 @@
+{
+  "logk_mae": 0.4146903864460864,
+  "logk_rmse": 0.5121967534879829,
+  "k_mae": 5.525952141202826,
+  "k_rmse": 13.196833543185683,
+  "logkw_mae": 0.503936630857975,
+  "s_mae": 0.6816522879553925,
+  "retention_order_accuracy_phi_035": 0.5704883962590925,
+  "heldout_observations": 308,
+  "heldout_curves": 77,
+  "heldout_unique_structures": 76,
+  "in_domain_only": {
+    "logk_mae": 0.4175599728536141,
+    "logk_rmse": 0.5098403708724584,
+    "k_mae": 5.765468098437121,
+    "k_rmse": 13.715474941206384,
+    "logkw_mae": 0.4863579336543841,
+    "s_mae": 0.6255653268165517,
+    "retention_order_accuracy_phi_035": 0.5394799054373522,
+    "heldout_observations": 264,
+    "heldout_curves": 66,
+    "heldout_unique_structures": 65
+  },
+  "rt_mae_min": null,
+  "rt_rmse_min": null,
+  "reason_no_rt_error": "No independent gradient experiments / documented t0 in curated dataset; do not infer Rt accuracy from parameter fitting",
+  "heldout_parameters": [
+    {
+      "smiles": "OC1C(O)C(O)C(O)C(O)C1O",
+      "reference_logkw": 0.9178309999999995,
+      "reference_s": 2.560809999999999,
+      "predicted_logkw": 0.7393406098708215,
+      "predicted_s": 2.8763106564191854,
+      "in_domain": false,
+      "reference_logk": [
+        0.4387,
+        0.10968,
+        -0.12577,
+        -0.33642
+      ],
+      "predicted_logk": [
+        0.16407847858698443,
+        -0.1235525870549341,
+        -0.41118365269685264,
+        -0.6988147183387712
+      ]
+    },
+    {
+      "smiles": "N#CCc1c[nH]c2ccccc12",
+      "reference_logkw": 1.9805009999999987,
+      "reference_s": 3.761559999999999,
+      "predicted_logkw": 1.1864605843722678,
+      "predicted_s": 3.3924161008237954,
+      "in_domain": false,
+      "reference_logk": [
+        1.2684,
+        0.80811,
+        0.44309,
+        0.13622
+      ],
+      "predicted_logk": [
+        0.5079773642075086,
+        0.1687357541251291,
+        -0.17050585595725054,
+        -0.50974746603963
+      ]
+    },
+    {
+      "smiles": "Clc1cccc2[nH]ccc12",
+      "reference_logkw": 0.6775969999999994,
+      "reference_s": 2.388744999999999,
+      "predicted_logkw": 1.4768535827137694,
+      "predicted_s": 3.529989480791307,
+      "in_domain": false,
+      "reference_logk": [
+        0.24455,
+        -0.088775,
+        -0.31251,
+        -0.47712
+      ],
+      "predicted_logk": [
+        0.7708556865555081,
+        0.4178567384763774,
+        0.0648577903972467,
+        -0.288141157681884
+      ]
+    },
+    {
+      "smiles": "CC(=O)Oc1cccc2[nH]ccc12",
+      "reference_logkw": 0.8894333999999996,
+      "reference_s": 2.9817139999999998,
+      "predicted_logkw": 1.7755413331552228,
+      "predicted_s": 3.79073384295148,
+      "in_domain": true,
+      "reference_logk": [
+        0.351,
+        -0.071226,
+        -0.34469,
+        -0.55175
+      ],
+      "predicted_logk": [
+        1.0173945645649267,
+        0.6383211802697788,
+        0.25924779597463066,
+        -0.11982558832051726
+      ]
+    },
+    {
+      "smiles": "COc1cccc2[nH]ccc12",
+      "reference_logkw": 1.8944169999999994,
+      "reference_s": 3.4139199999999996,
+      "predicted_logkw": 1.7208276392401118,
+      "predicted_s": 3.541103844090864,
+      "in_domain": true,
+      "reference_logk": [
+        1.245,
+        0.83561,
+        0.49801,
+        0.21956
+      ],
+      "predicted_logk": [
+        1.0126068704219389,
+        0.6584964860128526,
+        0.3043861016037661,
+        -0.04972428280532015
+      ]
+    },
+    {
+      "smiles": "COc1ccc2[nH]ccc2c1",
+      "reference_logkw": 1.8940989999999993,
+      "reference_s": 3.4133899999999993,
+      "predicted_logkw": 1.4619174497142258,
+      "predicted_s": 3.093882919352409,
+      "in_domain": true,
+      "reference_logk": [
+        1.245,
+        0.83508,
+        0.49801,
+        0.21956
+      ],
+      "predicted_logk": [
+        0.8431408658437439,
+        0.5337525739085031,
+        0.22436428197326208,
+        -0.08502400996197879
+      ]
+    },
+    {
+      "smiles": "O=[N+]([O-])c1ccc2[nH]ccc2c1",
+      "reference_logkw": 2.2199229999999988,
+      "reference_s": 4.001129999999998,
+      "predicted_logkw": 1.5549339075713324,
+      "predicted_s": 3.671073181312959,
+      "in_domain": true,
+      "reference_logk": [
+        1.4558,
+        0.98498,
+        0.58037,
+        0.25696
+      ],
+      "predicted_logk": [
+        0.8207192713087406,
+        0.45361195317744474,
+        0.08650463504614869,
+        -0.28060268308514713
+      ]
+    },
+    {
+      "smiles": "N#Cc1ccc2cc[nH]c2c1",
+      "reference_logkw": 2.1041999999999987,
+      "reference_s": 3.9175499999999985,
+      "predicted_logkw": 1.609471364772264,
+      "predicted_s": 3.382666641266286,
+      "in_domain": true,
+      "reference_logk": [
+        1.3699,
+        0.88104,
+        0.48534,
+        0.19595
+      ],
+      "predicted_logk": [
+        0.9329380365190069,
+        0.5946713723923784,
+        0.2564047082657497,
+        -0.08186195586087885
+      ]
+    },
+    {
+      "smiles": "COc1ccc2cc[nH]c2c1",
+      "reference_logkw": 2.0386819999999988,
+      "reference_s": 3.6241699999999986,
+      "predicted_logkw": 1.5276696138294323,
+      "predicted_s": 3.093882919352409,
+      "in_domain": true,
+      "reference_logk": [
+        1.347,
+        0.91969,
+        0.55304,
+        0.26116
+      ],
+      "predicted_logk": [
+        0.9088930299589505,
+        0.5995047380237096,
+        0.29011644608846865,
+        -0.019271845846772218
+      ]
+    },
+    {
+      "smiles": "Cc1cccc2cc[nH]c12",
+      "reference_logkw": 2.4110749999999985,
+      "reference_s": 3.9040999999999975,
+      "predicted_logkw": 0.766480306624584,
+      "predicted_s": 2.9832466667041904,
+      "in_domain": false,
+      "reference_logk": [
+        1.66,
+        1.2122,
+        0.81549,
+        0.49087
+      ],
+      "predicted_logk": [
+        0.16983097328374586,
+        -0.12849369338667305,
+        -0.4268183600570923,
+        -0.7251430267275112
+      ]
+    },
+    {
+      "smiles": "O=C(O)C(=O)Cc1c[nH]c2ccccc12",
+      "reference_logkw": 1.9180661999999988,
+      "reference_s": 3.8987919999999985,
+      "predicted_logkw": 1.1686054090001696,
+      "predicted_s": 3.251233673345274,
+      "in_domain": true,
+      "reference_logk": [
+        1.1954,
+        0.68785,
+        0.30843,
+        0.022276
+      ],
+      "predicted_logk": [
+        0.5183586743311148,
+        0.19323530699658753,
+        -0.13188806033793998,
+        -0.4570114276724673
+      ]
+    },
+    {
+      "smiles": "O=C(O)c1cccc2[nH]ccc12",
+      "reference_logkw": 1.305987999999999,
+      "reference_s": 3.475379999999999,
+      "predicted_logkw": 1.9202070827091546,
+      "predicted_s": 3.781380963617669,
+      "in_domain": true,
+      "reference_logk": [
+        0.66917,
+        0.2029,
+        -0.13799,
+        -0.37566
+      ],
+      "predicted_logk": [
+        1.1639308899856209,
+        0.785792793623854,
+        0.4076546972620869,
+        0.029516600900320045
+      ]
+    },
+    {
+      "smiles": "O=Cc1c[nH]c2ccccc12",
+      "reference_logkw": 1.2719395999999996,
+      "reference_s": 3.073696,
+      "predicted_logkw": 1.557713209323754,
+      "predicted_s": 3.5714722028970125,
+      "in_domain": true,
+      "reference_logk": [
+        0.70594,
+        0.2992,
+        -0.002496,
+        -0.21806
+      ],
+      "predicted_logk": [
+        0.8434187687443515,
+        0.48627154845465026,
+        0.129124328164949,
+        -0.22802289212475224
+      ]
+    },
+    {
+      "smiles": "OCc1c[nH]c2ccccc12",
+      "reference_logkw": 2.042146999999999,
+      "reference_s": 3.6378199999999987,
+      "predicted_logkw": 1.6117886474202296,
+      "predicted_s": 3.5324568771995835,
+      "in_domain": true,
+      "reference_logk": [
+        1.347,
+        0.91969,
+        0.55199,
+        0.25696
+      ],
+      "predicted_logk": [
+        0.905297271980313,
+        0.5520515842603546,
+        0.19880589654039627,
+        -0.15443979117956208
+      ]
+    },
+    {
+      "smiles": "O=C(O)c1c[nH]c2ccccc12",
+      "reference_logkw": 1.305987999999999,
+      "reference_s": 3.475379999999999,
+      "predicted_logkw": 1.722339173923873,
+      "predicted_s": 3.6249395327785376,
+      "in_domain": true,
+      "reference_logk": [
+        0.66917,
+        0.2029,
+        -0.13799,
+        -0.37566
+      ],
+      "predicted_logk": [
+        0.9973512673681654,
+        0.6348573140903118,
+        0.2723633608124578,
+        -0.0901305924653959
+      ]
+    },
+    {
+      "smiles": "O=C(O)c1ccc2[nH]ccc2c1",
+      "reference_logkw": 1.2072779999999992,
+      "reference_s": 3.2765799999999987,
+      "predicted_logkw": 1.6497382777401364,
+      "predicted_s": 3.6249395327785376,
+      "in_domain": true,
+      "reference_logk": [
+        0.59882,
+        0.17243,
+        -0.14018,
+        -0.38917
+      ],
+      "predicted_logk": [
+        0.9247503711844288,
+        0.5622564179065752,
+        0.19976246462872127,
+        -0.16273148864913245
+      ]
+    },
+    {
+      "smiles": "CC(=O)Oc1c[nH]c2ccccc12",
+      "reference_logkw": 1.4671812999999991,
+      "reference_s": 3.4640629999999986,
+      "predicted_logkw": 1.6687431805982595,
+      "predicted_s": 3.6267757119820003,
+      "in_domain": true,
+      "reference_logk": [
+        0.84224,
+        0.35421,
+        0.025447,
+        -0.20286
+      ],
+      "predicted_logk": [
+        0.9433880382018595,
+        0.5807104670036596,
+        0.21803289580545937,
+        -0.14464467539274062
+      ]
+    },
+    {
+      "smiles": "O=C(O)Cc1c[nH]c2ccc(O)cc12",
+      "reference_logkw": 0.3841248699999996,
+      "reference_s": 2.1488996999999994,
+      "predicted_logkw": 1.5423737446460064,
+      "predicted_s": 3.734411395861142,
+      "in_domain": true,
+      "reference_logk": [
+        0.0046699,
+        -0.31967,
+        -0.50816,
+        -0.6488
+      ],
+      "predicted_logk": [
+        0.795491465473778,
+        0.422050325887664,
+        0.048609186301549645,
+        -0.3248319532845645
+      ]
+    },
+    {
+      "smiles": "COc1ccc2[nH]c(C)c(CC(=O)O)c2c1",
+      "reference_logkw": 1.6835685999999992,
+      "reference_s": 3.9318359999999988,
+      "predicted_logkw": 1.9239695072897378,
+      "predicted_s": 3.8885823593236615,
+      "in_domain": true,
+      "reference_logk": [
+        0.9676,
+        0.42414,
+        0.059394,
+        -0.22143
+      ],
+      "predicted_logk": [
+        1.1462530354250053,
+        0.7573947994926393,
+        0.3685365635602731,
+        -0.020321672372092925
+      ]
+    },
+    {
+      "smiles": "O=C(O)Cc1c[nH]c2ccccc12",
+      "reference_logkw": 2.171730999999999,
+      "reference_s": 3.963759999999999,
+      "predicted_logkw": 1.5716979711665369,
+      "predicted_s": 3.7350801161933633,
+      "in_domain": true,
+      "reference_logk": [
+        1.4238,
+        0.93645,
+        0.54407,
+        0.23334
+      ],
+      "predicted_logk": [
+        0.8246819479278642,
+        0.45117393630852787,
+        0.07766592468919153,
+        -0.2958420869301448
+      ]
+    },
+    {
+      "smiles": "O=C(Cc1c[nH]c2ccccc12)NC(CO)C(=O)O",
+      "reference_logkw": 0.9436849999999993,
+      "reference_s": 3.6929999999999996,
+      "predicted_logkw": 1.1585530669803874,
+      "predicted_s": 4.59973835234243,
+      "in_domain": true,
+      "reference_logk": [
+        0.24068,
+        -0.22062,
+        -0.52749,
+        -0.88803
+      ],
+      "predicted_logk": [
+        0.23860539651190127,
+        -0.22136843872234158,
+        -0.6813422739565849,
+        -1.1413161091908277
+      ]
+    },
+    {
+      "smiles": "O=C(Cc1c[nH]c2ccccc12)NC(Cc1ccc(O)cc1)C(=O)O",
+      "reference_logkw": 0.818266929999999,
+      "reference_s": 4.340258299999998,
+      "predicted_logkw": 2.1392607500612058,
+      "predicted_s": 5.007644711940965,
+      "in_domain": true,
+      "reference_logk": [
+        -0.0023539,
+        -0.52781,
+        -0.97213,
+        -1.301
+      ],
+      "predicted_logk": [
+        1.1377318076730127,
+        0.6369673364789163,
+        0.13620286528481973,
+        -0.36456160590927666
+      ]
+    },
+    {
+      "smiles": "CC(NC(=O)CCCc1c[nH]c2ccccc12)C(=O)O",
+      "reference_logkw": 2.0304501999999984,
+      "reference_s": 4.742901999999998,
+      "predicted_logkw": 2.2876426941590884,
+      "predicted_s": 4.5745829396883675,
+      "in_domain": true,
+      "reference_logk": [
+        1.1786,
+        0.5006,
+        0.057058,
+        -0.25452
+      ],
+      "predicted_logk": [
+        1.3727261062214149,
+        0.9152678122525781,
+        0.4578095182837414,
+        0.00035122431490464123
+      ]
+    },
+    {
+      "smiles": "O=C(O)Cc1c[nH]c2c(Cl)ccc(Cl)c12",
+      "reference_logkw": 1.7220089999999995,
+      "reference_s": 6.26514,
+      "predicted_logkw": 2.010466748212348,
+      "predicted_s": 4.733112993729522,
+      "in_domain": true,
+      "reference_logk": [
+        0.46538,
+        -0.19837,
+        -0.69157,
+        -1.4586
+      ],
+      "predicted_logk": [
+        1.0638441494664437,
+        0.5905328500934917,
+        0.11722155072053919,
+        -0.35608974865241283
+      ]
+    },
+    {
+      "smiles": "O=C(O)CCc1c[nH]c2ccccc12",
+      "reference_logkw": 1.941986599999999,
+      "reference_s": 4.190331,
+      "predicted_logkw": 2.0372297416182215,
+      "predicted_s": 4.133183497890073,
+      "in_domain": true,
+      "reference_logk": [
+        1.1859,
+        0.59568,
+        0.19833,
+        -0.078427
+      ],
+      "predicted_logk": [
+        1.2105930420402067,
+        0.7972746922511995,
+        0.3839563424621921,
+        -0.029362007326815043
+      ]
+    },
+    {
+      "smiles": "OCCc1c[nH]c2ccccc12",
+      "reference_logkw": 1.4463936999999993,
+      "reference_s": 3.398436999999999,
+      "predicted_logkw": 1.8165052882740413,
+      "predicted_s": 3.627776015189313,
+      "in_domain": true,
+      "reference_logk": [
+        0.83097,
+        0.35379,
+        0.040373,
+        -0.19737
+      ],
+      "predicted_logk": [
+        1.0909500852361789,
+        0.7281724837172476,
+        0.3653948821983162,
+        0.002617280679384937
+      ]
+    },
+    {
+      "smiles": "O=C(O)Cc1c[nH]c2ccc(Cl)c(Cl)c12",
+      "reference_logkw": 1.7220089999999995,
+      "reference_s": 6.26514,
+      "predicted_logkw": 2.1478021650405164,
+      "predicted_s": 4.778112422619955,
+      "in_domain": true,
+      "reference_logk": [
+        0.46538,
+        -0.19837,
+        -0.69157,
+        -1.4586
+      ],
+      "predicted_logk": [
+        1.1921796805165252,
+        0.7143684382545299,
+        0.2365571959925341,
+        -0.24125404626946123
+      ]
+    },
+    {
+      "smiles": "O=C(O)Cc1c[nH]c2cc(Cl)cc(Cl)c12",
+      "reference_logkw": 1.7220089999999995,
+      "reference_s": 6.26514,
+      "predicted_logkw": 2.0467990278424892,
+      "predicted_s": 4.733112993729522,
+      "in_domain": true,
+      "reference_logk": [
+        0.46538,
+        -0.19837,
+        -0.69157,
+        -1.4586
+      ],
+      "predicted_logk": [
+        1.1001764290965848,
+        0.6268651297236327,
+        0.15355383035068026,
+        -0.31975746902227176
+      ]
+    },
+    {
+      "smiles": "O=C(O)Cc1c[nH]c2c(Cl)cc(Cl)cc12",
+      "reference_logkw": 1.7220089999999995,
+      "reference_s": 6.26514,
+      "predicted_logkw": 2.010466748212348,
+      "predicted_s": 4.733112993729522,
+      "in_domain": true,
+      "reference_logk": [
+        0.46538,
+        -0.19837,
+        -0.69157,
+        -1.4586
+      ],
+      "predicted_logk": [
+        1.0638441494664437,
+        0.5905328500934917,
+        0.11722155072053919,
+        -0.35608974865241283
+      ]
+    },
+    {
+      "smiles": "Cc1[nH]c2ccc(Cl)cc2c1CC(=O)O",
+      "reference_logkw": 2.5456419999999986,
+      "reference_s": 5.092369999999998,
+      "predicted_logkw": 2.0909798636535717,
+      "predicted_s": 4.102482177234334,
+      "in_domain": true,
+      "reference_logk": [
+        1.6198,
+        0.91864,
+        0.42938,
+        0.08543
+      ],
+      "predicted_logk": [
+        1.2704834282067048,
+        0.8602352104832716,
+        0.4499869927598379,
+        0.03973877503640466
+      ]
+    },
+    {
+      "smiles": "O=C(O)Cc1c[nH]c2c(Cl)c(Cl)ccc12",
+      "reference_logkw": 1.7220089999999995,
+      "reference_s": 6.26514,
+      "predicted_logkw": 2.010466748212348,
+      "predicted_s": 4.7023116711566875,
+      "in_domain": true,
+      "reference_logk": [
+        0.46538,
+        -0.19837,
+        -0.69157,
+        -1.4586
+      ],
+      "predicted_logk": [
+        1.0700044139810108,
+        0.5997732468653421,
+        0.12954207974967313,
+        -0.34068908736599557
+      ]
+    },
+    {
+      "smiles": "O=C(O)Cc1c[nH]c2cc(Cl)ccc12",
+      "reference_logkw": 2.2101241999999988,
+      "reference_s": 4.552897,
+      "predicted_logkw": 2.0858419423186723,
+      "predicted_s": 4.312429816844426,
+      "in_domain": true,
+      "reference_logk": [
+        1.3875,
+        0.74715,
+        0.31931,
+        0.012481
+      ],
+      "predicted_logk": [
+        1.2233559789497872,
+        0.7921129972653447,
+        0.3608700155809019,
+        -0.0703729661035406
+      ]
+    },
+    {
+      "smiles": "O=C(O)Cc1c[nH]c2c(Cl)cccc12",
+      "reference_logkw": 2.2101241999999988,
+      "reference_s": 4.552897,
+      "predicted_logkw": 2.0495096626885316,
+      "predicted_s": 4.312429816844426,
+      "in_domain": true,
+      "reference_logk": [
+        1.3875,
+        0.74715,
+        0.31931,
+        0.012481
+      ],
+      "predicted_logk": [
+        1.1870236993196466,
+        0.755780717635204,
+        0.3245377359507613,
+        -0.10670524573368123
+      ]
+    },
+    {
+      "smiles": "O=c1ccc2ccccc2o1",
+      "reference_logkw": 1.450121799999999,
+      "reference_s": 2.891062999999999,
+      "predicted_logkw": 1.426576559524809,
+      "predicted_s": 3.400566350993296,
+      "in_domain": true,
+      "reference_logk": [
+        0.91384,
+        0.53884,
+        0.25583,
+        0.044489
+      ],
+      "predicted_logk": [
+        0.7464632893261497,
+        0.4064066542268201,
+        0.06635001912749039,
+        -0.2737066159718391
+      ]
+    },
+    {
+      "smiles": "Cc1cc(=O)oc2cc(N)ccc12",
+      "reference_logkw": 1.2057525999999994,
+      "reference_s": 3.047476,
+      "predicted_logkw": 1.31492339359656,
+      "predicted_s": 3.664441871826598,
+      "in_domain": true,
+      "reference_logk": [
+        0.64585,
+        0.23706,
+        -0.053116,
+        -0.27325
+      ],
+      "predicted_logk": [
+        0.5820350192312405,
+        0.21559083204858065,
+        -0.15085335513407916,
+        -0.517297542316739
+      ]
+    },
+    {
+      "smiles": "COP(N)(=O)SC",
+      "reference_logkw": -0.4324359999999998,
+      "reference_s": 1.4416400000000003,
+      "predicted_logkw": 0.22214402936673494,
+      "predicted_s": 2.145819418925075,
+      "in_domain": false,
+      "reference_logk": [
+        -0.70226,
+        -0.86378,
+        -1.0669,
+        -1.1151
+      ],
+      "predicted_logk": [
+        -0.20701985441828008,
+        -0.42160179631078754,
+        -0.6361837382032951,
+        -0.8507656800958026
+      ]
+    },
+    {
+      "smiles": "CCC(=NOCC=CCl)C1=C(O)CC(C2CCOCC2)CC1=O",
+      "reference_logkw": 2.3765409999999982,
+      "reference_s": 4.885159999999997,
+      "predicted_logkw": 2.5620131857353856,
+      "predicted_s": 5.826347439547401,
+      "in_domain": false,
+      "reference_logk": [
+        1.4777,
+        0.8312,
+        0.34749,
+        0.01055
+      ],
+      "predicted_logk": [
+        1.3967436978259054,
+        0.8141089538711652,
+        0.2314742099164251,
+        -0.35116053403831504
+      ]
+    },
+    {
+      "smiles": "CNC(=O)ON=C(C)C(C)SC",
+      "reference_logkw": 2.4879849999999983,
+      "reference_s": 4.421899999999998,
+      "predicted_logkw": 1.9495027898250799,
+      "predicted_s": 3.9033544445354678,
+      "in_domain": true,
+      "reference_logk": [
+        1.6907,
+        1.0584,
+        0.66397,
+        0.34821
+      ],
+      "predicted_logk": [
+        1.1688319009179864,
+        0.7784964564644397,
+        0.3881610120108927,
+        -0.0021744324426540285
+      ]
+    },
+    {
+      "smiles": "COc1nc(C)nc(NC(=O)NS(=O)(=O)c2ccccc2Cl)n1",
+      "reference_logkw": 2.663905999999999,
+      "reference_s": 5.120559999999999,
+      "predicted_logkw": 1.3941716651889413,
+      "predicted_s": 4.207279839348853,
+      "in_domain": true,
+      "reference_logk": [
+        1.7461,
+        1.0016,
+        0.54904,
+        0.1901
+      ],
+      "predicted_logk": [
+        0.5527156973191706,
+        0.13198771338428528,
+        -0.28874027055060014,
+        -0.7094682544854853
+      ]
+    },
+    {
+      "smiles": "COC(=O)c1ccccc1S(=O)(=O)NC(=O)Nc1nc(C)nc(OC)n1",
+      "reference_logkw": 2.4983891999999983,
+      "reference_s": 4.990096999999998,
+      "predicted_logkw": 1.6312937137168981,
+      "predicted_s": 4.180624511793625,
+      "in_domain": true,
+      "reference_logk": [
+        1.6063,
+        0.87589,
+        0.4355,
+        0.089731
+      ],
+      "predicted_logk": [
+        0.7951688113581731,
+        0.3771063601788107,
+        -0.040956091000551975,
+        -0.45901854217991445
+      ]
+    },
+    {
+      "smiles": "CNC(=O)C=C(C)OP(=O)(OC)OC",
+      "reference_logkw": 0.4344274999999997,
+      "reference_s": 2.449975,
+      "predicted_logkw": 1.391259276508654,
+      "predicted_s": 3.407873636959864,
+      "in_domain": true,
+      "reference_logk": [
+        0.033585,
+        -0.41294,
+        -0.58827,
+        -0.72463
+      ],
+      "predicted_logk": [
+        0.7096845491166812,
+        0.36889718542069483,
+        0.02810982172470844,
+        -0.31267754197127795
+      ]
+    },
+    {
+      "smiles": "Cc1cc(C)nc(NC(=O)NS(=O)(=O)c2ccccc2C(=O)OC2COC2)n1",
+      "reference_logkw": 2.2544289999999987,
+      "reference_s": 4.645189999999999,
+      "predicted_logkw": 1.525327052848429,
+      "predicted_s": 4.08345087274201,
+      "in_domain": true,
+      "reference_logk": [
+        1.4228,
+        0.74477,
+        0.33633,
+        0.01055
+      ],
+      "predicted_logk": [
+        0.708636878300027,
+        0.30029179102582604,
+        -0.10805329624837512,
+        -0.516398383522576
+      ]
+    },
+    {
+      "smiles": "COc1nc(C)nc(NC(=O)NS(=O)(=O)c2ccccc2OCCCl)n1",
+      "reference_logkw": 2.681567999999998,
+      "reference_s": 5.241629999999997,
+      "predicted_logkw": 1.4274406644441417,
+      "predicted_s": 4.677086865457894,
+      "in_domain": true,
+      "reference_logk": [
+        1.7384,
+        0.98465,
+        0.5183,
+        0.14664
+      ],
+      "predicted_logk": [
+        0.49202329135256295,
+        0.02431460480677372,
+        -0.44339408173901584,
+        -0.9111027682848052
+      ]
+    },
+    {
+      "smiles": "Cc1cc(C)c(C2=C(OC(=O)CC(C)(C)C)C3(CCCC3)OC2=O)c(C)c1",
+      "reference_logkw": 2.626717999999998,
+      "reference_s": 4.894129999999998,
+      "predicted_logkw": 2.811372910528287,
+      "predicted_s": 5.980116177683906,
+      "in_domain": false,
+      "reference_logk": [
+        1.7336,
+        1.0578,
+        0.6133,
+        0.25039
+      ],
+      "predicted_logk": [
+        1.6153496749915057,
+        1.0173380572231154,
+        0.4193264394547245,
+        -0.17868517831366582
+      ]
+    },
+    {
+      "smiles": "CNC(=O)Oc1cccc2c1OC(C)(C)C2",
+      "reference_logkw": 2.1950299999999987,
+      "reference_s": 3.9717499999999983,
+      "predicted_logkw": 1.9819320104194709,
+      "predicted_s": 4.5201979308462015,
+      "in_domain": true,
+      "reference_logk": [
+        1.4645,
+        0.92725,
+        0.56738,
+        0.26054
+      ],
+      "predicted_logk": [
+        1.0778924242502306,
+        0.6258726311656104,
+        0.17385283808099028,
+        -0.27816695500362987
+      ]
+    },
+    {
+      "smiles": "Cc1cc(C2CC2)nc(Nc2ccccc2)n1",
+      "reference_logkw": 2.4197069999999985,
+      "reference_s": 3.843219999999998,
+      "predicted_logkw": 1.8605933709762885,
+      "predicted_s": 3.870088876834253,
+      "in_domain": true,
+      "reference_logk": [
+        1.7251,
+        1.1793,
+        0.83519,
+        0.55873
+      ],
+      "predicted_logk": [
+        1.0865755956094378,
+        0.6995667079260126,
+        0.31255782024258716,
+        -0.07445106744083807
+      ]
+    },
+    {
+      "smiles": "CNC(=O)CSP(=S)(OC)OC",
+      "reference_logkw": 1.3034597999999995,
+      "reference_s": 3.1339979999999996,
+      "predicted_logkw": 1.5868998790328488,
+      "predicted_s": 3.300435273435487,
+      "in_domain": true,
+      "reference_logk": [
+        0.73226,
+        0.29547,
+        0.018642,
+        -0.22013
+      ],
+      "predicted_logk": [
+        0.9268128243457514,
+        0.5967692970022027,
+        0.266725769658654,
+        -0.06331775768489467
+      ]
+    },
+    {
+      "smiles": "CNC(=N[N+](=O)[O-])NCC1CCOC1",
+      "reference_logkw": 0.17800199999999974,
+      "reference_s": 1.9392199999999997,
+      "predicted_logkw": 0.9650276364804151,
+      "predicted_s": 3.0739634188441696,
+      "in_domain": false,
+      "reference_logk": [
+        -0.17609,
+        -0.4591,
+        -0.58827,
+        -0.77944
+      ],
+      "predicted_logk": [
+        0.3502349527115811,
+        0.042838610827164336,
+        -0.2645577310572529,
+        -0.5719540729416697
+      ]
+    },
+    {
+      "smiles": "CNC(=O)N(C)c1nc2ccccc2s1",
+      "reference_logkw": 2.167604999999999,
+      "reference_s": 4.083649999999999,
+      "predicted_logkw": 1.7981462543830191,
+      "predicted_s": 3.7811301527448204,
+      "in_domain": true,
+      "reference_logk": [
+        1.4241,
+        0.86466,
+        0.47017,
+        0.19438
+      ],
+      "predicted_logk": [
+        1.041920223834055,
+        0.663807208559573,
+        0.28569419328509094,
+        -0.09241882198939111
+      ]
+    },
+    {
+      "smiles": "Cn1cnc([N+](=O)[O-])c1Sc1ncnc2nc[nH]c12",
+      "reference_logkw": 0.3511356099999998,
+      "reference_s": 2.1243090999999996,
+      "predicted_logkw": 1.3461178663498927,
+      "predicted_s": 4.806369737117519,
+      "in_domain": true,
+      "reference_logk": [
+        -0.0065803,
+        -0.37101,
+        -0.53032,
+        -0.66158
+      ],
+      "predicted_logk": [
+        0.3848439189263888,
+        -0.09579305478536293,
+        -0.5764300284971151,
+        -1.0570670022088668
+      ]
+    },
+    {
+      "smiles": "CN1C2CCC1CC(OC(c1ccccc1)c1ccccc1N)C2",
+      "reference_logkw": 2.502620999999999,
+      "reference_s": 6.8167599999999995,
+      "predicted_logkw": 2.7003388595778475,
+      "predicted_s": 6.508736567210523,
+      "in_domain": true,
+      "reference_logk": [
+        1.1851,
+        0.40246,
+        -0.25131,
+        -0.86923
+      ],
+      "predicted_logk": [
+        1.3985915461357428,
+        0.7477178894146908,
+        0.09684423269363807,
+        -0.554029424027414
+      ]
+    },
+    {
+      "smiles": "Oc1cc(-c2ccccc2)nc2nc(Cl)ccc12",
+      "reference_logkw": 2.054837759999999,
+      "reference_s": 4.253666599999999,
+      "predicted_logkw": 2.172765385718673,
+      "predicted_s": 5.113540230906008,
+      "in_domain": true,
+      "reference_logk": [
+        1.2794,
+        0.69897,
+        0.28702,
+        -0.0011722
+      ],
+      "predicted_logk": [
+        1.1500573395374716,
+        0.6387033164468707,
+        0.1273492933562701,
+        -0.38400472973433075
+      ]
+    },
+    {
+      "smiles": "CN(C(=O)Cc1ccc(Cl)c(Cl)c1)C1CCCCC1N1CCCC1",
+      "reference_logkw": 2.7807849999999985,
+      "reference_s": 6.923049999999998,
+      "predicted_logkw": 2.5690444806961055,
+      "predicted_s": 6.100885031148204,
+      "in_domain": true,
+      "reference_logk": [
+        1.4753,
+        0.62195,
+        -0.06197,
+        -0.60441
+      ],
+      "predicted_logk": [
+        1.3488674744664646,
+        0.7387789713516444,
+        0.12869046823682373,
+        -0.4813980348779965
+      ]
+    },
+    {
+      "smiles": "O=c1c(-c2ccc(O)cc2)coc2cc(O)cc(O)c12",
+      "reference_logkw": 2.357872799999998,
+      "reference_s": 4.977672999999998,
+      "predicted_logkw": 2.405380451420684,
+      "predicted_s": 4.779386817499928,
+      "in_domain": true,
+      "reference_logk": [
+        1.4548,
+        0.76851,
+        0.28154,
+        -0.042101
+      ],
+      "predicted_logk": [
+        1.4495030879206983,
+        0.9715644061707056,
+        0.49362572442071273,
+        0.015687042670720075
+      ]
+    },
+    {
+      "smiles": "COC(=O)c1cc2c(cn1)[nH]c1ccccc12",
+      "reference_logkw": 1.0963507999999993,
+      "reference_s": 3.064342999999999,
+      "predicted_logkw": 1.8817969473748573,
+      "predicted_s": 4.1189881921532825,
+      "in_domain": true,
+      "reference_logk": [
+        0.55241,
+        0.097593,
+        -0.17726,
+        -0.37742
+      ],
+      "predicted_logk": [
+        1.0579993089442006,
+        0.6461004897288725,
+        0.23420167051354412,
+        -0.177697148701784
+      ]
+    },
+    {
+      "smiles": "CNC(=O)c1cc2c(cn1)[nH]c1ccccc12",
+      "reference_logkw": 1.1042387999999994,
+      "reference_s": 3.105672999999999,
+      "predicted_logkw": 1.5372847908891152,
+      "predicted_s": 3.8524360227266037,
+      "in_domain": true,
+      "reference_logk": [
+        0.55332,
+        0.094853,
+        -0.19331,
+        -0.38585
+      ],
+      "predicted_logk": [
+        0.7667975863437944,
+        0.38155398407113417,
+        -0.003689618201526468,
+        -0.38893322047418666
+      ]
+    },
+    {
+      "smiles": "COc1cc2c(CCNC(C)=O)c[nH]c2cc1O",
+      "reference_logkw": 0.7593569999999994,
+      "reference_s": 3.4333699999999996,
+      "predicted_logkw": 2.115149947600578,
+      "predicted_s": 4.508005975998015,
+      "in_domain": true,
+      "reference_logk": [
+        0.1167,
+        -0.30445,
+        -0.67845,
+        -0.90309
+      ],
+      "predicted_logk": [
+        1.2135487524009752,
+        0.7627481548011739,
+        0.3119475572013721,
+        -0.13885304039842916
+      ]
+    },
+    {
+      "smiles": "O=C(c1ccccc1)c1ccc2n1CCC2C(=O)O",
+      "reference_logkw": 2.5561939999999983,
+      "reference_s": 5.0980399999999975,
+      "predicted_logkw": 2.008824120906644,
+      "predicted_s": 5.148056752383232,
+      "in_domain": true,
+      "reference_logk": [
+        1.6301,
+        0.92949,
+        0.43102,
+        0.09691
+      ],
+      "predicted_logk": [
+        0.9792127704299975,
+        0.46440709519167456,
+        -0.05039858004664888,
+        -0.5652042552849719
+      ]
+    },
+    {
+      "smiles": "COc1ccc2[nH]cc(CCNC(C)=O)c2c1",
+      "reference_logkw": 1.3468919999999993,
+      "reference_s": 3.55287,
+      "predicted_logkw": 1.9821655888408627,
+      "predicted_s": 3.8439110706555573,
+      "in_domain": true,
+      "reference_logk": [
+        0.71433,
+        0.20058,
+        -0.14739,
+        -0.35397
+      ],
+      "predicted_logk": [
+        1.213383374709751,
+        0.8289922676441956,
+        0.44460116057863974,
+        0.06021005351308406
+      ]
+    },
+    {
+      "smiles": "CC(C)N(CCC(=O)c1ccc2ccccc2c1)Cc1ccccc1",
+      "reference_logkw": 3.2469059999999983,
+      "reference_s": 7.423359999999999,
+      "predicted_logkw": 2.7794712607525742,
+      "predicted_s": 6.0728257662523655,
+      "in_domain": false,
+      "reference_logk": [
+        1.8471,
+        0.93212,
+        0.19852,
+        -0.38282
+      ],
+      "predicted_logk": [
+        1.5649061075021011,
+        0.9576235308768646,
+        0.35034095425162803,
+        -0.2569416223736085
+      ]
+    },
+    {
+      "smiles": "CCn1cc(C(=O)O)c(=O)c2cc3c(cc21)OCO3",
+      "reference_logkw": 1.4125829999999995,
+      "reference_s": 3.1104899999999995,
+      "predicted_logkw": 1.7753587507470974,
+      "predicted_s": 4.310047059531063,
+      "in_domain": true,
+      "reference_logk": [
+        0.87949,
+        0.38917,
+        0.081904,
+        -0.054918
+      ],
+      "predicted_logk": [
+        0.9133493388408848,
+        0.4823446328877785,
+        0.05133992693467215,
+        -0.379664779018434
+      ]
+    },
+    {
+      "smiles": "Nc1nc2ccc(OC(F)(F)F)cc2s1",
+      "reference_logkw": 2.106624999999999,
+      "reference_s": 4.098849999999999,
+      "predicted_logkw": 1.8274854553769153,
+      "predicted_s": 4.180002118532599,
+      "in_domain": true,
+      "reference_logk": [
+        1.343,
+        0.81961,
+        0.41337,
+        0.11213
+      ],
+      "predicted_logk": [
+        0.9914850316703955,
+        0.5734848198171356,
+        0.15548460796387564,
+        -0.2625156038893841
+      ]
+    },
+    {
+      "smiles": "CCN1CCCC1CNC(=O)c1c(O)c(Cl)cc(Cl)c1OC",
+      "reference_logkw": 2.4948329999999976,
+      "reference_s": 6.553579999999997,
+      "predicted_logkw": 2.266120484809596,
+      "predicted_s": 5.493888433118472,
+      "in_domain": true,
+      "reference_logk": [
+        1.238,
+        0.46726,
+        -0.16525,
+        -0.73569
+      ],
+      "predicted_logk": [
+        1.1673427981859015,
+        0.6179539548740545,
+        0.06856511156220702,
+        -0.48082373174964
+      ]
+    },
+    {
+      "smiles": "OC(CCN1CCCCC1)(c1ccccc1)C1CCCCC1",
+      "reference_logkw": 2.9009883999999984,
+      "reference_s": 7.011683999999998,
+      "predicted_logkw": 2.6259417210047182,
+      "predicted_s": 6.294098342072549,
+      "in_domain": true,
+      "reference_logk": [
+        1.572,
+        0.71682,
+        0.037596,
+        -0.53882
+      ],
+      "predicted_logk": [
+        1.3671220525902084,
+        0.7377122183829536,
+        0.10830238417569849,
+        -0.5211074500315562
+      ]
+    },
+    {
+      "smiles": "COc1cc(-c2ccc(=O)[nH]n2)ccc1OC(F)F",
+      "reference_logkw": 1.357620999999999,
+      "reference_s": 3.8994099999999987,
+      "predicted_logkw": 2.3141003433424,
+      "predicted_s": 4.921715570843192,
+      "in_domain": true,
+      "reference_logk": [
+        0.65965,
+        0.10094,
+        -0.27416,
+        -0.51512
+      ],
+      "predicted_logk": [
+        1.3297572291737616,
+        0.8375856720894426,
+        0.3454141150051231,
+        -0.14675744207919594
+      ]
+    },
+    {
+      "smiles": "CN(C(=O)Cc1ccc(Cl)c(Cl)c1)C1CCCCC1N1CCCC1",
+      "reference_logkw": 2.8588450999999986,
+      "reference_s": 7.080150999999998,
+      "predicted_logkw": 2.5690444806961055,
+      "predicted_s": 6.100885031148204,
+      "in_domain": true,
+      "reference_logk": [
+        1.5234,
+        0.65045,
+        -0.046271,
+        -0.60441
+      ],
+      "predicted_logk": [
+        1.3488674744664646,
+        0.7387789713516444,
+        0.12869046823682373,
+        -0.4813980348779965
+      ]
+    },
+    {
+      "smiles": "COc1ccc(C(=O)N2CCCC2=O)cc1",
+      "reference_logkw": 1.567122599999999,
+      "reference_s": 3.2999909999999986,
+      "predicted_logkw": 1.614901577053217,
+      "predicted_s": 3.6674263362399837,
+      "in_domain": true,
+      "reference_logk": [
+        0.95926,
+        0.52028,
+        0.20441,
+        -0.035447
+      ],
+      "predicted_logk": [
+        0.8814163098052201,
+        0.5146736761812218,
+        0.14793104255722334,
+        -0.21881159106677495
+      ]
+    },
+    {
+      "smiles": "O=c1c(-c2ccc(O)cc2)coc2cc(O)ccc12",
+      "reference_logkw": 1.804840989999999,
+      "reference_s": 4.366309899999999,
+      "predicted_logkw": 2.447350766697907,
+      "predicted_s": 4.822483962887785,
+      "in_domain": true,
+      "reference_logk": [
+        1.0302,
+        0.37851,
+        -0.0046699,
+        -0.29751
+      ],
+      "predicted_logk": [
+        1.4828539741203501,
+        1.0006055778315717,
+        0.5183571815427932,
+        0.03610878525401473
+      ]
+    },
+    {
+      "smiles": "O=c1[nH]c2cc(Cl)c(Cl)cc2[nH]c1=O",
+      "reference_logkw": 1.2387115499999992,
+      "reference_s": 3.0009654999999995,
+      "predicted_logkw": 1.7579049356361585,
+      "predicted_s": 4.372069445744014,
+      "in_domain": false,
+      "reference_logk": [
+        0.70871,
+        0.2564,
+        -0.0082055,
+        -0.20341
+      ],
+      "predicted_logk": [
+        0.8834910464873557,
+        0.4462841019129544,
+        0.009077157338552855,
+        -0.4281297872358485
+      ]
+    },
+    {
+      "smiles": "CN(C(=O)Cc1ccc(Cl)c(Cl)c1)C1CCCCC1N1CCCC1.O=C(O)C(O)C(O)C(=O)O",
+      "reference_logkw": 2.7552679999999983,
+      "reference_s": 6.9159799999999985,
+      "predicted_logkw": 2.2665140139657702,
+      "predicted_s": 5.050542401501911,
+      "in_domain": false,
+      "reference_logk": [
+        1.45,
+        0.6012,
+        -0.08636,
+        -0.62614
+      ],
+      "predicted_logk": [
+        1.256405533665388,
+        0.7513512935151969,
+        0.24629705336500596,
+        -0.2587571867851852
+      ]
+    },
+    {
+      "smiles": "O=c1c(-c2ccccc2)coc2ccccc12",
+      "reference_logkw": 3.1004859999999983,
+      "reference_s": 4.936009999999998,
+      "predicted_logkw": 2.4514435254051152,
+      "predicted_s": 4.617307096633968,
+      "in_domain": true,
+      "reference_logk": [
+        2.1717,
+        1.562,
+        1.0662,
+        0.69163
+      ],
+      "predicted_logk": [
+        1.5279821060783216,
+        1.066251396414925,
+        0.604520686751528,
+        0.14278997708813135
+      ]
+    },
+    {
+      "smiles": "CC1=C2C(=COC(C)C2C)C(O)=C(C(=O)O)C1=O",
+      "reference_logkw": 2.2855179999999993,
+      "reference_s": 3.9077299999999995,
+      "predicted_logkw": 1.8361308843381068,
+      "predicted_s": 4.916309379420198,
+      "in_domain": true,
+      "reference_logk": [
+        1.5587,
+        1.0568,
+        0.67104,
+        0.38471
+      ],
+      "predicted_logk": [
+        0.8528690084540671,
+        0.36123807051204726,
+        -0.13039286742997258,
+        -0.6220238053719924
+      ]
+    },
+    {
+      "smiles": "COc1ccc2c(c1)OC1c3ccc(OC)cc3OCC21",
+      "reference_logkw": 2.914311999999999,
+      "reference_s": 5.277569999999999,
+      "predicted_logkw": 2.2946592435102335,
+      "predicted_s": 5.523151714536164,
+      "in_domain": true,
+      "reference_logk": [
+        1.9551,
+        1.229,
+        0.71846,
+        0.36609
+      ],
+      "predicted_logk": [
+        1.1900289006030007,
+        0.6377137291493844,
+        0.08539855769576787,
+        -0.46691661375784843
+      ]
+    },
+    {
+      "smiles": "CC(C)=CCOc1cc2oc(=O)ccc2cc1O",
+      "reference_logkw": 2.6588549999999986,
+      "reference_s": 4.872199999999999,
+      "predicted_logkw": 2.293145478812108,
+      "predicted_s": 4.748803374108067,
+      "in_domain": true,
+      "reference_logk": [
+        1.7623,
+        1.1197,
+        0.63131,
+        0.30103
+      ],
+      "predicted_logk": [
+        1.3433848039904948,
+        0.8685044665796882,
+        0.39362412916888134,
+        -0.08125620824192525
+      ]
+    },
+    {
+      "smiles": "COc1ccc(-c2coc3cc(O)ccc3c2=O)cc1",
+      "reference_logkw": 2.765417999999999,
+      "reference_s": 5.2935799999999995,
+      "predicted_logkw": 2.482397838197078,
+      "predicted_s": 4.947935110120678,
+      "in_domain": true,
+      "reference_logk": [
+        1.798,
+        1.0822,
+        0.56438,
+        0.20608
+      ],
+      "predicted_logk": [
+        1.4928108161729425,
+        0.9980173051608747,
+        0.5032237941488069,
+        0.008430283136739103
+      ]
+    },
+    {
+      "smiles": "COc1ccc(-c2coc3cc(O)ccc3c2=O)c(O)c1O",
+      "reference_logkw": 1.850277499999999,
+      "reference_s": 4.389974999999999,
+      "predicted_logkw": 2.316936340481308,
+      "predicted_s": 5.096655851248686,
+      "in_domain": true,
+      "reference_logk": [
+        1.073,
+        0.42056,
+        0.017585,
+        -0.256
+      ],
+      "predicted_logk": [
+        1.297605170231571,
+        0.7879395851067024,
+        0.2782739999818338,
+        -0.23139158514303482
+      ]
+    },
+    {
+      "smiles": "O=c1c2ccccc2oc2ccccc12",
+      "reference_logkw": 2.879043999999998,
+      "reference_s": 4.5355399999999975,
+      "predicted_logkw": 2.110539905587396,
+      "predicted_s": 4.335118352117065,
+      "in_domain": true,
+      "reference_logk": [
+        2.0353,
+        1.4538,
+        1.0039,
+        0.67342
+      ],
+      "predicted_logk": [
+        1.243516235163983,
+        0.8100043999522766,
+        0.3764925647405699,
+        -0.05701927047113653
+      ]
+    }
+  ],
+  "scientific_status": "Experimental QSRR; dataset-heldout curves, no independent laboratory / gradient validation"
+}

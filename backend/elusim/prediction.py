@@ -11,6 +11,7 @@ def load_model(model_id):
  return data
 
 def evaluate(weights,x):
+ if weights['kind']=='multioutput':return np.array([evaluate(w,x)[0] for w in weights['outputs']])
  x=np.asarray(x,dtype=np.float32)
  def walk(tree):
   i=0
@@ -51,7 +52,13 @@ def prepare_structure(req):
  if req.workflow!='structure' or req.mode!='RP':return req,[]
  if not (ROOT/'lss-parameters.json.gz').exists():return req,[{'status':'Insufficient data','reason':'No deployed compatible logKw/S model; direct Rt predictions are not LSS parameters'}]
  from .schemas import Scope
- model=load_model('lss-parameters');scope=model['metadata']['scope'];actual={'mode':req.mode,'stationary_phase':req.column.stationary_phase,'mobile_a':req.mobile.a,'mobile_b':req.mobile.b,'buffer':req.mobile.buffer,'ph':req.mobile.ph,'temperature_c':req.column.temperature_c}
+ model=load_model('lss-parameters');scope=model['metadata']['scope']
+ if 'phi_range' in model['metadata']:
+  from .conditions import scope_matches
+  from .retention_registry import resolve_compounds
+  if not scope_matches(scope,req):return req,[{'status':'Insufficient data','reason':'LSS model scope mismatch'}]
+  return resolve_compounds(req)
+ actual={'mode':req.mode,'stationary_phase':req.column.stationary_phase,'mobile_a':req.mobile.a,'mobile_b':req.mobile.b,'buffer':req.mobile.buffer,'ph':req.mobile.ph,'temperature_c':req.column.temperature_c}
  if scope!=actual:return req,[{'status':'Insufficient data','reason':'LSS model scope mismatch'}]
  compounds=[];records=[]
  for c in req.compounds:
@@ -67,6 +74,6 @@ def prepare_structure(req):
  return req.model_copy(update={'compounds':compounds,'workflow':'known'}),records
 def library():
  models=[]
- for mid in ['report0259-rt','pnnl-uv-shape']:
+ for mid in ['report0259-rt','pnnl-uv-shape','lss-parameters']:
   data=load_model(mid);models.append({k:v for k,v in data['metadata'].items() if not k.endswith('_smiles')})
- return {'models':models,'retention_method':report_method(),'lss_structure_model':None,'lss_warning':'No licensed validated logKw/S dataset or compatible pretrained model; use known/calibrated parameters','uv_levels':{'1':'RDKit chromophore screening','2':'Window maximum derived from experimental full-spectrum model; not separate λmax model','3':'Experimental 220–400nm normalized shape model; no molar absorptivity or solvent adjustment'}}
+ return {'models':models,'retention_method':report_method(),'lss_structure_model':models[-1],'lss_warning':'Experimental scoped LSS model: Eclipse Plus C18, 35°C, formic-acid ACN/water, 20–50% ACN; non-commercial only; independent gradient accuracy unavailable','uv_levels':{'1':'RDKit chromophore screening','2':'Window maximum derived from experimental full-spectrum model; not separate λmax model','3':'Experimental 220–400nm normalized shape model; no molar absorptivity or solvent adjustment'}}
