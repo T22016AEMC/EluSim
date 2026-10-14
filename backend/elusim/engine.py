@@ -70,6 +70,8 @@ def eligibility(req,c):
  return c.source,None
 
 def simulate(req:Simulation,deadline=None):
+ from .prediction import prepare_structure
+ original_input=req.model_dump();req,predictions=prepare_structure(req)
  p=Program(req); vm=volume(req.column); grid=np.linspace(0,p.t[-1],req.points);peaks=[];curves=[];warnings=[]
  for c in req.compounds:
   if deadline and time.monotonic()>deadline:raise TimeoutError('Computation budget exceeded')
@@ -91,7 +93,7 @@ def simulate(req:Simulation,deadline=None):
   rs=2*(b['rt_min']-a['rt_min'])/(a['width_base_min']+b['width_base_min']) if a['width_base_min'] and b['width_base_min'] else None
   pairs.append({'ids':[a['id'],b['id']],'names':[a['name'],b['name']],'rs':rs,'coelution':rs is not None and rs<1.5})
  if len(grid)>1 and any(r['sigma_min'] and (grid[1]-grid[0])>r['sigma_min']/2 for r in peaks):warnings.append('Plot grid is coarse relative to some peak widths; use exported peak metrics')
- return {'input':req.model_dump(),'model':MODEL,'mode':req.mode,'peaks':peaks,'pairs':pairs,'order':[r['id'] for r in ordered],'min_rs':min((r['rs'] for r in pairs if r['rs'] is not None),default=None),'time_min':grid.tolist(),'traces':curves,'gradient':{'program_b_percent':[100*p.composition(t) for t in grid],'inlet_b_percent':[100*p.local_phi(t,0,vm,req.mobile.dwell_ml) for t in grid]},'void_ml':vm,'initial_t0_min':vm/p.flow(0),'total_solvent_ml':float(p.v[-1]),'warnings':list(dict.fromkeys(warnings)),'assumptions':['Dilute local equilibrium LSS; plug-flow solvent transport; no overload','Gaussian screening width sigma = Rt/sqrt(N) plus injection and extra-column variance; no validated gradient compression','Specified pH / temperature / solvent do not independently modify LSS parameters; parameter scope must match','No externally validated prediction error or confidence interval'],'uncertainty':{'quantified':False,'reason':'No external experimental validation dataset'},'pressure':{'available':False,'reason':'Missing viscosity, permeability and instrument pressure model'}}
+ return {'input':original_input,'structure_predictions':predictions,'model':MODEL,'mode':req.mode,'peaks':peaks,'pairs':pairs,'order':[r['id'] for r in ordered],'min_rs':min((r['rs'] for r in pairs if r['rs'] is not None),default=None),'time_min':grid.tolist(),'traces':curves,'gradient':{'program_b_percent':[100*p.composition(t) for t in grid],'inlet_b_percent':[100*p.local_phi(t,0,vm,req.mobile.dwell_ml) for t in grid]},'void_ml':vm,'initial_t0_min':vm/p.flow(0),'total_solvent_ml':float(p.v[-1]),'warnings':list(dict.fromkeys(warnings)),'assumptions':['Dilute local equilibrium LSS; plug-flow solvent transport; no overload','Gaussian screening width sigma = Rt/sqrt(N) plus injection and extra-column variance; no validated gradient compression','Specified pH / temperature / solvent do not independently modify LSS parameters; parameter scope must match','No externally validated prediction error or confidence interval'],'uncertainty':{'quantified':False,'reason':'No external experimental validation dataset'},'pressure':{'available':False,'reason':'Missing viscosity, permeability and instrument pressure model'}}
 
 def optimize(req:Optimize):
  from .schemas import Node

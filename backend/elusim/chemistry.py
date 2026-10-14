@@ -1,5 +1,6 @@
 """RDKit only provides structure descriptors, never fabricated retention parameters."""
 import csv,io
+from .features import molecular_features
 from rdkit import Chem
 from rdkit.Chem import Descriptors, Crippen, rdMolDescriptors, Draw
 NAMES={'caffeine':'Cn1c(=O)c2c(ncn2C)n(C)c1=O','acetaminophen':'CC(=O)Nc1ccc(O)cc1','aspirin':'CC(=O)Oc1ccccc1C(=O)O','benzene':'c1ccccc1','ethanol':'CCO','咖啡因':'Cn1c(=O)c2c(ncn2C)n(C)c1=O'}
@@ -9,7 +10,7 @@ def describe(smiles=None,name=None,molblock=None):
  mol=Chem.MolFromMolBlock(molblock) if molblock else Chem.MolFromSmiles(resolved or '')
  if mol is None or mol.GetNumAtoms()==0:raise ValueError('Invalid structure / unknown local name; enter SMILES or MOL. No external lookup is required')
  if mol.GetNumAtoms()>300:raise ValueError('Small-molecule descriptor limit: 300 atoms')
- return {'name':name,'smiles':Chem.MolToSmiles(mol),'formula':rdMolDescriptors.CalcMolFormula(mol),'mw':Descriptors.MolWt(mol),'logp':Crippen.MolLogP(mol),'tpsa':rdMolDescriptors.CalcTPSA(mol),'hbd':rdMolDescriptors.CalcNumHBD(mol),'hba':rdMolDescriptors.CalcNumHBA(mol),'svg':Draw.MolsToGridImage([mol],subImgSize=(250,180),useSVG=True),'retention_parameters':None,'prediction_status':'目前缺少經驗證的結構預測模型','source':'RDKit descriptors; not retention prediction'}
+ return {'name':name,'smiles':Chem.MolToSmiles(mol),'formula':rdMolDescriptors.CalcMolFormula(mol),'mw':Descriptors.MolWt(mol),'logp':Crippen.MolLogP(mol),'tpsa':rdMolDescriptors.CalcTPSA(mol),'hbd':rdMolDescriptors.CalcNumHBD(mol),'hba':rdMolDescriptors.CalcNumHBA(mol),'svg':Draw.MolsToGridImage([mol],molsPerRow=1,subImgSize=(250,180),useSVG=True),'retention_parameters':None,'prediction_status':'目前缺少經驗證的結構預測模型','source':'RDKit descriptors; not retention prediction',**molecular_features(Chem.MolToSmiles(mol))[0]}
 
 def import_file(content,filename):
  suffix=filename.rsplit('.',1)[-1].lower();rows=[]

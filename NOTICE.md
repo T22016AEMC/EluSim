@@ -7,3 +7,5 @@ PyLSS © Giuseppe Marco Randazzo, AGPL-3.0-or-later, https://github.com/gmrandaz
 NumPy, SciPy, RDKit, FastAPI/Pydantic, React, Vite, TypeScript and ECharts retain their respective licenses. Exact installed versions are in `backend/requirements.lock` and `frontend/pnpm-lock.yaml`; distribution license evidence is recorded separately before release. Full installed Python and bundled JavaScript runtime notices are in `third_party/RUNTIME_LICENSES.txt`; binary wheel vendor licenses still apply, including platform-specific notices on Linux. No GRIP, CADET, OpenIEX, unlicensed training code or external pretrained weights are deployed.
 
 Synthetic parameters and curves in the default project are demonstration/screening data, not measured experimental chromatography. LSS parameters cannot be inferred from RDKit descriptors without a separately validated model.
+
+V2 scientific data and derived model weights have independent licenses: see data/v2/README.md and backend/models/README.md. RepoRT-derived artifacts: CC-BY-SA-4.0; PNNL UV artifacts: BSD-2-Clause. Training uses scikit-learn 1.7.2 (BSD-3-Clause); serving retains existing dependencies only.

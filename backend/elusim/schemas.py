@@ -50,7 +50,7 @@ class Compound(Strict):
     logkw: float | None = Field(default=None, ge=-3, le=12)
     s: float | None = Field(default=None, ge=0, le=30)
     amplitude: float = Field(default=1, gt=0, le=100)
-    source: Literal['Measured','Calibrated','Model-based','Screening only','Insufficient data','Unsupported'] = 'Model-based'
+    source: Literal['Measured','Calibrated','Model-based','Screening only','Insufficient data','Unsupported','Experimental','Literature-derived','Validated model prediction','Experimental model prediction','Qualitative screening'] = 'Model-based'
     scope: Scope | None = None
     mode_parameters: dict = Field(default_factory=dict)
 

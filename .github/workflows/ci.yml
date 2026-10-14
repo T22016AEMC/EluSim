@@ -1,4 +1,4 @@
-name: EluSim V1 validation
+name: EluSim V2 validation
 on:
   push:
   pull_request:
@@ -42,15 +42,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: docker build -t elusim:v1 .
-      - run: docker run --rm --memory=512m elusim:v1 python -m pytest -q -p no:cacheprovider
-      - run: docker run -d --name elusim -p 8000:8000 elusim:v1
+      - run: docker build -t elusim:v2 .
+      - run: docker run --rm --memory=512m elusim:v2 python -m pytest -q -p no:cacheprovider
+      - run: docker run -d --name elusim -p 8000:8000 elusim:v2
       - run: |
           for i in $(seq 1 30); do curl --fail http://localhost:8000/api/health && exit 0; sleep 2; done
           docker logs elusim
           exit 1
   deploy:
-    if: github.event_name == 'push' && github.ref == 'refs/heads/feature/elusim-v1'
+    if: github.event_name == 'push' && github.ref == 'refs/heads/feature/elusim-v2'
     needs: container
     runs-on: ubuntu-latest
     environment: production
