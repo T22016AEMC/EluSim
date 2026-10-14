@@ -2,7 +2,15 @@
   {
     "file": "uv_spectra.csv",
     "url": "https://raw.githubusercontent.com/PNNL-CompBio/ML_UVvisModels/b61855b53bdae841ac38b820554d8f8e2a412ace/Data/UV_w_SMILES.csv",
-    "sha256": "0d6ff92d8d46b95ed005a27c746267abb35889e84c144972c213a9070f09a2e5"
+    "sha256": "40d2e338904d370f53c481a35ba9ed5f9e7e145094bf1913cbba9338778fc97b",
+    "original_sha256": "0d6ff92d8d46b95ed005a27c746267abb35889e84c144972c213a9070f09a2e5",
+    "original_dataset_doi": "10.6084/m9.figshare.15217512.v3",
+    "data_license": "CC-BY-4.0",
+    "excluded_rows": [
+      308,
+      311
+    ],
+    "processing": "Remove only unmatched rows; numerical strings unmodified; full original retained in local artifacts and public upstream"
   },
   {
     "file": "UV-LICENSE",

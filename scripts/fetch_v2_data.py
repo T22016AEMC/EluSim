@@ -5,3 +5,7 @@ manifest=[]
 for repo,sha,p,name in files:
  url='https://raw.githubusercontent.com/'+repo+'/'+sha+'/'+p;req=urllib.request.Request(url,headers={'User-Agent':'EluSim-V2'});raw=urllib.request.urlopen(req,timeout=40).read();(OUT/name).write_bytes(raw);manifest.append({'file':name,'url':url,'sha256':hashlib.sha256(raw).hexdigest()});print(name,len(raw),raw[:800],flush=True)
 (OUT/'manifest.json').write_text(json.dumps(manifest,indent=2))
+
+# Verify independent original dataset license and filter untraceable records before training.
+import subprocess,sys
+subprocess.run([sys.executable,str(ROOT/'scripts/verify_uv_data_license.py'),'--filter'],check=True)

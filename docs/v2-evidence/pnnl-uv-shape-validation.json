@@ -1,6 +1,6 @@
 {
   "model_id": "pnnl-uv-shape",
-  "model_version": "2.0.0",
+  "model_version": "2.0.1",
   "feature_version": "rdkit-morgan2-256-plus10/1",
   "selected": "random_forest",
   "selection": "validation RMSE; test never used for model choice",
@@ -14,33 +14,33 @@
   "benchmark": {
     "ridge": {
       "validation": {
-        "mae": 0.17450304767598654,
-        "rmse": 0.2348121718829361,
-        "r2": -0.24051401869427644
+        "mae": 0.17449981809620152,
+        "rmse": 0.2348131365578385,
+        "r2": -0.2405084634616937
       },
       "heldout_test": {
-        "mae": 0.17413512855316018,
-        "rmse": 0.24551613647169182,
-        "r2": -0.6478512923624774
+        "mae": 0.1742353101311593,
+        "rmse": 0.24560845070240783,
+        "r2": -0.6475588636123336
       }
     },
     "random_forest": {
       "validation": {
-        "mae": 0.11771300678389783,
-        "rmse": 0.17923210924838667,
-        "r2": 0.2971000319577876
+        "mae": 0.11766742204832202,
+        "rmse": 0.17919787084804512,
+        "r2": 0.2973377758859545
       },
       "heldout_test": {
-        "mae": 0.12015154661405926,
-        "rmse": 0.18165252543543436,
-        "r2": 0.21541012951251073
+        "mae": 0.12011298870375631,
+        "rmse": 0.18163532650151995,
+        "r2": 0.2159587329291142
       }
     }
   },
   "heldout_mean_baseline": {
-    "mae": 0.1390570245232708,
-    "rmse": 0.20798299577862264,
-    "r2": -0.027156328777684816
+    "mae": 0.13892631136735228,
+    "rmse": 0.20797770777849592,
+    "r2": -0.026854559479120313
   },
   "beats_mean_baseline": true,
   "domain_threshold": 0.3882893226176809,
@@ -983,9 +983,10 @@
   ],
   "external_study_validation": false,
   "output": "normalized_spectrum",
-  "dataset": "PNNL UV_w_SMILES 932 records",
+  "dataset": "UV-adVISor Dataset I via PNNL: 930 verified records",
   "dataset_source": "https://github.com/PNNL-CompBio/ML_UVvisModels/tree/b61855b53bdae841ac38b820554d8f8e2a412ace/Data",
-  "license": "BSD-2-Clause",
+  "license": "CC-BY-4.0",
+  "original_dataset_source": "https://doi.org/10.6084/m9.figshare.15217512.v3",
   "wavelength_nm": [
     220,
     221,
@@ -1172,5 +1173,5 @@
   "intensity_unit": "normalized relative absorption (dimensionless), not molar absorptivity",
   "scope": "Dataset-specific organic molecules, 220\u2013400nm; solvent/pH unannotated in CSV; no solvent/pH adjustments",
   "external_validation": "scaffold-heldout experimental records only; no independent laboratory dataset",
-  "lambda_max_mae_nm": 15.582191780821917
+  "lambda_max_mae_nm": 15.575342465753424
 }

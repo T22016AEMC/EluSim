@@ -70,3 +70,14 @@ def test_v2_api_and_bounds():
  assert client.post('/api/uv/predict',json={'smiles':s,'start_nm':800,'end_nm':200}).status_code==422
  assert client.post('/api/uv/predict',json={'smiles':s,'url':'http://169.254.169.254'}).status_code==422
  assert client.post('/api/retention/predict',json={'smiles':eligible_heldout('report0259-rt')[0],'method':exact_method().model_dump()}).json()['rt_min']>0
+
+def test_uv_original_license_and_filtered_data_integrity():
+ import hashlib,csv
+ root=pathlib.Path(__file__).resolve().parents[2]
+ provenance=json.loads((root/'docs/v2-evidence/uv-data-provenance.json').read_text(encoding='utf8'))
+ assert provenance['license']['name']=='CC BY 4.0'
+ assert provenance['deployment_records']==930 and len(provenance['excluded_from_training'])==2
+ raw=(root/'data/v2/uv_spectra.csv').read_bytes()
+ assert hashlib.sha256(raw).hexdigest()==provenance['verified_sha256']
+ assert load_model('pnnl-uv-shape')['metadata']['license']=='CC-BY-4.0'
+ assert load_model('pnnl-uv-shape')['metadata']['model_version']=='2.0.1'
