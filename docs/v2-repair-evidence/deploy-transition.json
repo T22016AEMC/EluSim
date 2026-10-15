@@ -1,0 +1,6 @@
+{
+  "deploy_id": "dep-db8ejegn74is73epmii0",
+  "commit": "631e575a542ebe70e45efabee5005fbeed9a129d",
+  "initial_trigger": "HTTP 500; deploy list confirmed no new deployment; retry succeeded",
+  "first_smoke": "Started while update_in_progress; RemoteDisconnected during /api/simulate. Not counted as acceptance; rerun after live required."
+}

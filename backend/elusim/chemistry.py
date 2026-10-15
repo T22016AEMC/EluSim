@@ -20,7 +20,7 @@ def import_file(content,filename):
    if i>=20:raise ValueError('At most 20 compounds per import')
    name=row.get('name','Compound '+str(i+1));smiles=row.get('smiles') or None
    descriptors=describe(smiles,name) if smiles else None
-   rows.append({'id':str(uuid.uuid4()),'name':name,'kind':'small_molecule' if smiles else 'parameterized','smiles':descriptors['smiles'] if descriptors else None,'logkw':float(row['logkw']) if row.get('logkw') else None,'s':float(row['s']) if row.get('s') else None,'source':'Model-based','amplitude':1,'descriptors':descriptors})
+   rows.append({'id':str(uuid.uuid4()),'name':name,'kind':'small_molecule' if smiles else 'parameterized','smiles':descriptors['smiles'] if descriptors else None,'logkw':float(row['logkw']) if row.get('logkw') else None,'s':float(row['s']) if row.get('s') else None,'source':'model_based','amplitude':1,'descriptors':descriptors})
  elif suffix in ['mol','sdf']:
   supplier=[Chem.MolFromMolBlock(content)] if suffix=='mol' else Chem.ForwardSDMolSupplier(io.BytesIO(content.encode()),removeHs=True)
   for i,mol in enumerate(supplier):
@@ -28,7 +28,7 @@ def import_file(content,filename):
    if mol is None:raise ValueError('Invalid MOL / SDF record')
    name=mol.GetProp('_Name') if mol.HasProp('_Name') else 'Imported '+str(i+1);smiles=Chem.MolToSmiles(mol)
    descriptors=describe(smiles,name)
-   rows.append({'id':'import-'+str(i),'name':name,'kind':'small_molecule','smiles':smiles,'logkw':None,'s':None,'source':'Insufficient data','amplitude':1,'descriptors':descriptors})
+   rows.append({'id':str(uuid.uuid4()),'name':name,'kind':'small_molecule','smiles':smiles,'logkw':None,'s':None,'source':'insufficient_data','amplitude':1,'descriptors':descriptors})
  else:raise ValueError('Only CSV, SDF, MOL are supported')
  if suffix=='csv':
   raw_rows=list(csv.DictReader(io.StringIO(content)))

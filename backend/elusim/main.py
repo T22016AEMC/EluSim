@@ -11,7 +11,7 @@ from .chemistry import describe,import_file
 from .jobs import compute
 
 ROOT=pathlib.Path(__file__).resolve().parents[2]
-app=FastAPI(title='EluSim_V2',version='2.1.0')
+app=FastAPI(title='EluSim_V2',version='2.1.1')
 _rates=OrderedDict();_rate_lock=threading.Lock()
 
 @app.middleware('http')
@@ -125,6 +125,10 @@ def resolve_retention(req:ResolveRetention):
  from .retention_registry import resolve_compounds
  prepared,records=resolve_compounds(req.method,req.overwrite_manual)
  return {'compounds':[c.model_dump() for c in prepared.compounds],'records':records,'workflow':'known'}
+@app.get('/api/retention/conditions')
+def retention_conditions():
+ from .retention_registry import curve_conditions
+ return curve_conditions()
 @app.get('/api/retention/database')
 def retention_database():
  from .retention_registry import measured_curves

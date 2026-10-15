@@ -9,3 +9,10 @@ def scope_matches(scope,req):
     declared=scope.model_dump() if hasattr(scope,'model_dump') else dict(scope)
     declared.setdefault('mode','RP');declared.setdefault('ph_control','fixed')
     return declared==actual
+
+
+def scope_mismatches(scope, req):
+    actual=method_scope(req)
+    declared=scope.model_dump() if hasattr(scope,'model_dump') else dict(scope)
+    declared.setdefault('mode','RP');declared.setdefault('ph_control','fixed')
+    return [f'{key}: current {actual.get(key)!r}; required {value!r}' for key,value in declared.items() if actual.get(key)!=value]

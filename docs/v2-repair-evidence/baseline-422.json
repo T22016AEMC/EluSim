@@ -1,0 +1,44 @@
+{
+  "timestamp_utc": "2026-10-15T07:42:14.471604+00:00",
+  "origin": "https://elusim-v1.onrender.com",
+  "health": {
+    "status": "ok",
+    "app": "EluSim_V2",
+    "engine": "elusim-lss-migration/1.0.0",
+    "rdkit": "2026.09.1",
+    "revision": "3673ccfa8943b154e9b219164458ce50d24d98d2"
+  },
+  "legacy_simulation_http": 422,
+  "baseline": true,
+  "validation_errors": [
+    {
+      "type": "literal_error",
+      "loc": [
+        "body",
+        "compounds",
+        0,
+        "source"
+      ],
+      "msg": "Input should be 'Measured', 'Calibrated', 'Model-based', 'Screening only', 'Insufficient data', 'Unsupported', 'Experimental', 'Literature-derived', 'Validated model prediction', 'Experimental model prediction' or 'Qualitative screening'",
+      "input": "\u57fa\u65bc\u6a21\u578b",
+      "ctx": {
+        "expected": "'Measured', 'Calibrated', 'Model-based', 'Screening only', 'Insufficient data', 'Unsupported', 'Experimental', 'Literature-derived', 'Validated model prediction', 'Experimental model prediction' or 'Qualitative screening'"
+      }
+    },
+    {
+      "type": "literal_error",
+      "loc": [
+        "body",
+        "compounds",
+        2,
+        "source"
+      ],
+      "msg": "Input should be 'Measured', 'Calibrated', 'Model-based', 'Screening only', 'Insufficient data', 'Unsupported', 'Experimental', 'Literature-derived', 'Validated model prediction', 'Experimental model prediction' or 'Qualitative screening'",
+      "input": "historic unknown label",
+      "ctx": {
+        "expected": "'Measured', 'Calibrated', 'Model-based', 'Screening only', 'Insufficient data', 'Unsupported', 'Experimental', 'Literature-derived', 'Validated model prediction', 'Experimental model prediction' or 'Qualitative screening'"
+      }
+    }
+  ],
+  "status": "REPRODUCED_LEGACY_422"
+}

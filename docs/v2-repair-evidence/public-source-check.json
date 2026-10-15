@@ -1,0 +1,9 @@
+{
+  "url": "https://elusim-v1.onrender.com/api/source",
+  "timestamp_utc": "2026-10-15T15:01:13.400715+00:00",
+  "status": "PASS",
+  "files": 229,
+  "bytes": 6117983,
+  "required_licensed_data_and_model_present": true,
+  "no_env_git_or_venv_paths": true
+}

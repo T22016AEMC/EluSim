@@ -1,5 +1,6 @@
 """AGPL-3.0-or-later. Explicit units and capability boundaries for EluSim."""
 from typing import Literal
+from .sources import Source, source_code
 from pydantic import BaseModel, Field, ConfigDict, model_validator
 
 class Strict(BaseModel):
@@ -58,7 +59,17 @@ class Compound(Strict):
     response_factor: float = Field(default=1, ge=0, le=1000000)
     parameter_origin: Literal['manual', 'prediction', 'calibration', 'literature'] = 'manual'
     retention_provenance: dict = Field(default_factory=dict)
-    source: Literal['Measured','Calibrated','Model-based','Screening only','Insufficient data','Unsupported','Experimental','Literature-derived','Validated model prediction','Experimental model prediction','Qualitative screening'] = 'Model-based'
+    source: Source = 'model_based'
+    source_legacy: str | None = None
+
+    @model_validator(mode='before')
+    @classmethod
+    def migrate_source(cls, data):
+        if isinstance(data, dict) and 'source' in data:
+            data=dict(data); original=data['source']; data['source']=source_code(original)
+            if original!=data['source'] and original is not None:
+                if data.get('source_legacy') is None:data['source_legacy']=str(original)
+        return data
     scope: Scope | None = None
     mode_parameters: dict = Field(default_factory=dict)
 
