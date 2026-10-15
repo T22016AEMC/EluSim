@@ -1,0 +1,100 @@
+COMMAND C:\Users\T22016\AppData\Local\Temp\lc-gradient-research-20261013\venv-pylss\Scripts\python.exe -m pip install numpy scipy matplotlib PyYAML pytest
+Collecting numpy
+  Downloading numpy-2.5.4-cp312-cp312-win_amd64.whl.metadata (6.6 kB)
+Collecting scipy
+  Downloading scipy-1.18.1-cp312-cp312-win_amd64.whl.metadata (61 kB)
+Collecting matplotlib
+  Downloading matplotlib-3.11.2-cp312-cp312-win_amd64.whl.metadata (80 kB)
+Collecting PyYAML
+  Downloading pyyaml-6.0.3-cp312-cp312-win_amd64.whl.metadata (2.4 kB)
+Collecting pytest
+  Downloading pytest-9.1.1-py3-none-any.whl.metadata (7.6 kB)
+Collecting contourpy>=1.0.1 (from matplotlib)
+  Downloading contourpy-1.4.0-cp312-cp312-win_amd64.whl.metadata (3.8 kB)
+Collecting cycler>=0.10 (from matplotlib)
+  Downloading cycler-0.12.1-py3-none-any.whl.metadata (3.8 kB)
+Collecting fonttools>=4.28.2 (from matplotlib)
+  Downloading fonttools-4.66.1-cp312-cp312-win_amd64.whl.metadata (132 kB)
+Collecting kiwisolver>=1.3.1 (from matplotlib)
+  Downloading kiwisolver-1.5.1-cp312-cp312-win_amd64.whl.metadata (5.2 kB)
+Collecting packaging>=20.0 (from matplotlib)
+  Downloading packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
+Collecting pillow>=9 (from matplotlib)
+  Downloading pillow-12.3.0-cp312-cp312-win_amd64.whl.metadata (9.3 kB)
+Collecting pyparsing>=3 (from matplotlib)
+  Downloading pyparsing-3.3.3-py3-none-any.whl.metadata (5.9 kB)
+Collecting python-dateutil>=2.7 (from matplotlib)
+  Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
+Collecting colorama>=0.4 (from pytest)
+  Downloading colorama-0.4.6-py2.py3-none-any.whl.metadata (17 kB)
+Collecting iniconfig>=1.0.1 (from pytest)
+  Downloading iniconfig-2.3.1-py3-none-any.whl.metadata (2.8 kB)
+Collecting pluggy<2,>=1.5 (from pytest)
+  Downloading pluggy-1.6.0-py3-none-any.whl.metadata (4.8 kB)
+Collecting pygments>=2.7.2 (from pytest)
+  Downloading pygments-2.21.0-py3-none-any.whl.metadata (2.5 kB)
+Collecting six>=1.5 (from python-dateutil>=2.7->matplotlib)
+  Downloading six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+Downloading numpy-2.5.4-cp312-cp312-win_amd64.whl (12.6 MB)
+   ---------------------------------------- 12.6/12.6 MB 3.9 MB/s eta 0:00:00
+Downloading scipy-1.18.1-cp312-cp312-win_amd64.whl (36.7 MB)
+   ---------------------------------------- 36.7/36.7 MB 2.6 MB/s eta 0:00:00
+Downloading matplotlib-3.11.2-cp312-cp312-win_amd64.whl (9.3 MB)
+   ---------------------------------------- 9.3/9.3 MB 1.6 MB/s eta 0:00:00
+Downloading pyyaml-6.0.3-cp312-cp312-win_amd64.whl (154 kB)
+Downloading pytest-9.1.1-py3-none-any.whl (386 kB)
+Downloading colorama-0.4.6-py2.py3-none-any.whl (25 kB)
+Downloading contourpy-1.4.0-cp312-cp312-win_amd64.whl (234 kB)
+Downloading cycler-0.12.1-py3-none-any.whl (8.3 kB)
+Downloading fonttools-4.66.1-cp312-cp312-win_amd64.whl (2.5 MB)
+   ---------------------------------------- 2.5/2.5 MB 1.5 MB/s eta 0:00:00
+Downloading iniconfig-2.3.1-py3-none-any.whl (7.6 kB)
+Downloading kiwisolver-1.5.1-cp312-cp312-win_amd64.whl (70 kB)
+Downloading packaging-26.3-py3-none-any.whl (129 kB)
+Downloading pillow-12.3.0-cp312-cp312-win_amd64.whl (7.2 MB)
+   ---------------------------------------- 7.2/7.2 MB 1.5 MB/s eta 0:00:00
+Downloading pluggy-1.6.0-py3-none-any.whl (20 kB)
+Downloading pygments-2.21.0-py3-none-any.whl (1.3 MB)
+   ---------------------------------------- 1.3/1.3 MB 1.1 MB/s eta 0:00:00
+Downloading pyparsing-3.3.3-py3-none-any.whl (126 kB)
+Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
+Installing collected packages: six, PyYAML, pyparsing, pygments, pluggy, pillow, packaging, numpy, kiwisolver, iniconfig, fonttools, cycler, colorama, scipy, python-dateutil, pytest, contourpy, matplotlib
+Successfully installed PyYAML-6.0.3 colorama-0.4.6 contourpy-1.4.0 cycler-0.12.1 fonttools-4.66.1 iniconfig-2.3.1 kiwisolver-1.5.1 matplotlib-3.11.2 numpy-2.5.4 packaging-26.3 pillow-12.3.0 pluggy-1.6.0 pygments-2.21.0 pyparsing-3.3.3 pytest-9.1.1 python-dateutil-2.9.0.post0 scipy-1.18.1 six-1.17.0
+
+[notice] A new release of pip is available: 25.0.1 -> 26.2.1
+[notice] To update, run: C:\Users\T22016\AppData\Local\Temp\lc-gradient-research-20261013\venv-pylss\Scripts\python.exe -m pip install --upgrade pip
+EXIT 0
+COMMAND C:\Users\T22016\AppData\Local\Temp\lc-gradient-research-20261013\venv-pylss\Scripts\python.exe -m pip install setuptools wheel
+Collecting setuptools
+  Downloading setuptools-84.0.0-py3-none-any.whl.metadata (6.6 kB)
+Collecting wheel
+  Downloading wheel-0.48.0-py3-none-any.whl.metadata (2.3 kB)
+Requirement already satisfied: packaging>=24.0 in c:\users\t22016\appdata\local\temp\lc-gradient-research-20261013\venv-pylss\lib\site-packages (from wheel) (26.3)
+Downloading setuptools-84.0.0-py3-none-any.whl (818 kB)
+   ---------------------------------------- 818.2/818.2 kB 2.6 MB/s eta 0:00:00
+Downloading wheel-0.48.0-py3-none-any.whl (33 kB)
+Installing collected packages: wheel, setuptools
+Successfully installed setuptools-84.0.0 wheel-0.48.0
+
+[notice] A new release of pip is available: 25.0.1 -> 26.2.1
+[notice] To update, run: C:\Users\T22016\AppData\Local\Temp\lc-gradient-research-20261013\venv-pylss\Scripts\python.exe -m pip install --upgrade pip
+EXIT 0
+COMMAND C:\Users\T22016\AppData\Local\Temp\lc-gradient-research-20261013\venv-pylss\Scripts\python.exe -m pip install --no-deps --no-build-isolation -e C:\Users\T22016\AppData\Local\Temp\lc-gradient-research-20261013\gmrandazzo__PyLSS
+Obtaining file:///C:/Users/T22016/AppData/Local/Temp/lc-gradient-research-20261013/gmrandazzo__PyLSS
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: pylss
+  Building editable for pylss (pyproject.toml): started
+  Building editable for pylss (pyproject.toml): finished with status 'done'
+  Created wheel for pylss: filename=pylss-0.1.0-0.editable-py3-none-any.whl size=16427 sha256=69c862e52c37478a1b8c0885f48b08c6c1b67a08c5802017d97efad4528c0352
+  Stored in directory: C:\Users\T22016\AppData\Local\Temp\pip-ephem-wheel-cache-19kz2_d8\wheels\a3\98\77\3b9e08feed8875c4fb8ef47725a8433d60a022d7572c46274b
+Successfully built pylss
+Installing collected packages: pylss
+Successfully installed pylss-0.1.0
+
+[notice] A new release of pip is available: 25.0.1 -> 26.2.1
+[notice] To update, run: C:\Users\T22016\AppData\Local\Temp\lc-gradient-research-20261013\venv-pylss\Scripts\python.exe -m pip install --upgrade pip
+EXIT 0

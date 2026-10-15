@@ -1,0 +1,4703 @@
+{
+  "source_doi": "10.6084/m9.figshare.15217512.v3",
+  "source_url": "https://figshare.com/articles/dataset/UV-adVISor_Attention-Based_Recurrent_Neural_Networks_to_Predict_UV-Vis_Spectra/15217512/3",
+  "license": {
+    "value": 1,
+    "name": "CC BY 4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "authors": [
+    "Fabio Urbina",
+    "Kushal Batra",
+    "Kevin J. Luebke",
+    "Jason D. White",
+    "Daniel Matsiev",
+    "Lori L. Olson",
+    "Jeremiah P. Malerich",
+    "Maggie A.Z. Hupcey",
+    "Peter B. Madrid",
+    "Sean Ekins"
+  ],
+  "archive_sha256": "7dac53a657419f63a950f4eeef1d88946da812707078e29c18d3ccbc303710cb",
+  "archive_download_url": "https://ndownloader.figshare.com/files/31512017",
+  "member": "Datasets I, II, III spectra and SMILES/Dataset_I.csv",
+  "matched": 930,
+  "raw_records": 932,
+  "comparison": "Canonical isomeric SMILES and all181 normalized experimental spectral values; tolerance1e-6, minmax-normalized original rounded values",
+  "matches": [
+    {
+      "row": 0,
+      "original_id": "SRI-0000002.txt",
+      "max_difference": 2.3461612801497247e-08
+    },
+    {
+      "row": 1,
+      "original_id": "SRI-0000003.txt",
+      "max_difference": 8.8934850051703e-09
+    },
+    {
+      "row": 2,
+      "original_id": "SRI-0000005.txt",
+      "max_difference": 4.290380035933876e-08
+    },
+    {
+      "row": 3,
+      "original_id": "SRI-0000007.txt",
+      "max_difference": 4.942773412786039e-10
+    },
+    {
+      "row": 4,
+      "original_id": "SRI-0000010.txt",
+      "max_difference": 4.533513325982448e-08
+    },
+    {
+      "row": 5,
+      "original_id": "SRI-0000011.txt",
+      "max_difference": 4.7308279448123226e-08
+    },
+    {
+      "row": 6,
+      "original_id": "SRI-0000012.txt",
+      "max_difference": 4.990772239921171e-10
+    },
+    {
+      "row": 7,
+      "original_id": "SRI-0000016.txt",
+      "max_difference": 4.955673649220671e-10
+    },
+    {
+      "row": 8,
+      "original_id": "SRI-0000020.txt",
+      "max_difference": 4.993498045613443e-10
+    },
+    {
+      "row": 9,
+      "original_id": "SRI-0000022.txt",
+      "max_difference": 4.998796654387405e-10
+    },
+    {
+      "row": 10,
+      "original_id": "SRI-0000023.txt",
+      "max_difference": 4.997150193641886e-10
+    },
+    {
+      "row": 11,
+      "original_id": "SRI-0000024.txt",
+      "max_difference": 2.0015534403939467e-08
+    },
+    {
+      "row": 12,
+      "original_id": "SRI-0000026.txt",
+      "max_difference": 4.988370827518906e-10
+    },
+    {
+      "row": 13,
+      "original_id": "SRI-0000027.txt",
+      "max_difference": 4.965465816297865e-10
+    },
+    {
+      "row": 14,
+      "original_id": "SRI-0000028.txt",
+      "max_difference": 4.97612950844939e-10
+    },
+    {
+      "row": 15,
+      "original_id": "SRI-0000033.txt",
+      "max_difference": 4.881980427556831e-10
+    },
+    {
+      "row": 16,
+      "original_id": "SRI-0000034.txt",
+      "max_difference": 4.989560431489792e-10
+    },
+    {
+      "row": 17,
+      "original_id": "SRI-0000036.txt",
+      "max_difference": 3.724737284059522e-08
+    },
+    {
+      "row": 18,
+      "original_id": "SRI-0000038.txt",
+      "max_difference": 4.942528747386987e-10
+    },
+    {
+      "row": 19,
+      "original_id": "SRI-0000044.txt",
+      "max_difference": 4.988666424399213e-10
+    },
+    {
+      "row": 20,
+      "original_id": "SRI-0000045.txt",
+      "max_difference": 4.956638571806948e-10
+    },
+    {
+      "row": 21,
+      "original_id": "SRI-0000046.txt",
+      "max_difference": 3.279703905128433e-08
+    },
+    {
+      "row": 22,
+      "original_id": "SRI-0000050.txt",
+      "max_difference": 4.997414149165991e-10
+    },
+    {
+      "row": 23,
+      "original_id": "SRI-0000053.txt",
+      "max_difference": 4.56901921532031e-08
+    },
+    {
+      "row": 24,
+      "original_id": "SRI-0000054.txt",
+      "max_difference": 3.8353680038952535e-08
+    },
+    {
+      "row": 25,
+      "original_id": "SRI-0000058.txt",
+      "max_difference": 3.33333360913457e-10
+    },
+    {
+      "row": 26,
+      "original_id": "SRI-0000059.txt",
+      "max_difference": 4.275180381612515e-08
+    },
+    {
+      "row": 27,
+      "original_id": "SRI-0000066.txt",
+      "max_difference": 4.978885089585924e-10
+    },
+    {
+      "row": 28,
+      "original_id": "SRI-0000075.txt",
+      "max_difference": 3.7552461721030545e-08
+    },
+    {
+      "row": 29,
+      "original_id": "SRI-0000076.txt",
+      "max_difference": 4.2531800837670867e-08
+    },
+    {
+      "row": 30,
+      "original_id": "SRI-0000082.txt",
+      "max_difference": 4.4918265813785065e-08
+    },
+    {
+      "row": 31,
+      "original_id": "SRI-0000090.txt",
+      "max_difference": 4.970622802247249e-10
+    },
+    {
+      "row": 32,
+      "original_id": "SRI-0000091.txt",
+      "max_difference": 1.3815131173505084e-08
+    },
+    {
+      "row": 33,
+      "original_id": "SRI-0000093.txt",
+      "max_difference": 4.998665925626256e-10
+    },
+    {
+      "row": 34,
+      "original_id": "SRI-0000095.txt",
+      "max_difference": 4.871321297728048e-10
+    },
+    {
+      "row": 35,
+      "original_id": "SRI-0000096.txt",
+      "max_difference": 4.937899950041569e-10
+    },
+    {
+      "row": 36,
+      "original_id": "SRI-0000098.txt",
+      "max_difference": 2.7984386020849178e-08
+    },
+    {
+      "row": 37,
+      "original_id": "SRI-0000100.txt",
+      "max_difference": 4.967585232051874e-10
+    },
+    {
+      "row": 38,
+      "original_id": "SRI-0000101.txt",
+      "max_difference": 4.978204515282414e-10
+    },
+    {
+      "row": 39,
+      "original_id": "SRI-0000110.txt",
+      "max_difference": 4.894671890021129e-10
+    },
+    {
+      "row": 40,
+      "original_id": "SRI-0000131.txt",
+      "max_difference": 2.3497991506033454e-08
+    },
+    {
+      "row": 41,
+      "original_id": "SRI-0000133.txt",
+      "max_difference": 3.700864153560702e-08
+    },
+    {
+      "row": 42,
+      "original_id": "SRI-0000137.txt",
+      "max_difference": 5.761846798779061e-09
+    },
+    {
+      "row": 43,
+      "original_id": "SRI-0000138.txt",
+      "max_difference": 4.96998799753845e-10
+    },
+    {
+      "row": 44,
+      "original_id": "SRI-0000139.txt",
+      "max_difference": 4.99651875429663e-10
+    },
+    {
+      "row": 45,
+      "original_id": "SRI-0000140.txt",
+      "max_difference": 4.996299042894781e-10
+    },
+    {
+      "row": 46,
+      "original_id": "SRI-0000141.txt",
+      "max_difference": 4.924997157024333e-08
+    },
+    {
+      "row": 47,
+      "original_id": "SRI-0000143.txt",
+      "max_difference": 2.8160901148829983e-09
+    },
+    {
+      "row": 48,
+      "original_id": "SRI-0000147.txt",
+      "max_difference": 3.3879424356637834e-08
+    },
+    {
+      "row": 49,
+      "original_id": "SRI-0000149.txt",
+      "max_difference": 4.968233810465073e-10
+    },
+    {
+      "row": 50,
+      "original_id": "SRI-0000150.txt",
+      "max_difference": 4.831058402326576e-08
+    },
+    {
+      "row": 51,
+      "original_id": "SRI-0000153.txt",
+      "max_difference": 4.8431974332819976e-08
+    },
+    {
+      "row": 52,
+      "original_id": "SRI-0000154.txt",
+      "max_difference": 4.942391496065568e-10
+    },
+    {
+      "row": 53,
+      "original_id": "SRI-0000157.txt",
+      "max_difference": 4.967103811592821e-10
+    },
+    {
+      "row": 54,
+      "original_id": "SRI-0000158.txt",
+      "max_difference": 1.2949999468867587e-08
+    },
+    {
+      "row": 55,
+      "original_id": "SRI-0000159.txt",
+      "max_difference": 3.25266957626355e-08
+    },
+    {
+      "row": 56,
+      "original_id": "SRI-0000164.txt",
+      "max_difference": 3.756243756243864e-08
+    },
+    {
+      "row": 57,
+      "original_id": "SRI-0000165.txt",
+      "max_difference": 2.8640274934003973e-08
+    },
+    {
+      "row": 58,
+      "original_id": "SRI-0000183.txt",
+      "max_difference": 4.965937190539588e-10
+    },
+    {
+      "row": 59,
+      "original_id": "SRI-0000184.txt",
+      "max_difference": 2.1668999533422416e-08
+    },
+    {
+      "row": 60,
+      "original_id": "SRI-0000198.txt",
+      "max_difference": 3.976671624598429e-08
+    },
+    {
+      "row": 61,
+      "original_id": "SRI-0000199.txt",
+      "max_difference": 2.1372606527844955e-08
+    },
+    {
+      "row": 62,
+      "original_id": "SRI-0000202.txt",
+      "max_difference": 1.5723892501747134e-08
+    },
+    {
+      "row": 63,
+      "original_id": "SRI-0000203.txt",
+      "max_difference": 4.771208300517906e-08
+    },
+    {
+      "row": 64,
+      "original_id": "SRI-0000206.txt",
+      "max_difference": 2.1307563827249352e-08
+    },
+    {
+      "row": 65,
+      "original_id": "SRI-0000208.txt",
+      "max_difference": 4.985035717552933e-10
+    },
+    {
+      "row": 66,
+      "original_id": "SRI-0000209.txt",
+      "max_difference": 1.6633819471815927e-08
+    },
+    {
+      "row": 67,
+      "original_id": "SRI-0000212.txt",
+      "max_difference": 4.993767183623932e-10
+    },
+    {
+      "row": 68,
+      "original_id": "SRI-0000213.txt",
+      "max_difference": 4.4305213694333133e-08
+    },
+    {
+      "row": 69,
+      "original_id": "SRI-0000215.txt",
+      "max_difference": 3.343541321083497e-08
+    },
+    {
+      "row": 70,
+      "original_id": "SRI-0000216.txt",
+      "max_difference": 4.329263429469826e-08
+    },
+    {
+      "row": 71,
+      "original_id": "SRI-0000217.txt",
+      "max_difference": 4.974291117898488e-10
+    },
+    {
+      "row": 72,
+      "original_id": "SRI-0000223.txt",
+      "max_difference": 4.959349597655205e-10
+    },
+    {
+      "row": 73,
+      "original_id": "SRI-0000231.txt",
+      "max_difference": 3.227353482943289e-09
+    },
+    {
+      "row": 74,
+      "original_id": "SRI-0000234.txt",
+      "max_difference": 3.3026670248845484e-08
+    },
+    {
+      "row": 75,
+      "original_id": "SRI-0000235.txt",
+      "max_difference": 1.3709063214056155e-09
+    },
+    {
+      "row": 76,
+      "original_id": "SRI-0000236.txt",
+      "max_difference": 3.3738517904976833e-08
+    },
+    {
+      "row": 77,
+      "original_id": "SRI-0000237.txt",
+      "max_difference": 4.984075652192388e-10
+    },
+    {
+      "row": 78,
+      "original_id": "SRI-0000241.txt",
+      "max_difference": 2.250692810093068e-08
+    },
+    {
+      "row": 79,
+      "original_id": "SRI-0000248.txt",
+      "max_difference": 4.943470077733991e-10
+    },
+    {
+      "row": 80,
+      "original_id": "SRI-0000249.txt",
+      "max_difference": 4.971012029742969e-10
+    },
+    {
+      "row": 81,
+      "original_id": "SRI-0000251.txt",
+      "max_difference": 4.952031007476876e-10
+    },
+    {
+      "row": 82,
+      "original_id": "SRI-0000259.txt",
+      "max_difference": 4.5773017166659137e-08
+    },
+    {
+      "row": 83,
+      "original_id": "SRI-0000262.txt",
+      "max_difference": 1.0699142096438322e-08
+    },
+    {
+      "row": 84,
+      "original_id": "SRI-0000263.txt",
+      "max_difference": 4.939100170520128e-10
+    },
+    {
+      "row": 85,
+      "original_id": "SRI-0000264.txt",
+      "max_difference": 3.123022315163908e-08
+    },
+    {
+      "row": 86,
+      "original_id": "SRI-0000266.txt",
+      "max_difference": 2.871855872676191e-08
+    },
+    {
+      "row": 87,
+      "original_id": "SRI-0000267.txt",
+      "max_difference": 1.4071485115980205e-08
+    },
+    {
+      "row": 88,
+      "original_id": "SRI-0000269.txt",
+      "max_difference": 4.462809917355783e-08
+    },
+    {
+      "row": 89,
+      "original_id": "SRI-0000271.txt",
+      "max_difference": 4.987533962219626e-10
+    },
+    {
+      "row": 90,
+      "original_id": "SRI-0000272.txt",
+      "max_difference": 4.079299372025582e-08
+    },
+    {
+      "row": 91,
+      "original_id": "SRI-0000273.txt",
+      "max_difference": 4.9604177815503554e-08
+    },
+    {
+      "row": 92,
+      "original_id": "SRI-0000274.txt",
+      "max_difference": 2.033195020747109e-08
+    },
+    {
+      "row": 93,
+      "original_id": "SRI-0000275.txt",
+      "max_difference": 2.017832308712122e-08
+    },
+    {
+      "row": 94,
+      "original_id": "SRI-0000276.txt",
+      "max_difference": 3.808408571838418e-08
+    },
+    {
+      "row": 95,
+      "original_id": "SRI-0000280.txt",
+      "max_difference": 4.984634302540591e-10
+    },
+    {
+      "row": 96,
+      "original_id": "SRI-0000281.txt",
+      "max_difference": 4.959339605647983e-10
+    },
+    {
+      "row": 97,
+      "original_id": "SRI-0000282.txt",
+      "max_difference": 4.929716634904935e-10
+    },
+    {
+      "row": 98,
+      "original_id": "SRI-0000283.txt",
+      "max_difference": 4.984590648224319e-10
+    },
+    {
+      "row": 99,
+      "original_id": "SRI-0000284.txt",
+      "max_difference": 4.981949852655987e-10
+    },
+    {
+      "row": 100,
+      "original_id": "SRI-0000285.txt",
+      "max_difference": 1.3273854475840839e-08
+    },
+    {
+      "row": 101,
+      "original_id": "SRI-0000287.txt",
+      "max_difference": 5.688223839297795e-09
+    },
+    {
+      "row": 102,
+      "original_id": "SRI-0000290.txt",
+      "max_difference": 4.958232279611563e-10
+    },
+    {
+      "row": 103,
+      "original_id": "SRI-0000291.txt",
+      "max_difference": 2.984777786277262e-08
+    },
+    {
+      "row": 104,
+      "original_id": "SRI-0000294.txt",
+      "max_difference": 4.808254781597809e-08
+    },
+    {
+      "row": 105,
+      "original_id": "SRI-0000297.txt",
+      "max_difference": 4.947623291964853e-10
+    },
+    {
+      "row": 106,
+      "original_id": "SRI-0000299.txt",
+      "max_difference": 4.679414777653034e-08
+    },
+    {
+      "row": 107,
+      "original_id": "SRI-0000301.txt",
+      "max_difference": 3.6968236345427024e-08
+    },
+    {
+      "row": 108,
+      "original_id": "SRI-0000303.txt",
+      "max_difference": 1.6791140870447518e-08
+    },
+    {
+      "row": 109,
+      "original_id": "SRI-0000304.txt",
+      "max_difference": 2.0281683577779157e-08
+    },
+    {
+      "row": 110,
+      "original_id": "SRI-0000305.txt",
+      "max_difference": 4.956709249518136e-08
+    },
+    {
+      "row": 111,
+      "original_id": "SRI-0000306.txt",
+      "max_difference": 4.9292081803878384e-08
+    },
+    {
+      "row": 112,
+      "original_id": "SRI-0000311.txt",
+      "max_difference": 1.608202184684199e-08
+    },
+    {
+      "row": 113,
+      "original_id": "SRI-0000317.txt",
+      "max_difference": 4.960125088437906e-10
+    },
+    {
+      "row": 114,
+      "original_id": "SRI-0000318.txt",
+      "max_difference": 4.975860730394022e-10
+    },
+    {
+      "row": 115,
+      "original_id": "SRI-0000319.txt",
+      "max_difference": 1.1003929134412844e-08
+    },
+    {
+      "row": 116,
+      "original_id": "SRI-0000325.txt",
+      "max_difference": 3.9222614840980535e-08
+    },
+    {
+      "row": 117,
+      "original_id": "SRI-0000326.txt",
+      "max_difference": 2.032612228173008e-08
+    },
+    {
+      "row": 118,
+      "original_id": "SRI-0000327.txt",
+      "max_difference": 4.5454551234058727e-10
+    },
+    {
+      "row": 119,
+      "original_id": "SRI-0000328.txt",
+      "max_difference": 4.951065061403748e-10
+    },
+    {
+      "row": 120,
+      "original_id": "SRI-0000332.txt",
+      "max_difference": 4.838709988241874e-10
+    },
+    {
+      "row": 121,
+      "original_id": "SRI-0000334.txt",
+      "max_difference": 4.981537404802339e-10
+    },
+    {
+      "row": 122,
+      "original_id": "SRI-0000335.txt",
+      "max_difference": 4.991843396973117e-10
+    },
+    {
+      "row": 123,
+      "original_id": "SRI-0000338.txt",
+      "max_difference": 4.992255428493131e-10
+    },
+    {
+      "row": 124,
+      "original_id": "SRI-0000339.txt",
+      "max_difference": 4.992494750943877e-10
+    },
+    {
+      "row": 125,
+      "original_id": "SRI-0000340.txt",
+      "max_difference": 3.7301832089320814e-08
+    },
+    {
+      "row": 126,
+      "original_id": "SRI-0000342.txt",
+      "max_difference": 4.986889651226178e-10
+    },
+    {
+      "row": 127,
+      "original_id": "SRI-0000344.txt",
+      "max_difference": 4.927536230610319e-10
+    },
+    {
+      "row": 128,
+      "original_id": "SRI-0000348.txt",
+      "max_difference": 4.986794865935451e-10
+    },
+    {
+      "row": 129,
+      "original_id": "SRI-0000355.txt",
+      "max_difference": 4.977872281042295e-10
+    },
+    {
+      "row": 130,
+      "original_id": "SRI-0000358.txt",
+      "max_difference": 4.901021307540665e-10
+    },
+    {
+      "row": 131,
+      "original_id": "SRI-0000360.txt",
+      "max_difference": 4.982444457013457e-10
+    },
+    {
+      "row": 132,
+      "original_id": "SRI-0000361.txt",
+      "max_difference": 3.971715157934161e-08
+    },
+    {
+      "row": 133,
+      "original_id": "SRI-0000363.txt",
+      "max_difference": 3.468081088967885e-08
+    },
+    {
+      "row": 134,
+      "original_id": "SRI-0000367.txt",
+      "max_difference": 4.987080054474902e-10
+    },
+    {
+      "row": 135,
+      "original_id": "SRI-0000368.txt",
+      "max_difference": 4.996676267188249e-10
+    },
+    {
+      "row": 136,
+      "original_id": "SRI-0000370.txt",
+      "max_difference": 4.5454545682943603e-10
+    },
+    {
+      "row": 137,
+      "original_id": "SRI-0000371.txt",
+      "max_difference": 4.996009161928328e-10
+    },
+    {
+      "row": 138,
+      "original_id": "SRI-0000372.txt",
+      "max_difference": 4.989495483442852e-10
+    },
+    {
+      "row": 139,
+      "original_id": "SRI-0000374.txt",
+      "max_difference": 3.2367976212295025e-08
+    },
+    {
+      "row": 140,
+      "original_id": "SRI-0000378.txt",
+      "max_difference": 4.802767026269796e-08
+    },
+    {
+      "row": 141,
+      "original_id": "SRI-0000384.txt",
+      "max_difference": 4.91230056631764e-10
+    },
+    {
+      "row": 142,
+      "original_id": "SRI-0000385.txt",
+      "max_difference": 4.942528747386987e-10
+    },
+    {
+      "row": 143,
+      "original_id": "SRI-0000387.txt",
+      "max_difference": 4.985535179136136e-10
+    },
+    {
+      "row": 144,
+      "original_id": "SRI-0000388.txt",
+      "max_difference": 4.993509303968802e-10
+    },
+    {
+      "row": 145,
+      "original_id": "SRI-0000393.txt",
+      "max_difference": 4.955185671506879e-10
+    },
+    {
+      "row": 146,
+      "original_id": "SRI-0000396.txt",
+      "max_difference": 4.923556462853925e-08
+    },
+    {
+      "row": 147,
+      "original_id": "SRI-0000402.txt",
+      "max_difference": 4.998156888369465e-10
+    },
+    {
+      "row": 148,
+      "original_id": "SRI-0000403.txt",
+      "max_difference": 4.93617979824279e-10
+    },
+    {
+      "row": 149,
+      "original_id": "SRI-0000404.txt",
+      "max_difference": 2.4620090304413027e-08
+    },
+    {
+      "row": 150,
+      "original_id": "SRI-0000405.txt",
+      "max_difference": 2.4553680606502113e-08
+    },
+    {
+      "row": 151,
+      "original_id": "SRI-0000407.txt",
+      "max_difference": 2.1497572932175648e-08
+    },
+    {
+      "row": 152,
+      "original_id": "SRI-0000409.txt",
+      "max_difference": 4.996694713127741e-08
+    },
+    {
+      "row": 153,
+      "original_id": "SRI-0000410.txt",
+      "max_difference": 3.14638857914606e-08
+    },
+    {
+      "row": 154,
+      "original_id": "SRI-0000415.txt",
+      "max_difference": 4.960276078769255e-10
+    },
+    {
+      "row": 155,
+      "original_id": "SRI-0000416.txt",
+      "max_difference": 4.977465106748014e-10
+    },
+    {
+      "row": 156,
+      "original_id": "SRI-0000417.txt",
+      "max_difference": 4.972975642392186e-10
+    },
+    {
+      "row": 157,
+      "original_id": "SRI-0000418.txt",
+      "max_difference": 4.999457237087057e-10
+    },
+    {
+      "row": 158,
+      "original_id": "SRI-0000419.txt",
+      "max_difference": 4.935131192596032e-10
+    },
+    {
+      "row": 159,
+      "original_id": "SRI-0000420.txt",
+      "max_difference": 4.974793910150765e-10
+    },
+    {
+      "row": 160,
+      "original_id": "SRI-0000421.txt",
+      "max_difference": 4.661707403471184e-08
+    },
+    {
+      "row": 161,
+      "original_id": "SRI-0000422.txt",
+      "max_difference": 4.912281137414709e-10
+    },
+    {
+      "row": 162,
+      "original_id": "SRI-0000423.txt",
+      "max_difference": 4.968362110613356e-10
+    },
+    {
+      "row": 163,
+      "original_id": "SRI-0000424.txt",
+      "max_difference": 4.979850976027933e-10
+    },
+    {
+      "row": 164,
+      "original_id": "SRI-0000425.txt",
+      "max_difference": 2.139876331589774e-08
+    },
+    {
+      "row": 165,
+      "original_id": "SRI-0000426.txt",
+      "max_difference": 4.944520633860458e-10
+    },
+    {
+      "row": 166,
+      "original_id": "SRI-0000427.txt",
+      "max_difference": 4.991975860457742e-10
+    },
+    {
+      "row": 167,
+      "original_id": "SRI-0000428.txt",
+      "max_difference": 4.936332063595894e-10
+    },
+    {
+      "row": 168,
+      "original_id": "SRI-0000430.txt",
+      "max_difference": 4.991334463799735e-10
+    },
+    {
+      "row": 169,
+      "original_id": "SRI-0000436.txt",
+      "max_difference": 4.90004370930962e-09
+    },
+    {
+      "row": 170,
+      "original_id": "SRI-0000437.txt",
+      "max_difference": 4.2857151161257434e-10
+    },
+    {
+      "row": 171,
+      "original_id": "SRI-0000442.txt",
+      "max_difference": 4.954449897218161e-10
+    },
+    {
+      "row": 172,
+      "original_id": "SRI-0000446.txt",
+      "max_difference": 2.0229041000090664e-08
+    },
+    {
+      "row": 173,
+      "original_id": "SRI-0000448.txt",
+      "max_difference": 4.98396408345203e-10
+    },
+    {
+      "row": 174,
+      "original_id": "SRI-0000449.txt",
+      "max_difference": 7.063529659453744e-09
+    },
+    {
+      "row": 175,
+      "original_id": "SRI-0000455.txt",
+      "max_difference": 4.944532561168558e-10
+    },
+    {
+      "row": 176,
+      "original_id": "SRI-0000457.txt",
+      "max_difference": 4.960424848654554e-10
+    },
+    {
+      "row": 177,
+      "original_id": "SRI-0000458.txt",
+      "max_difference": 4.974217704400985e-10
+    },
+    {
+      "row": 178,
+      "original_id": "SRI-0000462.txt",
+      "max_difference": 4.891279603569387e-10
+    },
+    {
+      "row": 179,
+      "original_id": "SRI-0000463.txt",
+      "max_difference": 4.836305800282048e-10
+    },
+    {
+      "row": 180,
+      "original_id": "SRI-0000464.txt",
+      "max_difference": 4.975349021663078e-10
+    },
+    {
+      "row": 181,
+      "original_id": "SRI-0000465.txt",
+      "max_difference": 4.993946705819652e-10
+    },
+    {
+      "row": 182,
+      "original_id": "SRI-0000466.txt",
+      "max_difference": 9.145766925283379e-09
+    },
+    {
+      "row": 183,
+      "original_id": "SRI-0000468.txt",
+      "max_difference": 4.983823770343676e-10
+    },
+    {
+      "row": 184,
+      "original_id": "SRI-0000473.txt",
+      "max_difference": 4.9582177252816e-10
+    },
+    {
+      "row": 185,
+      "original_id": "SRI-0000474.txt",
+      "max_difference": 4.995362457016483e-10
+    },
+    {
+      "row": 186,
+      "original_id": "SRI-0000477.txt",
+      "max_difference": 2.917873476306976e-08
+    },
+    {
+      "row": 187,
+      "original_id": "SRI-0000478.txt",
+      "max_difference": 4.9842932875645955e-08
+    },
+    {
+      "row": 188,
+      "original_id": "SRI-0000479.txt",
+      "max_difference": 2.344629235963183e-08
+    },
+    {
+      "row": 189,
+      "original_id": "SRI-0000480.txt",
+      "max_difference": 4.981707546480862e-10
+    },
+    {
+      "row": 190,
+      "original_id": "SRI-0000481.txt",
+      "max_difference": 4.941724945917159e-10
+    },
+    {
+      "row": 191,
+      "original_id": "SRI-0000483.txt",
+      "max_difference": 0.0
+    },
+    {
+      "row": 192,
+      "original_id": "SRI-0000484.txt",
+      "max_difference": 3.531335644958906e-08
+    },
+    {
+      "row": 193,
+      "original_id": "SRI-0000486.txt",
+      "max_difference": 2.231446601242803e-08
+    },
+    {
+      "row": 194,
+      "original_id": "SRI-0000490.txt",
+      "max_difference": 4.997316449539824e-10
+    },
+    {
+      "row": 195,
+      "original_id": "SRI-0000493.txt",
+      "max_difference": 4.99580821156087e-10
+    },
+    {
+      "row": 196,
+      "original_id": "SRI-0000494.txt",
+      "max_difference": 4.96294894070104e-10
+    },
+    {
+      "row": 197,
+      "original_id": "SRI-0000497.txt",
+      "max_difference": 4.967336542094358e-10
+    },
+    {
+      "row": 198,
+      "original_id": "SRI-0000499.txt",
+      "max_difference": 4.6724241646329406e-08
+    },
+    {
+      "row": 199,
+      "original_id": "SRI-0000500.txt",
+      "max_difference": 3.591246766193037e-08
+    },
+    {
+      "row": 200,
+      "original_id": "SRI-0000502.txt",
+      "max_difference": 4.979326638510084e-10
+    },
+    {
+      "row": 201,
+      "original_id": "SRI-0000504.txt",
+      "max_difference": 3.2488172397612494e-08
+    },
+    {
+      "row": 202,
+      "original_id": "SRI-0000506.txt",
+      "max_difference": 4.931957029513862e-08
+    },
+    {
+      "row": 203,
+      "original_id": "SRI-0000510.txt",
+      "max_difference": 4.921466012497433e-10
+    },
+    {
+      "row": 204,
+      "original_id": "SRI-0000514.txt",
+      "max_difference": 4.98066858589663e-10
+    },
+    {
+      "row": 205,
+      "original_id": "SRI-0000515.txt",
+      "max_difference": 4.991570490275876e-10
+    },
+    {
+      "row": 206,
+      "original_id": "SRI-0000516.txt",
+      "max_difference": 4.993324642654784e-10
+    },
+    {
+      "row": 207,
+      "original_id": "SRI-0000517.txt",
+      "max_difference": 4.99292773792348e-10
+    },
+    {
+      "row": 208,
+      "original_id": "SRI-0000519.txt",
+      "max_difference": 3.1474871976766675e-08
+    },
+    {
+      "row": 209,
+      "original_id": "SRI-0000520.txt",
+      "max_difference": 4.997796109254549e-10
+    },
+    {
+      "row": 210,
+      "original_id": "SRI-0000521.txt",
+      "max_difference": 3.412779234285632e-08
+    },
+    {
+      "row": 211,
+      "original_id": "SRI-0000526.txt",
+      "max_difference": 4.4611365899916604e-08
+    },
+    {
+      "row": 212,
+      "original_id": "SRI-0000527.txt",
+      "max_difference": 4.990443943503342e-10
+    },
+    {
+      "row": 213,
+      "original_id": "SRI-0000528.txt",
+      "max_difference": 4.97688334988311e-10
+    },
+    {
+      "row": 214,
+      "original_id": "SRI-0000530.txt",
+      "max_difference": 4.963418209422144e-10
+    },
+    {
+      "row": 215,
+      "original_id": "SRI-0000534.txt",
+      "max_difference": 3.643220467872127e-08
+    },
+    {
+      "row": 216,
+      "original_id": "SRI-0000535.txt",
+      "max_difference": 4.978191331383996e-10
+    },
+    {
+      "row": 217,
+      "original_id": "SRI-0000536.txt",
+      "max_difference": 4.947048326542358e-10
+    },
+    {
+      "row": 218,
+      "original_id": "SRI-0000537.txt",
+      "max_difference": 4.93062035644698e-10
+    },
+    {
+      "row": 219,
+      "original_id": "SRI-0000544.txt",
+      "max_difference": 3.1456806770402564e-08
+    },
+    {
+      "row": 220,
+      "original_id": "SRI-0000545.txt",
+      "max_difference": 4.7934201437746494e-08
+    },
+    {
+      "row": 221,
+      "original_id": "SRI-0000546.txt",
+      "max_difference": 4.999055613907899e-10
+    },
+    {
+      "row": 222,
+      "original_id": "SRI-0000547.txt",
+      "max_difference": 3.748283619153369e-08
+    },
+    {
+      "row": 223,
+      "original_id": "SRI-0000550.txt",
+      "max_difference": 4.983726209495387e-10
+    },
+    {
+      "row": 224,
+      "original_id": "SRI-0000551.txt",
+      "max_difference": 4.999159142204945e-10
+    },
+    {
+      "row": 225,
+      "original_id": "SRI-0000554.txt",
+      "max_difference": 4.986658308503422e-10
+    },
+    {
+      "row": 226,
+      "original_id": "SRI-0000556.txt",
+      "max_difference": 4.975859130653716e-10
+    },
+    {
+      "row": 227,
+      "original_id": "SRI-0000557.txt",
+      "max_difference": 4.912299456094615e-10
+    },
+    {
+      "row": 228,
+      "original_id": "SRI-0000561.txt",
+      "max_difference": 4.93877001794818e-10
+    },
+    {
+      "row": 229,
+      "original_id": "SRI-0000562.txt",
+      "max_difference": 4.97748703365275e-10
+    },
+    {
+      "row": 230,
+      "original_id": "SRI-0000563.txt",
+      "max_difference": 4.979253120929172e-10
+    },
+    {
+      "row": 231,
+      "original_id": "SRI-0000564.txt",
+      "max_difference": 4.996150715363967e-10
+    },
+    {
+      "row": 232,
+      "original_id": "SRI-0000565.txt",
+      "max_difference": 4.5454551234058727e-10
+    },
+    {
+      "row": 233,
+      "original_id": "SRI-0000566.txt",
+      "max_difference": 4.970757468830689e-10
+    },
+    {
+      "row": 234,
+      "original_id": "SRI-0000569.txt",
+      "max_difference": 4.954197607709432e-10
+    },
+    {
+      "row": 235,
+      "original_id": "SRI-0000570.txt",
+      "max_difference": 4.97255792097917e-10
+    },
+    {
+      "row": 236,
+      "original_id": "SRI-0000571.txt",
+      "max_difference": 4.918270235521049e-10
+    },
+    {
+      "row": 237,
+      "original_id": "SRI-0000572.txt",
+      "max_difference": 4.901573827067446e-08
+    },
+    {
+      "row": 238,
+      "original_id": "SRI-0000574.txt",
+      "max_difference": 2.0374600274100736e-09
+    },
+    {
+      "row": 239,
+      "original_id": "SRI-0000575.txt",
+      "max_difference": 4.976958532798559e-10
+    },
+    {
+      "row": 240,
+      "original_id": "SRI-0000578.txt",
+      "max_difference": 4.948415870857995e-10
+    },
+    {
+      "row": 241,
+      "original_id": "SRI-0000580.txt",
+      "max_difference": 4.977958635576929e-10
+    },
+    {
+      "row": 242,
+      "original_id": "SRI-0000581.txt",
+      "max_difference": 4.999383129700163e-10
+    },
+    {
+      "row": 243,
+      "original_id": "SRI-0000583.txt",
+      "max_difference": 4.984469226254618e-10
+    },
+    {
+      "row": 244,
+      "original_id": "SRI-0000584.txt",
+      "max_difference": 4.979476830868634e-10
+    },
+    {
+      "row": 245,
+      "original_id": "SRI-0000586.txt",
+      "max_difference": 4.996963953729505e-10
+    },
+    {
+      "row": 246,
+      "original_id": "SRI-0000588.txt",
+      "max_difference": 4.975041489885257e-10
+    },
+    {
+      "row": 247,
+      "original_id": "SRI-0000589.txt",
+      "max_difference": 4.965785560528957e-10
+    },
+    {
+      "row": 248,
+      "original_id": "SRI-0000591.txt",
+      "max_difference": 3.5979121159681086e-08
+    },
+    {
+      "row": 249,
+      "original_id": "SRI-0000592.txt",
+      "max_difference": 3.545442401033187e-08
+    },
+    {
+      "row": 250,
+      "original_id": "SRI-0000594.txt",
+      "max_difference": 4.974160250359461e-10
+    },
+    {
+      "row": 251,
+      "original_id": "SRI-0000599.txt",
+      "max_difference": 4.991406732379744e-10
+    },
+    {
+      "row": 252,
+      "original_id": "SRI-0000600.txt",
+      "max_difference": 9.081186379185932e-09
+    },
+    {
+      "row": 253,
+      "original_id": "SRI-0000601.txt",
+      "max_difference": 1.7624491459327816e-08
+    },
+    {
+      "row": 254,
+      "original_id": "SRI-0000602.txt",
+      "max_difference": 4.95965324365244e-10
+    },
+    {
+      "row": 255,
+      "original_id": "SRI-0000606.txt",
+      "max_difference": 3.072387734964809e-08
+    },
+    {
+      "row": 256,
+      "original_id": "SRI-0000607.txt",
+      "max_difference": 4.965746702723095e-10
+    },
+    {
+      "row": 257,
+      "original_id": "SRI-0000608.txt",
+      "max_difference": 3.443434608117616e-08
+    },
+    {
+      "row": 258,
+      "original_id": "SRI-0000609.txt",
+      "max_difference": 3.933759038516195e-08
+    },
+    {
+      "row": 259,
+      "original_id": "SRI-0000610.txt",
+      "max_difference": 4.95656626853247e-10
+    },
+    {
+      "row": 260,
+      "original_id": "SRI-0000611.txt",
+      "max_difference": 3.592599076231482e-08
+    },
+    {
+      "row": 261,
+      "original_id": "SRI-0000612.txt",
+      "max_difference": 4.838709710686118e-10
+    },
+    {
+      "row": 262,
+      "original_id": "SRI-0000613.txt",
+      "max_difference": 4.96958724172103e-10
+    },
+    {
+      "row": 263,
+      "original_id": "SRI-0000614.txt",
+      "max_difference": 4.8743718592966724e-08
+    },
+    {
+      "row": 264,
+      "original_id": "SRI-0000615.txt",
+      "max_difference": 4.982935175590342e-10
+    },
+    {
+      "row": 265,
+      "original_id": "SRI-0000620.txt",
+      "max_difference": 4.942169425439791e-10
+    },
+    {
+      "row": 266,
+      "original_id": "SRI-0000621.txt",
+      "max_difference": 4.964936886099613e-10
+    },
+    {
+      "row": 267,
+      "original_id": "SRI-0000623.txt",
+      "max_difference": 1.5784586815227402e-08
+    },
+    {
+      "row": 268,
+      "original_id": "SRI-0000630.txt",
+      "max_difference": 4.031197347681981e-08
+    },
+    {
+      "row": 269,
+      "original_id": "SRI-0000631.txt",
+      "max_difference": 4.986449864130549e-10
+    },
+    {
+      "row": 270,
+      "original_id": "SRI-0000632.txt",
+      "max_difference": 4.994435975902434e-10
+    },
+    {
+      "row": 271,
+      "original_id": "SRI-0000637.txt",
+      "max_difference": 4.526129518926539e-08
+    },
+    {
+      "row": 272,
+      "original_id": "SRI-0000638.txt",
+      "max_difference": 4.0251878370780615e-08
+    },
+    {
+      "row": 273,
+      "original_id": "SRI-0000639.txt",
+      "max_difference": 3.091768871494726e-08
+    },
+    {
+      "row": 274,
+      "original_id": "SRI-0000644.txt",
+      "max_difference": 4.939249877156104e-10
+    },
+    {
+      "row": 275,
+      "original_id": "SRI-0000650.txt",
+      "max_difference": 4.962347477377449e-10
+    },
+    {
+      "row": 276,
+      "original_id": "SRI-0000653.txt",
+      "max_difference": 4.965034980375371e-10
+    },
+    {
+      "row": 277,
+      "original_id": "SRI-0000654.txt",
+      "max_difference": 4.976303327741682e-10
+    },
+    {
+      "row": 278,
+      "original_id": "SRI-0000659.txt",
+      "max_difference": 4.971098255257544e-10
+    },
+    {
+      "row": 279,
+      "original_id": "SRI-0000667.txt",
+      "max_difference": 4.920582938501561e-10
+    },
+    {
+      "row": 280,
+      "original_id": "SRI-0000668.txt",
+      "max_difference": 4.993565005939615e-10
+    },
+    {
+      "row": 281,
+      "original_id": "SRI-0000669.txt",
+      "max_difference": 4.968944075645076e-10
+    },
+    {
+      "row": 282,
+      "original_id": "SRI-0000670.txt",
+      "max_difference": 4.938914763275015e-10
+    },
+    {
+      "row": 283,
+      "original_id": "SRI-0000672.txt",
+      "max_difference": 4.344840987110989e-08
+    },
+    {
+      "row": 284,
+      "original_id": "SRI-0000675.txt",
+      "max_difference": 4.4814530526362324e-08
+    },
+    {
+      "row": 285,
+      "original_id": "SRI-0000678.txt",
+      "max_difference": 4.925373442432601e-10
+    },
+    {
+      "row": 286,
+      "original_id": "SRI-0000679.txt",
+      "max_difference": 3.866443777090481e-08
+    },
+    {
+      "row": 287,
+      "original_id": "SRI-0000682.txt",
+      "max_difference": 4.98864498321705e-10
+    },
+    {
+      "row": 288,
+      "original_id": "SRI-0000685.txt",
+      "max_difference": 4.919683826987153e-10
+    },
+    {
+      "row": 289,
+      "original_id": "SRI-0000686.txt",
+      "max_difference": 4.7292418772567507e-08
+    },
+    {
+      "row": 290,
+      "original_id": "SRI-0000687.txt",
+      "max_difference": 4.6972659721969975e-08
+    },
+    {
+      "row": 291,
+      "original_id": "SRI-0000689.txt",
+      "max_difference": 4.988771253738866e-10
+    },
+    {
+      "row": 292,
+      "original_id": "SRI-0000690.txt",
+      "max_difference": 4.959547356131466e-10
+    },
+    {
+      "row": 293,
+      "original_id": "SRI-0000691.txt",
+      "max_difference": 3.746906037535255e-08
+    },
+    {
+      "row": 294,
+      "original_id": "SRI-0000693.txt",
+      "max_difference": 4.985831192350076e-10
+    },
+    {
+      "row": 295,
+      "original_id": "SRI-0000695.txt",
+      "max_difference": 4.948024767692516e-10
+    },
+    {
+      "row": 296,
+      "original_id": "SRI-0000697.txt",
+      "max_difference": 4.989517791986753e-10
+    },
+    {
+      "row": 297,
+      "original_id": "SRI-0000700.txt",
+      "max_difference": 4.997267252782045e-10
+    },
+    {
+      "row": 298,
+      "original_id": "SRI-0000701.txt",
+      "max_difference": 2.2457863035890832e-08
+    },
+    {
+      "row": 299,
+      "original_id": "SRI-0000712.txt",
+      "max_difference": 4.7637818251266336e-08
+    },
+    {
+      "row": 300,
+      "original_id": "SRI-0000716.txt",
+      "max_difference": 3.3164836715028666e-08
+    },
+    {
+      "row": 301,
+      "original_id": "SRI-0000717.txt",
+      "max_difference": 4.568375349517893e-08
+    },
+    {
+      "row": 302,
+      "original_id": "SRI-0000720.txt",
+      "max_difference": 3.671924071578384e-08
+    },
+    {
+      "row": 303,
+      "original_id": "SRI-0000721.txt",
+      "max_difference": 4.975259093598083e-10
+    },
+    {
+      "row": 304,
+      "original_id": "SRI-0000723.txt",
+      "max_difference": 1.4302022656087943e-08
+    },
+    {
+      "row": 305,
+      "original_id": "SRI-0000724.txt",
+      "max_difference": 4.999646369650834e-10
+    },
+    {
+      "row": 306,
+      "original_id": "SRI-0000726.txt",
+      "max_difference": 4.929178731849504e-10
+    },
+    {
+      "row": 307,
+      "original_id": "SRI-0000727.txt",
+      "max_difference": 4.921214893927051e-10
+    },
+    {
+      "row": 309,
+      "original_id": "SRI-000522.txt",
+      "max_difference": 1.624824717621435e-08
+    },
+    {
+      "row": 310,
+      "original_id": "SRI-000523.txt",
+      "max_difference": 4.6155127991526646e-08
+    },
+    {
+      "row": 312,
+      "original_id": "SRI-001739.txt",
+      "max_difference": 4.99806160000893e-10
+    },
+    {
+      "row": 313,
+      "original_id": "SRI-001779.txt",
+      "max_difference": 4.995485899939034e-10
+    },
+    {
+      "row": 314,
+      "original_id": "SRI-001852.txt",
+      "max_difference": 4.365597401354476e-08
+    },
+    {
+      "row": 315,
+      "original_id": "SRI-001911.txt",
+      "max_difference": 4.990087232314977e-10
+    },
+    {
+      "row": 316,
+      "original_id": "SRI-002160.txt",
+      "max_difference": 2.6070251536402492e-08
+    },
+    {
+      "row": 317,
+      "original_id": "SRI-002238.txt",
+      "max_difference": 4.875391756975489e-10
+    },
+    {
+      "row": 318,
+      "original_id": "SRI-002275.txt",
+      "max_difference": 4.961140022017793e-10
+    },
+    {
+      "row": 319,
+      "original_id": "SRI-002276.txt",
+      "max_difference": 4.974981537841927e-10
+    },
+    {
+      "row": 320,
+      "original_id": "SRI-002379.txt",
+      "max_difference": 4.963525712404354e-10
+    },
+    {
+      "row": 321,
+      "original_id": "SRI-002491.txt",
+      "max_difference": 2.9137138063779148e-08
+    },
+    {
+      "row": 322,
+      "original_id": "SRI-002503.txt",
+      "max_difference": 4.344226354746617e-08
+    },
+    {
+      "row": 323,
+      "original_id": "SRI-002865.txt",
+      "max_difference": 1.562284032187184e-08
+    },
+    {
+      "row": 324,
+      "original_id": "SRI-003073.txt",
+      "max_difference": 2.4039464452822235e-08
+    },
+    {
+      "row": 325,
+      "original_id": "SRI-003992.txt",
+      "max_difference": 4.925517771425802e-10
+    },
+    {
+      "row": 326,
+      "original_id": "SRI-004240.txt",
+      "max_difference": 1.4157016586747919e-08
+    },
+    {
+      "row": 327,
+      "original_id": "SRI-004715.txt",
+      "max_difference": 3.834536988444031e-08
+    },
+    {
+      "row": 328,
+      "original_id": "SRI-004719.txt",
+      "max_difference": 4.69405395876521e-08
+    },
+    {
+      "row": 329,
+      "original_id": "SRI-004796.txt",
+      "max_difference": 4.705752040323004e-08
+    },
+    {
+      "row": 330,
+      "original_id": "SRI-004857.txt",
+      "max_difference": 4.872907529207874e-08
+    },
+    {
+      "row": 331,
+      "original_id": "SRI-004863.txt",
+      "max_difference": 4.986769747139519e-10
+    },
+    {
+      "row": 332,
+      "original_id": "SRI-004864.txt",
+      "max_difference": 4.946745235656635e-10
+    },
+    {
+      "row": 333,
+      "original_id": "SRI-004888.txt",
+      "max_difference": 3.731587970234548e-08
+    },
+    {
+      "row": 334,
+      "original_id": "SRI-005005.txt",
+      "max_difference": 4.97859550049415e-08
+    },
+    {
+      "row": 335,
+      "original_id": "SRI-031101-1.txt",
+      "max_difference": 4.938353614925006e-10
+    },
+    {
+      "row": 336,
+      "original_id": "SRI-031102-1.txt",
+      "max_difference": 8.105648489648704e-10
+    },
+    {
+      "row": 337,
+      "original_id": "SRI-031110-1.txt",
+      "max_difference": 4.901462364630062e-08
+    },
+    {
+      "row": 338,
+      "original_id": "SRI-031112-1.txt",
+      "max_difference": 4.653270015725244e-08
+    },
+    {
+      "row": 339,
+      "original_id": "SRI-031143.txt",
+      "max_difference": 4.261564288624974e-08
+    },
+    {
+      "row": 340,
+      "original_id": "SRI-031144.txt",
+      "max_difference": 5.007210202023771e-10
+    },
+    {
+      "row": 341,
+      "original_id": "SRI-031145.txt",
+      "max_difference": 4.632946490003607e-08
+    },
+    {
+      "row": 342,
+      "original_id": "SRI-031149.txt",
+      "max_difference": 5.004366254723891e-09
+    },
+    {
+      "row": 343,
+      "original_id": "SRI-031152.txt",
+      "max_difference": 1.4575448625819831e-09
+    },
+    {
+      "row": 344,
+      "original_id": "SRI-031195.txt",
+      "max_difference": 2.3505829505054976e-09
+    },
+    {
+      "row": 345,
+      "original_id": "SRI-031196.txt",
+      "max_difference": 6.3583152076773786e-09
+    },
+    {
+      "row": 346,
+      "original_id": "SRI-031197.txt",
+      "max_difference": 4.775220284046911e-08
+    },
+    {
+      "row": 347,
+      "original_id": "SRI-031198.txt",
+      "max_difference": 2.435542101331123e-09
+    },
+    {
+      "row": 348,
+      "original_id": "SRI-031199.txt",
+      "max_difference": 1.4757897126571606e-09
+    },
+    {
+      "row": 349,
+      "original_id": "SRI-031200.txt",
+      "max_difference": 5.081203902079778e-09
+    },
+    {
+      "row": 350,
+      "original_id": "SRI-031201.txt",
+      "max_difference": 9.317069671332945e-09
+    },
+    {
+      "row": 351,
+      "original_id": "SRI-031202.txt",
+      "max_difference": 1.3460581538282668e-09
+    },
+    {
+      "row": 352,
+      "original_id": "SRI-031203.txt",
+      "max_difference": 5.377718825805289e-09
+    },
+    {
+      "row": 353,
+      "original_id": "SRI-1008400-002.txt",
+      "max_difference": 4.402116805236574e-08
+    },
+    {
+      "row": 354,
+      "original_id": "SRI-1017110-002.txt",
+      "max_difference": 1.562298256940016e-08
+    },
+    {
+      "row": 355,
+      "original_id": "SRI-1022907-002.txt",
+      "max_difference": 2.0690992116481437e-08
+    },
+    {
+      "row": 356,
+      "original_id": "SRI-1026262-002.txt",
+      "max_difference": 4.9143418045898e-10
+    },
+    {
+      "row": 357,
+      "original_id": "SRI-1032317-002.txt",
+      "max_difference": 4.4772891131942324e-08
+    },
+    {
+      "row": 358,
+      "original_id": "SRI-1032554-002.txt",
+      "max_difference": 4.640622048866284e-08
+    },
+    {
+      "row": 359,
+      "original_id": "SRI-1036555-002.txt",
+      "max_difference": 3.437057991513624e-08
+    },
+    {
+      "row": 360,
+      "original_id": "SRI-1052622-002.txt",
+      "max_difference": 4.683532399135258e-08
+    },
+    {
+      "row": 361,
+      "original_id": "SRI-1052748-001.txt",
+      "max_difference": 4.525014675423923e-08
+    },
+    {
+      "row": 362,
+      "original_id": "SRI-1052749-001.txt",
+      "max_difference": 4.8584905660381224e-08
+    },
+    {
+      "row": 363,
+      "original_id": "SRI-1052750-001.txt",
+      "max_difference": 4.9320794148380203e-08
+    },
+    {
+      "row": 364,
+      "original_id": "SRI-1052752-001.txt",
+      "max_difference": 1.8790898465167148e-08
+    },
+    {
+      "row": 365,
+      "original_id": "SRI-1052753-001.txt",
+      "max_difference": 2.7894609620495266e-08
+    },
+    {
+      "row": 366,
+      "original_id": "SRI-1052754-001.txt",
+      "max_difference": 3.5166347273638335e-08
+    },
+    {
+      "row": 367,
+      "original_id": "SRI-1052755-001.txt",
+      "max_difference": 2.019693545445841e-08
+    },
+    {
+      "row": 368,
+      "original_id": "SRI-1052756-001.txt",
+      "max_difference": 3.2211540335055975e-08
+    },
+    {
+      "row": 369,
+      "original_id": "SRI-1052757-001.txt",
+      "max_difference": 4.995287464920617e-10
+    },
+    {
+      "row": 370,
+      "original_id": "SRI-1052758-001.txt",
+      "max_difference": 2.1191747412827478e-08
+    },
+    {
+      "row": 371,
+      "original_id": "SRI-1052759-001.txt",
+      "max_difference": 4.2741505205866836e-08
+    },
+    {
+      "row": 372,
+      "original_id": "SRI-1052760-001.txt",
+      "max_difference": 3.926561309509414e-08
+    },
+    {
+      "row": 373,
+      "original_id": "SRI-1052761-001.txt",
+      "max_difference": 4.987164570202651e-10
+    },
+    {
+      "row": 374,
+      "original_id": "SRI-1052762-001.txt",
+      "max_difference": 2.857107215743814e-08
+    },
+    {
+      "row": 375,
+      "original_id": "SRI-1052763-001.txt",
+      "max_difference": 4.916068839141139e-08
+    },
+    {
+      "row": 376,
+      "original_id": "SRI-1052764-001.txt",
+      "max_difference": 4.988676806719217e-10
+    },
+    {
+      "row": 377,
+      "original_id": "SRI-1052765-001.txt",
+      "max_difference": 3.8821714731958595e-08
+    },
+    {
+      "row": 378,
+      "original_id": "SRI-1052766-001.txt",
+      "max_difference": 4.8939662025283674e-08
+    },
+    {
+      "row": 379,
+      "original_id": "SRI-1052767-001.txt",
+      "max_difference": 4.805531673054953e-08
+    },
+    {
+      "row": 380,
+      "original_id": "SRI-1052768-001.txt",
+      "max_difference": 4.306000813114044e-08
+    },
+    {
+      "row": 381,
+      "original_id": "SRI-1052770-001.txt",
+      "max_difference": 4.970197586828817e-10
+    },
+    {
+      "row": 382,
+      "original_id": "SRI-1052771-001.txt",
+      "max_difference": 3.3931541446795234e-08
+    },
+    {
+      "row": 383,
+      "original_id": "SRI-1052772-001.txt",
+      "max_difference": 3.001210046335665e-08
+    },
+    {
+      "row": 384,
+      "original_id": "SRI-1052773-001.txt",
+      "max_difference": 3.0437974064104786e-08
+    },
+    {
+      "row": 385,
+      "original_id": "SRI-1052774-001.txt",
+      "max_difference": 4.359334269099898e-08
+    },
+    {
+      "row": 386,
+      "original_id": "SRI-1052775-001.txt",
+      "max_difference": 4.988728874444348e-10
+    },
+    {
+      "row": 387,
+      "original_id": "SRI-1052776-001.txt",
+      "max_difference": 1.2234910277318873e-08
+    },
+    {
+      "row": 388,
+      "original_id": "SRI-1052777-001.txt",
+      "max_difference": 4.902181243403303e-10
+    },
+    {
+      "row": 389,
+      "original_id": "SRI-1052778-001.txt",
+      "max_difference": 4.986562011538066e-08
+    },
+    {
+      "row": 390,
+      "original_id": "SRI-1052779-001.txt",
+      "max_difference": 4.950417853422096e-10
+    },
+    {
+      "row": 391,
+      "original_id": "SRI-1052780-001.txt",
+      "max_difference": 3.732757231924514e-08
+    },
+    {
+      "row": 392,
+      "original_id": "SRI-1052781-001.txt",
+      "max_difference": 4.99292773792348e-10
+    },
+    {
+      "row": 393,
+      "original_id": "SRI-1052782-001.txt",
+      "max_difference": 4.989292312629345e-10
+    },
+    {
+      "row": 394,
+      "original_id": "SRI-1052783-001.txt",
+      "max_difference": 4.4481162900675774e-08
+    },
+    {
+      "row": 395,
+      "original_id": "SRI-1052784-001.txt",
+      "max_difference": 4.838464685552851e-08
+    },
+    {
+      "row": 396,
+      "original_id": "SRI-1052785-001.txt",
+      "max_difference": 4.975522771566432e-10
+    },
+    {
+      "row": 397,
+      "original_id": "SRI-1052786-001.txt",
+      "max_difference": 4.967658474245434e-10
+    },
+    {
+      "row": 398,
+      "original_id": "SRI-1052787-001.txt",
+      "max_difference": 4.730176469834775e-08
+    },
+    {
+      "row": 399,
+      "original_id": "SRI-1052788-001.txt",
+      "max_difference": 4.537756105113945e-08
+    },
+    {
+      "row": 400,
+      "original_id": "SRI-1052789-001.txt",
+      "max_difference": 4.901411818241156e-08
+    },
+    {
+      "row": 401,
+      "original_id": "SRI-1052792-001.txt",
+      "max_difference": 3.8181449613609994e-08
+    },
+    {
+      "row": 402,
+      "original_id": "SRI-1052793-001.txt",
+      "max_difference": 4.199832230403764e-08
+    },
+    {
+      "row": 403,
+      "original_id": "SRI-1052795-001.txt",
+      "max_difference": 4.439460558044856e-08
+    },
+    {
+      "row": 404,
+      "original_id": "SRI-1052796-001.txt",
+      "max_difference": 4.9663442802661e-10
+    },
+    {
+      "row": 405,
+      "original_id": "SRI-1052797-001.txt",
+      "max_difference": 2.4993374799293824e-08
+    },
+    {
+      "row": 406,
+      "original_id": "SRI-1052798-001.txt",
+      "max_difference": 4.637833298341357e-08
+    },
+    {
+      "row": 407,
+      "original_id": "SRI-1052799-001.txt",
+      "max_difference": 4.778057208284917e-08
+    },
+    {
+      "row": 408,
+      "original_id": "SRI-1052800-001.txt",
+      "max_difference": 4.442690428235772e-08
+    },
+    {
+      "row": 409,
+      "original_id": "SRI-1052801-001.txt",
+      "max_difference": 4.819791125052901e-08
+    },
+    {
+      "row": 410,
+      "original_id": "SRI-1052802-001.txt",
+      "max_difference": 4.972916523016124e-10
+    },
+    {
+      "row": 411,
+      "original_id": "SRI-1052803-001.txt",
+      "max_difference": 1.8746658766890904e-08
+    },
+    {
+      "row": 412,
+      "original_id": "SRI-1052804-001.txt",
+      "max_difference": 4.2892068454164316e-08
+    },
+    {
+      "row": 413,
+      "original_id": "SRI-1052805-001.txt",
+      "max_difference": 3.767357476798332e-08
+    },
+    {
+      "row": 414,
+      "original_id": "SRI-1052806-001.txt",
+      "max_difference": 4.983140920496317e-08
+    },
+    {
+      "row": 415,
+      "original_id": "SRI-1052807-001.txt",
+      "max_difference": 4.686989657049997e-08
+    },
+    {
+      "row": 416,
+      "original_id": "SRI-1052808-001.txt",
+      "max_difference": 2.972856466630213e-08
+    },
+    {
+      "row": 417,
+      "original_id": "SRI-1052809-001.txt",
+      "max_difference": 4.5689409533885986e-08
+    },
+    {
+      "row": 418,
+      "original_id": "SRI-1052810-001.txt",
+      "max_difference": 1.9764723345819246e-08
+    },
+    {
+      "row": 419,
+      "original_id": "SRI-1052811-001.txt",
+      "max_difference": 4.899024591290072e-08
+    },
+    {
+      "row": 420,
+      "original_id": "SRI-1052812-001.txt",
+      "max_difference": 4.779004216211096e-08
+    },
+    {
+      "row": 421,
+      "original_id": "SRI-1052813-001.txt",
+      "max_difference": 2.454765093830942e-08
+    },
+    {
+      "row": 422,
+      "original_id": "SRI-1052814-001.txt",
+      "max_difference": 4.905073204707522e-08
+    },
+    {
+      "row": 423,
+      "original_id": "SRI-1052815-001.txt",
+      "max_difference": 4.7151903197141694e-08
+    },
+    {
+      "row": 424,
+      "original_id": "SRI-1052816-001.txt",
+      "max_difference": 4.7390341207905265e-08
+    },
+    {
+      "row": 425,
+      "original_id": "SRI-1052817-001.txt",
+      "max_difference": 4.8977506684534135e-08
+    },
+    {
+      "row": 426,
+      "original_id": "SRI-1052818-001.txt",
+      "max_difference": 4.90452969860775e-08
+    },
+    {
+      "row": 427,
+      "original_id": "SRI-1052819-001.txt",
+      "max_difference": 4.2264454656385756e-08
+    },
+    {
+      "row": 428,
+      "original_id": "SRI-1052821-001.txt",
+      "max_difference": 4.8701287449535806e-08
+    },
+    {
+      "row": 429,
+      "original_id": "SRI-1052822-001.txt",
+      "max_difference": 4.965050592886655e-10
+    },
+    {
+      "row": 430,
+      "original_id": "SRI-1052824-001.txt",
+      "max_difference": 4.991300289747258e-10
+    },
+    {
+      "row": 431,
+      "original_id": "SRI-1052825-001.txt",
+      "max_difference": 4.95482741641462e-10
+    },
+    {
+      "row": 432,
+      "original_id": "SRI-1052826-001.txt",
+      "max_difference": 4.983713303152726e-10
+    },
+    {
+      "row": 433,
+      "original_id": "SRI-1052827-001.txt",
+      "max_difference": 4.978247744591435e-10
+    },
+    {
+      "row": 434,
+      "original_id": "SRI-1052828-001.txt",
+      "max_difference": 4.875038428497902e-10
+    },
+    {
+      "row": 435,
+      "original_id": "SRI-1052829-001.txt",
+      "max_difference": 4.683234475837627e-08
+    },
+    {
+      "row": 436,
+      "original_id": "SRI-1052830-001.txt",
+      "max_difference": 4.721694099851906e-08
+    },
+    {
+      "row": 437,
+      "original_id": "SRI-1052831-001.txt",
+      "max_difference": 3.879373022155192e-08
+    },
+    {
+      "row": 438,
+      "original_id": "SRI-1052832-001.txt",
+      "max_difference": 4.334013328353059e-08
+    },
+    {
+      "row": 439,
+      "original_id": "SRI-1052833-001.txt",
+      "max_difference": 2.8434680245432065e-08
+    },
+    {
+      "row": 440,
+      "original_id": "SRI-1052834-001.txt",
+      "max_difference": 2.9826335666772097e-08
+    },
+    {
+      "row": 441,
+      "original_id": "SRI-1052835-001.txt",
+      "max_difference": 2.6908213134834672e-08
+    },
+    {
+      "row": 442,
+      "original_id": "SRI-1052836-001.txt",
+      "max_difference": 4.927593430280395e-08
+    },
+    {
+      "row": 443,
+      "original_id": "SRI-1052838-001.txt",
+      "max_difference": 4.405528589405559e-08
+    },
+    {
+      "row": 444,
+      "original_id": "SRI-1052840-001.txt",
+      "max_difference": 4.662155664066222e-08
+    },
+    {
+      "row": 445,
+      "original_id": "SRI-1052841-001.txt",
+      "max_difference": 4.7795071673843725e-08
+    },
+    {
+      "row": 446,
+      "original_id": "SRI-1052842-001.txt",
+      "max_difference": 1.055137922327648e-08
+    },
+    {
+      "row": 447,
+      "original_id": "SRI-1052843-001.txt",
+      "max_difference": 4.792350700365223e-08
+    },
+    {
+      "row": 448,
+      "original_id": "SRI-1052844-001.txt",
+      "max_difference": 3.347874161251964e-08
+    },
+    {
+      "row": 449,
+      "original_id": "SRI-1052845-001.txt",
+      "max_difference": 3.925632429137441e-08
+    },
+    {
+      "row": 450,
+      "original_id": "SRI-1052846-001.txt",
+      "max_difference": 4.886031579331984e-10
+    },
+    {
+      "row": 451,
+      "original_id": "SRI-1052849-001.txt",
+      "max_difference": 4.6996930164688e-08
+    },
+    {
+      "row": 452,
+      "original_id": "SRI-1052851-001.txt",
+      "max_difference": 4.424131627057016e-08
+    },
+    {
+      "row": 453,
+      "original_id": "SRI-1052852-001.txt",
+      "max_difference": 4.403076470876511e-08
+    },
+    {
+      "row": 454,
+      "original_id": "SRI-1052853-001.txt",
+      "max_difference": 4.938719717037553e-08
+    },
+    {
+      "row": 455,
+      "original_id": "SRI-1052854-001.txt",
+      "max_difference": 4.610340750295762e-08
+    },
+    {
+      "row": 456,
+      "original_id": "SRI-1052855-001.txt",
+      "max_difference": 4.948305550991146e-08
+    },
+    {
+      "row": 457,
+      "original_id": "SRI-1052856-001.txt",
+      "max_difference": 4.5967796879613785e-08
+    },
+    {
+      "row": 458,
+      "original_id": "SRI-1052857-001.txt",
+      "max_difference": 1.6151551242293838e-08
+    },
+    {
+      "row": 459,
+      "original_id": "SRI-1052858-001.txt",
+      "max_difference": 4.806212396810312e-08
+    },
+    {
+      "row": 460,
+      "original_id": "SRI-1052859-001.txt",
+      "max_difference": 1.7434498466025274e-08
+    },
+    {
+      "row": 461,
+      "original_id": "SRI-1052860-001.txt",
+      "max_difference": 3.2153140532660204e-08
+    },
+    {
+      "row": 462,
+      "original_id": "SRI-1052861-001.txt",
+      "max_difference": 3.7665691168882096e-08
+    },
+    {
+      "row": 463,
+      "original_id": "SRI-1052862-001.txt",
+      "max_difference": 3.231021628750193e-08
+    },
+    {
+      "row": 464,
+      "original_id": "SRI-1052863-001.txt",
+      "max_difference": 4.204628333560382e-08
+    },
+    {
+      "row": 465,
+      "original_id": "SRI-1052864-001.txt",
+      "max_difference": 4.9904420810242584e-08
+    },
+    {
+      "row": 466,
+      "original_id": "SRI-1052865-001.txt",
+      "max_difference": 4.9666552161189027e-08
+    },
+    {
+      "row": 467,
+      "original_id": "SRI-1052866-001.txt",
+      "max_difference": 4.99637942130704e-10
+    },
+    {
+      "row": 468,
+      "original_id": "SRI-1052867-001.txt",
+      "max_difference": 4.061637355658458e-08
+    },
+    {
+      "row": 469,
+      "original_id": "SRI-1052868-001.txt",
+      "max_difference": 4.9299014455976174e-08
+    },
+    {
+      "row": 470,
+      "original_id": "SRI-1052869-001.txt",
+      "max_difference": 4.298867148488098e-08
+    },
+    {
+      "row": 471,
+      "original_id": "SRI-1052870-001.txt",
+      "max_difference": 4.997826597019639e-10
+    },
+    {
+      "row": 472,
+      "original_id": "SRI-1052871-001.txt",
+      "max_difference": 4.611461581647755e-08
+    },
+    {
+      "row": 473,
+      "original_id": "SRI-1052872-001.txt",
+      "max_difference": 4.0611821511998044e-08
+    },
+    {
+      "row": 474,
+      "original_id": "SRI-1052874-001.txt",
+      "max_difference": 4.3925775587117205e-08
+    },
+    {
+      "row": 475,
+      "original_id": "SRI-1052875-001.txt",
+      "max_difference": 4.0677464145233834e-08
+    },
+    {
+      "row": 476,
+      "original_id": "SRI-1052876-001.txt",
+      "max_difference": 4.8427183376637716e-08
+    },
+    {
+      "row": 477,
+      "original_id": "SRI-1052877-001.txt",
+      "max_difference": 4.721338323712698e-08
+    },
+    {
+      "row": 478,
+      "original_id": "SRI-1052879-001.txt",
+      "max_difference": 4.727507733551109e-08
+    },
+    {
+      "row": 479,
+      "original_id": "SRI-1052880-001.txt",
+      "max_difference": 4.68164755148214e-09
+    },
+    {
+      "row": 480,
+      "original_id": "SRI-1052881-001.txt",
+      "max_difference": 3.129690421031046e-08
+    },
+    {
+      "row": 481,
+      "original_id": "SRI-1052882-001.txt",
+      "max_difference": 5.0227250404069786e-09
+    },
+    {
+      "row": 482,
+      "original_id": "SRI-1052883-001.txt",
+      "max_difference": 4.822288946302732e-08
+    },
+    {
+      "row": 483,
+      "original_id": "SRI-1052884-001.txt",
+      "max_difference": 4.8707947342760546e-08
+    },
+    {
+      "row": 484,
+      "original_id": "SRI-1052886-001.txt",
+      "max_difference": 2.547352893166987e-08
+    },
+    {
+      "row": 485,
+      "original_id": "SRI-1052887-001.txt",
+      "max_difference": 4.7538585326600304e-08
+    },
+    {
+      "row": 486,
+      "original_id": "SRI-1052888-001.txt",
+      "max_difference": 4.9322316173912545e-08
+    },
+    {
+      "row": 487,
+      "original_id": "SRI-1052889-001.txt",
+      "max_difference": 4.927378921548708e-10
+    },
+    {
+      "row": 488,
+      "original_id": "SRI-1052890-001.txt",
+      "max_difference": 4.5601827739706244e-08
+    },
+    {
+      "row": 489,
+      "original_id": "SRI-1052891-001.txt",
+      "max_difference": 4.987429897242504e-10
+    },
+    {
+      "row": 490,
+      "original_id": "SRI-1052892-001.txt",
+      "max_difference": 4.723448211099571e-08
+    },
+    {
+      "row": 491,
+      "original_id": "SRI-1052894-001.txt",
+      "max_difference": 4.3224815242627276e-08
+    },
+    {
+      "row": 492,
+      "original_id": "SRI-1052895-001.txt",
+      "max_difference": 4.004344455988717e-09
+    },
+    {
+      "row": 493,
+      "original_id": "SRI-1052896-001.txt",
+      "max_difference": 4.984220700218983e-08
+    },
+    {
+      "row": 494,
+      "original_id": "SRI-1052898-001.txt",
+      "max_difference": 2.7799557726076595e-08
+    },
+    {
+      "row": 495,
+      "original_id": "SRI-1052899-001.txt",
+      "max_difference": 4.953271126595382e-10
+    },
+    {
+      "row": 496,
+      "original_id": "SRI-1052901-001.txt",
+      "max_difference": 4.9159472966840505e-08
+    },
+    {
+      "row": 497,
+      "original_id": "SRI-1052902-001.txt",
+      "max_difference": 4.344533316114833e-08
+    },
+    {
+      "row": 498,
+      "original_id": "SRI-1052903-001.txt",
+      "max_difference": 4.6451589052237305e-08
+    },
+    {
+      "row": 499,
+      "original_id": "SRI-1052904-001.txt",
+      "max_difference": 3.975118718126938e-08
+    },
+    {
+      "row": 500,
+      "original_id": "SRI-1052905-001.txt",
+      "max_difference": 2.7439231701538577e-09
+    },
+    {
+      "row": 501,
+      "original_id": "SRI-1052906-001.txt",
+      "max_difference": 4.798662729915519e-08
+    },
+    {
+      "row": 502,
+      "original_id": "SRI-1052907-001.txt",
+      "max_difference": 4.9340173142244396e-08
+    },
+    {
+      "row": 503,
+      "original_id": "SRI-1052908-001.txt",
+      "max_difference": 4.597280522369504e-08
+    },
+    {
+      "row": 504,
+      "original_id": "SRI-1052909-001.txt",
+      "max_difference": 4.887624816050755e-08
+    },
+    {
+      "row": 505,
+      "original_id": "SRI-1052910-001.txt",
+      "max_difference": 4.869684499315041e-08
+    },
+    {
+      "row": 506,
+      "original_id": "SRI-1052911-001.txt",
+      "max_difference": 4.925334615797552e-10
+    },
+    {
+      "row": 507,
+      "original_id": "SRI-1052912-001.txt",
+      "max_difference": 3.415752415261173e-08
+    },
+    {
+      "row": 508,
+      "original_id": "SRI-1052913-001.txt",
+      "max_difference": 3.51278913942815e-08
+    },
+    {
+      "row": 509,
+      "original_id": "SRI-1052914-001.txt",
+      "max_difference": 4.879212533342222e-08
+    },
+    {
+      "row": 510,
+      "original_id": "SRI-1052915-001.txt",
+      "max_difference": 1.2923344729925024e-08
+    },
+    {
+      "row": 511,
+      "original_id": "SRI-1052916-001.txt",
+      "max_difference": 4.823932689311869e-08
+    },
+    {
+      "row": 512,
+      "original_id": "SRI-1052917-001.txt",
+      "max_difference": 4.9603868710772e-08
+    },
+    {
+      "row": 513,
+      "original_id": "SRI-1052918-001.txt",
+      "max_difference": 4.9286628380453197e-08
+    },
+    {
+      "row": 514,
+      "original_id": "SRI-1052919-001.txt",
+      "max_difference": 2.33459096346723e-08
+    },
+    {
+      "row": 515,
+      "original_id": "SRI-1052920-001.txt",
+      "max_difference": 4.942663921377044e-10
+    },
+    {
+      "row": 516,
+      "original_id": "SRI-1052921-001.txt",
+      "max_difference": 4.814730605089894e-08
+    },
+    {
+      "row": 517,
+      "original_id": "SRI-1052922-001.txt",
+      "max_difference": 4.829300165682868e-08
+    },
+    {
+      "row": 518,
+      "original_id": "SRI-1052923-001.txt",
+      "max_difference": 4.8137654619585986e-08
+    },
+    {
+      "row": 519,
+      "original_id": "SRI-1052924-001.txt",
+      "max_difference": 4.8546701464335354e-08
+    },
+    {
+      "row": 520,
+      "original_id": "SRI-1052925-001.txt",
+      "max_difference": 4.9867922758266054e-08
+    },
+    {
+      "row": 521,
+      "original_id": "SRI-1052926-001.txt",
+      "max_difference": 4.4622955702053e-08
+    },
+    {
+      "row": 522,
+      "original_id": "SRI-1052927-001.txt",
+      "max_difference": 4.993005106590509e-10
+    },
+    {
+      "row": 523,
+      "original_id": "SRI-1052928-001.txt",
+      "max_difference": 4.989356480050722e-10
+    },
+    {
+      "row": 524,
+      "original_id": "SRI-1052929-001.txt",
+      "max_difference": 4.744743708835124e-08
+    },
+    {
+      "row": 525,
+      "original_id": "SRI-1052930-001.txt",
+      "max_difference": 4.642912624979942e-08
+    },
+    {
+      "row": 526,
+      "original_id": "SRI-1052931-001.txt",
+      "max_difference": 4.97774335639356e-10
+    },
+    {
+      "row": 527,
+      "original_id": "SRI-1052933-001.txt",
+      "max_difference": 4.987271446516006e-10
+    },
+    {
+      "row": 528,
+      "original_id": "SRI-1052934-001.txt",
+      "max_difference": 4.331455716487099e-08
+    },
+    {
+      "row": 529,
+      "original_id": "SRI-1052935-001.txt",
+      "max_difference": 4.255276934112082e-08
+    },
+    {
+      "row": 530,
+      "original_id": "SRI-1052936-001.txt",
+      "max_difference": 4.975682747765386e-10
+    },
+    {
+      "row": 531,
+      "original_id": "SRI-1052937-001.txt",
+      "max_difference": 4.221016508201706e-08
+    },
+    {
+      "row": 532,
+      "original_id": "SRI-1052938-001.txt",
+      "max_difference": 4.9781251849467106e-08
+    },
+    {
+      "row": 533,
+      "original_id": "SRI-1052939-001.txt",
+      "max_difference": 2.4303521076976965e-08
+    },
+    {
+      "row": 534,
+      "original_id": "SRI-1052940-001.txt",
+      "max_difference": 3.077281960207987e-08
+    },
+    {
+      "row": 535,
+      "original_id": "SRI-1052941-001.txt",
+      "max_difference": 4.9310371078947843e-08
+    },
+    {
+      "row": 536,
+      "original_id": "SRI-1052942-001.txt",
+      "max_difference": 4.992382063306877e-10
+    },
+    {
+      "row": 537,
+      "original_id": "SRI-1052943-001.txt",
+      "max_difference": 4.5454551234058727e-10
+    },
+    {
+      "row": 538,
+      "original_id": "SRI-1052944-001.txt",
+      "max_difference": 4.972992018181799e-10
+    },
+    {
+      "row": 539,
+      "original_id": "SRI-1052945-001.txt",
+      "max_difference": 4.446277131471923e-08
+    },
+    {
+      "row": 540,
+      "original_id": "SRI-1052946-001.txt",
+      "max_difference": 3.57267444263523e-08
+    },
+    {
+      "row": 541,
+      "original_id": "SRI-1052947-001.txt",
+      "max_difference": 4.8580853549581816e-08
+    },
+    {
+      "row": 542,
+      "original_id": "SRI-1052948-001.txt",
+      "max_difference": 4.6026635166802193e-08
+    },
+    {
+      "row": 543,
+      "original_id": "SRI-1052949-001.txt",
+      "max_difference": 4.410163339382757e-08
+    },
+    {
+      "row": 544,
+      "original_id": "SRI-1052950-001.txt",
+      "max_difference": 4.979054391007764e-10
+    },
+    {
+      "row": 545,
+      "original_id": "SRI-1052952-001.txt",
+      "max_difference": 4.792770735007599e-08
+    },
+    {
+      "row": 546,
+      "original_id": "SRI-1052953-001.txt",
+      "max_difference": 4.553879381590897e-08
+    },
+    {
+      "row": 547,
+      "original_id": "SRI-1052954-001.txt",
+      "max_difference": 6.027868613971306e-10
+    },
+    {
+      "row": 548,
+      "original_id": "SRI-1052955-001.txt",
+      "max_difference": 3.780608323268082e-08
+    },
+    {
+      "row": 549,
+      "original_id": "SRI-1052956-001.txt",
+      "max_difference": 3.8938033831398375e-08
+    },
+    {
+      "row": 550,
+      "original_id": "SRI-1052958-001.txt",
+      "max_difference": 4.98575514207289e-10
+    },
+    {
+      "row": 551,
+      "original_id": "SRI-1052959-001.txt",
+      "max_difference": 4.967485385882266e-08
+    },
+    {
+      "row": 552,
+      "original_id": "SRI-1052962-001.txt",
+      "max_difference": 4.6430531606397657e-08
+    },
+    {
+      "row": 553,
+      "original_id": "SRI-1052963-001.txt",
+      "max_difference": 4.896031835616393e-08
+    },
+    {
+      "row": 554,
+      "original_id": "SRI-1052964-001.txt",
+      "max_difference": 4.947536038630684e-08
+    },
+    {
+      "row": 555,
+      "original_id": "SRI-1052965-001.txt",
+      "max_difference": 4.75626936171866e-08
+    },
+    {
+      "row": 556,
+      "original_id": "SRI-1052966-001.txt",
+      "max_difference": 4.8728324449114546e-08
+    },
+    {
+      "row": 557,
+      "original_id": "SRI-1052967-001.txt",
+      "max_difference": 4.749040582600599e-08
+    },
+    {
+      "row": 558,
+      "original_id": "SRI-1052968-001.txt",
+      "max_difference": 4.771422530858323e-08
+    },
+    {
+      "row": 559,
+      "original_id": "SRI-1052969-001.txt",
+      "max_difference": 4.956398416329792e-08
+    },
+    {
+      "row": 560,
+      "original_id": "SRI-1052970-001.txt",
+      "max_difference": 2.2474990209688417e-08
+    },
+    {
+      "row": 561,
+      "original_id": "SRI-1052971-001.txt",
+      "max_difference": 4.1523369594836414e-08
+    },
+    {
+      "row": 562,
+      "original_id": "SRI-1052972-001.txt",
+      "max_difference": 2.3867753936993898e-09
+    },
+    {
+      "row": 563,
+      "original_id": "SRI-1052973-001.txt",
+      "max_difference": 4.8225094061835516e-08
+    },
+    {
+      "row": 564,
+      "original_id": "SRI-1052974-001.txt",
+      "max_difference": 4.949337502335727e-10
+    },
+    {
+      "row": 565,
+      "original_id": "SRI-1052975-001.txt",
+      "max_difference": 4.988602864131053e-10
+    },
+    {
+      "row": 566,
+      "original_id": "SRI-1052976-001.txt",
+      "max_difference": 3.628552738494989e-08
+    },
+    {
+      "row": 567,
+      "original_id": "SRI-1052977-001.txt",
+      "max_difference": 1.6736053288937767e-09
+    },
+    {
+      "row": 568,
+      "original_id": "SRI-1052978-001.txt",
+      "max_difference": 3.6139877901482007e-09
+    },
+    {
+      "row": 569,
+      "original_id": "SRI-1052979-001.txt",
+      "max_difference": 4.996088542874588e-10
+    },
+    {
+      "row": 570,
+      "original_id": "SRI-1052980-001.txt",
+      "max_difference": 4.406260632867866e-08
+    },
+    {
+      "row": 571,
+      "original_id": "SRI-1052981-001.txt",
+      "max_difference": 1.865521125284672e-08
+    },
+    {
+      "row": 572,
+      "original_id": "SRI-1052982-001.txt",
+      "max_difference": 4.676278200507289e-08
+    },
+    {
+      "row": 573,
+      "original_id": "SRI-1052983-001.txt",
+      "max_difference": 4.980562479716473e-08
+    },
+    {
+      "row": 574,
+      "original_id": "SRI-1052984-001.txt",
+      "max_difference": 4.952434018434815e-10
+    },
+    {
+      "row": 575,
+      "original_id": "SRI-1052985-001.txt",
+      "max_difference": 3.676268861454567e-08
+    },
+    {
+      "row": 576,
+      "original_id": "SRI-1052986-001.txt",
+      "max_difference": 4.337092998509104e-08
+    },
+    {
+      "row": 577,
+      "original_id": "SRI-1052987-001.txt",
+      "max_difference": 4.442544995781749e-08
+    },
+    {
+      "row": 578,
+      "original_id": "SRI-1052988-001.txt",
+      "max_difference": 4.4662014088894656e-08
+    },
+    {
+      "row": 579,
+      "original_id": "SRI-1052990-001.txt",
+      "max_difference": 4.5652558573627973e-08
+    },
+    {
+      "row": 580,
+      "original_id": "SRI-1052991-001.txt",
+      "max_difference": 4.785902361398889e-08
+    },
+    {
+      "row": 581,
+      "original_id": "SRI-1052992-001.txt",
+      "max_difference": 3.510854454069116e-08
+    },
+    {
+      "row": 582,
+      "original_id": "SRI-1052993-001.txt",
+      "max_difference": 4.615974408233431e-08
+    },
+    {
+      "row": 583,
+      "original_id": "SRI-1052994-001.txt",
+      "max_difference": 4.976432208684872e-08
+    },
+    {
+      "row": 584,
+      "original_id": "SRI-1052996-001.txt",
+      "max_difference": 4.919245873900814e-08
+    },
+    {
+      "row": 585,
+      "original_id": "SRI-1052997-001.txt",
+      "max_difference": 4.848484946862186e-10
+    },
+    {
+      "row": 586,
+      "original_id": "SRI-1052998-001.txt",
+      "max_difference": 4.321670654916206e-08
+    },
+    {
+      "row": 587,
+      "original_id": "SRI-1052999-001.txt",
+      "max_difference": 3.686139653646806e-08
+    },
+    {
+      "row": 588,
+      "original_id": "SRI-1053000-001.txt",
+      "max_difference": 3.363634578760512e-08
+    },
+    {
+      "row": 589,
+      "original_id": "SRI-1053001-001.txt",
+      "max_difference": 4.3535846938414565e-08
+    },
+    {
+      "row": 590,
+      "original_id": "SRI-1053002-001.txt",
+      "max_difference": 4.756074264438315e-08
+    },
+    {
+      "row": 591,
+      "original_id": "SRI-1053003-001.txt",
+      "max_difference": 4.660337872004056e-08
+    },
+    {
+      "row": 592,
+      "original_id": "SRI-1053004-001.txt",
+      "max_difference": 4.8534390912499344e-08
+    },
+    {
+      "row": 593,
+      "original_id": "SRI-1053005-001.txt",
+      "max_difference": 4.857531041249939e-08
+    },
+    {
+      "row": 594,
+      "original_id": "SRI-1053006-001.txt",
+      "max_difference": 4.99307566429949e-10
+    },
+    {
+      "row": 595,
+      "original_id": "SRI-1053007-001.txt",
+      "max_difference": 4.987102397713272e-10
+    },
+    {
+      "row": 596,
+      "original_id": "SRI-1053008-001.txt",
+      "max_difference": 4.92075713509621e-10
+    },
+    {
+      "row": 597,
+      "original_id": "SRI-1053009-001.txt",
+      "max_difference": 4.996908442578274e-10
+    },
+    {
+      "row": 598,
+      "original_id": "SRI-1053010-001.txt",
+      "max_difference": 4.8694640834948425e-08
+    },
+    {
+      "row": 599,
+      "original_id": "SRI-1053011-001.txt",
+      "max_difference": 4.999613500977773e-10
+    },
+    {
+      "row": 600,
+      "original_id": "SRI-1053012-001.txt",
+      "max_difference": 4.281048329835788e-08
+    },
+    {
+      "row": 601,
+      "original_id": "SRI-1053013-001.txt",
+      "max_difference": 4.774511351270062e-08
+    },
+    {
+      "row": 602,
+      "original_id": "SRI-1053014-001.txt",
+      "max_difference": 4.592659792855021e-08
+    },
+    {
+      "row": 603,
+      "original_id": "SRI-1053015-001.txt",
+      "max_difference": 4.556746177844409e-08
+    },
+    {
+      "row": 604,
+      "original_id": "SRI-1053016-001.txt",
+      "max_difference": 4.7992648656572314e-08
+    },
+    {
+      "row": 605,
+      "original_id": "SRI-1053017-001.txt",
+      "max_difference": 4.988024706817362e-10
+    },
+    {
+      "row": 606,
+      "original_id": "SRI-1053018-001.txt",
+      "max_difference": 4.2974702834500437e-08
+    },
+    {
+      "row": 607,
+      "original_id": "SRI-1053019-001.txt",
+      "max_difference": 4.8316034738414906e-08
+    },
+    {
+      "row": 608,
+      "original_id": "SRI-1053020-001.txt",
+      "max_difference": 4.876153656641568e-08
+    },
+    {
+      "row": 609,
+      "original_id": "SRI-1053021-001.txt",
+      "max_difference": 4.9193809128866936e-08
+    },
+    {
+      "row": 610,
+      "original_id": "SRI-1053023-001.txt",
+      "max_difference": 4.270458976849187e-08
+    },
+    {
+      "row": 611,
+      "original_id": "SRI-1053025-001.txt",
+      "max_difference": 4.437866561339326e-08
+    },
+    {
+      "row": 612,
+      "original_id": "SRI-1053026-001.txt",
+      "max_difference": 4.998666480737768e-10
+    },
+    {
+      "row": 613,
+      "original_id": "SRI-1053027-001.txt",
+      "max_difference": 3.4844353048111816e-08
+    },
+    {
+      "row": 614,
+      "original_id": "SRI-1053028-001.txt",
+      "max_difference": 4.7237753297113105e-08
+    },
+    {
+      "row": 615,
+      "original_id": "SRI-1053029-001.txt",
+      "max_difference": 4.944687992392005e-10
+    },
+    {
+      "row": 616,
+      "original_id": "SRI-1053030-001.txt",
+      "max_difference": 4.523009670352176e-08
+    },
+    {
+      "row": 617,
+      "original_id": "SRI-1053031-001.txt",
+      "max_difference": 3.897110641296411e-08
+    },
+    {
+      "row": 618,
+      "original_id": "SRI-1053032-001.txt",
+      "max_difference": 4.16433449009206e-08
+    },
+    {
+      "row": 619,
+      "original_id": "SRI-1053033-001.txt",
+      "max_difference": 4.991039583577064e-10
+    },
+    {
+      "row": 620,
+      "original_id": "SRI-1053034-001.txt",
+      "max_difference": 6.987386985155095e-09
+    },
+    {
+      "row": 621,
+      "original_id": "SRI-1053035-001.txt",
+      "max_difference": 4.984713117334096e-08
+    },
+    {
+      "row": 622,
+      "original_id": "SRI-1053036-001.txt",
+      "max_difference": 4.614996767615502e-08
+    },
+    {
+      "row": 623,
+      "original_id": "SRI-1053038-001.txt",
+      "max_difference": 2.9375951293760124e-08
+    },
+    {
+      "row": 624,
+      "original_id": "SRI-1053039-001.txt",
+      "max_difference": 3.33333360913457e-10
+    },
+    {
+      "row": 625,
+      "original_id": "SRI-1053040-001.txt",
+      "max_difference": 4.6194861851676775e-08
+    },
+    {
+      "row": 626,
+      "original_id": "SRI-1053041-001.txt",
+      "max_difference": 4.8506401137979414e-08
+    },
+    {
+      "row": 627,
+      "original_id": "SRI-1053042-001.txt",
+      "max_difference": 4.905451066972654e-08
+    },
+    {
+      "row": 628,
+      "original_id": "SRI-1053043-001.txt",
+      "max_difference": 4.951272586373179e-10
+    },
+    {
+      "row": 629,
+      "original_id": "SRI-1053044-001.txt",
+      "max_difference": 4.9976974833023085e-08
+    },
+    {
+      "row": 630,
+      "original_id": "SRI-1053045-001.txt",
+      "max_difference": 4.966886901769385e-10
+    },
+    {
+      "row": 631,
+      "original_id": "SRI-1053046-001.txt",
+      "max_difference": 1.8768859384428807e-08
+    },
+    {
+      "row": 632,
+      "original_id": "SRI-1053047-001.txt",
+      "max_difference": 3.247110811313133e-08
+    },
+    {
+      "row": 633,
+      "original_id": "SRI-1053048-001.txt",
+      "max_difference": 1.480992284317857e-08
+    },
+    {
+      "row": 634,
+      "original_id": "SRI-1053049-001.txt",
+      "max_difference": 4.899329743322391e-08
+    },
+    {
+      "row": 635,
+      "original_id": "SRI-1053050-001.txt",
+      "max_difference": 4.752275127123352e-08
+    },
+    {
+      "row": 636,
+      "original_id": "SRI-1053051-001.txt",
+      "max_difference": 3.958483227308135e-08
+    },
+    {
+      "row": 637,
+      "original_id": "SRI-1053053-001.txt",
+      "max_difference": 2.9571702891491747e-08
+    },
+    {
+      "row": 638,
+      "original_id": "SRI-1053054-001.txt",
+      "max_difference": 5.386227531752139e-09
+    },
+    {
+      "row": 639,
+      "original_id": "SRI-1053055-001.txt",
+      "max_difference": 4.184189286776587e-08
+    },
+    {
+      "row": 640,
+      "original_id": "SRI-1053056-001.txt",
+      "max_difference": 4.8731456859501935e-08
+    },
+    {
+      "row": 641,
+      "original_id": "SRI-1053057-001.txt",
+      "max_difference": 4.50697450697494e-08
+    },
+    {
+      "row": 642,
+      "original_id": "SRI-1053058-001.txt",
+      "max_difference": 4.963814394243204e-10
+    },
+    {
+      "row": 643,
+      "original_id": "SRI-1053059-001.txt",
+      "max_difference": 3.7504711647190665e-08
+    },
+    {
+      "row": 644,
+      "original_id": "SRI-1053060-001.txt",
+      "max_difference": 4.8526077097503745e-08
+    },
+    {
+      "row": 645,
+      "original_id": "SRI-1053061-001.txt",
+      "max_difference": 4.997176006327209e-10
+    },
+    {
+      "row": 646,
+      "original_id": "SRI-1053062-001.txt",
+      "max_difference": 4.976922060237476e-10
+    },
+    {
+      "row": 647,
+      "original_id": "SRI-1053063-001.txt",
+      "max_difference": 1.5652449994712613e-08
+    },
+    {
+      "row": 648,
+      "original_id": "SRI-1053064-001.txt",
+      "max_difference": 3.42783096207784e-08
+    },
+    {
+      "row": 649,
+      "original_id": "SRI-1053066-001.txt",
+      "max_difference": 4.961197325882409e-08
+    },
+    {
+      "row": 650,
+      "original_id": "SRI-1053067-001.txt",
+      "max_difference": 4.573418981272269e-08
+    },
+    {
+      "row": 651,
+      "original_id": "SRI-1053068-001.txt",
+      "max_difference": 4.977020187328646e-08
+    },
+    {
+      "row": 652,
+      "original_id": "SRI-1053069-001.txt",
+      "max_difference": 3.7003428367507235e-08
+    },
+    {
+      "row": 653,
+      "original_id": "SRI-1053070-001.txt",
+      "max_difference": 4.7830396370814434e-08
+    },
+    {
+      "row": 654,
+      "original_id": "SRI-1053071-001.txt",
+      "max_difference": 4.971125320196376e-10
+    },
+    {
+      "row": 655,
+      "original_id": "SRI-1053072-001.txt",
+      "max_difference": 3.8728452334081255e-08
+    },
+    {
+      "row": 656,
+      "original_id": "SRI-1053073-001.txt",
+      "max_difference": 4.903593217602973e-08
+    },
+    {
+      "row": 657,
+      "original_id": "SRI-1053074-001.txt",
+      "max_difference": 4.898066498431415e-08
+    },
+    {
+      "row": 658,
+      "original_id": "SRI-1053075-001.txt",
+      "max_difference": 2.5717907626223607e-08
+    },
+    {
+      "row": 659,
+      "original_id": "SRI-1053077-001.txt",
+      "max_difference": 4.777213633569221e-08
+    },
+    {
+      "row": 660,
+      "original_id": "SRI-1053080-001.txt",
+      "max_difference": 4.988158133073517e-10
+    },
+    {
+      "row": 661,
+      "original_id": "SRI-1053081-001.txt",
+      "max_difference": 4.363074788213964e-08
+    },
+    {
+      "row": 662,
+      "original_id": "SRI-1053082-001.txt",
+      "max_difference": 1.5833245953388226e-08
+    },
+    {
+      "row": 663,
+      "original_id": "SRI-1053083-001.txt",
+      "max_difference": 4.791598293402805e-08
+    },
+    {
+      "row": 664,
+      "original_id": "SRI-1053084-001.txt",
+      "max_difference": 4.922124929862548e-10
+    },
+    {
+      "row": 665,
+      "original_id": "SRI-1053085-001.txt",
+      "max_difference": 4.36640631018361e-08
+    },
+    {
+      "row": 666,
+      "original_id": "SRI-1053086-001.txt",
+      "max_difference": 2.5426511072361104e-08
+    },
+    {
+      "row": 667,
+      "original_id": "SRI-1053087-001.txt",
+      "max_difference": 4.779039206654256e-08
+    },
+    {
+      "row": 668,
+      "original_id": "SRI-1053088-001.txt",
+      "max_difference": 4.867699451583654e-08
+    },
+    {
+      "row": 669,
+      "original_id": "SRI-1053089-001.txt",
+      "max_difference": 4.989985317310763e-10
+    },
+    {
+      "row": 670,
+      "original_id": "SRI-1053090-001.txt",
+      "max_difference": 4.987958756967614e-10
+    },
+    {
+      "row": 671,
+      "original_id": "SRI-1053091-001.txt",
+      "max_difference": 4.9794353870420466e-08
+    },
+    {
+      "row": 672,
+      "original_id": "SRI-1053092-001.txt",
+      "max_difference": 4.973738088054347e-10
+    },
+    {
+      "row": 673,
+      "original_id": "SRI-1053093-001.txt",
+      "max_difference": 4.6720487470936135e-08
+    },
+    {
+      "row": 674,
+      "original_id": "SRI-1053094-001.txt",
+      "max_difference": 4.869292045327168e-08
+    },
+    {
+      "row": 675,
+      "original_id": "SRI-1053095-001.txt",
+      "max_difference": 4.859012538994381e-08
+    },
+    {
+      "row": 676,
+      "original_id": "SRI-1053096-001.txt",
+      "max_difference": 4.993735217007078e-10
+    },
+    {
+      "row": 677,
+      "original_id": "SRI-1053097-001.txt",
+      "max_difference": 4.996482634636579e-08
+    },
+    {
+      "row": 678,
+      "original_id": "SRI-1053098-001.txt",
+      "max_difference": 4.91987812236921e-08
+    },
+    {
+      "row": 679,
+      "original_id": "SRI-1053099-001.txt",
+      "max_difference": 4.980757473127539e-10
+    },
+    {
+      "row": 680,
+      "original_id": "SRI-1053100-001.txt",
+      "max_difference": 4.947545406309571e-09
+    },
+    {
+      "row": 681,
+      "original_id": "SRI-1053101-001.txt",
+      "max_difference": 4.292769900505577e-08
+    },
+    {
+      "row": 682,
+      "original_id": "SRI-1053102-001.txt",
+      "max_difference": 5.641110559142376e-09
+    },
+    {
+      "row": 683,
+      "original_id": "SRI-1053103-001.txt",
+      "max_difference": 4.978932266475056e-10
+    },
+    {
+      "row": 684,
+      "original_id": "SRI-1053104-001.txt",
+      "max_difference": 4.985034607329908e-10
+    },
+    {
+      "row": 685,
+      "original_id": "SRI-1053105-001.txt",
+      "max_difference": 4.589001988541811e-08
+    },
+    {
+      "row": 686,
+      "original_id": "SRI-1053106-001.txt",
+      "max_difference": 3.373966434220394e-08
+    },
+    {
+      "row": 687,
+      "original_id": "SRI-1053107-001.txt",
+      "max_difference": 3.934864364393408e-08
+    },
+    {
+      "row": 688,
+      "original_id": "SRI-1053108-001.txt",
+      "max_difference": 2.5378359775314412e-08
+    },
+    {
+      "row": 689,
+      "original_id": "SRI-1053109-001.txt",
+      "max_difference": 4.775298198674786e-08
+    },
+    {
+      "row": 690,
+      "original_id": "SRI-1053110-001.txt",
+      "max_difference": 4.051649375261279e-08
+    },
+    {
+      "row": 691,
+      "original_id": "SRI-1053111-001.txt",
+      "max_difference": 4.668288319253797e-08
+    },
+    {
+      "row": 692,
+      "original_id": "SRI-1053112-001.txt",
+      "max_difference": 3.2126354382593526e-08
+    },
+    {
+      "row": 693,
+      "original_id": "SRI-1053113-001.txt",
+      "max_difference": 3.0703216247329594e-08
+    },
+    {
+      "row": 694,
+      "original_id": "SRI-1053114-001.txt",
+      "max_difference": 4.6889133357779725e-08
+    },
+    {
+      "row": 695,
+      "original_id": "SRI-1053115-001.txt",
+      "max_difference": 4.8227471887731226e-08
+    },
+    {
+      "row": 696,
+      "original_id": "SRI-1053117-001.txt",
+      "max_difference": 3.9594934912916073e-08
+    },
+    {
+      "row": 697,
+      "original_id": "SRI-1053119-001.txt",
+      "max_difference": 3.3514744365436156e-08
+    },
+    {
+      "row": 698,
+      "original_id": "SRI-1053120-001.txt",
+      "max_difference": 4.075636875376849e-08
+    },
+    {
+      "row": 699,
+      "original_id": "SRI-1053121-001.txt",
+      "max_difference": 4.803567047819183e-08
+    },
+    {
+      "row": 700,
+      "original_id": "SRI-1053122-001.txt",
+      "max_difference": 4.2865594749947266e-08
+    },
+    {
+      "row": 701,
+      "original_id": "SRI-1053123-001.txt",
+      "max_difference": 4.90266762797416e-08
+    },
+    {
+      "row": 702,
+      "original_id": "SRI-1053124-001.txt",
+      "max_difference": 2.6393158721415666e-08
+    },
+    {
+      "row": 703,
+      "original_id": "SRI-1053125-001.txt",
+      "max_difference": 4.964389343402667e-10
+    },
+    {
+      "row": 704,
+      "original_id": "SRI-1053126-001.txt",
+      "max_difference": 4.871725935040746e-08
+    },
+    {
+      "row": 705,
+      "original_id": "SRI-1053127-001.txt",
+      "max_difference": 4.497206703911428e-08
+    },
+    {
+      "row": 706,
+      "original_id": "SRI-1053128-001.txt",
+      "max_difference": 4.8319454198862666e-08
+    },
+    {
+      "row": 707,
+      "original_id": "SRI-1053129-001.txt",
+      "max_difference": 1.277103729472001e-08
+    },
+    {
+      "row": 708,
+      "original_id": "SRI-1053130-001.txt",
+      "max_difference": 4.963762155306287e-08
+    },
+    {
+      "row": 709,
+      "original_id": "SRI-1053131-001.txt",
+      "max_difference": 4.969004315235424e-08
+    },
+    {
+      "row": 710,
+      "original_id": "SRI-1053132-001.txt",
+      "max_difference": 4.979272220234643e-10
+    },
+    {
+      "row": 711,
+      "original_id": "SRI-1053133-001.txt",
+      "max_difference": 4.6792673747596486e-08
+    },
+    {
+      "row": 712,
+      "original_id": "SRI-1053134-001.txt",
+      "max_difference": 2.8275881194713684e-08
+    },
+    {
+      "row": 713,
+      "original_id": "SRI-1053135-001.txt",
+      "max_difference": 4.689228261502224e-08
+    },
+    {
+      "row": 714,
+      "original_id": "SRI-1053136-001.txt",
+      "max_difference": 4.99983610069421e-10
+    },
+    {
+      "row": 715,
+      "original_id": "SRI-1053137-001.txt",
+      "max_difference": 4.761854987629839e-08
+    },
+    {
+      "row": 716,
+      "original_id": "SRI-1053138-001.txt",
+      "max_difference": 3.7988889084442545e-08
+    },
+    {
+      "row": 717,
+      "original_id": "SRI-1053139-001.txt",
+      "max_difference": 4.874334595725402e-08
+    },
+    {
+      "row": 718,
+      "original_id": "SRI-1053143-001.txt",
+      "max_difference": 4.995027134968577e-10
+    },
+    {
+      "row": 719,
+      "original_id": "SRI-1053144-001.txt",
+      "max_difference": 6.4662902261639044e-09
+    },
+    {
+      "row": 720,
+      "original_id": "SRI-1053145-001.txt",
+      "max_difference": 4.922842359450508e-10
+    },
+    {
+      "row": 721,
+      "original_id": "SRI-1053146-001.txt",
+      "max_difference": 2.7446216828099943e-08
+    },
+    {
+      "row": 722,
+      "original_id": "SRI-1053147-001.txt",
+      "max_difference": 4.997349756230562e-10
+    },
+    {
+      "row": 723,
+      "original_id": "SRI-1053148-001.txt",
+      "max_difference": 4.968316869025102e-10
+    },
+    {
+      "row": 724,
+      "original_id": "SRI-1053149-001.txt",
+      "max_difference": 4.9472454920189847e-08
+    },
+    {
+      "row": 725,
+      "original_id": "SRI-1053151-001.txt",
+      "max_difference": 4.965626652269142e-10
+    },
+    {
+      "row": 726,
+      "original_id": "SRI-1053152-001.txt",
+      "max_difference": 4.7279680166865e-08
+    },
+    {
+      "row": 727,
+      "original_id": "SRI-1053153-001.txt",
+      "max_difference": 4.207627702050435e-08
+    },
+    {
+      "row": 728,
+      "original_id": "SRI-1053156-001.txt",
+      "max_difference": 4.982489976157467e-10
+    },
+    {
+      "row": 729,
+      "original_id": "SRI-1053157-001.txt",
+      "max_difference": 4.953456432168758e-08
+    },
+    {
+      "row": 730,
+      "original_id": "SRI-1053158-001.txt",
+      "max_difference": 2.2180731889470207e-08
+    },
+    {
+      "row": 731,
+      "original_id": "SRI-1053159-001.txt",
+      "max_difference": 4.99935498110126e-10
+    },
+    {
+      "row": 732,
+      "original_id": "SRI-1053160-001.txt",
+      "max_difference": 4.859091700944e-09
+    },
+    {
+      "row": 733,
+      "original_id": "SRI-1053161-001.txt",
+      "max_difference": 3.831068081674126e-08
+    },
+    {
+      "row": 734,
+      "original_id": "SRI-1053162-001.txt",
+      "max_difference": 4.9497409341199626e-08
+    },
+    {
+      "row": 735,
+      "original_id": "SRI-1053163-001.txt",
+      "max_difference": 4.814814935638623e-10
+    },
+    {
+      "row": 736,
+      "original_id": "SRI-1053164-001.txt",
+      "max_difference": 4.993434554734222e-10
+    },
+    {
+      "row": 737,
+      "original_id": "SRI-1053165-001.txt",
+      "max_difference": 4.94703444875455e-10
+    },
+    {
+      "row": 738,
+      "original_id": "SRI-1053166-001.txt",
+      "max_difference": 4.981314527530145e-10
+    },
+    {
+      "row": 739,
+      "original_id": "SRI-1053167-001.txt",
+      "max_difference": 4.981549825422427e-10
+    },
+    {
+      "row": 740,
+      "original_id": "SRI-1053168-001.txt",
+      "max_difference": 4.813377143248932e-08
+    },
+    {
+      "row": 741,
+      "original_id": "SRI-1053169-001.txt",
+      "max_difference": 4.460828087905072e-08
+    },
+    {
+      "row": 742,
+      "original_id": "SRI-1053170-001.txt",
+      "max_difference": 4.998035318948268e-10
+    },
+    {
+      "row": 743,
+      "original_id": "SRI-1053171-001.txt",
+      "max_difference": 4.997538077811114e-10
+    },
+    {
+      "row": 744,
+      "original_id": "SRI-1053173-001.txt",
+      "max_difference": 4.6035793399093754e-08
+    },
+    {
+      "row": 745,
+      "original_id": "SRI-1053174-001.txt",
+      "max_difference": 4.954128439947636e-10
+    },
+    {
+      "row": 746,
+      "original_id": "SRI-1053175-001.txt",
+      "max_difference": 4.929360582457481e-08
+    },
+    {
+      "row": 747,
+      "original_id": "SRI-1053176-001.txt",
+      "max_difference": 4.977314079090294e-08
+    },
+    {
+      "row": 748,
+      "original_id": "SRI-1053177-001.txt",
+      "max_difference": 4.906540851316556e-08
+    },
+    {
+      "row": 749,
+      "original_id": "SRI-1053178-001.txt",
+      "max_difference": 4.435832302047412e-08
+    },
+    {
+      "row": 750,
+      "original_id": "SRI-1053180-001.txt",
+      "max_difference": 4.181240943951754e-08
+    },
+    {
+      "row": 751,
+      "original_id": "SRI-1053181-001.txt",
+      "max_difference": 4.988822688289929e-10
+    },
+    {
+      "row": 752,
+      "original_id": "SRI-1053182-001.txt",
+      "max_difference": 4.2011901603303085e-08
+    },
+    {
+      "row": 753,
+      "original_id": "SRI-1053183-001.txt",
+      "max_difference": 4.938535544049549e-10
+    },
+    {
+      "row": 754,
+      "original_id": "SRI-1053184-001.txt",
+      "max_difference": 4.9853660092669827e-08
+    },
+    {
+      "row": 755,
+      "original_id": "SRI-1053185-001.txt",
+      "max_difference": 3.6468782713867546e-08
+    },
+    {
+      "row": 756,
+      "original_id": "SRI-1053186-001.txt",
+      "max_difference": 4.7591384395394406e-08
+    },
+    {
+      "row": 757,
+      "original_id": "SRI-1053187-001.txt",
+      "max_difference": 4.951880572257039e-10
+    },
+    {
+      "row": 758,
+      "original_id": "SRI-1053188-001.txt",
+      "max_difference": 4.8474258642201796e-08
+    },
+    {
+      "row": 759,
+      "original_id": "SRI-1053189-001.txt",
+      "max_difference": 4.3339198484864706e-08
+    },
+    {
+      "row": 760,
+      "original_id": "SRI-1053190-001.txt",
+      "max_difference": 4.591719329081676e-08
+    },
+    {
+      "row": 761,
+      "original_id": "SRI-1053191-001.txt",
+      "max_difference": 4.872012866019126e-08
+    },
+    {
+      "row": 762,
+      "original_id": "SRI-1053192-001.txt",
+      "max_difference": 4.9503277093745413e-08
+    },
+    {
+      "row": 763,
+      "original_id": "SRI-1053193-001.txt",
+      "max_difference": 4.9488303159618e-08
+    },
+    {
+      "row": 764,
+      "original_id": "SRI-1053194-001.txt",
+      "max_difference": 4.7229059634861154e-08
+    },
+    {
+      "row": 765,
+      "original_id": "SRI-1053196-001.txt",
+      "max_difference": 4.625147031511089e-08
+    },
+    {
+      "row": 766,
+      "original_id": "SRI-1053199-001.txt",
+      "max_difference": 5.435010068643264e-10
+    },
+    {
+      "row": 767,
+      "original_id": "SRI-1053200-001.txt",
+      "max_difference": 4.9347090635874444e-08
+    },
+    {
+      "row": 768,
+      "original_id": "SRI-1053201-001.txt",
+      "max_difference": 3.7752719023151945e-08
+    },
+    {
+      "row": 769,
+      "original_id": "SRI-1053202-001.txt",
+      "max_difference": 3.813326619867653e-08
+    },
+    {
+      "row": 770,
+      "original_id": "SRI-1053203-001.txt",
+      "max_difference": 4.986185908606444e-10
+    },
+    {
+      "row": 771,
+      "original_id": "SRI-1053204-001.txt",
+      "max_difference": 4.566124834258446e-08
+    },
+    {
+      "row": 772,
+      "original_id": "SRI-1053205-001.txt",
+      "max_difference": 4.7570502520910985e-08
+    },
+    {
+      "row": 773,
+      "original_id": "SRI-1053206-001.txt",
+      "max_difference": 4.8406856102082424e-08
+    },
+    {
+      "row": 774,
+      "original_id": "SRI-1053207-001.txt",
+      "max_difference": 4.836321927518652e-08
+    },
+    {
+      "row": 775,
+      "original_id": "SRI-1053208-001.txt",
+      "max_difference": 4.984724855106037e-10
+    },
+    {
+      "row": 776,
+      "original_id": "SRI-1053209-001.txt",
+      "max_difference": 4.7402295799884686e-08
+    },
+    {
+      "row": 777,
+      "original_id": "SRI-1053211-001.txt",
+      "max_difference": 4.966937972028518e-10
+    },
+    {
+      "row": 778,
+      "original_id": "SRI-1053212-001.txt",
+      "max_difference": 4.7739726896884954e-08
+    },
+    {
+      "row": 779,
+      "original_id": "SRI-1053213-001.txt",
+      "max_difference": 4.93401292436506e-08
+    },
+    {
+      "row": 780,
+      "original_id": "SRI-1053214-001.txt",
+      "max_difference": 4.491243111932246e-08
+    },
+    {
+      "row": 781,
+      "original_id": "SRI-1053215-001.txt",
+      "max_difference": 4.760707629244238e-08
+    },
+    {
+      "row": 782,
+      "original_id": "SRI-1053216-001.txt",
+      "max_difference": 4.947244280906204e-10
+    },
+    {
+      "row": 783,
+      "original_id": "SRI-1053218-001.txt",
+      "max_difference": 3.991705546915457e-08
+    },
+    {
+      "row": 784,
+      "original_id": "SRI-1053219-001.txt",
+      "max_difference": 4.751441523585321e-08
+    },
+    {
+      "row": 785,
+      "original_id": "SRI-1053221-001.txt",
+      "max_difference": 4.560937311269694e-08
+    },
+    {
+      "row": 786,
+      "original_id": "SRI-1053222-001.txt",
+      "max_difference": 4.968906331314846e-10
+    },
+    {
+      "row": 787,
+      "original_id": "SRI-1053223-001.txt",
+      "max_difference": 4.942418557751793e-10
+    },
+    {
+      "row": 788,
+      "original_id": "SRI-1053224-001.txt",
+      "max_difference": 4.93871665351725e-10
+    },
+    {
+      "row": 789,
+      "original_id": "SRI-1053225-001.txt",
+      "max_difference": 2.7625240079380998e-08
+    },
+    {
+      "row": 790,
+      "original_id": "SRI-1053226-001.txt",
+      "max_difference": 4.478874940203628e-08
+    },
+    {
+      "row": 791,
+      "original_id": "SRI-1053227-001.txt",
+      "max_difference": 4.967918040341807e-08
+    },
+    {
+      "row": 792,
+      "original_id": "SRI-1053228-001.txt",
+      "max_difference": 3.5961014762785765e-08
+    },
+    {
+      "row": 793,
+      "original_id": "SRI-1053229-001.txt",
+      "max_difference": 4.2286074900900526e-08
+    },
+    {
+      "row": 794,
+      "original_id": "SRI-1053230-001.txt",
+      "max_difference": 4.4048093733709036e-08
+    },
+    {
+      "row": 795,
+      "original_id": "SRI-1053232-001.txt",
+      "max_difference": 4.891445256945007e-08
+    },
+    {
+      "row": 796,
+      "original_id": "SRI-1053233-001.txt",
+      "max_difference": 4.995992508582958e-10
+    },
+    {
+      "row": 797,
+      "original_id": "SRI-1053234-001.txt",
+      "max_difference": 4.992887631116716e-10
+    },
+    {
+      "row": 798,
+      "original_id": "SRI-1053235-001.txt",
+      "max_difference": 4.840489374590833e-08
+    },
+    {
+      "row": 799,
+      "original_id": "SRI-1053236-001.txt",
+      "max_difference": 4.809617378119562e-08
+    },
+    {
+      "row": 800,
+      "original_id": "SRI-1053237-001.txt",
+      "max_difference": 2.2968575269827923e-08
+    },
+    {
+      "row": 801,
+      "original_id": "SRI-1053240-001.txt",
+      "max_difference": 3.512649299351105e-08
+    },
+    {
+      "row": 802,
+      "original_id": "SRI-1053241-001.txt",
+      "max_difference": 4.8100386636723916e-08
+    },
+    {
+      "row": 803,
+      "original_id": "SRI-1053242-001.txt",
+      "max_difference": 4.983442142020983e-10
+    },
+    {
+      "row": 804,
+      "original_id": "SRI-1053243-001.txt",
+      "max_difference": 3.770677936700646e-08
+    },
+    {
+      "row": 805,
+      "original_id": "SRI-1053244-001.txt",
+      "max_difference": 4.975916345628661e-10
+    },
+    {
+      "row": 806,
+      "original_id": "SRI-1053245-001.txt",
+      "max_difference": 4.0287908115513305e-08
+    },
+    {
+      "row": 807,
+      "original_id": "SRI-1053247-001.txt",
+      "max_difference": 2.573835135062793e-08
+    },
+    {
+      "row": 808,
+      "original_id": "SRI-1053248-001.txt",
+      "max_difference": 2.3992888223458024e-08
+    },
+    {
+      "row": 809,
+      "original_id": "SRI-1053249-001.txt",
+      "max_difference": 4.471787040979242e-08
+    },
+    {
+      "row": 810,
+      "original_id": "SRI-1053250-001.txt",
+      "max_difference": 3.782539223211464e-08
+    },
+    {
+      "row": 811,
+      "original_id": "SRI-1053251-001.txt",
+      "max_difference": 4.6835507907386025e-08
+    },
+    {
+      "row": 812,
+      "original_id": "SRI-1053252-001.txt",
+      "max_difference": 4.315108561616499e-08
+    },
+    {
+      "row": 813,
+      "original_id": "SRI-1053253-001.txt",
+      "max_difference": 2.2420815942416272e-08
+    },
+    {
+      "row": 814,
+      "original_id": "SRI-1053254-001.txt",
+      "max_difference": 4.9834697447020694e-08
+    },
+    {
+      "row": 815,
+      "original_id": "SRI-1053255-001.txt",
+      "max_difference": 2.6066366742209888e-08
+    },
+    {
+      "row": 816,
+      "original_id": "SRI-1053256-001.txt",
+      "max_difference": 4.05770981315364e-08
+    },
+    {
+      "row": 817,
+      "original_id": "SRI-1053257-001.txt",
+      "max_difference": 2.2524159577091453e-08
+    },
+    {
+      "row": 818,
+      "original_id": "SRI-1053258-001.txt",
+      "max_difference": 4.90146310154195e-08
+    },
+    {
+      "row": 819,
+      "original_id": "SRI-1053259-001.txt",
+      "max_difference": 4.8931085806697735e-08
+    },
+    {
+      "row": 820,
+      "original_id": "SRI-1053260-001.txt",
+      "max_difference": 4.8371751372900274e-08
+    },
+    {
+      "row": 821,
+      "original_id": "SRI-1053262-001.txt",
+      "max_difference": 4.994971103400303e-10
+    },
+    {
+      "row": 822,
+      "original_id": "SRI-1053263-001.txt",
+      "max_difference": 4.119067824270118e-08
+    },
+    {
+      "row": 823,
+      "original_id": "SRI-1053264-001.txt",
+      "max_difference": 2.3511050193587607e-08
+    },
+    {
+      "row": 824,
+      "original_id": "SRI-1053266-001.txt",
+      "max_difference": 4.650789832410864e-08
+    },
+    {
+      "row": 825,
+      "original_id": "SRI-1053268-001.txt",
+      "max_difference": 4.848288242389001e-08
+    },
+    {
+      "row": 826,
+      "original_id": "SRI-1053269-001.txt",
+      "max_difference": 2.3918764586122005e-08
+    },
+    {
+      "row": 827,
+      "original_id": "SRI-1053270-001.txt",
+      "max_difference": 3.054680059304282e-08
+    },
+    {
+      "row": 828,
+      "original_id": "SRI-1053271-001.txt",
+      "max_difference": 4.783054611414049e-08
+    },
+    {
+      "row": 829,
+      "original_id": "SRI-1053272-001.txt",
+      "max_difference": 4.991568304524296e-10
+    },
+    {
+      "row": 830,
+      "original_id": "SRI-1053273-001.txt",
+      "max_difference": 4.034911258835218e-08
+    },
+    {
+      "row": 831,
+      "original_id": "SRI-1053274-001.txt",
+      "max_difference": 2.9280648429584594e-08
+    },
+    {
+      "row": 832,
+      "original_id": "SRI-1053277-001.txt",
+      "max_difference": 4.545568698360029e-08
+    },
+    {
+      "row": 833,
+      "original_id": "SRI-1053278-001.txt",
+      "max_difference": 4.682115556015379e-08
+    },
+    {
+      "row": 834,
+      "original_id": "SRI-1053280-001.txt",
+      "max_difference": 4.4591297394858435e-08
+    },
+    {
+      "row": 835,
+      "original_id": "SRI-1053281-001.txt",
+      "max_difference": 4.481365750869397e-08
+    },
+    {
+      "row": 836,
+      "original_id": "SRI-1053282-001.txt",
+      "max_difference": 3.6363636363632935e-08
+    },
+    {
+      "row": 837,
+      "original_id": "SRI-1053286-001.txt",
+      "max_difference": 2.9601864574830107e-08
+    },
+    {
+      "row": 838,
+      "original_id": "SRI-1053287-001.txt",
+      "max_difference": 3.68104029399631e-08
+    },
+    {
+      "row": 839,
+      "original_id": "SRI-1053288-001.txt",
+      "max_difference": 4.031949413428696e-08
+    },
+    {
+      "row": 840,
+      "original_id": "SRI-1053289-001.txt",
+      "max_difference": 4.983832721516812e-10
+    },
+    {
+      "row": 841,
+      "original_id": "SRI-1053290-001.txt",
+      "max_difference": 4.991671243015361e-10
+    },
+    {
+      "row": 842,
+      "original_id": "SRI-1053291-001.txt",
+      "max_difference": 3.840244750912737e-08
+    },
+    {
+      "row": 843,
+      "original_id": "SRI-1053292-001.txt",
+      "max_difference": 4.935687666669938e-08
+    },
+    {
+      "row": 844,
+      "original_id": "SRI-1053293-001.txt",
+      "max_difference": 4.484514806362558e-08
+    },
+    {
+      "row": 845,
+      "original_id": "SRI-1053294-001.txt",
+      "max_difference": 4.991080699699141e-08
+    },
+    {
+      "row": 846,
+      "original_id": "SRI-1053295-001.txt",
+      "max_difference": 4.933858544022864e-08
+    },
+    {
+      "row": 847,
+      "original_id": "SRI-1053296-001.txt",
+      "max_difference": 4.052160373686656e-08
+    },
+    {
+      "row": 848,
+      "original_id": "SRI-1053297-001.txt",
+      "max_difference": 4.857569841508213e-08
+    },
+    {
+      "row": 849,
+      "original_id": "SRI-1053298-001.txt",
+      "max_difference": 4.6163450689299166e-08
+    },
+    {
+      "row": 850,
+      "original_id": "SRI-1053299-001.txt",
+      "max_difference": 3.891762265044712e-09
+    },
+    {
+      "row": 851,
+      "original_id": "SRI-1053300-001.txt",
+      "max_difference": 4.984053725287652e-10
+    },
+    {
+      "row": 852,
+      "original_id": "SRI-1053302-001.txt",
+      "max_difference": 4.983142266878904e-10
+    },
+    {
+      "row": 853,
+      "original_id": "SRI-1053303-001.txt",
+      "max_difference": 4.8715280788461896e-08
+    },
+    {
+      "row": 854,
+      "original_id": "SRI-1053304-001.txt",
+      "max_difference": 4.14026679748593e-08
+    },
+    {
+      "row": 855,
+      "original_id": "SRI-1053305-001.txt",
+      "max_difference": 4.855897223858259e-09
+    },
+    {
+      "row": 856,
+      "original_id": "SRI-1053306-001.txt",
+      "max_difference": 2.970630094449795e-08
+    },
+    {
+      "row": 857,
+      "original_id": "SRI-1053307-001.txt",
+      "max_difference": 4.609019734487898e-08
+    },
+    {
+      "row": 858,
+      "original_id": "SRI-1053308-001.txt",
+      "max_difference": 4.64718743788513e-08
+    },
+    {
+      "row": 859,
+      "original_id": "SRI-1053310-001.txt",
+      "max_difference": 4.845495503039897e-08
+    },
+    {
+      "row": 860,
+      "original_id": "SRI-1053311-001.txt",
+      "max_difference": 2.347844656639211e-08
+    },
+    {
+      "row": 861,
+      "original_id": "SRI-1053312-001.txt",
+      "max_difference": 3.3214979567233586e-08
+    },
+    {
+      "row": 862,
+      "original_id": "SRI-1053313-001.txt",
+      "max_difference": 4.0832595217006737e-08
+    },
+    {
+      "row": 863,
+      "original_id": "SRI-1053314-001.txt",
+      "max_difference": 4.976726630627482e-10
+    },
+    {
+      "row": 864,
+      "original_id": "SRI-1053315-001.txt",
+      "max_difference": 4.7516506218622085e-08
+    },
+    {
+      "row": 865,
+      "original_id": "SRI-1053316-001.txt",
+      "max_difference": 4.001896385668225e-08
+    },
+    {
+      "row": 866,
+      "original_id": "SRI-1053318-001.txt",
+      "max_difference": 4.96913325157694e-10
+    },
+    {
+      "row": 867,
+      "original_id": "SRI-1053319-001.txt",
+      "max_difference": 4.92991523363788e-10
+    },
+    {
+      "row": 868,
+      "original_id": "SRI-1053320-001.txt",
+      "max_difference": 2.779552715655154e-08
+    },
+    {
+      "row": 869,
+      "original_id": "SRI-1053321-001.txt",
+      "max_difference": 4.375464104656437e-08
+    },
+    {
+      "row": 870,
+      "original_id": "SRI-1053322-001.txt",
+      "max_difference": 4.6427871615002756e-08
+    },
+    {
+      "row": 871,
+      "original_id": "SRI-1053325-001.txt",
+      "max_difference": 4.353069091627348e-08
+    },
+    {
+      "row": 872,
+      "original_id": "SRI-1053326-001.txt",
+      "max_difference": 4.9889722099691466e-08
+    },
+    {
+      "row": 873,
+      "original_id": "SRI-1053328-001.txt",
+      "max_difference": 3.601634831928882e-08
+    },
+    {
+      "row": 874,
+      "original_id": "SRI-1053329-001.txt",
+      "max_difference": 4.931506869532143e-10
+    },
+    {
+      "row": 875,
+      "original_id": "SRI-1053330-001.txt",
+      "max_difference": 4.987985540859559e-08
+    },
+    {
+      "row": 876,
+      "original_id": "SRI-1053332-001.txt",
+      "max_difference": 4.757074212493412e-08
+    },
+    {
+      "row": 877,
+      "original_id": "SRI-1053333-001.txt",
+      "max_difference": 4.9263203183815604e-08
+    },
+    {
+      "row": 878,
+      "original_id": "SRI-1053334-001.txt",
+      "max_difference": 7.508452341592389e-09
+    },
+    {
+      "row": 879,
+      "original_id": "SRI-1053335-001.txt",
+      "max_difference": 4.997851021926181e-10
+    },
+    {
+      "row": 880,
+      "original_id": "SRI-1053336-001.txt",
+      "max_difference": 3.375507116826031e-08
+    },
+    {
+      "row": 881,
+      "original_id": "SRI-1053337-001.txt",
+      "max_difference": 4.8989860408745e-08
+    },
+    {
+      "row": 882,
+      "original_id": "SRI-1053338-001.txt",
+      "max_difference": 4.6803410743049916e-08
+    },
+    {
+      "row": 883,
+      "original_id": "SRI-1053339-001.txt",
+      "max_difference": 4.424168402903327e-08
+    },
+    {
+      "row": 884,
+      "original_id": "SRI-1053340-001.txt",
+      "max_difference": 3.872003349966334e-08
+    },
+    {
+      "row": 885,
+      "original_id": "SRI-1053341-001.txt",
+      "max_difference": 4.501131569388945e-08
+    },
+    {
+      "row": 886,
+      "original_id": "SRI-1053342-001.txt",
+      "max_difference": 2.8491151555810743e-09
+    },
+    {
+      "row": 887,
+      "original_id": "SRI-1053343-001.txt",
+      "max_difference": 4.6680013346680566e-08
+    },
+    {
+      "row": 888,
+      "original_id": "SRI-1053344-001.txt",
+      "max_difference": 4.305186774412146e-08
+    },
+    {
+      "row": 889,
+      "original_id": "SRI-1053345-001.txt",
+      "max_difference": 4.5454551234058727e-10
+    },
+    {
+      "row": 890,
+      "original_id": "SRI-1053346-001.txt",
+      "max_difference": 1.76341765322009e-08
+    },
+    {
+      "row": 891,
+      "original_id": "SRI-1053347-001.txt",
+      "max_difference": 2.8688237822493382e-08
+    },
+    {
+      "row": 892,
+      "original_id": "SRI-1053348-001.txt",
+      "max_difference": 4.7166396799694626e-08
+    },
+    {
+      "row": 893,
+      "original_id": "SRI-1053349-001.txt",
+      "max_difference": 4.7647375955083633e-08
+    },
+    {
+      "row": 894,
+      "original_id": "SRI-1053351-001.txt",
+      "max_difference": 4.349459840300449e-08
+    },
+    {
+      "row": 895,
+      "original_id": "SRI-1053353-001.txt",
+      "max_difference": 2.8700906344405227e-08
+    },
+    {
+      "row": 896,
+      "original_id": "SRI-1053354-001.txt",
+      "max_difference": 4.975845291355085e-10
+    },
+    {
+      "row": 897,
+      "original_id": "SRI-1053357-001.txt",
+      "max_difference": 4.428527649755573e-08
+    },
+    {
+      "row": 898,
+      "original_id": "SRI-1053358-001.txt",
+      "max_difference": 3.948257184732749e-08
+    },
+    {
+      "row": 899,
+      "original_id": "SRI-1053359-001.txt",
+      "max_difference": 1.10579261269184e-08
+    },
+    {
+      "row": 900,
+      "original_id": "SRI-1053360-001.txt",
+      "max_difference": 4.021944811249983e-08
+    },
+    {
+      "row": 901,
+      "original_id": "SRI-1053361-001.txt",
+      "max_difference": 4.129372872157047e-08
+    },
+    {
+      "row": 902,
+      "original_id": "SRI-1053362-001.txt",
+      "max_difference": 3.6362606446250275e-08
+    },
+    {
+      "row": 903,
+      "original_id": "SRI-1053363-001.txt",
+      "max_difference": 9.182843194231825e-09
+    },
+    {
+      "row": 904,
+      "original_id": "SRI-1053364-001.txt",
+      "max_difference": 2.3500225529995438e-08
+    },
+    {
+      "row": 905,
+      "original_id": "SRI-1053365-001.txt",
+      "max_difference": 4.979714418595904e-10
+    },
+    {
+      "row": 906,
+      "original_id": "SRI-1053366-001.txt",
+      "max_difference": 1.5477145148355806e-08
+    },
+    {
+      "row": 907,
+      "original_id": "SRI-1053367-001.txt",
+      "max_difference": 4.950852599427567e-08
+    },
+    {
+      "row": 908,
+      "original_id": "SRI-1053372-001.txt",
+      "max_difference": 4.786406918842756e-08
+    },
+    {
+      "row": 909,
+      "original_id": "SRI-1053373-001.txt",
+      "max_difference": 4.204731787304638e-08
+    },
+    {
+      "row": 910,
+      "original_id": "SRI-1053374-001.txt",
+      "max_difference": 3.3498712013625546e-08
+    },
+    {
+      "row": 911,
+      "original_id": "SRI-1053375-001.txt",
+      "max_difference": 3.662264307666228e-08
+    },
+    {
+      "row": 912,
+      "original_id": "SRI-1053376-001.txt",
+      "max_difference": 4.9694724566098854e-08
+    },
+    {
+      "row": 913,
+      "original_id": "SRI-1053378-001.txt",
+      "max_difference": 4.94114269248766e-10
+    },
+    {
+      "row": 914,
+      "original_id": "SRI-1053379-001.txt",
+      "max_difference": 4.992450923155256e-10
+    },
+    {
+      "row": 915,
+      "original_id": "SRI-1053380-001.txt",
+      "max_difference": 4.978187168047654e-10
+    },
+    {
+      "row": 916,
+      "original_id": "SRI-1053381-001.txt",
+      "max_difference": 3.023360161530375e-08
+    },
+    {
+      "row": 917,
+      "original_id": "SRI-1053382-001.txt",
+      "max_difference": 4.8043307574686315e-08
+    },
+    {
+      "row": 918,
+      "original_id": "SRI-1053383-001.txt",
+      "max_difference": 4.051695674732019e-08
+    },
+    {
+      "row": 919,
+      "original_id": "SRI-1053384-001.txt",
+      "max_difference": 4.984278129116504e-10
+    },
+    {
+      "row": 920,
+      "original_id": "SRI-1053389-001.txt",
+      "max_difference": 4.998020886048948e-10
+    },
+    {
+      "row": 921,
+      "original_id": "SRI-1053391-001.txt",
+      "max_difference": 4.979708728702903e-10
+    },
+    {
+      "row": 922,
+      "original_id": "SRI-1053392-001.txt",
+      "max_difference": 2.1916446890643602e-08
+    },
+    {
+      "row": 923,
+      "original_id": "SRI-1053396-001.txt",
+      "max_difference": 4.6967895362666305e-08
+    },
+    {
+      "row": 924,
+      "original_id": "SRI-1053397-001.txt",
+      "max_difference": 3.178199632578049e-08
+    },
+    {
+      "row": 925,
+      "original_id": "SRI-1053398-001.txt",
+      "max_difference": 4.851898206090937e-08
+    },
+    {
+      "row": 926,
+      "original_id": "SRI-1053399-001.txt",
+      "max_difference": 4.990683977190713e-10
+    },
+    {
+      "row": 927,
+      "original_id": "SRI-1053402-001.txt",
+      "max_difference": 4.999455294196764e-10
+    },
+    {
+      "row": 928,
+      "original_id": "SRI-1053403-001.txt",
+      "max_difference": 3.718455872323012e-08
+    },
+    {
+      "row": 929,
+      "original_id": "SRI-1053404-001.txt",
+      "max_difference": 4.954656129818602e-10
+    },
+    {
+      "row": 930,
+      "original_id": "SRI-1053405-001.txt",
+      "max_difference": 4.942407908718055e-10
+    },
+    {
+      "row": 931,
+      "original_id": "SRI-31204.txt",
+      "max_difference": 1.3621505257077615e-07
+    }
+  ],
+  "unmatched": [
+    {
+      "row": 308,
+      "smiles": "ClC1=CC=C(C=C1)N1CCNCC1"
+    },
+    {
+      "row": 311,
+      "smiles": "[O-][N+](=O)C1=CC=C(O1)\\C=C\\C1=NC=CC=N1"
+    }
+  ],
+  "deployment_records": 930,
+  "excluded_from_training": [
+    {
+      "row": 308,
+      "smiles": "ClC1=CC=C(C=C1)N1CCNCC1"
+    },
+    {
+      "row": 311,
+      "smiles": "[O-][N+](=O)C1=CC=C(O1)\\C=C\\C1=NC=CC=N1"
+    }
+  ],
+  "source_full_sha256": "0d6ff92d8d46b95ed005a27c746267abb35889e84c144972c213a9070f09a2e5",
+  "verified_sha256": "40d2e338904d370f53c481a35ba9ed5f9e7e145094bf1913cbba9338778fc97b",
+  "transformation": "Remove only unmatched rows; numerical strings unmodified; full original retained in local artifacts and public upstream"
+}

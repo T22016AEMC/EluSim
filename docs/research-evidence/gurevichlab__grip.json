@@ -1,0 +1,624 @@
+{
+  "repo": "gurevichlab/grip",
+  "metadata": {
+    "id": 1264885072,
+    "node_id": "R_kgDOS2SdUA",
+    "name": "grip",
+    "full_name": "gurevichlab/grip",
+    "private": false,
+    "owner": {
+      "login": "gurevichlab",
+      "id": 119312334,
+      "node_id": "O_kgDOBxyPzg",
+      "avatar_url": "https://avatars.githubusercontent.com/u/119312334?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/gurevichlab",
+      "html_url": "https://github.com/gurevichlab",
+      "followers_url": "https://api.github.com/users/gurevichlab/followers",
+      "following_url": "https://api.github.com/users/gurevichlab/following{/other_user}",
+      "gists_url": "https://api.github.com/users/gurevichlab/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/gurevichlab/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/gurevichlab/subscriptions",
+      "organizations_url": "https://api.github.com/users/gurevichlab/orgs",
+      "repos_url": "https://api.github.com/users/gurevichlab/repos",
+      "events_url": "https://api.github.com/users/gurevichlab/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/gurevichlab/received_events",
+      "type": "Organization",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "html_url": "https://github.com/gurevichlab/grip",
+    "description": null,
+    "fork": false,
+    "url": "https://api.github.com/repos/gurevichlab/grip",
+    "forks_url": "https://api.github.com/repos/gurevichlab/grip/forks",
+    "keys_url": "https://api.github.com/repos/gurevichlab/grip/keys{/key_id}",
+    "collaborators_url": "https://api.github.com/repos/gurevichlab/grip/collaborators{/collaborator}",
+    "teams_url": "https://api.github.com/repos/gurevichlab/grip/teams",
+    "hooks_url": "https://api.github.com/repos/gurevichlab/grip/hooks",
+    "issue_events_url": "https://api.github.com/repos/gurevichlab/grip/issues/events{/number}",
+    "events_url": "https://api.github.com/repos/gurevichlab/grip/events",
+    "assignees_url": "https://api.github.com/repos/gurevichlab/grip/assignees{/user}",
+    "branches_url": "https://api.github.com/repos/gurevichlab/grip/branches{/branch}",
+    "tags_url": "https://api.github.com/repos/gurevichlab/grip/tags",
+    "blobs_url": "https://api.github.com/repos/gurevichlab/grip/git/blobs{/sha}",
+    "git_tags_url": "https://api.github.com/repos/gurevichlab/grip/git/tags{/sha}",
+    "git_refs_url": "https://api.github.com/repos/gurevichlab/grip/git/refs{/sha}",
+    "trees_url": "https://api.github.com/repos/gurevichlab/grip/git/trees{/sha}",
+    "statuses_url": "https://api.github.com/repos/gurevichlab/grip/statuses/{sha}",
+    "languages_url": "https://api.github.com/repos/gurevichlab/grip/languages",
+    "stargazers_url": "https://api.github.com/repos/gurevichlab/grip/stargazers",
+    "contributors_url": "https://api.github.com/repos/gurevichlab/grip/contributors",
+    "subscribers_url": "https://api.github.com/repos/gurevichlab/grip/subscribers",
+    "subscription_url": "https://api.github.com/repos/gurevichlab/grip/subscription",
+    "commits_url": "https://api.github.com/repos/gurevichlab/grip/commits{/sha}",
+    "git_commits_url": "https://api.github.com/repos/gurevichlab/grip/git/commits{/sha}",
+    "comments_url": "https://api.github.com/repos/gurevichlab/grip/comments{/number}",
+    "issue_comment_url": "https://api.github.com/repos/gurevichlab/grip/issues/comments{/number}",
+    "contents_url": "https://api.github.com/repos/gurevichlab/grip/contents/{+path}",
+    "compare_url": "https://api.github.com/repos/gurevichlab/grip/compare/{base}...{head}",
+    "merges_url": "https://api.github.com/repos/gurevichlab/grip/merges",
+    "archive_url": "https://api.github.com/repos/gurevichlab/grip/{archive_format}{/ref}",
+    "downloads_url": "https://api.github.com/repos/gurevichlab/grip/downloads",
+    "issues_url": "https://api.github.com/repos/gurevichlab/grip/issues{/number}",
+    "pulls_url": "https://api.github.com/repos/gurevichlab/grip/pulls{/number}",
+    "milestones_url": "https://api.github.com/repos/gurevichlab/grip/milestones{/number}",
+    "notifications_url": "https://api.github.com/repos/gurevichlab/grip/notifications{?since,all,participating}",
+    "labels_url": "https://api.github.com/repos/gurevichlab/grip/labels{/name}",
+    "releases_url": "https://api.github.com/repos/gurevichlab/grip/releases{/id}",
+    "deployments_url": "https://api.github.com/repos/gurevichlab/grip/deployments",
+    "created_at": "2026-06-10T09:09:30Z",
+    "updated_at": "2026-06-10T09:39:06Z",
+    "pushed_at": "2026-06-10T09:39:02Z",
+    "git_url": "git://github.com/gurevichlab/grip.git",
+    "ssh_url": "git@github.com:gurevichlab/grip.git",
+    "clone_url": "https://github.com/gurevichlab/grip.git",
+    "svn_url": "https://github.com/gurevichlab/grip",
+    "homepage": null,
+    "size": 17171,
+    "stargazers_count": 0,
+    "watchers_count": 0,
+    "language": "Jupyter Notebook",
+    "has_issues": true,
+    "has_projects": true,
+    "has_downloads": false,
+    "has_wiki": true,
+    "has_pages": false,
+    "has_discussions": false,
+    "forks_count": 0,
+    "mirror_url": null,
+    "archived": false,
+    "disabled": false,
+    "open_issues_count": 0,
+    "license": null,
+    "allow_forking": true,
+    "is_template": false,
+    "web_commit_signoff_required": false,
+    "has_pull_requests": true,
+    "pull_request_creation_policy": "all",
+    "topics": [],
+    "visibility": "public",
+    "forks": 0,
+    "open_issues": 0,
+    "watchers": 0,
+    "default_branch": "main",
+    "temp_clone_token": null,
+    "custom_properties": {},
+    "organization": {
+      "login": "gurevichlab",
+      "id": 119312334,
+      "node_id": "O_kgDOBxyPzg",
+      "avatar_url": "https://avatars.githubusercontent.com/u/119312334?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/gurevichlab",
+      "html_url": "https://github.com/gurevichlab",
+      "followers_url": "https://api.github.com/users/gurevichlab/followers",
+      "following_url": "https://api.github.com/users/gurevichlab/following{/other_user}",
+      "gists_url": "https://api.github.com/users/gurevichlab/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/gurevichlab/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/gurevichlab/subscriptions",
+      "organizations_url": "https://api.github.com/users/gurevichlab/orgs",
+      "repos_url": "https://api.github.com/users/gurevichlab/repos",
+      "events_url": "https://api.github.com/users/gurevichlab/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/gurevichlab/received_events",
+      "type": "Organization",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "network_count": 0,
+    "subscribers_count": 0
+  },
+  "commit": {
+    "sha": "4247e26580d6ad050125741833dedae8e9ba5370",
+    "node_id": "C_kwDOS2SdUNoAKDQyNDdlMjY1ODBkNmFkMDUwMTI1NzQxODMzZGVkYWU4ZTliYTUzNzA",
+    "commit": {
+      "author": {
+        "name": "azmtag",
+        "email": "aztagr@gmail.com",
+        "date": "2026-06-10T09:38:48Z"
+      },
+      "committer": {
+        "name": "azmtag",
+        "email": "aztagr@gmail.com",
+        "date": "2026-06-10T09:38:48Z"
+      },
+      "message": "add readme",
+      "tree": {
+        "sha": "791be6b379c5a87aa5223331f0fe36851e466be0",
+        "url": "https://api.github.com/repos/gurevichlab/grip/git/trees/791be6b379c5a87aa5223331f0fe36851e466be0"
+      },
+      "url": "https://api.github.com/repos/gurevichlab/grip/git/commits/4247e26580d6ad050125741833dedae8e9ba5370",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/gurevichlab/grip/commits/4247e26580d6ad050125741833dedae8e9ba5370",
+    "html_url": "https://github.com/gurevichlab/grip/commit/4247e26580d6ad050125741833dedae8e9ba5370",
+    "comments_url": "https://api.github.com/repos/gurevichlab/grip/commits/4247e26580d6ad050125741833dedae8e9ba5370/comments",
+    "author": {
+      "login": "azmtag",
+      "id": 23064083,
+      "node_id": "MDQ6VXNlcjIzMDY0MDgz",
+      "avatar_url": "https://avatars.githubusercontent.com/u/23064083?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/azmtag",
+      "html_url": "https://github.com/azmtag",
+      "followers_url": "https://api.github.com/users/azmtag/followers",
+      "following_url": "https://api.github.com/users/azmtag/following{/other_user}",
+      "gists_url": "https://api.github.com/users/azmtag/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/azmtag/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/azmtag/subscriptions",
+      "organizations_url": "https://api.github.com/users/azmtag/orgs",
+      "repos_url": "https://api.github.com/users/azmtag/repos",
+      "events_url": "https://api.github.com/users/azmtag/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/azmtag/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "azmtag",
+      "id": 23064083,
+      "node_id": "MDQ6VXNlcjIzMDY0MDgz",
+      "avatar_url": "https://avatars.githubusercontent.com/u/23064083?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/azmtag",
+      "html_url": "https://github.com/azmtag",
+      "followers_url": "https://api.github.com/users/azmtag/followers",
+      "following_url": "https://api.github.com/users/azmtag/following{/other_user}",
+      "gists_url": "https://api.github.com/users/azmtag/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/azmtag/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/azmtag/subscriptions",
+      "organizations_url": "https://api.github.com/users/azmtag/orgs",
+      "repos_url": "https://api.github.com/users/azmtag/repos",
+      "events_url": "https://api.github.com/users/azmtag/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/azmtag/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "abaeab5654f23dba8f3ad0daed8ad53d50453417",
+        "url": "https://api.github.com/repos/gurevichlab/grip/commits/abaeab5654f23dba8f3ad0daed8ad53d50453417",
+        "html_url": "https://github.com/gurevichlab/grip/commit/abaeab5654f23dba8f3ad0daed8ad53d50453417"
+      }
+    ],
+    "stats": {
+      "total": 32,
+      "additions": 32,
+      "deletions": 0
+    },
+    "files": [
+      {
+        "sha": "5b073275e246589931b0c21d321e0669a7570a7d",
+        "filename": "README.md",
+        "status": "added",
+        "additions": 32,
+        "deletions": 0,
+        "changes": 32,
+        "blob_url": "https://github.com/gurevichlab/grip/blob/4247e26580d6ad050125741833dedae8e9ba5370/README.md",
+        "raw_url": "https://github.com/gurevichlab/grip/raw/4247e26580d6ad050125741833dedae8e9ba5370/README.md",
+        "contents_url": "https://api.github.com/repos/gurevichlab/grip/contents/README.md?ref=4247e26580d6ad050125741833dedae8e9ba5370",
+        "patch": "@@ -0,0 +1,32 @@\n+# GRIP: physics-informed neural network for gradient retention time prediction in liquid chromatography \n+\n+GRIP is a physics-informed deep learning model for retention time prediction in reversed-phase gradient liquid chromatography (RP-HPLC). The model combines molecular representations learned from chemical structures with explicit chromatographic system parameters and the fundamental equation of gradient elution, enabling retention time prediction across diverse chromatographic conditions. You can read more about the model in our [preprint](https://www.biorxiv.org/content/10.1101/2024.11.11.622855v1.full).\n+\n+## Installation\n+\n+```bash\n+git clone https://github.com/gurevichlab/grip.git\n+cd grip\n+\n+conda env create -f environment.yml\n+conda activate grip\n+\n+pip install -e .\n+```\n+\n+## Run inference on test data\n+\n+The repository includes a small example input in `test_data/` and a pretrained model checkpoint in `model/`.\n+\n+```bash\n+python grip_inference.py \\\n+  --input test_data/smiles.tsv \\\n+  --id-col id \\\n+  --smiles-col smiles \\\n+  --system-cfg test_data/system_100mm_18min.yaml \\\n+  --ckpt model/model-i6kwrq9u.ckpt \\\n+  --out predictions.tsv \\\n+  --device cpu\n+```\n+\n+The output file `predictions.tsv` contains predicted retention times for all compounds in the input file."
+      }
+    ]
+  },
+  "tree": {
+    "sha": "4247e26580d6ad050125741833dedae8e9ba5370",
+    "url": "https://api.github.com/repos/gurevichlab/grip/git/trees/4247e26580d6ad050125741833dedae8e9ba5370",
+    "tree": [
+      {
+        "path": ".gitignore",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "04ffddbc2f68660d2d3d8a66ba937b7365cb0797",
+        "size": 3521,
+        "url": "https://api.github.com/repos/gurevichlab/grip/git/blobs/04ffddbc2f68660d2d3d8a66ba937b7365cb0797"
+      },
+      {
+        "path": "README.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "5b073275e246589931b0c21d321e0669a7570a7d",
+        "size": 1269,
+        "url": "https://api.github.com/repos/gurevichlab/grip/git/blobs/5b073275e246589931b0c21d321e0669a7570a7d"
+      },
+      {
+        "path": "environment.yml",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "91c35cb4535431e9c5b2b3702280532f73b1ce31",
+        "size": 410,
+        "url": "https://api.github.com/repos/gurevichlab/grip/git/blobs/91c35cb4535431e9c5b2b3702280532f73b1ce31"
+      },
+      {
+        "path": "grip",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "787c9fb42f5f475dfd80f4b5ff7321f72ae80301",
+        "url": "https://api.github.com/repos/gurevichlab/grip/git/trees/787c9fb42f5f475dfd80f4b5ff7321f72ae80301"
+      },
+      {
+        "path": "grip/__init__.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "7141c424552b62f6084301fab2054a921a96c155",
+        "size": 19,
+        "url": "https://api.github.com/repos/gurevichlab/grip/git/blobs/7141c424552b62f6084301fab2054a921a96c155"
+      },
+      {
+        "path": "grip/config",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "83a2335d83a8c24b089977ba95c5d966777a871f",
+        "url": "https://api.github.com/repos/gurevichlab/grip/git/trees/83a2335d83a8c24b089977ba95c5d966777a871f"
+      },
+      {
+        "path": "grip/config/__init__.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "d445dbab357062168bed9a176fc6af0b5d35ecc7",
+        "size": 110,
+        "url": "https://api.github.com/repos/gurevichlab/grip/git/blobs/d445dbab357062168bed9a176fc6af0b5d35ecc7"
+      },
+      {
+        "path": "grip/config/data.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "bf55fd8c9d7efc769d3d37b95ac5078c01f1e9bb",
+        "size": 5335,
+        "url": "https://api.github.com/repos/gurevichlab/grip/git/blobs/bf55fd8c9d7efc769d3d37b95ac5078c01f1e9bb"
+      },
+      {
+        "path": "grip/config/features.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "2ae5671f5e65c74314bab2bb0df79c841ce619f8",
+        "size": 3985,
+        "url": "https://api.github.com/repos/gurevichlab/grip/git/blobs/2ae5671f5e65c74314bab2bb0df79c841ce619f8"
+      },
+      {
+        "path": "grip/data",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "6440aa00d5a9b14c740ad0df9ae888bd73908fd2",
+        "url": "https://api.github.com/repos/gurevichlab/grip/git/trees/6440aa00d5a9b14c740ad0df9ae888bd73908fd2"
+      },
+      {
+        "path": "grip/data/__init__.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "9fe32b5a076247be24de7eaaa4e10ad60ea5309a",
+        "size": 475,
+        "url": "https://api.github.com/repos/gurevichlab/grip/git/blobs/9fe32b5a076247be24de7eaaa4e10ad60ea5309a"
+      },
+      {
+        "path": "grip/data/collate.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "f53e97e26b1ac18e5bf438e3f7abd5f1d63afc26",
+        "size": 4456,
+        "url": "https://api.github.com/repos/gurevichlab/grip/git/blobs/f53e97e26b1ac18e5bf438e3f7abd5f1d63afc26"
+      },
+      {
+        "path": "grip/data/datamodule.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "12220f366f71c41be20fd99404efed8d785b7819",
+        "size": 7217,
+        "url": "https://api.github.com/repos/gurevichlab/grip/git/blobs/12220f366f71c41be20fd99404efed8d785b7819"
+      },
+      {
+        "path": "grip/data/datapoints.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "1a56f17c1a598bd3f82dd28c65010769930d2b2a",
+        "size": 986,
+        "url": "https://api.github.com/repos/gurevichlab/grip/git/blobs/1a56f17c1a598bd3f82dd28c65010769930d2b2a"
+      },
+      {
+        "path": "grip/data/datasets.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "49e1e70f6e2266159132ac4515fb9081b48bd7ac",
+        "size": 7830,
+        "url": "https://api.github.com/repos/gurevichlab/grip/git/blobs/49e1e70f6e2266159132ac4515fb9081b48bd7ac"
+      },
+      {
+        "path": "grip/data/helpers.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "7c2bf242bb4b2285075d6ee91d8505a6b04bdabd",
+        "size": 7757,
+        "url": "https://api.github.com/repos/gurevichlab/grip/git/blobs/7c2bf242bb4b2285075d6ee91d8505a6b04bdabd"
+      },
+      {
+        "path": "grip/featurizers",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "abb40f6c0cc74e28c3fc052f6da66abee2fd7c8e",
+        "url": "https://api.github.com/repos/gurevichlab/grip/git/trees/abb40f6c0cc74e28c3fc052f6da66abee2fd7c8e"
+      },
+      {
+        "path": "grip/featurizers/__init__.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "454d031e282456994da9f8c6bbc3014dabbbe7af",
+        "size": 196,
+        "url": "https://api.github.com/repos/gurevichlab/grip/git/blobs/454d031e282456994da9f8c6bbc3014dabbbe7af"
+      },
+      {
+        "path": "grip/featurizers/ecv.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "af1cf29feb96e5c2710d90dfb9fddaab9e6ba042",
+        "size": 2640,
+        "url": "https://api.github.com/repos/gurevichlab/grip/git/blobs/af1cf29feb96e5c2710d90dfb9fddaab9e6ba042"
+      },
+      {
+        "path": "grip/featurizers/gradient.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "6819004c6d188f15db384029c6b6dfb043c3287a",
+        "size": 2712,
+        "url": "https://api.github.com/repos/gurevichlab/grip/git/blobs/6819004c6d188f15db384029c6b6dfb043c3287a"
+      },
+      {
+        "path": "grip/featurizers/system_descriptors.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "b9d6279a06aa1b38a31254eff403f293a063187f",
+        "size": 4397,
+        "url": "https://api.github.com/repos/gurevichlab/grip/git/blobs/b9d6279a06aa1b38a31254eff403f293a063187f"
+      },
+      {
+        "path": "grip/models",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "6add8cd8a1c26cf51b3d8d36a89eab93109f7137",
+        "url": "https://api.github.com/repos/gurevichlab/grip/git/trees/6add8cd8a1c26cf51b3d8d36a89eab93109f7137"
+      },
+      {
+        "path": "grip/models/__init__.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "21b93286de5b47e7d383773904594e69587ad413",
+        "size": 135,
+        "url": "https://api.github.com/repos/gurevichlab/grip/git/blobs/21b93286de5b47e7d383773904594e69587ad413"
+      },
+      {
+        "path": "grip/models/grip.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "fca0cc332e7936c20a6e6325cf32a52f4382582f",
+        "size": 12827,
+        "url": "https://api.github.com/repos/gurevichlab/grip/git/blobs/fca0cc332e7936c20a6e6325cf32a52f4382582f"
+      },
+      {
+        "path": "grip/models/layers.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "2f604b4d4f33ef8a3bcc486a42a2301dfd54553b",
+        "size": 9607,
+        "url": "https://api.github.com/repos/gurevichlab/grip/git/blobs/2f604b4d4f33ef8a3bcc486a42a2301dfd54553b"
+      },
+      {
+        "path": "grip/models/lazymlp.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "f55e9d22c08f9023b0fdaad7e19aee349e9d36de",
+        "size": 2983,
+        "url": "https://api.github.com/repos/gurevichlab/grip/git/blobs/f55e9d22c08f9023b0fdaad7e19aee349e9d36de"
+      },
+      {
+        "path": "grip/models/modules.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "59c16b23a818563855f33f83705966ae57713621",
+        "size": 7251,
+        "url": "https://api.github.com/repos/gurevichlab/grip/git/blobs/59c16b23a818563855f33f83705966ae57713621"
+      },
+      {
+        "path": "grip/utils",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "b83a5ed9e5452ed1db1a9e957b6718f2374c5a6b",
+        "url": "https://api.github.com/repos/gurevichlab/grip/git/trees/b83a5ed9e5452ed1db1a9e957b6718f2374c5a6b"
+      },
+      {
+        "path": "grip/utils/__init__.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+        "size": 0,
+        "url": "https://api.github.com/repos/gurevichlab/grip/git/blobs/e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+      },
+      {
+        "path": "grip/utils/activations.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e185c642720542fedd26d68d660cf2ce8a1c590b",
+        "size": 510,
+        "url": "https://api.github.com/repos/gurevichlab/grip/git/blobs/e185c642720542fedd26d68d660cf2ce8a1c590b"
+      },
+      {
+        "path": "grip/utils/callbacks.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "9cb41fdcbabd8c92a0a641e4073df01a99f5ed45",
+        "size": 2076,
+        "url": "https://api.github.com/repos/gurevichlab/grip/git/blobs/9cb41fdcbabd8c92a0a641e4073df01a99f5ed45"
+      },
+      {
+        "path": "grip/utils/helper.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "07b0d0fe1ea927bcb5c1453e27ec60c815a2b4a7",
+        "size": 3563,
+        "url": "https://api.github.com/repos/gurevichlab/grip/git/blobs/07b0d0fe1ea927bcb5c1453e27ec60c815a2b4a7"
+      },
+      {
+        "path": "grip/utils/training.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "08168fffdd07b4c90762444491fed70a1dcf6878",
+        "size": 5773,
+        "url": "https://api.github.com/repos/gurevichlab/grip/git/blobs/08168fffdd07b4c90762444491fed70a1dcf6878"
+      },
+      {
+        "path": "grip_inference.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "9508ed5f5be4e15ee9fcf19cee88324e35d03d46",
+        "size": 10863,
+        "url": "https://api.github.com/repos/gurevichlab/grip/git/blobs/9508ed5f5be4e15ee9fcf19cee88324e35d03d46"
+      },
+      {
+        "path": "model",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "a5f5e019b26a53ba6338e2d9e9fad6a03539d67f",
+        "url": "https://api.github.com/repos/gurevichlab/grip/git/trees/a5f5e019b26a53ba6338e2d9e9fad6a03539d67f"
+      },
+      {
+        "path": "model/model-i6kwrq9u.ckpt",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "fd5f24a99859d6b70d36193129244233cfa2b771",
+        "size": 12355159,
+        "url": "https://api.github.com/repos/gurevichlab/grip/git/blobs/fd5f24a99859d6b70d36193129244233cfa2b771"
+      },
+      {
+        "path": "notebooks",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "0c7fd4ef116b441bf3dd3a17932d649124be5a2b",
+        "url": "https://api.github.com/repos/gurevichlab/grip/git/trees/0c7fd4ef116b441bf3dd3a17932d649124be5a2b"
+      },
+      {
+        "path": "notebooks/evaluate_RepoRT.ipynb",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "94c0f4347302f4b7dbde09cac1340ff3785f4d53",
+        "size": 2061996,
+        "url": "https://api.github.com/repos/gurevichlab/grip/git/blobs/94c0f4347302f4b7dbde09cac1340ff3785f4d53"
+      },
+      {
+        "path": "notebooks/evaluate_custom.ipynb",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "839b1ea98c74b915b4ecd6ef3c911074f33199ee",
+        "size": 56441,
+        "url": "https://api.github.com/repos/gurevichlab/grip/git/blobs/839b1ea98c74b915b4ecd6ef3c911074f33199ee"
+      },
+      {
+        "path": "notebooks/preprocessing_RepoRT.ipynb",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "9cdd718b32cc4c10a194ac151c18c3ff9b7ffb9d",
+        "size": 10761,
+        "url": "https://api.github.com/repos/gurevichlab/grip/git/blobs/9cdd718b32cc4c10a194ac151c18c3ff9b7ffb9d"
+      },
+      {
+        "path": "notebooks/train.ipynb",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c448bf71b83b8978ee95a64e0b7d48d4a3c4a790",
+        "size": 76079,
+        "url": "https://api.github.com/repos/gurevichlab/grip/git/blobs/c448bf71b83b8978ee95a64e0b7d48d4a3c4a790"
+      },
+      {
+        "path": "pyproject.toml",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "1f80be4ca4d56f39703bacc30ed0be95cd2216f5",
+        "size": 366,
+        "url": "https://api.github.com/repos/gurevichlab/grip/git/blobs/1f80be4ca4d56f39703bacc30ed0be95cd2216f5"
+      },
+      {
+        "path": "test_data",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "5339a8880d6590dbe4d2e4f1e33959625631bc79",
+        "url": "https://api.github.com/repos/gurevichlab/grip/git/trees/5339a8880d6590dbe4d2e4f1e33959625631bc79"
+      },
+      {
+        "path": "test_data/smiles.tsv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "5a27fdf5313fd74d577293654c86b40d25794f10",
+        "size": 1009,
+        "url": "https://api.github.com/repos/gurevichlab/grip/git/blobs/5a27fdf5313fd74d577293654c86b40d25794f10"
+      },
+      {
+        "path": "test_data/system_100mm_18min.yaml",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "359ac5cacfb288bf81db704358d2ba0ffc971a4b",
+        "size": 232,
+        "url": "https://api.github.com/repos/gurevichlab/grip/git/blobs/359ac5cacfb288bf81db704358d2ba0ffc971a4b"
+      }
+    ],
+    "truncated": false
+  },
+  "issues": [],
+  "file_errors": [],
+  "snapshot": "C:\\Users\\T22016\\AppData\\Local\\Temp\\lc-gradient-research-20261013\\gurevichlab__grip",
+  "downloaded_text_paths": [
+    "README.md",
+    "environment.yml",
+    "grip/__init__.py",
+    "grip/config/__init__.py",
+    "grip/config/data.py",
+    "grip/config/features.py",
+    "grip/data/__init__.py",
+    "grip/data/collate.py",
+    "grip/data/datamodule.py",
+    "grip/data/datapoints.py",
+    "grip/data/datasets.py",
+    "grip/data/helpers.py",
+    "grip/featurizers/__init__.py",
+    "grip/featurizers/ecv.py",
+    "grip/featurizers/gradient.py",
+    "grip/featurizers/system_descriptors.py",
+    "grip/models/__init__.py",
+    "grip/models/grip.py",
+    "grip/models/layers.py",
+    "grip/models/lazymlp.py",
+    "grip/models/modules.py",
+    "grip/utils/__init__.py",
+    "grip/utils/activations.py",
+    "grip/utils/callbacks.py",
+    "grip/utils/helper.py",
+    "grip/utils/training.py",
+    "grip_inference.py",
+    "pyproject.toml",
+    "test_data/system_100mm_18min.yaml"
+  ]
+}

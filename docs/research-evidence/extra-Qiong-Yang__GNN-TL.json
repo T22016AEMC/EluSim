@@ -1,0 +1,15 @@
+{
+  "repo": "Qiong-Yang/GNN-TL",
+  "sha": "dcbd1fafcca5c5d8d8b4bbbaecdd8842fbce2e40",
+  "commit_patch_header": "From dcbd1fafcca5c5d8d8b4bbbaecdd8842fbce2e40 Mon Sep 17 00:00:00 2001\nFrom: =?UTF-8?q?=E2=80=98yangqiong=E2=80=99?= <‘192301010@csu.edu.cn’>\nDate: Sat, 9 Oct 2021 16:55:30 +0800\nSubject: [PATCH] README\n",
+  "snapshot": "C:\\Users\\T22016\\AppData\\Local\\Temp\\lc-gradient-research-20261013\\Qiong-Yang__GNN-TL",
+  "paths": [
+    "README.md",
+    "data\\HILIC-test.txt",
+    "data\\HILIC-train.txt",
+    "data\\HILIC-val.txt",
+    "model\\preprocess.py",
+    "model\\train.py",
+    "model\\transferlearning.py"
+  ]
+}

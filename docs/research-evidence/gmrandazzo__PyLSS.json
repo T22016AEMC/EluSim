@@ -1,0 +1,960 @@
+{
+  "repo": "gmrandazzo/PyLSS",
+  "metadata": {
+    "id": 51531586,
+    "node_id": "MDEwOlJlcG9zaXRvcnk1MTUzMTU4Ng==",
+    "name": "PyLSS",
+    "full_name": "gmrandazzo/PyLSS",
+    "private": false,
+    "owner": {
+      "login": "gmrandazzo",
+      "id": 3600735,
+      "node_id": "MDQ6VXNlcjM2MDA3MzU=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/3600735?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/gmrandazzo",
+      "html_url": "https://github.com/gmrandazzo",
+      "followers_url": "https://api.github.com/users/gmrandazzo/followers",
+      "following_url": "https://api.github.com/users/gmrandazzo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/gmrandazzo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/gmrandazzo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/gmrandazzo/subscriptions",
+      "organizations_url": "https://api.github.com/users/gmrandazzo/orgs",
+      "repos_url": "https://api.github.com/users/gmrandazzo/repos",
+      "events_url": "https://api.github.com/users/gmrandazzo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/gmrandazzo/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "html_url": "https://github.com/gmrandazzo/PyLSS",
+    "description": "A python package to calculate linear solvent strength parameters in Liquid Chromatography",
+    "fork": false,
+    "url": "https://api.github.com/repos/gmrandazzo/PyLSS",
+    "forks_url": "https://api.github.com/repos/gmrandazzo/PyLSS/forks",
+    "keys_url": "https://api.github.com/repos/gmrandazzo/PyLSS/keys{/key_id}",
+    "collaborators_url": "https://api.github.com/repos/gmrandazzo/PyLSS/collaborators{/collaborator}",
+    "teams_url": "https://api.github.com/repos/gmrandazzo/PyLSS/teams",
+    "hooks_url": "https://api.github.com/repos/gmrandazzo/PyLSS/hooks",
+    "issue_events_url": "https://api.github.com/repos/gmrandazzo/PyLSS/issues/events{/number}",
+    "events_url": "https://api.github.com/repos/gmrandazzo/PyLSS/events",
+    "assignees_url": "https://api.github.com/repos/gmrandazzo/PyLSS/assignees{/user}",
+    "branches_url": "https://api.github.com/repos/gmrandazzo/PyLSS/branches{/branch}",
+    "tags_url": "https://api.github.com/repos/gmrandazzo/PyLSS/tags",
+    "blobs_url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/blobs{/sha}",
+    "git_tags_url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/tags{/sha}",
+    "git_refs_url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/refs{/sha}",
+    "trees_url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/trees{/sha}",
+    "statuses_url": "https://api.github.com/repos/gmrandazzo/PyLSS/statuses/{sha}",
+    "languages_url": "https://api.github.com/repos/gmrandazzo/PyLSS/languages",
+    "stargazers_url": "https://api.github.com/repos/gmrandazzo/PyLSS/stargazers",
+    "contributors_url": "https://api.github.com/repos/gmrandazzo/PyLSS/contributors",
+    "subscribers_url": "https://api.github.com/repos/gmrandazzo/PyLSS/subscribers",
+    "subscription_url": "https://api.github.com/repos/gmrandazzo/PyLSS/subscription",
+    "commits_url": "https://api.github.com/repos/gmrandazzo/PyLSS/commits{/sha}",
+    "git_commits_url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/commits{/sha}",
+    "comments_url": "https://api.github.com/repos/gmrandazzo/PyLSS/comments{/number}",
+    "issue_comment_url": "https://api.github.com/repos/gmrandazzo/PyLSS/issues/comments{/number}",
+    "contents_url": "https://api.github.com/repos/gmrandazzo/PyLSS/contents/{+path}",
+    "compare_url": "https://api.github.com/repos/gmrandazzo/PyLSS/compare/{base}...{head}",
+    "merges_url": "https://api.github.com/repos/gmrandazzo/PyLSS/merges",
+    "archive_url": "https://api.github.com/repos/gmrandazzo/PyLSS/{archive_format}{/ref}",
+    "downloads_url": "https://api.github.com/repos/gmrandazzo/PyLSS/downloads",
+    "issues_url": "https://api.github.com/repos/gmrandazzo/PyLSS/issues{/number}",
+    "pulls_url": "https://api.github.com/repos/gmrandazzo/PyLSS/pulls{/number}",
+    "milestones_url": "https://api.github.com/repos/gmrandazzo/PyLSS/milestones{/number}",
+    "notifications_url": "https://api.github.com/repos/gmrandazzo/PyLSS/notifications{?since,all,participating}",
+    "labels_url": "https://api.github.com/repos/gmrandazzo/PyLSS/labels{/name}",
+    "releases_url": "https://api.github.com/repos/gmrandazzo/PyLSS/releases{/id}",
+    "deployments_url": "https://api.github.com/repos/gmrandazzo/PyLSS/deployments",
+    "created_at": "2016-02-11T17:20:11Z",
+    "updated_at": "2026-05-01T08:47:03Z",
+    "pushed_at": "2026-05-01T08:46:59Z",
+    "git_url": "git://github.com/gmrandazzo/PyLSS.git",
+    "ssh_url": "git@github.com:gmrandazzo/PyLSS.git",
+    "clone_url": "https://github.com/gmrandazzo/PyLSS.git",
+    "svn_url": "https://github.com/gmrandazzo/PyLSS",
+    "homepage": null,
+    "size": 1005,
+    "stargazers_count": 12,
+    "watchers_count": 12,
+    "language": "Python",
+    "has_issues": true,
+    "has_projects": true,
+    "has_downloads": false,
+    "has_wiki": true,
+    "has_pages": false,
+    "has_discussions": false,
+    "forks_count": 2,
+    "mirror_url": null,
+    "archived": false,
+    "disabled": false,
+    "open_issues_count": 0,
+    "license": {
+      "key": "agpl-3.0",
+      "name": "GNU Affero General Public License v3.0",
+      "spdx_id": "AGPL-3.0",
+      "url": "https://api.github.com/licenses/agpl-3.0",
+      "node_id": "MDc6TGljZW5zZTE="
+    },
+    "allow_forking": true,
+    "is_template": false,
+    "web_commit_signoff_required": false,
+    "has_pull_requests": true,
+    "pull_request_creation_policy": "all",
+    "topics": [],
+    "visibility": "public",
+    "forks": 2,
+    "open_issues": 0,
+    "watchers": 12,
+    "default_branch": "master",
+    "temp_clone_token": null,
+    "network_count": 2,
+    "subscribers_count": 1
+  },
+  "commit": {
+    "sha": "d2cda850fa0b0881fc3cf1cd68c4d93b59dac04f",
+    "node_id": "C_kwDOAxJPQtoAKGQyY2RhODUwZmEwYjA4ODFmYzNjZjFjZDY4YzRkOTNiNTlkYWMwNGY",
+    "commit": {
+      "author": {
+        "name": "gmrandazzo",
+        "email": "gmrandazzo@gmail.com",
+        "date": "2026-05-01T08:46:56Z"
+      },
+      "committer": {
+        "name": "gmrandazzo",
+        "email": "gmrandazzo@gmail.com",
+        "date": "2026-05-01T08:46:56Z"
+      },
+      "message": "fix cd/ci pipeline",
+      "tree": {
+        "sha": "327be5f0d62c1e954f7c2ff9c8d1b60845304ff3",
+        "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/trees/327be5f0d62c1e954f7c2ff9c8d1b60845304ff3"
+      },
+      "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/commits/d2cda850fa0b0881fc3cf1cd68c4d93b59dac04f",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/gmrandazzo/PyLSS/commits/d2cda850fa0b0881fc3cf1cd68c4d93b59dac04f",
+    "html_url": "https://github.com/gmrandazzo/PyLSS/commit/d2cda850fa0b0881fc3cf1cd68c4d93b59dac04f",
+    "comments_url": "https://api.github.com/repos/gmrandazzo/PyLSS/commits/d2cda850fa0b0881fc3cf1cd68c4d93b59dac04f/comments",
+    "author": {
+      "login": "gmrandazzo",
+      "id": 3600735,
+      "node_id": "MDQ6VXNlcjM2MDA3MzU=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/3600735?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/gmrandazzo",
+      "html_url": "https://github.com/gmrandazzo",
+      "followers_url": "https://api.github.com/users/gmrandazzo/followers",
+      "following_url": "https://api.github.com/users/gmrandazzo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/gmrandazzo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/gmrandazzo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/gmrandazzo/subscriptions",
+      "organizations_url": "https://api.github.com/users/gmrandazzo/orgs",
+      "repos_url": "https://api.github.com/users/gmrandazzo/repos",
+      "events_url": "https://api.github.com/users/gmrandazzo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/gmrandazzo/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "gmrandazzo",
+      "id": 3600735,
+      "node_id": "MDQ6VXNlcjM2MDA3MzU=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/3600735?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/gmrandazzo",
+      "html_url": "https://github.com/gmrandazzo",
+      "followers_url": "https://api.github.com/users/gmrandazzo/followers",
+      "following_url": "https://api.github.com/users/gmrandazzo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/gmrandazzo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/gmrandazzo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/gmrandazzo/subscriptions",
+      "organizations_url": "https://api.github.com/users/gmrandazzo/orgs",
+      "repos_url": "https://api.github.com/users/gmrandazzo/repos",
+      "events_url": "https://api.github.com/users/gmrandazzo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/gmrandazzo/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "91ef796f81e8258d27cd79c1143e5d9a5c6f55b4",
+        "url": "https://api.github.com/repos/gmrandazzo/PyLSS/commits/91ef796f81e8258d27cd79c1143e5d9a5c6f55b4",
+        "html_url": "https://github.com/gmrandazzo/PyLSS/commit/91ef796f81e8258d27cd79c1143e5d9a5c6f55b4"
+      }
+    ],
+    "stats": {
+      "total": 3,
+      "additions": 2,
+      "deletions": 1
+    },
+    "files": [
+      {
+        "sha": "082704547f6bd56f34d6720704de699231af0f0a",
+        "filename": ".github/workflows/python-ci.yml",
+        "status": "modified",
+        "additions": 2,
+        "deletions": 1,
+        "changes": 3,
+        "blob_url": "https://github.com/gmrandazzo/PyLSS/blob/d2cda850fa0b0881fc3cf1cd68c4d93b59dac04f/.github%2Fworkflows%2Fpython-ci.yml",
+        "raw_url": "https://github.com/gmrandazzo/PyLSS/raw/d2cda850fa0b0881fc3cf1cd68c4d93b59dac04f/.github%2Fworkflows%2Fpython-ci.yml",
+        "contents_url": "https://api.github.com/repos/gmrandazzo/PyLSS/contents/.github%2Fworkflows%2Fpython-ci.yml?ref=d2cda850fa0b0881fc3cf1cd68c4d93b59dac04f",
+        "patch": "@@ -34,8 +34,9 @@ jobs:\n         \n     - name: Run tests with pytest\n       run: |\n+        export PYTHONPATH=$PYTHONPATH:$(pwd)/src\n         pytest\n         \n     - name: Static type checking with mypy\n       run: |\n-        mypy pylss bin gui\n+        mypy src"
+      }
+    ]
+  },
+  "tree": {
+    "sha": "d2cda850fa0b0881fc3cf1cd68c4d93b59dac04f",
+    "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/trees/d2cda850fa0b0881fc3cf1cd68c4d93b59dac04f",
+    "tree": [
+      {
+        "path": ".github",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "8c4e5c8c939459346dee8d3be2502f6265e485f4",
+        "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/trees/8c4e5c8c939459346dee8d3be2502f6265e485f4"
+      },
+      {
+        "path": ".github/workflows",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "b0b5679280c32326e921323553453a8a826167a8",
+        "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/trees/b0b5679280c32326e921323553453a8a826167a8"
+      },
+      {
+        "path": ".github/workflows/python-ci.yml",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "082704547f6bd56f34d6720704de699231af0f0a",
+        "size": 1052,
+        "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/blobs/082704547f6bd56f34d6720704de699231af0f0a"
+      },
+      {
+        "path": ".gitignore",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "f2f0ce43d3b34d7a16089ac4c882b212c0033ca6",
+        "size": 2292,
+        "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/blobs/f2f0ce43d3b34d7a16089ac4c882b212c0033ca6"
+      },
+      {
+        "path": "LICENSE",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "0ad25db4bd1d86c452db3f9602ccdbe172438f52",
+        "size": 34523,
+        "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/blobs/0ad25db4bd1d86c452db3f9602ccdbe172438f52"
+      },
+      {
+        "path": "README.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "ae1fe585472df9f654531afbe7e6669a38fb09f5",
+        "size": 5585,
+        "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/blobs/ae1fe585472df9f654531afbe7e6669a38fb09f5"
+      },
+      {
+        "path": "TODO",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "fb8a4dbd71e48310167c7e52df06686556a882bb",
+        "size": 329,
+        "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/blobs/fb8a4dbd71e48310167c7e52df06686556a882bb"
+      },
+      {
+        "path": "doc",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "2e88a493cbecb3858800dca95573e72942fe46bf",
+        "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/trees/2e88a493cbecb3858800dca95573e72942fe46bf"
+      },
+      {
+        "path": "doc/Documentation.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "107cd7a120b14143c2cc04b5b72596b6c8a08862",
+        "size": 5883,
+        "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/blobs/107cd7a120b14143c2cc04b5b72596b6c8a08862"
+      },
+      {
+        "path": "examples",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "4739eda7de5961868c5d0be68ac2aa4d56af51cf",
+        "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/trees/4739eda7de5961868c5d0be68ac2aa4d56af51cf"
+      },
+      {
+        "path": "examples/example_gc1.txt",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "d4efca62269f01edf547949aa4d89052f26c9b18",
+        "size": 2083,
+        "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/blobs/d4efca62269f01edf547949aa4d89052f26c9b18"
+      },
+      {
+        "path": "examples/example_gc2.txt",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "d79aa4d8d3888519db3c081864905ee426681a5e",
+        "size": 1966,
+        "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/blobs/d79aa4d8d3888519db3c081864905ee426681a5e"
+      },
+      {
+        "path": "examples/my_output.txt",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "a1a284baa9c487b0fe562caaa244bbc00f6e30be",
+        "size": 399,
+        "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/blobs/a1a284baa9c487b0fe562caaa244bbc00f6e30be"
+      },
+      {
+        "path": "examples/new_format_example.lss",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "26f65716ebb746d403902a0ed9d84e6d728c8bbd",
+        "size": 189,
+        "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/blobs/26f65716ebb746d403902a0ed9d84e6d728c8bbd"
+      },
+      {
+        "path": "examples/output_chromatogram.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e83c9b0dce4a8031737522239f5e0d16c33dc40c",
+        "size": 29850,
+        "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/blobs/e83c9b0dce4a8031737522239f5e0d16c33dc40c"
+      },
+      {
+        "path": "examples/output_gc1.txt",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "55f463e8ddf1e72e519ff32275b588863d93e321",
+        "size": 1647,
+        "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/blobs/55f463e8ddf1e72e519ff32275b588863d93e321"
+      },
+      {
+        "path": "examples/output_gc2.txt",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "b5031c0344a5beea017da7203e33ec73c7ccc43b",
+        "size": 9,
+        "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/blobs/b5031c0344a5beea017da7203e33ec73c7ccc43b"
+      },
+      {
+        "path": "examples/output_new_format.txt",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "0578cc7785444b5f7c6418f5b88e92ba2cf07671",
+        "size": 87,
+        "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/blobs/0578cc7785444b5f7c6418f5b88e92ba2cf07671"
+      },
+      {
+        "path": "examples/output_test_lss_parameter.txt",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "d6caae78182d1ab7e3caf660f74cc8572d23d578",
+        "size": 399,
+        "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/blobs/d6caae78182d1ab7e3caf660f74cc8572d23d578"
+      },
+      {
+        "path": "examples/output_testchromatogram.txt",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "75e018d06ef50eefae627c44efac110e8f1d0964",
+        "size": 83419,
+        "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/blobs/75e018d06ef50eefae627c44efac110e8f1d0964"
+      },
+      {
+        "path": "examples/runtest.sh",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "07eecb7728d470104cac6ca80814634e51317e67",
+        "size": 447,
+        "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/blobs/07eecb7728d470104cac6ca80814634e51317e67"
+      },
+      {
+        "path": "examples/simple_example.txt",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "3e899625e625d92882392149adae9990d7b5c2f1",
+        "size": 215,
+        "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/blobs/3e899625e625d92882392149adae9990d7b5c2f1"
+      },
+      {
+        "path": "examples/test_caculation_lss_parameter.txt",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "b2b38425f027576ad5b2e3715597970fa9b568eb",
+        "size": 260,
+        "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/blobs/b2b38425f027576ad5b2e3715597970fa9b568eb"
+      },
+      {
+        "path": "examples/test_caculation_lss_parameter_steroids.txt",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "8aaa25b6a85bf23783a0a8a05a1939293de031bf",
+        "size": 303,
+        "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/blobs/8aaa25b6a85bf23783a0a8a05a1939293de031bf"
+      },
+      {
+        "path": "examples/test_optimisation.txt",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "392f745f6897dc1ac3b7c4af364fb510a91e7273",
+        "size": 144,
+        "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/blobs/392f745f6897dc1ac3b7c4af364fb510a91e7273"
+      },
+      {
+        "path": "examples/testchromatogram.txt",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "7225c1531497e6dabee7edc9dbc1cbf90b053667",
+        "size": 222,
+        "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/blobs/7225c1531497e6dabee7edc9dbc1cbf90b053667"
+      },
+      {
+        "path": "mypy.ini",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "db0970c8a68243c6dacce897abf027ac50800a0c",
+        "size": 433,
+        "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/blobs/db0970c8a68243c6dacce897abf027ac50800a0c"
+      },
+      {
+        "path": "pyproject.toml",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "d562a1589d55907d7666c0b8a9cd5d5e87732c42",
+        "size": 1005,
+        "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/blobs/d562a1589d55907d7666c0b8a9cd5d5e87732c42"
+      },
+      {
+        "path": "src",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "ff77e42bc57259759ba8b307e1ed2e32d568269c",
+        "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/trees/ff77e42bc57259759ba8b307e1ed2e32d568269c"
+      },
+      {
+        "path": "src/pylss",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "6195071619f966863eb99f4b733d69387a80869e",
+        "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/trees/6195071619f966863eb99f4b733d69387a80869e"
+      },
+      {
+        "path": "src/pylss/MakeChromatogram.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "32cec41049464d9f63f31b125a0fabd7b30ee51a",
+        "size": 2380,
+        "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/blobs/32cec41049464d9f63f31b125a0fabd7b30ee51a"
+      },
+      {
+        "path": "src/pylss/MakeCromatogram.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "27d851e9769afa9ebe3cf988b3e60c7a00e78a69",
+        "size": 2338,
+        "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/blobs/27d851e9769afa9ebe3cf988b3e60c7a00e78a69"
+      },
+      {
+        "path": "src/pylss/RsOrgSolvPlot.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "3c72e61288d719b8a479c4131f0cfb4070afaec4",
+        "size": 4474,
+        "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/blobs/3c72e61288d719b8a479c4131f0cfb4070afaec4"
+      },
+      {
+        "path": "src/pylss/__init__.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "8c7106945a96d0032dd7c5dc8a3db824540b7d67",
+        "size": 751,
+        "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/blobs/8c7106945a96d0032dd7c5dc8a3db824540b7d67"
+      },
+      {
+        "path": "src/pylss/chromanalysis.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "38a51de0ac5e17fbfd4950acd7b1979f3ac967bc",
+        "size": 8639,
+        "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/blobs/38a51de0ac5e17fbfd4950acd7b1979f3ac967bc"
+      },
+      {
+        "path": "src/pylss/gradientutils.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "246be16c94c11b8695de8eb62be1dfc340c58eff",
+        "size": 10354,
+        "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/blobs/246be16c94c11b8695de8eb62be1dfc340c58eff"
+      },
+      {
+        "path": "src/pylss/gui",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "29a8f82d257587fcae2d4ba4f4c931aa86b87158",
+        "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/trees/29a8f82d257587fcae2d4ba4f4c931aa86b87158"
+      },
+      {
+        "path": "src/pylss/gui/Makefile",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "6fa2dc37abd6a4dee2e10a5cf2022846564e30cc",
+        "size": 484,
+        "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/blobs/6fa2dc37abd6a4dee2e10a5cf2022846564e30cc"
+      },
+      {
+        "path": "src/pylss/gui/__init__.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "8c7106945a96d0032dd7c5dc8a3db824540b7d67",
+        "size": 751,
+        "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/blobs/8c7106945a96d0032dd7c5dc8a3db824540b7d67"
+      },
+      {
+        "path": "src/pylss/gui/aboutdialog.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "3b7cc96e31e3f88a966f86dc59fb88079efab312",
+        "size": 1550,
+        "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/blobs/3b7cc96e31e3f88a966f86dc59fb88079efab312"
+      },
+      {
+        "path": "src/pylss/gui/aboutdialog.ui",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "39caeeadbfbf6242d4aad6e8576c1bf6ba96d6a5",
+        "size": 2293,
+        "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/blobs/39caeeadbfbf6242d4aad6e8576c1bf6ba96d6a5"
+      },
+      {
+        "path": "src/pylss/gui/automaticelutionwindowstretching.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "738bbc1efecacebcc43117360930c2a3d33fe28b",
+        "size": 2828,
+        "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/blobs/738bbc1efecacebcc43117360930c2a3d33fe28b"
+      },
+      {
+        "path": "src/pylss/gui/automaticelutionwindowstretching.ui",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "695df3f4b5fe2a7f2b5d2955142ccb0f8bd01bbd",
+        "size": 6205,
+        "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/blobs/695df3f4b5fe2a7f2b5d2955142ccb0f8bd01bbd"
+      },
+      {
+        "path": "src/pylss/gui/chromanalyzer.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "f47e84f50e1eaf91662de356591e50add99bcfc4",
+        "size": 7518,
+        "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/blobs/f47e84f50e1eaf91662de356591e50add99bcfc4"
+      },
+      {
+        "path": "src/pylss/gui/chromanalyzer.ui",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "f59aa02b5f7a86854ee462a3a1e42bb2654a8f4c",
+        "size": 5924,
+        "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/blobs/f59aa02b5f7a86854ee462a3a1e42bb2654a8f4c"
+      },
+      {
+        "path": "src/pylss/gui/computelss.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "2d2bc90cd26966c03e16e414a77d1d8b48386b18",
+        "size": 1582,
+        "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/blobs/2d2bc90cd26966c03e16e414a77d1d8b48386b18"
+      },
+      {
+        "path": "src/pylss/gui/computelss.ui",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "6adecdc8e807bcd2cb1a855c143be87145e3d541",
+        "size": 2910,
+        "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/blobs/6adecdc8e807bcd2cb1a855c143be87145e3d541"
+      },
+      {
+        "path": "src/pylss/gui/gui_aboutdialog.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "12c9060037817f447b13dacad72f3446e7308d42",
+        "size": 3292,
+        "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/blobs/12c9060037817f447b13dacad72f3446e7308d42"
+      },
+      {
+        "path": "src/pylss/gui/gui_automaticelutionwindowstretching.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "683739fc1e87d2201d5958161f1e38f2d0dc071a",
+        "size": 8223,
+        "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/blobs/683739fc1e87d2201d5958161f1e38f2d0dc071a"
+      },
+      {
+        "path": "src/pylss/gui/gui_chromanalyzer.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "dbc66c7838353f5c4c15d6525c8fa23624023c5d",
+        "size": 7268,
+        "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/blobs/dbc66c7838353f5c4c15d6525c8fa23624023c5d"
+      },
+      {
+        "path": "src/pylss/gui/gui_computelss.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "2c173b1107acfecd7fc67136d711eeed3cb9bea0",
+        "size": 4505,
+        "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/blobs/2c173b1107acfecd7fc67136d711eeed3cb9bea0"
+      },
+      {
+        "path": "src/pylss/gui/gui_importdialog.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "3f45058fb240c06d0c76faa3289ed3b4fd441b6c",
+        "size": 8431,
+        "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/blobs/3f45058fb240c06d0c76faa3289ed3b4fd441b6c"
+      },
+      {
+        "path": "src/pylss/gui/gui_plotmaps.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "d833c16064932d0a56b1ca7c8b251c80f06476e8",
+        "size": 3104,
+        "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/blobs/d833c16064932d0a56b1ca7c8b251c80f06476e8"
+      },
+      {
+        "path": "src/pylss/gui/icon.xcf",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c63f68494a7ef32b16c1cbe4c982f9ddb676e436",
+        "size": 33677,
+        "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/blobs/c63f68494a7ef32b16c1cbe4c982f9ddb676e436"
+      },
+      {
+        "path": "src/pylss/gui/importdialog.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "749a93280cb082c55d1a7c060944ac87f0374cc1",
+        "size": 5541,
+        "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/blobs/749a93280cb082c55d1a7c060944ac87f0374cc1"
+      },
+      {
+        "path": "src/pylss/gui/importdialog.ui",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "4808e16944fce709694bbab3f77476bc4933ac3b",
+        "size": 6767,
+        "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/blobs/4808e16944fce709694bbab3f77476bc4933ac3b"
+      },
+      {
+        "path": "src/pylss/gui/mainwindow.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "3c62392de2510e6caaa5b4c0a9bda5160f52c42b",
+        "size": 20969,
+        "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/blobs/3c62392de2510e6caaa5b4c0a9bda5160f52c42b"
+      },
+      {
+        "path": "src/pylss/gui/mainwindow.ui",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e5b9b4bf0d0333bf9b842f5deec3b390f3c6d2be",
+        "size": 19263,
+        "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/blobs/e5b9b4bf0d0333bf9b842f5deec3b390f3c6d2be"
+      },
+      {
+        "path": "src/pylss/gui/plotmaps.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "1f5728d80edfa8a07e18567f5564ca5c5b4ce605",
+        "size": 9529,
+        "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/blobs/1f5728d80edfa8a07e18567f5564ca5c5b4ce605"
+      },
+      {
+        "path": "src/pylss/gui/plotmaps.ui",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c49d383272e0edcbee6da6743ac25ded27d005cc",
+        "size": 2286,
+        "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/blobs/c49d383272e0edcbee6da6743ac25ded27d005cc"
+      },
+      {
+        "path": "src/pylss/gui/pylss-gui-win32.pyinstallerspec",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "b229138311d52f640bd2d0cddca86801ab2ed85b",
+        "size": 908,
+        "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/blobs/b229138311d52f640bd2d0cddca86801ab2ed85b"
+      },
+      {
+        "path": "src/pylss/gui/pylss.ico",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "40ff8b676b2c8e04809ba47719e5476ef90e8fb0",
+        "size": 7810,
+        "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/blobs/40ff8b676b2c8e04809ba47719e5476ef90e8fb0"
+      },
+      {
+        "path": "src/pylss/gui/pylss_gui.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "2ce6a8f69bfe34ba9af6690f6c1ffd529842df8d",
+        "size": 19919,
+        "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/blobs/2ce6a8f69bfe34ba9af6690f6c1ffd529842df8d"
+      },
+      {
+        "path": "src/pylss/gui/pylssgui.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "1bbae17dde5b5b3dcfb2e73dcd15d137dc227922",
+        "size": 248270,
+        "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/blobs/1bbae17dde5b5b3dcfb2e73dcd15d137dc227922"
+      },
+      {
+        "path": "src/pylss/gui/test_gui_calculation_lss.txt",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "6330786b73827b7dab91145a29328eff2a787e84",
+        "size": 217,
+        "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/blobs/6330786b73827b7dab91145a29328eff2a787e84"
+      },
+      {
+        "path": "src/pylss/gui/utilities.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "a7bdb359f927f1d4b1b4c050fcf36d022184b9fc",
+        "size": 3874,
+        "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/blobs/a7bdb359f927f1d4b1b4c050fcf36d022184b9fc"
+      },
+      {
+        "path": "src/pylss/io.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c8fe02c87122fb1c6cc9b06d492332da9f793cf1",
+        "size": 4785,
+        "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/blobs/c8fe02c87122fb1c6cc9b06d492332da9f793cf1"
+      },
+      {
+        "path": "src/pylss/logssgen.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e5880c3c852e456cec9cc436184b46050ea7b6e8",
+        "size": 3717,
+        "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/blobs/e5880c3c852e456cec9cc436184b46050ea7b6e8"
+      },
+      {
+        "path": "src/pylss/logssoptseparation.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "780558ec9f1ad03857cf597d02e3200ca86380a3",
+        "size": 6925,
+        "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/blobs/780558ec9f1ad03857cf597d02e3200ca86380a3"
+      },
+      {
+        "path": "src/pylss/lsscoltransfer.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "f2aa9345dc10cd304d09eafc48f60b41020c9e28",
+        "size": 6303,
+        "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/blobs/f2aa9345dc10cd304d09eafc48f60b41020c9e28"
+      },
+      {
+        "path": "src/pylss/lssgen.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "5fc20ea50ba737740c0f6b5de1daea4186e0a7d2",
+        "size": 3805,
+        "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/blobs/5fc20ea50ba737740c0f6b5de1daea4186e0a7d2"
+      },
+      {
+        "path": "src/pylss/lssoptseparation.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "6d4c96f9e16f61736a106bbb8a73ced1aa8243da",
+        "size": 4255,
+        "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/blobs/6d4c96f9e16f61736a106bbb8a73ced1aa8243da"
+      },
+      {
+        "path": "src/pylss/lssoptseptwotemp.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "a1737ef3633c20af13bedad59fe3d0c9d0eea56f",
+        "size": 15345,
+        "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/blobs/a1737ef3633c20af13bedad59fe3d0c9d0eea56f"
+      },
+      {
+        "path": "src/pylss/lsstranscol.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "bae3a50065ae20419bbb8a80f0b4902ac7222e05",
+        "size": 9716,
+        "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/blobs/bae3a50065ae20419bbb8a80f0b4902ac7222e05"
+      },
+      {
+        "path": "src/pylss/miscalgoritms.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "8bbbb77f137c71285559c3a297bc5669541b643d",
+        "size": 1183,
+        "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/blobs/8bbbb77f137c71285559c3a297bc5669541b643d"
+      },
+      {
+        "path": "src/pylss/nlssengine.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "2a2360cc25c5cc57964d57f263ff03e78069d2dd",
+        "size": 5062,
+        "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/blobs/2a2360cc25c5cc57964d57f263ff03e78069d2dd"
+      },
+      {
+        "path": "src/pylss/optimizer.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "aaf7803fec9d4eb1db9c33ed11d8e704883e22b4",
+        "size": 3719,
+        "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/blobs/aaf7803fec9d4eb1db9c33ed11d8e704883e22b4"
+      },
+      {
+        "path": "src/pylss/optseparation.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "274063798c9859516ea61fa6be5d31ec2a46c660",
+        "size": 20979,
+        "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/blobs/274063798c9859516ea61fa6be5d31ec2a46c660"
+      },
+      {
+        "path": "src/pylss/plotengine.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "9d0b536d5cbd6082b279d6a061b1ba631aa864a0",
+        "size": 2718,
+        "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/blobs/9d0b536d5cbd6082b279d6a061b1ba631aa864a0"
+      },
+      {
+        "path": "src/pylss/ssengine.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "923ce569258535c831846517270c9e11204f82e0",
+        "size": 8006,
+        "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/blobs/923ce569258535c831846517270c9e11204f82e0"
+      },
+      {
+        "path": "tests",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "171ba3eda0c29eca15acd04385611553d1e9d6cb",
+        "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/trees/171ba3eda0c29eca15acd04385611553d1e9d6cb"
+      },
+      {
+        "path": "tests/__init__.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "8c7106945a96d0032dd7c5dc8a3db824540b7d67",
+        "size": 751,
+        "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/blobs/8c7106945a96d0032dd7c5dc8a3db824540b7d67"
+      },
+      {
+        "path": "tests/test_chromanalysis.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "cbe677e14005348d242ee89fd804883e9002f3ec",
+        "size": 2345,
+        "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/blobs/cbe677e14005348d242ee89fd804883e9002f3ec"
+      },
+      {
+        "path": "tests/test_optimizer.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "da0c7bfe00c8ed711ee8c789a807c3f32831f6ac",
+        "size": 1637,
+        "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/blobs/da0c7bfe00c8ed711ee8c789a807c3f32831f6ac"
+      },
+      {
+        "path": "tests/test_ssengine.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "0221cef25de235a928d1a11646367280392ae84c",
+        "size": 2378,
+        "url": "https://api.github.com/repos/gmrandazzo/PyLSS/git/blobs/0221cef25de235a928d1a11646367280392ae84c"
+      }
+    ],
+    "truncated": false
+  },
+  "issues": [],
+  "file_errors": [],
+  "snapshot": "C:\\Users\\T22016\\AppData\\Local\\Temp\\lc-gradient-research-20261013\\gmrandazzo__PyLSS",
+  "downloaded_text_paths": [
+    ".github/workflows/python-ci.yml",
+    "LICENSE",
+    "README.md",
+    "doc/Documentation.md",
+    "examples/example_gc1.txt",
+    "examples/example_gc2.txt",
+    "examples/my_output.txt",
+    "examples/output_gc1.txt",
+    "examples/output_gc2.txt",
+    "examples/output_new_format.txt",
+    "examples/output_test_lss_parameter.txt",
+    "examples/output_testchromatogram.txt",
+    "examples/runtest.sh",
+    "examples/simple_example.txt",
+    "examples/test_caculation_lss_parameter.txt",
+    "examples/test_caculation_lss_parameter_steroids.txt",
+    "examples/test_optimisation.txt",
+    "examples/testchromatogram.txt",
+    "pyproject.toml",
+    "src/pylss/MakeChromatogram.py",
+    "src/pylss/MakeCromatogram.py",
+    "src/pylss/RsOrgSolvPlot.py",
+    "src/pylss/__init__.py",
+    "src/pylss/chromanalysis.py",
+    "src/pylss/gradientutils.py",
+    "src/pylss/gui/__init__.py",
+    "src/pylss/gui/aboutdialog.py",
+    "src/pylss/gui/automaticelutionwindowstretching.py",
+    "src/pylss/gui/chromanalyzer.py",
+    "src/pylss/gui/computelss.py",
+    "src/pylss/gui/gui_aboutdialog.py",
+    "src/pylss/gui/gui_automaticelutionwindowstretching.py",
+    "src/pylss/gui/gui_chromanalyzer.py",
+    "src/pylss/gui/gui_computelss.py",
+    "src/pylss/gui/gui_importdialog.py",
+    "src/pylss/gui/gui_plotmaps.py",
+    "src/pylss/gui/importdialog.py",
+    "src/pylss/gui/mainwindow.py",
+    "src/pylss/gui/plotmaps.py",
+    "src/pylss/gui/pylss_gui.py",
+    "src/pylss/gui/test_gui_calculation_lss.txt",
+    "src/pylss/gui/utilities.py",
+    "src/pylss/io.py",
+    "src/pylss/logssgen.py",
+    "src/pylss/logssoptseparation.py",
+    "src/pylss/lsscoltransfer.py",
+    "src/pylss/lssgen.py",
+    "src/pylss/lssoptseparation.py",
+    "src/pylss/lssoptseptwotemp.py",
+    "src/pylss/lsstranscol.py",
+    "src/pylss/miscalgoritms.py",
+    "src/pylss/nlssengine.py",
+    "src/pylss/optimizer.py",
+    "src/pylss/optseparation.py",
+    "src/pylss/plotengine.py",
+    "src/pylss/ssengine.py",
+    "tests/__init__.py",
+    "tests/test_chromanalysis.py",
+    "tests/test_optimizer.py",
+    "tests/test_ssengine.py"
+  ]
+}

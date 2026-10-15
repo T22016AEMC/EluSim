@@ -1,0 +1,12 @@
+services:
+  elusim:
+    build: .
+    ports: ["8000:8000"]
+    environment:
+      PORT: 8000
+      SOURCE_REVISION: ${SOURCE_REVISION:-local-unreleased}
+    read_only: true
+    tmpfs: [/tmp]
+    mem_limit: 768m
+    cpus: 1.0
+    restart: unless-stopped

@@ -1,0 +1,169 @@
+[
+  {
+    "repository_snapshot": "boecker-lab__2-step",
+    "root_license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "8486a10c4393cee1c25392769ddd3b2d6c242d6ec7928e1414efff7dfb2f07ef",
+        "evidence_excerpt": "                    GNU AFFERO GENERAL PUBLIC LICENSE\n                       Version 3, 19 November 2007\n\n Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>\n Everyone is permitted to copy and distribute verbatim copies\n of this license document, but changing it is not allowed.\n\n                            Preamble\n\n  The GNU Affero General Public License is a free, copyleft license for\nsoftware and other kinds of works, specifically designed to ensure\ncooperation with the community in the case of network server software.\n\n  The licenses for most software and other practical works are designed\nto take away your freedom to share and change the works.  By contrast,\nour General Public Licenses are intended to guarantee your freedom to\nshare and change all versions of a program--to make sure it remains free\nsoftware for all its users.\n\n  When we speak of free software, we a"
+      }
+    ],
+    "note": "Empty list means no root license found; vendor licenses are not blanket project licenses."
+  },
+  {
+    "repository_snapshot": "cadet__CADET-Core",
+    "root_license_files": [
+      {
+        "path": "LICENSE.txt",
+        "sha256": "0d96a4ff68ad6d4b6f1f30f713b18d5184912ba8dd389f86aa7710db079abcb0",
+        "evidence_excerpt": "                    GNU AFFERO GENERAL PUBLIC LICENSE\n                       Version 3, 19 November 2007\n\n Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>\n Everyone is permitted to copy and distribute verbatim copies\n of this license document, but changing it is not allowed.\n\n                            Preamble\n\n  The GNU Affero General Public License is a free, copyleft license for\nsoftware and other kinds of works, specifically designed to ensure\ncooperation with the community in the case of network server software.\n\n  The licenses for most software and other practical works are designed\nto take away your freedom to share and change the works.  By contrast,\nour General Public Licenses are intended to guarantee your freedom to\nshare and change all versions of a program--to make sure it remains free\nsoftware for all its users.\n\n  When we speak of free software, we a"
+      }
+    ],
+    "note": "Empty list means no root license found; vendor licenses are not blanket project licenses."
+  },
+  {
+    "repository_snapshot": "cadet__CADET-Process",
+    "root_license_files": [],
+    "note": "Empty list means no root license found; vendor licenses are not blanket project licenses."
+  },
+  {
+    "repository_snapshot": "CompOmics__DeepLC",
+    "root_license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "283ea6cc2997a1a70da0049e09adf9317bb60ca1b51279b65196b83a69e1996b",
+        "evidence_excerpt": "Apache License\n                           Version 2.0, January 2004\n                        http://www.apache.org/licenses/\n\n   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\n\n   1. Definitions.\n\n      \"License\" shall mean the terms and conditions for use, reproduction,\n      and distribution as defined by Sections 1 through 9 of this document.\n\n      \"Licensor\" shall mean the copyright owner or entity authorized by\n      the copyright owner that is granting the License.\n\n      \"Legal Entity\" shall mean the union of the acting entity and all\n      other entities that control, are controlled by, or are under common\n      control with that entity. For the purposes of this definition,\n      \"control\" means (i) the power, direct or indirect, to cause the\n      direction or management of such entity, whether by contract or\n      otherwise, or (ii) ownership of fifty percent (50%"
+      }
+    ],
+    "note": "Empty list means no root license found; vendor licenses are not blanket project licenses."
+  },
+  {
+    "repository_snapshot": "DLUT-datas__MDL-TL",
+    "root_license_files": [],
+    "note": "Empty list means no root license found; vendor licenses are not blanket project licenses."
+  },
+  {
+    "repository_snapshot": "fau-advanced-separations__CADET-Process",
+    "root_license_files": [
+      {
+        "path": "LICENSE.md",
+        "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+        "evidence_excerpt": "                    GNU GENERAL PUBLIC LICENSE\n                       Version 3, 29 June 2007\n\n Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>\n Everyone is permitted to copy and distribute verbatim copies\n of this license document, but changing it is not allowed.\n\n                            Preamble\n\n  The GNU General Public License is a free, copyleft license for\nsoftware and other kinds of works.\n\n  The licenses for most software and other practical works are designed\nto take away your freedom to share and change the works.  By contrast,\nthe GNU General Public License is intended to guarantee your freedom to\nshare and change all versions of a program--to make sure it remains free\nsoftware for all its users.  We, the Free Software Foundation, use the\nGNU General Public License for most of our software; it applies also to\nany other work released this way by its aut"
+      }
+    ],
+    "note": "Empty list means no root license found; vendor licenses are not blanket project licenses."
+  },
+  {
+    "repository_snapshot": "gmrandazzo__PyLSS",
+    "root_license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "8486a10c4393cee1c25392769ddd3b2d6c242d6ec7928e1414efff7dfb2f07ef",
+        "evidence_excerpt": "                    GNU AFFERO GENERAL PUBLIC LICENSE\n                       Version 3, 19 November 2007\n\n Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>\n Everyone is permitted to copy and distribute verbatim copies\n of this license document, but changing it is not allowed.\n\n                            Preamble\n\n  The GNU Affero General Public License is a free, copyleft license for\nsoftware and other kinds of works, specifically designed to ensure\ncooperation with the community in the case of network server software.\n\n  The licenses for most software and other practical works are designed\nto take away your freedom to share and change the works.  By contrast,\nour General Public Licenses are intended to guarantee your freedom to\nshare and change all versions of a program--to make sure it remains free\nsoftware for all its users.\n\n  When we speak of free software, we a"
+      }
+    ],
+    "note": "Empty list means no root license found; vendor licenses are not blanket project licenses."
+  },
+  {
+    "repository_snapshot": "gurevichlab__grip",
+    "root_license_files": [],
+    "note": "Empty list means no root license found; vendor licenses are not blanket project licenses."
+  },
+  {
+    "repository_snapshot": "HopkinsLaboratory__Graphormer-RT",
+    "root_license_files": [],
+    "note": "Empty list means no root license found; vendor licenses are not blanket project licenses."
+  },
+  {
+    "repository_snapshot": "Jimbo994__AutoLC-BO",
+    "root_license_files": [
+      {
+        "path": "license.md",
+        "sha256": "1349a4b6148492b44f629e64eed676612e234fe9a839e4f3b277c1482c8849f1",
+        "evidence_excerpt": "Attribution-NonCommercial-ShareAlike 4.0 International\n\n=======================================================================\n\nCreative Commons Corporation (\"Creative Commons\") is not a law firm and\ndoes not provide legal services or legal advice. Distribution of\nCreative Commons public licenses does not create a lawyer-client or\nother relationship. Creative Commons makes its licenses and related\ninformation available on an \"as-is\" basis. Creative Commons gives no\nwarranties regarding its licenses, any material licensed under their\nterms and conditions, or any related information. Creative Commons\ndisclaims all liability for damages resulting from their use to the\nfullest extent possible.\n\nUsing Creative Commons Public Licenses\n\nCreative Commons public licenses provide a standard set of terms and\nconditions that creators and other rights holders may use to share\noriginal works of autho"
+      }
+    ],
+    "note": "Empty list means no root license found; vendor licenses are not blanket project licenses."
+  },
+  {
+    "repository_snapshot": "jonkeeley__openiex",
+    "root_license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "eeb6cd0118c9153c4af3132ea098b36897df2c6ad79155421e3954f0e7421c8e",
+        "evidence_excerpt": "MIT License\n\nCopyright (c) 2025 Jon Keeley\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER"
+      }
+    ],
+    "note": "Empty list means no root license found; vendor licenses are not blanket project licenses."
+  },
+  {
+    "repository_snapshot": "josiehong__TIMPANI",
+    "root_license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+        "evidence_excerpt": "                                 Apache License\n                           Version 2.0, January 2004\n                        http://www.apache.org/licenses/\n\n   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\n\n   1. Definitions.\n\n      \"License\" shall mean the terms and conditions for use, reproduction,\n      and distribution as defined by Sections 1 through 9 of this document.\n\n      \"Licensor\" shall mean the copyright owner or entity authorized by\n      the copyright owner that is granting the License.\n\n      \"Legal Entity\" shall mean the union of the acting entity and all\n      other entities that control, are controlled by, or are under common\n      control with that entity. For the purposes of this definition,\n      \"control\" means (i) the power, direct or indirect, to cause the\n      direction or management of such entity, whether by contract or\n      otherwise, or (ii"
+      }
+    ],
+    "note": "Empty list means no root license found; vendor licenses are not blanket project licenses."
+  },
+  {
+    "repository_snapshot": "jraysajulga__High-Performance-Liquid-Chromatography-Research-Programs",
+    "root_license_files": [],
+    "note": "Empty list means no root license found; vendor licenses are not blanket project licenses."
+  },
+  {
+    "repository_snapshot": "julianealdag__hplc-retention-prediction",
+    "root_license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "be614fd2a1a30c970fb6cb56ddb81f2b2a853431b9972773c8e3523dbcb973e0",
+        "evidence_excerpt": "MIT License\n\nCopyright (c) 2025-2026 Juliane Aldag\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES "
+      }
+    ],
+    "note": "Empty list means no root license found; vendor licenses are not blanket project licenses."
+  },
+  {
+    "repository_snapshot": "michaelwitting__RepoRT",
+    "root_license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "2835bab027f3352343175bc5c0b56ea955c8c981e60892368041aa75f3d24221",
+        "evidence_excerpt": "Attribution-ShareAlike 4.0 International\n\n=======================================================================\n\nCreative Commons Corporation (\"Creative Commons\") is not a law firm and\ndoes not provide legal services or legal advice. Distribution of\nCreative Commons public licenses does not create a lawyer-client or\nother relationship. Creative Commons makes its licenses and related\ninformation available on an \"as-is\" basis. Creative Commons gives no\nwarranties regarding its licenses, any material licensed under their\nterms and conditions, or any related information. Creative Commons\ndisclaims all liability for damages resulting from their use to the\nfullest extent possible.\n\nUsing Creative Commons Public Licenses\n\nCreative Commons public licenses provide a standard set of terms and\nconditions that creators and other rights holders may use to share\noriginal works of authorship and othe"
+      }
+    ],
+    "note": "Empty list means no root license found; vendor licenses are not blanket project licenses."
+  },
+  {
+    "repository_snapshot": "Qiong-Yang__GNN-TL",
+    "root_license_files": [],
+    "note": "Empty list means no root license found; vendor licenses are not blanket project licenses."
+  },
+  {
+    "repository_snapshot": "sartorius-research__STLC",
+    "root_license_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+        "evidence_excerpt": "                    GNU GENERAL PUBLIC LICENSE\n                       Version 3, 29 June 2007\n\n Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>\n Everyone is permitted to copy and distribute verbatim copies\n of this license document, but changing it is not allowed.\n\n                            Preamble\n\n  The GNU General Public License is a free, copyleft license for\nsoftware and other kinds of works.\n\n  The licenses for most software and other practical works are designed\nto take away your freedom to share and change the works.  By contrast,\nthe GNU General Public License is intended to guarantee your freedom to\nshare and change all versions of a program--to make sure it remains free\nsoftware for all its users.  We, the Free Software Foundation, use the\nGNU General Public License for most of our software; it applies also to\nany other work released this way by its aut"
+      }
+    ],
+    "note": "Empty list means no root license found; vendor licenses are not blanket project licenses."
+  },
+  {
+    "repository_snapshot": "statisticalbiotechnology__NonlinearGradientsUI",
+    "root_license_files": [],
+    "note": "Empty list means no root license found; vendor licenses are not blanket project licenses."
+  },
+  {
+    "repository_snapshot": "yufree__mzrtsim",
+    "root_license_files": [
+      {
+        "path": "DESCRIPTION",
+        "sha256": "fa341f82ffc3686f0ce48eb3ffbff1b7abe39bdf3a9ce97fae3dcfa7cecd500f",
+        "evidence_excerpt": "Package: mzrtsim\nType: Package\nTitle: Raw data (mzML) and peaks list simulation for LC/GC-MS based metabolomics data\nVersion: 0.99.1\nDate: 2025-04-01\nAuthors@R: person(given = \"Miao\", family = \"YU\",\n        role = c(\"aut\", \"cre\"), \n        email = \"yufreecas@gmail.com\",\n        comment = c(ORCID = \"0000-0002-2804-6014\"))\nDescription: Raw data(mzML) and peaks list simulation for LC/GC-MS based metabolomics data. Besides, shiny applications could be used to simulate GC/LC-MS based raw data and peaks list.\nURL: https://github.com/yufree/mzrtsim\nBugReports: https://github.com/yufree/mzrtsim/issues\nLicense: GPL-2\nEncoding: UTF-8\nLazyData: true\nLazyDataCompression: xz\nSuggests: knitr,\n    rmarkdown,\n    testthat (>= 3.0.0),\n    shiny,\n    BiocStyle\nVignetteBuilder: knitr\nbiocViews: Metabolomics, MassSpectrometry, Simulation\nDepends: R (>= 4.3.0)\nImports: stats,\n        utils,\n        S4Vectors"
+      }
+    ],
+    "note": "Empty list means no root license found; vendor licenses are not blanket project licenses."
+  }
+]

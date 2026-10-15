@@ -1,0 +1,3 @@
+COMMAND C:\Users\T22016\AppData\Local\Temp\lc-gradient-research-20261013\venv-pylss\Scripts\python.exe -m pytest C:\Users\T22016\AppData\Local\Temp\lc-gradient-research-20261013\gmrandazzo__PyLSS\tests -q
+......                                                                   [100%]
+6 passed in 1.16s
