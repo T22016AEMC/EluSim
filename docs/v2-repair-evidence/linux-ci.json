@@ -1,0 +1,259 @@
+{
+  "commit": "631e575a542ebe70e45efabee5005fbeed9a129d",
+  "url": "https://github.com/T22016AEMC/EluSim/actions/runs/38754523554",
+  "jobs": [
+    {
+      "id": 116489298694,
+      "name": "backend",
+      "status": "completed",
+      "conclusion": "success",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1,
+          "started_at": "2026-10-15T14:47:23Z",
+          "completed_at": "2026-10-15T14:47:24Z"
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2,
+          "started_at": "2026-10-15T14:47:24Z",
+          "completed_at": "2026-10-15T14:47:26Z"
+        },
+        {
+          "name": "Run actions/setup-python@v5",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3,
+          "started_at": "2026-10-15T14:47:26Z",
+          "completed_at": "2026-10-15T14:47:29Z"
+        },
+        {
+          "name": "Run pip install -r backend/requirements.lock",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4,
+          "started_at": "2026-10-15T14:47:29Z",
+          "completed_at": "2026-10-15T14:47:42Z"
+        },
+        {
+          "name": "Run pytest -q --junitxml=artifacts/backend-tests.xml",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5,
+          "started_at": "2026-10-15T14:47:42Z",
+          "completed_at": "2026-10-15T14:47:52Z"
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6,
+          "started_at": "2026-10-15T14:47:52Z",
+          "completed_at": "2026-10-15T14:47:53Z"
+        },
+        {
+          "name": "Post Run actions/setup-python@v5",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 11,
+          "started_at": "2026-10-15T14:47:53Z",
+          "completed_at": "2026-10-15T14:47:53Z"
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 12,
+          "started_at": "2026-10-15T14:47:53Z",
+          "completed_at": "2026-10-15T14:47:53Z"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 13,
+          "started_at": "2026-10-15T14:47:53Z",
+          "completed_at": "2026-10-15T14:47:53Z"
+        }
+      ]
+    },
+    {
+      "id": 116489298770,
+      "name": "frontend",
+      "status": "completed",
+      "conclusion": "success",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1,
+          "started_at": "2026-10-15T14:47:23Z",
+          "completed_at": "2026-10-15T14:47:24Z"
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2,
+          "started_at": "2026-10-15T14:47:24Z",
+          "completed_at": "2026-10-15T14:47:25Z"
+        },
+        {
+          "name": "Run pnpm/action-setup@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3,
+          "started_at": "2026-10-15T14:47:25Z",
+          "completed_at": "2026-10-15T14:47:26Z"
+        },
+        {
+          "name": "Run actions/setup-node@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4,
+          "started_at": "2026-10-15T14:47:26Z",
+          "completed_at": "2026-10-15T14:47:28Z"
+        },
+        {
+          "name": "Run pnpm install --frozen-lockfile",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5,
+          "started_at": "2026-10-15T14:47:28Z",
+          "completed_at": "2026-10-15T14:47:30Z"
+        },
+        {
+          "name": "Run pnpm build",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6,
+          "started_at": "2026-10-15T14:47:30Z",
+          "completed_at": "2026-10-15T14:47:39Z"
+        },
+        {
+          "name": "Post Run actions/setup-node@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 10,
+          "started_at": "2026-10-15T14:47:39Z",
+          "completed_at": "2026-10-15T14:47:39Z"
+        },
+        {
+          "name": "Post Run pnpm/action-setup@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 11,
+          "started_at": "2026-10-15T14:47:39Z",
+          "completed_at": "2026-10-15T14:47:39Z"
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 12,
+          "started_at": "2026-10-15T14:47:39Z",
+          "completed_at": "2026-10-15T14:47:39Z"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 13,
+          "started_at": "2026-10-15T14:47:39Z",
+          "completed_at": "2026-10-15T14:47:39Z"
+        }
+      ]
+    },
+    {
+      "id": 116489629432,
+      "name": "container",
+      "status": "completed",
+      "conclusion": "success",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1,
+          "started_at": "2026-10-15T14:48:03Z",
+          "completed_at": "2026-10-15T14:48:03Z"
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2,
+          "started_at": "2026-10-15T14:48:03Z",
+          "completed_at": "2026-10-15T14:48:05Z"
+        },
+        {
+          "name": "Run docker build -t elusim:v2 .",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3,
+          "started_at": "2026-10-15T14:48:05Z",
+          "completed_at": "2026-10-15T14:48:40Z"
+        },
+        {
+          "name": "Run docker run --rm --memory=512m elusim:v2 python -m pytest -q -p no:cacheprovider",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4,
+          "started_at": "2026-10-15T14:48:40Z",
+          "completed_at": "2026-10-15T14:48:49Z"
+        },
+        {
+          "name": "Run docker run -d --name elusim -p 8000:8000 elusim:v2",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5,
+          "started_at": "2026-10-15T14:48:49Z",
+          "completed_at": "2026-10-15T14:48:49Z"
+        },
+        {
+          "name": "Run for i in $(seq 1 30); do curl --fail http://localhost:8000/api/health && exit 0; sleep 2; done",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6,
+          "started_at": "2026-10-15T14:48:49Z",
+          "completed_at": "2026-10-15T14:48:51Z"
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 12,
+          "started_at": "2026-10-15T14:48:51Z",
+          "completed_at": "2026-10-15T14:48:51Z"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 13,
+          "started_at": "2026-10-15T14:48:51Z",
+          "completed_at": "2026-10-15T14:48:51Z"
+        }
+      ]
+    },
+    {
+      "id": 116490110942,
+      "name": "deploy",
+      "status": "completed",
+      "conclusion": "skipped",
+      "steps": []
+    }
+  ],
+  "backend_summary": [
+    "2026-10-15T14:47:51.8420974Z 51 passed, 1 warning in 8.67s"
+  ],
+  "container_summary": [
+    "2026-10-15T14:48:48.7370196Z 51 passed, 1 warning in 7.82s"
+  ]
+}

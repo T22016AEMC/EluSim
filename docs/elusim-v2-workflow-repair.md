@@ -50,3 +50,31 @@ Deployment retains Dockerfile, backend/requirements.in + requirements.lock, fron
 Additional non-database test: CC(=O)Nc1ccc(OCCC)cc1 is absent from the measured-curve registry and training set; the unchanged QSRR accepts its domain and predicts logKw 2.3092989204 / S 4.6164833713. Its parameters enter the real LSS solver. This is functional inference verification, not experimental accuracy validation. The additional test passed (1 passed, 11 deselected); full Linux CI will run all 51 tests.
 
 Final local browser run: 17/18 passed; mobile optimization returned HTTP 504 while an additional Python test encountered Windows WMI/native resource errors. The unchanged test passed in isolation (38.0s whole workflow; 1/1), without raising the server 30s compute budget. All 18 cases have passed; this was not a single clean final suite run. Both original failure and isolated rerun JSON are retained. Linux CI and public-site validation remain release gates.
+
+## Release verification
+
+Code commit: 631e575a542ebe70e45efabee5005fbeed9a129d; PR #4: https://github.com/T22016AEMC/EluSim/pull/4. Linux CI https://github.com/T22016AEMC/EluSim/actions/runs/38754523554 passed: backend 51 tests (8.67s), container 51 tests under 512 MiB (7.82s), frontend production build and container health.
+
+Render deployment dep-db8ejegn74is73epmii0 reached live at 2026-10-15T14:58:08Z on the existing free service. Public health confirms the code commit. After the deployment-transition disconnect, the post-live repair smoke passed: legacy-source compounds produce Rt 5.621256 / 6.406693 / 7.031674 min and areas 0.5 / 0.3 / 0.2; a genuinely non-lookup QSRR input produces parameters and LSS Rt 7.212821 min. Invalid negative S still correctly returns detailed 422. No claim of experimental accuracy from these functional tests.
+
+Public retention regression passed on commit 631e575: three experimental-curve components resolved; changing gradient time changed Rt from [2.781215, 1.293896, 5.407988] to [2.858424, 1.294723, 5.944867] min; changing parts preserved Rt while changing areas. Two optimization candidates were actually evaluated. Manual parameters survived resolve, and MeOH correctly caused abstention. Corresponding-source archive passed (229 files, 6,117,983 bytes), containing licenses, curve data and model weights, with no .env/.git/.venv paths.
+
+## 操作驗收方式
+
+1. 在 Retention Prediction 選 Load three experimental curve compounds，這是明確載入實驗曲線示範與相容條件的操作，不是未知化合物預測。
+2. 在 Compounds 選 Resolve retention from structures；確認各 ID 的 logKw / S 與 Literature-derived 來源寫入。也可選 Structure workflow 後 Run simulation，成功解析的實際參數會回寫欄位。
+3. 輸入任意非負份數，例如 5:3:2，按 Run simulation。第一張圖是實際計算的峰；Gradient Profile 預設收合。
+4. 調整梯度後重新模擬，或至 Gradient Optimization 搜尋候選並套用。條件不相容時修正設定或使用適用的手動／校正參數，不能解除科學限制。
+5. 使用新結構前，可在 LC Mode & Column 明確選 Use model-compatible conditions；模型仍可能因結構超出適用範圍而拒絕。
+
+## Changed modules
+
+Backend: chemistry.py (import IDs), conditions.py (mismatch details), engine.py (provenance/result states/resolved compounds), main.py (conditions route), prediction.py, retention_registry.py, schemas.py, new sources.py. Existing solver equations and mixture.py are unchanged.
+
+Frontend: types.ts, main.tsx, RetentionWorkspace.tsx, Chart.tsx; new sources.ts, project.ts, api.ts, ModelConditions.tsx. Existing UVWorkspace and model files are unchanged. Tests: test_workflow_repair.py plus source-code assertions in existing tests, workflow-repair.spec.ts and result-title assertions in workbench.spec.ts. New public_repair_smoke.py and this report/evidence.
+
+Operational limits remain unchanged: free Render instance, bounded computation slots and 30s worker timeout, upload/compound/optimization budgets. Heavy or concurrent workloads can be rejected or timed out rather than exhausting the service. No paid resource change was made. Physical-phone/cellular testing was not performed for this repair; automated Pixel 7 viewport testing is explicitly separate from the earlier user-reported basic V1 page usability.
+
+Final public browser acceptance: **18/18 passed, 0 skipped, 0 failed, 0 flaky**, 720.41s, beginning 2026-10-15T15:01:46Z. Desktop Chromium 9/9 and Pixel 7 emulation 9/9 against https://elusim-v1.onrender.com; real API computation, not mocked responses. Includes original UV/DAD/retention/manual workflows and all new migration, chart-order, failure, model-conditions, non-elution and parameter-writeback cases. Public screenshots and JSON retained here. No physical device/cellular test was performed.
+
+Release is operational at the original URL with code commit 631e575a542ebe70e45efabee5005fbeed9a129d. The subsequent documentation-only commit adds acceptance evidence and does not change the deployed application. Scientific limitations above remain unresolved by design; no broad QSRR accuracy or detector-specific quantitative signal claim is made.
