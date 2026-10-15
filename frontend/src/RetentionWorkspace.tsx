@@ -1,26 +1,31 @@
 import {useEffect,useState,useRef} from 'react';
+import {api} from './api';
+import {sourceCode} from './sources';
+import {compatibleMethod,conditionDifferences,type CurveConditions} from './ModelConditions';
 import {payload,type Config,type Compound,type Scope} from './types';
-type Library={models:any[];retention_method:{column:Partial<Config['column']>;mobile:Partial<Config['mobile']>;gradient:Config['gradient']};lss_structure_model:any;lss_warning:string};
+type Library={lss_conditions:CurveConditions;models:any[];retention_method:{column:Partial<Config['column']>;mobile:Partial<Config['mobile']>;gradient:Config['gradient']};lss_structure_model:any;lss_warning:string};
 export function RetentionWorkspace({config,change}:{config:Config;change:(c:Partial<Config>)=>void}){
  const sequence=useRef(0),current=useRef(config);current.current=config;
- const [library,setLibrary]=useState<Library>(),[smiles,setSmiles]=useState(''),[compoundId,setCompoundId]=useState(''),[modelId,setModelId]=useState('auto'),[replaceManual,setReplaceManual]=useState(false),[result,setResult]=useState<Record<string,any>>(),[busy,setBusy]=useState(false),[error,setError]=useState('');
+ const [library,setLibrary]=useState<Library>(),[smiles,setSmiles]=useState(config.compounds.find(c=>c.smiles)?.smiles||''),[compoundId,setCompoundId]=useState(config.compounds.find(c=>c.smiles)?.id||''),[modelId,setModelId]=useState('auto'),[replaceManual,setReplaceManual]=useState(false),[result,setResult]=useState<Record<string,any>>(),[busy,setBusy]=useState(false),[error,setError]=useState('');
  const conditions=JSON.stringify({mode:config.mode,column:config.column,mobile:config.mobile,gradient:config.gradient});
- useEffect(()=>{fetch('/api/models').then(r=>r.json()).then(setLibrary).catch(e=>setError(String(e)));},[]);
+ useEffect(()=>{api<Library>('models').then(setLibrary).catch(e=>setError(String(e)));},[]);
+ useEffect(()=>{if(compoundId){const selected=config.compounds.find(c=>c.id===compoundId);if(selected)setSmiles(selected.smiles||'');else{setCompoundId('');setSmiles('');}}},[config.compounds,compoundId]);
  useEffect(()=>{sequence.current++;setResult(undefined);setBusy(false);},[conditions,smiles,compoundId,modelId]);
  async function predict(){const token=++sequence.current;const snapshot=JSON.stringify(current.current);setBusy(true);setError('');try{
-  const response=await fetch('/api/retention/predict',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({smiles,method:payload(current.current),model_id:modelId})});const r=await response.json();if(!response.ok)throw Error(JSON.stringify(r.detail));
+  const r=await api<Record<string,any>>('retention/predict',{smiles,method:payload(current.current),model_id:modelId});
   if(token!==sequence.current||snapshot!==JSON.stringify(current.current))return;
   const c=current.current.compounds.find(c=>c.id===compoundId);
   if(c&&r.logkw!=null&&r.s!=null){
    if(c.parameter_origin!=='prediction'&&c.parameter_origin!=='literature'&&c.logkw!=null&&c.s!=null&&!replaceManual)r.warnings.push('Manual parameters preserved; enable explicit replacement to apply this prediction.');
-   else {const updated:Compound={...c,logkw:r.logkw,s:r.s,source:r.status,scope:r.scope as Scope,parameter_origin:r.status==='Literature-derived'?'literature':'prediction',retention_provenance:{model_id:r.model.model_id,model_version:r.model.model_version,source:r.parameter_source,reference:r.model.original_dataset_source,license:r.model.license,canonical_smiles:r.features.canonical_smiles,scope:r.scope,phi_range:r.phi_range,particle_um:3.5,validation_status:r.status,applicability:r.applicability,warnings:r.warnings}};
+   else {const updated:Compound={...c,logkw:r.logkw,s:r.s,source:sourceCode(r.status),scope:r.scope as Scope,parameter_origin:r.status==='Literature-derived'?'literature':'prediction',retention_provenance:{model_id:r.model.model_id,model_version:r.model.model_version,source:r.parameter_source,reference:r.model.original_dataset_source,license:r.model.license,canonical_smiles:r.features.canonical_smiles,scope:r.scope,phi_range:r.phi_range,particle_um:3.5,validation_status:r.status,applicability:r.applicability,warnings:r.warnings}};
     change({compounds:current.current.compounds.map(x=>x.id===c.id?updated:x),workflow:'known'});r.warnings.push('Retention Parameters automatically updated for '+c.name+'.');}
   }
   setResult(r);
  }catch(e){if(token===sequence.current)setError(String(e));}finally{if(token===sequence.current)setBusy(false);}}
- function loadScoped(){const m=library?.lss_structure_model?.scope;if(!m)return;change({mode:'RP',workflow:'known',column:{...config.column,manufacturer:'Agilent',stationary_phase:m.stationary_phase,particle_um:3.5,temperature_c:35},mobile:{...config.mobile,a:m.mobile_a,b:m.mobile_b,buffer:m.buffer,ph:null,ph_control:'formulation'},gradient:[{time_min:0,b_percent:20,flow_ml_min:.3,temperature_c:35,interpolation:'linear'},{time_min:10,b_percent:50,flow_ml_min:.3,temperature_c:35,interpolation:'linear'},{time_min:20,b_percent:50,flow_ml_min:.3,temperature_c:35,interpolation:'linear'}]});setModelId('auto');}
- async function loadExamples(){try{const r=await fetch('/api/retention/database');if(!r.ok)throw Error('Database unavailable');const d=await r.json();loadScoped();change({compounds:d.examples.map((e:any,i:number)=>({id:crypto.randomUUID(),name:['Anthranilic acid','Caffeine','Diethyl malonate'][i],kind:'small_molecule',smiles:e.smiles,logkw:null,s:null,amplitude:1,mixture_parts:[5,3,2][i],source:'Insufficient data'}))});}catch(e){setError(String(e));}}
+ function loadScoped(){if(!library)return;change(compatibleMethod(config,library.lss_conditions));setModelId('auto');}
+ async function loadExamples(){try{const r=await fetch('/api/retention/database');if(!r.ok)throw Error('Database unavailable');const d=await r.json();loadScoped();change({compounds:d.examples.map((e:any,i:number)=>({id:crypto.randomUUID(),name:['Anthranilic acid','Caffeine','Diethyl malonate'][i],kind:'small_molecule',smiles:e.smiles,logkw:null,s:null,amplitude:1,mixture_parts:[5,3,2][i],source:'insufficient_data'}))});}catch(e){setError(String(e));}}
  return <><section><h2>Structure → retention prediction</h2><p>Measured-curve lookup or experimental scoped QSRR → logKw / S → existing migration solver.</p><p className="warn">Non-commercial service · Eclipse Plus C18 / 3.5 µm / 35°C / acidified ACN–water / 20–50% ACN only. No independent gradient Rt accuracy claim. Formulation-defined pH is not a calculated pKa or logD.</p>
+ {library&&conditionDifferences(config,library.lss_conditions).length>0&&<div className="warn"><strong>Incompatible model conditions</strong><ul>{conditionDifferences(config,library.lss_conditions).map(x=><li key={x}>{x}</li>)}</ul></div>}
  <label>Use mixture structure<select aria-label="Retention compound" value={compoundId} onChange={e=>{setCompoundId(e.target.value);setSmiles(config.compounds.find(c=>c.id===e.target.value)?.smiles||'');}}><option value="">Standalone prediction</option>{config.compounds.filter(c=>c.smiles).map(c=><option key={c.id} value={c.id}>{c.name}</option>)}</select></label>
  <label>Prediction SMILES<input aria-label="Retention SMILES" value={smiles} onChange={e=>{setSmiles(e.target.value);setCompoundId('');}}/></label>
  <label>Retention model<select aria-label="Retention model" value={modelId} onChange={e=>setModelId(e.target.value)}><option value="auto">Measured curve first, then scoped QSRR</option><option value="lss-parameters">QSRR only (no experimental lookup)</option><option value="report0259-rt">Method-specific RepoRT0259 Rt</option></select></label>

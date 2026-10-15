@@ -68,12 +68,13 @@ def prepare_structure(req):
    if r['prediction'] is None:raise ValueError('Out of domain or insufficient validation')
    kw,ss=r['prediction']
    if not -3<=kw<=12 or not 0<=ss<=30:raise ValueError('Predicted parameters outside LSS bounds')
-   compounds.append(c.model_copy(update={'logkw':kw,'s':ss,'source':'Experimental model prediction','scope':Scope(**{k:v for k,v in scope.items() if k!='mode'})}))
+   compounds.append(c.model_copy(update={'logkw':kw,'s':ss,'source':'experimental_model_prediction','scope':Scope(**{k:v for k,v in scope.items() if k!='mode'})}))
   except (ValueError,OSError,KeyError) as exc:
-   compounds.append(c.model_copy(update={'logkw':None,'s':None,'source':'Insufficient data'}));records.append({'compound_id':c.id,'status':'Insufficient data','reason':str(exc)})
+   compounds.append(c.model_copy(update={'logkw':None,'s':None,'source':'insufficient_data'}));records.append({'compound_id':c.id,'status':'Insufficient data','reason':str(exc)})
  return req.model_copy(update={'compounds':compounds,'workflow':'known'}),records
 def library():
+ from .retention_registry import curve_conditions
  models=[]
  for mid in ['report0259-rt','pnnl-uv-shape','lss-parameters']:
   data=load_model(mid);models.append({k:v for k,v in data['metadata'].items() if not k.endswith('_smiles')})
- return {'models':models,'retention_method':report_method(),'lss_structure_model':models[-1],'lss_warning':'Experimental scoped LSS model: Eclipse Plus C18, 35°C, formic-acid ACN/water, 20–50% ACN; non-commercial only; independent gradient accuracy unavailable','uv_levels':{'1':'RDKit chromophore screening','2':'Window maximum derived from experimental full-spectrum model; not separate λmax model','3':'Experimental 220–400nm normalized shape model; no molar absorptivity or solvent adjustment'}}
+ return {'lss_conditions':curve_conditions(),'models':models,'retention_method':report_method(),'lss_structure_model':models[-1],'lss_warning':'Experimental scoped LSS model: Eclipse Plus C18, 35°C, formic-acid ACN/water, 20–50% ACN; non-commercial only; independent gradient accuracy unavailable','uv_levels':{'1':'RDKit chromophore screening','2':'Window maximum derived from experimental full-spectrum model; not separate λmax model','3':'Experimental 220–400nm normalized shape model; no molar absorptivity or solvent adjustment'}}

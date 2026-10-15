@@ -1,8 +1,9 @@
 """Scoped measured curves and QSRR are separate from method-specific Rt."""
 import json,pathlib,functools
 from .features import molecular_features
-from .conditions import scope_matches
+from .conditions import scope_matches, scope_mismatches
 from .schemas import Scope
+from .sources import source_code
 DATA=pathlib.Path(__file__).resolve().parents[2]/'data/retention'
 @functools.lru_cache(maxsize=1)
 def measured_curves():
@@ -18,14 +19,16 @@ def predict_curve(smiles,method,use_literature=True):
             'input_conditions':method.model_dump(),'warnings':list(meta['limitations']),
             'scope':{k:v for k,v in scope.items() if k!='mode'},'phi_range':limits,
             'curve':None,'parameter_source':None,'applicability':{'accepted':False}}
-    if not scope_matches(scope,method):
-        result['warnings'].append('Phase / solvent / buffer / pH-control / temperature mismatch; no parameter transfer')
-        return result
-    if method.column.particle_um!=3.5:
-        result['warnings'].append('Model database uses 3.5 µm particles; other material specifications not validated')
-        return result
-    if any(not limits[0]-1e-9<=n.b_percent/100<=limits[1]+1e-9 for n in method.gradient):
-        result['warnings'].append('Program exceeds measured 20–50% ACN interval; set a compatible gradient before prediction')
+    mismatches=scope_mismatches(scope,method)
+    specification=curve_conditions()
+    if method.column.particle_um!=specification['particle_um']:
+        mismatches.append(f"particle_um: current {method.column.particle_um}; required {specification['particle_um']}")
+    for i,node in enumerate(method.gradient):
+        if not limits[0]-1e-9<=node.b_percent/100<=limits[1]+1e-9:
+            mismatches.append(f"gradient[{i}].b_percent: current {node.b_percent}; required {100*limits[0]}–{100*limits[1]}")
+    result['condition_mismatches']=mismatches
+    if mismatches:
+        result['warnings']+=mismatches
         return result
     known=next((r for r in measured_curves() if r['smiles']==features['canonical_smiles']),None) if use_literature else None
     if known:
@@ -58,8 +61,19 @@ def resolve_compounds(req,overwrite_manual=False):
                         'scope':r['scope'],'phi_range':r['phi_range'],'validation_status':r['status'],'applicability':r['applicability'],'warnings':r['warnings'],
                         'reference':r['model']['original_dataset_source'],'particle_um':3.5}
             compounds.append(c.model_copy(update={'logkw':r['logkw'],'s':r['s'],'scope':Scope(**r['scope']),
-                             'source':r['status'],'parameter_origin':'literature' if r['status']=='Literature-derived' else 'prediction',
+                             'source':source_code(r['status']),'parameter_origin':'literature' if r['status']=='Literature-derived' else 'prediction',
                              'retention_provenance':provenance}))
         except (ValueError,OSError,KeyError) as e:
             compounds.append(c);records.append({'compound_id':c.id,'status':'Insufficient data','reason':str(e)})
     return req.model_copy(update={'compounds':compounds,'workflow':'known'}),records
+
+
+def curve_conditions():
+    """Expose existing model metadata and documented material specification, not a new model."""
+    from .prediction import load_model
+    meta=load_model('lss-parameters')['metadata']
+    return {'model_id':meta['model_id'],'model_version':meta['model_version'],
+            'scope':meta['scope'],'phi_range':meta['phi_range'],
+            'particle_um':measured_curves()[0]['applicability_domain']['particle_um'],
+            'status':'Experimental model prediction','limitations':meta['limitations'],
+            'notice':'Matching training conditions does not establish external gradient accuracy.'}

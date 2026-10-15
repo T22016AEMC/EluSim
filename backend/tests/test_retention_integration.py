@@ -21,7 +21,7 @@ def scoped_method():
 def test_three_real_smiles_curves_and_auto_parameter_resolution():
  m=scoped_method();prepared,records=resolve_compounds(m)
  assert len({json.dumps(r['features']['descriptors'],sort_keys=True) for r in records})==3
- assert all(c.logkw is not None and c.s is not None and c.source=='Literature-derived' for c in prepared.compounds)
+ assert all(c.logkw is not None and c.s is not None and c.source=='literature_derived' for c in prepared.compounds)
  assert all(len(r['observations'])>=4 and len(r['curve']['k'])==31 for r in records)
  for c,r in zip(prepared.compounds,records):assert c.id==r['compound_id'] and c.retention_provenance['canonical_smiles']==r['features']['canonical_smiles']
  assert len(simulate(prepared)['order'])==3
@@ -72,7 +72,7 @@ def test_concentration_amount_units_and_invalid_composition():
 def test_manual_protection_and_explicit_replacement():
  m=scoped_method();m.compounds[0].logkw=2;m.compounds[0].s=4
  p,records=resolve_compounds(m);assert p.compounds[0].logkw==2 and records[0]['status']=='Manual parameters preserved'
- p,records=resolve_compounds(m,overwrite_manual=True);assert p.compounds[0].logkw!=2 and p.compounds[0].source=='Literature-derived'
+ p,records=resolve_compounds(m,overwrite_manual=True);assert p.compounds[0].logkw!=2 and p.compounds[0].source=='literature_derived'
 
 def test_optimizer_uses_same_curve_and_rejects_ineligible_base():
  m,_=resolve_compounds(scoped_method());r=optimize(Optimize(simulation=m,durations_min=[8,12],starts_percent=[20],ends_percent=[50],hold_min=10))

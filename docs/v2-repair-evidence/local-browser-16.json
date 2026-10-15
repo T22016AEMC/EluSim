@@ -1,0 +1,662 @@
+{
+  "config": {
+    "configFile": "C:\\Users\\T22016\\Desktop\\程式\\LC Gradient Studio\\EluSim_V2\\frontend\\playwright.config.ts",
+    "rootDir": "C:/Users/T22016/Desktop/程式/LC Gradient Studio/EluSim_V2/frontend/tests",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "../artifacts/browser-tests.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "C:/Users/T22016/Desktop/程式/LC Gradient Studio/EluSim_V2/frontend/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "desktop",
+        "name": "desktop",
+        "testDir": "C:/Users/T22016/Desktop/程式/LC Gradient Studio/EluSim_V2/frontend/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "C:/Users/T22016/Desktop/程式/LC Gradient Studio/EluSim_V2/frontend/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "mobile-emulation",
+        "name": "mobile-emulation",
+        "testDir": "C:/Users/T22016/Desktop/程式/LC Gradient Studio/EluSim_V2/frontend/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.56.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "retention-integration.spec.ts",
+      "file": "retention-integration.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "real curve compounds resolve by ID; 5:3:2 area composition; gradient and ratio dataflow",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 36772,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T07:44:18.203Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a3c7e831f8d9ad61f1fe-d1715380e441c173f6c5",
+          "file": "retention-integration.spec.ts",
+          "line": 2,
+          "column": 1
+        },
+        {
+          "title": "scoped QSRR fills a heldout compound; manual edits remain protected",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2330,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T07:44:56.018Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a3c7e831f8d9ad61f1fe-c2130fcdc19290f3146b",
+          "file": "retention-integration.spec.ts",
+          "line": 130,
+          "column": 1
+        },
+        {
+          "title": "real curve compounds resolve by ID; 5:3:2 area composition; gradient and ratio dataflow",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-emulation",
+              "projectName": "mobile-emulation",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 27555,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T07:45:57.206Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a3c7e831f8d9ad61f1fe-0da39d7e47391938a47b",
+          "file": "retention-integration.spec.ts",
+          "line": 2,
+          "column": 1
+        },
+        {
+          "title": "scoped QSRR fills a heldout compound; manual edits remain protected",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-emulation",
+              "projectName": "mobile-emulation",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2336,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T07:46:25.545Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a3c7e831f8d9ad61f1fe-34998005d4cd6f7c07b7",
+          "file": "retention-integration.spec.ts",
+          "line": 130,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "v2.spec.ts",
+      "file": "v2.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "V2 real retention inference, method abstention and preserved manual workflow",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2289,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T07:44:58.437Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9f5cea1cd63f4d778102-a0db3381679baee0b060",
+          "file": "v2.spec.ts",
+          "line": 4,
+          "column": 1
+        },
+        {
+          "title": "V2 experimental full UV spectrum, imports, exports and qualitative abstention",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3205,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T07:45:00.791Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9f5cea1cd63f4d778102-8afa6bcbd5d5bec7489b",
+          "file": "v2.spec.ts",
+          "line": 50,
+          "column": 1
+        },
+        {
+          "title": "V2 real retention inference, method abstention and preserved manual workflow",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-emulation",
+              "projectName": "mobile-emulation",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1710,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T07:46:27.964Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9f5cea1cd63f4d778102-892dc3af5aa264c670a8",
+          "file": "v2.spec.ts",
+          "line": 4,
+          "column": 1
+        },
+        {
+          "title": "V2 experimental full UV spectrum, imports, exports and qualitative abstention",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-emulation",
+              "projectName": "mobile-emulation",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4166,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T07:46:29.705Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9f5cea1cd63f4d778102-ba23af8267b723dc3bdc",
+          "file": "v2.spec.ts",
+          "line": 50,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "workbench.spec.ts",
+      "file": "workbench.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "RDKit, multi-node gradient, simulation, optimization and refresh",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 20048,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T07:45:04.080Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "921e070f285a8b470d11-53b580d14cecb73033f8",
+          "file": "workbench.spec.ts",
+          "line": 2,
+          "column": 1
+        },
+        {
+          "title": "unsupported modes never produce fictitious predictions",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8326,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T07:45:24.154Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "921e070f285a8b470d11-299ab2d9f06e70496e39",
+          "file": "workbench.spec.ts",
+          "line": 85,
+          "column": 1
+        },
+        {
+          "title": "RDKit, multi-node gradient, simulation, optimization and refresh",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-emulation",
+              "projectName": "mobile-emulation",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 20444,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T07:46:33.955Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "921e070f285a8b470d11-bc142bd270ff8721ed7f",
+          "file": "workbench.spec.ts",
+          "line": 2,
+          "column": 1
+        },
+        {
+          "title": "unsupported modes never produce fictitious predictions",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-emulation",
+              "projectName": "mobile-emulation",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6076,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T07:46:54.433Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "921e070f285a8b470d11-4b6870a53035aedb26ca",
+          "file": "workbench.spec.ts",
+          "line": 85,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "workflow-repair.spec.ts",
+      "file": "workflow-repair.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "legacy storage migrates without loss; real peaks precede collapsed gradient; failed API hides old results",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7141,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T07:45:32.560Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fa8999cf0d24cd8d4bcf-257110852bdcd6aa0b6e",
+          "file": "workflow-repair.spec.ts",
+          "line": 3,
+          "column": 1
+        },
+        {
+          "title": "conditions require explicit selection; incomplete retention and nonelution never masquerade as peaks",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 150000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 12019,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T07:45:39.731Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fa8999cf0d24cd8d4bcf-d8ce1f7e6e91ba8436a1",
+          "file": "workflow-repair.spec.ts",
+          "line": 84,
+          "column": 1
+        },
+        {
+          "title": "legacy storage migrates without loss; real peaks precede collapsed gradient; failed API hides old results",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-emulation",
+              "projectName": "mobile-emulation",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7978,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T07:47:00.582Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fa8999cf0d24cd8d4bcf-60574112ad46d747a395",
+          "file": "workflow-repair.spec.ts",
+          "line": 3,
+          "column": 1
+        },
+        {
+          "title": "conditions require explicit selection; incomplete retention and nonelution never masquerade as peaks",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 150000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-emulation",
+              "projectName": "mobile-emulation",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 13346,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-15T07:47:08.582Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fa8999cf0d24cd8d4bcf-04f3ea021df3244fff6f",
+          "file": "workflow-repair.spec.ts",
+          "line": 84,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-15T07:44:13.719Z",
+    "duration": 190129.22,
+    "expected": 16,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

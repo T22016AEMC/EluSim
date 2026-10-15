@@ -52,10 +52,10 @@ def test_noneluted_insufficient_and_unsupported():
  m=method();m.compounds[0].logkw=12;m.compounds[0].s=0;m.compounds[1].s=None
  r=simulate(m)
  assert r['peaks'][0]['rt_min'] is None and not r['peaks'][0]['eluted']
- assert r['peaks'][1]['source']=='Insufficient data'
+ assert r['peaks'][1]['source']=='insufficient_data'
  for mode in ['NP','HILIC','IEX','SEC']:
   r=simulate(m.model_copy(update={'mode':mode}))
-  assert not r['traces'] and all(p['source']=='Unsupported' for p in r['peaks'])
+  assert not r['traces'] and all(p['source']=='unsupported' for p in r['peaks'])
 
 def test_gaussian_width_and_resolution_identity():
  r=simulate(method());a,b=r['peaks'][:2]
@@ -66,12 +66,12 @@ def test_missing_efficiency_and_structure_path_do_not_make_peaks():
  m=method();m.column.plates=None
  assert not simulate(m)['traces'] and simulate(m)['min_rs'] is None
  r=simulate(m.model_copy(update={'workflow':'structure'}))
- assert not r['order'] and all(p['source']=='Insufficient data' for p in r['peaks'])
+ assert not r['order'] and all(p['source']=='insufficient_data' for p in r['peaks'])
 
 def test_parameter_scope_blocks_invalid_method_transfer():
  from elusim.schemas import Scope
  m=method();m.compounds[0].scope=Scope(mobile_b='MeOH')
- assert simulate(m)['peaks'][0]['source']=='Insufficient data'
+ assert simulate(m)['peaks'][0]['source']=='insufficient_data'
 
 def test_optimization_changes_real_migration_and_respects_budget():
  req=Optimize(simulation=method(),durations_min=[8,12],starts_percent=[5],ends_percent=[95])
