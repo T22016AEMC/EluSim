@@ -37,13 +37,15 @@ Production: `docker compose up --build`. Same container serves `/` and `/api`; s
 
 ## Scientific boundaries
 
-- Dilute equilibrium `log10 k = logKw − Sφ`, position-dependent delayed solvent front, numerical migration until column exit.
-- Constant temperature with supplied selectivity parameters. pH / solvent / stationary-phase transfers require matching parameter scope.
-- Gaussian screening widths from explicit plate count, injection variance and extra-column sigma. No validated gradient compression, tailing or overload model.
-- Optimization enumerates bounded gradients, evaluates actual simulations and marks unfeasible candidates. Pressure is not calculated without a validated viscosity/permeability model.
-- Two or more independent methods may fit logKw/S; rank/condition checks reject unidentifiable fits. Fit residual is not external prediction error.
-- RDKit structure descriptors do not generate arbitrary retention parameters; the structure-prediction interface reports missing validated models.
-- Projects remain in the visitor's browser; no anonymous shared project database.
+- Dilute equilibrium `log10 k = logKw − Sφ`, delayed plug-flow solvent transport, and numerical migration to the column outlet.
+- Column width uses `G·t0_e·(1+k_e)/√N`, with the requested Poppe factor or `band_compression=none` (G=1). Injection and extra-column variances remain additive. Multiple gradient segments use a local outlet approximation; steps use the post-event slope. Formula reference: [Poppe et al., J. Chromatogr. 204 (1981), 77–84](https://doi.org/10.1016/S0021-9673(00)81641-6).
+- Parameter tiers are A stored measured-curve LSS fit, B existing scoped QSRR, C generic C18 regression, D user experimental calibration, and M manual. Coefficients and results carry `validation_status: "unvalidated — pending user validation"`.
+- The C regression uses only repository ACN / Eclipse Plus C18 / 35°C / 0.1% formic-acid curves over φ 0.2–0.5. Other conditions, including MeOH, are extrapolation. No pKa, microstate, logD or ionization correction is calculated.
+- Changes in stationary phase, solvent, pH, temperature, particles, structure or gradient range produce warnings and retain numerical LSS parameters. Numerical availability does not establish suitability for an experiment. Other LC modes and unsupported entity types remain outside this workflow.
+- M/D parameters are protected from background estimates. A/B/C are refreshed after structure/method edits; explicit re-estimation can replace M. Calibration takes priority.
+- Optimization keeps the existing bounded candidate grid and uses the same migration/width calculations. Pressure, tailing and overload are not modeled in this phase.
+- Two or more independent methods are required for logKw/S calibration, with rank and condition checks. All scientific/data checks remain for the user; software tests cover equations, API behavior and UI flows only.
+- Projects remain in the visitor's browser; no anonymous shared project database. This branch does not change the deployed website.
 
 ## License
 

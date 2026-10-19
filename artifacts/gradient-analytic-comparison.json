@@ -1,0 +1,104 @@
+[
+  {
+    "case": "zero_dwell",
+    "parameters": {
+      "logkw": 2.0,
+      "s": 4.0,
+      "phi0": 0.1,
+      "phi1": 0.5,
+      "tG_min": 10.0,
+      "dwell_ml": 0.0
+    },
+    "rt_theory_min": 8.468628634723796,
+    "rt_program_min": 8.468628634723794,
+    "rt_relative_error": 2.220446049250313e-16,
+    "sigma_col_theory_min": 0.028160802129584713,
+    "sigma_col_program_min": 0.028160802129585886,
+    "sigma_col_relative_error": 4.1744385725905886e-14
+  },
+  {
+    "case": "with_dwell",
+    "parameters": {
+      "logkw": 2.5,
+      "s": 5.0,
+      "phi0": 0.1,
+      "phi1": 0.6,
+      "tG_min": 8.0,
+      "dwell_ml": 0.12
+    },
+    "rt_theory_min": 7.356297518571733,
+    "rt_program_min": 7.356297516859606,
+    "rt_relative_error": 2.3274293603492424e-10,
+    "sigma_col_theory_min": 0.017375226878484716,
+    "sigma_col_program_min": 0.017375226890881026,
+    "sigma_col_relative_error": 7.134473012371245e-10
+  },
+  {
+    "case": "short_gradient",
+    "parameters": {
+      "logkw": 3.0,
+      "s": 6.0,
+      "phi0": 0.05,
+      "phi1": 0.8,
+      "tG_min": 5.0,
+      "dwell_ml": 0.3
+    },
+    "rt_theory_min": 5.351121754813436,
+    "rt_program_min": 5.351121755449532,
+    "rt_relative_error": 1.188715792466155e-10,
+    "sigma_col_theory_min": 0.009354020596299039,
+    "sigma_col_program_min": 0.00935402059228254,
+    "sigma_col_relative_error": 4.2938741451337137e-10
+  },
+  {
+    "case": "long_gradient",
+    "parameters": {
+      "logkw": 1.5,
+      "s": 3.0,
+      "phi0": 0.2,
+      "phi1": 0.5,
+      "tG_min": 20.0,
+      "dwell_ml": 0.6
+    },
+    "rt_theory_min": 7.630961667729533,
+    "rt_program_min": 7.630961556837587,
+    "rt_relative_error": 1.4531844283460771e-08,
+    "sigma_col_theory_min": 0.05174597352034434,
+    "sigma_col_program_min": 0.05174597401441129,
+    "sigma_col_relative_error": 9.547930446274222e-09
+  },
+  {
+    "case": "early_isocratic",
+    "parameters": {
+      "logkw": -0.5,
+      "s": 2.0,
+      "phi0": 0.1,
+      "phi1": 0.5,
+      "tG_min": 10.0,
+      "dwell_ml": 1.2
+    },
+    "rt_theory_min": 1.199526231496888,
+    "rt_program_min": 1.1995262314968875,
+    "rt_relative_error": 3.3306690738754696e-16,
+    "sigma_col_theory_min": 0.010950126255166823,
+    "sigma_col_program_min": 0.010950126255166823,
+    "sigma_col_relative_error": 0.0
+  },
+  {
+    "case": "zero_s",
+    "parameters": {
+      "logkw": 1.0,
+      "s": 0.0,
+      "phi0": 0.1,
+      "phi1": 0.6,
+      "tG_min": 10.0,
+      "dwell_ml": 0.0
+    },
+    "rt_theory_min": 11.0,
+    "rt_program_min": 11.000000000000016,
+    "rt_relative_error": 1.5543122344752192e-15,
+    "sigma_col_theory_min": 0.10041580220928045,
+    "sigma_col_program_min": 0.10041580220928045,
+    "sigma_col_relative_error": 0.0
+  }
+]
