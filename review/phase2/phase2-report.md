@@ -13,7 +13,7 @@ bee4e30 test: record map timing and exercise worker cancellation
 交付文件本身的提交 hash 與最終完整 git log 另列於對話回報，避免本文件自我引用。
 
 2. 推送結果
-此交付提交尚未推送；完成提交後進行同步，結果會更新於本報告。
+首次推送成功：origin/codex/v3-phase2-optimizer，交付提交 f0ade6787a5c70c789a15fef37b9e8806816a592。未產生備用 ZIP。最終同步與部署結果另列於本次對話回報。
 未推送或合併其他開發分支；部署分支僅依使用者另訂的 fast-forward 流程處理。
 render.yaml、.gitignore、Render 設定、既有模型係數與資料檔未更動。
 
