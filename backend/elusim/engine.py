@@ -221,6 +221,8 @@ def simulate(req: Simulation, deadline=None):
     program = Program(req)
     void_ml = volume(req.column)
     grid = np.linspace(0, program.t[-1], req.points)
+    use_analytic = req.solver != 'ode' and np.all(program.f == program.f[0])
+    actual_solver = 'analytic' if use_analytic else 'ode'
     peaks = []
     curves = []
     warnings = []
@@ -255,7 +257,23 @@ def simulate(req: Simulation, deadline=None):
         if not error:
             notices = parameter_warnings(req, compound)
             row['warning'] = '; '.join(notices) or None
-            state = retention_state(req, compound)
+            if use_analytic:
+                from .analytic import analytic_state
+
+                state = analytic_state(
+                    program.t,
+                    program.phi,
+                    program.step,
+                    compound.logkw,
+                    compound.s,
+                    program.f,
+                    void_ml,
+                    req.mobile.dwell_ml,
+                )
+                if state is not None and state.rt_min > program.t[-1]:
+                    state = None
+            else:
+                state = retention_state(req, compound)
             row['eluted'] = state is not None
             row['simulation_status'] = 'eluted' if state is not None else 'non_eluted'
             if state is None:
@@ -314,6 +332,7 @@ def simulate(req: Simulation, deadline=None):
         'resolved_compounds': [compound.model_dump() for compound in req.compounds],
         'structure_predictions': predictions,
         'model': MODEL,
+        'solver': actual_solver,
         'mode': req.mode,
         'peaks': peaks,
         'pairs': pairs,

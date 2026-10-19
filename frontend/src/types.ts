@@ -68,6 +68,7 @@ export type Column = {
   temperature_c: number;
 };
 export type Config = {
+  solver?: "auto" | "ode" | "analytic";
   band_compression?: "poppe" | "none";
   project_schema_version?: number;
   mixture_basis?: "parts" | "concentration";

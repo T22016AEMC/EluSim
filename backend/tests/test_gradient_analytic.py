@@ -58,10 +58,10 @@ def analytic_values(case, compression='poppe'):
 
 
 @pytest.fixture(scope='module', autouse=True)
-def save_equation_comparisons():
+def save_equation_comparisons(tmp_path_factory):
     """Write raw mathematical comparisons for the implementation report."""
     yield
-    destination = Path(__file__).resolve().parents[2] / 'artifacts/gradient-analytic-comparison.json'
+    destination = tmp_path_factory.mktemp('phase1-equations') / 'gradient-analytic-comparison.json'
     destination.parent.mkdir(exist_ok=True)
     destination.write_text(json.dumps(COMPARISONS, indent=2), encoding='utf8')
 
@@ -74,7 +74,7 @@ def test_linear_gradient_closed_form(case):
     peak = simulate(method)['peaks'][0]
     assert peak['rt_min'] == pytest.approx(expected_rt, rel=1e-5)
     assert peak['sigma_col_min'] == pytest.approx(expected_sigma, rel=1e-3)
-    assert retention(method, method.compounds[0]) == peak['rt_min']
+    assert retention(method, method.compounds[0]) == pytest.approx(peak['rt_min'], rel=1e-7)
     without = simulate(linear_method(case, 'none'))['peaks'][0]
     assert without['compression_factor'] == 1
     assert without['sigma_col_min'] == pytest.approx(analytic_values(case, 'none')[1], rel=1e-3)

@@ -75,6 +75,7 @@ class Compound(Strict):
     mode_parameters: dict = Field(default_factory=dict)
 
 class Simulation(Strict):
+    solver: Literal['auto', 'ode', 'analytic'] = 'auto'
     band_compression: Literal['poppe', 'none'] = 'poppe'
     mode: Literal['RP','NP','HILIC','IEX','SEC'] = 'RP'
     workflow: Literal['known','calibrated','structure'] = 'known'
@@ -116,3 +117,83 @@ class Observation(Strict):
 class Calibration(Strict):
     observations: list[Observation] = Field(min_length=2, max_length=12)
     compound_id: str = Field(max_length=80)
+
+class SearchRange(Strict):
+    """An inclusive numeric grid axis."""
+
+    min: float
+    max: float
+    steps: int = Field(ge=1, le=100)
+
+    @model_validator(mode="after")
+    def ordered(self):
+        """Require ordered endpoints."""
+        if self.max < self.min:
+            raise ValueError("Grid maximum must be at least its minimum")
+        return self
+
+
+class OptimizeMap(Strict):
+    """A bounded constant-flow resolution grid."""
+
+    simulation: Simulation
+    gradient_time_min: SearchRange = Field(default_factory=lambda: SearchRange(min=2, max=60, steps=30))
+    start_percent: SearchRange = Field(default_factory=lambda: SearchRange(min=0, max=50, steps=11))
+    end_percent: SearchRange = Field(default_factory=lambda: SearchRange(min=30, max=100, steps=15))
+    initial_hold_min: float = Field(default=0, ge=0, le=60)
+    final_hold_min: float = Field(default=3, ge=0, le=60)
+    target_rs: float = Field(default=1.5, gt=0, le=100)
+    max_run_time_min: float | None = Field(default=None, gt=0, le=240)
+
+    @model_validator(mode="after")
+    def bounded_grid(self):
+        """Reject excessive work and nonconstant flow before process creation."""
+        import numpy as np
+
+        if len({node.flow_ml_min for node in self.simulation.gradient}) != 1:
+            raise ValueError("地圖需定流速；請改用單次模擬")
+        if not 0 < self.gradient_time_min.min <= self.gradient_time_min.max:
+            raise ValueError("Gradient time must be positive")
+        if self.gradient_time_min.max + self.initial_hold_min + self.final_hold_min > 240:
+            raise ValueError("Total programmed run must not exceed 240 min")
+        if not all(0 <= axis.min <= axis.max <= 100 for axis in (self.start_percent, self.end_percent)):
+            raise ValueError("Composition bounds must be within 0–100 %B")
+        starts = np.linspace(self.start_percent.min, self.start_percent.max, self.start_percent.steps)
+        ends = np.linspace(self.end_percent.min, self.end_percent.max, self.end_percent.steps)
+        count = int(np.sum(ends[None, :] > starts[:, None] + 1)) * self.gradient_time_min.steps
+        cells = self.start_percent.steps * self.end_percent.steps * self.gradient_time_min.steps
+        if count > 20000 or count * len(self.simulation.compounds) > 400000 or cells > 40000:
+            raise ValueError("Grid limit: 20 000 candidates, 400 000 candidate-compound pairs, 40 000 stored cells")
+        return self
+
+
+class OptimizeMultiSegment(Strict):
+    """Time-limited monotone two- or three-ramp search."""
+
+    simulation: Simulation
+    segments: Literal[2, 3] = 2
+    start_percent_bounds: tuple[float, float] = (0, 50)
+    end_percent_bounds: tuple[float, float] = (30, 100)
+    total_gradient_time_bounds: tuple[float, float] = (2, 60)
+    initial_hold_min: float = Field(default=0, ge=0, le=60)
+    final_hold_min: float = Field(default=3, ge=0, le=60)
+    target_rs: float = Field(default=1.5, gt=0, le=100)
+    max_run_time_min: float | None = Field(default=None, gt=0, le=240)
+    seed: int = Field(default=42, ge=0, le=4294967295)
+    time_budget_s: float = Field(default=20, gt=0, le=25)
+    initial_candidate: list[Node] | None = Field(default=None, min_length=2, max_length=40)
+
+    @model_validator(mode="after")
+    def bounded_search(self):
+        """Require constant flow and physically bounded search variables."""
+        if len({node.flow_ml_min for node in self.simulation.gradient}) != 1:
+            raise ValueError("Multi-segment search requires constant flow")
+        for lower, upper in (self.start_percent_bounds, self.end_percent_bounds):
+            if not 0 <= lower <= upper <= 100:
+                raise ValueError("Composition bounds must be ordered within 0–100 %B")
+        if self.start_percent_bounds[0] + 1 >= self.end_percent_bounds[1]:
+            raise ValueError("No increasing gradient exists within the bounds")
+        lower, upper = self.total_gradient_time_bounds
+        if lower <= 0 or lower > upper or upper + self.initial_hold_min + self.final_hold_min > 240:
+            raise ValueError("Gradient time bounds exceed programmed run limits")
+        return self
