@@ -13,7 +13,10 @@ async function structures(page: Page) {
     const response = page.waitForResponse(
       (response) =>
         response.url().endsWith("/api/retention/estimate") &&
-        response.request().postDataJSON().method.compounds.some((compound: any) => compound.name === name),
+        response
+          .request()
+          .postDataJSON()
+          .method.compounds.some((compound: any) => compound.name === name),
     );
     await page
       .getByRole("button", { name: "Add compound", exact: true })

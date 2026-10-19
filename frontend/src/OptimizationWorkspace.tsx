@@ -713,6 +713,14 @@ export function OptimizationWorkspace({
           </button>
         </section>
       )}
+      <section>
+        <h3>Across-mode screening</h3>
+        <p>
+          RP search uses supplied or estimated LSS parameters. NP, HILIC, IEX
+          and SEC require independent parameters and experiments; no
+          quantitative cross-mode ranking is generated.
+        </p>
+      </section>
     </section>
   );
 }
