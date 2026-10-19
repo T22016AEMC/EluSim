@@ -1,3 +1,4 @@
+import { OptimizationWorkspace } from "./OptimizationWorkspace";
 import { compoundTier, useRetentionEstimates } from "./retentionEstimates";
 import { parameterCsv, peakTableCsv } from "./retentionExports";
 import React, { useState, useEffect, useRef, useCallback } from "react";
@@ -20,7 +21,6 @@ import {
   type Compound,
   type Descriptor,
   type Result,
-  type Candidate,
   type Scope,
 } from "./types";
 import "./style.css";
@@ -94,7 +94,6 @@ function App() {
     [busy, setBusy] = useState(""),
     [error, setError] = useState(""),
     [auto, setAuto] = useState(false),
-    [candidates, setCandidates] = useState<Candidate[]>([]),
     [selected, setSelected] = useState(""),
     [name, setName] = useState(""),
     [smiles, setSmiles] = useState(""),
@@ -103,8 +102,6 @@ function App() {
     [calibrationResult, setCalibrationResult] =
       useState<Record<string, unknown>>(),
     [observations, setObservations] = useState<unknown[]>([]),
-    [targetRs, setTargetRs] = useState(1.5),
-    [durations, setDurations] = useState("5,10,15,20"),
     [health, setHealth] = useState("Connecting"),
     [modeParams, setModeParams] = useState("{}"),
     [replaceManual, setReplaceManual] = useState(false),
@@ -128,7 +125,6 @@ function App() {
       localStorage.setItem("elusim-project", JSON.stringify(config));
     seq.current++;
     request.current?.abort();
-    setCandidates([]);
     setBusy((b) => (b === "Simulating" ? "" : b));
     if (!auto) return;
     const timer = setTimeout(() => void simulate(false), 700);
@@ -358,37 +354,6 @@ function App() {
         setError("Import truncated to 20 components");
     }
   }
-  /** Call the existing bounded optimizer for the current shared method. */
-  async function optimize() {
-    setCandidates([]);
-    const inputFingerprint = JSON.stringify(current.current);
-    const r = await run("Searching gradients", () =>
-      api<{ candidates: Candidate[] }>("optimize", {
-        simulation: payload(config),
-        durations_min: durations.split(",").map(Number),
-        starts_percent: config.compounds.some(
-          (c) =>
-            c.parameter_origin === "prediction" ||
-            c.parameter_origin === "literature",
-        )
-          ? [20, 25]
-          : [5, 15],
-        ends_percent: config.compounds.some(
-          (c) =>
-            c.parameter_origin === "prediction" ||
-            c.parameter_origin === "literature",
-        )
-          ? [45, 50]
-          : [80, 95],
-        target_rs: targetRs,
-        hold_min: 3,
-      }),
-    );
-    if (r && inputFingerprint === JSON.stringify(current.current))
-      setCandidates(r.candidates);
-    else if (r)
-      setError("Method changed during optimization; rerun for current inputs.");
-  }
   /** Fit the selected compound from supplied method/Rt observations. */
   async function calibrate() {
     let parsed;
@@ -490,7 +455,6 @@ function App() {
                     setConfig(c);
                     setStorageError("");
                     setResult(undefined);
-                    setCandidates([]);
                   } catch (x) {
                     setError((x as Error).message);
                   }
@@ -1624,91 +1588,16 @@ function App() {
           </>
         )}
         {tab === 4 && (
-          <>
-            <section>
-              <h2>Find a useful gradient</h2>
-              <p className="muted">
-                Bounded grid search · up to 24 candidates · finite CPU budget ·
-                valid RP parameters required
-              </p>
-              <div className="field-grid">
-                <Num
-                  label="Target minimum Rs"
-                  value={targetRs}
-                  onChange={(v) => setTargetRs(v!)}
-                />
-                <label>
-                  Gradient durations (min, comma separated)
-                  <input
-                    aria-label="Gradient durations"
-                    value={durations}
-                    onChange={(e) => setDurations(e.target.value)}
-                  />
-                </label>
-              </div>
-              <button disabled={!!busy} onClick={() => void optimize()}>
-                Optimize gradient
-              </button>
-            </section>
-            <div className="candidate-grid">
-              {candidates.map((c, i) => (
-                <section key={i}>
-                  <div className="section-head">
-                    <h2>Candidate {i + 1}</h2>
-                    <span className={"pill " + (c.feasible ? "ok" : "")}>
-                      {c.feasible
-                        ? "Target reached"
-                        : "Constraint / target not met"}
-                    </span>
-                  </div>
-                  <strong className="candidate-rs">Rs {fmt(c.min_rs)}</strong>
-                  <p>
-                    {c.gradient[0].b_percent} → {c.gradient[1].b_percent}% B ·{" "}
-                    {c.duration_min} min incl. hold
-                  </p>
-                  <p>
-                    {fmt(c.solvent_ml)} mL ·{" "}
-                    {c.all_eluted
-                      ? "All components eluted"
-                      : "Non-eluted component"}
-                  </p>
-                  {c.limits.map((l) => (
-                    <p key={l} className="muted">
-                      {l}
-                    </p>
-                  ))}
-                  <button
-                    onClick={() => {
-                      setPrevious(result);
-                      change({ gradient: c.gradient });
-                      setResult(undefined);
-                      setTab(2);
-                      setTimeout(() => void simulate(), 0);
-                    }}
-                  >
-                    Apply & simulate
-                  </button>
-                </section>
-              ))}
-            </div>
-            <section>
-              <h2>Across-mode screening</h2>
-              <p>
-                No quantitative cross-mode ranking: RP uses supplied or
-                estimated LSS parameters; user experimental checks are pending.
-              </p>
-              <div className="mode-grid">
-                {["NP", "HILIC", "IEX", "SEC"].map((m) => (
-                  <div className="mode" key={m}>
-                    <strong>{m}</strong>
-                    <small>
-                      Screening only · parameters & experiments required
-                    </small>
-                  </div>
-                ))}
-              </div>
-            </section>
-          </>
+          <OptimizationWorkspace
+            config={config}
+            apply={(nodes) => {
+              setPrevious(result);
+              queuedSimulation.current = true;
+              change({ gradient: nodes });
+              setResult(undefined);
+              setTab(3);
+            }}
+          />
         )}
         {tab === 5 && (
           <>
@@ -1890,7 +1779,6 @@ function App() {
               setConfig(structuredClone(demo));
               setStorageError("");
               setResult(undefined);
-              setCandidates([]);
               setError("");
               setSimulationAttempted(false);
             }}

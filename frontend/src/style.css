@@ -3,3 +3,14 @@
 @media(max-width:700px){.app{display:block}aside{position:sticky;top:0;z-index:5;width:100%;padding:13px 16px 0;height:auto}.brand{font-size:22px}.brand-mark{font-size:25px}.aside-caption,.aside-foot{display:none}nav{display:flex;overflow-x:auto;gap:4px;margin-top:12px;padding-bottom:9px;scrollbar-width:thin}nav button{flex-shrink:0;padding:8px 10px;font-size:10px;max-width:160px;white-space:nowrap}nav button span{display:none}nav button[aria-current]{border-left:0;border-bottom:2px solid #76dbcc}main{width:100%;margin-left:0;padding:0 14px 22px}.topbar{height:42px;font-size:9px}.local-badge{font-size:8px}header{padding:24px 0 14px}h1{font-size:24px}.eyebrow{font-size:8px}.subtitle{font-size:10px;line-height:1.6}button,.file-button{font-size:11px;padding:9px 11px}.toolbar{gap:8px}.check{font-size:10px!important}section{padding:17px;margin:15px 0}.field-grid{grid-template-columns:1fr 1fr;gap:12px}.compound-grid{grid-template-columns:1fr}.gradient-row{gap:9px;padding:12px;grid-template-columns:15px repeat(2,minmax(0,1fr)) 25px}.gradient-row label{font-size:8px}.gradient-row input,.gradient-row select{padding:9px 5px;font-size:12px}.metrics{gap:9px}.metrics>div{padding:14px}.metrics strong{font-size:23px}.chart{height:350px}.chart-block>.muted{display:block;margin:12px 0 0}.mode-grid{grid-template-columns:repeat(2,1fr)}.descriptor{gap:5px}.descriptor img{width:180px}.candidate-grid{grid-template-columns:1fr}.model-card{flex-direction:column}.section-head{gap:10px}.notice{font-size:10px}.gradient-row .icon{padding:4px}.drawing select{max-width:125px}input,select,textarea{font-size:16px}article input{font-size:14px}}
 
 .molecular-preview{display:block;width:250px;max-width:100%;height:auto}
+
+.optimizer-workspace { min-width: 0; max-width: 100%; overflow: hidden; }
+.optimizer-workspace fieldset { min-width: 0; }
+.optimizer-workspace .field-grid > * { min-width: 0; }
+.search-plot-scroll, .search-table-scroll { max-width: 100%; overflow-x: auto; }
+.search-table-scroll table { width: 100%; }
+.optimizer-workspace button { margin: 5px; }
+@media (max-width: 640px) {
+  .optimizer-workspace .field-grid { grid-template-columns: minmax(0, 1fr); }
+  .optimizer-workspace { padding: 12px; }
+}

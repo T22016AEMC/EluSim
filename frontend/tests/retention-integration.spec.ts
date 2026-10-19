@@ -73,12 +73,14 @@ test("real curve compounds resolve by ID; 5:3:2 area composition; gradient and r
   await page
     .getByRole("button", { name: "Gradient Optimization", exact: false })
     .click();
-  await page.getByLabel("Gradient durations", { exact: true }).fill("8,12");
+  await page.getByLabel("Gradient time (min) min", { exact: true }).fill("8");
+  await page.getByLabel("Gradient time (min) max", { exact: true }).fill("12");
+  await page.getByLabel("Gradient time (min) steps", { exact: true }).fill("2");
   await page
-    .getByRole("button", { name: "Optimize gradient", exact: true })
+    .getByRole("button", { name: "Generate resolution map", exact: true })
     .click();
   await expect(
-    page.getByRole("heading", { name: "Candidate 1", exact: true }),
+    page.getByRole("heading", { name: "Top candidates", exact: true }),
   ).toBeVisible({ timeout: 30000 });
   await page
     .getByRole("navigation", { name: "Workspaces" })
