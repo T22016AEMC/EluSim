@@ -166,27 +166,54 @@ def band_width(req, compound, state, program):
     }
 
 
-def eligibility(req,c):
- if req.mode!='RP':return 'unsupported',f'{req.mode}: independent quantitative model not enabled'
- if req.workflow=='structure':return 'insufficient_data','No compatible retention model for these structure/conditions'
- if c.kind in ['polymer','peptide','protein','oligomer']:return 'unsupported','No validated LSS model for this entity kind'
- if c.logkw is None or c.s is None:return 'insufficient_data','Missing logKw / S'
- if req.workflow=='calibrated' and c.source!='calibrated':return 'insufficient_data','No calibrated parameters for this component'
- from .conditions import scope_matches, scope_mismatches
- if c.scope and not scope_matches(c.scope,req):return 'insufficient_data','Incompatible retention scope: '+ '; '.join(scope_mismatches(c.scope,req))
- if c.parameter_origin in ['prediction','literature']:
-  from .features import molecular_features
-  if c.retention_provenance.get('scope') and not scope_matches(c.retention_provenance['scope'],req):return 'insufficient_data','Original model chemistry scope no longer matches'
-  if not c.smiles or molecular_features(c.smiles)[0]['canonical_smiles']!=c.retention_provenance.get('canonical_smiles'):return 'insufficient_data','Structure changed since parameters were obtained'
-  if c.retention_provenance.get('particle_um',req.column.particle_um)!=req.column.particle_um:return 'insufficient_data','Particle specification changed since prediction'
-  limits=c.retention_provenance.get('phi_range')
-  if limits and any(not limits[0]-1e-9<=n.b_percent/100<=limits[1]+1e-9 for n in req.gradient):return 'insufficient_data','Gradient outside the retention-curve organic-fraction range'
- return c.source,None
+def eligibility(req, compound):
+    """Block missing/unsupported parameters; chemistry differences are warnings."""
+    if req.mode != 'RP':
+        return 'unsupported', f'{req.mode}: independent quantitative model not enabled'
+    if compound.kind in ['polymer', 'peptide', 'protein', 'oligomer']:
+        return 'unsupported', 'No LSS parameter workflow for this entity kind'
+    if compound.logkw is None or compound.s is None:
+        return 'insufficient_data', 'Missing logKw / S'
+    if not math.isfinite(compound.logkw) or not -3 <= compound.logkw <= 12:
+        return 'insufficient_data', 'logKw outside [-3, 12]'
+    if not math.isfinite(compound.s) or not 0 <= compound.s <= 30:
+        return 'insufficient_data', 'S outside [0, 30]'
+    if req.workflow == 'calibrated' and compound.source != 'calibrated':
+        return 'insufficient_data', 'No calibrated parameters for this component'
+    return compound.source, None
+
+
+def parameter_warnings(req, compound):
+    """Carry source-system and structure differences into every peak record."""
+    from .conditions import scope_mismatches
+    from .generic_lss import generic_features
+
+    notices = list(compound.retention_provenance.get('warnings', []))
+    if compound.scope:
+        notices.extend(scope_mismatches(compound.scope, req))
+    provenance = compound.retention_provenance
+    if provenance.get('scope'):
+        notices.extend(scope_mismatches(provenance['scope'], req))
+    if provenance.get('particle_um', req.column.particle_um) != req.column.particle_um:
+        notices.append('Particle specification differs from the parameter source.')
+    limits = provenance.get('phi_range')
+    if limits and any(not limits[0] <= node.b_percent / 100 <= limits[1] for node in req.gradient):
+        notices.append('Gradient outside the source organic-fraction interval; extrapolation.')
+    if provenance.get('canonical_smiles'):
+        try:
+            canonical = generic_features(compound.smiles or '')['canonical_smiles']
+            if canonical != provenance['canonical_smiles']:
+                notices.append('Structure changed since parameters were obtained; supplied values retained.')
+        except ValueError:
+            notices.append('Current SMILES cannot be parsed; supplied parameters retained.')
+    return list(dict.fromkeys(notices))
+
 
 def simulate(req: Simulation, deadline=None):
     """Run migration, outlet-state bandwidth and area-normalized Gaussian signals."""
     from .prediction import prepare_structure
     from .mixture import signal_amounts
+    from .estimation import parameter_tier
 
     original_input = req.model_dump()
     req, predictions = prepare_structure(req)
@@ -209,6 +236,7 @@ def simulate(req: Simulation, deadline=None):
             'id': compound.id,
             'name': compound.name,
             'source': source,
+            'parameter_tier': parameter_tier(compound),
             'rt_min': None,
             'eluted': False,
             'warning': error,
@@ -225,11 +253,13 @@ def simulate(req: Simulation, deadline=None):
             'parameter_scope': compound.scope.model_dump() if compound.scope else None,
         }
         if not error:
+            notices = parameter_warnings(req, compound)
+            row['warning'] = '; '.join(notices) or None
             state = retention_state(req, compound)
             row['eluted'] = state is not None
             row['simulation_status'] = 'eluted' if state is not None else 'non_eluted'
             if state is None:
-                row['warning'] = 'Non-eluted within programmed run; not assigned a fictitious Rt'
+                row['warning'] = '; '.join(notices + ['Non-eluted within programmed run; not assigned a fictitious Rt'])
             else:
                 row.update(
                     rt_min=state.rt_min,
@@ -247,7 +277,7 @@ def simulate(req: Simulation, deadline=None):
                         width_base_min=4 * sigma,
                     )
                     if widths['width_warning']:
-                        row['warning'] = widths['width_warning']
+                        row['warning'] = '; '.join(notices + [widths['width_warning']])
                     height = signals[compound.id]['peak_area'] / (math.sqrt(2 * math.pi) * sigma)
                     row['peak_height'] = height
                     curves.append({
@@ -256,7 +286,9 @@ def simulate(req: Simulation, deadline=None):
                         'y': (height * np.exp(-0.5 * ((grid - state.rt_min) / sigma)**2)).tolist(),
                     })
                 else:
-                    row['warning'] = 'Efficiency missing: Rt only; peak / Rs not generated'
+                    row['warning'] = '; '.join(notices + ['Efficiency missing: Rt only; peak / Rs not generated'])
+            if not error and row['warning']:
+                warnings.append(compound.name + ': ' + row['warning'])
             if compound.scope is None:
                 warnings.append(compound.name + ': parameter scope undeclared; supplied parameters used')
         peaks.append(row)
@@ -309,51 +341,117 @@ def simulate(req: Simulation, deadline=None):
     }
 
 
-def optimize(req:Optimize):
- from .schemas import Node
- from .prediction import prepare_structure
- base,_=prepare_structure(req.simulation)
- failures=[]
- for c in base.compounds:
-  try:reason=eligibility(base,c)[1]
-  except ValueError as exc:reason=str(exc)
-  if reason:failures.append(f'{c.name} ({c.id}): {reason}')
- if failures:raise ValueError('Optimization blocked: '+'; '.join(failures))
- if base.mode!='RP' or not base.column.plates or len(base.compounds)<2:raise ValueError('Optimization needs ≥2 eligible RP components and column efficiency')
- for c in base.compounds:
-  limits=c.retention_provenance.get('phi_range') if c.parameter_origin in ['prediction','literature'] else None
-  if limits and any(not limits[0]-1e-9<=v/100<=limits[1]+1e-9 for v in req.starts_percent+req.ends_percent):raise ValueError('Optimization candidate fractions exceed the retention model interval')
- deadline=time.monotonic()+20; results=[]
- for duration in req.durations_min:
-  for start in req.starts_percent:
-   for end in req.ends_percent:
-    if end<=start:continue
-    nodes=[Node(time_min=0,b_percent=start,flow_ml_min=base.gradient[0].flow_ml_min,temperature_c=base.column.temperature_c),Node(time_min=duration,b_percent=end,flow_ml_min=base.gradient[0].flow_ml_min,temperature_c=base.column.temperature_c)]
-    if req.hold_min:nodes.append(nodes[-1].model_copy(update={'time_min':duration+req.hold_min}))
-    sim=base.model_copy(update={'gradient':nodes,'points':300});result=simulate(sim,deadline)
-    all_eluted=all(x['eluted'] for x in result['peaks']);rs=result['min_rs'];solvent=result['total_solvent_ml']
-    feasible=all_eluted and rs is not None and rs>=req.target_rs and (req.max_solvent_ml is None or solvent<=req.max_solvent_ml)
-    results.append({'gradient':[x.model_dump() for x in nodes],'feasible':feasible,'all_eluted':all_eluted,'min_rs':rs,'duration_min':nodes[-1].time_min,'solvent_ml':solvent,'result':result,'limits':['Pressure limit not evaluated: physical properties missing','Gaussian efficiency approximation; no experimental accuracy claim']})
- results.sort(key=lambda x:(not x['feasible'],not x['all_eluted'],max(0,req.target_rs-(x['min_rs'] or 0)),x['duration_min'],x['solvent_ml']))
- return {'candidates':results[:8],'evaluated':len(results),'search':'Bounded enumerated linear-gradient grid; global optimality not claimed','recommendations':[{'mode':m,'status':'Screening only' if m!='RP' else 'Model-based','note':MODES[m]['description']} for m in MODES]}
+def optimize(req: Optimize):
+    """Keep the bounded candidate grid; source-interval differences become notices."""
+    from .schemas import Node
+    from .prediction import prepare_structure
 
-def calibrate(req:Calibration):
- methods=[o.method for o in req.observations]
- if any(m.mode!='RP' for m in methods):raise ValueError('RP calibration only')
- signatures=[str((m.column.model_dump(),m.mobile.model_dump(),[n.model_dump() for n in m.gradient])) for m in methods]
- if len(set(signatures))<2:raise ValueError('Need at least two independent methods; duplicate Rt cannot identify two parameters')
- first=methods[0];scope=(first.column.stationary_phase,first.mobile.b,first.mobile.ph,first.column.temperature_c,first.mobile.a,first.mobile.buffer,first.mobile.ph_control)
- if any((m.column.stationary_phase,m.mobile.b,m.mobile.ph,m.column.temperature_c,m.mobile.a,m.mobile.buffer,m.mobile.ph_control)!=scope for m in methods):raise ValueError('Calibration methods must share stationary phase, solvents, buffer, pH and temperature')
- compounds=[]
- for m in methods:
-  c=next((x for x in m.compounds if x.id==req.compound_id),None)
-  if c is None or c.kind not in ['small_molecule','parameterized']:raise ValueError('Missing / unsupported calibration component')
-  compounds.append(c)
- target=np.array([o.rt_min for o in req.observations]);deadline=time.monotonic()+20
- def residual(values):
-  if time.monotonic()>deadline:raise TimeoutError('Calibration budget exceeded')
-  return np.array([(retention(m,c.model_copy(update={'logkw':float(values[0]),'s':float(values[1])})) or m.gradient[-1].time_min*2) for m,c in zip(methods,compounds)])-target
- fit=least_squares(residual,[2.,4.],bounds=([-3,0],[12,30]),max_nfev=100,diff_step=1e-4)
- if not fit.success or np.linalg.matrix_rank(fit.jac)<2 or np.linalg.cond(fit.jac)>1e6:raise ValueError('Parameters not identifiable / optimizer not converged')
- if any(retention(m,c.model_copy(update={'logkw':float(fit.x[0]),'s':float(fit.x[1])})) is None for m,c in zip(methods,compounds)):raise ValueError('Calibration predicts non-elution')
- return {'compound_id':req.compound_id,'logkw':float(fit.x[0]),'s':float(fit.x[1]),'source':'calibrated','scope':{'stationary_phase':scope[0],'mobile_b':scope[1],'ph':scope[2],'temperature_c':scope[3],'mobile_a':scope[4],'buffer':scope[5],'ph_control':scope[6]},'residuals_min':fit.fun.tolist(),'rmse_fit_min':float(np.sqrt(np.mean(fit.fun**2))),'jacobian_condition':float(np.linalg.cond(fit.jac)),'statistical_prediction_error':None,'warning':'Training fit residual is not external prediction accuracy; synthetic inputs remain synthetic','model':MODEL}
+    base, _ = prepare_structure(req.simulation)
+    failures = []
+    for compound in base.compounds:
+        reason = eligibility(base, compound)[1]
+        if reason:
+            failures.append(f'{compound.name} ({compound.id}): {reason}')
+    if failures:
+        raise ValueError('Optimization blocked: ' + '; '.join(failures))
+    if base.mode != 'RP' or not base.column.plates or len(base.compounds) < 2:
+        raise ValueError('Optimization needs ≥2 eligible RP components and column efficiency')
+    deadline = time.monotonic() + 20
+    results = []
+    for duration in req.durations_min:
+        for start in req.starts_percent:
+            for end in req.ends_percent:
+                if end <= start:
+                    continue
+                nodes = [
+                    Node(time_min=0, b_percent=start, flow_ml_min=base.gradient[0].flow_ml_min, temperature_c=base.column.temperature_c),
+                    Node(time_min=duration, b_percent=end, flow_ml_min=base.gradient[0].flow_ml_min, temperature_c=base.column.temperature_c),
+                ]
+                if req.hold_min:
+                    nodes.append(nodes[-1].model_copy(update={'time_min': duration + req.hold_min}))
+                simulation = base.model_copy(update={'gradient': nodes, 'points': 300})
+                result = simulate(simulation, deadline)
+                all_eluted = all(peak['eluted'] for peak in result['peaks'])
+                resolution = result['min_rs']
+                solvent = result['total_solvent_ml']
+                feasible = (
+                    all_eluted and resolution is not None and resolution >= req.target_rs
+                    and (req.max_solvent_ml is None or solvent <= req.max_solvent_ml)
+                )
+                results.append({
+                    'gradient': [node.model_dump() for node in nodes], 'feasible': feasible,
+                    'all_eluted': all_eluted, 'min_rs': resolution,
+                    'duration_min': nodes[-1].time_min, 'solvent_ml': solvent, 'result': result,
+                    'limits': ['Pressure limit not evaluated: physical properties missing', 'Gaussian local-width approximation; pending user experimental checks'],
+                })
+    results.sort(key=lambda candidate: (
+        not candidate['feasible'], not candidate['all_eluted'],
+        max(0, req.target_rs - (candidate['min_rs'] or 0)),
+        candidate['duration_min'], candidate['solvent_ml'],
+    ))
+    return {
+        'candidates': results[:8], 'evaluated': len(results),
+        'search': 'Bounded enumerated linear-gradient grid; global optimality not claimed',
+        'recommendations': [
+            {'mode': mode, 'status': 'Screening only' if mode != 'RP' else 'Model-based', 'note': MODES[mode]['description']}
+            for mode in MODES
+        ],
+    }
+
+
+def calibrate(req: Calibration):
+    """Fit two LSS parameters using the existing multi-method residual solver."""
+    methods = [observation.method for observation in req.observations]
+    if any(method.mode != 'RP' for method in methods):
+        raise ValueError('RP calibration only')
+    signatures = [str((method.column.model_dump(), method.mobile.model_dump(), [node.model_dump() for node in method.gradient])) for method in methods]
+    if len(set(signatures)) < 2:
+        raise ValueError('Need at least two independent methods; duplicate Rt cannot identify two parameters')
+
+    def chemistry(method):
+        """Identify the shared chemical system independently of gradient time."""
+        return (
+            method.column.stationary_phase, method.mobile.b, method.mobile.ph,
+            method.column.temperature_c, method.mobile.a, method.mobile.buffer, method.mobile.ph_control,
+        )
+
+    scope = chemistry(methods[0])
+    if any(chemistry(method) != scope for method in methods):
+        raise ValueError('Calibration methods must share stationary phase, solvents, buffer, pH and temperature')
+    compounds = []
+    for method in methods:
+        compound = next((item for item in method.compounds if item.id == req.compound_id), None)
+        if compound is None or compound.kind not in ['small_molecule', 'parameterized']:
+            raise ValueError('Missing / unsupported calibration component')
+        compounds.append(compound)
+    target = np.array([observation.rt_min for observation in req.observations])
+    deadline = time.monotonic() + 20
+
+    def residual(values):
+        """Use float-returning retention(), preserving its calibration interface."""
+        if time.monotonic() > deadline:
+            raise TimeoutError('Calibration budget exceeded')
+        predicted = [
+            retention(method, compound.model_copy(update={'logkw': float(values[0]), 's': float(values[1])}))
+            or method.gradient[-1].time_min * 2
+            for method, compound in zip(methods, compounds)
+        ]
+        return np.array(predicted) - target
+
+    fit = least_squares(residual, [2.0, 4.0], bounds=([-3, 0], [12, 30]), max_nfev=100, diff_step=1e-4)
+    if not fit.success or np.linalg.matrix_rank(fit.jac) < 2 or np.linalg.cond(fit.jac) > 1e6:
+        raise ValueError('Parameters not identifiable / optimizer not converged')
+    if any(retention(method, compound.model_copy(update={'logkw': float(fit.x[0]), 's': float(fit.x[1])})) is None for method, compound in zip(methods, compounds)):
+        raise ValueError('Calibration predicts non-elution')
+    return {
+        'compound_id': req.compound_id, 'logkw': float(fit.x[0]), 's': float(fit.x[1]),
+        'source': 'calibrated', 'parameter_tier': 'D',
+        'validation_status': 'unvalidated — pending user validation',
+        'scope': {
+            'stationary_phase': scope[0], 'mobile_b': scope[1], 'ph': scope[2],
+            'temperature_c': scope[3], 'mobile_a': scope[4], 'buffer': scope[5], 'ph_control': scope[6],
+        },
+        'residuals_min': fit.fun.tolist(), 'rmse_fit_min': float(np.sqrt(np.mean(fit.fun**2))),
+        'jacobian_condition': float(np.linalg.cond(fit.jac)), 'statistical_prediction_error': None,
+        'warning': 'Fit residuals only; pending user experimental checks', 'model': MODEL,
+    }

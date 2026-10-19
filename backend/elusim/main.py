@@ -117,6 +117,21 @@ def retention_prediction(req:RetentionInput):
   from .retention_registry import predict_curve
   return predict_curve(req.smiles,req.method,use_literature=req.model_id=='auto')
  return predict_retention(req.smiles,req.method,req.model_id)
+class EstimateRetention(Strict):
+    """A structure and current method for tiered LSS parameter estimation."""
+
+    smiles: str = Field(min_length=1, max_length=2000)
+    method: Simulation
+
+
+@app.post('/api/retention/estimate')
+def retention_estimate(req: EstimateRetention):
+    """Return parameters with source tier and method-difference notices."""
+    from .estimation import estimate_retention
+
+    return estimate_retention(req.smiles, req.method)
+
+
 class ResolveRetention(Strict):
  method:Simulation
  overwrite_manual:bool=False

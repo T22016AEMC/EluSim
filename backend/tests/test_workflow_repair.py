@@ -34,26 +34,43 @@ def test_legacy_api_not_just_200_and_field_error_is_specific():
  assert r.status_code==422 and r.json()['detail'][0]['loc']==['body','compounds',1,'s']
 
 
-def test_real_lookup_model_conditions_and_detailed_rejection():
- m=scoped_method();actual=curve_conditions();assert actual['scope']==predict_curve(m.compounds[0].smiles,m)['model']['scope']
- r=client.post('/api/retention/resolve',json={'method':m.model_dump()})
- assert r.status_code==200
- compounds=r.json()['compounds'];assert all(c['source']=='literature_derived' for c in compounds)
- m.compounds=[Compound.model_validate(c) for c in compounds];assert len(simulate(m)['traces'])==3
- m.mobile.b='MeOH';m.column.particle_um=1.7
- rejected=predict_curve(m.compounds[0].smiles,m)
- assert rejected['logkw'] is None and any('mobile_b' in x for x in rejected['condition_mismatches']) and any('particle_um' in x for x in rejected['condition_mismatches'])
- with pytest.raises(ValueError,match='Experimental curve 0'):optimize(Optimize(simulation=m))
+def test_real_lookup_model_conditions_and_detailed_warnings():
+    """Lookup and optimization retain values while reporting source differences."""
+    request = scoped_method()
+    actual = curve_conditions()
+    assert actual['scope'] == predict_curve(request.compounds[0].smiles, request)['model']['scope']
+    response = client.post('/api/retention/resolve', json={'method': request.model_dump()})
+    assert response.status_code == 200
+    compounds = response.json()['compounds']
+    assert all(compound['source'] == 'literature_derived' for compound in compounds)
+    request.compounds = [Compound.model_validate(compound) for compound in compounds]
+    assert len(simulate(request)['traces']) == 3
+    request.mobile.b = 'MeOH'
+    request.column.particle_um = 1.7
+    warned = predict_curve(request.compounds[0].smiles, request)
+    assert warned['logkw'] is not None
+    assert any('mobile_b' in item for item in warned['condition_mismatches'])
+    assert any('particle_um' in item for item in warned['condition_mismatches'])
+    result = optimize(Optimize(simulation=request, durations_min=[8], starts_percent=[20], ends_percent=[50]))
+    assert result['evaluated'] == 1
+    assert result['candidates'][0]['result']['peaks'][0]['warning']
 
 
-def test_failed_prediction_keeps_manual_and_no_fake_partial_peak():
- m=scoped_method();m.compounds[0].logkw=2;m.compounds[0].s=4;m.compounds[0].smiles='not-a-smiles'
- kept,records=resolve_compounds(m,overwrite_manual=True)
- assert kept.compounds[0].logkw==2 and kept.compounds[0].s==4
- assert records[0]['status']=='Insufficient data'
- resolved,_=resolve_compounds(scoped_method());resolved.compounds[0].smiles='not-a-smiles'
- partial=simulate(resolved)
- assert partial['peaks'][0]['simulation_status']=='ineligible' and len(partial['traces'])==2
+def test_failed_estimation_keeps_parameters_and_reports_structure_warning():
+    """An invalid new structure cannot overwrite existing numerical parameters."""
+    request = scoped_method()
+    request.compounds[0].logkw = 2
+    request.compounds[0].s = 4
+    request.compounds[0].smiles = 'not-a-smiles'
+    kept, records = resolve_compounds(request, overwrite_manual=True)
+    assert kept.compounds[0].logkw == 2 and kept.compounds[0].s == 4
+    assert records[0]['status'] == 'Insufficient data'
+    resolved, _ = resolve_compounds(scoped_method())
+    resolved.compounds[0].smiles = 'not-a-smiles'
+    result = simulate(resolved)
+    assert result['peaks'][0]['simulation_status'] == 'eluted'
+    assert len(result['traces']) == 3
+    assert 'SMILES cannot be parsed' in result['peaks'][0]['warning']
 
 
 def test_nonelution_is_distinct_from_invalid_parameters_and_import_ids():

@@ -29,20 +29,58 @@ def test_direct_rt_only_and_exact_method_constraints():
  for key,value in [('stationary_phase','Other C18'),('length_mm',150),('temperature_c',25)]:
   other=m.model_copy(deep=True);setattr(other.column,key,value);assert predict_retention(s,other)['rt_min'] is None
  m.gradient[1].time_min+=.1;assert predict_retention(s,m)['rt_min'] is None
-def test_out_of_domain_and_manual_fallback():
- assert infer('report0259-rt','[Na+]')['prediction'] is None
- m=method();m.workflow='structure';assert not simulate(m)['order'];m.workflow='known';assert len(simulate(m)['order'])==3
-def test_lss_adapter_output_is_really_used_and_gradient_changes(monkeypatch):
- import elusim.prediction as p
- m=method();m.workflow='structure';m.compounds=m.compounds[:1];m.compounds[0].kind='small_molecule';m.compounds[0].smiles='CCO'
- scope={'mode':'RP','stationary_phase':m.column.stationary_phase,'mobile_a':m.mobile.a,'mobile_b':m.mobile.b,'buffer':m.mobile.buffer,'ph':m.mobile.ph,'temperature_c':m.column.temperature_c}
- class FixtureRoot:
-  def __truediv__(self,other):return self
-  def exists(self):return True
- monkeypatch.setattr(p,'ROOT',FixtureRoot());monkeypatch.setattr(p,'load_model',lambda mid:{'metadata':{'scope':scope}});monkeypatch.setattr(p,'infer',lambda mid,s:{'prediction':[2.,4.],'status':'Experimental model prediction','model':{'source':'Synthetic adapter fixture only; not deployed empirical model'}})
- r=simulate(m);assert r['peaks'][0]['rt_min'] is not None and r['structure_predictions']
- before=r['peaks'][0]['rt_min'];m.gradient[1].time_min=15;assert simulate(m)['peaks'][0]['rt_min']>before
- m.mobile.b='MeOH';assert not simulate(m)['order']
+def test_out_of_domain_direct_rt_keeps_manual_lss_fallback():
+    """Direct Rt abstention does not disable existing manual LSS values."""
+    assert infer('report0259-rt', '[Na+]')['prediction'] is None
+    request = method()
+    for workflow in ['structure', 'known']:
+        request.workflow = workflow
+        assert len(simulate(request)['order']) == 3
+
+
+def test_lss_adapter_parameters_enter_solver_with_condition_warnings(monkeypatch):
+    """A synthetic adapter fixture checks dataflow, not empirical prediction."""
+    from elusim.generic_lss import PENDING_STATUS
+
+    request = method()
+    request.workflow = 'structure'
+    request.compounds = request.compounds[:1]
+    compound = request.compounds[0]
+    compound.kind = 'small_molecule'
+    compound.smiles = 'CCO'
+    compound.logkw = None
+    compound.s = None
+
+    def fixture(smiles, submitted):
+        """Return transparent synthetic parameters for adapter arithmetic only."""
+        return {
+            'logkw': 2.0, 's': 4.0, 'tier': 'B', 'status': 'Experimental model prediction',
+            'model_id': 'synthetic-fixture', 'model_version': 'test-only',
+            'parameter_source': 'Synthetic adapter fixture', 'license': 'test-only', 'reference': None,
+            'scope': {
+                'stationary_phase': request.column.stationary_phase,
+                'mobile_a': request.mobile.a, 'mobile_b': 'ACN', 'buffer': request.mobile.buffer,
+                'ph': request.mobile.ph, 'ph_control': request.mobile.ph_control,
+                'temperature_c': request.column.temperature_c,
+            },
+            'phi_range': [0, 1], 'particle_um': request.column.particle_um,
+            'validation_status': PENDING_STATUS, 'features': {'canonical_smiles': smiles},
+            'condition_differences': ['MeOH differs from fixture ACN'] if submitted.mobile.b == 'MeOH' else [],
+            'warnings': ['MeOH differs from fixture ACN'] if submitted.mobile.b == 'MeOH' else [],
+        }
+
+    monkeypatch.setattr('elusim.estimation.estimate_retention', fixture)
+    result = simulate(request)
+    assert result['peaks'][0]['rt_min'] is not None and result['structure_predictions']
+    assert result['resolved_compounds'][0]['logkw'] == 2.0
+    before = result['peaks'][0]['rt_min']
+    request.gradient[1].time_min = 15
+    assert simulate(request)['peaks'][0]['rt_min'] > before
+    request.mobile.b = 'MeOH'
+    result = simulate(request)
+    assert result['order'] and 'MeOH' in result['peaks'][0]['warning']
+
+
 def curve_row(phi,logk):
  return {'smiles':'CCO','mode':'RP','stationary_phase':'test','mobile_a':'Water','mobile_b':'ACN','buffer':'None','ph':7,'temperature_c':25,'source':'Synthetic fixture, not empirical evidence','license':'test','phi':phi,'logk':logk}
 def test_identifiability_units_and_scope():

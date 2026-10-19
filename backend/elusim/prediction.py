@@ -49,29 +49,13 @@ def predict_retention(smiles,method,model_id='report0259-rt'):
  return r
 
 def prepare_structure(req):
- if req.workflow!='structure' or req.mode!='RP':return req,[]
- if not (ROOT/'lss-parameters.json.gz').exists():return req,[{'status':'Insufficient data','reason':'No deployed compatible logKw/S model; direct Rt predictions are not LSS parameters'}]
- from .schemas import Scope
- model=load_model('lss-parameters');scope=model['metadata']['scope']
- if 'phi_range' in model['metadata']:
-  from .conditions import scope_matches
-  from .retention_registry import resolve_compounds
-  if not scope_matches(scope,req):return req,[{'status':'Insufficient data','reason':'LSS model scope mismatch'}]
-  return resolve_compounds(req)
- actual={'mode':req.mode,'stationary_phase':req.column.stationary_phase,'mobile_a':req.mobile.a,'mobile_b':req.mobile.b,'buffer':req.mobile.buffer,'ph':req.mobile.ph,'temperature_c':req.column.temperature_c}
- if scope!=actual:return req,[{'status':'Insufficient data','reason':'LSS model scope mismatch'}]
- compounds=[];records=[]
- for c in req.compounds:
-  try:
-   if c.kind!='small_molecule' or not c.smiles:raise ValueError('Small-molecule SMILES required')
-   r=infer('lss-parameters',c.smiles);records.append({'compound_id':c.id,**r})
-   if r['prediction'] is None:raise ValueError('Out of domain or insufficient validation')
-   kw,ss=r['prediction']
-   if not -3<=kw<=12 or not 0<=ss<=30:raise ValueError('Predicted parameters outside LSS bounds')
-   compounds.append(c.model_copy(update={'logkw':kw,'s':ss,'source':'experimental_model_prediction','scope':Scope(**{k:v for k,v in scope.items() if k!='mode'})}))
-  except (ValueError,OSError,KeyError) as exc:
-   compounds.append(c.model_copy(update={'logkw':None,'s':None,'source':'insufficient_data'}));records.append({'compound_id':c.id,'status':'Insufficient data','reason':str(exc)})
- return req.model_copy(update={'compounds':compounds,'workflow':'known'}),records
+    """Acquire tiered LSS estimates for the structure workflow without scope gates."""
+    if req.workflow != 'structure' or req.mode != 'RP':
+        return req, []
+    from .retention_registry import resolve_compounds
+
+    return resolve_compounds(req)
+
 def library():
  from .retention_registry import curve_conditions
  models=[]

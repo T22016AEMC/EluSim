@@ -58,6 +58,7 @@ class Compound(Strict):
     concentration_unit: Literal['mM', 'mg/mL'] = 'mM'
     response_factor: float = Field(default=1, ge=0, le=1000000)
     parameter_origin: Literal['manual', 'prediction', 'calibration', 'literature'] = 'manual'
+    parameter_tier: Literal['A', 'B', 'C', 'D', 'M'] | None = None
     retention_provenance: dict = Field(default_factory=dict)
     source: Source = 'model_based'
     source_legacy: str | None = None

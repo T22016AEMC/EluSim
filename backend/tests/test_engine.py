@@ -62,16 +62,26 @@ def test_gaussian_width_and_resolution_identity():
  assert a['fwhm_min']/a['sigma_min']==pytest.approx(2*math.sqrt(2*math.log(2)))
  assert r['pairs'][0]['rs']==pytest.approx(2*(b['rt_min']-a['rt_min'])/(4*a['sigma_min']+4*b['sigma_min']))
 
-def test_missing_efficiency_and_structure_path_do_not_make_peaks():
- m=method();m.column.plates=None
- assert not simulate(m)['traces'] and simulate(m)['min_rs'] is None
- r=simulate(m.model_copy(update={'workflow':'structure'}))
- assert not r['order'] and all(p['source']=='insufficient_data' for p in r['peaks'])
+def test_missing_efficiency_keeps_rt_without_drawing_peaks():
+    """Manual parameters stay usable in either workflow, with no N-based signal."""
+    request = method()
+    request.column.plates = None
+    for workflow in ['known', 'structure']:
+        result = simulate(request.model_copy(update={'workflow': workflow}))
+        assert len(result['order']) == 3
+        assert not result['traces'] and result['min_rs'] is None
 
-def test_parameter_scope_blocks_invalid_method_transfer():
- from elusim.schemas import Scope
- m=method();m.compounds[0].scope=Scope(mobile_b='MeOH')
- assert simulate(m)['peaks'][0]['source']=='insufficient_data'
+
+def test_parameter_scope_difference_warns_without_blocking():
+    """Supplied numerical parameters remain usable with an explicit difference."""
+    from elusim.schemas import Scope
+
+    request = method()
+    request.compounds[0].scope = Scope(mobile_b='MeOH')
+    peak = simulate(request)['peaks'][0]
+    assert peak['rt_min'] is not None
+    assert 'mobile_b' in peak['warning']
+
 
 def test_optimization_changes_real_migration_and_respects_budget():
  req=Optimize(simulation=method(),durations_min=[8,12],starts_percent=[5],ends_percent=[95])

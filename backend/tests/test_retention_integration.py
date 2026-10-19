@@ -34,16 +34,32 @@ def test_unseen_qsrr_parameters_really_feed_solver():
  m.compounds=[c];first=simulate(m)['peaks'][0]['rt_min'];m.gradient[1].time_min=20;second=simulate(m)['peaks'][0]['rt_min']
  assert first is not None and second is not None and second>first
 
-def test_conditions_and_range_cannot_silently_transfer_parameters():
- m,_=resolve_compounds(scoped_method())
- for field,value in [('stationary_phase','Generic C18'),('temperature_c',25),('particle_um',1.7)]:
-  other=m.model_copy(deep=True);setattr(other.column,field,value)
-  if field=='temperature_c':other.gradient=[n.model_copy(update={'temperature_c':value}) for n in other.gradient]
-  assert not simulate(other)['order']
- other=m.model_copy(deep=True);other.mobile.b='MeOH';assert not simulate(other)['order']
- other=m.model_copy(deep=True);other.mobile.ph=3;other.mobile.ph_control='fixed';assert not simulate(other)['order']
- other=m.model_copy(deep=True);other.gradient[0].b_percent=5;assert not simulate(other)['order']
- other=m.model_copy(deep=True);other.compounds[0].smiles='CCO';assert simulate(other)['peaks'][0]['rt_min'] is None
+def test_conditions_range_and_structure_differences_are_peak_warnings():
+    """Condition/structure changes retain numbers and expose provenance differences."""
+    prepared, _ = resolve_compounds(scoped_method())
+    for field, value in [('stationary_phase', 'Generic C18'), ('temperature_c', 25), ('particle_um', 1.7)]:
+        changed = prepared.model_copy(deep=True)
+        setattr(changed.column, field, value)
+        if field == 'temperature_c':
+            changed.gradient = [node.model_copy(update={'temperature_c': value}) for node in changed.gradient]
+        result = simulate(changed)
+        assert len(result['order']) == 3
+        assert all(peak['warning'] for peak in result['peaks'])
+    for update in ['solvent', 'ph', 'gradient', 'structure']:
+        changed = prepared.model_copy(deep=True)
+        if update == 'solvent':
+            changed.mobile.b = 'MeOH'
+        elif update == 'ph':
+            changed.mobile.ph = 3
+            changed.mobile.ph_control = 'fixed'
+        elif update == 'gradient':
+            changed.gradient[0].b_percent = 5
+        else:
+            changed.compounds[0].smiles = 'CCO'
+        result = simulate(changed)
+        assert len(result['order']) == 3
+        assert result['peaks'][0]['warning']
+
 
 def test_parts_area_not_height_and_rt_invariance():
  m,_=resolve_compounds(scoped_method());m.points=2000;m.gradient[-1].time_min=20;r=simulate(m)
@@ -74,14 +90,24 @@ def test_manual_protection_and_explicit_replacement():
  p,records=resolve_compounds(m);assert p.compounds[0].logkw==2 and records[0]['status']=='Manual parameters preserved'
  p,records=resolve_compounds(m,overwrite_manual=True);assert p.compounds[0].logkw!=2 and p.compounds[0].source=='literature_derived'
 
-def test_optimizer_uses_same_curve_and_rejects_ineligible_base():
- m,_=resolve_compounds(scoped_method());r=optimize(Optimize(simulation=m,durations_min=[8,12],starts_percent=[20],ends_percent=[50],hold_min=10))
- assert r['evaluated']==2
- for candidate in r['candidates']:
-  expected=simulate(m.model_copy(update={'gradient':[Node(**n) for n in candidate['gradient']],'points':300}))
-  assert [p['rt_min'] for p in expected['peaks']]==pytest.approx([p['rt_min'] for p in candidate['result']['peaks']])
- m.mobile.b='MeOH'
- with pytest.raises(ValueError):optimize(Optimize(simulation=m))
+def test_optimizer_uses_same_curve_and_warns_on_method_differences():
+    """The existing candidate engine uses the same solver and warning policy."""
+    prepared, _ = resolve_compounds(scoped_method())
+    request = Optimize(simulation=prepared, durations_min=[8, 12], starts_percent=[20], ends_percent=[50], hold_min=10)
+    result = optimize(request)
+    assert result['evaluated'] == 2
+    for candidate in result['candidates']:
+        expected = simulate(prepared.model_copy(update={
+            'gradient': [Node(**node) for node in candidate['gradient']], 'points': 300,
+        }))
+        assert [peak['rt_min'] for peak in expected['peaks']] == pytest.approx([
+            peak['rt_min'] for peak in candidate['result']['peaks']
+        ])
+    prepared.mobile.b = 'MeOH'
+    warned = optimize(Optimize(simulation=prepared, durations_min=[8], starts_percent=[20], ends_percent=[50]))
+    assert warned['evaluated'] == 1
+    assert all(peak['warning'] for peak in warned['candidates'][0]['result']['peaks'])
+
 
 def test_composition_import_ids_and_validation():
  raw='name,smiles,mixture_parts,concentration,concentration_unit,response_factor\nCaffeine,Cn1c(=O)c2c(ncn2C)n(C)c1=O,5,2,mM,1\n'
