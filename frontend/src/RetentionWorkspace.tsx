@@ -1,37 +1,388 @@
-import {useEffect,useState,useRef} from 'react';
-import {api} from './api';
-import {sourceCode} from './sources';
-import {compatibleMethod,conditionDifferences,type CurveConditions} from './ModelConditions';
-import {payload,type Config,type Compound,type Scope} from './types';
-type Library={lss_conditions:CurveConditions;models:any[];retention_method:{column:Partial<Config['column']>;mobile:Partial<Config['mobile']>;gradient:Config['gradient']};lss_structure_model:any;lss_warning:string};
-export function RetentionWorkspace({config,change}:{config:Config;change:(c:Partial<Config>)=>void}){
- const sequence=useRef(0),current=useRef(config);current.current=config;
- const [library,setLibrary]=useState<Library>(),[smiles,setSmiles]=useState(config.compounds.find(c=>c.smiles)?.smiles||''),[compoundId,setCompoundId]=useState(config.compounds.find(c=>c.smiles)?.id||''),[modelId,setModelId]=useState('auto'),[replaceManual,setReplaceManual]=useState(false),[result,setResult]=useState<Record<string,any>>(),[busy,setBusy]=useState(false),[error,setError]=useState('');
- const conditions=JSON.stringify({mode:config.mode,column:config.column,mobile:config.mobile,gradient:config.gradient});
- useEffect(()=>{api<Library>('models').then(setLibrary).catch(e=>setError(String(e)));},[]);
- useEffect(()=>{if(compoundId){const selected=config.compounds.find(c=>c.id===compoundId);if(selected)setSmiles(selected.smiles||'');else{setCompoundId('');setSmiles('');}}},[config.compounds,compoundId]);
- useEffect(()=>{sequence.current++;setResult(undefined);setBusy(false);},[conditions,smiles,compoundId,modelId]);
- async function predict(){const token=++sequence.current;const snapshot=JSON.stringify(current.current);setBusy(true);setError('');try{
-  const r=await api<Record<string,any>>('retention/predict',{smiles,method:payload(current.current),model_id:modelId});
-  if(token!==sequence.current||snapshot!==JSON.stringify(current.current))return;
-  const c=current.current.compounds.find(c=>c.id===compoundId);
-  if(c&&r.logkw!=null&&r.s!=null){
-   if(c.parameter_origin!=='prediction'&&c.parameter_origin!=='literature'&&c.logkw!=null&&c.s!=null&&!replaceManual)r.warnings.push('Manual parameters preserved; enable explicit replacement to apply this prediction.');
-   else {const updated:Compound={...c,logkw:r.logkw,s:r.s,source:sourceCode(r.status),scope:r.scope as Scope,parameter_origin:r.status==='Literature-derived'?'literature':'prediction',retention_provenance:{model_id:r.model.model_id,model_version:r.model.model_version,source:r.parameter_source,reference:r.model.original_dataset_source,license:r.model.license,canonical_smiles:r.features.canonical_smiles,scope:r.scope,phi_range:r.phi_range,particle_um:3.5,validation_status:r.status,applicability:r.applicability,warnings:r.warnings}};
-    change({compounds:current.current.compounds.map(x=>x.id===c.id?updated:x),workflow:'known'});r.warnings.push('Retention Parameters automatically updated for '+c.name+'.');}
+import { compoundTier } from "./retentionEstimates";
+import { useEffect, useState, useRef } from "react";
+import { api } from "./api";
+import { sourceCode } from "./sources";
+import {
+  compatibleMethod,
+  conditionDifferences,
+  type CurveConditions,
+} from "./ModelConditions";
+import { payload, type Config, type Compound, type Scope } from "./types";
+type Library = {
+  lss_conditions: CurveConditions;
+  models: any[];
+  retention_method: {
+    column: Partial<Config["column"]>;
+    mobile: Partial<Config["mobile"]>;
+    gradient: Config["gradient"];
+  };
+  lss_structure_model: any;
+  lss_warning: string;
+};
+/** Keep explicit prediction/model-condition controls on the shared mixture state. */
+export function RetentionWorkspace({
+  config,
+  change,
+}: {
+  config: Config;
+  change: (c: Partial<Config>) => void;
+}) {
+  const sequence = useRef(0),
+    current = useRef(config);
+  current.current = config;
+  const [library, setLibrary] = useState<Library>(),
+    [smiles, setSmiles] = useState(
+      config.compounds.find((c) => c.smiles)?.smiles || "",
+    ),
+    [compoundId, setCompoundId] = useState(
+      config.compounds.find((c) => c.smiles)?.id || "",
+    ),
+    [modelId, setModelId] = useState("auto"),
+    [replaceManual, setReplaceManual] = useState(false),
+    [result, setResult] = useState<Record<string, any>>(),
+    [busy, setBusy] = useState(false),
+    [error, setError] = useState("");
+  const conditions = JSON.stringify({
+    mode: config.mode,
+    column: config.column,
+    mobile: config.mobile,
+    gradient: config.gradient,
+  });
+  useEffect(() => {
+    api<Library>("models")
+      .then(setLibrary)
+      .catch((e) => setError(String(e)));
+  }, []);
+  useEffect(() => {
+    if (compoundId) {
+      const selected = config.compounds.find((c) => c.id === compoundId);
+      if (selected) setSmiles(selected.smiles || "");
+      else {
+        setCompoundId("");
+        setSmiles("");
+      }
+    }
+  }, [config.compounds, compoundId]);
+  useEffect(() => {
+    sequence.current++;
+    setResult(undefined);
+    setBusy(false);
+  }, [conditions, smiles, compoundId, modelId]);
+  /** Request the selected output family while protecting manual and calibration values. */
+  async function predict() {
+    const token = ++sequence.current;
+    const snapshot = JSON.stringify(current.current);
+    setBusy(true);
+    setError("");
+    try {
+      const r = await api<Record<string, any>>("retention/predict", {
+        smiles,
+        method: payload(current.current),
+        model_id: modelId,
+      });
+      if (
+        token !== sequence.current ||
+        snapshot !== JSON.stringify(current.current)
+      )
+        return;
+      const c = current.current.compounds.find((c) => c.id === compoundId);
+      if (c && r.logkw != null && r.s != null) {
+        const manualLocked =
+          c.parameter_tier === "M" ||
+          (c.parameter_origin !== "prediction" &&
+            c.parameter_origin !== "literature" &&
+            (c.logkw != null || c.s != null));
+        if (compoundTier(c) === "D" || (manualLocked && !replaceManual))
+          r.warnings.push(
+            compoundTier(c) === "D"
+              ? "Calibration parameters preserved; calibration has priority."
+              : "Manual parameters preserved; enable explicit replacement to apply this prediction.",
+          );
+        else {
+          const updated: Compound = {
+            ...c,
+            logkw: r.logkw,
+            s: r.s,
+            parameter_tier: r.status === "Literature-derived" ? "A" : "B",
+            source: sourceCode(r.status),
+            scope: r.scope as Scope,
+            parameter_origin:
+              r.status === "Literature-derived" ? "literature" : "prediction",
+            retention_provenance: {
+              model_id: r.model.model_id,
+              model_version: r.model.model_version,
+              source: r.parameter_source,
+              reference: r.model.original_dataset_source,
+              license: r.model.license,
+              canonical_smiles: r.features.canonical_smiles,
+              scope: r.scope,
+              phi_range: r.phi_range,
+              particle_um: 3.5,
+              validation_status: "unvalidated — pending user validation",
+              applicability: r.applicability,
+              warnings: r.warnings,
+            },
+          };
+          change({
+            compounds: current.current.compounds.map((x) =>
+              x.id === c.id ? updated : x,
+            ),
+            workflow: "known",
+          });
+          r.warnings.push(
+            "Retention Parameters automatically updated for " + c.name + ".",
+          );
+        }
+      }
+      setResult(r);
+    } catch (e) {
+      if (token === sequence.current) setError(String(e));
+    } finally {
+      if (token === sequence.current) setBusy(false);
+    }
   }
-  setResult(r);
- }catch(e){if(token===sequence.current)setError(String(e));}finally{if(token===sequence.current)setBusy(false);}}
- function loadScoped(){if(!library)return;change(compatibleMethod(config,library.lss_conditions));setModelId('auto');}
- async function loadExamples(){try{const r=await fetch('/api/retention/database');if(!r.ok)throw Error('Database unavailable');const d=await r.json();loadScoped();change({compounds:d.examples.map((e:any,i:number)=>({id:crypto.randomUUID(),name:['Anthranilic acid','Caffeine','Diethyl malonate'][i],kind:'small_molecule',smiles:e.smiles,logkw:null,s:null,amplitude:1,mixture_parts:[5,3,2][i],source:'insufficient_data'}))});}catch(e){setError(String(e));}}
- return <><section><h2>Structure → retention prediction</h2><p>Measured-curve lookup or experimental scoped QSRR → logKw / S → existing migration solver.</p><p className="warn">Non-commercial service · Eclipse Plus C18 / 3.5 µm / 35°C / acidified ACN–water / 20–50% ACN only. No independent gradient Rt accuracy claim. Formulation-defined pH is not a calculated pKa or logD.</p>
- {library&&conditionDifferences(config,library.lss_conditions).length>0&&<div className="warn"><strong>Incompatible model conditions</strong><ul>{conditionDifferences(config,library.lss_conditions).map(x=><li key={x}>{x}</li>)}</ul></div>}
- <label>Use mixture structure<select aria-label="Retention compound" value={compoundId} onChange={e=>{setCompoundId(e.target.value);setSmiles(config.compounds.find(c=>c.id===e.target.value)?.smiles||'');}}><option value="">Standalone prediction</option>{config.compounds.filter(c=>c.smiles).map(c=><option key={c.id} value={c.id}>{c.name}</option>)}</select></label>
- <label>Prediction SMILES<input aria-label="Retention SMILES" value={smiles} onChange={e=>{setSmiles(e.target.value);setCompoundId('');}}/></label>
- <label>Retention model<select aria-label="Retention model" value={modelId} onChange={e=>setModelId(e.target.value)}><option value="auto">Measured curve first, then scoped QSRR</option><option value="lss-parameters">QSRR only (no experimental lookup)</option><option value="report0259-rt">Method-specific RepoRT0259 Rt</option></select></label>
- <label className="check"><input type="checkbox" checked={replaceManual} onChange={e=>setReplaceManual(e.target.checked)}/>Allow replacing manual parameters for selected compound</label>
- <div className="toolbar"><button disabled={busy||!smiles} onClick={()=>void predict()}>{busy?'Predicting…':'Predict retention'}</button><button className="secondary" disabled={!library} onClick={loadScoped}>Load scoped curve conditions</button><button className="secondary" disabled={!library} onClick={()=>void loadExamples()}>Load three experimental curve compounds</button><button className="secondary" disabled={!library} onClick={()=>{const m=library!.retention_method;change({mode:'RP',column:{...config.column,...m.column},mobile:{...config.mobile,...m.mobile},gradient:m.gradient});setModelId('report0259-rt');}}>Load exact RepoRT0259 method</button></div>
- <p className="muted">Loading a method changes current LC settings. Experimental examples contain real measured curves, not synthetic validation; geometry / efficiency remain user-supplied simulation assumptions. Predictions update the selected Compound ID only. Direct Rt never updates LSS parameters.</p>
- {error&&<p role="alert" className="error">{error}</p>}{result&&<><h3>{result.status}</h3><p data-testid="retention-result">{result.output_type==='rt_min'?'Rt: '+(result.rt_min==null?'Withheld':result.rt_min.toFixed(3)+' min'):'logKw: '+(result.logkw==null?'Withheld':result.logkw.toFixed(4))+' · S: '+(result.s==null?'Withheld':result.s.toFixed(4))} · output: {result.output_type}</p>{result.curve&&<div className="table-wrap"><table><thead><tr><th>ACN fraction</th><th>k</th><th>log10(k)</th></tr></thead><tbody>{result.curve.phi.filter((_:number,i:number)=>i%5===0).map((p:number,i:number)=><tr key={p}><td>{p.toFixed(2)}</td><td>{result.curve.k[i*5].toFixed(4)}</td><td>{result.curve.logk[i*5].toFixed(4)}</td></tr>)}</tbody></table></div>}{result.warnings?.map((w:string)=><p className="warn" key={w}>{w}</p>)}<details><summary>Model provenance, conditions & applicability</summary><pre>{JSON.stringify(result,null,2)}</pre></details></>}
- </section><section><h2>Model scope & held-out evidence</h2>{library?.models.filter(m=>m.output==='rt_min'||m.output==='lss_parameters').map(m=><article key={m.model_id}><h3>{m.model_id} / {m.model_version}</h3><p>{typeof m.scope==='string'?m.scope:JSON.stringify(m.scope)}</p><p>{m.license} · {m.selected} · split counts {JSON.stringify(m.counts)}</p><pre>{JSON.stringify(m.benchmark,null,2)}</pre></article>)}<p>{library?.lss_warning}</p><p>Gradient changes recalculate migration using the same eligible retention model. Other solvents, phases, temperatures, pH controls or organic fractions are withheld.</p></section></>;
+  /** Apply source conditions only after an explicit button action. */
+  function loadScoped() {
+    if (!library) return;
+    change(compatibleMethod(config, library.lss_conditions));
+    setModelId("auto");
+  }
+  /** Load the existing curve examples through an explicit user action. */
+  async function loadExamples() {
+    try {
+      const r = await fetch("/api/retention/database");
+      if (!r.ok) throw Error("Database unavailable");
+      const d = await r.json();
+      loadScoped();
+      change({
+        compounds: d.examples.map((e: any, i: number) => ({
+          id: crypto.randomUUID(),
+          name: ["Anthranilic acid", "Caffeine", "Diethyl malonate"][i],
+          kind: "small_molecule",
+          smiles: e.smiles,
+          logkw: null,
+          s: null,
+          amplitude: 1,
+          mixture_parts: [5, 3, 2][i],
+          source: "insufficient_data",
+        })),
+      });
+    } catch (e) {
+      setError(String(e));
+    }
+  }
+  return (
+    <>
+      <section>
+        <h2>Structure → retention prediction</h2>
+        <p>
+          Measured-curve lookup or experimental scoped QSRR → logKw / S →
+          existing migration solver.
+        </p>
+        <p className="warn">
+          Non-commercial service · Source system: Eclipse Plus C18 / 3.5 µm /
+          35°C / acidified ACN–water / 20–50% ACN only. No independent gradient
+          Rt accuracy claim. Formulation-defined pH is not a calculated pKa or
+          logD.
+        </p>
+        {library &&
+          conditionDifferences(config, library.lss_conditions).length > 0 && (
+            <div className="warn">
+              <strong>Incompatible model conditions</strong>
+              <ul>
+                {conditionDifferences(config, library.lss_conditions).map(
+                  (x) => (
+                    <li key={x}>{x}</li>
+                  ),
+                )}
+              </ul>
+            </div>
+          )}
+        <label>
+          Use mixture structure
+          <select
+            aria-label="Retention compound"
+            value={compoundId}
+            onChange={(e) => {
+              setCompoundId(e.target.value);
+              setSmiles(
+                config.compounds.find((c) => c.id === e.target.value)?.smiles ||
+                  "",
+              );
+            }}
+          >
+            <option value="">Standalone prediction</option>
+            {config.compounds
+              .filter((c) => c.smiles)
+              .map((c) => (
+                <option key={c.id} value={c.id}>
+                  {c.name}
+                </option>
+              ))}
+          </select>
+        </label>
+        <label>
+          Prediction SMILES
+          <input
+            aria-label="Retention SMILES"
+            value={smiles}
+            onChange={(e) => {
+              setSmiles(e.target.value);
+              setCompoundId("");
+            }}
+          />
+        </label>
+        <label>
+          Retention model
+          <select
+            aria-label="Retention model"
+            value={modelId}
+            onChange={(e) => setModelId(e.target.value)}
+          >
+            <option value="auto">Measured curve first, then scoped QSRR</option>
+            <option value="lss-parameters">
+              QSRR only (no experimental lookup)
+            </option>
+            <option value="report0259-rt">Method-specific RepoRT0259 Rt</option>
+          </select>
+        </label>
+        <label className="check">
+          <input
+            type="checkbox"
+            checked={replaceManual}
+            onChange={(e) => setReplaceManual(e.target.checked)}
+          />
+          Allow replacing manual parameters for selected compound
+        </label>
+        <div className="toolbar">
+          <button disabled={busy || !smiles} onClick={() => void predict()}>
+            {busy ? "Predicting…" : "Predict retention"}
+          </button>
+          <button
+            className="secondary"
+            disabled={!library}
+            onClick={loadScoped}
+          >
+            Load scoped curve conditions
+          </button>
+          <button
+            className="secondary"
+            disabled={!library}
+            onClick={() => void loadExamples()}
+          >
+            Load three experimental curve compounds
+          </button>
+          <button
+            className="secondary"
+            disabled={!library}
+            onClick={() => {
+              const m = library!.retention_method;
+              change({
+                mode: "RP",
+                column: { ...config.column, ...m.column },
+                mobile: { ...config.mobile, ...m.mobile },
+                gradient: m.gradient,
+              });
+              setModelId("report0259-rt");
+            }}
+          >
+            Load exact RepoRT0259 method
+          </button>
+        </div>
+        <p className="muted">
+          Loading a method changes current LC settings. Experimental examples
+          contain real measured curves, not synthetic validation; geometry /
+          efficiency remain user-supplied simulation assumptions. Predictions
+          update the selected Compound ID only. Direct Rt never updates LSS
+          parameters.
+        </p>
+        {error && (
+          <p role="alert" className="error">
+            {error}
+          </p>
+        )}
+        {result && (
+          <>
+            <h3>{result.status}</h3>
+            <p data-testid="retention-result">
+              {result.output_type === "rt_min"
+                ? "Rt: " +
+                  (result.rt_min == null
+                    ? "Withheld"
+                    : result.rt_min.toFixed(3) + " min")
+                : "logKw: " +
+                  (result.logkw == null
+                    ? "Withheld"
+                    : result.logkw.toFixed(4)) +
+                  " · S: " +
+                  (result.s == null ? "Withheld" : result.s.toFixed(4))}{" "}
+              · output: {result.output_type}
+            </p>
+            {result.curve && (
+              <div className="table-wrap">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>ACN fraction</th>
+                      <th>k</th>
+                      <th>log10(k)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {result.curve.phi
+                      .filter((_: number, i: number) => i % 5 === 0)
+                      .map((p: number, i: number) => (
+                        <tr key={p}>
+                          <td>{p.toFixed(2)}</td>
+                          <td>{result.curve.k[i * 5].toFixed(4)}</td>
+                          <td>{result.curve.logk[i * 5].toFixed(4)}</td>
+                        </tr>
+                      ))}
+                  </tbody>
+                </table>
+              </div>
+            )}
+            {result.warnings?.map((w: string) => (
+              <p className="warn" key={w}>
+                {w}
+              </p>
+            ))}
+            <details>
+              <summary>Model provenance, conditions & applicability</summary>
+              <pre>{JSON.stringify(result, null, 2)}</pre>
+            </details>
+          </>
+        )}
+      </section>
+      <section>
+        <h2>Model scope & held-out evidence</h2>
+        {library?.models
+          .filter((m) => m.output === "rt_min" || m.output === "lss_parameters")
+          .map((m) => (
+            <article key={m.model_id}>
+              <h3>
+                {m.model_id} / {m.model_version}
+              </h3>
+              <p>
+                {typeof m.scope === "string"
+                  ? m.scope
+                  : JSON.stringify(m.scope)}
+              </p>
+              <p>
+                {m.license} · {m.selected} · split counts{" "}
+                {JSON.stringify(m.counts)}
+              </p>
+              <pre>{JSON.stringify(m.benchmark, null, 2)}</pre>
+            </article>
+          ))}
+        <p>{library?.lss_warning}</p>
+        <p>
+          Gradient changes recalculate migration using the same eligible
+          retention model. For LSS parameters, other solvents, phases,
+          temperatures, pH controls or organic fractions produce warnings.
+          Method-specific Rt retains its exact-method gate.
+        </p>
+      </section>
+    </>
+  );
 }
