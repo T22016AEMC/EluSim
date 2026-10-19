@@ -83,7 +83,7 @@ def test_map_api_and_legacy_route():
     assert any(route.path == "/api/optimize" for route in app.routes)
 
 
-def test_twenty_thousand_candidates_five_compounds():
+def test_twenty_thousand_candidates_five_compounds(request):
     """Record elapsed grid computation without interpreting model results."""
     base = method()
     base.compounds.extend(
@@ -96,13 +96,19 @@ def test_twenty_thousand_candidates_five_compounds():
             ),
         ]
     )
-    request = map_request(
+    grid_request = map_request(
         simulation=base,
         start_percent={"min": 0, "max": 10, "steps": 20},
         end_percent={"min": 30, "max": 100, "steps": 25},
         gradient_time_min={"min": 2, "max": 60, "steps": 40},
     )
-    result = optimize_map(request)
+    terminal = request.config.pluginmanager.get_plugin("terminalreporter")
+    result = optimize_map(grid_request)
+    if terminal is not None:
+        terminal.write_line(
+            "map_performance: candidates=20000 compounds=5 elapsed_s="
+            + str(result["elapsed_s"])
+        )
     assert result["evaluated"] == 20000
     assert result["elapsed_s"] < 10
     import os

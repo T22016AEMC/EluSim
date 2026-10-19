@@ -43,3 +43,21 @@ def test_budget_stop_and_initial_candidate():
     assert result["time_budget_stopped"]
     assert result["evaluations"] >= 1
     assert result["iterations"] >= 1
+
+
+def test_cancelled_process_releases_slot():
+    """A pre-set cancellation signal terminates a worker and frees its slot."""
+    import threading
+
+    from elusim.jobs import compute
+
+    cancelled = threading.Event()
+    cancelled.set()
+    with pytest.raises(RuntimeError, match="cancelled"):
+        compute(
+            "optimization_multisegment",
+            OptimizeMultiSegment(simulation=method()).model_dump(),
+            cancelled=cancelled,
+        )
+    result = compute("simulation", method().model_dump())
+    assert len(result["order"]) == 3
