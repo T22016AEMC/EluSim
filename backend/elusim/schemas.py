@@ -74,6 +74,7 @@ class Compound(Strict):
     mode_parameters: dict = Field(default_factory=dict)
 
 class Simulation(Strict):
+    band_compression: Literal['poppe', 'none'] = 'poppe'
     mode: Literal['RP','NP','HILIC','IEX','SEC'] = 'RP'
     workflow: Literal['known','calibrated','structure'] = 'known'
     compounds: list[Compound] = Field(min_length=1, max_length=20)

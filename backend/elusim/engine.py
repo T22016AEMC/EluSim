@@ -3,6 +3,7 @@ Local solvent composition follows plug-flow volume transport; no adsorption of
 solvent and no compressibility. Synthetic verification is not experimental validation.
 """
 import math, time
+from dataclasses import dataclass
 import numpy as np
 from scipy.integrate import solve_ivp
 from scipy.optimize import least_squares
@@ -45,18 +46,125 @@ class Program:
  def local_phi(self,t,x,vm,dwell):
   return self.composition(self.time_at_volume(self.pumped(t)-dwell-max(0,x)*vm))
 
-def retention(req,compound,rtol=1e-7,max_step=None):
- from .retention_models import retention_model
- model=retention_model(compound)
- p=Program(req); vm=volume(req.column);end=p.t[-1]
- def rhs(t,y):
-  k=model.k(p.local_phi(t,y[0],vm,req.mobile.dwell_ml),req)
-  return [p.flow(t)/(vm*(1+k))]
- def eluted(t,y):return y[0]-1
- eluted.terminal=True;eluted.direction=1
- sol=solve_ivp(rhs,(0,end),[0.],method='DOP853',events=eluted,rtol=rtol,atol=rtol*1e-2,max_step=max_step or min(.1,end/80))
- if not sol.success: raise ValueError('Migration solver failed')
- return float(sol.t_events[0][0]) if len(sol.t_events[0]) else None
+@dataclass(frozen=True)
+class RetentionState:
+    """Outlet state at the migration event, in minutes and volume fractions."""
+
+    rt_min: float
+    phi_outlet: float
+    k_e: float
+    flow_at_elution: float
+    dphi_dt_outlet: float
+
+
+def outlet_slope(program, time_min, void_ml, dwell_ml):
+    """Differentiate outlet phi using h=min(0.01*t0_e, 0.001 min).
+
+    At a step or segment boundary, disagreeing one-sided slopes select the
+    post-event slope. Offset right samples avoid differentiating the jump itself.
+    """
+    t0_e = void_ml / program.flow(time_min)
+    step = min(0.01 * t0_e, 0.001)
+
+    def phi(offset):
+        """Return outlet composition at an offset from elution."""
+        return program.local_phi(time_min + offset, 1.0, void_ml, dwell_ml)
+
+    left = (phi(-step / 2) - phi(-step)) / (step / 2)
+    right = (phi(step) - phi(step / 2)) / (step / 2)
+    central = (phi(step) - phi(-step)) / (2 * step)
+    if not math.isclose(left, right, rel_tol=1e-5, abs_tol=1e-9):
+        return right
+    if not math.isclose(central, (left + right) / 2, rel_tol=1e-5, abs_tol=1e-9):
+        return right
+    return 0.0 if abs(central) < 1e-10 else central
+
+
+def retention_state(req, compound, rtol=1e-7, max_step=None):
+    """Solve the existing plug-flow migration ODE and return the outlet event."""
+    from .retention_models import retention_model
+
+    model = retention_model(compound)
+    program = Program(req)
+    void_ml = volume(req.column)
+    end_min = program.t[-1]
+
+    def derivative(time_min, position):
+        """Return solute velocity in normalized column lengths per minute."""
+        phi = program.local_phi(time_min, position[0], void_ml, req.mobile.dwell_ml)
+        retention_factor = model.k(phi, req)
+        return [program.flow(time_min) / (void_ml * (1 + retention_factor))]
+
+    def eluted(time_min, position):
+        """Locate the outlet crossing."""
+        return position[0] - 1
+
+    eluted.terminal = True
+    eluted.direction = 1
+    solution = solve_ivp(
+        derivative,
+        (0, end_min),
+        [0.0],
+        method='DOP853',
+        events=eluted,
+        rtol=rtol,
+        atol=rtol * 1e-2,
+        max_step=max_step or min(0.1, end_min / 80),
+    )
+    if not solution.success:
+        raise ValueError('Migration solver failed')
+    if not len(solution.t_events[0]):
+        return None
+    rt_min = float(solution.t_events[0][0])
+    phi_outlet = program.local_phi(rt_min, 1.0, void_ml, req.mobile.dwell_ml)
+    return RetentionState(
+        rt_min=rt_min,
+        phi_outlet=phi_outlet,
+        k_e=model.k(phi_outlet, req),
+        flow_at_elution=program.flow(rt_min),
+        dphi_dt_outlet=outlet_slope(program, rt_min, void_ml, req.mobile.dwell_ml),
+    )
+
+
+def retention(req, compound, rtol=1e-7, max_step=None):
+    """Keep the float-or-None interface used by calibration and existing callers."""
+    state = retention_state(req, compound, rtol, max_step)
+    return state.rt_min if state is not None else None
+
+
+def band_width(req, compound, state, program):
+    """Compute G*t0_e*(1+k_e)/sqrt(N); multi-segment: local approximation.
+
+    Independently implemented from the requested equations. Reference: Poppe,
+    Paanakker & Bronckhorst, J. Chromatogr. 204 (1981), 77-84,
+    doi:10.1016/S0021-9673(00)81641-6. No upstream simulator code is used.
+    Injection and extra-column variances retain the existing conventions.
+    """
+    from .retention_models import retention_model
+
+    t0_e = volume(req.column) / state.flow_at_elution
+    slope = state.dphi_dt_outlet
+    b_e = t0_e * compound.s * math.log(10) * slope
+    k_initial = retention_model(compound).k(program.composition(0), req)
+    poppe_p = k_initial * b_e / (1 + k_initial)
+    compression = 1.0
+    warning = None
+    if req.band_compression == 'poppe':
+        if abs(1 + poppe_p) < 1e-12:
+            warning = 'Local Poppe expression is singular; G=1 used for this peak.'
+        else:
+            compression = math.sqrt(1 + poppe_p + poppe_p**2 / 3) / abs(1 + poppe_p)
+    sigma_col = compression * t0_e * (1 + state.k_e) / math.sqrt(req.column.plates)
+    sigma_inj = req.mobile.injection_ul / 1000 / program.flow(0) / math.sqrt(12)
+    sigma = math.sqrt(sigma_col**2 + sigma_inj**2 + req.mobile.extra_sigma_min**2)
+    return {
+        'sigma_col_min': sigma_col,
+        'sigma_min': sigma,
+        'compression_factor': compression,
+        'b_e': b_e,
+        'width_warning': warning,
+    }
+
 
 def eligibility(req,c):
  if req.mode!='RP':return 'unsupported',f'{req.mode}: independent quantitative model not enabled'
@@ -75,37 +183,131 @@ def eligibility(req,c):
   if limits and any(not limits[0]-1e-9<=n.b_percent/100<=limits[1]+1e-9 for n in req.gradient):return 'insufficient_data','Gradient outside the retention-curve organic-fraction range'
  return c.source,None
 
-def simulate(req:Simulation,deadline=None):
- from .prediction import prepare_structure
- original_input=req.model_dump();req,predictions=prepare_structure(req)
- from .mixture import signal_amounts
- signals=signal_amounts(req)
- p=Program(req); vm=volume(req.column); grid=np.linspace(0,p.t[-1],req.points);peaks=[];curves=[];warnings=[]
- for c in req.compounds:
-  if deadline and time.monotonic()>deadline:raise TimeoutError('Computation budget exceeded')
-  try:source,error=eligibility(req,c)
-  except ValueError as exc:source,error='insufficient_data',str(exc)
-  row={'simulation_status':'ineligible' if error else 'pending','id':c.id,'name':c.name,'source':source,'rt_min':None,'eluted':False,'warning':error,'sigma_min':None,'fwhm_min':None,'width_base_min':None,**signals[c.id], 'peak_height':None,'retention_provenance':c.retention_provenance,'parameter_scope':c.scope.model_dump() if c.scope else None}
-  if not error:
-   rt=retention(req,c)
-   row['rt_min']=rt;row['eluted']=rt is not None;row['simulation_status']='eluted' if rt is not None else 'non_eluted'
-   if rt is None:row['warning']='Non-eluted within programmed run; not assigned a fictitious Rt'
-   elif req.column.plates:
-    sigma=math.sqrt(rt*rt/req.column.plates+(req.mobile.injection_ul/1000/p.flow(0))**2/12+req.mobile.extra_sigma_min**2)
-    row.update(sigma_min=sigma,fwhm_min=2*math.sqrt(2*math.log(2))*sigma,width_base_min=4*sigma)
-    signal=signals[c.id]
-    height=signal['peak_area']/(math.sqrt(2*math.pi)*sigma)
-    row.update(**signal,peak_height=height)
-    curves.append({'id':c.id,'name':c.name,'y':(height*np.exp(-.5*((grid-rt)/sigma)**2)).tolist()})
-   else:row['warning']='Efficiency missing: Rt only; peak / Rs not generated'
-   if c.scope is None:warnings.append(c.name+': parameter scope undeclared; comparisons are conditional on these supplied parameters')
-  peaks.append(row)
- ordered=sorted([r for r in peaks if r['eluted']],key=lambda r:r['rt_min']);pairs=[]
- for a,b in zip(ordered,ordered[1:]):
-  rs=2*(b['rt_min']-a['rt_min'])/(a['width_base_min']+b['width_base_min']) if a['width_base_min'] and b['width_base_min'] else None
-  pairs.append({'ids':[a['id'],b['id']],'names':[a['name'],b['name']],'rs':rs,'coelution':rs is not None and rs<1.5})
- if len(grid)>1 and any(r['sigma_min'] and (grid[1]-grid[0])>r['sigma_min']/2 for r in peaks):warnings.append('Plot grid is coarse relative to some peak widths; use exported peak metrics')
- return {'input':original_input,'resolved_compounds':[c.model_dump() for c in req.compounds],'structure_predictions':predictions,'model':MODEL,'mode':req.mode,'peaks':peaks,'pairs':pairs,'order':[r['id'] for r in ordered],'min_rs':min((r['rs'] for r in pairs if r['rs'] is not None),default=None),'time_min':grid.tolist(),'traces':curves,'gradient':{'program_b_percent':[100*p.composition(t) for t in grid],'inlet_b_percent':[100*p.local_phi(t,0,vm,req.mobile.dwell_ml) for t in grid]},'void_ml':vm,'initial_t0_min':vm/p.flow(0),'total_solvent_ml':float(p.v[-1]),'warnings':list(dict.fromkeys(warnings)),'assumptions':['Dilute local equilibrium LSS; plug-flow solvent transport; no overload','Peak area = injected amount × relative response; height = area / (sqrt(2π) sigma); not calibrated UV absorbance; legacy amplitude is ignored','Gaussian screening width sigma = Rt/sqrt(N) plus injection and extra-column variance; no validated gradient compression','Specified pH / temperature / solvent do not independently modify LSS parameters; parameter scope must match','No externally validated prediction error or confidence interval'],'uncertainty':{'quantified':False,'reason':'No external experimental validation dataset'},'pressure':{'available':False,'reason':'Missing viscosity, permeability and instrument pressure model'}}
+def simulate(req: Simulation, deadline=None):
+    """Run migration, outlet-state bandwidth and area-normalized Gaussian signals."""
+    from .prediction import prepare_structure
+    from .mixture import signal_amounts
+
+    original_input = req.model_dump()
+    req, predictions = prepare_structure(req)
+    signals = signal_amounts(req)
+    program = Program(req)
+    void_ml = volume(req.column)
+    grid = np.linspace(0, program.t[-1], req.points)
+    peaks = []
+    curves = []
+    warnings = []
+    for compound in req.compounds:
+        if deadline and time.monotonic() > deadline:
+            raise TimeoutError('Computation budget exceeded')
+        try:
+            source, error = eligibility(req, compound)
+        except ValueError as exc:
+            source, error = 'insufficient_data', str(exc)
+        row = {
+            'simulation_status': 'ineligible' if error else 'pending',
+            'id': compound.id,
+            'name': compound.name,
+            'source': source,
+            'rt_min': None,
+            'eluted': False,
+            'warning': error,
+            'sigma_min': None,
+            'sigma_col_min': None,
+            'fwhm_min': None,
+            'width_base_min': None,
+            'k_e': None,
+            'phi_outlet': None,
+            'compression_factor': None,
+            **signals[compound.id],
+            'peak_height': None,
+            'retention_provenance': compound.retention_provenance,
+            'parameter_scope': compound.scope.model_dump() if compound.scope else None,
+        }
+        if not error:
+            state = retention_state(req, compound)
+            row['eluted'] = state is not None
+            row['simulation_status'] = 'eluted' if state is not None else 'non_eluted'
+            if state is None:
+                row['warning'] = 'Non-eluted within programmed run; not assigned a fictitious Rt'
+            else:
+                row.update(
+                    rt_min=state.rt_min,
+                    k_e=state.k_e,
+                    phi_outlet=state.phi_outlet,
+                    flow_at_elution=state.flow_at_elution,
+                    dphi_dt_outlet=state.dphi_dt_outlet,
+                )
+                if req.column.plates:
+                    widths = band_width(req, compound, state, program)
+                    sigma = widths['sigma_min']
+                    row.update({key: value for key, value in widths.items() if key != 'width_warning'})
+                    row.update(
+                        fwhm_min=2 * math.sqrt(2 * math.log(2)) * sigma,
+                        width_base_min=4 * sigma,
+                    )
+                    if widths['width_warning']:
+                        row['warning'] = widths['width_warning']
+                    height = signals[compound.id]['peak_area'] / (math.sqrt(2 * math.pi) * sigma)
+                    row['peak_height'] = height
+                    curves.append({
+                        'id': compound.id,
+                        'name': compound.name,
+                        'y': (height * np.exp(-0.5 * ((grid - state.rt_min) / sigma)**2)).tolist(),
+                    })
+                else:
+                    row['warning'] = 'Efficiency missing: Rt only; peak / Rs not generated'
+            if compound.scope is None:
+                warnings.append(compound.name + ': parameter scope undeclared; supplied parameters used')
+        peaks.append(row)
+    ordered = sorted([row for row in peaks if row['eluted']], key=lambda row: row['rt_min'])
+    pairs = []
+    for first, second in zip(ordered, ordered[1:]):
+        rs = None
+        if first['width_base_min'] and second['width_base_min']:
+            rs = 2 * (second['rt_min'] - first['rt_min']) / (first['width_base_min'] + second['width_base_min'])
+        pairs.append({
+            'ids': [first['id'], second['id']],
+            'names': [first['name'], second['name']],
+            'rs': rs,
+            'coelution': rs is not None and rs < 1.5,
+        })
+        first['rs_to_next'] = rs
+    if ordered:
+        ordered[-1]['rs_to_next'] = None
+    if any(row['sigma_min'] and grid[1] - grid[0] > row['sigma_min'] / 2 for row in peaks):
+        warnings.append('Plot grid is coarse relative to some peak widths; use exported peak metrics')
+    return {
+        'input': original_input,
+        'resolved_compounds': [compound.model_dump() for compound in req.compounds],
+        'structure_predictions': predictions,
+        'model': MODEL,
+        'mode': req.mode,
+        'peaks': peaks,
+        'pairs': pairs,
+        'order': [row['id'] for row in ordered],
+        'min_rs': min((pair['rs'] for pair in pairs if pair['rs'] is not None), default=None),
+        'time_min': grid.tolist(),
+        'traces': curves,
+        'gradient': {
+            'program_b_percent': [100 * program.composition(t) for t in grid],
+            'inlet_b_percent': [100 * program.local_phi(t, 0, void_ml, req.mobile.dwell_ml) for t in grid],
+        },
+        'void_ml': void_ml,
+        'initial_t0_min': void_ml / program.flow(0),
+        'total_solvent_ml': float(program.v[-1]),
+        'warnings': list(dict.fromkeys(warnings)),
+        'assumptions': [
+            'Dilute local equilibrium LSS; plug-flow solvent transport; no overload',
+            'Peak area = injected amount × relative response; Gaussian height = area / (sqrt(2π) sigma)',
+            'Gradient band width: G*t0_e*(1+k_e)/sqrt(N); Poppe or G=1; pending user experimental checks',
+            'Multi-segment gradients use a local outlet approximation; injection and extra-column variances are additive',
+            'Specified pH / temperature / solvent do not independently modify LSS parameters',
+        ],
+        'uncertainty': {'quantified': False, 'reason': 'Pending user experimental checks'},
+        'pressure': {'available': False, 'reason': 'Missing viscosity, permeability and instrument pressure model'},
+    }
+
 
 def optimize(req:Optimize):
  from .schemas import Node
