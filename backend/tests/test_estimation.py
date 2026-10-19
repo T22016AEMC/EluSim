@@ -101,6 +101,13 @@ def test_manual_and_calibration_priority():
     replaced, _ = resolve_compounds(request, overwrite_manual=True)
     assert replaced.compounds[0].parameter_tier == 'A'
     assert replaced.compounds[1].logkw == 3 and replaced.compounds[1].parameter_tier == 'D'
+    request.compounds[0].s = None
+    request.compounds[1].s = None
+    incomplete, _ = resolve_compounds(request)
+    assert all(compound.s is None for compound in incomplete.compounds)
+    explicit, _ = resolve_compounds(request, overwrite_manual=True)
+    assert explicit.compounds[0].s is not None
+    assert explicit.compounds[1].s is None
 
 
 def test_fit_groups_and_standardization_use_training_rows_only():

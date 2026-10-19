@@ -86,8 +86,11 @@ def resolve_compounds(req, overwrite_manual=False):
     records = []
     for compound in req.compounds:
         tier = parameter_tier(compound)
-        has_values = compound.logkw is not None and compound.s is not None
-        if has_values and (tier == 'D' or (tier == 'M' and not overwrite_manual)):
+        manual_locked = compound.parameter_tier == 'M' or (
+            compound.parameter_origin == 'manual'
+            and (compound.logkw is not None or compound.s is not None)
+        )
+        if tier == 'D' or (manual_locked and not overwrite_manual):
             compounds.append(compound)
             records.append({
                 'compound_id': compound.id,
