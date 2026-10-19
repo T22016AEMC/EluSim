@@ -1,4 +1,4 @@
-import { test, expect } from "@playwright/test";
+import { test, expect } from "./fixtures";
 import { readFileSync } from "node:fs";
 const inputs = JSON.parse(
   readFileSync(new URL("./v2-inputs.json", import.meta.url), "utf8"),

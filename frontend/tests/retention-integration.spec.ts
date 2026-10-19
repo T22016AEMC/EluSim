@@ -1,4 +1,4 @@
-import { test, expect } from "@playwright/test";
+import { test, expect } from "./fixtures";
 test("real curve compounds resolve by ID; 5:3:2 area composition; gradient and ratio dataflow", async ({
   page,
 }) => {

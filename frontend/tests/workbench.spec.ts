@@ -1,4 +1,4 @@
-import { test, expect } from "@playwright/test";
+import { test, expect } from "./fixtures";
 test("RDKit, multi-node gradient, simulation, optimization and refresh", async ({
   page,
 }, info) => {

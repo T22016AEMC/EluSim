@@ -1,4 +1,4 @@
-import { test, expect } from "@playwright/test";
+import { test, expect } from "./fixtures";
 import { demo } from "../src/types";
 
 test("legacy storage migrates without loss; real peaks precede collapsed gradient; failed API hides old results", async ({
