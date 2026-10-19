@@ -156,6 +156,36 @@ def uv_prediction(req:UVInput):return predict_uv(**req.model_dump())
 @app.post('/api/uv/import')
 def uv_import(req:SpectrumInput):return import_spectrum(req.content,req.name,req.unit)
 
+
+from .schemas import OptimizeMap, OptimizeMultiSegment
+
+
+@app.post("/api/optimize/map")
+def optimization_map(req: OptimizeMap):
+    """Run the bounded map using existing process slots and timeout."""
+    return compute("optimization_map", req.model_dump())
+
+
+@app.post("/api/optimize/multisegment")
+async def optimization_multisegment(req: OptimizeMultiSegment, request: Request):
+    """Terminate the disposable search when the client disconnects."""
+    import asyncio
+
+    cancelled = threading.Event()
+    task = asyncio.create_task(asyncio.to_thread(
+        compute, "optimization_multisegment", req.model_dump(), 30, cancelled
+    ))
+    try:
+        while not task.done():
+            if await request.is_disconnected():
+                cancelled.set()
+                break
+            await asyncio.sleep(0.1)
+        return await task
+    finally:
+        cancelled.set()
+
+
 dist=ROOT/'frontend/dist'
 if dist.exists():
  app.mount('/assets',StaticFiles(directory=dist/'assets'),name='assets')

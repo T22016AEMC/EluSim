@@ -1,25 +1,68 @@
-"""Bounded disposable processes: timed-out CPU work is actually terminated."""
-import multiprocessing as mp, threading, queue
-from .schemas import Simulation, Optimize, Calibration
-_slots=threading.BoundedSemaphore(2)
+"""Bounded disposable processes; timeout or request cancellation stops CPU work."""
 
-def _worker(kind,data,output):
- try:
-  from .engine import simulate,optimize,calibrate
-  fn,model={'simulation':(simulate,Simulation),'optimization':(optimize,Optimize),'calibration':(calibrate,Calibration)}[kind]
-  output.put({'ok':True,'result':fn(model.model_validate(data))})
- except Exception as exc:output.put({'ok':False,'error':str(exc)})
+import multiprocessing as mp
+import queue
+import threading
+import time
 
-def compute(kind,data,timeout=30):
- if not _slots.acquire(blocking=False):raise RuntimeError('Server busy; two computation slots occupied')
- ctx=mp.get_context('spawn');out=ctx.Queue(maxsize=1);p=ctx.Process(target=_worker,args=(kind,data,out),daemon=True)
- try:
-  p.start()
-  try:result=out.get(timeout=timeout)
-  except queue.Empty:raise TimeoutError('Server computation timeout')
-  if not result['ok']:raise ValueError(result['error'])
-  return result['result']
- finally:
-  if p.is_alive():p.terminate()
-  if p.pid:p.join(timeout=3)
-  out.close();_slots.release()
+from .schemas import (
+    Calibration,
+    Optimize,
+    OptimizeMap,
+    OptimizeMultiSegment,
+    Simulation,
+)
+
+_slots = threading.BoundedSemaphore(2)
+
+
+def _worker(kind, data, output):
+    """Resolve one typed operation inside a disposable process."""
+    try:
+        from .engine import calibrate, optimize, simulate
+        from .optimizer import optimize_map, optimize_multisegment
+
+        operations = {
+            "simulation": (simulate, Simulation),
+            "optimization": (optimize, Optimize),
+            "calibration": (calibrate, Calibration),
+            "optimization_map": (optimize_map, OptimizeMap),
+            "optimization_multisegment": (optimize_multisegment, OptimizeMultiSegment),
+        }
+        function, model = operations[kind]
+        output.put({"ok": True, "result": function(model.model_validate(data))})
+    except Exception as exc:
+        output.put({"ok": False, "error": str(exc)})
+
+
+def compute(kind, data, timeout=30, cancelled=None):
+    """Run within two slots; terminate on timeout or a set cancellation event."""
+    if not _slots.acquire(blocking=False):
+        raise RuntimeError("Server busy; two computation slots occupied")
+    context = mp.get_context("spawn")
+    output = context.Queue(maxsize=1)
+    process = context.Process(target=_worker, args=(kind, data, output), daemon=True)
+    deadline = time.monotonic() + timeout
+    try:
+        process.start()
+        while True:
+            if cancelled is not None and cancelled.is_set():
+                raise RuntimeError("Computation cancelled")
+            remaining = deadline - time.monotonic()
+            if remaining <= 0:
+                raise TimeoutError("Server computation timeout")
+            try:
+                result = output.get(timeout=min(0.1, remaining))
+                break
+            except queue.Empty:
+                continue
+        if not result["ok"]:
+            raise ValueError(result["error"])
+        return result["result"]
+    finally:
+        if process.is_alive():
+            process.terminate()
+        if process.pid:
+            process.join(timeout=3)
+        output.close()
+        _slots.release()
