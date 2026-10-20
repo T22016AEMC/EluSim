@@ -40,7 +40,7 @@ def test_forced_tier_c_fixed_gates(tier_c_rows, index):
 def test_transformed_equation_identity():
     """The stored logKw equation must equal the algebraic logk35 inversion."""
     model = load_generic_model()
-    assert model["selected_candidate"] == "C2"
+    assert model["selected_candidate"] == "C6"
     for _, smiles in CANDIDATES.MOLECULES:
         features = generic_features(smiles)
         matrix = np.array([[features[key] for key in model["feature_names"]]])

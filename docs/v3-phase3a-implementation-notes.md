@@ -24,3 +24,19 @@
 - Knox 係數、擴散係數與洗提時 N 是否適合使用者管柱。
 - 流阻因子、入口黏度近似、實際系統壓力與限制值。
 - 等級 C 參數在使用者實驗條件下的使用方式。
+
+## B：登記候選
+- 僅使用 repo 的 273 筆曲線、既有 seed 42 scaffold 分割與訓練組標準化；C5/C6/C7 符號限制與 S–logKw 轉換照需求實作。
+- C5：19/19 門檻，Rt 範圍 0.8307348662834384 min，logk35 測試組 MAE 0.4456223631208842。
+- C6：19/19 門檻，Rt 範圍 0.8869785503903049 min，logk35 測試組 MAE 0.44175445165556565。
+- C7：19/19 門檻，Rt 範圍 0.8869785503903049 min，logk35 測試組 MAE 0.44175445165556565。
+- 登記規則選 C6（C6/C7 同值時依登記次序）；版本 3.0.0，保留 generic-lss-v2.json。不變更 A/B 模型。
+- review/phase3a/tier-c-candidates.csv 與 tier-c-sanity-molecules.csv 僅記錄登記結果；數據判讀由使用者進行。
+- 原模型來源與 CC BY-NC-SA 3.0 US、非商業用途限制維持；係數狀態欄維持原待使用者確認代碼。
+
+## 修改既有測試與原因
+- frontend/tests/p0-estimation.spec.ts 的峰表 CSV 表頭：新增 plates_used、max_pressure_bar、time_at_max_pressure_min，原欄位保留。
+- backend/tests/test_sanity_ordering.py：經使用者明確同意，僅 test_transformed_equation_identity 的 selected_candidate 從 C2 改為 C6。原因＝階段 3A 第 6 節的預先登記選擇規則選出新候選，測試中硬寫的候選名稱需同步。其餘門檻、斷言與容差不變。另一個 C2 斷言是歷史 2.1 報告，保持原樣。
+- backend/tests/test_estimation.py 的 test_generic_equation_and_clipping：改依模型 metadata 的特徵名稱組向量，保留原推論及裁切斷言。
+- 同檔 test_fit_groups_and_standardization_use_training_rows_only：從原訓練記錄的 SMILES 計算模型記載特徵，保留原分組隔離、平均值與資料筆數斷言；新模型新增兩個登記特徵，不能繼續固定五維。
+- workflow-repair.spec.ts 不需修改：壓力設定使用一般設定容器，第一個結果 section 仍為層析圖。

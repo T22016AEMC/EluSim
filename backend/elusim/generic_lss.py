@@ -8,7 +8,7 @@ import numpy as np
 from rdkit import Chem
 from rdkit.Chem import Crippen, Descriptors, rdMolDescriptors
 
-FEATURE_VERSION = 'generic-c18-rdkit-five/2'
+FEATURE_VERSION = 'generic-c18-rdkit-carbonyl-aromatic-n/3'
 FEATURE_NAMES = ['crippen_logp', 'tpsa', 'hbd', 'aromatic_rings', 'sqrt_mw']
 PENDING_STATUS = 'unvalidated — pending user validation'
 IONIZABLE_SMARTS = {
@@ -22,7 +22,7 @@ IONIZABLE_SMARTS = {
 
 
 def generic_features(smiles):
-    """Parse a nonempty SMILES and compute the five regression features."""
+    """Parse SMILES and compute the registered local regression descriptors."""
     molecule = Chem.MolFromSmiles(smiles)
     if molecule is None or molecule.GetNumAtoms() == 0:
         raise ValueError('Invalid SMILES')
@@ -39,6 +39,12 @@ def generic_features(smiles):
         'aromatic_rings': rdMolDescriptors.CalcNumAromaticRings(molecule),
         'mw': molecular_weight,
         'sqrt_mw': math.sqrt(molecular_weight),
+        'hetero_no': sum(atom.GetAtomicNum() in (7, 8) for atom in molecule.GetAtoms()),
+        'aromatic_n': sum(
+            atom.GetAtomicNum() == 7 and atom.GetIsAromatic()
+            for atom in molecule.GetAtoms()
+        ),
+        'carbonyl': len(molecule.GetSubstructMatches(Chem.MolFromSmarts('[CX3]=[OX1]'))),
         'formal_charge': Chem.GetFormalCharge(molecule),
         'ionizable_groups': ionizable_groups,
         'feature_version': FEATURE_VERSION,
@@ -50,7 +56,7 @@ def load_generic_model():
     """Load only the existing local JSON artifact, never executable weights."""
     path = Path(__file__).resolve().parents[1] / 'models/generic-lss.json'
     model = json.loads(path.read_text(encoding='utf8'))
-    if model['feature_version'] not in ['generic-c18-rdkit-five/1', FEATURE_VERSION]:
+    if model['feature_version'] not in ['generic-c18-rdkit-five/1', 'generic-c18-rdkit-five/2', FEATURE_VERSION]:
         raise ValueError('Generic LSS feature version mismatch')
     return model
 
@@ -58,7 +64,7 @@ def load_generic_model():
 def generic_estimate(features):
     """Evaluate standardized linear equations with explicit clipping notices."""
     model = load_generic_model()
-    values = np.array([features[name] for name in FEATURE_NAMES], dtype=float)
+    values = np.array([features[name] for name in model['feature_names']], dtype=float)
     means = np.array(model['standardization']['mean'])
     scales = np.array(model['standardization']['scale'])
     warnings = []

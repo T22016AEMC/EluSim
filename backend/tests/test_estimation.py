@@ -60,7 +60,7 @@ def test_generic_equation_and_clipping(monkeypatch):
     """Compare NumPy inference to the stored linear equations and exercise bounds."""
     features = generic_features('CCO')
     model = load_generic_model()
-    vector = np.array([features[name] for name in FEATURE_NAMES])
+    vector = np.array([features[name] for name in model['feature_names']])
     standardized = (vector - model['standardization']['mean']) / model['standardization']['scale']
     expected_kw = model['logkw']['intercept'] + np.dot(model['logkw']['coefficients'], standardized)
     expected_s = model['s']['intercept'] + model['s']['logkw_coefficient'] * expected_kw
@@ -119,7 +119,10 @@ def test_fit_groups_and_standardization_use_training_rows_only():
     test = [row for row in rows if row['split'] == 'test']
     assert not {row['scaffold'] for row in training} & {row['scaffold'] for row in test}
     assert not {row['canonical_smiles'] for row in training} & {row['canonical_smiles'] for row in test}
-    values = np.array([[float(row[name]) for name in FEATURE_NAMES] for row in training])
+    values = np.array([
+        [generic_features(row['smiles'])[name] for name in load_generic_model()['feature_names']]
+        for row in training
+    ])
     assert np.allclose(values.mean(axis=0), load_generic_model()['standardization']['mean'])
     assert load_generic_model()['validation_status'] == PENDING_STATUS
     assert len(rows) == 273
