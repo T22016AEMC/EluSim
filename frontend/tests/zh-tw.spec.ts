@@ -26,8 +26,20 @@ test("desktop empty project, explicit demo and all-workspace text inventory", as
     expect(text).not.toMatch(
       /色譜|保留時間|色譜柱|柱子|分辨率|理論塔板數|駐留體積|死體積|進樣量|校準|優化|仿真|默認|導出|導入|軟件|信息/,
     );
+    const properNames = [
+      "Agilent Eclipse Plus C18",
+      "Waters, ACQUITY UPLC BEH C18",
+    ];
+    const preserved = properNames.filter((name) => text.includes(name));
+    const translatedText = properNames.reduce(
+      (value, name) => value.replaceAll(name, ""),
+      text,
+    );
     const english =
-      text.match(/\b[A-Za-z][A-Za-z-]*(?: [A-Za-z][A-Za-z-]*){2,}/g) ?? [];
+      translatedText.match(
+        /\b[A-Za-z][A-Za-z-]*(?: [A-Za-z][A-Za-z-]*){2,}/g,
+      ) ?? [];
+    console.log("PRESERVED PRODUCT NAMES", tab, JSON.stringify(preserved));
     console.log("ENGLISH INVENTORY", tab, JSON.stringify(english));
     expect(english).toEqual([]);
   }
@@ -108,7 +120,7 @@ test("desktop automatic names, live rename, source descriptions and solvent labe
     .getByRole("button", { name: "流動相與梯度", exact: false })
     .click();
   await page
-    .getByLabel("B 液（有機溶劑）", { exact: true })
+    .getByRole("combobox", { name: "B 液（有機溶劑）", exact: true })
     .selectOption("MeOH");
   await expect(
     page.getByLabel("MeOH（%） 節點 1", { exact: true }),

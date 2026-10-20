@@ -733,7 +733,9 @@ export const zhTW: Record<string, string> = {
   "logKw extrapolated to pure water: do not simulate beyond 20–50% ACN": "logKw 為純水外推值；來源區間為 20–50% ACN，區間外屬外推。",
   "Non-commercial only": "僅限非商業用途。",
   "Heldout order agreement at 35% ACN is about 0.57 (0.54 in-domain); predictions are experimental screening estimates, not validated method recommendations": "來源將此模型列為實驗性篩選估算；方法選擇仍需使用者以實驗確認，原始數值保留於模型中繼資料。",
-  "Geometry scaling assumes equivalent packing phase ratio; column batch/pore selectivity and gradient Rt accuracy remain unverified": "幾何尺寸換算假設填料相比例相當；管柱批次、孔隙選擇性及梯度滯留時間仍待使用者以實驗確認。"
+  "Geometry scaling assumes equivalent packing phase ratio; column batch/pore selectivity and gradient Rt accuracy remain unverified": "幾何尺寸換算假設填料相比例相當；管柱批次、孔隙選擇性及梯度滯留時間仍待使用者以實驗確認。",
+  "Water + 0.100% formic acid": "水＋0.100% 甲酸",
+  "0.100% formic acid in A and B": "A 液與 B 液均含 0.100% 甲酸"
 };
 
 /** Translate display text without changing API identifiers or user names. */
