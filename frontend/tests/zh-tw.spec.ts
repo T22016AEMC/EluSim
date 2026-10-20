@@ -6,6 +6,7 @@ test("desktop empty project, explicit demo and all-workspace text inventory", as
   page,
 }) => {
   await page.goto("/");
+  await expect(page).toHaveTitle("EluSim — 液相層析模擬");
   await expect(page.locator(".compound-grid article")).toHaveCount(0);
   for (const tab of [
     "Compounds",

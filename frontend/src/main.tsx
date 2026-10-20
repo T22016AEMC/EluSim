@@ -34,6 +34,8 @@ import {
 import "./style.css";
 import { RetentionWorkspace } from "./RetentionWorkspace";
 import { UVWorkspace } from "./UVWorkspace";
+document.title = tr("page_title");
+
 const tabs = [
   tr("Compounds"),
   tr("LC Mode & Column"),
