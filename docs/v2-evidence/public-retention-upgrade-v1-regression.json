@@ -1,0 +1,26 @@
+{
+  "origin": "https://elusim-v1.onrender.com",
+  "tested_at": "2026-10-14T08:21:15.264414+00:00",
+  "actual_phone_cellular_test": "not performed",
+  "checks": {
+    "site": true,
+    "health": {
+      "status": "ok",
+      "app": "EluSim_V2",
+      "engine": "elusim-lss-migration/1.0.0",
+      "rdkit": "2026.09.1",
+      "revision": "30a0a3b9c9e95c8d22f2ee6f34c3ecd07a66679a"
+    },
+    "rdkit": true,
+    "simulation": true,
+    "online_sensitivity": {
+      "baseline_rt_min": 5.621255935188169,
+      "slower_gradient": 7.160486302680594,
+      "higher_flow": 4.254383661371532,
+      "longer_column": 6.495955625326843
+    },
+    "optimization": true,
+    "corresponding_source": true
+  },
+  "status": "PASS_PUBLIC_API_SMOKE"
+}

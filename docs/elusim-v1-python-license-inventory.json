@@ -1,0 +1,350 @@
+[
+  {
+    "name": "annotated-doc",
+    "version": "0.0.5",
+    "expression": "MIT",
+    "metadata_license": "",
+    "classifiers": [],
+    "license_files": [
+      "annotated_doc-0.0.5.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "annotated-types",
+    "version": "0.8.0",
+    "expression": "MIT",
+    "metadata_license": "",
+    "classifiers": [
+      "License :: OSI Approved :: MIT License"
+    ],
+    "license_files": [
+      "annotated_types-0.8.0.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "anyio",
+    "version": "4.15.1",
+    "expression": "MIT",
+    "metadata_license": "",
+    "classifiers": [],
+    "license_files": [
+      "anyio-4.15.1.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "certifi",
+    "version": "2026.7.22",
+    "expression": null,
+    "metadata_license": "MPL-2.0",
+    "classifiers": [
+      "License :: OSI Approved :: Mozilla Public License 2.0 (MPL 2.0)"
+    ],
+    "license_files": [
+      "certifi-2026.7.22.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "click",
+    "version": "8.5.0",
+    "expression": "BSD-3-Clause",
+    "metadata_license": "",
+    "classifiers": [],
+    "license_files": [
+      "click-8.5.0.dist-info/licenses/LICENSE.txt"
+    ]
+  },
+  {
+    "name": "colorama",
+    "version": "0.4.6",
+    "expression": null,
+    "metadata_license": "",
+    "classifiers": [
+      "License :: OSI Approved :: BSD License"
+    ],
+    "license_files": [
+      "colorama-0.4.6.dist-info/licenses/LICENSE.txt"
+    ]
+  },
+  {
+    "name": "fastapi",
+    "version": "0.143.0",
+    "expression": "MIT",
+    "metadata_license": "",
+    "classifiers": [],
+    "license_files": [
+      "fastapi-0.143.0.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "h11",
+    "version": "0.16.0",
+    "expression": null,
+    "metadata_license": "MIT",
+    "classifiers": [
+      "License :: OSI Approved :: MIT License"
+    ],
+    "license_files": [
+      "h11-0.16.0.dist-info/licenses/LICENSE.txt"
+    ]
+  },
+  {
+    "name": "httpcore",
+    "version": "1.0.9",
+    "expression": "BSD-3-Clause",
+    "metadata_license": "",
+    "classifiers": [
+      "License :: OSI Approved :: BSD License"
+    ],
+    "license_files": [
+      "httpcore-1.0.9.dist-info/licenses/LICENSE.md"
+    ]
+  },
+  {
+    "name": "httpx",
+    "version": "0.28.1",
+    "expression": null,
+    "metadata_license": "BSD-3-Clause",
+    "classifiers": [
+      "License :: OSI Approved :: BSD License"
+    ],
+    "license_files": [
+      "httpx-0.28.1.dist-info/licenses/LICENSE.md"
+    ]
+  },
+  {
+    "name": "idna",
+    "version": "3.20",
+    "expression": "BSD-3-Clause",
+    "metadata_license": "",
+    "classifiers": [],
+    "license_files": [
+      "idna-3.20.dist-info/licenses/LICENSE.md"
+    ]
+  },
+  {
+    "name": "iniconfig",
+    "version": "2.3.1",
+    "expression": "MIT",
+    "metadata_license": "",
+    "classifiers": [],
+    "license_files": [
+      "iniconfig-2.3.1.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "numpy",
+    "version": "2.5.4",
+    "expression": "BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0",
+    "metadata_license": "",
+    "classifiers": [],
+    "license_files": [
+      "numpy-2.5.4.dist-info/licenses/LICENSE.txt",
+      "numpy-2.5.4.dist-info/licenses/numpy/_core/include/numpy/libdivide/LICENSE.txt",
+      "numpy-2.5.4.dist-info/licenses/numpy/_core/src/common/pythoncapi-compat/COPYING",
+      "numpy-2.5.4.dist-info/licenses/numpy/_core/src/highway/LICENSE",
+      "numpy-2.5.4.dist-info/licenses/numpy/_core/src/multiarray/dragon4_LICENSE.txt",
+      "numpy-2.5.4.dist-info/licenses/numpy/_core/src/npysort/x86-simd-sort/LICENSE.md",
+      "numpy-2.5.4.dist-info/licenses/numpy/_core/src/umath/svml/LICENSE",
+      "numpy-2.5.4.dist-info/licenses/numpy/fft/pocketfft/LICENSE.md",
+      "numpy-2.5.4.dist-info/licenses/numpy/linalg/lapack_lite/LICENSE.txt",
+      "numpy-2.5.4.dist-info/licenses/numpy/ma/LICENSE",
+      "numpy-2.5.4.dist-info/licenses/numpy/random/LICENSE.md",
+      "numpy-2.5.4.dist-info/licenses/numpy/random/src/distributions/LICENSE.md",
+      "numpy-2.5.4.dist-info/licenses/numpy/random/src/mt19937/LICENSE.md",
+      "numpy-2.5.4.dist-info/licenses/numpy/random/src/pcg64/LICENSE.md",
+      "numpy-2.5.4.dist-info/licenses/numpy/random/src/philox/LICENSE.md",
+      "numpy-2.5.4.dist-info/licenses/numpy/random/src/sfc64/LICENSE.md",
+      "numpy-2.5.4.dist-info/licenses/numpy/random/src/splitmix64/LICENSE.md",
+      "numpy/_core/include/numpy/random/LICENSE.txt",
+      "numpy/ma/LICENSE",
+      "numpy/random/LICENSE.md"
+    ]
+  },
+  {
+    "name": "opentelemetry-api",
+    "version": "1.45.1",
+    "expression": "Apache-2.0",
+    "metadata_license": "",
+    "classifiers": [],
+    "license_files": [
+      "opentelemetry_api-1.45.1.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "packaging",
+    "version": "26.3",
+    "expression": "Apache-2.0 OR BSD-2-Clause",
+    "metadata_license": "",
+    "classifiers": [],
+    "license_files": [
+      "packaging-26.3.dist-info/licenses/LICENSE",
+      "packaging-26.3.dist-info/licenses/LICENSE.APACHE",
+      "packaging-26.3.dist-info/licenses/LICENSE.BSD",
+      "packaging/licenses/__init__.py",
+      "packaging/licenses/__pycache__/__init__.cpython-312.pyc",
+      "packaging/licenses/__pycache__/_spdx.cpython-312.pyc",
+      "packaging/licenses/_spdx.py"
+    ]
+  },
+  {
+    "name": "pillow",
+    "version": "12.3.0",
+    "expression": "MIT-CMU",
+    "metadata_license": "",
+    "classifiers": [],
+    "license_files": [
+      "pillow-12.3.0.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "pip",
+    "version": "25.0.1",
+    "expression": null,
+    "metadata_license": "MIT",
+    "classifiers": [
+      "License :: OSI Approved :: MIT License"
+    ],
+    "license_files": [
+      "pip-25.0.1.dist-info/LICENSE.txt",
+      "pip/_vendor/packaging/licenses/__init__.py",
+      "pip/_vendor/packaging/licenses/__pycache__/__init__.cpython-312.pyc",
+      "pip/_vendor/packaging/licenses/__pycache__/_spdx.cpython-312.pyc",
+      "pip/_vendor/packaging/licenses/_spdx.py"
+    ]
+  },
+  {
+    "name": "pluggy",
+    "version": "1.6.0",
+    "expression": null,
+    "metadata_license": "MIT",
+    "classifiers": [
+      "License :: OSI Approved :: MIT License"
+    ],
+    "license_files": [
+      "pluggy-1.6.0.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "pydantic",
+    "version": "2.14.1",
+    "expression": "MIT",
+    "metadata_license": "",
+    "classifiers": [],
+    "license_files": [
+      "pydantic-2.14.1.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "pydantic_core",
+    "version": "2.50.1",
+    "expression": "MIT",
+    "metadata_license": "",
+    "classifiers": [],
+    "license_files": [
+      "pydantic_core-2.50.1.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "Pygments",
+    "version": "2.21.0",
+    "expression": "BSD-2-Clause",
+    "metadata_license": "",
+    "classifiers": [],
+    "license_files": [
+      "pygments-2.21.0.dist-info/licenses/AUTHORS",
+      "pygments-2.21.0.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "pytest",
+    "version": "9.1.1",
+    "expression": "MIT",
+    "metadata_license": "",
+    "classifiers": [],
+    "license_files": [
+      "pytest-9.1.1.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "python-multipart",
+    "version": "0.0.32",
+    "expression": "Apache-2.0",
+    "metadata_license": "",
+    "classifiers": [
+      "License :: OSI Approved :: Apache Software License"
+    ],
+    "license_files": [
+      "python_multipart-0.0.32.dist-info/licenses/LICENSE.txt"
+    ]
+  },
+  {
+    "name": "rdkit",
+    "version": "2026.9.1",
+    "expression": null,
+    "metadata_license": "BSD-3-Clause",
+    "classifiers": [],
+    "license_files": [
+      "rdkit-2026.9.1.dist-info/LICENSE.md",
+      "rdkit/Data/Fonts/amadeus_font_license.txt",
+      "rdkit/Data/Fonts/roboto_regular_license.txt",
+      "rdkit/Data/Fonts/telex_font_license.txt",
+      "rdkit/license.txt"
+    ]
+  },
+  {
+    "name": "scipy",
+    "version": "1.18.1",
+    "expression": null,
+    "metadata_license": "Copyright (c) 2001-2002 Enthought, Inc. 2003, SciPy Developers.\n All rights reserved.\n\n Redistribution and use in source and binary forms, with or without\n modification, are permitted provided that the following conditions\n are met:\n\n 1. Redistributions of source code must retain the above copyright\n    notice, this list of conditions and the following disclaimer.\n\n 2. Redistributions in binary form must reproduce the above\n    copyright notice, this list of conditions and the following\n    disclaimer in the documentation and/or other materials provided\n    with the distribution.\n\n 3. Neither the name of the copyright holder nor the names of its\n    contributors may be used to endorse or promote products derived\n    from this software without specific prior written permission.\n\n THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS\n \"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT\n LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR\n A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT\n OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,\n SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT\n LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,\n DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY\n THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE\n OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n\n ----\n\n\n ----\n\n This binary distribution of SciPy can also bundle the following software\n (depending on the build):\n\n\n Name: OpenBLAS\n Files: scipy.libs\\libscipy_openblas*.dll\n Description: bundled as a dynamically linked library\n Availability: https://github.com/OpenMathLib/OpenBLAS/\n License: BSD-3-Clause\n   Copyright (c) 2011-2014, The OpenBLAS Project\n   All rights reserved.\n\n   Redistribution and use in source and binary forms, with or without\n   modification, are permitted provided that the following conditions are\n   met:\n\n      1. Redistributions of source code must retain the above copyright\n         notice, this list of conditions and the following disclaimer.\n\n      2. Redistributions in binary form must reproduce the above copyright\n         notice, this list of conditions and the following disclaimer in\n         the documentation and/or other materials provided with the\n         distribution.\n      3. Neither the name",
+    "classifiers": [
+      "License :: OSI Approved :: BSD License"
+    ],
+    "license_files": [
+      "scipy-1.18.1.dist-info/LICENSE.txt",
+      "scipy/_lib/_uarray/LICENSE",
+      "scipy/fft/_duccfft/LICENSE.md",
+      "scipy/integrate/LICENSE_DOP",
+      "scipy/spatial/qhull_src/COPYING_QHULL.txt"
+    ]
+  },
+  {
+    "name": "starlette",
+    "version": "1.7.0",
+    "expression": "BSD-3-Clause",
+    "metadata_license": "",
+    "classifiers": [],
+    "license_files": [
+      "starlette-1.7.0.dist-info/licenses/LICENSE.md"
+    ]
+  },
+  {
+    "name": "typing_extensions",
+    "version": "4.16.0",
+    "expression": "PSF-2.0",
+    "metadata_license": "",
+    "classifiers": [],
+    "license_files": [
+      "typing_extensions-4.16.0.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "typing-inspection",
+    "version": "0.4.4",
+    "expression": "MIT",
+    "metadata_license": "",
+    "classifiers": [],
+    "license_files": [
+      "typing_inspection-0.4.4.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "uvicorn",
+    "version": "0.54.0",
+    "expression": "BSD-3-Clause",
+    "metadata_license": "",
+    "classifiers": [],
+    "license_files": [
+      "uvicorn-0.54.0.dist-info/licenses/LICENSE.md"
+    ]
+  }
+]

@@ -1,0 +1,26 @@
+{
+  "repo": "yufree/mzrtsim",
+  "sha": "9735e7b692b1ce88b6305420ae0568ea12128e96",
+  "commit_patch_header": "From 9735e7b692b1ce88b6305420ae0568ea12128e96 Mon Sep 17 00:00:00 2001\nFrom: yufree <yufree@live.cn>\nDate: Thu, 9 Apr 2026 20:19:36 -0400\nSubject: [PATCH] feat: add MSn parameters to simmzml documentation for\n advanced scan simulation\n",
+  "snapshot": "C:\\Users\\T22016\\AppData\\Local\\Temp\\lc-gradient-research-20261013\\yufree__mzrtsim",
+  "paths": [
+    ".github\\workflows\\R-CMD-check.yaml",
+    "DESCRIPTION",
+    "NEWS.md",
+    "R\\mzmlsim.R",
+    "R\\mzrtsim.R",
+    "R\\qcbc.R",
+    "R\\shiny.R",
+    "README.md",
+    "_pkgdown.yaml",
+    "docs\\pkgdown.yml",
+    "tests\\testthat.R",
+    "tests\\testthat\\test-ms2-capability.R",
+    "tests\\testthat\\test-mzml-integrity.R",
+    "tests\\testthat\\test-mzrtsim-se.R",
+    "tests\\testthat\\test-mzrtsim.R",
+    "tests\\testthat\\test-qcbc.R",
+    "tests\\testthat\\test-simmzml-ms2.R",
+    "tests\\testthat\\test-simmzml.R"
+  ]
+}

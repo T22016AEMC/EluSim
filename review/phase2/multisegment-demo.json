@@ -1,0 +1,82 @@
+{
+  "gradient": [
+    {
+      "time_min": 0.0,
+      "b_percent": 47.7575162376629,
+      "flow_ml_min": 0.3,
+      "temperature_c": 25.0,
+      "interpolation": "linear"
+    },
+    {
+      "time_min": 0.013768754052334624,
+      "b_percent": 71.93994560049656,
+      "flow_ml_min": 0.3,
+      "temperature_c": 25.0,
+      "interpolation": "linear"
+    },
+    {
+      "time_min": 2.139518794409369,
+      "b_percent": 86.61874551574547,
+      "flow_ml_min": 0.3,
+      "temperature_c": 25.0,
+      "interpolation": "linear"
+    },
+    {
+      "time_min": 5.139518794409369,
+      "b_percent": 86.61874551574547,
+      "flow_ml_min": 0.3,
+      "temperature_c": 25.0,
+      "interpolation": "linear"
+    }
+  ],
+  "min_rs": 1.5717858825856783,
+  "run_time_min": 1.3168006173141888,
+  "critical_pair": [
+    "a",
+    "b"
+  ],
+  "all_eluted": true,
+  "feasible": true,
+  "peaks": [
+    {
+      "id": "a",
+      "name": "Synthetic A",
+      "parameter_tier": "M",
+      "rt_min": 1.1935842173541935,
+      "sigma_min": 0.007289514286480413,
+      "eluted": true,
+      "rs_to_next": 1.5717858825856783
+    },
+    {
+      "id": "b",
+      "name": "Synthetic B",
+      "parameter_tier": "M",
+      "rt_min": 1.239462432186,
+      "sigma_min": 0.007304781075281624,
+      "eluted": true,
+      "rs_to_next": 1.8729256499733382
+    },
+    {
+      "id": "c",
+      "name": "Synthetic C",
+      "parameter_tier": "M",
+      "rt_min": 1.294575596681768,
+      "sigma_min": 0.007408340210806973,
+      "eluted": true,
+      "rs_to_next": null
+    }
+  ],
+  "ode_check": {
+    "max_rel_rt": 1.1208676797824779e-07,
+    "max_rel_sigma": 1.4162214734270151e-08,
+    "elution_disagreements": [],
+    "solver": "ode"
+  },
+  "iterations": 60,
+  "evaluations": 2928,
+  "time_budget_stopped": false,
+  "elapsed_s": 4.561999999976251,
+  "solver": "analytic",
+  "warnings": [],
+  "search_note": "Stochastic search within time budget; global optimality not claimed"
+}

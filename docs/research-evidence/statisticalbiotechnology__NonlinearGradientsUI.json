@@ -1,0 +1,1119 @@
+{
+  "repo": "statisticalbiotechnology/NonlinearGradientsUI",
+  "metadata": {
+    "id": 15971097,
+    "node_id": "MDEwOlJlcG9zaXRvcnkxNTk3MTA5Nw==",
+    "name": "NonlinearGradientsUI",
+    "full_name": "statisticalbiotechnology/NonlinearGradientsUI",
+    "private": false,
+    "owner": {
+      "login": "statisticalbiotechnology",
+      "id": 6049919,
+      "node_id": "MDEyOk9yZ2FuaXphdGlvbjYwNDk5MTk=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/6049919?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/statisticalbiotechnology",
+      "html_url": "https://github.com/statisticalbiotechnology",
+      "followers_url": "https://api.github.com/users/statisticalbiotechnology/followers",
+      "following_url": "https://api.github.com/users/statisticalbiotechnology/following{/other_user}",
+      "gists_url": "https://api.github.com/users/statisticalbiotechnology/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/statisticalbiotechnology/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/statisticalbiotechnology/subscriptions",
+      "organizations_url": "https://api.github.com/users/statisticalbiotechnology/orgs",
+      "repos_url": "https://api.github.com/users/statisticalbiotechnology/repos",
+      "events_url": "https://api.github.com/users/statisticalbiotechnology/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/statisticalbiotechnology/received_events",
+      "type": "Organization",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "html_url": "https://github.com/statisticalbiotechnology/NonlinearGradientsUI",
+    "description": "User Interface to calculate optimized gradients",
+    "fork": false,
+    "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI",
+    "forks_url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/forks",
+    "keys_url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/keys{/key_id}",
+    "collaborators_url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/collaborators{/collaborator}",
+    "teams_url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/teams",
+    "hooks_url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/hooks",
+    "issue_events_url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/issues/events{/number}",
+    "events_url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/events",
+    "assignees_url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/assignees{/user}",
+    "branches_url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/branches{/branch}",
+    "tags_url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/tags",
+    "blobs_url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs{/sha}",
+    "git_tags_url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/tags{/sha}",
+    "git_refs_url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/refs{/sha}",
+    "trees_url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/trees{/sha}",
+    "statuses_url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/statuses/{sha}",
+    "languages_url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/languages",
+    "stargazers_url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/stargazers",
+    "contributors_url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/contributors",
+    "subscribers_url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/subscribers",
+    "subscription_url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/subscription",
+    "commits_url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/commits{/sha}",
+    "git_commits_url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/commits{/sha}",
+    "comments_url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/comments{/number}",
+    "issue_comment_url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/issues/comments{/number}",
+    "contents_url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/contents/{+path}",
+    "compare_url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/compare/{base}...{head}",
+    "merges_url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/merges",
+    "archive_url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/{archive_format}{/ref}",
+    "downloads_url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/downloads",
+    "issues_url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/issues{/number}",
+    "pulls_url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/pulls{/number}",
+    "milestones_url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/milestones{/number}",
+    "notifications_url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/notifications{?since,all,participating}",
+    "labels_url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/labels{/name}",
+    "releases_url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/releases{/id}",
+    "deployments_url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/deployments",
+    "created_at": "2014-01-16T15:04:09Z",
+    "updated_at": "2023-06-03T22:49:02Z",
+    "pushed_at": "2014-05-16T16:09:54Z",
+    "git_url": "git://github.com/statisticalbiotechnology/NonlinearGradientsUI.git",
+    "ssh_url": "git@github.com:statisticalbiotechnology/NonlinearGradientsUI.git",
+    "clone_url": "https://github.com/statisticalbiotechnology/NonlinearGradientsUI.git",
+    "svn_url": "https://github.com/statisticalbiotechnology/NonlinearGradientsUI",
+    "homepage": null,
+    "size": 29112,
+    "stargazers_count": 3,
+    "watchers_count": 3,
+    "language": "Java",
+    "has_issues": true,
+    "has_projects": true,
+    "has_downloads": false,
+    "has_wiki": true,
+    "has_pages": false,
+    "has_discussions": false,
+    "forks_count": 1,
+    "mirror_url": null,
+    "archived": false,
+    "disabled": false,
+    "open_issues_count": 0,
+    "license": null,
+    "allow_forking": true,
+    "is_template": false,
+    "web_commit_signoff_required": false,
+    "has_pull_requests": true,
+    "pull_request_creation_policy": "all",
+    "topics": [],
+    "visibility": "public",
+    "forks": 1,
+    "open_issues": 0,
+    "watchers": 3,
+    "default_branch": "master",
+    "temp_clone_token": null,
+    "custom_properties": {},
+    "organization": {
+      "login": "statisticalbiotechnology",
+      "id": 6049919,
+      "node_id": "MDEyOk9yZ2FuaXphdGlvbjYwNDk5MTk=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/6049919?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/statisticalbiotechnology",
+      "html_url": "https://github.com/statisticalbiotechnology",
+      "followers_url": "https://api.github.com/users/statisticalbiotechnology/followers",
+      "following_url": "https://api.github.com/users/statisticalbiotechnology/following{/other_user}",
+      "gists_url": "https://api.github.com/users/statisticalbiotechnology/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/statisticalbiotechnology/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/statisticalbiotechnology/subscriptions",
+      "organizations_url": "https://api.github.com/users/statisticalbiotechnology/orgs",
+      "repos_url": "https://api.github.com/users/statisticalbiotechnology/repos",
+      "events_url": "https://api.github.com/users/statisticalbiotechnology/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/statisticalbiotechnology/received_events",
+      "type": "Organization",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "network_count": 1,
+    "subscribers_count": 17
+  },
+  "commit": {
+    "sha": "c8dd6681cd7171df751c97d91f26af74c364171b",
+    "node_id": "MDY6Q29tbWl0MTU5NzEwOTc6YzhkZDY2ODFjZDcxNzFkZjc1MWM5N2Q5MWYyNmFmNzRjMzY0MTcxYg==",
+    "commit": {
+      "author": {
+        "name": "karljohanw",
+        "email": "westrin@kth.se",
+        "date": "2014-05-16T16:09:31Z"
+      },
+      "committer": {
+        "name": "karljohanw",
+        "email": "westrin@kth.se",
+        "date": "2014-05-16T16:09:31Z"
+      },
+      "message": "Fixed a small flaw in the figure",
+      "tree": {
+        "sha": "850f9ba695ddf80ea04c85926e208a7b83f3d401",
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/trees/850f9ba695ddf80ea04c85926e208a7b83f3d401"
+      },
+      "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/commits/c8dd6681cd7171df751c97d91f26af74c364171b",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/commits/c8dd6681cd7171df751c97d91f26af74c364171b",
+    "html_url": "https://github.com/statisticalbiotechnology/NonlinearGradientsUI/commit/c8dd6681cd7171df751c97d91f26af74c364171b",
+    "comments_url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/commits/c8dd6681cd7171df751c97d91f26af74c364171b/comments",
+    "author": {
+      "login": "karljohanw",
+      "id": 7093209,
+      "node_id": "MDQ6VXNlcjcwOTMyMDk=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/7093209?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/karljohanw",
+      "html_url": "https://github.com/karljohanw",
+      "followers_url": "https://api.github.com/users/karljohanw/followers",
+      "following_url": "https://api.github.com/users/karljohanw/following{/other_user}",
+      "gists_url": "https://api.github.com/users/karljohanw/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/karljohanw/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/karljohanw/subscriptions",
+      "organizations_url": "https://api.github.com/users/karljohanw/orgs",
+      "repos_url": "https://api.github.com/users/karljohanw/repos",
+      "events_url": "https://api.github.com/users/karljohanw/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/karljohanw/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "karljohanw",
+      "id": 7093209,
+      "node_id": "MDQ6VXNlcjcwOTMyMDk=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/7093209?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/karljohanw",
+      "html_url": "https://github.com/karljohanw",
+      "followers_url": "https://api.github.com/users/karljohanw/followers",
+      "following_url": "https://api.github.com/users/karljohanw/following{/other_user}",
+      "gists_url": "https://api.github.com/users/karljohanw/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/karljohanw/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/karljohanw/subscriptions",
+      "organizations_url": "https://api.github.com/users/karljohanw/orgs",
+      "repos_url": "https://api.github.com/users/karljohanw/repos",
+      "events_url": "https://api.github.com/users/karljohanw/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/karljohanw/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "b3c08f7e1355ce0272f5c04c86ec61f37ef2ad7d",
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/commits/b3c08f7e1355ce0272f5c04c86ec61f37ef2ad7d",
+        "html_url": "https://github.com/statisticalbiotechnology/NonlinearGradientsUI/commit/b3c08f7e1355ce0272f5c04c86ec61f37ef2ad7d"
+      }
+    ],
+    "stats": {
+      "total": 8,
+      "additions": 5,
+      "deletions": 3
+    },
+    "files": [
+      {
+        "sha": "a654e3293ebeeb8c27f124234ea202ddeaca085c",
+        "filename": "src/nonlineargradientsui/MzFigure.java",
+        "status": "modified",
+        "additions": 5,
+        "deletions": 3,
+        "changes": 8,
+        "blob_url": "https://github.com/statisticalbiotechnology/NonlinearGradientsUI/blob/c8dd6681cd7171df751c97d91f26af74c364171b/src%2Fnonlineargradientsui%2FMzFigure.java",
+        "raw_url": "https://github.com/statisticalbiotechnology/NonlinearGradientsUI/raw/c8dd6681cd7171df751c97d91f26af74c364171b/src%2Fnonlineargradientsui%2FMzFigure.java",
+        "contents_url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/contents/src%2Fnonlineargradientsui%2FMzFigure.java?ref=c8dd6681cd7171df751c97d91f26af74c364171b",
+        "patch": "@@ -58,7 +58,7 @@ protected void paintComponent(Graphics g) {\n \tdouble maxMz = Double.MIN_VALUE;\n         List<Double> splits;\n         Line2D line;\n-        double stime, etime, y;\n+        double stime, etime, y=0, prev_y=0, y_step;\n         double x, x0, x1;\n \n \tmaxRT = this.optimizedMzWindows.get(this.optimizedMzWindows.size() - 1).getEndRT();\n@@ -81,6 +81,7 @@ protected void paintComponent(Graphics g) {\n             stime = win.getStartRT();\n             etime = win.getEndRT();\n             for (Double d : win.getSplits()) {\n+\t\tprev_y = y;\n                 y = starty - (d - minMz) * delta_y;\n \t\tx0 = startx + (stime-minRT) * delta_x;\n \t\tx1 = startx + (etime-minRT) * delta_x;\n@@ -100,15 +101,16 @@ protected void paintComponent(Graphics g) {\n \t\tend_markers.put(d, Math.max(x, x1));\n             }\n         }\n+\ty_step = (y-prev_y)/2;\n \tg2.setColor(Color.gray);\n         for (RtMzWindows win : this.optimizedMzWindows) {\n \t    for (Double d : win.getSplits()) {\n                 y = starty - (d - minMz) * delta_y;\n \t\tx0 = start_markers.get(d);\n \t\tx1 = end_markers.get(d);\n-                line = new Line2D.Double(x0, y+MARKER_SIZE, x0, y-MARKER_SIZE);\n+                line = new Line2D.Double(x0, y+y_step, x0, y-y_step);\n \t\tg2.draw(line);\n-\t\tline = new Line2D.Double(x1, y+MARKER_SIZE, x1, y-MARKER_SIZE);\n+\t\tline = new Line2D.Double(x1, y+y_step, x1, y-y_step);\n \t\tg2.draw(line);\n \t    }\n \t}"
+      },
+      {
+        "sha": "bc049cafa833bc2b2c578020d6124673840ed51b",
+        "filename": "store/GradientOptimizer.jar",
+        "status": "modified",
+        "additions": 0,
+        "deletions": 0,
+        "changes": 0,
+        "blob_url": "https://github.com/statisticalbiotechnology/NonlinearGradientsUI/blob/c8dd6681cd7171df751c97d91f26af74c364171b/store%2FGradientOptimizer.jar",
+        "raw_url": "https://github.com/statisticalbiotechnology/NonlinearGradientsUI/raw/c8dd6681cd7171df751c97d91f26af74c364171b/store%2FGradientOptimizer.jar",
+        "contents_url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/contents/store%2FGradientOptimizer.jar?ref=c8dd6681cd7171df751c97d91f26af74c364171b"
+      }
+    ]
+  },
+  "tree": {
+    "sha": "c8dd6681cd7171df751c97d91f26af74c364171b",
+    "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/trees/c8dd6681cd7171df751c97d91f26af74c364171b",
+    "tree": [
+      {
+        "path": ".gitignore",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "3f0bd98e016bc7856c84efee5fb01efc74c3e7e7",
+        "size": 74,
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs/3f0bd98e016bc7856c84efee5fb01efc74c3e7e7"
+      },
+      {
+        "path": "README.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "f227fc0690d0c37152119ce7f75ed59513daacad",
+        "size": 3924,
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs/f227fc0690d0c37152119ce7f75ed59513daacad"
+      },
+      {
+        "path": "build.xml",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "7d593284509c271368474283b6b2998384771edc",
+        "size": 4839,
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs/7d593284509c271368474283b6b2998384771edc"
+      },
+      {
+        "path": "data",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "ab7946e25c6add7af37245937ba1075d5b1539c7",
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/trees/ab7946e25c6add7af37245937ba1075d5b1539c7"
+      },
+      {
+        "path": "data/custom",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "e9ce66ee4a3bf8bb4a96ca60eab9e946365b1c8c",
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/trees/e9ce66ee4a3bf8bb4a96ca60eab9e946365b1c8c"
+      },
+      {
+        "path": "data/custom/readme",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "29f60b632d47779f688a8e8c40b845c58b70a219",
+        "size": 164,
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs/29f60b632d47779f688a8e8c40b845c58b70a219"
+      },
+      {
+        "path": "data/custom/rts-identified-peptides.txt",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "1e011ebc3c402cdeeadda9058d33ce0f262eb172",
+        "size": 151807,
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs/1e011ebc3c402cdeeadda9058d33ce0f262eb172"
+      },
+      {
+        "path": "data/insilico",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "53d322bd177e239fd176cef59a0ee41fcdbd4be0",
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/trees/53d322bd177e239fd176cef59a0ee41fcdbd4be0"
+      },
+      {
+        "path": "data/insilico/elude-ubuntu-64",
+        "mode": "100755",
+        "type": "blob",
+        "sha": "effcc73ab207723f812a4166df48df10e360c6e3",
+        "size": 850551,
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs/effcc73ab207723f812a4166df48df10e360c6e3"
+      },
+      {
+        "path": "data/insilico/insilico-human-8-50.txt",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "8551de9b86ee27ad250885d91f9a52aade73b18b",
+        "size": 8195728,
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs/8551de9b86ee27ad250885d91f9a52aade73b18b"
+      },
+      {
+        "path": "data/insilico/readme",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e0c5f3aeafdb833353bee88ca3253f999bac61bb",
+        "size": 534,
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs/e0c5f3aeafdb833353bee88ca3253f999bac61bb"
+      },
+      {
+        "path": "data/insilico/sp_201209_human.fasta",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "07d4b6acb61e8cdaa4251560cf39499d2e9cc31b",
+        "size": 13141835,
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs/07d4b6acb61e8cdaa4251560cf39499d2e9cc31b"
+      },
+      {
+        "path": "data/insilico/training-peptides.txt",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "844597fe19a8316f963ea15ec695f19d5948ca80",
+        "size": 12478,
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs/844597fe19a8316f963ea15ec695f19d5948ca80"
+      },
+      {
+        "path": "doc",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "6c5db9b856df4af11a9551298f8c7f52cd18ebee",
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/trees/6c5db9b856df4af11a9551298f8c7f52cd18ebee"
+      },
+      {
+        "path": "doc/for-developers",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "97fd73eaa8a340dd9ade9d9d70ba226a1911feca",
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/trees/97fd73eaa8a340dd9ade9d9d70ba226a1911feca"
+      },
+      {
+        "path": "doc/for-developers/build_fat_jar.txt",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "18e9d4ba6a4022c6852f1cd9fda1ba7987210156",
+        "size": 719,
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs/18e9d4ba6a4022c6852f1cd9fda1ba7987210156"
+      },
+      {
+        "path": "lib",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "b15863e2b78c55573747eca72b8a8aa1d6fb6086",
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/trees/b15863e2b78c55573747eca72b8a8aa1d6fb6086"
+      },
+      {
+        "path": "lib/jmzml-1.6.7",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "3d6b4ea96ebac01ef40ff0a7e5549602482f1e74",
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/trees/3d6b4ea96ebac01ef40ff0a7e5549602482f1e74"
+      },
+      {
+        "path": "lib/jmzml-1.6.7/LICENSE-2.0.txt",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+        "size": 11358,
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs/d645695673349e3947e8e5ae42332d0ac3164cd7"
+      },
+      {
+        "path": "lib/jmzml-1.6.7/jmzml-1.6.7.jar",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "864177b8b66e87a83a5d5cdbd72224b3cb4c7790",
+        "size": 165383,
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs/864177b8b66e87a83a5d5cdbd72224b3cb4c7790"
+      },
+      {
+        "path": "lib/jmzml-1.6.7/lib",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "4a49fdb214901a61d8d440fdc9154a7b1be1dde9",
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/trees/4a49fdb214901a61d8d440fdc9154a7b1be1dde9"
+      },
+      {
+        "path": "lib/jmzml-1.6.7/lib/activation-1.1.jar",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "53f82a1c4c492dc810c27317857bbb02afd6fa58",
+        "size": 62983,
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs/53f82a1c4c492dc810c27317857bbb02afd6fa58"
+      },
+      {
+        "path": "lib/jmzml-1.6.7/lib/chardet-1.0.jar",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "2e84a8d9337b1d76f85a9b3b297a3a669d4aee77",
+        "size": 36586,
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs/2e84a8d9337b1d76f85a9b3b297a3a669d4aee77"
+      },
+      {
+        "path": "lib/jmzml-1.6.7/lib/com.springsource.antlr-2.7.7.jar",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "642e9dffed1708c2cb483ce588c19601ede7d628",
+        "size": 445584,
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs/642e9dffed1708c2cb483ce588c19601ede7d628"
+      },
+      {
+        "path": "lib/jmzml-1.6.7/lib/com.springsource.org.apache.commons.io-1.4.0.jar",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "1482fdc33904109c7eb1f38ce76cce2047db1f4d",
+        "size": 110412,
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs/1482fdc33904109c7eb1f38ce76cce2047db1f4d"
+      },
+      {
+        "path": "lib/jmzml-1.6.7/lib/com.springsource.org.apache.commons.logging-1.1.1.jar",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "f50c78cce95c8e8a8f71d9cfe6e029f2efe287be",
+        "size": 61464,
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs/f50c78cce95c8e8a8f71d9cfe6e029f2efe287be"
+      },
+      {
+        "path": "lib/jmzml-1.6.7/lib/com.springsource.org.apache.log4j-1.2.15.jar",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "8043a9b6fb8397feca4e0e8027a670e55736d26d",
+        "size": 396713,
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs/8043a9b6fb8397feca4e0e8027a670e55736d26d"
+      },
+      {
+        "path": "lib/jmzml-1.6.7/lib/commons-codec-1.3.jar",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "957b6752af9a60c1bb2a4f65db0e90e5ce00f521",
+        "size": 46725,
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs/957b6752af9a60c1bb2a4f65db0e90e5ce00f521"
+      },
+      {
+        "path": "lib/jmzml-1.6.7/lib/commons-collections-3.2.1.jar",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c35fa1fee145cba638884e41b80a401cbe4924ef",
+        "size": 575389,
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs/c35fa1fee145cba638884e41b80a401cbe4924ef"
+      },
+      {
+        "path": "lib/jmzml-1.6.7/lib/cpdetector-1.0.7.jar",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "825bf8a1e0a43ef92560d3be52aaa368a3d2ed1c",
+        "size": 51526,
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs/825bf8a1e0a43ef92560d3be52aaa368a3d2ed1c"
+      },
+      {
+        "path": "lib/jmzml-1.6.7/lib/jargs-1.0.jar",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c315b60a1bac768495472c6745ec354ecec0da58",
+        "size": 8162,
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs/c315b60a1bac768495472c6745ec354ecec0da58"
+      },
+      {
+        "path": "lib/jmzml-1.6.7/lib/jaxb-api-2.1.jar",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "be3d6dca2fbf4b35c6b0fdb513f750f331e375d1",
+        "size": 89967,
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs/be3d6dca2fbf4b35c6b0fdb513f750f331e375d1"
+      },
+      {
+        "path": "lib/jmzml-1.6.7/lib/jaxb-impl-2.1.7.jar",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "034c158670badd4117eb65c65f7b45dc848b259a",
+        "size": 854901,
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs/034c158670badd4117eb65c65f7b45dc848b259a"
+      },
+      {
+        "path": "lib/jmzml-1.6.7/lib/jaxb-xjc-2.1.7.jar",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "ba2ec468ed95fb4b7b5933a4cad310e40480dd9b",
+        "size": 3126580,
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs/ba2ec468ed95fb4b7b5933a4cad310e40480dd9b"
+      },
+      {
+        "path": "lib/jmzml-1.6.7/lib/jboss-jsfunit-microdeployer-1.3.0.Final.jar",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "1011bf292d45a68890813cd9d62b2ec4bfa23bed",
+        "size": 5432007,
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs/1011bf292d45a68890813cd9d62b2ec4bfa23bed"
+      },
+      {
+        "path": "lib/jmzml-1.6.7/lib/junit-4.8.2.jar",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "5b4bb849af9583fec1ea0a0ccc0d571ef49aa8ba",
+        "size": 237344,
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs/5b4bb849af9583fec1ea0a0ccc0d571ef49aa8ba"
+      },
+      {
+        "path": "lib/jmzml-1.6.7/lib/log4j-1.2.13.jar",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "dde9972109dd25f14f732052984b0d3719b17795",
+        "size": 358180,
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs/dde9972109dd25f14f732052984b0d3719b17795"
+      },
+      {
+        "path": "lib/jmzml-1.6.7/lib/slf4j-api-1.6.1.jar",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "f1f4fdd214940c76cefaad2419e538e4c13cef6b",
+        "size": 25496,
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs/f1f4fdd214940c76cefaad2419e538e4c13cef6b"
+      },
+      {
+        "path": "lib/jmzml-1.6.7/lib/slf4j-log4j12-1.6.1.jar",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "641159959c21651235677a4912bb58bc47cfef41",
+        "size": 9753,
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs/641159959c21651235677a4912bb58bc47cfef41"
+      },
+      {
+        "path": "lib/jmzml-1.6.7/lib/stax-api-1.0-2.jar",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "015169dc71f06832714d21b67970ff8a7970d5b4",
+        "size": 23346,
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs/015169dc71f06832714d21b67970ff8a7970d5b4"
+      },
+      {
+        "path": "lib/jmzml-1.6.7/lib/xxindex-0.11.jar",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c46b011ba03c06532f58d2b4c8e27db559cf84f7",
+        "size": 574022,
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs/c46b011ba03c06532f58d2b4c8e27db559cf84f7"
+      },
+      {
+        "path": "lib/jmzml-1.6.7/readMe.txt",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c38eff6a93b2e361a5ea68fd096e3a303fda92b6",
+        "size": 644,
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs/c38eff6a93b2e361a5ea68fd096e3a303fda92b6"
+      },
+      {
+        "path": "nbproject",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "dcb0df07275f1c9be994d802fb465d89f9775c16",
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/trees/dcb0df07275f1c9be994d802fb465d89f9775c16"
+      },
+      {
+        "path": "nbproject/build-impl.xml",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "f928e5786c2197d3b001003492df7922c2087d7a",
+        "size": 77967,
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs/f928e5786c2197d3b001003492df7922c2087d7a"
+      },
+      {
+        "path": "nbproject/genfiles.properties",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "d0748e6ef9ad3a0602b5b816117adb9d5478d870",
+        "size": 467,
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs/d0748e6ef9ad3a0602b5b816117adb9d5478d870"
+      },
+      {
+        "path": "nbproject/project.properties",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "ff11d7a8c6b16f47f867f4b23c4bbed0db4f8f18",
+        "size": 5323,
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs/ff11d7a8c6b16f47f867f4b23c4bbed0db4f8f18"
+      },
+      {
+        "path": "nbproject/project.xml",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "922b9f009e9eaf10ebf71d9aaa03ecdcac82523c",
+        "size": 513,
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs/922b9f009e9eaf10ebf71d9aaa03ecdcac82523c"
+      },
+      {
+        "path": "scripts",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "6d4a35fda71063e3af952debedd5590aa7f65ffe",
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/trees/6d4a35fda71063e3af952debedd5590aa7f65ffe"
+      },
+      {
+        "path": "scripts/get_data.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "d32d921f2859aff950966bd7a4db94d7bf027669",
+        "size": 116,
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs/d32d921f2859aff950966bd7a4db94d7bf027669"
+      },
+      {
+        "path": "scripts/plot-gradient.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "41be5ec0313b667aaae6e2c08590cd4254f2eb3b",
+        "size": 389,
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs/41be5ec0313b667aaae6e2c08590cd4254f2eb3b"
+      },
+      {
+        "path": "src",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "5aceca7ba90329713e12801cfd27005ddca5bc89",
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/trees/5aceca7ba90329713e12801cfd27005ddca5bc89"
+      },
+      {
+        "path": "src/nonlineargradientsui",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "2353f48ce40ff02d90230ed03b39b9e985dbb549",
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/trees/2353f48ce40ff02d90230ed03b39b9e985dbb549"
+      },
+      {
+        "path": "src/nonlineargradientsui/CustomDistributionPanel.form",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "a17cc73562554b4cfb8f81a2702528690c6ef8ba",
+        "size": 9351,
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs/a17cc73562554b4cfb8f81a2702528690c6ef8ba"
+      },
+      {
+        "path": "src/nonlineargradientsui/CustomDistributionPanel.java",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "5ddcb8cb8f6bf6a394ec7fca4f03349f8e4f4d35",
+        "size": 11690,
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs/5ddcb8cb8f6bf6a394ec7fca4f03349f8e4f4d35"
+      },
+      {
+        "path": "src/nonlineargradientsui/EludeWorker.java",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "d267b51f6f91bf25646b937d331827460d5e3147",
+        "size": 2348,
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs/d267b51f6f91bf25646b937d331827460d5e3147"
+      },
+      {
+        "path": "src/nonlineargradientsui/GeneralUtilities.java",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "33ec6d306a40e951bd0bda568acd47abc0a9a496",
+        "size": 2107,
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs/33ec6d306a40e951bd0bda568acd47abc0a9a496"
+      },
+      {
+        "path": "src/nonlineargradientsui/GradientCalculator.java",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "2363a7d813960138fc91175aa84d012982b68b2a",
+        "size": 8633,
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs/2363a7d813960138fc91175aa84d012982b68b2a"
+      },
+      {
+        "path": "src/nonlineargradientsui/GradientFigure.java",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "ce83a9898204f62346149610cbfa2f8186b1a335",
+        "size": 4367,
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs/ce83a9898204f62346149610cbfa2f8186b1a335"
+      },
+      {
+        "path": "src/nonlineargradientsui/GradientFunction.java",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "38d45d6abb8143ca9cdc6f6a283fad9e29c0f12c",
+        "size": 5246,
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs/38d45d6abb8143ca9cdc6f6a283fad9e29c0f12c"
+      },
+      {
+        "path": "src/nonlineargradientsui/GradientOptionsPanel.form",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "ef59c5e08863465481e047dba59c4626329b79bd",
+        "size": 17934,
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs/ef59c5e08863465481e047dba59c4626329b79bd"
+      },
+      {
+        "path": "src/nonlineargradientsui/GradientOptionsPanel.java",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "572106a74cba96e70de2ee531629061da9cdecee",
+        "size": 21419,
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs/572106a74cba96e70de2ee531629061da9cdecee"
+      },
+      {
+        "path": "src/nonlineargradientsui/GradientTypePanel.form",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "3dd1c92a7eaeb79615d3fdb3a96dc7359bed8277",
+        "size": 6788,
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs/3dd1c92a7eaeb79615d3fdb3a96dc7359bed8277"
+      },
+      {
+        "path": "src/nonlineargradientsui/GradientTypePanel.java",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c06537e713c64d813bfc4a203b49397b58030a1f",
+        "size": 4316,
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs/c06537e713c64d813bfc4a203b49397b58030a1f"
+      },
+      {
+        "path": "src/nonlineargradientsui/InsilicoDistributionPanel.form",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "60c1b4faa67c75503a2ee66383262c250602712a",
+        "size": 18309,
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs/60c1b4faa67c75503a2ee66383262c250602712a"
+      },
+      {
+        "path": "src/nonlineargradientsui/InsilicoDistributionPanel.java",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "37f40236facbe92c38086a10b56cec4a504d6289",
+        "size": 31390,
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs/37f40236facbe92c38086a10b56cec4a504d6289"
+      },
+      {
+        "path": "src/nonlineargradientsui/MS1DistributionPanel.form",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "b2a4ee6aedb3fa21a9a52fe23cc38ad38f59d4e0",
+        "size": 19062,
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs/b2a4ee6aedb3fa21a9a52fe23cc38ad38f59d4e0"
+      },
+      {
+        "path": "src/nonlineargradientsui/MS1DistributionPanel.java",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "af362a7c39268184034d6aa88e078b2e0c7cb227",
+        "size": 32363,
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs/af362a7c39268184034d6aa88e078b2e0c7cb227"
+      },
+      {
+        "path": "src/nonlineargradientsui/MainFrame.form",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "40c95238ca84ae0aec539551c35152cb1934b33d",
+        "size": 4100,
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs/40c95238ca84ae0aec539551c35152cb1934b33d"
+      },
+      {
+        "path": "src/nonlineargradientsui/MainFrame.java",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "5e7af22a7e7158fc875b535275f119ef1903132d",
+        "size": 14514,
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs/5e7af22a7e7158fc875b535275f119ef1903132d"
+      },
+      {
+        "path": "src/nonlineargradientsui/Makefile",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "a53a3147f168b603f2b6dd007759576a5c145418",
+        "size": 561,
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs/a53a3147f168b603f2b6dd007759576a5c145418"
+      },
+      {
+        "path": "src/nonlineargradientsui/MzFigure.java",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "a654e3293ebeeb8c27f124234ea202ddeaca085c",
+        "size": 4367,
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs/a654e3293ebeeb8c27f124234ea202ddeaca085c"
+      },
+      {
+        "path": "src/nonlineargradientsui/MzOptimizer.java",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "20e918777477751fa4a1a08330a0191d0cdb3cff",
+        "size": 14212,
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs/20e918777477751fa4a1a08330a0191d0cdb3cff"
+      },
+      {
+        "path": "src/nonlineargradientsui/MzResultWindow.form",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "288faf4adfaa29f6a9a0aec914b299a0f7b54459",
+        "size": 9129,
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs/288faf4adfaa29f6a9a0aec914b299a0f7b54459"
+      },
+      {
+        "path": "src/nonlineargradientsui/MzResultWindow.java",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "ed4b7129926eb53a56bf3640a55ef74664485589",
+        "size": 14684,
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs/ed4b7129926eb53a56bf3640a55ef74664485589"
+      },
+      {
+        "path": "src/nonlineargradientsui/MzmlIO.java",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "4f341ef9c99707346f84eda4126893c8b96c9f48",
+        "size": 13973,
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs/4f341ef9c99707346f84eda4126893c8b96c9f48"
+      },
+      {
+        "path": "src/nonlineargradientsui/MzmlTextFieldListener.java",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "bd25e5c3605ab59f8ae26a0d9c696b6cd02f79fa",
+        "size": 947,
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs/bd25e5c3605ab59f8ae26a0d9c696b6cd02f79fa"
+      },
+      {
+        "path": "src/nonlineargradientsui/MzmlWorker.java",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "20ecdbaf74bf54356667a4131ff6440ba3e94c74",
+        "size": 5283,
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs/20ecdbaf74bf54356667a4131ff6440ba3e94c74"
+      },
+      {
+        "path": "src/nonlineargradientsui/NFeaturesRT.java",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "fecceb873fc1537d65b92edb66d0d2ee747f1ab9",
+        "size": 2127,
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs/fecceb873fc1537d65b92edb66d0d2ee747f1ab9"
+      },
+      {
+        "path": "src/nonlineargradientsui/NonlinearGradientsUI.java",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "b40c79f0cb4eb828709ab9b45ef9159e6d49b048",
+        "size": 1065,
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs/b40c79f0cb4eb828709ab9b45ef9159e6d49b048"
+      },
+      {
+        "path": "src/nonlineargradientsui/Protein.java",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "a7c29f0c4c6435ad748874d34baa2cc51a4f1d09",
+        "size": 5939,
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs/a7c29f0c4c6435ad748874d34baa2cc51a4f1d09"
+      },
+      {
+        "path": "src/nonlineargradientsui/RTPanel.java",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "ce7a5783993fad07c8dd09c1abd9cbf03fc3ac1b",
+        "size": 325,
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs/ce7a5783993fad07c8dd09c1abd9cbf03fc3ac1b"
+      },
+      {
+        "path": "src/nonlineargradientsui/ResultWindow.form",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "0a88a713cbad1dddf5eb78b85be325ab7c62a2d9",
+        "size": 9149,
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs/0a88a713cbad1dddf5eb78b85be325ab7c62a2d9"
+      },
+      {
+        "path": "src/nonlineargradientsui/ResultWindow.java",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "d4b6252a88b08543b323c3ab8973b1a18a788d9b",
+        "size": 15495,
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs/d4b6252a88b08543b323c3ab8973b1a18a788d9b"
+      },
+      {
+        "path": "src/nonlineargradientsui/RtMzWindows.java",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "aff6fce9f3405f878fa60b1d90c211a765377616",
+        "size": 1390,
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs/aff6fce9f3405f878fa60b1d90c211a765377616"
+      },
+      {
+        "path": "src/nonlineargradientsui/TestXmlLib.java",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "95467268f442c5f0cf8edf115feec84bacbf1d1e",
+        "size": 4684,
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs/95467268f442c5f0cf8edf115feec84bacbf1d1e"
+      },
+      {
+        "path": "src/nonlineargradientsui/TextFieldListener.java",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "04a74aaeba2d3c14f8c88edb26d9d9e58d81c6f6",
+        "size": 963,
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs/04a74aaeba2d3c14f8c88edb26d9d9e58d81c6f6"
+      },
+      {
+        "path": "src/nonlineargradientsui/Utilities.java",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "fefb223ae935fd050c9f008a9aaa531b61ee1f85",
+        "size": 952,
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs/fefb223ae935fd050c9f008a9aaa531b61ee1f85"
+      },
+      {
+        "path": "src/nonlineargradientsui/ValidationException.java",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "987d9f6b31adc2fc740862afe7137f1f7874af80",
+        "size": 424,
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs/987d9f6b31adc2fc740862afe7137f1f7874af80"
+      },
+      {
+        "path": "store",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "683ae5126b77c10b19d5d5d607e0717945ab815b",
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/trees/683ae5126b77c10b19d5d5d607e0717945ab815b"
+      },
+      {
+        "path": "store/GradientOptimizer.jar",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "bc049cafa833bc2b2c578020d6124673840ed51b",
+        "size": 11128291,
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs/bc049cafa833bc2b2c578020d6124673840ed51b"
+      },
+      {
+        "path": "test",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "30d5bb5bf59b1d142a75c071a55cff2f6ab92122",
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/trees/30d5bb5bf59b1d142a75c071a55cff2f6ab92122"
+      },
+      {
+        "path": "test/system-level",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "234e1d947b6a0ce6884244eebe5b096c325fca14",
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/trees/234e1d947b6a0ce6884244eebe5b096c325fca14"
+      },
+      {
+        "path": "test/system-level/custom",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "a1c4473bb40dfedf7380c170f23e4aca1ce4a3b6",
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/trees/a1c4473bb40dfedf7380c170f23e4aca1ce4a3b6"
+      },
+      {
+        "path": "test/system-level/custom/custom-optimized-description.odt",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "27e1f3c4eb3c22bb1aa6f974e140a6bef2fcde84",
+        "size": 1481553,
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs/27e1f3c4eb3c22bb1aa6f974e140a6bef2fcde84"
+      },
+      {
+        "path": "test/system-level/custom/custom-optimized-paste-rts.txt",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "050b9ae92b79351d8c1a354271d80dea1e881d0c",
+        "size": 1041,
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs/050b9ae92b79351d8c1a354271d80dea1e881d0c"
+      },
+      {
+        "path": "test/system-level/custom/custom-optimized-upload-file.txt",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c026e24cce5ee34439b72c7da3d3a82916bef694",
+        "size": 583,
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs/c026e24cce5ee34439b72c7da3d3a82916bef694"
+      },
+      {
+        "path": "test/system-level/insilico",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "f890d268572413ff7285409f868f5d6d140217d2",
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/trees/f890d268572413ff7285409f868f5d6d140217d2"
+      },
+      {
+        "path": "test/system-level/insilico/insilico-optimized-description.odt",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "f112d1b87672aa6d39cf93bf1ba44fe29efd8b2a",
+        "size": 1851327,
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs/f112d1b87672aa6d39cf93bf1ba44fe29efd8b2a"
+      },
+      {
+        "path": "test/system-level/insilico/insilico-optimized-insilico-human-8-50.txt",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e46a58374a905b38b6735baf7d2ba2ef7e34f3d2",
+        "size": 2545,
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs/e46a58374a905b38b6735baf7d2ba2ef7e34f3d2"
+      },
+      {
+        "path": "test/system-level/insilico/insilico-optimized-sp-201209-human-fasta-30-50.txt",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "68a3f8a8cd66265219c0021cde1ba61438043e3d",
+        "size": 1423,
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs/68a3f8a8cd66265219c0021cde1ba61438043e3d"
+      },
+      {
+        "path": "test/system-level/ms1",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "6d98af465ce5fb0620783fd37e8f8c8ff80a3176",
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/trees/6d98af465ce5fb0620783fd37e8f8c8ff80a3176"
+      },
+      {
+        "path": "test/system-level/ms1/ms1-optimized-description.odt",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "253d8bb89ac7a269ee814e4075ad5ba078945a42",
+        "size": 802043,
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs/253d8bb89ac7a269ee814e4075ad5ba078945a42"
+      },
+      {
+        "path": "test/system-level/ms1/ms1-optimized-gradient-human-4h-DIA.txt",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "3c4d7dec5917f7fd7a58fc5417b503d611bbd9ea",
+        "size": 659,
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs/3c4d7dec5917f7fd7a58fc5417b503d611bbd9ea"
+      },
+      {
+        "path": "test/system-level/ms1/ms1-optimized-gradient-human-4h.txt",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "ef2b9c6e999dc50ac4710896f54e725c83cb810e",
+        "size": 659,
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs/ef2b9c6e999dc50ac4710896f54e725c83cb810e"
+      },
+      {
+        "path": "test/system-level/ms1/ms1-optimized-mz-windows-human-4h-DIA.txt",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e25a6e523436e320bfb5de4458442f387885b1f0",
+        "size": 736,
+        "url": "https://api.github.com/repos/statisticalbiotechnology/NonlinearGradientsUI/git/blobs/e25a6e523436e320bfb5de4458442f387885b1f0"
+      }
+    ],
+    "truncated": false
+  },
+  "issues": [],
+  "file_errors": [],
+  "snapshot": "C:\\Users\\T22016\\AppData\\Local\\Temp\\lc-gradient-research-20261013\\statisticalbiotechnology__NonlinearGradientsUI",
+  "downloaded_text_paths": [
+    "README.md",
+    "data/custom/rts-identified-peptides.txt",
+    "data/insilico/training-peptides.txt",
+    "doc/for-developers/build_fat_jar.txt",
+    "lib/jmzml-1.6.7/LICENSE-2.0.txt",
+    "lib/jmzml-1.6.7/readMe.txt",
+    "scripts/get_data.py",
+    "scripts/plot-gradient.py",
+    "src/nonlineargradientsui/CustomDistributionPanel.java",
+    "src/nonlineargradientsui/EludeWorker.java",
+    "src/nonlineargradientsui/GeneralUtilities.java",
+    "src/nonlineargradientsui/GradientCalculator.java",
+    "src/nonlineargradientsui/GradientFigure.java",
+    "src/nonlineargradientsui/GradientFunction.java",
+    "src/nonlineargradientsui/GradientOptionsPanel.java",
+    "src/nonlineargradientsui/GradientTypePanel.java",
+    "src/nonlineargradientsui/InsilicoDistributionPanel.java",
+    "src/nonlineargradientsui/MS1DistributionPanel.java",
+    "src/nonlineargradientsui/MainFrame.java",
+    "src/nonlineargradientsui/MzFigure.java",
+    "src/nonlineargradientsui/MzOptimizer.java",
+    "src/nonlineargradientsui/MzResultWindow.java",
+    "src/nonlineargradientsui/MzmlIO.java",
+    "src/nonlineargradientsui/MzmlTextFieldListener.java",
+    "src/nonlineargradientsui/MzmlWorker.java",
+    "src/nonlineargradientsui/NFeaturesRT.java",
+    "src/nonlineargradientsui/NonlinearGradientsUI.java",
+    "src/nonlineargradientsui/Protein.java",
+    "src/nonlineargradientsui/RTPanel.java",
+    "src/nonlineargradientsui/ResultWindow.java",
+    "src/nonlineargradientsui/RtMzWindows.java",
+    "src/nonlineargradientsui/TestXmlLib.java",
+    "src/nonlineargradientsui/TextFieldListener.java",
+    "src/nonlineargradientsui/Utilities.java",
+    "src/nonlineargradientsui/ValidationException.java",
+    "test/system-level/custom/custom-optimized-paste-rts.txt",
+    "test/system-level/custom/custom-optimized-upload-file.txt",
+    "test/system-level/insilico/insilico-optimized-insilico-human-8-50.txt",
+    "test/system-level/insilico/insilico-optimized-sp-201209-human-fasta-30-50.txt",
+    "test/system-level/ms1/ms1-optimized-gradient-human-4h-DIA.txt",
+    "test/system-level/ms1/ms1-optimized-gradient-human-4h.txt",
+    "test/system-level/ms1/ms1-optimized-mz-windows-human-4h-DIA.txt"
+  ]
+}

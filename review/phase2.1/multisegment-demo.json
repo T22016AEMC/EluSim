@@ -1,0 +1,87 @@
+{
+  "gradient": [
+    {
+      "time_min": 0.0,
+      "b_percent": 49.9239443706409,
+      "flow_ml_min": 0.3,
+      "temperature_c": 25.0,
+      "interpolation": "linear"
+    },
+    {
+      "time_min": 0.5017520808732965,
+      "b_percent": 99.7978437081989,
+      "flow_ml_min": 0.3,
+      "temperature_c": 25.0,
+      "interpolation": "linear"
+    },
+    {
+      "time_min": 2.1788535422490547,
+      "b_percent": 99.96241749323772,
+      "flow_ml_min": 0.3,
+      "temperature_c": 25.0,
+      "interpolation": "linear"
+    },
+    {
+      "time_min": 5.178853542249055,
+      "b_percent": 99.96241749323772,
+      "flow_ml_min": 0.3,
+      "temperature_c": 25.0,
+      "interpolation": "linear"
+    }
+  ],
+  "min_rs": 2.053739419518356,
+  "run_time_min": 1.4177946666970724,
+  "critical_pair": [
+    "b",
+    "c"
+  ],
+  "all_eluted": true,
+  "feasible": true,
+  "peaks": [
+    {
+      "id": "a",
+      "name": "Synthetic A",
+      "parameter_tier": "M",
+      "rt_min": 1.2982117760972178,
+      "sigma_min": 0.005638467827330352,
+      "eluted": true,
+      "rs_to_next": 2.840198338404864
+    },
+    {
+      "id": "b",
+      "name": "Synthetic B",
+      "parameter_tier": "M",
+      "rt_min": 1.3601654211847332,
+      "sigma_min": 0.005268102367043863,
+      "eluted": true,
+      "rs_to_next": 2.053739419518356
+    },
+    {
+      "id": "c",
+      "name": "Synthetic C",
+      "parameter_tier": "M",
+      "rt_min": 1.4026033615945566,
+      "sigma_min": 0.005063768367505308,
+      "eluted": true,
+      "rs_to_next": null
+    }
+  ],
+  "ode_check": {
+    "max_rel_rt": 5.6778205803631465e-08,
+    "max_rel_sigma": 9.94855353653179e-08,
+    "elution_disagreements": [],
+    "solver": "ode"
+  },
+  "iterations": 60,
+  "evaluations": 2928,
+  "time_budget_stopped": false,
+  "elapsed_s": 6.75,
+  "solver": "analytic",
+  "warnings": [],
+  "search_note": "Stochastic search within time budget; global optimality not claimed",
+  "min_segment_min": 0.5,
+  "segment_durations_min": [
+    0.5017520808732965,
+    1.6771014613757582
+  ]
+}

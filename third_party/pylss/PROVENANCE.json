@@ -1,0 +1,22 @@
+{
+  "repository": "https://github.com/gmrandazzo/PyLSS",
+  "commit": "d2cda850fa0b0881fc3cf1cd68c4d93b59dac04f",
+  "files": [
+    {
+      "file": "ssengine.py",
+      "sha256": "7d5b4e5c30ee46cf82c8c011cf922ef5ff112186ef7216e3f44d32f35b2cffa8",
+      "modified": false
+    },
+    {
+      "file": "optimizer.py",
+      "sha256": "d7d93ea4cd446cbb7e970307a57345d7e5fdadb76793a5d431e7dd166e763877",
+      "modified": false
+    },
+    {
+      "file": "miscalgoritms.py",
+      "sha256": "097000dfbe0b82664494a7eca1b69e5be418b26f1eecba30e12dcdf93a24a692",
+      "modified": false
+    }
+  ],
+  "role": "Optional reference test, production engine independently derived"
+}

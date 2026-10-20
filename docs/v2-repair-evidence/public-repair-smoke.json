@@ -1,0 +1,45 @@
+{
+  "timestamp_utc": "2026-10-15T14:59:19.644737+00:00",
+  "origin": "https://elusim-v1.onrender.com",
+  "health": {
+    "status": "ok",
+    "app": "EluSim_V2",
+    "engine": "elusim-lss-migration/1.0.0",
+    "rdkit": "2026.09.1",
+    "revision": "631e575a542ebe70e45efabee5005fbeed9a129d"
+  },
+  "legacy_simulation_http": 200,
+  "baseline": false,
+  "status": "PASS",
+  "rt_min": [
+    5.621255935188169,
+    6.406693183337087,
+    7.031673690223801
+  ],
+  "areas": [
+    0.5,
+    0.3,
+    0.2
+  ],
+  "source_codes": [
+    "model_based",
+    "model_based",
+    "unknown_legacy"
+  ],
+  "specific_validation_error": [
+    "body",
+    "compounds",
+    1,
+    "s"
+  ],
+  "non_database_qsrr": {
+    "smiles": "CC(=O)Nc1ccc(OCCC)cc1",
+    "logkw": 2.309298920397595,
+    "s": 4.616483371328446,
+    "rt_min": 7.212821471259318,
+    "observations_returned": false,
+    "seen_in_training": false,
+    "status": "Experimental model prediction",
+    "experimental_accuracy": "Not established"
+  }
+}

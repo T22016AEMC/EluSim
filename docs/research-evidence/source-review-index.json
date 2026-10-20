@@ -1,0 +1,4172 @@
+{
+  "gmrandazzo__PyLSS": [
+    {
+      "path": "src/pylss/ssengine.py",
+      "sha256": "7d5b4e5c30ee46cf82c8c011cf922ef5ff112186ef7216e3f44d32f35b2cffa8",
+      "lines": 250,
+      "symbols": [
+        {
+          "line": 78,
+          "symbol": "class SSGenerator(object):"
+        },
+        {
+          "line": 130,
+          "symbol": "def __init__(self, c_length, c_diameter, c_porosity, t0, v_d, flow):"
+        },
+        {
+          "line": 162,
+          "symbol": "def rtpred(self, logkw, S, tg, init_B, final_B, t0, td):"
+        },
+        {
+          "line": 194,
+          "symbol": "def iterfun(self, lss):"
+        },
+        {
+          "line": 202,
+          "symbol": "def getlssparameters(self, tr, tg, init_B, final_B):"
+        },
+        {
+          "line": 213,
+          "symbol": "def logrtpred(self, logkw, S, tg, init_B, final_B, t0, td):"
+        },
+        {
+          "line": 229,
+          "symbol": "def logiterfun(self, lss):"
+        },
+        {
+          "line": 237,
+          "symbol": "def getlogssparameters(self, tr, tg, init_B, final_B):"
+        },
+        {
+          "line": 248,
+          "symbol": "def getlss_s(self):"
+        }
+      ]
+    },
+    {
+      "path": "src/pylss/nlssengine.py",
+      "sha256": "a17da7842c9cf13fbdc2eebf76540bb4b879aaa4073ce599b7d07d50e473aef8",
+      "lines": 175,
+      "symbols": [
+        {
+          "line": 40,
+          "symbol": "def square(val):"
+        },
+        {
+          "line": 44,
+          "symbol": "class NLSS(object):"
+        },
+        {
+          "line": 68,
+          "symbol": "def __init__(self, CLenght, CDiameter, CPorosity, t0, Vd, flow):"
+        },
+        {
+          "line": 105,
+          "symbol": "def simplelr(self, x, y):"
+        },
+        {
+          "line": 120,
+          "symbol": "def iterfun(self, param):"
+        },
+        {
+          "line": 137,
+          "symbol": "def rtpred(self, kw, S, c, tg, init_B, final_B, t0, td):"
+        },
+        {
+          "line": 161,
+          "symbol": "def getlssparameters(self, tr, tg, init_B, final_B):"
+        }
+      ]
+    },
+    {
+      "path": "src/pylss/gradientutils.py",
+      "sha256": "c46bde2ec1449422ab03ebb214d25bea002d48358980a4906091506e92402e83",
+      "lines": 254,
+      "symbols": [
+        {
+          "line": 36,
+          "symbol": "def get_lss_peak_width(c_length, c_particle, logkw, s, init_b, final_b, tg, flow, v_m, v_d, s_extra):"
+        },
+        {
+          "line": 53,
+          "symbol": "def get_lss_gradient_critical_rs(c_length, c_particle, init_b, final_b, tg, flow, v_m, v_d, lssparam , crit_res=1.4):"
+        },
+        {
+          "line": 106,
+          "symbol": "def get_lss_gradient_critical_selectivity(c_length, c_particle, init_b, final_b, tg, flow, v_m, v_d, lssparam , crit_alpha=1.1):"
+        },
+        {
+          "line": 145,
+          "symbol": "def get_logss_peak_width(c_length, c_particle, lss_logkw, lss_s, init_b, final_b, tg, flow, v_m, v_d, s_extra):"
+        },
+        {
+          "line": 163,
+          "symbol": "def get_logss_gradient_critical_rs(c_length, c_particle, init_b, final_b, tg, flow, v_m, v_d, lssparam , crit_res=1.4):"
+        },
+        {
+          "line": 213,
+          "symbol": "def get_logss_gradient_critical_selectivity(c_length, c_particle, init_b, final_b, tg, flow, v_m, v_d, lssparam, crit_alpha=1.1):"
+        }
+      ]
+    },
+    {
+      "path": "src/pylss/plotengine.py",
+      "sha256": "b591c7f4113ec20ca5d6d87a69cea81577cc6b57319b178c3067e219d4753006",
+      "lines": 102,
+      "symbols": [
+        {
+          "line": 31,
+          "symbol": "def seq(start, stop, step=1):"
+        },
+        {
+          "line": 38,
+          "symbol": "def square(x):"
+        },
+        {
+          "line": 41,
+          "symbol": "def BuildSelectivityMap(model):"
+        },
+        {
+          "line": 44,
+          "symbol": "def BuildChromatogram(trtab, maxtime, delta_time):"
+        },
+        {
+          "line": 62,
+          "symbol": "def PlotChromatogram(peaks):"
+        },
+        {
+          "line": 80,
+          "symbol": "def PlotDelayedChromatogram(peaks):"
+        }
+      ]
+    },
+    {
+      "path": "src/pylss/optseparation.py",
+      "sha256": "62efee3fcbbe1551b20d0194921ca68fe83c65f385f3bcc1ef4cb0631011db60",
+      "lines": 508,
+      "symbols": [
+        {
+          "line": 36,
+          "symbol": "class OptSep(object):"
+        },
+        {
+          "line": 99,
+          "symbol": "def __init__(self, v_m, v_d, flow, logkw_s_tab):"
+        },
+        {
+          "line": 118,
+          "symbol": "def getSelMapPlot(self, model, flow=0.3, g_start_min=0.00, g_start_max=1.0, g_stop_min=0.1, g_stop_max=1.0, time_grad_min=2, time_grad_max=60):"
+        },
+        {
+          "line": 157,
+          "symbol": "def getAutomaticElutionWindowStretching(self, model, flow=0.3, g_start_min=0.00, g_start_max=1.0, g_stop_min=0.1, g_stop_max=1.0, time_grad_min=2, time_grad_max=60):"
+        },
+        {
+          "line": 208,
+          "symbol": "def isocratic_iterfun(self, phi):"
+        },
+        {
+          "line": 244,
+          "symbol": "def getResMapPlot(self, model, flow=0.3, g_start_min=0.00, g_start_max=1.0, g_stop_min=0.1, g_stop_max=1.0, time_grad_min=2, time_grad_max=60):"
+        },
+        {
+          "line": 275,
+          "symbol": "def getisoconditions(self):"
+        },
+        {
+          "line": 291,
+          "symbol": "def getplotisoconditions(self):"
+        },
+        {
+          "line": 323,
+          "symbol": "def optgradfun(self, grad):"
+        },
+        {
+          "line": 342,
+          "symbol": "def getgradientconditions(self, tr_min, tr_max):"
+        },
+        {
+          "line": 390,
+          "symbol": "def getplotgradientconditions(self, flow_min=0.2, flow_max=0.6, g_start_min=0.00, g_start_max=0.98,"
+        },
+        {
+          "line": 417,
+          "symbol": "def optloggradfun(self, grad):"
+        },
+        {
+          "line": 453,
+          "symbol": "def getloggradientconditions(self, tr_min, tr_max):"
+        }
+      ]
+    },
+    {
+      "path": "src/pylss/lsscoltransfer.py",
+      "sha256": "d0a2a6f11816930e110b382eb6c2dd01f74f8f69a70b878b93929920a76827b9",
+      "lines": 196,
+      "symbols": [
+        {
+          "line": 31,
+          "symbol": "def square(val):"
+        },
+        {
+          "line": 35,
+          "symbol": "class LSSColTrans(object):"
+        },
+        {
+          "line": 89,
+          "symbol": "def __init__(self, c_length, c_diameter, c_porosity, t0, v_d, flow):"
+        },
+        {
+          "line": 127,
+          "symbol": "def rtpred(self, logkw, S, tg, init_B, final_B, alpha, t0, td):"
+        },
+        {
+          "line": 146,
+          "symbol": "def iterfun(self, lss):"
+        },
+        {
+          "line": 154,
+          "symbol": "def iterfunalpha(self, alpha):"
+        },
+        {
+          "line": 178,
+          "symbol": "def getlssparameters(self, trtab, tg, init_B, final_B, alpha):"
+        }
+      ]
+    },
+    {
+      "path": "tests/test_ssengine.py",
+      "sha256": "d407b57391ca8d2c1f55e24a128541c79fa6aac9aa9fd68abec687bb80891b99",
+      "lines": 71,
+      "symbols": [
+        {
+          "line": 22,
+          "symbol": "def test_lss_parameter_calculation():"
+        },
+        {
+          "line": 52,
+          "symbol": "def test_rtpred():"
+        }
+      ]
+    },
+    {
+      "path": "tests/test_optimizer.py",
+      "sha256": "759f385f0594ec15db8928ce4cb53ca09b3a94a9f1be98460f3efc048a903f91",
+      "lines": 46,
+      "symbols": [
+        {
+          "line": 22,
+          "symbol": "def test_simplex_quadratic():"
+        },
+        {
+          "line": 24,
+          "symbol": "def quadratic(x):"
+        },
+        {
+          "line": 35,
+          "symbol": "def test_simplex_rosenbrock():"
+        },
+        {
+          "line": 37,
+          "symbol": "def rosenbrock(x):"
+        }
+      ]
+    },
+    {
+      "path": "tests/test_chromanalysis.py",
+      "sha256": "0e191b2ced267f6c39e0c60ccaa4d22983e8f86075a46828961feb2879b35262",
+      "lines": 68,
+      "symbols": [
+        {
+          "line": 22,
+          "symbol": "def test_peak_detection():"
+        },
+        {
+          "line": 53,
+          "symbol": "def test_integration():"
+        }
+      ]
+    }
+  ],
+  "gurevichlab__grip": [
+    {
+      "path": "grip/models/grip.py",
+      "sha256": "f71780ecbb736197044df0de4dc92c858b8fa9591c9a9418ecb795982302795f",
+      "lines": 347,
+      "symbols": [
+        {
+          "line": 11,
+          "symbol": "class MolEncoder(nn.Module):"
+        },
+        {
+          "line": 12,
+          "symbol": "def __init__(self, message_passing: BondMessagePassing | AtomMessagePassing, head: LazyMLP):"
+        },
+        {
+          "line": 21,
+          "symbol": "def forward(self, batch: MolBatch) -> torch.Tensor:"
+        },
+        {
+          "line": 32,
+          "symbol": "def build(cls, cfg:dict) -> \"MolEncoder\":"
+        },
+        {
+          "line": 49,
+          "symbol": "class BilinearHead(nn.Module):"
+        },
+        {
+          "line": 50,
+          "symbol": "def __init__(self, mol_dim: int, sys_dim: int,"
+        },
+        {
+          "line": 82,
+          "symbol": "def init_parameters(self):"
+        },
+        {
+          "line": 92,
+          "symbol": "def forward(self, mol: torch.Tensor, sys: torch.Tensor) -> torch.Tensor:"
+        },
+        {
+          "line": 112,
+          "symbol": "class BilinearResHead(nn.Module):"
+        },
+        {
+          "line": 113,
+          "symbol": "def __init__(self, mol_dim: int, sys_dim: int,"
+        },
+        {
+          "line": 147,
+          "symbol": "def forward(self, mol: torch.Tensor, sys: torch.Tensor) -> torch.Tensor:"
+        },
+        {
+          "line": 157,
+          "symbol": "class ConcatMLPHead(nn.Module):"
+        },
+        {
+          "line": 158,
+          "symbol": "def __init__(self, hidden: int, layers: int, d_out: int, dropout: float = 0., activation: nn.Module = nn.SiLU):"
+        },
+        {
+          "line": 162,
+          "symbol": "def forward(self, mol: torch.Tensor, sys: torch.Tensor) -> torch.Tensor:"
+        },
+        {
+          "line": 167,
+          "symbol": "class ZeroLazyLinear(nn.LazyLinear):"
+        },
+        {
+          "line": 168,
+          "symbol": "def reset_parameters(self):"
+        },
+        {
+          "line": 174,
+          "symbol": "class GRIP(nn.Module):"
+        },
+        {
+          "line": 175,
+          "symbol": "def __init__(self, mol_encoder: MolEncoder,"
+        },
+        {
+          "line": 198,
+          "symbol": "def forward(self, batch: TrainingBatch) -> RTPrediction:"
+        },
+        {
+          "line": 224,
+          "symbol": "def build(cls, cfg: dict) -> \"GRIP\":"
+        }
+      ]
+    },
+    {
+      "path": "grip/models/layers.py",
+      "sha256": "cd33166ed2938a4b5fb1897af4de52d956f4079f761e69e2d97c83fd531a46ce",
+      "lines": 241,
+      "symbols": [
+        {
+          "line": 7,
+          "symbol": "def add_dwell_time(gr: GradientBatch, tdwell: torch.Tensor) -> GradientBatch:"
+        },
+        {
+          "line": 38,
+          "symbol": "class RTLayerLSS(nn.Module):"
+        },
+        {
+          "line": 39,
+          "symbol": "def __init__(self):"
+        },
+        {
+          "line": 43,
+          "symbol": "def I_flat(self, phi, S, dt):"
+        },
+        {
+          "line": 46,
+          "symbol": "def beta_I_linear(self, phi, S, dt, beta):"
+        },
+        {
+          "line": 49,
+          "symbol": "def correct_rt(self, rt, t0, tpost):"
+        },
+        {
+          "line": 56,
+          "symbol": "def forward("
+        },
+        {
+          "line": 140,
+          "symbol": "class RTLayerLSSRefactoredBak(nn.Module):"
+        },
+        {
+          "line": 141,
+          "symbol": "def __init__(self):"
+        },
+        {
+          "line": 144,
+          "symbol": "def I_flat(self, phi, S, dt):"
+        },
+        {
+          "line": 147,
+          "symbol": "def beta_I_linear(self, phi, S, dt, beta):"
+        },
+        {
+          "line": 150,
+          "symbol": "def correct_rt(self, rt, t0, tpost):"
+        },
+        {
+          "line": 157,
+          "symbol": "def forward("
+        }
+      ]
+    },
+    {
+      "path": "grip_inference.py",
+      "sha256": "3107d75c8a263ce07905e8207b5d0a79898b56bdfafbddb89719a91b602e2cf7",
+      "lines": 324,
+      "symbols": [
+        {
+          "line": 24,
+          "symbol": "def read_table_any(path: Path) -> pd.DataFrame:"
+        },
+        {
+          "line": 33,
+          "symbol": "def select_id_smiles(df: pd.DataFrame, id_col: str, smi_col: str) -> pd.DataFrame:"
+        },
+        {
+          "line": 52,
+          "symbol": "def load_yaml(path: Path) -> dict:"
+        },
+        {
+          "line": 65,
+          "symbol": "def validate_system_config(cfg: dict) -> None:"
+        },
+        {
+          "line": 92,
+          "symbol": "def choose_device(arg: str) -> torch.device:"
+        },
+        {
+          "line": 102,
+          "symbol": "def load_model_from_ckpt(ckpt_path: Path, device: torch.device) -> GRIP:"
+        },
+        {
+          "line": 135,
+          "symbol": "def to_device(obj: Any, device: torch.device) -> Any:"
+        },
+        {
+          "line": 151,
+          "symbol": "def chunked(xs: list[str], n_chunks: int) -> list[list[str]]:"
+        },
+        {
+          "line": 159,
+          "symbol": "def build_moldata_chunk(smiles_chunk: list[str]) -> MolData:"
+        },
+        {
+          "line": 163,
+          "symbol": "def build_moldata(smiles: Iterable[str], threads: int) -> MolData:"
+        },
+        {
+          "line": 182,
+          "symbol": "def predict_one_system("
+        },
+        {
+          "line": 240,
+          "symbol": "def parse_args() -> argparse.Namespace:"
+        },
+        {
+          "line": 261,
+          "symbol": "def main() -> int:"
+        }
+      ]
+    },
+    {
+      "path": "grip/featurizers/system_descriptors.py",
+      "sha256": "46e86f90744471ef4c58be919e0a924824b8ce90c3f38d092ef402d3f3a0e9bb",
+      "lines": 132,
+      "symbols": [
+        {
+          "line": 15,
+          "symbol": "class IQRScaler:"
+        },
+        {
+          "line": 22,
+          "symbol": "def _pre_transform(self, x):"
+        },
+        {
+          "line": 25,
+          "symbol": "def _weighted_quantile(self, x, w, q):"
+        },
+        {
+          "line": 32,
+          "symbol": "def fit(self, x, w=None):"
+        },
+        {
+          "line": 41,
+          "symbol": "def transform(self, x):"
+        },
+        {
+          "line": 48,
+          "symbol": "def fit_transform(self, x, w=None):"
+        },
+        {
+          "line": 54,
+          "symbol": "class RangeScaler:"
+        },
+        {
+          "line": 61,
+          "symbol": "def transform(self, x):"
+        },
+        {
+          "line": 74,
+          "symbol": "class Identity:"
+        },
+        {
+          "line": 75,
+          "symbol": "def transform(self, x):"
+        },
+        {
+          "line": 79,
+          "symbol": "class SysDescriptorsFeaturizer:"
+        },
+        {
+          "line": 80,
+          "symbol": "def __init__(self, spec: Optional[SysDescriptorsFeaturizerCfg] = None):"
+        },
+        {
+          "line": 87,
+          "symbol": "def from_dict(cls, d: Dict[str, Any]) -> \"SysDescriptorsFeaturizer\":"
+        },
+        {
+          "line": 90,
+          "symbol": "def to_dict(self) -> Dict[str, Any]:"
+        },
+        {
+          "line": 93,
+          "symbol": "def _build_pos_transforms(self) -> None:"
+        },
+        {
+          "line": 120,
+          "symbol": "def __call__(self, desc: np.ndarray) -> np.ndarray:"
+        }
+      ]
+    }
+  ],
+  "sartorius-research__STLC": [
+    {
+      "path": "stlc/lkm.py",
+      "sha256": "e0aba168de9637dee425db59c5b85db35a027918732a56551fe0388893905916",
+      "lines": 563,
+      "symbols": [
+        {
+          "line": 99,
+          "symbol": "class ModelParameters:"
+        },
+        {
+          "line": 136,
+          "symbol": "class LumpedKineticModel:"
+        },
+        {
+          "line": 234,
+          "symbol": "def __post_init__(self) -> None:"
+        },
+        {
+          "line": 287,
+          "symbol": "def _calc_qstar(model: LumpedKineticModel, yt: np.ndarray, i: int) -> np.ndarray:"
+        },
+        {
+          "line": 326,
+          "symbol": "def _create_state_vector(model: LumpedKineticModel, timesteps: int) -> np.ndarray:"
+        },
+        {
+          "line": 347,
+          "symbol": "def _build_column_interior_matrix(i: int, model: LumpedKineticModel) -> np.ndarray:"
+        },
+        {
+          "line": 402,
+          "symbol": "def _assemble_complete_matrix(model: LumpedKineticModel, yt: np.ndarray) -> np.ndarray:"
+        },
+        {
+          "line": 478,
+          "symbol": "def _create_lhs_matrix(model: LumpedKineticModel, dt: float) -> np.ndarray:"
+        },
+        {
+          "line": 513,
+          "symbol": "def solve(model: LumpedKineticModel, tmax: float, dt: float) -> np.ndarray:"
+        }
+      ]
+    },
+    {
+      "path": "stlc/grm.py",
+      "sha256": "84f1fdd48687ead8f8b438672ef615895cce659557e72fe95d4bc61ac19bea70",
+      "lines": 467,
+      "symbols": [
+        {
+          "line": 64,
+          "symbol": "def step(t: float, tinj: float) -> float:"
+        },
+        {
+          "line": 108,
+          "symbol": "class ModelParameters:"
+        },
+        {
+          "line": 146,
+          "symbol": "class Solution:"
+        },
+        {
+          "line": 162,
+          "symbol": "def __post_init__(self):"
+        },
+        {
+          "line": 170,
+          "symbol": "def build_results(self):"
+        },
+        {
+          "line": 201,
+          "symbol": "class GeneralRateModel:"
+        },
+        {
+          "line": 247,
+          "symbol": "def __post_init__(self):"
+        },
+        {
+          "line": 308,
+          "symbol": "def init_solution(self, tmax: int, dt: float) -> np.ndarray:"
+        },
+        {
+          "line": 315,
+          "symbol": "def _build_component_matrix("
+        },
+        {
+          "line": 398,
+          "symbol": "def _binding_site_ratio_per_particle(model: GeneralRateModel, y: np.ndarray):"
+        },
+        {
+          "line": 415,
+          "symbol": "def _assemble_complete_matrix(model: GeneralRateModel, y: np.ndarray) -> np.ndarray:"
+        },
+        {
+          "line": 426,
+          "symbol": "def _create_lhs_matrix(model: GeneralRateModel, dt: float) -> np.ndarray:"
+        },
+        {
+          "line": 443,
+          "symbol": "def solve(model: GeneralRateModel, tmax: int, dt: float):"
+        }
+      ]
+    },
+    {
+      "path": "stlc/occ.py",
+      "sha256": "7d152a3980a13ce3d60e38abcedda9bceb6ce872cfa84a70936e76d26588a073",
+      "lines": 1242,
+      "symbols": [
+        {
+          "line": 11,
+          "symbol": "class Typ(Enum):"
+        },
+        {
+          "line": 23,
+          "symbol": "class Geom(Enum):"
+        },
+        {
+          "line": 32,
+          "symbol": "def _Wshift(n, w, wbfac):"
+        },
+        {
+          "line": 41,
+          "symbol": "def _Deriv1(sym, xx, wb):"
+        },
+        {
+          "line": 60,
+          "symbol": "def _Deriv1odd(geom, sym, x, wb):"
+        },
+        {
+          "line": 75,
+          "symbol": "def _Deriv2(geom, sym, x, wb):"
+        },
+        {
+          "line": 85,
+          "symbol": "def _Deriv2non(x, A):"
+        },
+        {
+          "line": 98,
+          "symbol": "def _Deriv2sym(geom, x, A):"
+        },
+        {
+          "line": 113,
+          "symbol": "def _Stiffness(geom, sym, x, wb, wq):"
+        },
+        {
+          "line": 127,
+          "symbol": "def _Lcoeff(x, xc, wb=None, sym=0):"
+        },
+        {
+          "line": 136,
+          "symbol": "def _Lcoefx(x, xc, wb=None):"
+        },
+        {
+          "line": 164,
+          "symbol": "def _WBcalc(x):"
+        },
+        {
+          "line": 176,
+          "symbol": "def _MassMatrix(oc, func=None, nextra=1):"
+        },
+        {
+          "line": 197,
+          "symbol": "def _MassMatFn(oc, func, nextra=1):"
+        },
+        {
+          "line": 239,
+          "symbol": "def _MassMatG(x, wb, shift):"
+        },
+        {
+          "line": 255,
+          "symbol": "def _MassMatL(x, wb, shift):"
+        },
+        {
+          "line": 269,
+          "symbol": "class OrthColloc:"
+        },
+        {
+          "line": 272,
+          "symbol": "def __init__(self, n, TType=Typ.Lobatto.value, Geometry=0, Shift=True):"
+        },
+        {
+          "line": 292,
+          "symbol": "def Xpoints(self):"
+        },
+        {
+          "line": 296,
+          "symbol": "def WeightQ(self):"
+        },
+        {
+          "line": 300,
+          "symbol": "def WeightB(self):"
+        },
+        {
+          "line": 304,
+          "symbol": "def WBfac(self):"
+        },
+        {
+          "line": 308,
+          "symbol": "def Deriv1(self):"
+        },
+        {
+          "line": 313,
+          "symbol": "def Deriv1odd(self):"
+        },
+        {
+          "line": 318,
+          "symbol": "def Deriv2(self):"
+        },
+        {
+          "line": 323,
+          "symbol": "def Stiffness(self):"
+        },
+        {
+          "line": 328,
+          "symbol": "def Lcoeff(self, x):"
+        },
+        {
+          "line": 332,
+          "symbol": "def MassMatrix(self, func=None, nextra=1):"
+        },
+        {
+          "line": 337,
+          "symbol": "def jac_abeta(t, g):"
+        },
+        {
+          "line": 348,
+          "symbol": "def jac_quadrature(n, abeta=[0, 0], geom=0, MaxIter=1):"
+        },
+        {
+          "line": 353,
+          "symbol": "def jac_quad(n, abeta=[0, 0], geom=0, MaxIter=1):"
+        },
+        {
+          "line": 368,
+          "symbol": "def a_beta(abeta=[0, 0], n=0):"
+        },
+        {
+          "line": 383,
+          "symbol": "def n_values(n, abeta=[0, 0]):"
+        },
+        {
+          "line": 400,
+          "symbol": "def jac_weight(n, g, abeta, x, p):"
+        },
+        {
+          "line": 434,
+          "symbol": "def jac_wts_store(n, nx, g, w):"
+        },
+        {
+          "line": 469,
+          "symbol": "def jac_wt_ord(ex, c, x, q, ord):"
+        },
+        {
+          "line": 527,
+          "symbol": "def Sfunc(x):"
+        },
+        {
+          "line": 543,
+          "symbol": "def GammaRatio(a, b, n):"
+        },
+        {
+          "line": 565,
+          "symbol": "def jac_ends(n, abeta=[0, 0], Monic=False, Shift=False):"
+        },
+        {
+          "line": 584,
+          "symbol": "def jac_lead_coef(n, abeta=[0, 0], Shift=False):"
+        },
+        {
+          "line": 611,
+          "symbol": "def jac_poly_rec_all(x, n, ar, Monic=False):"
+        },
+        {
+          "line": 641,
+          "symbol": "def jac_weight_coef(n, s, abeta):"
+        },
+        {
+          "line": 735,
+          "symbol": "def jac_weight_rx(ex, x):"
+        },
+        {
+          "line": 751,
+          "symbol": "def jac_roots(n, abeta, MaxIter=1, Order=None, Theta=False, nneg=0):"
+        },
+        {
+          "line": 770,
+          "symbol": "def jac_roots_iter(x, p, c2, Order):"
+        },
+        {
+          "line": 792,
+          "symbol": "def jac_poly_recurrent("
+        },
+        {
+          "line": 803,
+          "symbol": "def jac_poly_rec(x, n, abeta=[0, 0], nd=0, n0=0, Monic=False, Shift=False):"
+        },
+        {
+          "line": 839,
+          "symbol": "def jac_poly_rec3(x, n, ar, Monic=False):"
+        },
+        {
+          "line": 872,
+          "symbol": "def jac_deriv1(n, abeta=[0, 0], Monic=False, Shift=False):"
+        },
+        {
+          "line": 892,
+          "symbol": "def jac_reccoef(n, abeta=[0, 0], Monic=False, Shift=False):"
+        },
+        {
+          "line": 960,
+          "symbol": "def jac_root_estimate(nx, abeta=[0, 0], nneg=False):"
+        },
+        {
+          "line": 1041,
+          "symbol": "def FirstLT(x, x0):"
+        },
+        {
+          "line": 1052,
+          "symbol": "def jac_root_stored(n, Legendre, Lobatto, abeta):"
+        },
+        {
+          "line": 1085,
+          "symbol": "def jac_root_est_interior(n, i1, i2, abeta=[0, 0], Method=2):"
+        },
+        {
+          "line": 1119,
+          "symbol": "def jac_root_est_boundary(n, nx, abeta=[0, 0], Method=2):"
+        },
+        {
+          "line": 1152,
+          "symbol": "def jac_deriv2(n, abeta=[0, 0], Shift=False, nd=2):"
+        },
+        {
+          "line": 1170,
+          "symbol": "def jac_root_est_bessel(n, a):"
+        }
+      ]
+    },
+    {
+      "path": "examples/lkm/multi_component.py",
+      "sha256": "be6309170f5b7456bf9690504956552ddfd2bb30f6d2e948213527dc99ea2bf9",
+      "lines": 71,
+      "symbols": [
+        {
+          "line": 19,
+          "symbol": "def step(t: float, x0: float, x1: float):"
+        }
+      ]
+    }
+  ],
+  "jonkeeley__openiex": [
+    {
+      "path": "src/openiex/physics.py",
+      "sha256": "10e61f79b63d122922f94f7a0b1e6bef5b9ad346abdb3181f1c58f456aa02518",
+      "lines": 102,
+      "symbols": [
+        {
+          "line": 3,
+          "symbol": "def calc_Qbar(Q, system):"
+        },
+        {
+          "line": 21,
+          "symbol": "def calc_dQdt(C, Q, Qbar, feed, system, eps=1e-30):"
+        },
+        {
+          "line": 74,
+          "symbol": "def calc_dCdt(C, dQdt, feed, system):"
+        }
+      ]
+    },
+    {
+      "path": "src/openiex/system.py",
+      "sha256": "6e0996c9b1eae137afdbf585ffa8a93638485e0e6b1697cd12a34afa25de6692",
+      "lines": 154,
+      "symbols": [
+        {
+          "line": 5,
+          "symbol": "class ExchangeSystem:"
+        },
+        {
+          "line": 6,
+          "symbol": "def __init__("
+        },
+        {
+          "line": 18,
+          "symbol": "self.ln_K_eq = {}"
+        },
+        {
+          "line": 22,
+          "symbol": "def set_equilibrium(self, a: str, b: str, ln_K_eq_val: float, ln_k_ads_val: float):"
+        },
+        {
+          "line": 23,
+          "symbol": "self.ln_K_eq[(a, b)]  = ln_K_eq_val"
+        },
+        {
+          "line": 26,
+          "symbol": "self.ln_K_eq[(b, a)]  = 1.0 - ln_K_eq_val"
+        },
+        {
+          "line": 30,
+          "symbol": "def check_equilibria(self):"
+        },
+        {
+          "line": 51,
+          "symbol": "def to_dict(self) -> dict:"
+        },
+        {
+          "line": 96,
+          "symbol": "def to_math_dict(self) -> dict:"
+        },
+        {
+          "line": 109,
+          "symbol": "def from_dict(cls, data: dict) -> \"ExchangeSystem\":"
+        }
+      ]
+    },
+    {
+      "path": "src/openiex/solver.py",
+      "sha256": "6f75126afcc06f774f1bf1ac0d68d041bbeaf5bdf077728ade7aa033496d3b89",
+      "lines": 176,
+      "symbols": [
+        {
+          "line": 18,
+          "symbol": "class SimulationResult:"
+        },
+        {
+          "line": 24,
+          "symbol": "class SimulationTracker:"
+        },
+        {
+          "line": 25,
+          "symbol": "def __init__(self, t_final):"
+        },
+        {
+          "line": 29,
+          "symbol": "def update(self, t):"
+        },
+        {
+          "line": 34,
+          "symbol": "def close(self):"
+        },
+        {
+          "line": 37,
+          "symbol": "def method_duration(method: Method, system):"
+        },
+        {
+          "line": 44,
+          "symbol": "class ODEFunction:"
+        },
+        {
+          "line": 45,
+          "symbol": "def __init__(self, chromat_method: Method, system: ExchangeSystem):"
+        },
+        {
+          "line": 51,
+          "symbol": "def __call__(self, t: float, y: np.ndarray) -> np.ndarray:"
+        },
+        {
+          "line": 61,
+          "symbol": "def close(self):"
+        },
+        {
+          "line": 65,
+          "symbol": "def run_simulation("
+        },
+        {
+          "line": 85,
+          "symbol": "def resume_simulation("
+        }
+      ]
+    },
+    {
+      "path": "src/openiex/species.py",
+      "sha256": "c2d68eeacd86006eec2f3a8a4db1a04b601e45575e4d42802eb52fae94d7f4d6",
+      "lines": 92,
+      "symbols": [
+        {
+          "line": 1,
+          "symbol": "class Species:"
+        },
+        {
+          "line": 16,
+          "symbol": "def __init__("
+        },
+        {
+          "line": 39,
+          "symbol": "def __repr__(self):"
+        },
+        {
+          "line": 46,
+          "symbol": "class Ion(Species):"
+        },
+        {
+          "line": 53,
+          "symbol": "class Protein(Species):"
+        },
+        {
+          "line": 62,
+          "symbol": "def __init__("
+        },
+        {
+          "line": 78,
+          "symbol": "def __repr__(self):"
+        },
+        {
+          "line": 85,
+          "symbol": "class Inert(Species):"
+        }
+      ]
+    },
+    {
+      "path": "src/openiex/method.py",
+      "sha256": "c032885a43c97816ba910b62f8fa174b1f149673bdcdda0e0be307a534ad1a61",
+      "lines": 105,
+      "symbols": [
+        {
+          "line": 3,
+          "symbol": "class Method:"
+        },
+        {
+          "line": 4,
+          "symbol": "def __init__(self, buffers, blocks):"
+        },
+        {
+          "line": 8,
+          "symbol": "def validate_method(method: Method, system):"
+        },
+        {
+          "line": 25,
+          "symbol": "def convert_units(data_dict, system, direction=\"to_M\"):"
+        },
+        {
+          "line": 69,
+          "symbol": "def get_feed(t, method: Method, system):"
+        }
+      ]
+    },
+    {
+      "path": "src/openiex/analysis.py",
+      "sha256": "c25aef90470412dc8572b2eb13f827788a8131bf359a2d5d857a6613f394ad0b",
+      "lines": 196,
+      "symbols": [
+        {
+          "line": 10,
+          "symbol": "def compute_chromatogram(result) -> Dict[str, np.ndarray]:"
+        },
+        {
+          "line": 71,
+          "symbol": "def export_chromatogram_csv("
+        },
+        {
+          "line": 102,
+          "symbol": "def analyze_fraction("
+        },
+        {
+          "line": 181,
+          "symbol": "def generate_fraction_dataframe("
+        }
+      ]
+    }
+  ],
+  "boecker-lab__2-step": [
+    {
+      "path": "dmpnn.py",
+      "sha256": "34ec144facc2b54d734a0828120774bf3a66fb32dd2ed96e22965cb0fe19794c",
+      "lines": 34,
+      "symbols": [
+        {
+          "line": 7,
+          "symbol": "def dmpnn(encoder_size, depth, dropout_rate, add_sys_features=False,"
+        }
+      ]
+    },
+    {
+      "path": "dmpnn_graph.py",
+      "sha256": "8e8c3e860485797656fe3e6fcf2b2993b76a3a73834c9af9d2893ce69980eaff",
+      "lines": 20,
+      "symbols": [
+        {
+          "line": 3,
+          "symbol": "def dmpnn_graph(smiles, atom_features_extra=None, bond_features_extra=None):"
+        },
+        {
+          "line": 7,
+          "symbol": "def dmpnn_batch(graphs):"
+        }
+      ]
+    },
+    {
+      "path": "mpnranker2.py",
+      "sha256": "c294b7cf93dc31757949ba714f7d6a046ea195dde9824018cf1a3b0add0fc71e",
+      "lines": 369,
+      "symbols": [
+        {
+          "line": 25,
+          "symbol": "class MPNranker(nn.Module):"
+        },
+        {
+          "line": 26,
+          "symbol": "def __init__(self, encoder='dmpnn', extra_features_dim=0, sys_features_dim=0,"
+        },
+        {
+          "line": 77,
+          "symbol": "def forward(self, batch):"
+        },
+        {
+          "line": 117,
+          "symbol": "def predict(self, graphs, extra, sysf, batch_size=8192,"
+        },
+        {
+          "line": 151,
+          "symbol": "def loss_step(self, x, y, weights, loss_fun):"
+        },
+        {
+          "line": 160,
+          "symbol": "def train(ranker: MPNranker, bg: DataLoader, epochs=2,"
+        },
+        {
+          "line": 349,
+          "symbol": "def custom_collate(batch):"
+        },
+        {
+          "line": 363,
+          "symbol": "def custom_collate_single(batch):"
+        }
+      ]
+    },
+    {
+      "path": "predict.py",
+      "sha256": "517a830cb878167976a454b9b3cb7fa47b0061a750d578b24e7120b54e64afe3",
+      "lines": 161,
+      "symbols": [
+        {
+          "line": 19,
+          "symbol": "class DataUnpickler(pickle.Unpickler):"
+        },
+        {
+          "line": 20,
+          "symbol": "def find_class(self, module, name):"
+        },
+        {
+          "line": 27,
+          "symbol": "def load_model(path: str, all_in_one:bool=False):"
+        },
+        {
+          "line": 47,
+          "symbol": "class PredictArgs(Tap):"
+        }
+      ]
+    },
+    {
+      "path": "mapping.py",
+      "sha256": "663d0125cdfcbc2ae8971a8dc87e6b24ed6c2ef8e95eee83d4a580566023e9e4",
+      "lines": 128,
+      "symbols": [
+        {
+          "line": 28,
+          "symbol": "class LADModel:"
+        },
+        {
+          "line": 29,
+          "symbol": "def __init__(self, data, void=0, ols_after=False, ols_discard_if_negative=False,"
+        },
+        {
+          "line": 42,
+          "symbol": "def _compute(self):"
+        },
+        {
+          "line": 81,
+          "symbol": "def _compute_lad_coefficients(self, data, enforce_positive=True):"
+        },
+        {
+          "line": 100,
+          "symbol": "def _get_ols_refined_coefficients(self, data):"
+        },
+        {
+          "line": 111,
+          "symbol": "def apply_basis_fun(self, x, basis):"
+        },
+        {
+          "line": 124,
+          "symbol": "def get_mapping(self, x):"
+        }
+      ]
+    },
+    {
+      "path": ".github/workflows/test_container.yaml",
+      "sha256": "897abfce1168ff26746edc90fae19765cafe9c2900abb6ea9646f2a34b620294",
+      "lines": 27,
+      "symbols": []
+    }
+  ],
+  "josiehong__TIMPANI": [
+    {
+      "path": "timp/trainer/timp_trainer.py",
+      "sha256": "6f06f61801946f577c9207c5ffc584a30ae5124a0591dc5374af3e6ca2c9348e",
+      "lines": 376,
+      "symbols": [
+        {
+          "line": 41,
+          "symbol": "class TimpTrainer:"
+        },
+        {
+          "line": 42,
+          "symbol": "def __init__(self, model, device, config: Optional[dict] = None):"
+        },
+        {
+          "line": 86,
+          "symbol": "def _clip_grads(grads, max_norm):"
+        },
+        {
+          "line": 95,
+          "symbol": "def _adapt("
+        },
+        {
+          "line": 137,
+          "symbol": "def _meta_backward(self, support_graphs, support_labels, query_graphs, query_labels,"
+        },
+        {
+          "line": 178,
+          "symbol": "def update_target_ref(self, support_graphs, support_labels, query_graphs, query_labels,"
+        },
+        {
+          "line": 201,
+          "symbol": "def _group_cos(grads, ref, names):"
+        },
+        {
+          "line": 213,
+          "symbol": "def _combine(self, a_mol, a_cond):"
+        },
+        {
+          "line": 217,
+          "symbol": "def soft(a):"
+        },
+        {
+          "line": 231,
+          "symbol": "def meta_step(self, support_graphs, support_labels, query_graphs, query_labels,"
+        },
+        {
+          "line": 260,
+          "symbol": "def _ema_ref_from_grad(self):"
+        },
+        {
+          "line": 276,
+          "symbol": "def _alignments(self):"
+        },
+        {
+          "line": 288,
+          "symbol": "def meta_batch_step(self, target_ep, source_eps):"
+        },
+        {
+          "line": 332,
+          "symbol": "def meta_step_pool_support(self, source_supports, target_query):"
+        },
+        {
+          "line": 358,
+          "symbol": "def meta_train(self, episodes: Sequence[dict], max_steps: int, verbose: bool = False) -> List[float]:"
+        },
+        {
+          "line": 375,
+          "symbol": "def save(self, path: str):"
+        }
+      ]
+    },
+    {
+      "path": "timp/models/chrom_encoder.py",
+      "sha256": "5405e2b7bde0da0e0ea6f931934e9cf93d114ba071f2ffe302bd67f90228cf1a",
+      "lines": 367,
+      "symbols": [
+        {
+          "line": 82,
+          "symbol": "def _safe_float(val, default: float = 0.0) -> float:"
+        },
+        {
+          "line": 99,
+          "symbol": "def _channel_additive_multihot(row: pd.Series, channel: str) -> np.ndarray:"
+        },
+        {
+          "line": 114,
+          "symbol": "def _manufacturer_onehot(col_name: Optional[str]) -> np.ndarray:"
+        },
+        {
+          "line": 128,
+          "symbol": "def _usp_onehot(usp_code: Optional[str]) -> np.ndarray:"
+        },
+        {
+          "line": 141,
+          "symbol": "def _gradient_points(gradient: Optional[np.ndarray], row: pd.Series) -> List[float]:"
+        },
+        {
+          "line": 163,
+          "symbol": "def _parse_gradient(row: pd.Series, gradient: Optional[np.ndarray] = None) -> Tuple[np.ndarray, np.ndarray]:"
+        },
+        {
+          "line": 182,
+          "symbol": "def _parse_column(row: pd.Series) -> Tuple[np.ndarray, np.ndarray]:"
+        },
+        {
+          "line": 219,
+          "symbol": "def extract_chrom_features(row: pd.Series, gradient: Optional[np.ndarray] = None) -> Tuple[np.ndarray, np.ndarray]:"
+        },
+        {
+          "line": 237,
+          "symbol": "class ChromIntEncoder(nn.Module):"
+        },
+        {
+          "line": 240,
+          "symbol": "def __init__(self, input_dim: int = TOTAL_INT_DIM, hidden: int = 256, out_dim: int = 512):"
+        },
+        {
+          "line": 251,
+          "symbol": "def forward(self, x: torch.Tensor) -> torch.Tensor:"
+        },
+        {
+          "line": 255,
+          "symbol": "class ChromFloatEncoder(nn.Module):"
+        },
+        {
+          "line": 258,
+          "symbol": "def __init__(self, input_dim: int = TOTAL_FLOAT_DIM, hidden: int = 256, out_dim: int = 512):"
+        },
+        {
+          "line": 269,
+          "symbol": "def forward(self, x: torch.Tensor) -> torch.Tensor:"
+        },
+        {
+          "line": 273,
+          "symbol": "class ChromEncoder(nn.Module):"
+        },
+        {
+          "line": 279,
+          "symbol": "def __init__(self, out_dim: int = 512):"
+        },
+        {
+          "line": 284,
+          "symbol": "def forward("
+        },
+        {
+          "line": 296,
+          "symbol": "def load_dataset_metadata(dataset_id: str, repo_rt_root: str) -> Optional[pd.Series]:"
+        },
+        {
+          "line": 326,
+          "symbol": "def load_gradient_profile(dataset_id: str, repo_rt_root: str) -> Optional[np.ndarray]:"
+        },
+        {
+          "line": 349,
+          "symbol": "def get_chrom_features(dataset_id: str, repo_rt_root: str) -> Tuple[np.ndarray, np.ndarray]:"
+        },
+        {
+          "line": 359,
+          "symbol": "def build_chrom_feature_map("
+        }
+      ]
+    },
+    {
+      "path": "timp/models/graphormer_rt.py",
+      "sha256": "cf400fec67f637e55b4b246909cf2b4aa83b42104ade887558ad9b992076f31a",
+      "lines": 278,
+      "symbols": [
+        {
+          "line": 29,
+          "symbol": "class GraphormerMultiHeadAttention(nn.Module):"
+        },
+        {
+          "line": 37,
+          "symbol": "def __init__(self, emb_dim: int, n_heads: int, attn_dropout: float = 0.15):"
+        },
+        {
+          "line": 48,
+          "symbol": "def forward("
+        },
+        {
+          "line": 78,
+          "symbol": "class GraphormerLayer(nn.Module):"
+        },
+        {
+          "line": 79,
+          "symbol": "def __init__(self, emb_dim: int, n_heads: int, attn_dropout: float = 0.15, dropout: float = 0.05):"
+        },
+        {
+          "line": 93,
+          "symbol": "def forward(self, x, spatial_bias, mask=None):"
+        },
+        {
+          "line": 103,
+          "symbol": "class GraphormerRT(nn.Module):"
+        },
+        {
+          "line": 129,
+          "symbol": "def __init__("
+        },
+        {
+          "line": 178,
+          "symbol": "def _init_weights(self):"
+        },
+        {
+          "line": 190,
+          "symbol": "def forward("
+        },
+        {
+          "line": 250,
+          "symbol": "def forward_batch("
+        }
+      ]
+    },
+    {
+      "path": "timp/models/gnn.py",
+      "sha256": "ac41085f74c93ca9c6dc8646a1fb2545f788e7f3c6812de9892a6eb0c8429b13",
+      "lines": 280,
+      "symbols": [
+        {
+          "line": 25,
+          "symbol": "class GINLayer(nn.Module):"
+        },
+        {
+          "line": 30,
+          "symbol": "def __init__(self, dim: int, dropout: float = 0.1):"
+        },
+        {
+          "line": 38,
+          "symbol": "def forward(self, h: torch.Tensor, edge_index: torch.Tensor) -> torch.Tensor:"
+        },
+        {
+          "line": 48,
+          "symbol": "class GINEncoder(nn.Module):"
+        },
+        {
+          "line": 49,
+          "symbol": "def __init__(self, node_in_feats: int, emb_dim: int, num_layers: int, dropout: float):"
+        },
+        {
+          "line": 54,
+          "symbol": "def forward(self, x, edge_index, edge_attr=None):"
+        },
+        {
+          "line": 61,
+          "symbol": "class MPNNLayer(nn.Module):"
+        },
+        {
+          "line": 65,
+          "symbol": "def __init__(self, dim: int, edge_in: int, dropout: float = 0.1):"
+        },
+        {
+          "line": 72,
+          "symbol": "def forward(self, h, edge_index, edge_attr):"
+        },
+        {
+          "line": 82,
+          "symbol": "class MPNNEncoder(nn.Module):"
+        },
+        {
+          "line": 83,
+          "symbol": "def __init__(self, node_in_feats, edge_in_feats, emb_dim, num_layers, dropout):"
+        },
+        {
+          "line": 88,
+          "symbol": "def forward(self, x, edge_index, edge_attr=None):"
+        },
+        {
+          "line": 95,
+          "symbol": "class GATLayer(nn.Module):"
+        },
+        {
+          "line": 98,
+          "symbol": "def __init__(self, dim: int, heads: int = 4, dropout: float = 0.1):"
+        },
+        {
+          "line": 110,
+          "symbol": "def forward(self, h, edge_index, edge_attr=None):"
+        },
+        {
+          "line": 129,
+          "symbol": "class GATEncoder(nn.Module):"
+        },
+        {
+          "line": 130,
+          "symbol": "def __init__(self, node_in_feats, emb_dim, num_layers, heads, dropout):"
+        },
+        {
+          "line": 136,
+          "symbol": "def forward(self, x, edge_index, edge_attr=None):"
+        },
+        {
+          "line": 143,
+          "symbol": "class GNN(nn.Module):"
+        },
+        {
+          "line": 148,
+          "symbol": "def __init__("
+        },
+        {
+          "line": 180,
+          "symbol": "def task_context(self, chrom_int_row, chrom_float_row):"
+        },
+        {
+          "line": 183,
+          "symbol": "def _readout(self, h: torch.Tensor, batch: torch.Tensor, n_graphs: int) -> torch.Tensor:"
+        },
+        {
+          "line": 188,
+          "symbol": "def predict(self, graphs: List[Optional[dict]], z=None, device=None) -> torch.Tensor:"
+        },
+        {
+          "line": 215,
+          "symbol": "def forward(self, graphs, z=None, device=None):"
+        },
+        {
+          "line": 218,
+          "symbol": "def head_param_names(self) -> List[str]:"
+        },
+        {
+          "line": 221,
+          "symbol": "def encoder_param_names(self) -> List[str]:"
+        },
+        {
+          "line": 224,
+          "symbol": "def condition_param_names(self) -> List[str]:"
+        },
+        {
+          "line": 229,
+          "symbol": "def gnn_finetune(model, train, val, test, device, lr, epochs, patience,"
+        },
+        {
+          "line": 245,
+          "symbol": "def run(data):"
+        }
+      ]
+    },
+    {
+      "path": "tests/test_chrom_encoder.py",
+      "sha256": "197cc85d5d12fa39f96f3b7ef8ae8204b58023e6a826b80d78596712f54bc1e1",
+      "lines": 76,
+      "symbols": [
+        {
+          "line": 24,
+          "symbol": "def _row(**over):"
+        },
+        {
+          "line": 38,
+          "symbol": "def test_column_fields_propagate_not_defaults():"
+        },
+        {
+          "line": 49,
+          "symbol": "def test_different_conditions_give_different_vectors():"
+        },
+        {
+          "line": 58,
+          "symbol": "def test_eluent_additive_multihot_reads_composition():"
+        },
+        {
+          "line": 69,
+          "symbol": "def test_gradient_profile_interpolation():"
+        }
+      ]
+    },
+    {
+      "path": "tests/test_base_trainer.py",
+      "sha256": "91097be29f164f55b82a1326d8e39ed5123823d9b288ffbec738f7470659880a",
+      "lines": 38,
+      "symbols": [
+        {
+          "line": 7,
+          "symbol": "def _make_loader(n=10, in_feats=4):"
+        },
+        {
+          "line": 14,
+          "symbol": "def test_inference_shape(mock_model, device):"
+        },
+        {
+          "line": 22,
+          "symbol": "def test_inference_denormalized(mock_model, device):"
+        }
+      ]
+    },
+    {
+      "path": "doc/RESULTS.md",
+      "sha256": "cdb7dc770d697ac6040178fb569fbe3a20452620c691ab0a014f57685013c2e8",
+      "lines": 18,
+      "symbols": []
+    }
+  ],
+  "DLUT-datas__MDL-TL": [
+    {
+      "path": "CPEncoder/Column Type Encoder/ColumnTypeEncoder.py",
+      "sha256": "18cb7799aed21ac28d2bced15e7b8125723d526ce974f89c1a380d692f8c2281",
+      "lines": 103,
+      "symbols": [
+        {
+          "line": 8,
+          "symbol": "def getColumns(column_database_path):"
+        },
+        {
+          "line": 24,
+          "symbol": "def train_model(document, model_path, model_file):"
+        },
+        {
+          "line": 46,
+          "symbol": "def getColumnVec(model_path, model_file, columns_path, vec_save_path):"
+        },
+        {
+          "line": 77,
+          "symbol": "def main():"
+        }
+      ]
+    },
+    {
+      "path": "CPEncoder/Gradient Program Encoder/AutoEncoder.py",
+      "sha256": "c7e704ec79ae1e478ddac3566e186c589399bcf6aa5e8dcbbf514907e00b37dd",
+      "lines": 54,
+      "symbols": [
+        {
+          "line": 4,
+          "symbol": "class AE(nn.Module):"
+        },
+        {
+          "line": 6,
+          "symbol": "def __init__(self, device, *args, **kwargs) -> None:"
+        },
+        {
+          "line": 39,
+          "symbol": "def forward(self, x, device):"
+        }
+      ]
+    },
+    {
+      "path": "train_base_model/build.py",
+      "sha256": "0c591e4e50ba2f9197b168d4f99efa06422211fef7a327190374a9166855c8ea",
+      "lines": 35,
+      "symbols": [
+        {
+          "line": 10,
+          "symbol": "def build_DNN(input_shape, num_lr, init_val):"
+        }
+      ]
+    },
+    {
+      "path": "train_small_data/build.py",
+      "sha256": "dbdce8799edf05a5e09a5e69d8a852b444f17caa67ae81b5fbcf3a36dfaaba0f",
+      "lines": 16,
+      "symbols": [
+        {
+          "line": 8,
+          "symbol": "def build_DNN(num_lr, model_path):"
+        }
+      ]
+    },
+    {
+      "path": "data_process/preprocess.py",
+      "sha256": "174383d80ff706438edbc92549eccf08e464167fddb84aaf4a7177abe8cbbac2",
+      "lines": 113,
+      "symbols": [
+        {
+          "line": 14,
+          "symbol": "def dump_dictionary(dictionary, filename):"
+        },
+        {
+          "line": 27,
+          "symbol": "def create_atoms(mol, atom_dict):"
+        },
+        {
+          "line": 40,
+          "symbol": "def create_ijbonddict(mol, bond_dict):"
+        },
+        {
+          "line": 54,
+          "symbol": "def extract_fingerprints(radius, atoms, i_jbond_dict,"
+        },
+        {
+          "line": 94,
+          "symbol": "def create_dataset(new_smiles):"
+        }
+      ]
+    }
+  ],
+  "statisticalbiotechnology__NonlinearGradientsUI": [
+    {
+      "path": "src/nonlineargradientsui/GradientCalculator.java",
+      "sha256": "2ff18c2e1ad140897158a48619b875ea868ad7d921347c87d00f655c262c0e30",
+      "lines": 236,
+      "symbols": [
+        {
+          "line": 15,
+          "symbol": "public GradientCalculator() {"
+        },
+        {
+          "line": 30,
+          "symbol": "public void setVariables(GradientFunction gradientFunction, float lagTime,"
+        },
+        {
+          "line": 39,
+          "symbol": "public String toString() {"
+        },
+        {
+          "line": 62,
+          "symbol": "public float getPercentageB(float rawTime, float rawStartGradTime,"
+        },
+        {
+          "line": 76,
+          "symbol": "public GradientFunction computeOptimizedGradient(){"
+        },
+        {
+          "line": 170,
+          "symbol": "public void loadRTDistribution(String infile) throws IOException{"
+        },
+        {
+          "line": 183,
+          "symbol": "public static void main(String[] args) throws Exception {"
+        }
+      ]
+    },
+    {
+      "path": "src/nonlineargradientsui/EludeWorker.java",
+      "sha256": "2336efe2026e6ceb92886003aed017ee89ad264110e89206100b8fe18af4980f",
+      "lines": 74,
+      "symbols": [
+        {
+          "line": 22,
+          "symbol": "public EludeWorker(String[] commands, String tmpDir, String errFile,"
+        }
+      ]
+    },
+    {
+      "path": "src/nonlineargradientsui/MzOptimizer.java",
+      "sha256": "a69bc2b2f696213cdd780cc276544c11d0586bde2ee6533505f6ba37ba2dce2a",
+      "lines": 373,
+      "symbols": [
+        {
+          "line": 29,
+          "symbol": "public MzOptimizer(float lagTime, GradientFunction linGradient,"
+        },
+        {
+          "line": 46,
+          "symbol": "public void fillOptimizedRTs() {"
+        },
+        {
+          "line": 70,
+          "symbol": "public List<RtMzWindows> getScheduledMzWindows(float timeStep) {"
+        },
+        {
+          "line": 88,
+          "symbol": "public int compare(NFeaturesRT f1, NFeaturesRT f2) {"
+        },
+        {
+          "line": 182,
+          "symbol": "public List<RtMzWindows> getScheduledMzWindows() {"
+        },
+        {
+          "line": 199,
+          "symbol": "public int compare(NFeaturesRT f1, NFeaturesRT f2) {"
+        },
+        {
+          "line": 276,
+          "symbol": "public static List<Double> getList(double[] x) {"
+        },
+        {
+          "line": 284,
+          "symbol": "public static List<Float> getList(float[] x) {"
+        },
+        {
+          "line": 293,
+          "symbol": "public static List<NFeaturesRT> genData() {"
+        },
+        {
+          "line": 336,
+          "symbol": "public static void main(String [] args) {"
+        }
+      ]
+    }
+  ],
+  "cadet__CADET-Core": [
+    {
+      "path": "LICENSE.txt",
+      "sha256": "0d96a4ff68ad6d4b6f1f30f713b18d5184912ba8dd389f86aa7710db079abcb0",
+      "lines": 661,
+      "symbols": []
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "4063d3b48a4cb175de682f6f8c4a3603f9655339c73604e891dc29e75398225b",
+      "lines": 40,
+      "symbols": []
+    },
+    {
+      "path": "src/libcadet/model/binding/StericMassActionBinding.cpp",
+      "sha256": "5dd38820cbd7009255613e0726a265a88927a02b435d32a6634c96d9d1cda815",
+      "lines": 363,
+      "symbols": [
+        {
+          "line": 105,
+          "symbol": "class StericMassActionBindingBase : public ParamHandlerBindingModelBase<ParamHandler_t>"
+        },
+        {
+          "line": 333,
+          "symbol": "class NoJacobianStericMassActionBinding : public model::StericMassActionBinding {"
+        }
+      ]
+    },
+    {
+      "path": "src/libcadet/model/GeneralRateModel.cpp",
+      "sha256": "8f7bb9ec366b22f49746ae2cfac4f9d5149106fbc77a9dca540c2f5fde05ec6f",
+      "lines": 3416,
+      "symbols": []
+    },
+    {
+      "path": "test/GeneralRateModel.cpp",
+      "sha256": "ad6a2ce44eb0e1ab1670929c68078fe4245236108da17cd41748aa2d78e2e556",
+      "lines": 389,
+      "symbols": []
+    },
+    {
+      "path": "test/BindingModels.cpp",
+      "sha256": "a3df46f528c450ffff1caef0c281574d67b69ec5e8b8c3ea4e9b76239c5aa2aa",
+      "lines": 639,
+      "symbols": []
+    }
+  ],
+  "fau-advanced-separations__CADET-Process": [
+    {
+      "path": "CADETProcess/processModel/binding.py",
+      "sha256": "46d7a89718e4954c08907cb60ff1e32b743573727213049452fc5e49035837d6",
+      "lines": 1447,
+      "symbols": [
+        {
+          "line": 53,
+          "symbol": "class BindingBaseClass(Structure):"
+        },
+        {
+          "line": 98,
+          "symbol": "def __init__("
+        },
+        {
+          "line": 122,
+          "symbol": "def model(self) -> str:"
+        },
+        {
+          "line": 127,
+          "symbol": "def component_system(self) -> ComponentSystem:"
+        },
+        {
+          "line": 132,
+          "symbol": "def component_system(self, component_system: ComponentSystem) -> None:"
+        },
+        {
+          "line": 138,
+          "symbol": "def n_comp(self) -> int:"
+        },
+        {
+          "line": 143,
+          "symbol": "def bound_states(self) -> list[int]:"
+        },
+        {
+          "line": 151,
+          "symbol": "def bound_states(self, bound_states: np.ndarray) -> None:"
+        },
+        {
+          "line": 159,
+          "symbol": "def n_bound_states(self) -> int:"
+        },
+        {
+          "line": 163,
+          "symbol": "def __repr__(self) -> str:"
+        },
+        {
+          "line": 168,
+          "symbol": "def __str__(self) -> str:"
+        },
+        {
+          "line": 175,
+          "symbol": "class NoBinding(BindingBaseClass):"
+        },
+        {
+          "line": 182,
+          "symbol": "def __init__(self, *args: Any, **kwargs: Any) -> None:"
+        },
+        {
+          "line": 187,
+          "symbol": "class Linear(BindingBaseClass):"
+        },
+        {
+          "line": 216,
+          "symbol": "def k_eq(self) -> list[float]:"
+        },
+        {
+          "line": 221,
+          "symbol": "def henry_coefficient(self) -> list[float]:"
+        },
+        {
+          "line": 226,
+          "symbol": "class Langmuir(BindingBaseClass):"
+        },
+        {
+          "line": 265,
+          "symbol": "def k_eq(self) -> list[float]:"
+        },
+        {
+          "line": 270,
+          "symbol": "def henry_coefficient(self) -> list[float]:"
+        },
+        {
+          "line": 275,
+          "symbol": "class LangmuirLDF(BindingBaseClass):"
+        },
+        {
+          "line": 302,
+          "symbol": "class LangmuirLDFLiquidPhase(BindingBaseClass):"
+        },
+        {
+          "line": 329,
+          "symbol": "class BiLangmuir(BindingBaseClass):"
+        },
+        {
+          "line": 358,
+          "symbol": "def __init__(self, *args: Any, n_binding_sites: int = 2, **kwargs: Any) -> None:"
+        },
+        {
+          "line": 365,
+          "symbol": "class BiLangmuirLDF(BindingBaseClass):"
+        },
+        {
+          "line": 394,
+          "symbol": "def __init__(self, *args: Any, n_binding_sites: int = 2, **kwargs: Any) -> None:"
+        },
+        {
+          "line": 401,
+          "symbol": "class FreundlichLDF(BindingBaseClass):"
+        },
+        {
+          "line": 426,
+          "symbol": "class StericMassAction(BindingBaseClass):"
+        },
+        {
+          "line": 520,
+          "symbol": "def adsorption_rate_untransformed(self) -> list[UnsignedFloat]:"
+        },
+        {
+          "line": 529,
+          "symbol": "def adsorption_rate_untransformed("
+        },
+        {
+          "line": 544,
+          "symbol": "def desorption_rate_untransformed(self) -> list[UnsignedFloat]:"
+        },
+        {
+          "line": 553,
+          "symbol": "def desorption_rate_untransformed("
+        },
+        {
+          "line": 568,
+          "symbol": "class AntiLangmuir(BindingBaseClass):"
+        },
+        {
+          "line": 592,
+          "symbol": "class Spreading(BindingBaseClass):"
+        },
+        {
+          "line": 632,
+          "symbol": "class MobilePhaseModulator(BindingBaseClass):"
+        },
+        {
+          "line": 673,
+          "symbol": "class ExtendedMobilePhaseModulator(BindingBaseClass):"
+        },
+        {
+          "line": 718,
+          "symbol": "class SelfAssociation(BindingBaseClass):"
+        },
+        {
+          "line": 766,
+          "symbol": "class BiStericMassAction(BindingBaseClass):"
+        },
+        {
+          "line": 821,
+          "symbol": "def __init__(self, *args: Any, n_states: int = 2, **kwargs: Any) -> None:"
+        },
+        {
+          "line": 827,
+          "symbol": "class MultistateStericMassAction(BindingBaseClass):"
+        },
+        {
+          "line": 889,
+          "symbol": "def _conversion_entries(self) -> int:"
+        },
+        {
+          "line": 897,
+          "symbol": "class SimplifiedMultistateStericMassAction(BindingBaseClass):"
+        },
+        {
+          "line": 1005,
+          "symbol": "class Saska(BindingBaseClass):"
+        },
+        {
+          "line": 1026,
+          "symbol": "class GeneralizedIonExchange(BindingBaseClass):"
+        },
+        {
+          "line": 1158,
+          "symbol": "def n_pieces(self) -> int:"
+        },
+        {
+          "line": 1169,
+          "symbol": "class HICConstantWaterActivity(BindingBaseClass):"
+        },
+        {
+          "line": 1210,
+          "symbol": "class HICUnified(BindingBaseClass):"
+        },
+        {
+          "line": 1271,
+          "symbol": "class HICWaterOnHydrophobicSurfaces(BindingBaseClass):"
+        },
+        {
+          "line": 1312,
+          "symbol": "class MultiComponentColloidal(BindingBaseClass):"
+        },
+        {
+          "line": 1405,
+          "symbol": "class AffinityComplexTitration(BindingBaseClass):"
+        }
+      ]
+    },
+    {
+      "path": "CADETProcess/processModel/unitOperation.py",
+      "sha256": "b01ac8eabd5118785267c295f8b2107535302c0b4433f9918ac5b5f3106ce31f",
+      "lines": 1705,
+      "symbols": [
+        {
+          "line": 65,
+          "symbol": "class UnitBaseClass(Structure):"
+        },
+        {
+          "line": 108,
+          "symbol": "def __init__("
+        },
+        {
+          "line": 173,
+          "symbol": "def model(self) -> str:"
+        },
+        {
+          "line": 178,
+          "symbol": "def component_system(self) -> ComponentSystem:"
+        },
+        {
+          "line": 183,
+          "symbol": "def component_system(self, component_system: ComponentSystem) -> None:"
+        },
+        {
+          "line": 189,
+          "symbol": "def discretization(self) -> DiscretizationParametersBase:"
+        },
+        {
+          "line": 194,
+          "symbol": "def discretization(self, discretization: DiscretizationParametersBase) -> None:"
+        },
+        {
+          "line": 207,
+          "symbol": "def n_comp(self) -> int:"
+        },
+        {
+          "line": 212,
+          "symbol": "def ports(self) -> list:"
+        },
+        {
+          "line": 217,
+          "symbol": "def n_ports(self) -> int:"
+        },
+        {
+          "line": 222,
+          "symbol": "def parameters(self) -> dict:"
+        },
+        {
+          "line": 239,
+          "symbol": "def parameters(self, parameters: dict) -> None:"
+        },
+        {
+          "line": 262,
+          "symbol": "def section_dependent_parameters(self) -> dict:"
+        },
+        {
+          "line": 272,
+          "symbol": "def initial_state(self) -> dict:"
+        },
+        {
+          "line": 279,
+          "symbol": "def initial_state(self, initial_state: dict) -> None:"
+        },
+        {
+          "line": 287,
+          "symbol": "def missing_parameters(self) -> list:"
+        },
+        {
+          "line": 297,
+          "symbol": "def check_required_parameters(self) -> bool:"
+        },
+        {
+          "line": 307,
+          "symbol": "def binding_model(self) -> BindingBaseClass:"
+        },
+        {
+          "line": 322,
+          "symbol": "def binding_model(self, binding_model: BindingBaseClass) -> None:"
+        },
+        {
+          "line": 339,
+          "symbol": "def n_bound_states(self) -> int:"
+        },
+        {
+          "line": 346,
+          "symbol": "def bulk_reaction_model(self) -> BulkReactionBase:"
+        },
+        {
+          "line": 362,
+          "symbol": "def bulk_reaction_model(self, bulk_reaction_model: BulkReactionBase) -> None:"
+        },
+        {
+          "line": 375,
+          "symbol": "def particle_reaction_model(self) -> ParticleReactionBase:"
+        },
+        {
+          "line": 391,
+          "symbol": "def particle_reaction_model("
+        },
+        {
+          "line": 415,
+          "symbol": "def check_sensitivity_indices("
+        },
+        {
+          "line": 443,
+          "symbol": "def __repr__(self) -> str:"
+        },
+        {
+          "line": 447,
+          "symbol": "def __str__(self) -> str:"
+        },
+        {
+          "line": 452,
+          "symbol": "class SourceMixin(Structure):"
+        },
+        {
+          "line": 469,
+          "symbol": "class SinkMixin:"
+        },
+        {
+          "line": 482,
+          "symbol": "class Inlet(UnitBaseClass, SourceMixin):"
+        },
+        {
+          "line": 507,
+          "symbol": "class Outlet(UnitBaseClass, SinkMixin):"
+        },
+        {
+          "line": 520,
+          "symbol": "class MixerSplitter(UnitBaseClass):"
+        },
+        {
+          "line": 526,
+          "symbol": "class TubularReactorBase(UnitBaseClass):"
+        },
+        {
+          "line": 593,
+          "symbol": "def total_porosity(self) -> None:"
+        },
+        {
+          "line": 598,
+          "symbol": "def cross_section_area(self) -> float:"
+        },
+        {
+          "line": 611,
+          "symbol": "def cross_section_area(self, cross_section_area: float) -> None:"
+        },
+        {
+          "line": 614,
+          "symbol": "def set_diameter_from_interstitial_velocity(self, Q: float, u0: float) -> None:"
+        },
+        {
+          "line": 636,
+          "symbol": "def cross_section_area_interstitial(self) -> float:"
+        },
+        {
+          "line": 650,
+          "symbol": "def volume(self) -> float:"
+        },
+        {
+          "line": 662,
+          "symbol": "def volume_interstitial(self) -> float:"
+        },
+        {
+          "line": 674,
+          "symbol": "def volume_liquid(self) -> float:"
+        },
+        {
+          "line": 679,
+          "symbol": "def volume_solid(self) -> float:"
+        },
+        {
+          "line": 683,
+          "symbol": "def calculate_interstitial_rt(self, flow_rate: float) -> float:"
+        },
+        {
+          "line": 704,
+          "symbol": "def calculate_superficial_rt(self, flow_rate: float) -> float:"
+        },
+        {
+          "line": 725,
+          "symbol": "def calculate_interstitial_velocity(self, flow_rate: float) -> float:"
+        },
+        {
+          "line": 746,
+          "symbol": "def calculate_superficial_velocity(self, flow_rate: float) -> float:"
+        },
+        {
+          "line": 768,
+          "symbol": "def calculate_flow_rate_from_velocity(self, u0: float) -> float:"
+        },
+        {
+          "line": 789,
+          "symbol": "def NTP(self, flow_rate: float) -> float:"
+        },
+        {
+          "line": 811,
+          "symbol": "def set_axial_dispersion_from_NTP(self, NTP: float, flow_rate: float) -> float:"
+        },
+        {
+          "line": 840,
+          "symbol": "def calculate_bodenstein_number(self, flow_rate: float) -> float:"
+        },
+        {
+          "line": 871,
+          "symbol": "class TubularReactor(TubularReactorBase):"
+        },
+        {
+          "line": 890,
+          "symbol": "def __init__("
+        },
+        {
+          "line": 906,
+          "symbol": "class ChromatographicColumnBase(TubularReactorBase):"
+        },
+        {
+          "line": 912,
+          "symbol": "class LumpedRateModelWithoutPores(ChromatographicColumnBase):"
+        },
+        {
+          "line": 959,
+          "symbol": "def __init__("
+        },
+        {
+          "line": 972,
+          "symbol": "def q(self) -> list:"
+        },
+        {
+          "line": 977,
+          "symbol": "def q(self, q: list) -> None:"
+        },
+        {
+          "line": 985,
+          "symbol": "class LumpedRateModelWithPores(ChromatographicColumnBase):"
+        },
+        {
+          "line": 1075,
+          "symbol": "def __init__("
+        },
+        {
+          "line": 1088,
+          "symbol": "def total_porosity(self) -> float:"
+        },
+        {
+          "line": 1093,
+          "symbol": "def cross_section_area_interstitial(self) -> float:"
+        },
+        {
+          "line": 1102,
+          "symbol": "def set_diameter_from_interstitial_velocity(self, Q: float, u0: float) -> None:"
+        },
+        {
+          "line": 1125,
+          "symbol": "def cp(self) -> list[float]:"
+        },
+        {
+          "line": 1133,
+          "symbol": "def cp(self, cp: list[float]) -> None:"
+        },
+        {
+          "line": 1139,
+          "symbol": "def q(self) -> list[float]:"
+        },
+        {
+          "line": 1144,
+          "symbol": "def q(self, q: list) -> None:"
+        },
+        {
+          "line": 1152,
+          "symbol": "class GeneralRateModel(ChromatographicColumnBase):"
+        },
+        {
+          "line": 1263,
+          "symbol": "def __init__("
+        },
+        {
+          "line": 1276,
+          "symbol": "def total_porosity(self) -> float:"
+        },
+        {
+          "line": 1281,
+          "symbol": "def cross_section_area_interstitial(self) -> float:"
+        },
+        {
+          "line": 1291,
+          "symbol": "def set_diameter_from_interstitial_velocity(self, Q: float, u0: float) -> None:"
+        },
+        {
+          "line": 1314,
+          "symbol": "def cp(self) -> list[float]:"
+        },
+        {
+          "line": 1322,
+          "symbol": "def cp(self, cp: list[float]) -> None:"
+        },
+        {
+          "line": 1328,
+          "symbol": "def q(self) -> list[float]:"
+        },
+        {
+          "line": 1333,
+          "symbol": "def q(self, q: list[float]) -> None:"
+        },
+        {
+          "line": 1341,
+          "symbol": "def surface_diffusion(self) -> list[float]:"
+        },
+        {
+          "line": 1346,
+          "symbol": "def surface_diffusion(self, surface_diffusion: list[float]) -> None:"
+        },
+        {
+          "line": 1356,
+          "symbol": "class Cstr(UnitBaseClass, SourceMixin, SinkMixin):"
+        },
+        {
+          "line": 1429,
+          "symbol": "def __init__(self, *args: Any, **kwargs: Any) -> None:"
+        },
+        {
+          "line": 1434,
+          "symbol": "def required_parameters(self) -> list:"
+        },
+        {
+          "line": 1445,
+          "symbol": "def porosity(self) -> float:"
+        },
+        {
+          "line": 1454,
+          "symbol": "def porosity(self, porosity: float) -> None:"
+        },
+        {
+          "line": 1466,
+          "symbol": "def V(self) -> float:"
+        },
+        {
+          "line": 1471,
+          "symbol": "def V(self, V: float) -> None:"
+        },
+        {
+          "line": 1480,
+          "symbol": "def volume(self) -> float:"
+        },
+        {
+          "line": 1485,
+          "symbol": "def volume_liquid(self) -> float:"
+        },
+        {
+          "line": 1490,
+          "symbol": "def volume_solid(self) -> float:"
+        },
+        {
+          "line": 1494,
+          "symbol": "def calculate_interstitial_rt(self, flow_rate: float) -> float:"
+        },
+        {
+          "line": 1515,
+          "symbol": "def q(self) -> list:"
+        },
+        {
+          "line": 1520,
+          "symbol": "def q(self, q: list) -> None:"
+        },
+        {
+          "line": 1528,
+          "symbol": "class MCT(UnitBaseClass):"
+        },
+        {
+          "line": 1592,
+          "symbol": "def __init__(self, *args: Any, nchannel: int, **kwargs: Any) -> None:"
+        },
+        {
+          "line": 1604,
+          "symbol": "def nchannel(self) -> int:"
+        },
+        {
+          "line": 1609,
+          "symbol": "def nchannel(self, nchannel: int) -> None:"
+        },
+        {
+          "line": 1613,
+          "symbol": "def ports(self) -> list:"
+        },
+        {
+          "line": 1618,
+          "symbol": "def n_ports(self) -> int:"
+        },
+        {
+          "line": 1622,
+          "symbol": "def check_sensitivity_indices("
+        },
+        {
+          "line": 1686,
+          "symbol": "def volume(self) -> float:"
+        },
+        {
+          "line": 1698,
+          "symbol": "def volume_liquid(self) -> float:"
+        },
+        {
+          "line": 1703,
+          "symbol": "def volume_solid(self) -> float:"
+        }
+      ]
+    },
+    {
+      "path": "CADETProcess/simulator/cadetAdapter.py",
+      "sha256": "8708af794ac180a299f524024db43141009a169b910be925b0e87cd672a4f041",
+      "lines": 2045,
+      "symbols": [
+        {
+          "line": 65,
+          "symbol": "class Cadet(SimulatorBase):"
+        },
+        {
+          "line": 107,
+          "symbol": "def __init__("
+        },
+        {
+          "line": 134,
+          "symbol": "def temp_dir(self) -> dict:"
+        },
+        {
+          "line": 141,
+          "symbol": "def temp_dir(self, temp_dir: str) -> None:"
+        },
+        {
+          "line": 144,
+          "symbol": "def locks_process(func: Callable) -> Callable:"
+        },
+        {
+          "line": 148,
+          "symbol": "def wrapper(self: Any, process: Process, *args: Any, **kwargs: Any) -> Any:"
+        },
+        {
+          "line": 164,
+          "symbol": "def check_cadet(self) -> bool:"
+        },
+        {
+          "line": 208,
+          "symbol": "def get_tempfile_name(self) -> str:"
+        },
+        {
+          "line": 214,
+          "symbol": "def _run("
+        },
+        {
+          "line": 306,
+          "symbol": "def get_cadet_version(self) -> tuple[str, str]:"
+        },
+        {
+          "line": 351,
+          "symbol": "def version(self) -> str:"
+        },
+        {
+          "line": 363,
+          "symbol": "def get_new_cadet_instance(self) -> CadetAPI:"
+        },
+        {
+          "line": 368,
+          "symbol": "def save_to_h5(self, process: Process, file_path: os.PathLike) -> None:"
+        },
+        {
+          "line": 375,
+          "symbol": "def run_h5(self, file_path: os.PathLike) -> CadetAPI:"
+        },
+        {
+          "line": 394,
+          "symbol": "def load_from_h5(self, file_path: os.PathLike) -> CadetAPI:"
+        },
+        {
+          "line": 403,
+          "symbol": "def create_lwe(self, *args: Any, **kwargs: Any) -> CadetAPI:"
+        },
+        {
+          "line": 408,
+          "symbol": "def get_process_config(self, process: Process) -> Dict:"
+        },
+        {
+          "line": 436,
+          "symbol": "def load_simulation_results("
+        },
+        {
+          "line": 448,
+          "symbol": "def get_simulation_results("
+        },
+        {
+          "line": 546,
+          "symbol": "def _read_unit_outputs("
+        },
+        {
+          "line": 658,
+          "symbol": "def get_input_model(self, process: Process) -> Dict:"
+        },
+        {
+          "line": 687,
+          "symbol": "def get_model_connections(self, process: Process) -> Dict:"
+        },
+        {
+          "line": 716,
+          "symbol": "def cadet_connections(self, flow_rates: dict, flow_sheet: FlowSheet) -> list:"
+        },
+        {
+          "line": 771,
+          "symbol": "def get_unit_index(self, process: Process, unit: UnitBaseClass) -> str:"
+        },
+        {
+          "line": 790,
+          "symbol": "def get_port_index(self, flow_sheet: FlowSheet, unit: UnitBaseClass, port: str) -> int:"
+        },
+        {
+          "line": 808,
+          "symbol": "def get_model_units(self, process: Process) -> Dict:"
+        },
+        {
+          "line": 829,
+          "symbol": "def get_unit_config(self, unit: UnitBaseClass) -> Dict:"
+        },
+        {
+          "line": 902,
+          "symbol": "def set_section_dependent_parameters(self, model_units: Dict, process: Process) -> None:"
+        },
+        {
+          "line": 942,
+          "symbol": "def add_inlet_section("
+        },
+        {
+          "line": 954,
+          "symbol": "def add_parameter_section("
+        },
+        {
+          "line": 971,
+          "symbol": "def get_adsorption_config(self, binding: BindingBaseClass) -> Dict:"
+        },
+        {
+          "line": 990,
+          "symbol": "def get_reaction_config(self, reaction: ReactionBaseClass) -> Dict:"
+        },
+        {
+          "line": 1009,
+          "symbol": "def get_input_solver(self, process: Process) -> Dict:"
+        },
+        {
+          "line": 1027,
+          "symbol": "def get_solver_sections(self, process: Process) -> Dict:"
+        },
+        {
+          "line": 1039,
+          "symbol": "def get_input_return(self, process: Process) -> dict:"
+        },
+        {
+          "line": 1045,
+          "symbol": "def get_unit_return_parameters(self, process: Process) -> Dict:"
+        },
+        {
+          "line": 1054,
+          "symbol": "def get_input_sensitivity(self, process: Process) -> dict:"
+        },
+        {
+          "line": 1060,
+          "symbol": "def get_parameter_sensitivities(self, process: Process) -> Dict:"
+        },
+        {
+          "line": 1071,
+          "symbol": "def get_sensitivity_config(self, process: Process, sens: Dict) -> Dict:"
+        },
+        {
+          "line": 1174,
+          "symbol": "def __str__(self) -> str:"
+        },
+        {
+          "line": 1179,
+          "symbol": "class ModelSolverParameters(Structure):"
+        },
+        {
+          "line": 1238,
+          "symbol": "def _get_sens_partype(unit: UnitBaseClass, is_binding: bool, parameter: str) -> int:"
+        },
+        {
+          "line": 1256,
+          "symbol": "def _set_channel_index("
+        },
+        {
+          "line": 1422,
+          "symbol": "class UnitParameters(ParameterWrapper):"
+        },
+        {
+          "line": 1759,
+          "symbol": "class AdsorptionParameters(ParameterWrapper):"
+        },
+        {
+          "line": 1824,
+          "symbol": "class ReactionParameters(ParameterWrapper):"
+        },
+        {
+          "line": 1843,
+          "symbol": "class SolverParameters(Structure):"
+        },
+        {
+          "line": 1886,
+          "symbol": "class SolverTimeIntegratorParameters(Structure):"
+        },
+        {
+          "line": 2020,
+          "symbol": "class ReturnParameters(Structure):"
+        },
+        {
+          "line": 2040,
+          "symbol": "class SensitivityParameters(Structure):"
+        }
+      ]
+    },
+    {
+      "path": "CADETProcess/comparison/peaks.py",
+      "sha256": "236fc636b6ccaed527cec1aa68a7eca6af9ccbc8bb905928abeccb10f931606c",
+      "lines": 103,
+      "symbols": [
+        {
+          "line": 9,
+          "symbol": "def find_peaks("
+        },
+        {
+          "line": 60,
+          "symbol": "def find_breakthroughs("
+        }
+      ]
+    },
+    {
+      "path": "CADETProcess/optimization/optimizationProblem.py",
+      "error": "not downloaded / path absent"
+    }
+  ],
+  "HopkinsLaboratory__Graphormer-RT": [
+    {
+      "path": "graphormer/models/graphormer.py",
+      "sha256": "66fb18966a30aea0b339a3411e317e73f83bc01c6dd2943b34a06335be0d053e",
+      "lines": 494,
+      "symbols": [
+        {
+          "line": 40,
+          "symbol": "class GraphormerModel(FairseqEncoderModel):"
+        },
+        {
+          "line": 41,
+          "symbol": "def __init__(self, args, encoder):"
+        },
+        {
+          "line": 119,
+          "symbol": "def add_args(parser):"
+        },
+        {
+          "line": 229,
+          "symbol": "def max_nodes(self):"
+        },
+        {
+          "line": 233,
+          "symbol": "def build_model(cls, args, task):"
+        },
+        {
+          "line": 246,
+          "symbol": "def forward(self, batched_data, **kwargs):"
+        },
+        {
+          "line": 250,
+          "symbol": "class GraphormerEncoder(FairseqEncoder):"
+        },
+        {
+          "line": 251,
+          "symbol": "def __init__(self, args):"
+        },
+        {
+          "line": 346,
+          "symbol": "def reset_output_layer_parameters(self):"
+        },
+        {
+          "line": 352,
+          "symbol": "def forward(self, batched_data, perturb=None, masked_tokens=None, **unused):"
+        },
+        {
+          "line": 384,
+          "symbol": "def max_nodes(self):"
+        },
+        {
+          "line": 388,
+          "symbol": "def upgrade_state_dict_named(self, state_dict, name):"
+        },
+        {
+          "line": 396,
+          "symbol": "def base_architecture(args):"
+        },
+        {
+          "line": 420,
+          "symbol": "def graphormer_base_architecture(args):"
+        },
+        {
+          "line": 454,
+          "symbol": "def graphormer_slim_architecture(args):"
+        },
+        {
+          "line": 476,
+          "symbol": "def graphormer_large_architecture(args):"
+        }
+      ]
+    },
+    {
+      "path": "graphormer/models/graphormerHILIC.py",
+      "sha256": "3ff0ae82f10675fd8184eab1e9354667110c006bfe7333f5ac26c76c1dcb2abc",
+      "lines": 380,
+      "symbols": [
+        {
+          "line": 40,
+          "symbol": "class GraphormerModel(FairseqEncoderModel):"
+        },
+        {
+          "line": 41,
+          "symbol": "def __init__(self, args, encoder):"
+        },
+        {
+          "line": 119,
+          "symbol": "def add_args(parser):"
+        },
+        {
+          "line": 228,
+          "symbol": "def max_nodes(self):"
+        },
+        {
+          "line": 232,
+          "symbol": "def build_model(cls, args, task):"
+        },
+        {
+          "line": 245,
+          "symbol": "def forward(self, batched_data, **kwargs):"
+        },
+        {
+          "line": 249,
+          "symbol": "class GraphormerEncoder(FairseqEncoder):"
+        },
+        {
+          "line": 250,
+          "symbol": "def __init__(self, args):"
+        },
+        {
+          "line": 318,
+          "symbol": "def reset_output_layer_parameters(self):"
+        },
+        {
+          "line": 324,
+          "symbol": "def forward(self, batched_data, perturb=None, masked_tokens=None, **unused):"
+        },
+        {
+          "line": 347,
+          "symbol": "def max_nodes(self):"
+        },
+        {
+          "line": 351,
+          "symbol": "def upgrade_state_dict_named(self, state_dict, name):"
+        },
+        {
+          "line": 359,
+          "symbol": "def base_architecture(args):"
+        }
+      ]
+    },
+    {
+      "path": "graphormer/modules/graphormer_layers.py",
+      "sha256": "e02e3543ab273b6e2d1fdc85bd061a933a037dceb8e4a91598df772e11bebfd1",
+      "lines": 313,
+      "symbols": [
+        {
+          "line": 16,
+          "symbol": "def init_params(module, n_layers):"
+        },
+        {
+          "line": 24,
+          "symbol": "def convert_to_single_emb(x, offset: int = 512):"
+        },
+        {
+          "line": 31,
+          "symbol": "class GraphNodeFeature(nn.Module):"
+        },
+        {
+          "line": 36,
+          "symbol": "def __init__("
+        },
+        {
+          "line": 79,
+          "symbol": "def forward(self, batched_data):"
+        },
+        {
+          "line": 218,
+          "symbol": "class GraphAttnBias(nn.Module):"
+        },
+        {
+          "line": 223,
+          "symbol": "def __init__("
+        },
+        {
+          "line": 251,
+          "symbol": "def forward(self, batched_data):"
+        }
+      ]
+    }
+  ],
+  "CompOmics__DeepLC": [
+    {
+      "path": "deeplc/core.py",
+      "sha256": "fb5b5ab458fc109fe0c917cb04ccd03a757717315f794c2b7f7a3285cdecfae7",
+      "lines": 867,
+      "symbols": [
+        {
+          "line": 64,
+          "symbol": "def predict("
+        },
+        {
+          "line": 155,
+          "symbol": "def _default_task_idx(model: torch.nn.Module) -> int:"
+        },
+        {
+          "line": 169,
+          "symbol": "def calibrate("
+        },
+        {
+          "line": 243,
+          "symbol": "class HeadColumnSource:"
+        },
+        {
+          "line": 274,
+          "symbol": "def __init__("
+        },
+        {
+          "line": 288,
+          "symbol": "def shape(self) -> tuple[int, int]:"
+        },
+        {
+          "line": 293,
+          "symbol": "def ndim(self) -> int:"
+        },
+        {
+          "line": 297,
+          "symbol": "def __getitem__(self, key) -> np.ndarray:"
+        },
+        {
+          "line": 327,
+          "symbol": "def __array__(self, dtype=None, copy=None) -> np.ndarray:"
+        },
+        {
+          "line": 337,
+          "symbol": "def __len__(self) -> int:"
+        },
+        {
+          "line": 342,
+          "symbol": "def predict_and_calibrate("
+        },
+        {
+          "line": 411,
+          "symbol": "def finetune_and_predict("
+        },
+        {
+          "line": 481,
+          "symbol": "def _feature_kwargs_from_spec(spec: dict | None) -> dict:"
+        },
+        {
+          "line": 501,
+          "symbol": "def _solve_reference_affine("
+        },
+        {
+          "line": 534,
+          "symbol": "def finetune("
+        },
+        {
+          "line": 684,
+          "symbol": "def _warn_if_fit_collapsed("
+        },
+        {
+          "line": 736,
+          "symbol": "def train("
+        },
+        {
+          "line": 783,
+          "symbol": "def save_model(model: torch.nn.Module, path: PathLike | str) -> None:"
+        },
+        {
+          "line": 809,
+          "symbol": "def _parse_psms(psm_list: PSMList | list[PSM | Peptidoform | str]) -> PSMList:"
+        },
+        {
+          "line": 835,
+          "symbol": "def _unique_peptidoforms(psm_list: PSMList) -> tuple[PSMList, np.ndarray | None]:"
+        }
+      ]
+    },
+    {
+      "path": "deeplc/_architecture.py",
+      "sha256": "34783da35d127b1365f0b8ee1cc7b0380eb79549c0cfe54fbe7afe9ad419c53f",
+      "lines": 1133,
+      "symbols": [
+        {
+          "line": 14,
+          "symbol": "class LeakyReLUSaturation(nn.Module):"
+        },
+        {
+          "line": 30,
+          "symbol": "def __init__(self, negative_slope: float = 0.1, max_value: float = 20.0):"
+        },
+        {
+          "line": 36,
+          "symbol": "def forward(self, x: torch.Tensor) -> torch.Tensor:"
+        },
+        {
+          "line": 41,
+          "symbol": "class ConvBlock(nn.Module):"
+        },
+        {
+          "line": 62,
+          "symbol": "def __init__("
+        },
+        {
+          "line": 100,
+          "symbol": "def forward(self, x: torch.Tensor) -> torch.Tensor:"
+        },
+        {
+          "line": 110,
+          "symbol": "class GlobalFeatureBranch(nn.Module):"
+        },
+        {
+          "line": 127,
+          "symbol": "def __init__("
+        },
+        {
+          "line": 148,
+          "symbol": "def forward(self, x: torch.Tensor) -> torch.Tensor:"
+        },
+        {
+          "line": 152,
+          "symbol": "class OneHotBranch(nn.Module):"
+        },
+        {
+          "line": 170,
+          "symbol": "def __init__("
+        },
+        {
+          "line": 200,
+          "symbol": "def forward(self, x: torch.Tensor) -> torch.Tensor:"
+        },
+        {
+          "line": 211,
+          "symbol": "class BatchedHeads(nn.Module):"
+        },
+        {
+          "line": 229,
+          "symbol": "def __init__(self, input_size: int, n_heads: int, hidden: int = 32):"
+        },
+        {
+          "line": 236,
+          "symbol": "def forward(self, x: torch.Tensor) -> torch.Tensor:"
+        },
+        {
+          "line": 243,
+          "symbol": "class DeepLCModel(nn.Module):"
+        },
+        {
+          "line": 302,
+          "symbol": "def __init__("
+        },
+        {
+          "line": 402,
+          "symbol": "def add_adapter(self, hidden_size: int = 256) -> None:"
+        },
+        {
+          "line": 420,
+          "symbol": "def solve_adapter_output("
+        },
+        {
+          "line": 505,
+          "symbol": "def freeze_backbone(self) -> None:"
+        },
+        {
+          "line": 510,
+          "symbol": "def unfreeze_backbone(self) -> None:"
+        },
+        {
+          "line": 515,
+          "symbol": "def _initialize_weights(self) -> None:"
+        },
+        {
+          "line": 522,
+          "symbol": "def forward("
+        },
+        {
+          "line": 570,
+          "symbol": "class _ConvSiLU(nn.Module):"
+        },
+        {
+          "line": 573,
+          "symbol": "def __init__(self, in_channels: int, out_channels: int, kernel_size: int):"
+        },
+        {
+          "line": 578,
+          "symbol": "def forward(self, x: torch.Tensor) -> torch.Tensor:"
+        },
+        {
+          "line": 583,
+          "symbol": "def _pointwise_stem(channels: int, layers: int, in_channels: int = 6) -> nn.Sequential:"
+        },
+        {
+          "line": 603,
+          "symbol": "class InputNorm(nn.Module):"
+        },
+        {
+          "line": 618,
+          "symbol": "def __init__(self, n_features: int):"
+        },
+        {
+          "line": 624,
+          "symbol": "def fit(self, values: torch.Tensor) -> None:"
+        },
+        {
+          "line": 630,
+          "symbol": "def forward(self, x: torch.Tensor) -> torch.Tensor:"
+        },
+        {
+          "line": 635,
+          "symbol": "class FactorHead(nn.Module):"
+        },
+        {
+          "line": 665,
+          "symbol": "def __init__(self, trunk_dim: int, n_tasks: int, rank: int = 64):"
+        },
+        {
+          "line": 674,
+          "symbol": "def add_task(self, targets: torch.Tensor | None = None, init_from: int | None = None) -> None:"
+        },
+        {
+          "line": 723,
+          "symbol": "def project_new_task(self, trunk: torch.Tensor) -> torch.Tensor:"
+        },
+        {
+          "line": 728,
+          "symbol": "def solve_new_task_affine(self, projected: torch.Tensor, targets: torch.Tensor) -> None:"
+        },
+        {
+          "line": 755,
+          "symbol": "def freeze_pretrained(self) -> None:"
+        },
+        {
+          "line": 765,
+          "symbol": "def has_new_task(self) -> bool:"
+        },
+        {
+          "line": 769,
+          "symbol": "def forward(self, trunk: torch.Tensor, task_idx: torch.Tensor | None = None) -> torch.Tensor:"
+        },
+        {
+          "line": 800,
+          "symbol": "class FlexCNNMultitaskModel(nn.Module):"
+        },
+        {
+          "line": 851,
+          "symbol": "def __init__("
+        },
+        {
+          "line": 907,
+          "symbol": "def forward("
+        },
+        {
+          "line": 941,
+          "symbol": "def project("
+        },
+        {
+          "line": 965,
+          "symbol": "def padding_reach(self) -> int | None:"
+        },
+        {
+          "line": 991,
+          "symbol": "def add_task_head("
+        },
+        {
+          "line": 1009,
+          "symbol": "def solve_new_task_affine("
+        },
+        {
+          "line": 1021,
+          "symbol": "def describe(self) -> dict:"
+        },
+        {
+          "line": 1042,
+          "symbol": "class _FlexCNNEncoder(nn.Module):"
+        },
+        {
+          "line": 1047,
+          "symbol": "def __init__("
+        },
+        {
+          "line": 1084,
+          "symbol": "def residue_indices(self, x_one_hot: torch.Tensor) -> torch.Tensor:"
+        },
+        {
+          "line": 1095,
+          "symbol": "def residue_counts(self, idx: torch.Tensor) -> torch.Tensor:"
+        },
+        {
+          "line": 1110,
+          "symbol": "def forward("
+        }
+      ]
+    },
+    {
+      "path": "deeplc/calibration/simple.py",
+      "sha256": "5ba9923f6d2859f02f3b972e944a149dd69e1257ec85f34eb38101cd3c008077",
+      "lines": 355,
+      "symbols": [
+        {
+          "line": 26,
+          "symbol": "class Calibration(ABC):"
+        },
+        {
+          "line": 30,
+          "symbol": "def __init__(self, *args, **kwargs):"
+        },
+        {
+          "line": 36,
+          "symbol": "def is_fitted(self) -> bool:"
+        },
+        {
+          "line": 41,
+          "symbol": "def fit(self, target: np.ndarray, source: np.ndarray) -> None:"
+        },
+        {
+          "line": 46,
+          "symbol": "def transform(self, source: np.ndarray) -> np.ndarray:"
+        },
+        {
+          "line": 51,
+          "symbol": "class IdentityCalibration(Calibration):"
+        },
+        {
+          "line": 54,
+          "symbol": "def __init__(self) -> None:"
+        },
+        {
+          "line": 59,
+          "symbol": "def is_fitted(self) -> bool:"
+        },
+        {
+          "line": 63,
+          "symbol": "def fit(self, target: np.ndarray, source: np.ndarray) -> None:  # noqa: ARG002"
+        },
+        {
+          "line": 67,
+          "symbol": "def transform(self, source: np.ndarray) -> np.ndarray:"
+        },
+        {
+          "line": 72,
+          "symbol": "class PiecewiseLinearCalibration(Calibration):"
+        },
+        {
+          "line": 75,
+          "symbol": "def __init__("
+        },
+        {
+          "line": 117,
+          "symbol": "def is_fitted(self) -> bool:"
+        },
+        {
+          "line": 128,
+          "symbol": "def calibrate_min(self) -> float | None:"
+        },
+        {
+          "line": 133,
+          "symbol": "def calibrate_max(self) -> float | None:"
+        },
+        {
+          "line": 137,
+          "symbol": "def fit(self, target: np.ndarray, source: np.ndarray) -> None:"
+        },
+        {
+          "line": 207,
+          "symbol": "def transform(self, source: np.ndarray) -> np.ndarray:"
+        },
+        {
+          "line": 230,
+          "symbol": "def get_calibration_curve(self) -> tuple[np.ndarray, np.ndarray]:"
+        },
+        {
+          "line": 251,
+          "symbol": "class SplineTransformerCalibration(Calibration):"
+        },
+        {
+          "line": 254,
+          "symbol": "def __init__(self) -> None:"
+        },
+        {
+          "line": 264,
+          "symbol": "def is_fitted(self) -> bool:"
+        },
+        {
+          "line": 274,
+          "symbol": "def fit("
+        },
+        {
+          "line": 306,
+          "symbol": "def transform(self, source: np.ndarray) -> np.ndarray:"
+        },
+        {
+          "line": 336,
+          "symbol": "def _prepare_series("
+        }
+      ]
+    },
+    {
+      "path": "deeplc/_reference_selection.py",
+      "sha256": "e177f9fceaba89b6b4f1102514edb2dc197005d9d4782ac5acfb6b587cad73ad",
+      "lines": 235,
+      "symbols": [
+        {
+          "line": 18,
+          "symbol": "def select_reference_psms(psm_list: PSMList) -> PSMList:"
+        },
+        {
+          "line": 84,
+          "symbol": "def _filter_targets_with_rt(psm_list: PSMList) -> PSMList:"
+        },
+        {
+          "line": 99,
+          "symbol": "def _select_by_qvalue(candidates: PSMList) -> PSMList:"
+        },
+        {
+          "line": 108,
+          "symbol": "def _select_by_computed_qvalue(psm_list: PSMList) -> PSMList:"
+        },
+        {
+          "line": 119,
+          "symbol": "def _select_by_score(candidates: PSMList) -> PSMList:"
+        },
+        {
+          "line": 133,
+          "symbol": "def deduplicate_psms(psm_list: PSMList, ignore_charge: bool = True) -> PSMList:"
+        },
+        {
+          "line": 194,
+          "symbol": "def _warn_on_conflicting_retention_times("
+        }
+      ]
+    }
+  ],
+  "michaelwitting__RepoRT": [
+    {
+      "path": "LICENSE",
+      "sha256": "2835bab027f3352343175bc5c0b56ea955c8c981e60892368041aa75f3d24221",
+      "lines": 427,
+      "symbols": []
+    },
+    {
+      "path": "README.md",
+      "sha256": "c814e7e367e8768d5ae828b3f3457aa1bd1f5366c523d5b0141e2904fabdf903",
+      "lines": 72,
+      "symbols": []
+    }
+  ],
+  "yufree__mzrtsim": [
+    {
+      "path": "DESCRIPTION",
+      "sha256": "fa341f82ffc3686f0ce48eb3ffbff1b7abe39bdf3a9ce97fae3dcfa7cecd500f",
+      "lines": 33,
+      "symbols": []
+    },
+    {
+      "path": "R/mzmlsim.R",
+      "sha256": "202ff3d3dbca5dbee8aca871160f3ca46750c0cdc98683248a49a34117305bdd",
+      "lines": 579,
+      "symbols": []
+    },
+    {
+      "path": "R/mzrtsim.R",
+      "sha256": "b6aa4feec2bc72ee2f2f5b04082f4874cacb8acf173f5598e1a521437904f04d",
+      "lines": 297,
+      "symbols": []
+    },
+    {
+      "path": "tests/testthat/test-mzml-integrity.R",
+      "sha256": "fa25b87f40da5a407196c45da869c9d6289a5b4810c27f726cc10f0b139ecadb",
+      "lines": 83,
+      "symbols": []
+    }
+  ],
+  "jraysajulga__High-Performance-Liquid-Chromatography-Research-Programs": [
+    {
+      "path": "simulation.java",
+      "sha256": "d1aa46473c3a4643152d1bbdf925427439ec3f6852ef64283292cf4505e9e700",
+      "lines": 364,
+      "symbols": [
+        {
+          "line": 75,
+          "symbol": "public simulation(String compoundName, double[] neueKussParameters,Object[] parameters,double[] selectedProfile){"
+        },
+        {
+          "line": 86,
+          "symbol": "public void varInit(Object[] parameters){"
+        },
+        {
+          "line": 105,
+          "symbol": "public void varCalculation(){"
+        },
+        {
+          "line": 130,
+          "symbol": "public void init(){"
+        },
+        {
+          "line": 189,
+          "symbol": "public int getNinputTLoop(){"
+        },
+        {
+          "line": 193,
+          "symbol": "public double[] getACNprofile(){"
+        },
+        {
+          "line": 221,
+          "symbol": "public void update(int m){"
+        },
+        {
+          "line": 254,
+          "symbol": "public void test(int m,int init, int fin){"
+        },
+        {
+          "line": 268,
+          "symbol": "public void addDataset(int frameCount) {"
+        },
+        {
+          "line": 290,
+          "symbol": "public XYDataset getGradient(){"
+        },
+        {
+          "line": 299,
+          "symbol": "public XYDataset[] get(int m){"
+        },
+        {
+          "line": 307,
+          "symbol": "public double[] getResults(double time){"
+        },
+        {
+          "line": 325,
+          "symbol": "public static double max(double[] profile){"
+        },
+        {
+          "line": 335,
+          "symbol": "public static double trapz(double[] profile){"
+        },
+        {
+          "line": 346,
+          "symbol": "public void areaCorrection(){"
+        }
+      ]
+    },
+    {
+      "path": "matrix.java",
+      "sha256": "b82e9fa02352b7904123ae601fb497dfb4183baa7aa59ac228be4806ba9d58c7",
+      "lines": 317,
+      "symbols": [
+        {
+          "line": 21,
+          "symbol": "public matrix(int zsteps) {"
+        },
+        {
+          "line": 34,
+          "symbol": "public void initX(double dt){"
+        },
+        {
+          "line": 42,
+          "symbol": "public void setACNmpd(double[][] ACNmpd){"
+        },
+        {
+          "line": 46,
+          "symbol": "public void divideBy(double val){"
+        },
+        {
+          "line": 52,
+          "symbol": "public void divideByLocalK(double[] kp){"
+        },
+        {
+          "line": 58,
+          "symbol": "public double sum(){"
+        },
+        {
+          "line": 66,
+          "symbol": "public double max(){"
+        },
+        {
+          "line": 72,
+          "symbol": "public void setNeueKuss(double[] neueKuss){"
+        },
+        {
+          "line": 76,
+          "symbol": "public void setDtDz(double dt, double dz){"
+        },
+        {
+          "line": 81,
+          "symbol": "public void propagateEluentnonMPD(double fill){"
+        },
+        {
+          "line": 92,
+          "symbol": "public double getFinalK(matrix mobileMat){"
+        },
+        {
+          "line": 100,
+          "symbol": "public void propagateEluent(double fill){"
+        },
+        {
+          "line": 126,
+          "symbol": "public void initPropagateEluent(){"
+        },
+        {
+          "line": 133,
+          "symbol": "public void initPropagateAnalyte(matrix mobileMat){"
+        },
+        {
+          "line": 138,
+          "symbol": "public void propagateAnalyte(matrix mobileMat){"
+        },
+        {
+          "line": 147,
+          "symbol": "public matrix(double[] profile){"
+        },
+        {
+          "line": 151,
+          "symbol": "public void transfer(){"
+        },
+        {
+          "line": 159,
+          "symbol": "public void disperse(Boolean test, matrix eluentMat){"
+        },
+        {
+          "line": 184,
+          "symbol": "public void disperseEluent(){"
+        },
+        {
+          "line": 199,
+          "symbol": "public double get(int i){"
+        },
+        {
+          "line": 203,
+          "symbol": "public double getPrevious(int i){"
+        },
+        {
+          "line": 207,
+          "symbol": "public void inject(double conc){"
+        },
+        {
+          "line": 211,
+          "symbol": "public void set(int i, double conc){"
+        },
+        {
+          "line": 215,
+          "symbol": "public double kCalc(int i, boolean previous) {"
+        },
+        {
+          "line": 226,
+          "symbol": "public double kCalc(double ACN){"
+        },
+        {
+          "line": 235,
+          "symbol": "public void fill(double fill){"
+        },
+        {
+          "line": 244,
+          "symbol": "public double trapz() {"
+        },
+        {
+          "line": 248,
+          "symbol": "public int getPeak() {"
+        },
+        {
+          "line": 260,
+          "symbol": "public double firstMoment(double dt){"
+        },
+        {
+          "line": 269,
+          "symbol": "public double secondMoment(double dt){"
+        },
+        {
+          "line": 284,
+          "symbol": "public void assign(int i, double conc){"
+        },
+        {
+          "line": 288,
+          "symbol": "public double getWidth(double ratio){"
+        },
+        {
+          "line": 313,
+          "symbol": "public double getHeight(){"
+        }
+      ]
+    }
+  ],
+  "Jimbo994__AutoLC-BO": [
+    {
+      "path": "license.md",
+      "sha256": "1349a4b6148492b44f629e64eed676612e234fe9a839e4f3b277c1482c8849f1",
+      "lines": 437,
+      "symbols": []
+    },
+    {
+      "path": "rm_code/retention_model.py",
+      "sha256": "bc98be924e05c2fad1c9fd70ad17ce7431ddb1cb982bf0fc85a15c87261f3580",
+      "lines": 184,
+      "symbols": [
+        {
+          "line": 6,
+          "symbol": "def get_k(k_0, S, phi):"
+        },
+        {
+          "line": 12,
+          "symbol": "def get_B_list(phi_list, t_list):"
+        },
+        {
+          "line": 24,
+          "symbol": "def isocratic_retention_time(t_0, k):"
+        },
+        {
+          "line": 30,
+          "symbol": "def retention_time_multisegment_gradient(k_0, S, t_0, t_D, t_init, phi_list, t_list, N):"
+        },
+        {
+          "line": 170,
+          "symbol": "def compute_chromatogram(k0_list, S_list, t_0, t_D, t_init, phi_list, t_list, N):"
+        }
+      ]
+    },
+    {
+      "path": "rm_code/peak_width.py",
+      "sha256": "697b6f5142961467a3519c94f9ea4f245ea308f7aecc54bacc3e82cc9daea4d6",
+      "lines": 26,
+      "symbols": [
+        {
+          "line": 3,
+          "symbol": "def get_peak_width_gradient(N, t_0, k, G):"
+        },
+        {
+          "line": 9,
+          "symbol": "def get_peak_width_isocratic(N, t_0, k):"
+        },
+        {
+          "line": 15,
+          "symbol": "def get_G(cum_sum_w, k_phi_r, k_phi_init, t_D, t_0, t_init):"
+        },
+        {
+          "line": 22,
+          "symbol": "def poppe(k0, S, B, t0):"
+        }
+      ]
+    },
+    {
+      "path": "rm_code/crf.py",
+      "sha256": "c3ec8c643c6c473e428711d05844710b239db45f461ea15ea22847cc569a7182",
+      "lines": 200,
+      "symbols": [
+        {
+          "line": 5,
+          "symbol": "def resolution(tR1, tR2, W1, W2):"
+        },
+        {
+          "line": 11,
+          "symbol": "def sigmoid(x, a, b):"
+        },
+        {
+          "line": 17,
+          "symbol": "def sort_peaks(retention_times, peak_widths):"
+        },
+        {
+          "line": 41,
+          "symbol": "def crf(retention_times, peak_widths, phi_list):"
+        },
+        {
+          "line": 96,
+          "symbol": "def capped_sum_of_resolutions(retention_times, peak_widths, phi_list=None, max_time=60, min_res=1, max_res=1.5):"
+        },
+        {
+          "line": 144,
+          "symbol": "def tyteca_eq_11(retention_times, peak_widths, max_time=60, min_time=2, max_res=1.6, prefacs=[1,1,1]):"
+        },
+        {
+          "line": 177,
+          "symbol": "def tyteca_eq_24(retention_times, peak_widths, max_res=1.6):"
+        }
+      ]
+    },
+    {
+      "path": "bo_code/BO.py",
+      "sha256": "dbafbb260bbdc1e467496a05f92013b46b5f6845640cf5fcc9fc2ccb1953a4c5",
+      "lines": 178,
+      "symbols": [
+        {
+          "line": 34,
+          "symbol": "def BO_round(bounds, norm_bounds, scores, pars):"
+        },
+        {
+          "line": 105,
+          "symbol": "def MOBO_round(bounds, norm_bounds, scores, pars, ref_point):"
+        }
+      ]
+    }
+  ],
+  "Qiong-Yang__GNN-TL": [
+    {
+      "path": "model/train.py",
+      "sha256": "57de18cdfeeb22d82df369b7bcd85496f564d50d5f719008490ba27bd9ba9fce",
+      "lines": 311,
+      "symbols": [
+        {
+          "line": 16,
+          "symbol": "class MolecularGraphNeuralNetwork(nn.Module):"
+        },
+        {
+          "line": 17,
+          "symbol": "def __init__(self, N, dim, layer_hidden, layer_output):"
+        },
+        {
+          "line": 26,
+          "symbol": "def pad(self, matrices, pad_value):"
+        },
+        {
+          "line": 45,
+          "symbol": "def update(self, matrix, vectors, layer):"
+        },
+        {
+          "line": 49,
+          "symbol": "def sum(self, vectors, axis):"
+        },
+        {
+          "line": 53,
+          "symbol": "def mean(self, vectors, axis):"
+        },
+        {
+          "line": 57,
+          "symbol": "def gnn(self, inputs):"
+        },
+        {
+          "line": 79,
+          "symbol": "def mlp(self, vectors):"
+        },
+        {
+          "line": 85,
+          "symbol": "def forward_regressor(self, data_batch, train): #Variable(label.cuda())"
+        },
+        {
+          "line": 106,
+          "symbol": "class Trainer(object):"
+        },
+        {
+          "line": 107,
+          "symbol": "def __init__(self, model):"
+        },
+        {
+          "line": 111,
+          "symbol": "def train(self, dataset):"
+        },
+        {
+          "line": 124,
+          "symbol": "class Tester(object):"
+        },
+        {
+          "line": 125,
+          "symbol": "def __init__(self, model):"
+        },
+        {
+          "line": 127,
+          "symbol": "def test_regressor(self, dataset):"
+        },
+        {
+          "line": 147,
+          "symbol": "def save_MAEs(self, MAEs, filename):"
+        },
+        {
+          "line": 150,
+          "symbol": "def save_predictions(self, predictions, filename):"
+        },
+        {
+          "line": 154,
+          "symbol": "def save_model(self, model, filename):"
+        },
+        {
+          "line": 157,
+          "symbol": "def split_dataset(dataset, ratio):"
+        },
+        {
+          "line": 163,
+          "symbol": "def dump_dictionary(dictionary, filename):"
+        },
+        {
+          "line": 194,
+          "symbol": "def random_split_data(ratio,s, X, Y):"
+        },
+        {
+          "line": 278,
+          "symbol": "def rmse(y_true, y_pred):"
+        }
+      ]
+    },
+    {
+      "path": "model/transferlearning.py",
+      "sha256": "1cd195a8493bd1c3cec775e961c9e8ce4c8732ce57de7407f878e40c8b5ddc9c",
+      "lines": 379,
+      "symbols": [
+        {
+          "line": 16,
+          "symbol": "class MolecularGraphNeuralNetwork(nn.Module):"
+        },
+        {
+          "line": 17,
+          "symbol": "def __init__(self, N, dim, layer_hidden, layer_output):"
+        },
+        {
+          "line": 26,
+          "symbol": "def pad(self, matrices, pad_value):"
+        },
+        {
+          "line": 45,
+          "symbol": "def update(self, matrix, vectors, layer):"
+        },
+        {
+          "line": 49,
+          "symbol": "def sum(self, vectors, axis):"
+        },
+        {
+          "line": 53,
+          "symbol": "def mean(self, vectors, axis):"
+        },
+        {
+          "line": 57,
+          "symbol": "def gnn(self, inputs):"
+        },
+        {
+          "line": 76,
+          "symbol": "def mlp(self, vectors):"
+        },
+        {
+          "line": 82,
+          "symbol": "def forward_regressor(self, data_batch, train):"
+        },
+        {
+          "line": 104,
+          "symbol": "def forward_predict(self, data_batch):"
+        },
+        {
+          "line": 113,
+          "symbol": "class Trainer(object):"
+        },
+        {
+          "line": 114,
+          "symbol": "def __init__(self, model):"
+        },
+        {
+          "line": 118,
+          "symbol": "def train(self, dataset):"
+        },
+        {
+          "line": 130,
+          "symbol": "class Trainer_tf(object):"
+        },
+        {
+          "line": 131,
+          "symbol": "def __init__(self, model):"
+        },
+        {
+          "line": 135,
+          "symbol": "def train(self, dataset):"
+        },
+        {
+          "line": 149,
+          "symbol": "class Tester(object):"
+        },
+        {
+          "line": 150,
+          "symbol": "def __init__(self, model):"
+        },
+        {
+          "line": 152,
+          "symbol": "def test_regressor(self, dataset):"
+        },
+        {
+          "line": 170,
+          "symbol": "def test_predict(self, dataset):"
+        },
+        {
+          "line": 185,
+          "symbol": "def save_MAEs(self, MAEs, filename):"
+        },
+        {
+          "line": 188,
+          "symbol": "def save_predictions(self, predictions, filename):"
+        },
+        {
+          "line": 192,
+          "symbol": "def save_model(self, model, filename):"
+        },
+        {
+          "line": 195,
+          "symbol": "def split_dataset(dataset, ratio):"
+        },
+        {
+          "line": 201,
+          "symbol": "def dump_dictionary(dictionary, filename):"
+        },
+        {
+          "line": 301,
+          "symbol": "def rmse(y_true, y_pred):"
+        }
+      ]
+    },
+    {
+      "path": "model/preprocess.py",
+      "sha256": "cf1de02b74d9ddc5c5841d568efc9e8f2de3b267d4dd55b498f979ef14f679d9",
+      "lines": 279,
+      "symbols": [
+        {
+          "line": 14,
+          "symbol": "def dump_dictionary(dictionary, filename):"
+        },
+        {
+          "line": 19,
+          "symbol": "def create_atoms(mol, atom_dict):"
+        },
+        {
+          "line": 32,
+          "symbol": "def create_ijbonddict(mol, bond_dict):"
+        },
+        {
+          "line": 46,
+          "symbol": "def extract_subgraphs(radius, atoms, i_jbond_dict,"
+        },
+        {
+          "line": 85,
+          "symbol": "def create_dataset_randomsplit(x,y,dataname):"
+        },
+        {
+          "line": 146,
+          "symbol": "def transferlearning_dataset(file_name):"
+        },
+        {
+          "line": 221,
+          "symbol": "def transferlearning_dataset_predict(x):"
+        }
+      ]
+    }
+  ],
+  "julianealdag__hplc-retention-prediction": [
+    {
+      "path": "src/hplc_rt/predictor.py",
+      "sha256": "dc812a4915714f6cb8691636a2f8d8ac7acfec45cd579d069ee1d55ccd5bdf9f",
+      "lines": 261,
+      "symbols": [
+        {
+          "line": 39,
+          "symbol": "def canonical_smiles(smiles: str | None) -> str | None:"
+        },
+        {
+          "line": 55,
+          "symbol": "class TrainedModel:"
+        },
+        {
+          "line": 83,
+          "symbol": "def methods(self) -> list[str]:"
+        },
+        {
+          "line": 87,
+          "symbol": "def save(self, path: Path | str) -> Path:"
+        },
+        {
+          "line": 102,
+          "symbol": "def load(cls, path: Path | str) -> TrainedModel:"
+        },
+        {
+          "line": 127,
+          "symbol": "def predict("
+        },
+        {
+          "line": 176,
+          "symbol": "def _note(self, desc: pd.Series, canonical: str | None, method: str) -> str:"
+        },
+        {
+          "line": 190,
+          "symbol": "def train("
+        }
+      ]
+    },
+    {
+      "path": "src/hplc_rt/features.py",
+      "sha256": "ec4951b279352fcecd51bbf5989a547ccaab1b84548fa1ca77811654ca0cb547",
+      "lines": 261,
+      "symbols": [
+        {
+          "line": 50,
+          "symbol": "def parse_mobile_phase(description: str | None) -> dict[str, float]:"
+        },
+        {
+          "line": 127,
+          "symbol": "def gradient_column_names(resolution: int = config.GRADIENT_RESOLUTION) -> list[str]:"
+        },
+        {
+          "line": 140,
+          "symbol": "def vectorize_gradient("
+        },
+        {
+          "line": 194,
+          "symbol": "def attach_condition_features(experiment: Experiment) -> None:"
+        },
+        {
+          "line": 225,
+          "symbol": "def build_features(experiments: dict[str, Experiment]) -> dict[str, Experiment]:"
+        },
+        {
+          "line": 240,
+          "symbol": "def pool_experiments(experiments: dict[str, Experiment]) -> pd.DataFrame:"
+        }
+      ]
+    },
+    {
+      "path": "src/hplc_rt/models.py",
+      "sha256": "bc0c343dc1a96dce952991a9bcdad99159fd43858eed543de1a6ee472cc1267a",
+      "lines": 336,
+      "symbols": [
+        {
+          "line": 29,
+          "symbol": "def make_ridge() -> tuple[Pipeline, dict[str, Any]]:"
+        },
+        {
+          "line": 46,
+          "symbol": "def make_lasso() -> tuple[Pipeline, dict[str, Any]]:"
+        },
+        {
+          "line": 59,
+          "symbol": "def make_random_forest() -> tuple[RandomForestRegressor, dict[str, Any]]:"
+        },
+        {
+          "line": 81,
+          "symbol": "class CVResult:"
+        },
+        {
+          "line": 111,
+          "symbol": "def to_row(self) -> dict[str, Any]:"
+        },
+        {
+          "line": 125,
+          "symbol": "def importance_series(self) -> pd.Series:"
+        },
+        {
+          "line": 141,
+          "symbol": "def _held_out(split: Split, indices: np.ndarray, max_listed: int = 10) -> str:"
+        },
+        {
+          "line": 151,
+          "symbol": "def _extract_importances(estimator: BaseEstimator) -> np.ndarray | None:"
+        },
+        {
+          "line": 163,
+          "symbol": "def outer_splitter(split: Split, n_folds: int) -> KFold | GroupKFold:"
+        },
+        {
+          "line": 191,
+          "symbol": "def nested_cv("
+        },
+        {
+          "line": 279,
+          "symbol": "def zero_coefficient_frequency(results: list[CVResult]) -> pd.DataFrame:"
+        },
+        {
+          "line": 322,
+          "symbol": "def fit_final(split: Split, model_name: str, best_params: dict[str, Any]) -> BaseEstimator:"
+        }
+      ]
+    },
+    {
+      "path": "src/hplc_rt/splits.py",
+      "sha256": "d829b64ffcf2e98a4adfcfc34215fd969eb597c9b88a03b2ef8a6170d34dc40d",
+      "lines": 203,
+      "symbols": [
+        {
+          "line": 30,
+          "symbol": "class Split:"
+        },
+        {
+          "line": 54,
+          "symbol": "def __repr__(self) -> str:  # pragma: no cover - display only"
+        },
+        {
+          "line": 61,
+          "symbol": "def pooled_feature_names("
+        },
+        {
+          "line": 86,
+          "symbol": "def make_split("
+        },
+        {
+          "line": 163,
+          "symbol": "def make_all_splits("
+        }
+      ]
+    },
+    {
+      "path": "tests/test_predictor.py",
+      "sha256": "d49c3cc738cc405c7ecd067f39a17a7c00b7b98bfa4145d6ee3c1e06cba68221",
+      "lines": 174,
+      "symbols": [
+        {
+          "line": 15,
+          "symbol": "def model(data_dir: Path) -> predictor.TrainedModel:"
+        },
+        {
+          "line": 20,
+          "symbol": "def pooled(data_dir: Path) -> pd.DataFrame:"
+        },
+        {
+          "line": 24,
+          "symbol": "def test_model_knows_every_training_method(model: predictor.TrainedModel) -> None:"
+        },
+        {
+          "line": 28,
+          "symbol": "def test_prediction_features_match_training_features("
+        },
+        {
+          "line": 45,
+          "symbol": "def test_predicts_one_row_per_molecule_and_method(model: predictor.TrainedModel) -> None:"
+        },
+        {
+          "line": 51,
+          "symbol": "def test_lipophilic_molecule_elutes_later(model: predictor.TrainedModel) -> None:"
+        },
+        {
+          "line": 58,
+          "symbol": "def test_invalid_smiles_gets_no_prediction(model: predictor.TrainedModel) -> None:"
+        },
+        {
+          "line": 65,
+          "symbol": "def test_flags_molecules_outside_the_training_range("
+        },
+        {
+          "line": 74,
+          "symbol": "def test_flags_molecules_measured_in_training("
+        },
+        {
+          "line": 86,
+          "symbol": "def test_unknown_method_raises(model: predictor.TrainedModel) -> None:"
+        },
+        {
+          "line": 91,
+          "symbol": "def test_save_and_load_round_trip(model: predictor.TrainedModel, tmp_path: Path) -> None:"
+        },
+        {
+          "line": 97,
+          "symbol": "def test_load_rejects_other_objects(tmp_path: Path) -> None:"
+        },
+        {
+          "line": 108,
+          "symbol": "def test_cli_train_then_predict("
+        },
+        {
+          "line": 133,
+          "symbol": "def test_cli_predict_reports_unknown_method("
+        },
+        {
+          "line": 142,
+          "symbol": "def test_cli_without_subcommand_still_evaluates(data_dir: Path, tmp_path: Path) -> None:"
+        },
+        {
+          "line": 154,
+          "symbol": "def test_cli_method_split_evaluates_the_pooled_model_only("
+        },
+        {
+          "line": 166,
+          "symbol": "def test_cli_saves_pooled_diagnostic_figures(data_dir: Path, tmp_path: Path) -> None:"
+        }
+      ]
+    },
+    {
+      "path": "docs/corrections.md",
+      "sha256": "6444cb34b4bb0640f586aec0a037bfd5a395b6b388df0639d2f4c95889b43bb5",
+      "lines": 180,
+      "symbols": []
+    }
+  ]
+}

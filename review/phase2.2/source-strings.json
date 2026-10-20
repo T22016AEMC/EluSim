@@ -1,0 +1,2619 @@
+{
+  "string": [
+    "api.ts",
+    "project.ts",
+    "RetentionWorkspace.tsx",
+    "sources.ts"
+  ],
+  "body": [
+    "api.ts"
+  ],
+  "compounds": [
+    "api.ts"
+  ],
+  "/api/": [
+    "api.ts"
+  ],
+  "POST": [
+    "api.ts",
+    "main.tsx",
+    "UVWorkspace.tsx",
+    "UVWorkspace.tsx"
+  ],
+  "GET": [
+    "api.ts"
+  ],
+  "Content-Type": [
+    "api.ts",
+    "UVWorkspace.tsx",
+    "UVWorkspace.tsx"
+  ],
+  "application/json": [
+    "api.ts",
+    "main.tsx",
+    "OptimizationWorkspace.tsx",
+    "UVWorkspace.tsx",
+    "UVWorkspace.tsx",
+    "UVWorkspace.tsx"
+  ],
+  "API": [
+    "api.ts",
+    "api.ts"
+  ],
+  "returned a non-JSON response (HTTP": [
+    "api.ts"
+  ],
+  "(HTTP": [
+    "api.ts"
+  ],
+  "react": [
+    "Chart.tsx",
+    "main.tsx",
+    "ModelConditions.tsx",
+    "OptimizationWorkspace.tsx",
+    "retentionEstimates.ts",
+    "RetentionWorkspace.tsx",
+    "StructureEditor.tsx",
+    "UVWorkspace.tsx"
+  ],
+  "echarts": [
+    "Chart.tsx",
+    "OptimizationWorkspace.tsx",
+    "UVWorkspace.tsx"
+  ],
+  "./types": [
+    "Chart.tsx",
+    "main.tsx",
+    "ModelConditions.tsx",
+    "OptimizationWorkspace.tsx",
+    "project.ts",
+    "retentionEstimates.ts",
+    "retentionExports.ts",
+    "RetentionWorkspace.tsx",
+    "UVWorkspace.tsx"
+  ],
+  "C": [
+    "Chart.tsx",
+    "Chart.tsx",
+    "main.tsx",
+    "main.tsx",
+    "OptimizationWorkspace.tsx",
+    "retentionEstimates.ts",
+    "retentionEstimates.ts",
+    "retentionEstimates.ts",
+    "StructureEditor.tsx",
+    "StructureEditor.tsx",
+    "types.ts"
+  ],
+  "估算": [
+    "Chart.tsx",
+    "Chart.tsx",
+    "main.tsx",
+    "main.tsx"
+  ],
+  "line": [
+    "Chart.tsx",
+    "Chart.tsx",
+    "Chart.tsx",
+    "Chart.tsx",
+    "Chart.tsx",
+    "UVWorkspace.tsx"
+  ],
+  "none": [
+    "Chart.tsx",
+    "types.ts"
+  ],
+  "min": [
+    "Chart.tsx",
+    "main.tsx",
+    "OptimizationWorkspace.tsx",
+    "OptimizationWorkspace.tsx",
+    "OptimizationWorkspace.tsx",
+    "OptimizationWorkspace.tsx",
+    "RetentionWorkspace.tsx"
+  ],
+  "insideEndTop": [
+    "Chart.tsx"
+  ],
+  "dotted": [
+    "Chart.tsx"
+  ],
+  "total-signal": [
+    "Chart.tsx"
+  ],
+  "Total simulated signal": [
+    "Chart.tsx"
+  ],
+  "#253e45": [
+    "Chart.tsx",
+    "Chart.tsx"
+  ],
+  "before-": [
+    "Chart.tsx"
+  ],
+  "Before ·": [
+    "Chart.tsx"
+  ],
+  "dashed": [
+    "Chart.tsx",
+    "Chart.tsx"
+  ],
+  "#008b8b": [
+    "Chart.tsx"
+  ],
+  "#df8a32": [
+    "Chart.tsx"
+  ],
+  "#666acd": [
+    "Chart.tsx"
+  ],
+  "scroll": [
+    "Chart.tsx",
+    "UVWorkspace.tsx"
+  ],
+  "axis": [
+    "Chart.tsx",
+    "Chart.tsx",
+    "UVWorkspace.tsx"
+  ],
+  "value": [
+    "Chart.tsx",
+    "Chart.tsx",
+    "Chart.tsx",
+    "Chart.tsx",
+    "OptimizationWorkspace.tsx",
+    "OptimizationWorkspace.tsx",
+    "UVWorkspace.tsx",
+    "UVWorkspace.tsx"
+  ],
+  "Retention Time (min)": [
+    "Chart.tsx"
+  ],
+  "middle": [
+    "Chart.tsx",
+    "Chart.tsx",
+    "Chart.tsx",
+    "OptimizationWorkspace.tsx",
+    "OptimizationWorkspace.tsx",
+    "StructureEditor.tsx",
+    "UVWorkspace.tsx"
+  ],
+  "Relative Response (a.u.)": [
+    "Chart.tsx"
+  ],
+  "inside": [
+    "Chart.tsx",
+    "UVWorkspace.tsx"
+  ],
+  "slider": [
+    "Chart.tsx",
+    "UVWorkspace.tsx"
+  ],
+  "click": [
+    "Chart.tsx",
+    "OptimizationWorkspace.tsx"
+  ],
+  "chart-block": [
+    "Chart.tsx"
+  ],
+  "chart": [
+    "Chart.tsx",
+    "Chart.tsx",
+    "UVWorkspace.tsx"
+  ],
+  "chromatogram": [
+    "Chart.tsx"
+  ],
+  "img": [
+    "Chart.tsx",
+    "Chart.tsx",
+    "OptimizationWorkspace.tsx",
+    "StructureEditor.tsx"
+  ],
+  "Simulated Chromatogram: Retention Time (min), Relative Response (a.u.);": [
+    "Chart.tsx"
+  ],
+  "M": [
+    "Chart.tsx",
+    "main.tsx",
+    "main.tsx",
+    "main.tsx",
+    "retentionEstimates.ts",
+    "retentionEstimates.ts",
+    "RetentionWorkspace.tsx",
+    "types.ts"
+  ],
+  "secondary": [
+    "Chart.tsx",
+    "main.tsx",
+    "main.tsx",
+    "main.tsx",
+    "main.tsx",
+    "main.tsx",
+    "main.tsx",
+    "main.tsx",
+    "main.tsx",
+    "main.tsx",
+    "main.tsx",
+    "main.tsx",
+    "main.tsx",
+    "main.tsx",
+    "main.tsx",
+    "main.tsx",
+    "main.tsx",
+    "main.tsx",
+    "main.tsx",
+    "main.tsx",
+    "ModelConditions.tsx",
+    "RetentionWorkspace.tsx",
+    "RetentionWorkspace.tsx",
+    "RetentionWorkspace.tsx",
+    "StructureEditor.tsx",
+    "UVWorkspace.tsx",
+    "UVWorkspace.tsx",
+    "UVWorkspace.tsx",
+    "UVWorkspace.tsx",
+    "UVWorkspace.tsx"
+  ],
+  "a": [
+    "Chart.tsx",
+    "main.tsx",
+    "OptimizationWorkspace.tsx",
+    "types.ts",
+    "UVWorkspace.tsx",
+    "UVWorkspace.tsx"
+  ],
+  "#fff": [
+    "Chart.tsx",
+    "StructureEditor.tsx",
+    "UVWorkspace.tsx"
+  ],
+  "EluSim-chromatogram.png": [
+    "Chart.tsx"
+  ],
+  "Export PNG": [
+    "Chart.tsx"
+  ],
+  "muted": [
+    "Chart.tsx",
+    "Chart.tsx",
+    "main.tsx",
+    "main.tsx",
+    "main.tsx",
+    "main.tsx",
+    "main.tsx",
+    "main.tsx",
+    "main.tsx",
+    "main.tsx",
+    "main.tsx",
+    "main.tsx",
+    "main.tsx",
+    "main.tsx",
+    "main.tsx",
+    "main.tsx",
+    "RetentionWorkspace.tsx",
+    "StructureEditor.tsx",
+    "UVWorkspace.tsx",
+    "UVWorkspace.tsx"
+  ],
+  "Pinch / scroll to zoom · Tap legend to hide peaks": [
+    "Chart.tsx"
+  ],
+  "Time (min)": [
+    "Chart.tsx",
+    "main.tsx"
+  ],
+  "%B": [
+    "Chart.tsx"
+  ],
+  "Programmed %B": [
+    "Chart.tsx"
+  ],
+  "Column Inlet %B": [
+    "Chart.tsx"
+  ],
+  "gradient-profile": [
+    "Chart.tsx",
+    "Chart.tsx"
+  ],
+  "Gradient Profile — programmed / column inlet": [
+    "Chart.tsx"
+  ],
+  "Dwell volume": [
+    "Chart.tsx"
+  ],
+  "mL; initial delay": [
+    "Chart.tsx"
+  ],
+  "min. Variable-flow delay follows transported volume. This profile is an input check, not evidence of successful separation.": [
+    "Chart.tsx"
+  ],
+  "Gradient Profile: Programmed and Column Inlet percent B": [
+    "Chart.tsx"
+  ],
+  "./OptimizationWorkspace": [
+    "main.tsx"
+  ],
+  "./retentionEstimates": [
+    "main.tsx",
+    "OptimizationWorkspace.tsx",
+    "retentionExports.ts",
+    "RetentionWorkspace.tsx"
+  ],
+  "./retentionExports": [
+    "main.tsx"
+  ],
+  "react-dom/client": [
+    "main.tsx"
+  ],
+  "./Chart": [
+    "main.tsx"
+  ],
+  "./api": [
+    "main.tsx",
+    "ModelConditions.tsx",
+    "OptimizationWorkspace.tsx",
+    "retentionEstimates.ts",
+    "RetentionWorkspace.tsx"
+  ],
+  "./project": [
+    "main.tsx"
+  ],
+  "./sources": [
+    "main.tsx",
+    "project.ts",
+    "RetentionWorkspace.tsx",
+    "types.ts"
+  ],
+  "./ModelConditions": [
+    "main.tsx",
+    "RetentionWorkspace.tsx"
+  ],
+  "./StructureEditor": [
+    "main.tsx"
+  ],
+  "./style.css": [
+    "main.tsx"
+  ],
+  "./RetentionWorkspace": [
+    "main.tsx"
+  ],
+  "./UVWorkspace": [
+    "main.tsx"
+  ],
+  "Compounds": [
+    "main.tsx"
+  ],
+  "LC Mode & Column": [
+    "main.tsx"
+  ],
+  "Mobile Phase & Gradient": [
+    "main.tsx"
+  ],
+  "Chromatogram Simulation": [
+    "main.tsx"
+  ],
+  "Gradient Optimization": [
+    "main.tsx",
+    "OptimizationWorkspace.tsx"
+  ],
+  "Experimental Calibration": [
+    "main.tsx"
+  ],
+  "Model & Column Library": [
+    "main.tsx"
+  ],
+  "Retention Prediction": [
+    "main.tsx"
+  ],
+  "UV-Vis / DAD": [
+    "main.tsx"
+  ],
+  "number": [
+    "main.tsx",
+    "OptimizationWorkspace.tsx",
+    "OptimizationWorkspace.tsx",
+    "UVWorkspace.tsx",
+    "UVWorkspace.tsx",
+    "UVWorkspace.tsx",
+    "UVWorkspace.tsx"
+  ],
+  "any": [
+    "main.tsx",
+    "OptimizationWorkspace.tsx"
+  ],
+  "Connecting": [
+    "main.tsx"
+  ],
+  "health": [
+    "main.tsx"
+  ],
+  "Python / RDKit": [
+    "main.tsx"
+  ],
+  "Backend unavailable": [
+    "main.tsx"
+  ],
+  "elusim-project": [
+    "main.tsx",
+    "project.ts"
+  ],
+  "Simulating": [
+    "main.tsx",
+    "main.tsx"
+  ],
+  "simulate": [
+    "main.tsx"
+  ],
+  "structure": [
+    "main.tsx",
+    "main.tsx",
+    "main.tsx",
+    "types.ts"
+  ],
+  "known": [
+    "main.tsx",
+    "main.tsx",
+    "main.tsx",
+    "ModelConditions.tsx",
+    "project.ts",
+    "RetentionWorkspace.tsx",
+    "types.ts",
+    "types.ts"
+  ],
+  "AbortError": [
+    "main.tsx",
+    "OptimizationWorkspace.tsx"
+  ],
+  "RDKit calculation": [
+    "main.tsx"
+  ],
+  "compounds/describe": [
+    "main.tsx",
+    "main.tsx"
+  ],
+  "Resolving retention": [
+    "main.tsx"
+  ],
+  "retention/resolve": [
+    "main.tsx"
+  ],
+  "Inputs changed; retention results were not applied.": [
+    "main.tsx"
+  ],
+  "At most 20 components": [
+    "main.tsx"
+  ],
+  "Parsing compound": [
+    "main.tsx"
+  ],
+  "New compound": [
+    "main.tsx"
+  ],
+  "small_molecule": [
+    "main.tsx",
+    "main.tsx",
+    "main.tsx",
+    "main.tsx",
+    "retentionEstimates.ts",
+    "RetentionWorkspace.tsx",
+    "types.ts"
+  ],
+  "parameterized": [
+    "main.tsx",
+    "main.tsx",
+    "main.tsx",
+    "types.ts",
+    "types.ts",
+    "types.ts",
+    "types.ts"
+  ],
+  "manual": [
+    "main.tsx",
+    "main.tsx",
+    "project.ts",
+    "types.ts"
+  ],
+  "insufficient_data": [
+    "main.tsx",
+    "RetentionWorkspace.tsx",
+    "sources.ts"
+  ],
+  "logkw": [
+    "main.tsx",
+    "main.tsx",
+    "retentionExports.ts"
+  ],
+  "s": [
+    "main.tsx",
+    "main.tsx",
+    "OptimizationWorkspace.tsx",
+    "retentionExports.ts"
+  ],
+  "model_based": [
+    "main.tsx",
+    "sources.ts",
+    "sources.ts"
+  ],
+  "User manual parameters": [
+    "main.tsx",
+    "main.tsx"
+  ],
+  "Manual parameters; pending user experimental checks": [
+    "main.tsx"
+  ],
+  "smiles": [
+    "main.tsx",
+    "main.tsx",
+    "main.tsx",
+    "retentionExports.ts"
+  ],
+  "D": [
+    "main.tsx",
+    "main.tsx",
+    "main.tsx",
+    "main.tsx",
+    "retentionEstimates.ts",
+    "retentionEstimates.ts",
+    "retentionEstimates.ts",
+    "retentionEstimates.ts",
+    "RetentionWorkspace.tsx",
+    "RetentionWorkspace.tsx",
+    "types.ts"
+  ],
+  "Structure edited; manual/calibrated parameters retained; molecular descriptors need recalculation.": [
+    "main.tsx"
+  ],
+  "file": [
+    "main.tsx",
+    "main.tsx",
+    "main.tsx",
+    "main.tsx",
+    "UVWorkspace.tsx"
+  ],
+  "Importing": [
+    "main.tsx"
+  ],
+  "/api/compounds/import": [
+    "main.tsx"
+  ],
+  "Import truncated to 20 components": [
+    "main.tsx"
+  ],
+  "Invalid observation JSON": [
+    "main.tsx"
+  ],
+  "Fitting parameters": [
+    "main.tsx"
+  ],
+  "calibrate": [
+    "main.tsx"
+  ],
+  "eyebrow": [
+    "main.tsx"
+  ],
+  "LIQUID CHROMATOGRAPHY WORKBENCH": [
+    "main.tsx"
+  ],
+  "subtitle": [
+    "main.tsx"
+  ],
+  "EluSim_V2 — LC Separation Simulation & Gradient Optimization": [
+    "main.tsx"
+  ],
+  "app": [
+    "main.tsx"
+  ],
+  "brand": [
+    "main.tsx"
+  ],
+  "brand-mark": [
+    "main.tsx"
+  ],
+  "EluSim": [
+    "main.tsx"
+  ],
+  "version": [
+    "main.tsx"
+  ],
+  "V2": [
+    "main.tsx"
+  ],
+  "aside-caption": [
+    "main.tsx"
+  ],
+  "From parameters": [
+    "main.tsx"
+  ],
+  "to separation.": [
+    "main.tsx"
+  ],
+  "Workspaces": [
+    "main.tsx"
+  ],
+  "page": [
+    "main.tsx"
+  ],
+  "aside-foot": [
+    "main.tsx"
+  ],
+  "LSS migration engine": [
+    "main.tsx"
+  ],
+  "Server-side scientific computing": [
+    "main.tsx"
+  ],
+  "topbar": [
+    "main.tsx"
+  ],
+  "status-dot": [
+    "main.tsx"
+  ],
+  "local-badge": [
+    "main.tsx"
+  ],
+  "Private browser workspace": [
+    "main.tsx"
+  ],
+  "toolbar": [
+    "main.tsx",
+    "main.tsx",
+    "main.tsx",
+    "main.tsx",
+    "main.tsx",
+    "main.tsx",
+    "main.tsx",
+    "RetentionWorkspace.tsx",
+    "StructureEditor.tsx",
+    "UVWorkspace.tsx"
+  ],
+  "▶ Run simulation": [
+    "main.tsx"
+  ],
+  "check": [
+    "main.tsx",
+    "main.tsx",
+    "main.tsx",
+    "RetentionWorkspace.tsx"
+  ],
+  "checkbox": [
+    "main.tsx",
+    "main.tsx",
+    "main.tsx",
+    "RetentionWorkspace.tsx"
+  ],
+  "Auto recalculate": [
+    "main.tsx"
+  ],
+  "elusim-project.json": [
+    "main.tsx"
+  ],
+  "Save project": [
+    "main.tsx"
+  ],
+  "file-button": [
+    "main.tsx",
+    "main.tsx",
+    "main.tsx",
+    "main.tsx",
+    "main.tsx",
+    "UVWorkspace.tsx"
+  ],
+  "Load project": [
+    "main.tsx"
+  ],
+  ".json": [
+    "main.tsx",
+    "main.tsx"
+  ],
+  "alert": [
+    "main.tsx",
+    "main.tsx",
+    "ModelConditions.tsx",
+    "OptimizationWorkspace.tsx",
+    "RetentionWorkspace.tsx",
+    "UVWorkspace.tsx"
+  ],
+  "error": [
+    "main.tsx",
+    "main.tsx",
+    "main.tsx",
+    "RetentionWorkspace.tsx",
+    "UVWorkspace.tsx"
+  ],
+  "Saved data was not overwritten. Load a valid project or explicitly reset the demonstration to continue saving.": [
+    "main.tsx"
+  ],
+  "status": [
+    "main.tsx",
+    "main.tsx",
+    "OptimizationWorkspace.tsx"
+  ],
+  "notice": [
+    "main.tsx",
+    "main.tsx",
+    "main.tsx",
+    "main.tsx"
+  ],
+  "Estimating retention parameters…": [
+    "main.tsx"
+  ],
+  "… bounded server computation in progress": [
+    "main.tsx"
+  ],
+  "notice soft": [
+    "main.tsx",
+    "ModelConditions.tsx"
+  ],
+  "RP parameter tiers: A measured curve, B scoped QSRR, C generic C18 estimate, D calibration, M manual. Condition differences are warnings; user experimental checks are pending.": [
+    "main.tsx"
+  ],
+  "section-head": [
+    "main.tsx",
+    "main.tsx",
+    "main.tsx",
+    "main.tsx",
+    "main.tsx"
+  ],
+  "Build your mixture": [
+    "main.tsx"
+  ],
+  "/ 20 compounds": [
+    "main.tsx"
+  ],
+  "field-grid": [
+    "main.tsx",
+    "main.tsx",
+    "main.tsx",
+    "main.tsx",
+    "main.tsx",
+    "OptimizationWorkspace.tsx",
+    "OptimizationWorkspace.tsx",
+    "UVWorkspace.tsx",
+    "UVWorkspace.tsx"
+  ],
+  "Compound name": [
+    "main.tsx",
+    "main.tsx"
+  ],
+  "Name or local lookup, e.g. caffeine": [
+    "main.tsx"
+  ],
+  "SMILES": [
+    "main.tsx",
+    "main.tsx"
+  ],
+  "Paste a molecular structure": [
+    "main.tsx"
+  ],
+  "Calculate RDKit descriptors": [
+    "main.tsx"
+  ],
+  "Add compound": [
+    "main.tsx"
+  ],
+  "Import CSV / SDF / MOL": [
+    "main.tsx"
+  ],
+  ".csv,.sdf,.mol": [
+    "main.tsx"
+  ],
+  "descriptor": [
+    "main.tsx"
+  ],
+  "RDKit molecular structure": [
+    "main.tsx"
+  ],
+  "data:image/svg+xml;charset=utf-8,": [
+    "main.tsx",
+    "UVWorkspace.tsx"
+  ],
+  "MW": [
+    "main.tsx"
+  ],
+  "· logP": [
+    "main.tsx"
+  ],
+  "· TPSA": [
+    "main.tsx"
+  ],
+  "HBD": [
+    "main.tsx"
+  ],
+  "· HBA": [
+    "main.tsx"
+  ],
+  "Retention parameters": [
+    "main.tsx"
+  ],
+  "Re-estimate all A/B/C": [
+    "main.tsx"
+  ],
+  "elusim-parameters.csv": [
+    "main.tsx"
+  ],
+  "text/csv": [
+    "main.tsx",
+    "main.tsx",
+    "main.tsx",
+    "main.tsx",
+    "OptimizationWorkspace.tsx",
+    "UVWorkspace.tsx"
+  ],
+  "Export parameter CSV": [
+    "main.tsx"
+  ],
+  "Resolve retention from structures": [
+    "main.tsx"
+  ],
+  "Allow replacing manual parameters": [
+    "main.tsx"
+  ],
+  "Estimates A measured curve → B scoped QSRR → C generic C18 regression. M manual and D calibration values are protected from background changes; method differences remain warnings.": [
+    "main.tsx"
+  ],
+  "warn": [
+    "main.tsx",
+    "main.tsx",
+    "main.tsx",
+    "main.tsx",
+    "main.tsx",
+    "RetentionWorkspace.tsx",
+    "RetentionWorkspace.tsx",
+    "RetentionWorkspace.tsx",
+    "UVWorkspace.tsx"
+  ],
+  "Retention resolution results": [
+    "main.tsx"
+  ],
+  "Batch relative parts (current displayed order)": [
+    "main.tsx"
+  ],
+  "Batch relative parts": [
+    "main.tsx"
+  ],
+  "Provide one nonnegative part per current compound and a positive total.": [
+    "main.tsx"
+  ],
+  "parts": [
+    "main.tsx",
+    "main.tsx",
+    "main.tsx",
+    "main.tsx",
+    "types.ts"
+  ],
+  "Apply batch composition": [
+    "main.tsx"
+  ],
+  "Total parts:": [
+    "main.tsx"
+  ],
+  "Mixture basis": [
+    "main.tsx",
+    "main.tsx"
+  ],
+  "concentration": [
+    "main.tsx",
+    "main.tsx",
+    "main.tsx",
+    "types.ts"
+  ],
+  "Relative parts": [
+    "main.tsx"
+  ],
+  "Concentration": [
+    "main.tsx",
+    "main.tsx"
+  ],
+  "Up to 20 components · area from injected amount × relative detector response; no calibrated UV absorbance. Legacy amplitude is ignored. All concentrations must use the same unit.": [
+    "main.tsx"
+  ],
+  "Workflow": [
+    "main.tsx",
+    "main.tsx"
+  ],
+  "workflow": [
+    "main.tsx"
+  ],
+  "A · Known parameters": [
+    "main.tsx"
+  ],
+  "calibrated": [
+    "main.tsx",
+    "main.tsx",
+    "retentionEstimates.ts",
+    "sources.ts",
+    "sources.ts",
+    "types.ts"
+  ],
+  "B · Experimental calibration": [
+    "main.tsx"
+  ],
+  "C · Structure prediction": [
+    "main.tsx"
+  ],
+  "Structure estimation returns A/B/C parameters. Source-condition differences are shown as extrapolation warnings; the method is changed only by an explicit user action.": [
+    "main.tsx"
+  ],
+  "compound-grid": [
+    "main.tsx"
+  ],
+  "Name": [
+    "main.tsx"
+  ],
+  "name": [
+    "main.tsx",
+    "retentionExports.ts",
+    "retentionExports.ts"
+  ],
+  "icon": [
+    "main.tsx",
+    "main.tsx"
+  ],
+  "Remove": [
+    "main.tsx"
+  ],
+  "logKw": [
+    "main.tsx"
+  ],
+  "S": [
+    "main.tsx",
+    "StructureEditor.tsx"
+  ],
+  "Mixture parts": [
+    "main.tsx"
+  ],
+  "mixture_parts": [
+    "main.tsx"
+  ],
+  "% relative parts": [
+    "main.tsx"
+  ],
+  "Concentration unit": [
+    "main.tsx"
+  ],
+  "mM": [
+    "main.tsx",
+    "main.tsx",
+    "types.ts"
+  ],
+  "concentration_unit": [
+    "main.tsx",
+    "main.tsx"
+  ],
+  "mg/mL": [
+    "main.tsx",
+    "types.ts"
+  ],
+  "Response factor": [
+    "main.tsx"
+  ],
+  "response_factor": [
+    "main.tsx"
+  ],
+  "Entity type": [
+    "main.tsx"
+  ],
+  "kind": [
+    "main.tsx",
+    "main.tsx"
+  ],
+  "oligomer": [
+    "main.tsx",
+    "types.ts"
+  ],
+  "polymer": [
+    "main.tsx",
+    "types.ts"
+  ],
+  "peptide": [
+    "main.tsx",
+    "types.ts"
+  ],
+  "protein": [
+    "main.tsx",
+    "types.ts"
+  ],
+  "Parameter source": [
+    "main.tsx"
+  ],
+  "source": [
+    "main.tsx"
+  ],
+  "pill": [
+    "main.tsx",
+    "main.tsx"
+  ],
+  "tier-": [
+    "main.tsx"
+  ],
+  "校正": [
+    "main.tsx"
+  ],
+  "手動": [
+    "main.tsx"
+  ],
+  "重新估算": [
+    "main.tsx"
+  ],
+  "Stored SMILES": [
+    "main.tsx",
+    "main.tsx"
+  ],
+  "Legacy source:": [
+    "main.tsx"
+  ],
+  "Retention model provenance": [
+    "main.tsx"
+  ],
+  "fixed": [
+    "main.tsx",
+    "main.tsx",
+    "main.tsx",
+    "main.tsx",
+    "main.tsx",
+    "main.tsx",
+    "ModelConditions.tsx",
+    "types.ts",
+    "types.ts"
+  ],
+  "Retention condition differences: simulation uses the supplied parameters with warnings; review or re-estimate for the current method.": [
+    "main.tsx"
+  ],
+  "Scoped to": [
+    "main.tsx"
+  ],
+  "Parameter scope undeclared; geometry changes retain assumed selectivity.": [
+    "main.tsx"
+  ],
+  "prediction": [
+    "main.tsx",
+    "retentionEstimates.ts",
+    "retentionEstimates.ts",
+    "RetentionWorkspace.tsx",
+    "RetentionWorkspace.tsx",
+    "types.ts"
+  ],
+  "literature": [
+    "main.tsx",
+    "retentionEstimates.ts",
+    "retentionEstimates.ts",
+    "RetentionWorkspace.tsx",
+    "RetentionWorkspace.tsx",
+    "types.ts"
+  ],
+  "scope": [
+    "main.tsx",
+    "retentionEstimates.ts"
+  ],
+  "Bind parameters to current method scope": [
+    "main.tsx"
+  ],
+  "Independent LC modes": [
+    "main.tsx"
+  ],
+  "mode-grid": [
+    "main.tsx"
+  ],
+  "RP": [
+    "main.tsx",
+    "main.tsx",
+    "main.tsx",
+    "project.ts",
+    "retentionEstimates.ts",
+    "retentionEstimates.ts",
+    "retentionEstimates.ts",
+    "retentionEstimates.ts",
+    "RetentionWorkspace.tsx",
+    "types.ts"
+  ],
+  "NP": [
+    "main.tsx"
+  ],
+  "HILIC": [
+    "main.tsx"
+  ],
+  "IEX": [
+    "main.tsx"
+  ],
+  "SEC": [
+    "main.tsx"
+  ],
+  "mode": [
+    "main.tsx"
+  ],
+  "active": [
+    "main.tsx"
+  ],
+  "Parameter-based LSS": [
+    "main.tsx"
+  ],
+  "Quantitative model pending": [
+    "main.tsx"
+  ],
+  "is Unsupported for quantitative simulation. No RP equation is used. Mode-specific parameters may be recorded for future validation.": [
+    "main.tsx"
+  ],
+  "dedicated parameters (JSON)": [
+    "main.tsx"
+  ],
+  "Invalid mode parameter JSON": [
+    "main.tsx"
+  ],
+  "Save mode parameters": [
+    "main.tsx"
+  ],
+  "Column geometry & efficiency": [
+    "main.tsx"
+  ],
+  "Generic C18 template": [
+    "main.tsx"
+  ],
+  "Generic geometry only. No commercial stationary-phase selectivity database.": [
+    "main.tsx"
+  ],
+  "Column manufacturer": [
+    "main.tsx"
+  ],
+  "Stationary phase": [
+    "main.tsx"
+  ],
+  "length_mm": [
+    "main.tsx"
+  ],
+  "Column length (mm)": [
+    "main.tsx"
+  ],
+  "diameter_mm": [
+    "main.tsx"
+  ],
+  "Internal diameter (mm)": [
+    "main.tsx"
+  ],
+  "particle_um": [
+    "main.tsx"
+  ],
+  "Particle size (µm)": [
+    "main.tsx"
+  ],
+  "pore_angstrom": [
+    "main.tsx"
+  ],
+  "Pore size (Å)": [
+    "main.tsx"
+  ],
+  "porosity": [
+    "main.tsx"
+  ],
+  "Porosity": [
+    "main.tsx"
+  ],
+  "void_ml": [
+    "main.tsx",
+    "main.tsx"
+  ],
+  "Void volume (mL, blank = geometry)": [
+    "main.tsx"
+  ],
+  "plates": [
+    "main.tsx",
+    "main.tsx"
+  ],
+  "Column efficiency (N)": [
+    "main.tsx"
+  ],
+  "temperature_c": [
+    "main.tsx",
+    "main.tsx",
+    "main.tsx"
+  ],
+  "Column temperature (°C)": [
+    "main.tsx"
+  ],
+  "Mobile phase & instrument": [
+    "main.tsx"
+  ],
+  "Mobile phase A": [
+    "main.tsx"
+  ],
+  "Mobile phase B": [
+    "main.tsx"
+  ],
+  "ACN": [
+    "main.tsx",
+    "main.tsx",
+    "types.ts",
+    "types.ts",
+    "types.ts"
+  ],
+  "MeOH": [
+    "main.tsx",
+    "main.tsx",
+    "types.ts",
+    "types.ts"
+  ],
+  "pH condition": [
+    "main.tsx"
+  ],
+  "formulation": [
+    "main.tsx",
+    "main.tsx",
+    "main.tsx",
+    "main.tsx",
+    "types.ts",
+    "types.ts"
+  ],
+  "Fixed numeric pH": [
+    "main.tsx"
+  ],
+  "Formulation-defined, no fixed pH": [
+    "main.tsx"
+  ],
+  "Buffer": [
+    "main.tsx"
+  ],
+  "ph": [
+    "main.tsx",
+    "main.tsx"
+  ],
+  "pH": [
+    "main.tsx"
+  ],
+  "injection_ul": [
+    "main.tsx"
+  ],
+  "Injection volume (µL)": [
+    "main.tsx"
+  ],
+  "dwell_ml": [
+    "main.tsx"
+  ],
+  "Dwell volume (mL)": [
+    "main.tsx"
+  ],
+  "extra_sigma_min": [
+    "main.tsx"
+  ],
+  "Extra-column sigma (min)": [
+    "main.tsx"
+  ],
+  "pH, temperature and solvent changes refresh A/B/C estimates and warnings. No pKa, ionization or solvent correction is applied.": [
+    "main.tsx"
+  ],
+  "Gradient program": [
+    "main.tsx"
+  ],
+  "Isocratic": [
+    "main.tsx"
+  ],
+  "Linear + hold": [
+    "main.tsx"
+  ],
+  "Re-equilibrate": [
+    "main.tsx"
+  ],
+  "gradient-list": [
+    "main.tsx"
+  ],
+  "gradient-row": [
+    "main.tsx"
+  ],
+  "node-number": [
+    "main.tsx"
+  ],
+  "time_min": [
+    "main.tsx"
+  ],
+  "b_percent": [
+    "main.tsx"
+  ],
+  "B (%)": [
+    "main.tsx"
+  ],
+  "flow_ml_min": [
+    "main.tsx"
+  ],
+  "Flow (mL/min)": [
+    "main.tsx"
+  ],
+  "Temperature (°C)": [
+    "main.tsx"
+  ],
+  "node": [
+    "main.tsx"
+  ],
+  "Segment": [
+    "main.tsx",
+    "main.tsx"
+  ],
+  "linear": [
+    "main.tsx",
+    "main.tsx",
+    "ModelConditions.tsx",
+    "ModelConditions.tsx",
+    "ModelConditions.tsx",
+    "OptimizationWorkspace.tsx",
+    "project.ts",
+    "types.ts",
+    "types.ts",
+    "types.ts",
+    "types.ts"
+  ],
+  "step": [
+    "main.tsx",
+    "main.tsx",
+    "types.ts"
+  ],
+  "Linear / hold": [
+    "main.tsx"
+  ],
+  "Step at next node": [
+    "main.tsx"
+  ],
+  "Delete node": [
+    "main.tsx"
+  ],
+  "+ Add gradient node": [
+    "main.tsx"
+  ],
+  "Flow interpolates between nodes. Temperature-dependent retention is not enabled; node temperatures must equal the column temperature. Initial composition fills the column before injection.": [
+    "main.tsx"
+  ],
+  "Simulated Chromatogram": [
+    "main.tsx"
+  ],
+  "Overlay previous run": [
+    "main.tsx"
+  ],
+  "simulation-incomplete": [
+    "main.tsx"
+  ],
+  "non_eluted": [
+    "main.tsx",
+    "types.ts"
+  ],
+  "本時間窗內未洗脫": [
+    "main.tsx"
+  ],
+  "LC 分離模擬未完成": [
+    "main.tsx",
+    "main.tsx"
+  ],
+  "Rt 已計算；缺少有效效率或訊號參數，無法產生色譜峰。": [
+    "main.tsx"
+  ],
+  "未顯示任何虛構峰。未洗脫表示已完成遷移計算但尚未到達柱出口，並非程式故障。": [
+    "main.tsx"
+  ],
+  "No valid peak": [
+    "main.tsx"
+  ],
+  "Gaussian efficiency approximation · Select a peak for details ·": [
+    "main.tsx"
+  ],
+  "elusim-simulation.json": [
+    "main.tsx"
+  ],
+  "Export JSON": [
+    "main.tsx"
+  ],
+  "elusim-peak-table.csv": [
+    "main.tsx"
+  ],
+  "Export peak table CSV": [
+    "main.tsx"
+  ],
+  "elusim-peaks.csv": [
+    "main.tsx"
+  ],
+  "name,rt_min,fwhm_min,width_base_min,source,mixture_fraction,injected_amount,amount_unit,relative_peak_area,relative_peak_height": [
+    "main.tsx"
+  ],
+  "Export peaks CSV": [
+    "main.tsx"
+  ],
+  "elusim-traces.csv": [
+    "main.tsx"
+  ],
+  "time_min,": [
+    "main.tsx"
+  ],
+  "Export traces CSV": [
+    "main.tsx"
+  ],
+  "metrics": [
+    "main.tsx"
+  ],
+  "Minimum Rs": [
+    "main.tsx",
+    "OptimizationWorkspace.tsx",
+    "OptimizationWorkspace.tsx",
+    "OptimizationWorkspace.tsx"
+  ],
+  "Hold-up time": [
+    "main.tsx"
+  ],
+  "Solvent volume": [
+    "main.tsx"
+  ],
+  "mL": [
+    "main.tsx"
+  ],
+  "Eluted components": [
+    "main.tsx"
+  ],
+  "Elution order & peak metrics": [
+    "main.tsx"
+  ],
+  "table-wrap": [
+    "main.tsx",
+    "RetentionWorkspace.tsx"
+  ],
+  "Compound": [
+    "main.tsx"
+  ],
+  "Tier": [
+    "main.tsx"
+  ],
+  "Rt min": [
+    "main.tsx"
+  ],
+  "FWHM min": [
+    "main.tsx"
+  ],
+  "Base width min": [
+    "main.tsx"
+  ],
+  "Relative area / height": [
+    "main.tsx"
+  ],
+  "Source / status": [
+    "main.tsx"
+  ],
+  "selected": [
+    "main.tsx"
+  ],
+  "· Rs": [
+    "main.tsx"
+  ],
+  "· Co-elution warning": [
+    "main.tsx"
+  ],
+  "Model assumptions & scope": [
+    "main.tsx"
+  ],
+  "empty": [
+    "main.tsx"
+  ],
+  "Ready to simulate": [
+    "main.tsx"
+  ],
+  "LC 條件已變更；先前結果已隱藏，請重新模擬。": [
+    "main.tsx"
+  ],
+  "Scientific calculation in progress.": [
+    "main.tsx"
+  ],
+  "Supply logKw / S, column geometry and a gradient. Calculations run in the Python backend.": [
+    "main.tsx"
+  ],
+  ": Missing logKw / S. Resolve compatible retention data or calibrate.": [
+    "main.tsx"
+  ],
+  "Run simulation": [
+    "main.tsx"
+  ],
+  "Calibrate from experimental methods": [
+    "main.tsx"
+  ],
+  "At least two independent methods for two parameters. Same phase / solvent / pH / temperature. Fit RMSE is not external accuracy.": [
+    "main.tsx"
+  ],
+  "Calibration compound": [
+    "main.tsx",
+    "main.tsx"
+  ],
+  "Measured Rt (min) for current method": [
+    "main.tsx"
+  ],
+  "Add measured Rt for current method": [
+    "main.tsx"
+  ],
+  "recorded methods": [
+    "main.tsx"
+  ],
+  "elusim-observations.json": [
+    "main.tsx"
+  ],
+  "Export observations": [
+    "main.tsx"
+  ],
+  "Import observation JSON": [
+    "main.tsx"
+  ],
+  "Observation JSON (optional override)": [
+    "main.tsx"
+  ],
+  "Calibration observation JSON": [
+    "main.tsx"
+  ],
+  "[{\"method\": {...}, \"rt_min\": 6.2}, ...]": [
+    "main.tsx"
+  ],
+  "Fit logKw and S": [
+    "main.tsx"
+  ],
+  "calibration": [
+    "main.tsx",
+    "retentionEstimates.ts",
+    "types.ts"
+  ],
+  "User experimental calibration": [
+    "main.tsx",
+    "main.tsx"
+  ],
+  "unvalidated — pending user validation": [
+    "main.tsx",
+    "RetentionWorkspace.tsx"
+  ],
+  "Apply calibrated parameters": [
+    "main.tsx"
+  ],
+  "Model library": [
+    "main.tsx"
+  ],
+  "model-card": [
+    "main.tsx"
+  ],
+  "RP · LSS local migration": [
+    "main.tsx"
+  ],
+  "log₁₀ k = logKw − Sφ": [
+    "main.tsx"
+  ],
+  "Independent SciPy ODE; plug-flow composition with column and dwell transport. External experimental accuracy is not quantified.": [
+    "main.tsx"
+  ],
+  "pill ok": [
+    "main.tsx"
+  ],
+  "Parameter-based": [
+    "main.tsx"
+  ],
+  "PyLSS fixed reference:": [
+    "main.tsx"
+  ],
+  "d2cda850fa0b0881fc3cf1cd68c4d93b59dac04f": [
+    "main.tsx"
+  ],
+  ". NLSS disabled. CADET license unresolved; not shipped.": [
+    "main.tsx"
+  ],
+  "Scoped experimental Rt and UV models are available in Retention Prediction and UV-Vis / DAD. TIMPANI / DeepLC pretrained weights are not loaded.": [
+    "main.tsx"
+  ],
+  "Mode-specific parameter requirements": [
+    "main.tsx"
+  ],
+  "NP: adsorption, competition, water activity.": [
+    "main.tsx"
+  ],
+  "HILIC: partition, adsorption and ionic contributions.": [
+    "main.tsx"
+  ],
+  "IEX: capacity, ν, σ, rates and salt.": [
+    "main.tsx"
+  ],
+  "SEC: pore accessibility, hydrodynamic size and partition.": [
+    "main.tsx"
+  ],
+  "Licensing & corresponding source": [
+    "main.tsx"
+  ],
+  "EluSim_V2 application: AGPL-3.0-or-later. Retention curve data and derived weights: CC BY-NC-SA 3.0 US; non-commercial service only, credited to Boswell and the Wiczling curation team. Scientific parameters supplied by users; browser-local projects are not shared with other visitors.": [
+    "main.tsx"
+  ],
+  "/api/source": [
+    "main.tsx"
+  ],
+  "Download deployed corresponding source": [
+    "main.tsx"
+  ],
+  "/api/license": [
+    "main.tsx"
+  ],
+  "License": [
+    "main.tsx"
+  ],
+  "EluSim · Model-based simulation requires scoped parameters. No model is a substitute for experimental method validation.": [
+    "main.tsx"
+  ],
+  "text-button": [
+    "main.tsx"
+  ],
+  "Reset synthetic demonstration": [
+    "main.tsx"
+  ],
+  "root": [
+    "main.tsx"
+  ],
+  "→ required": [
+    "ModelConditions.tsx",
+    "ModelConditions.tsx"
+  ],
+  "particle_um:": [
+    "ModelConditions.tsx"
+  ],
+  "Gradient node": [
+    "ModelConditions.tsx",
+    "ModelConditions.tsx"
+  ],
+  "% B → required": [
+    "ModelConditions.tsx"
+  ],
+  "temperature: required": [
+    "ModelConditions.tsx"
+  ],
+  "°C": [
+    "ModelConditions.tsx"
+  ],
+  "retention/conditions": [
+    "ModelConditions.tsx"
+  ],
+  "Model-compatible LC conditions": [
+    "ModelConditions.tsx"
+  ],
+  "Explicitly apply the existing measured-curve / experimental QSRR scope. This replaces column chemistry, mobile phase and gradient settings; geometry and efficiency stay user supplied. It does not validate QSRR accuracy.": [
+    "ModelConditions.tsx"
+  ],
+  "°C ·": [
+    "ModelConditions.tsx"
+  ],
+  "% B": [
+    "ModelConditions.tsx"
+  ],
+  "Current method matches the model conditions.": [
+    "ModelConditions.tsx"
+  ],
+  "Use model-compatible conditions": [
+    "ModelConditions.tsx"
+  ],
+  "max": [
+    "OptimizationWorkspace.tsx"
+  ],
+  "steps": [
+    "OptimizationWorkspace.tsx",
+    "OptimizationWorkspace.tsx"
+  ],
+  "search-plot-scroll": [
+    "OptimizationWorkspace.tsx"
+  ],
+  "map": [
+    "OptimizationWorkspace.tsx",
+    "OptimizationWorkspace.tsx",
+    "OptimizationWorkspace.tsx",
+    "OptimizationWorkspace.tsx",
+    "OptimizationWorkspace.tsx"
+  ],
+  "multisegment": [
+    "OptimizationWorkspace.tsx",
+    "OptimizationWorkspace.tsx"
+  ],
+  "Computing resolution map": [
+    "OptimizationWorkspace.tsx"
+  ],
+  "Searching multi-segment gradient": [
+    "OptimizationWorkspace.tsx"
+  ],
+  "optimize/map": [
+    "OptimizationWorkspace.tsx"
+  ],
+  "optimize/multisegment": [
+    "OptimizationWorkspace.tsx"
+  ],
+  "Search cancelled": [
+    "OptimizationWorkspace.tsx"
+  ],
+  "Replace the current gradient and run simulation?": [
+    "OptimizationWorkspace.tsx"
+  ],
+  "· 含估算參數": [
+    "OptimizationWorkspace.tsx"
+  ],
+  "start": [
+    "OptimizationWorkspace.tsx"
+  ],
+  "end": [
+    "OptimizationWorkspace.tsx"
+  ],
+  "time": [
+    "OptimizationWorkspace.tsx"
+  ],
+  "min_rs": [
+    "OptimizationWorkspace.tsx",
+    "OptimizationWorkspace.tsx"
+  ],
+  "run_time": [
+    "OptimizationWorkspace.tsx",
+    "OptimizationWorkspace.tsx"
+  ],
+  "all_eluted": [
+    "OptimizationWorkspace.tsx"
+  ],
+  "critical_pair": [
+    "OptimizationWorkspace.tsx",
+    "OptimizationWorkspace.tsx"
+  ],
+  "resolution-map.csv": [
+    "OptimizationWorkspace.tsx"
+  ],
+  "gradient-candidates.csv": [
+    "OptimizationWorkspace.tsx"
+  ],
+  "rank": [
+    "OptimizationWorkspace.tsx"
+  ],
+  "gradient": [
+    "OptimizationWorkspace.tsx",
+    "RetentionWorkspace.tsx"
+  ],
+  "max_rel_rt": [
+    "OptimizationWorkspace.tsx"
+  ],
+  "max_rel_sigma": [
+    "OptimizationWorkspace.tsx"
+  ],
+  "#172e35": [
+    "OptimizationWorkspace.tsx"
+  ],
+  "richText": [
+    "OptimizationWorkspace.tsx",
+    "OptimizationWorkspace.tsx"
+  ],
+  "Rs": [
+    "OptimizationWorkspace.tsx"
+  ],
+  "Run": [
+    "OptimizationWorkspace.tsx"
+  ],
+  "category": [
+    "OptimizationWorkspace.tsx",
+    "OptimizationWorkspace.tsx"
+  ],
+  "Gradient time (min)": [
+    "OptimizationWorkspace.tsx",
+    "OptimizationWorkspace.tsx"
+  ],
+  "End %B": [
+    "OptimizationWorkspace.tsx",
+    "OptimizationWorkspace.tsx"
+  ],
+  "piecewise": [
+    "OptimizationWorkspace.tsx"
+  ],
+  "horizontal": [
+    "OptimizationWorkspace.tsx"
+  ],
+  "center": [
+    "OptimizationWorkspace.tsx"
+  ],
+  "#e9b3a3": [
+    "OptimizationWorkspace.tsx"
+  ],
+  "< target Rs": [
+    "OptimizationWorkspace.tsx"
+  ],
+  "#4ba59b": [
+    "OptimizationWorkspace.tsx"
+  ],
+  "≥ target Rs": [
+    "OptimizationWorkspace.tsx"
+  ],
+  "heatmap": [
+    "OptimizationWorkspace.tsx"
+  ],
+  "item": [
+    "OptimizationWorkspace.tsx"
+  ],
+  "Run time (min)": [
+    "OptimizationWorkspace.tsx"
+  ],
+  "scatter": [
+    "OptimizationWorkspace.tsx"
+  ],
+  "optimizer-workspace": [
+    "OptimizationWorkspace.tsx"
+  ],
+  "Constant-flow LSS calculations · user experimental checks pending · search ranges are independent of parameter tier.": [
+    "OptimizationWorkspace.tsx"
+  ],
+  "Start %B": [
+    "OptimizationWorkspace.tsx"
+  ],
+  "Initial hold (min)": [
+    "OptimizationWorkspace.tsx"
+  ],
+  "Final hold (min)": [
+    "OptimizationWorkspace.tsx"
+  ],
+  "Target minimum Rs": [
+    "OptimizationWorkspace.tsx"
+  ],
+  "Maximum analysis time (min)": [
+    "OptimizationWorkspace.tsx",
+    "OptimizationWorkspace.tsx"
+  ],
+  "Generate resolution map": [
+    "OptimizationWorkspace.tsx"
+  ],
+  "Segments": [
+    "OptimizationWorkspace.tsx",
+    "OptimizationWorkspace.tsx"
+  ],
+  "Search time budget (s)": [
+    "OptimizationWorkspace.tsx"
+  ],
+  "Minimum segment duration (min)": [
+    "OptimizationWorkspace.tsx"
+  ],
+  "Optimize multi-segment gradient": [
+    "OptimizationWorkspace.tsx"
+  ],
+  "Cancel search": [
+    "OptimizationWorkspace.tsx"
+  ],
+  "Resolution map": [
+    "OptimizationWorkspace.tsx"
+  ],
+  "candidates ·": [
+    "OptimizationWorkspace.tsx"
+  ],
+  "s · outlined cells meet the displayed target and time limit": [
+    "OptimizationWorkspace.tsx"
+  ],
+  "Start %B slice:": [
+    "OptimizationWorkspace.tsx"
+  ],
+  "Start %B slice": [
+    "OptimizationWorkspace.tsx"
+  ],
+  "range": [
+    "OptimizationWorkspace.tsx"
+  ],
+  "resolution-map": [
+    "OptimizationWorkspace.tsx"
+  ],
+  "Keyboard cell selection": [
+    "OptimizationWorkspace.tsx"
+  ],
+  "search-table-scroll": [
+    "OptimizationWorkspace.tsx",
+    "OptimizationWorkspace.tsx"
+  ],
+  "Apply map cell": [
+    "OptimizationWorkspace.tsx"
+  ],
+  "Export map CSV": [
+    "OptimizationWorkspace.tsx"
+  ],
+  "Export candidates CSV": [
+    "OptimizationWorkspace.tsx"
+  ],
+  "Top candidates": [
+    "OptimizationWorkspace.tsx"
+  ],
+  "optimizer-candidates": [
+    "OptimizationWorkspace.tsx"
+  ],
+  "Rank / nodes (%B @ min)": [
+    "OptimizationWorkspace.tsx"
+  ],
+  "Run (min)": [
+    "OptimizationWorkspace.tsx"
+  ],
+  "Critical pair": [
+    "OptimizationWorkspace.tsx"
+  ],
+  "ODE relative differences (Rt / σ)": [
+    "OptimizationWorkspace.tsx"
+  ],
+  "Apply": [
+    "OptimizationWorkspace.tsx"
+  ],
+  "Apply candidate": [
+    "OptimizationWorkspace.tsx"
+  ],
+  "Pareto frontier": [
+    "OptimizationWorkspace.tsx"
+  ],
+  "pareto-map": [
+    "OptimizationWorkspace.tsx"
+  ],
+  "Keyboard Pareto selection": [
+    "OptimizationWorkspace.tsx"
+  ],
+  "Apply Pareto": [
+    "OptimizationWorkspace.tsx"
+  ],
+  "warning": [
+    "OptimizationWorkspace.tsx"
+  ],
+  "multisegment-result": [
+    "OptimizationWorkspace.tsx"
+  ],
+  "Multi-segment search result": [
+    "OptimizationWorkspace.tsx"
+  ],
+  "· run": [
+    "OptimizationWorkspace.tsx"
+  ],
+  "min ·": [
+    "OptimizationWorkspace.tsx"
+  ],
+  "iterations ·": [
+    "OptimizationWorkspace.tsx"
+  ],
+  "evaluations · budget stop": [
+    "OptimizationWorkspace.tsx"
+  ],
+  "· ODE differences": [
+    "OptimizationWorkspace.tsx"
+  ],
+  "Apply multi-segment result": [
+    "OptimizationWorkspace.tsx"
+  ],
+  "multisegment-result.json": [
+    "OptimizationWorkspace.tsx"
+  ],
+  "Export multi-segment JSON": [
+    "OptimizationWorkspace.tsx"
+  ],
+  "Across-mode screening": [
+    "OptimizationWorkspace.tsx"
+  ],
+  "RP search uses supplied or estimated LSS parameters. NP, HILIC, IEX and SEC require independent parameters and experiments; no quantitative cross-mode ranking is generated.": [
+    "OptimizationWorkspace.tsx"
+  ],
+  "object": [
+    "project.ts",
+    "project.ts"
+  ],
+  "Invalid saved project: expected an object. Original storage retained.": [
+    "project.ts"
+  ],
+  "Invalid saved project: compounds and gradient are required. Original storage retained.": [
+    "project.ts"
+  ],
+  "Invalid compound record; original project retained.": [
+    "project.ts"
+  ],
+  "elusim-project-before-v2-migration": [
+    "project.ts",
+    "project.ts"
+  ],
+  "A": [
+    "retentionEstimates.ts",
+    "retentionEstimates.ts",
+    "retentionEstimates.ts",
+    "retentionEstimates.ts",
+    "retentionEstimates.ts",
+    "retentionEstimates.ts",
+    "RetentionWorkspace.tsx",
+    "types.ts"
+  ],
+  "B": [
+    "retentionEstimates.ts",
+    "retentionEstimates.ts",
+    "retentionEstimates.ts",
+    "retentionEstimates.ts",
+    "retentionEstimates.ts",
+    "RetentionWorkspace.tsx",
+    "types.ts"
+  ],
+  "literature_derived": [
+    "retentionEstimates.ts"
+  ],
+  "experimental_model_prediction": [
+    "retentionEstimates.ts"
+  ],
+  "screening_only": [
+    "retentionEstimates.ts",
+    "sources.ts",
+    "types.ts",
+    "types.ts",
+    "types.ts"
+  ],
+  "retention/estimate": [
+    "retentionEstimates.ts"
+  ],
+  "id": [
+    "retentionExports.ts",
+    "retentionExports.ts"
+  ],
+  "canonical_smiles": [
+    "retentionExports.ts"
+  ],
+  "tier": [
+    "retentionExports.ts",
+    "retentionExports.ts"
+  ],
+  "parameter_source": [
+    "retentionExports.ts"
+  ],
+  "model_version": [
+    "retentionExports.ts"
+  ],
+  "warnings": [
+    "retentionExports.ts"
+  ],
+  "crippen_logp": [
+    "retentionExports.ts"
+  ],
+  "tpsa": [
+    "retentionExports.ts"
+  ],
+  "hbd": [
+    "retentionExports.ts"
+  ],
+  "aromatic_rings": [
+    "retentionExports.ts"
+  ],
+  "mw": [
+    "retentionExports.ts"
+  ],
+  "rt_min": [
+    "retentionExports.ts",
+    "RetentionWorkspace.tsx",
+    "RetentionWorkspace.tsx"
+  ],
+  "k_e": [
+    "retentionExports.ts"
+  ],
+  "phi_outlet": [
+    "retentionExports.ts"
+  ],
+  "sigma_min": [
+    "retentionExports.ts"
+  ],
+  "compression_factor": [
+    "retentionExports.ts"
+  ],
+  "fwhm_min": [
+    "retentionExports.ts"
+  ],
+  "rs_to_next": [
+    "retentionExports.ts"
+  ],
+  "column": [
+    "RetentionWorkspace.tsx"
+  ],
+  "mobile": [
+    "RetentionWorkspace.tsx"
+  ],
+  "auto": [
+    "RetentionWorkspace.tsx",
+    "RetentionWorkspace.tsx",
+    "RetentionWorkspace.tsx",
+    "types.ts"
+  ],
+  "models": [
+    "RetentionWorkspace.tsx"
+  ],
+  "retention/predict": [
+    "RetentionWorkspace.tsx"
+  ],
+  "Calibration parameters preserved; calibration has priority.": [
+    "RetentionWorkspace.tsx"
+  ],
+  "Manual parameters preserved; enable explicit replacement to apply this prediction.": [
+    "RetentionWorkspace.tsx"
+  ],
+  "Literature-derived": [
+    "RetentionWorkspace.tsx",
+    "RetentionWorkspace.tsx",
+    "sources.ts"
+  ],
+  "Retention Parameters automatically updated for": [
+    "RetentionWorkspace.tsx"
+  ],
+  "/api/retention/database": [
+    "RetentionWorkspace.tsx"
+  ],
+  "Database unavailable": [
+    "RetentionWorkspace.tsx"
+  ],
+  "Anthranilic acid": [
+    "RetentionWorkspace.tsx"
+  ],
+  "Caffeine": [
+    "RetentionWorkspace.tsx"
+  ],
+  "Diethyl malonate": [
+    "RetentionWorkspace.tsx"
+  ],
+  "Structure → retention prediction": [
+    "RetentionWorkspace.tsx"
+  ],
+  "Measured-curve lookup or experimental scoped QSRR → logKw / S → existing migration solver.": [
+    "RetentionWorkspace.tsx"
+  ],
+  "Non-commercial service · Source system: Eclipse Plus C18 / 3.5 µm / 35°C / acidified ACN–water / 20–50% ACN only. No independent gradient Rt accuracy claim. Formulation-defined pH is not a calculated pKa or logD.": [
+    "RetentionWorkspace.tsx"
+  ],
+  "Incompatible model conditions": [
+    "RetentionWorkspace.tsx"
+  ],
+  "Use mixture structure": [
+    "RetentionWorkspace.tsx"
+  ],
+  "Retention compound": [
+    "RetentionWorkspace.tsx"
+  ],
+  "Standalone prediction": [
+    "RetentionWorkspace.tsx"
+  ],
+  "Prediction SMILES": [
+    "RetentionWorkspace.tsx"
+  ],
+  "Retention SMILES": [
+    "RetentionWorkspace.tsx"
+  ],
+  "Retention model": [
+    "RetentionWorkspace.tsx",
+    "RetentionWorkspace.tsx"
+  ],
+  "Measured curve first, then scoped QSRR": [
+    "RetentionWorkspace.tsx"
+  ],
+  "lss-parameters": [
+    "RetentionWorkspace.tsx"
+  ],
+  "QSRR only (no experimental lookup)": [
+    "RetentionWorkspace.tsx"
+  ],
+  "report0259-rt": [
+    "RetentionWorkspace.tsx",
+    "RetentionWorkspace.tsx"
+  ],
+  "Method-specific RepoRT0259 Rt": [
+    "RetentionWorkspace.tsx"
+  ],
+  "Allow replacing manual parameters for selected compound": [
+    "RetentionWorkspace.tsx"
+  ],
+  "Predicting…": [
+    "RetentionWorkspace.tsx",
+    "UVWorkspace.tsx"
+  ],
+  "Predict retention": [
+    "RetentionWorkspace.tsx"
+  ],
+  "Load scoped curve conditions": [
+    "RetentionWorkspace.tsx"
+  ],
+  "Load three experimental curve compounds": [
+    "RetentionWorkspace.tsx"
+  ],
+  "Load exact RepoRT0259 method": [
+    "RetentionWorkspace.tsx"
+  ],
+  "Loading a method changes current LC settings. Experimental examples contain real measured curves, not synthetic validation; geometry / efficiency remain user-supplied simulation assumptions. Predictions update the selected Compound ID only. Direct Rt never updates LSS parameters.": [
+    "RetentionWorkspace.tsx"
+  ],
+  "retention-result": [
+    "RetentionWorkspace.tsx"
+  ],
+  "Rt:": [
+    "RetentionWorkspace.tsx"
+  ],
+  "Withheld": [
+    "RetentionWorkspace.tsx",
+    "RetentionWorkspace.tsx",
+    "RetentionWorkspace.tsx",
+    "UVWorkspace.tsx"
+  ],
+  "logKw:": [
+    "RetentionWorkspace.tsx"
+  ],
+  "· S:": [
+    "RetentionWorkspace.tsx"
+  ],
+  "· output:": [
+    "RetentionWorkspace.tsx"
+  ],
+  "ACN fraction": [
+    "RetentionWorkspace.tsx"
+  ],
+  "k": [
+    "RetentionWorkspace.tsx"
+  ],
+  "log10(k)": [
+    "RetentionWorkspace.tsx"
+  ],
+  "Model provenance, conditions & applicability": [
+    "RetentionWorkspace.tsx"
+  ],
+  "Model scope & held-out evidence": [
+    "RetentionWorkspace.tsx"
+  ],
+  "lss_parameters": [
+    "RetentionWorkspace.tsx"
+  ],
+  "· split counts": [
+    "RetentionWorkspace.tsx"
+  ],
+  "Gradient changes recalculate migration using the same eligible retention model. For LSS parameters, other solvents, phases, temperatures, pH controls or organic fractions produce warnings. Method-specific Rt retains its exact-method gate.": [
+    "RetentionWorkspace.tsx"
+  ],
+  "Measured": [
+    "sources.ts"
+  ],
+  "Calibrated": [
+    "sources.ts"
+  ],
+  "Model-based": [
+    "sources.ts"
+  ],
+  "Screening only": [
+    "sources.ts"
+  ],
+  "Insufficient data": [
+    "sources.ts"
+  ],
+  "Unsupported": [
+    "sources.ts"
+  ],
+  "Experimental": [
+    "sources.ts"
+  ],
+  "Model prediction (legacy label; pending user review)": [
+    "sources.ts"
+  ],
+  "Experimental model prediction": [
+    "sources.ts",
+    "UVWorkspace.tsx"
+  ],
+  "Qualitative screening": [
+    "sources.ts"
+  ],
+  "Unknown / Legacy": [
+    "sources.ts"
+  ],
+  "validated model prediction": [
+    "sources.ts"
+  ],
+  "validated_model_prediction": [
+    "sources.ts"
+  ],
+  "measured": [
+    "sources.ts",
+    "sources.ts"
+  ],
+  "unsupported": [
+    "sources.ts"
+  ],
+  "unknown_legacy": [
+    "sources.ts",
+    "sources.ts",
+    "sources.ts",
+    "sources.ts",
+    "sources.ts"
+  ],
+  "EluSim drawing": [
+    "StructureEditor.tsx"
+  ],
+  "EluSim 2D": [
+    "StructureEditor.tsx"
+  ],
+  "0 0 0 0 999 V2000": [
+    "StructureEditor.tsx"
+  ],
+  "M END": [
+    "StructureEditor.tsx"
+  ],
+  "drawing": [
+    "StructureEditor.tsx"
+  ],
+  "2D structure drawing": [
+    "StructureEditor.tsx"
+  ],
+  "Basic atom / bond editor. Tap canvas to add atoms; select two atoms to connect. RDKit validates the result. Aromatic / stereochemical editing: import MOL/SDF.": [
+    "StructureEditor.tsx"
+  ],
+  "Drawing atom": [
+    "StructureEditor.tsx"
+  ],
+  "N": [
+    "StructureEditor.tsx"
+  ],
+  "O": [
+    "StructureEditor.tsx"
+  ],
+  "F": [
+    "StructureEditor.tsx"
+  ],
+  "Cl": [
+    "StructureEditor.tsx"
+  ],
+  "Br": [
+    "StructureEditor.tsx"
+  ],
+  "P": [
+    "StructureEditor.tsx"
+  ],
+  "Bond order": [
+    "StructureEditor.tsx"
+  ],
+  "bond": [
+    "StructureEditor.tsx"
+  ],
+  "Clear": [
+    "StructureEditor.tsx"
+  ],
+  "Structure drawing canvas": [
+    "StructureEditor.tsx"
+  ],
+  "#71838e": [
+    "StructureEditor.tsx"
+  ],
+  "#d1f2ea": [
+    "StructureEditor.tsx"
+  ],
+  "#0b8080": [
+    "StructureEditor.tsx"
+  ],
+  "Use drawn structure": [
+    "StructureEditor.tsx"
+  ],
+  "ode": [
+    "types.ts"
+  ],
+  "analytic": [
+    "types.ts"
+  ],
+  "poppe": [
+    "types.ts"
+  ],
+  "ineligible": [
+    "types.ts"
+  ],
+  "pending": [
+    "types.ts"
+  ],
+  "eluted": [
+    "types.ts"
+  ],
+  "Synthetic A": [
+    "types.ts"
+  ],
+  "b": [
+    "types.ts"
+  ],
+  "Synthetic B": [
+    "types.ts"
+  ],
+  "c": [
+    "types.ts"
+  ],
+  "Synthetic C": [
+    "types.ts"
+  ],
+  "Generic": [
+    "types.ts"
+  ],
+  "Generic C18": [
+    "types.ts"
+  ],
+  "Water": [
+    "types.ts"
+  ],
+  "None": [
+    "types.ts"
+  ],
+  "c1ccccc1": [
+    "UVWorkspace.tsx"
+  ],
+  "Spectrum": [
+    "UVWorkspace.tsx"
+  ],
+  "elusim-uv-spectra": [
+    "UVWorkspace.tsx",
+    "UVWorkspace.tsx"
+  ],
+  "absorbance": [
+    "UVWorkspace.tsx",
+    "UVWorkspace.tsx",
+    "UVWorkspace.tsx"
+  ],
+  "Wavelength (nm)": [
+    "UVWorkspace.tsx"
+  ],
+  "normalized relative absorption (dimensionless)": [
+    "UVWorkspace.tsx",
+    "UVWorkspace.tsx"
+  ],
+  "Absorbance": [
+    "UVWorkspace.tsx"
+  ],
+  "molar": [
+    "UVWorkspace.tsx"
+  ],
+  "ε (L mol⁻¹ cm⁻¹)": [
+    "UVWorkspace.tsx"
+  ],
+  "Relative absorption": [
+    "UVWorkspace.tsx"
+  ],
+  "right": [
+    "UVWorkspace.tsx"
+  ],
+  "left": [
+    "UVWorkspace.tsx"
+  ],
+  "circle": [
+    "UVWorkspace.tsx"
+  ],
+  "λmax": [
+    "UVWorkspace.tsx"
+  ],
+  "top": [
+    "UVWorkspace.tsx"
+  ],
+  "Predicted window maximum": [
+    "UVWorkspace.tsx"
+  ],
+  "/api/uv/predict": [
+    "UVWorkspace.tsx"
+  ],
+  "Spectrum CSV limit: 180 kB": [
+    "UVWorkspace.tsx"
+  ],
+  "/api/uv/import": [
+    "UVWorkspace.tsx"
+  ],
+  "Independent UV-Vis / DAD spectra": [
+    "UVWorkspace.tsx"
+  ],
+  "Level 1 chromophore screening · Level 3 experimental full-shape regression, 220–400 nm only. No LC peak-height coupling.": [
+    "UVWorkspace.tsx"
+  ],
+  "Spectrum name": [
+    "UVWorkspace.tsx"
+  ],
+  "UV SMILES": [
+    "UVWorkspace.tsx",
+    "UVWorkspace.tsx"
+  ],
+  "Mixture compound": [
+    "UVWorkspace.tsx"
+  ],
+  "Select structure": [
+    "UVWorkspace.tsx"
+  ],
+  "Solvent (blank: dataset-specific)": [
+    "UVWorkspace.tsx"
+  ],
+  "UV solvent": [
+    "UVWorkspace.tsx"
+  ],
+  "pH (blank: unconditioned)": [
+    "UVWorkspace.tsx"
+  ],
+  "View start (nm)": [
+    "UVWorkspace.tsx"
+  ],
+  "UV start nm": [
+    "UVWorkspace.tsx"
+  ],
+  "View end (nm)": [
+    "UVWorkspace.tsx"
+  ],
+  "UV end nm": [
+    "UVWorkspace.tsx"
+  ],
+  "Sampling step (nm)": [
+    "UVWorkspace.tsx"
+  ],
+  "Analyze UV structure": [
+    "UVWorkspace.tsx"
+  ],
+  "Default view 190–800nm; model values exist only at 220–400nm. Solvent/pH adjustments and molar absorptivity are unsupported. No peaks are fabricated for missing or out-of-domain predictions.": [
+    "UVWorkspace.tsx"
+  ],
+  "uv-status": [
+    "UVWorkspace.tsx"
+  ],
+  "molecular-preview": [
+    "UVWorkspace.tsx"
+  ],
+  "UV molecular structure": [
+    "UVWorkspace.tsx"
+  ],
+  "Matched chromophores:": [
+    "UVWorkspace.tsx"
+  ],
+  "None matched": [
+    "UVWorkspace.tsx"
+  ],
+  "Predicted maximum within 220–400nm:": [
+    "UVWorkspace.tsx"
+  ],
+  "nm": [
+    "UVWorkspace.tsx"
+  ],
+  "Descriptors, model evidence & applicability": [
+    "UVWorkspace.tsx"
+  ],
+  "Wavelength scan & multiple-spectrum comparison": [
+    "UVWorkspace.tsx"
+  ],
+  "uv-chart": [
+    "UVWorkspace.tsx"
+  ],
+  "Tap legend / zoom. Unit groups have separate axes; relative shape is not quantitatively comparable to absorbance or ε. Experimental originals are retained. Maximum markers are shown in the result above.": [
+    "UVWorkspace.tsx"
+  ],
+  "png": [
+    "UVWorkspace.tsx"
+  ],
+  "EluSim-UV.png": [
+    "UVWorkspace.tsx"
+  ],
+  "Export UV PNG": [
+    "UVWorkspace.tsx"
+  ],
+  "div": [
+    "UVWorkspace.tsx"
+  ],
+  "svg": [
+    "UVWorkspace.tsx"
+  ],
+  "EluSim-UV.svg": [
+    "UVWorkspace.tsx"
+  ],
+  "image/svg+xml": [
+    "UVWorkspace.tsx"
+  ],
+  "Export UV SVG": [
+    "UVWorkspace.tsx"
+  ],
+  "EluSim-UV.csv": [
+    "UVWorkspace.tsx"
+  ],
+  "name,status,unit,wavelength_nm,intensity": [
+    "UVWorkspace.tsx"
+  ],
+  "Export UV CSV": [
+    "UVWorkspace.tsx"
+  ],
+  "EluSim-UV-originals.json": [
+    "UVWorkspace.tsx"
+  ],
+  "Export original data JSON": [
+    "UVWorkspace.tsx"
+  ],
+  "Clear comparison": [
+    "UVWorkspace.tsx"
+  ],
+  "Experimental intensity unit": [
+    "UVWorkspace.tsx"
+  ],
+  "molar absorptivity (L mol^-1 cm^-1)": [
+    "UVWorkspace.tsx"
+  ],
+  "Import experimental UV CSV": [
+    "UVWorkspace.tsx"
+  ],
+  "Import UV CSV": [
+    "UVWorkspace.tsx"
+  ],
+  ".csv": [
+    "UVWorkspace.tsx"
+  ],
+  "CSV columns: wavelength_nm,intensity. Raw values, unit and original CSV are preserved; importing never retrains or overwrites a model.": [
+    "UVWorkspace.tsx"
+  ],
+  "points ·": [
+    "UVWorkspace.tsx"
+  ]
+}

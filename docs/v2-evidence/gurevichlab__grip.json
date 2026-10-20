@@ -1,0 +1,24 @@
+{
+  "repo": "gurevichlab/grip",
+  "commit": "4247e26580d6ad050125741833dedae8e9ba5370",
+  "license": null,
+  "tree": [
+    {
+      "path": "model/model-i6kwrq9u.ckpt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fd5f24a99859d6b70d36193129244233cfa2b771",
+      "size": 12355159,
+      "url": "https://api.github.com/repos/gurevichlab/grip/git/blobs/fd5f24a99859d6b70d36193129244233cfa2b771"
+    }
+  ],
+  "files": {},
+  "reviewed_files": [
+    "README.md",
+    "environment.yml",
+    "grip_inference.py",
+    "pyproject.toml"
+  ],
+  "reuse_decision": "No explicit license; source reviewed only, no source or weight redistribution",
+  "review_tree_entries": 45
+}

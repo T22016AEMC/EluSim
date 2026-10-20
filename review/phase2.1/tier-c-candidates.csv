@@ -1,0 +1,77 @@
+candidate,gate,passed,values,test_logk35_mae
+C1,polarity,False,"{""caffeine"": 3.4598438029981056, ""phenol"": 3.379730543255529, ""benzene"": 3.4042925511339255}",0.471591103612334
+C1,homologues,True,"{""benzene"": 3.4042925511339255, ""toluene"": 3.7912722957865777, ""ethylbenzene"": 4.111090599306394, ""propylbenzene"": 4.452161508951891}",0.471591103612334
+C1,benzyl_alcohol_toluene,True,"{""benzyl_alcohol"": 3.485144248240402, ""toluene"": 3.7912722957865777}",0.471591103612334
+C1,aniline_benzene,True,"{""aniline"": 3.2988506200451746, ""benzene"": 3.4042925511339255}",0.471591103612334
+C1,ring_count,True,"{""benzene"": 3.4042925511339255, ""naphthalene"": 4.533919569189166}",0.471591103612334
+C1,esters,True,"{""PGMEA"": 3.7584238872631928, ""benzyl_acetate"": 4.402021580981244}",0.471591103612334
+C1,rs_phenol_benzene,False,"{""rs"": 0.3874240481225878}",0.471591103612334
+C1,rs_benzene_toluene,True,"{""rs"": 6.159772439942504}",0.471591103612334
+C1,range_and_elution_caffeine,True,"{""logkw"": 1.0412778044267565, ""s"": 3.209897057286124, ""rt_min"": 3.4598438029981056, ""eluted"": true}",0.471591103612334
+C1,range_and_elution_phenol,True,"{""logkw"": 1.0050436906856364, ""s"": 3.160059229975092, ""rt_min"": 3.379730543255529, ""eluted"": true}",0.471591103612334
+C1,range_and_elution_benzene,True,"{""logkw"": 1.0161161269696506, ""s"": 3.175288694986371, ""rt_min"": 3.4042925511339255, ""eluted"": true}",0.471591103612334
+C1,range_and_elution_toluene,True,"{""logkw"": 1.1957892721937782, ""s"": 3.422418216301201, ""rt_min"": 3.7912722957865777, ""eluted"": true}",0.471591103612334
+C1,range_and_elution_ethylbenzene,True,"{""logkw"": 1.3547469696621324, ""s"": 3.6410548947856753, ""rt_min"": 4.111090599306394, ""eluted"": true}",0.471591103612334
+C1,range_and_elution_propylbenzene,True,"{""logkw"": 1.5394617774002413, ""s"": 3.8951189173146794, ""rt_min"": 4.452161508951891, ""eluted"": true}",0.471591103612334
+C1,range_and_elution_benzyl_alcohol,True,"{""logkw"": 1.0527962938809892, ""s"": 3.2257400413978763, ""rt_min"": 3.485144248240402, ""eluted"": true}",0.471591103612334
+C1,range_and_elution_aniline,True,"{""logkw"": 0.9687875285037537, ""s"": 3.1101910763701404, ""rt_min"": 3.2988506200451746, ""eluted"": true}",0.471591103612334
+C1,range_and_elution_naphthalene,True,"{""logkw"": 1.5866624433622725, ""s"": 3.9600405725257968, ""rt_min"": 4.533919569189166, ""eluted"": true}",0.471591103612334
+C1,range_and_elution_PGMEA,True,"{""logkw"": 1.1800764458004527, ""s"": 3.400806175947359, ""rt_min"": 3.7584238872631928, ""eluted"": true}",0.471591103612334
+C1,range_and_elution_benzyl_acetate,True,"{""logkw"": 1.5111226643459819, ""s"": 3.8561401849345573, ""rt_min"": 4.402021580981244, ""eluted"": true}",0.471591103612334
+C2,polarity,True,"{""caffeine"": 4.5511661836551704, ""phenol"": 4.814585403498814, ""benzene"": 5.06988199246921}",0.4456223631208843
+C2,homologues,True,"{""benzene"": 5.06988199246921, ""toluene"": 5.179650158536594, ""ethylbenzene"": 5.270055196461103, ""propylbenzene"": 5.38190104993861}",0.4456223631208843
+C2,benzyl_alcohol_toluene,True,"{""benzyl_alcohol"": 4.802468823711355, ""toluene"": 5.179650158536594}",0.4456223631208843
+C2,aniline_benzene,True,"{""aniline"": 4.779806482334339, ""benzene"": 5.06988199246921}",0.4456223631208843
+C2,ring_count,True,"{""benzene"": 5.06988199246921, ""naphthalene"": 5.331827922943924}",0.4456223631208843
+C2,esters,True,"{""PGMEA"": 5.084522910004934, ""benzyl_acetate"": 5.262577912728615}",0.4456223631208843
+C2,rs_phenol_benzene,True,"{""rs"": 4.613621130866283}",0.4456223631208843
+C2,rs_benzene_toluene,True,"{""rs"": 2.0347740328981962}",0.4456223631208843
+C2,range_and_elution_caffeine,True,"{""logkw"": 1.596783119165926, ""s"": 3.9739609486822873, ""rt_min"": 4.5511661836551704, ""eluted"": true}",0.4456223631208843
+C2,range_and_elution_phenol,True,"{""logkw"": 1.7592451845538961, ""s"": 4.197417672841397, ""rt_min"": 4.814585403498814, ""eluted"": true}",0.4456223631208843
+C2,range_and_elution_benzene,True,"{""logkw"": 1.9331839111915337, ""s"": 4.436659848952076, ""rt_min"": 5.06988199246921, ""eluted"": true}",0.4456223631208843
+C2,range_and_elution_toluene,True,"{""logkw"": 2.013926306926158, ""s"": 4.547716120510185, ""rt_min"": 5.179650158536594, ""eluted"": true}",0.4456223631208843
+C2,range_and_elution_ethylbenzene,True,"{""logkw"": 2.083487063728083, ""s"": 4.643392725432492, ""rt_min"": 5.270055196461103, ""eluted"": true}",0.4456223631208843
+C2,range_and_elution_propylbenzene,True,"{""logkw"": 2.173737197060066, ""s"": 4.7675263137943515, ""rt_min"": 5.38190104993861, ""eluted"": true}",0.4456223631208843
+C2,range_and_elution_benzyl_alcohol,True,"{""logkw"": 1.751421985861469, ""s"": 4.18665733720193, ""rt_min"": 4.802468823711355, ""eluted"": true}",0.4456223631208843
+C2,range_and_elution_aniline,True,"{""logkw"": 1.7368864600683256, ""s"": 4.166664602467766, ""rt_min"": 4.779806482334339, ""eluted"": true}",0.4456223631208843
+C2,range_and_elution_naphthalene,True,"{""logkw"": 2.1327331835098806, ""s"": 4.711127778398293, ""rt_min"": 5.331827922943924, ""eluted"": true}",0.4456223631208843
+C2,range_and_elution_PGMEA,True,"{""logkw"": 1.9437301688462838, ""s"": 4.451165587150348, ""rt_min"": 5.084522910004934, ""eluted"": true}",0.4456223631208843
+C2,range_and_elution_benzyl_acetate,True,"{""logkw"": 2.0776228902045752, ""s"": 4.635326910176885, ""rt_min"": 5.262577912728615, ""eluted"": true}",0.4456223631208843
+C3,polarity,False,"{""caffeine"": 4.6126272946013716, ""phenol"": 4.599585945183326, ""benzene"": 4.774872308286683}",0.4494385331983264
+C3,homologues,True,"{""benzene"": 4.774872308286683, ""toluene"": 4.999882029131, ""ethylbenzene"": 5.145131313222196, ""propylbenzene"": 5.291849936959079}",0.4494385331983264
+C3,benzyl_alcohol_toluene,True,"{""benzyl_alcohol"": 4.6426709238922435, ""toluene"": 4.999882029131}",0.4494385331983264
+C3,aniline_benzene,True,"{""aniline"": 4.563024986257804, ""benzene"": 4.774872308286683}",0.4494385331983264
+C3,ring_count,True,"{""benzene"": 4.774872308286683, ""naphthalene"": 5.189851318471357}",0.4494385331983264
+C3,esters,False,"{""PGMEA"": 5.283919996929968, ""benzyl_acetate"": 5.224813608611294}",0.4494385331983264
+C3,rs_phenol_benzene,True,"{""rs"": 3.0646127628523256}",0.4494385331983264
+C3,rs_benzene_toluene,True,"{""rs"": 4.036187108640862}",0.4494385331983264
+C3,range_and_elution_caffeine,True,"{""logkw"": 1.6333359038937314, ""s"": 4.024237088620942, ""rt_min"": 4.6126272946013716, ""eluted"": true}",0.4494385331983264
+C3,range_and_elution_phenol,True,"{""logkw"": 1.6255151585819179, ""s"": 4.01348012745781, ""rt_min"": 4.599585945183326, ""eluted"": true}",0.4494385331983264
+C3,range_and_elution_benzene,True,"{""logkw"": 1.733738213871437, ""s"": 4.1623343806383, ""rt_min"": 4.774872308286683, ""eluted"": true}",0.4494385331983264
+C3,range_and_elution_toluene,True,"{""logkw"": 1.8836625593626661, ""s"": 4.3685462309872705, ""rt_min"": 4.999882029131, ""eluted"": true}",0.4494385331983264
+C3,range_and_elution_ethylbenzene,True,"{""logkw"": 1.988111616748814, ""s"": 4.51220957879267, ""rt_min"": 5.145131313222196, ""eluted"": true}",0.4494385331983264
+C3,range_and_elution_propylbenzene,True,"{""logkw"": 2.100697812386469, ""s"": 4.667065067073259, ""rt_min"": 5.291849936959079, ""eluted"": true}",0.4494385331983264
+C3,range_and_elution_benzyl_alcohol,True,"{""logkw"": 1.6514887782107668, ""s"": 4.0492052670032, ""rt_min"": 4.6426709238922435, ""eluted"": true}",0.4494385331983264
+C3,range_and_elution_aniline,True,"{""logkw"": 1.6037763041227182, ""s"": 3.9835796507352974, ""rt_min"": 4.563024986257804, ""eluted"": true}",0.4494385331983264
+C3,range_and_elution_naphthalene,True,"{""logkw"": 2.02163218648137, ""s"": 4.558315090787095, ""rt_min"": 5.189851318471357, ""eluted"": true}",0.4494385331983264
+C3,range_and_elution_PGMEA,True,"{""logkw"": 2.0944152967922287, ""s"": 4.65842384765496, ""rt_min"": 5.283919996929968, ""eluted"": true}",0.4494385331983264
+C3,range_and_elution_benzyl_acetate,True,"{""logkw"": 2.04831523311807, ""s"": 4.595016004183602, ""rt_min"": 5.224813608611294, ""eluted"": true}",0.4494385331983264
+C4,polarity,True,"{""caffeine"": 4.632118119466888, ""phenol"": 4.683149891022919, ""benzene"": 4.874060540699061}",0.44747559593731706
+C4,homologues,True,"{""benzene"": 4.874060540699061, ""toluene"": 5.057940665308046, ""ethylbenzene"": 5.180394740094399, ""propylbenzene"": 5.310381993326575}",0.44747559593731706
+C4,benzyl_alcohol_toluene,True,"{""benzyl_alcohol"": 4.707069809473488, ""toluene"": 5.057940665308046}",0.44747559593731706
+C4,aniline_benzene,True,"{""aniline"": 4.648672180642703, ""benzene"": 4.874060540699061}",0.44747559593731706
+C4,ring_count,True,"{""benzene"": 4.874060540699061, ""naphthalene"": 5.231657806769864}",0.44747559593731706
+C4,esters,True,"{""PGMEA"": 5.225465525481181, ""benzyl_acetate"": 5.234021748808433}",0.44747559593731706
+C4,rs_phenol_benzene,True,"{""rs"": 3.3761723855954733}",0.44747559593731706
+C4,rs_benzene_toluene,True,"{""rs"": 3.3333805646583476}",0.44747559593731706
+C4,range_and_elution_caffeine,True,"{""logkw"": 1.6450907720899843, ""s"": 4.040405197365492, ""rt_min"": 4.632118119466888, ""eluted"": true}",0.44747559593731706
+C4,range_and_elution_phenol,True,"{""logkw"": 1.6762541829367759, ""s"": 4.083268580179312, ""rt_min"": 4.683149891022919, ""eluted"": true}",0.44747559593731706
+C4,range_and_elution_benzene,True,"{""logkw"": 1.7981822952599493, ""s"": 4.250973308649777, ""rt_min"": 4.874060540699061, ""eluted"": true}",0.44747559593731706
+C4,range_and_elution_toluene,True,"{""logkw"": 1.9246313497140861, ""s"": 4.424896319008296, ""rt_min"": 5.057940665308046, ""eluted"": true}",0.44747559593731706
+C4,range_and_elution_ethylbenzene,True,"{""logkw"": 2.014487557441541, ""s"": 4.548488086576852, ""rt_min"": 5.180394740094399, ""eluted"": true}",0.44747559593731706
+C4,range_and_elution_propylbenzene,True,"{""logkw"": 2.1154721628820443, ""s"": 4.687386290710517, ""rt_min"": 5.310381993326575, ""eluted"": true}",0.44747559593731706
+C4,range_and_elution_benzyl_alcohol,True,"{""logkw"": 1.691058965258153, ""s"": 4.103631660948496, ""rt_min"": 4.707069809473488, ""eluted"": true}",0.44747559593731706
+C4,range_and_elution_aniline,True,"{""logkw"": 1.655137898307295, ""s"": 4.054224410523788, ""rt_min"": 4.648672180642703, ""eluted"": true}",0.44747559593731706
+C4,range_and_elution_naphthalene,True,"{""logkw"": 2.053588878760403, ""s"": 4.602269584130389, ""rt_min"": 5.231657806769864, ""eluted"": true}",0.44747559593731706
+C4,range_and_elution_PGMEA,True,"{""logkw"": 2.048816837817801, ""s"": 4.5957059310459565, ""rt_min"": 5.225465525481181, ""eluted"": true}",0.44747559593731706
+C4,range_and_elution_benzyl_acetate,True,"{""logkw"": 2.055414229499312, ""s"": 4.604780243437742, ""rt_min"": 5.234021748808433, ""eluted"": true}",0.44747559593731706

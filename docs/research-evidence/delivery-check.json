@@ -1,0 +1,34 @@
+{
+  "github-research-report.md": {
+    "characters": 33589
+  },
+  "open-source-comparison.md": {
+    "characters": 6278
+  },
+  "scientific-model-comparison.md": {
+    "characters": 6751
+  },
+  "recommended-architecture.md": {
+    "characters": 3836
+  },
+  "phase1-revised-plan.md": {
+    "characters": 2342
+  },
+  "license-review.md": {
+    "characters": 5331
+  },
+  "pylss": {
+    "status": "PASS_HEADLESS_API",
+    "cases": 4
+  },
+  "stlc": {
+    "status": "PASS_SYNTHETIC_TRANSPORT",
+    "cases": 3
+  },
+  "openiex": {
+    "status": "EXECUTED_REVIEW_REQUIRED",
+    "cases": 3
+  },
+  "git_status": "## No commits yet on research/lc-open-source-20261013\n?? docs/\n?? scripts/\n",
+  "errors": []
+}

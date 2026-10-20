@@ -1,0 +1,1332 @@
+COMMAND C:\Users\T22016\AppData\Local\Temp\lc-gradient-research-20261013\venv-pylss\Scripts\python.exe -X utf8 "C:\Users\T22016\Desktop\程式\LC Gradient Studio\scripts\research\probe.py" pylss
+
+REPO boecker-lab/2-step SHA 74c2675e8482f3d588bf8bb4bc47433f9200e68f DATE 2026-10-12T09:05:33Z LICENSE {'key': 'agpl-3.0', 'name': 'GNU Affero General Public License v3.0', 'spdx_id': 'AGPL-3.0', 'url': 'https://api.github.com/licenses/agpl-3.0', 'node_id': 'MDc6TGljZW5zZTE='} ISSUES 0 ARCHIVED False ERROR None
+TEST/CI ['.github/workflows/build_container.yaml', '.github/workflows/test-envs.yml', '.github/workflows/test_container.yaml', 'test/test_input.tsv', 'test/test_metadata.yaml', 'test/test_output.tsv']
+WEIGHTS [{'path': 'models/2-step0525.pt', 'size': 3826197}, {'path': 'models/2-step0525_nocolumn.pt', 'size': 3814190}, {'path': 'models/2-step0525_setupagnostic.pt', 'size': 3813187}]
+FILE LICENSE                     GNU AFFERO GENERAL PUBLIC LICENSE
+                       Version 3, 19 November 2007
+
+ Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>
+ Everyone is permitted to copy and distribute verbatim copies
+ of this license document, but changing it is not allowed.
+
+                            Preamble
+
+  The GNU Affero General Public License is a free, copyleft license for
+software and other kinds of works, specifically designed to ensure
+cooperation with the community in the case of network server software.
+
+  The licenses for most software and other practical works are designed
+to take away your freedom to share and change the works.  By contrast,
+our General Public Licenses are intended to guarantee your freedom to
+share and change all versions of a program--to make sure it remains free
+software for all its users.
+
+  When we speak of free software, we a
+
+REPO cadet/CADET-Core SHA b7f689ff7db3bd539188be08a43f7564ea39ff2e DATE 2026-10-12T14:28:15Z LICENSE {'key': 'agpl-3.0', 'name': 'GNU Affero General Public License v3.0', 'spdx_id': 'AGPL-3.0', 'url': 'https://api.github.com/licenses/agpl-3.0', 'node_id': 'MDc6TGljZW5zZTE='} ISSUES 146 ARCHIVED False ERROR None
+TEST/CI ['.github/workflows/cd_docker.yml', '.github/workflows/ci.yml', '.github/workflows/ci_coverage.yml', '.github/workflows/cla.yml', '.github/workflows/deploy_documentation.yml', '.github/workflows/testrunner.yml', '.github/workflows/wheels.yml', 'test/AD.cpp', 'test/Approx.hpp', 'test/BandMatrix.cpp', 'test/BindingModelAutoJacobian.cpp', 'test/BindingModelTests.cpp', 'test/BindingModelTests.hpp', 'test/BindingModels.cpp', 'test/BindingModels.hpp', 'test/CMakeLists.txt', 'test/CSTR-Residual.cpp', 'test/CSTR-Simulation.cpp', 'test/Callbacks.cpp', 'test/CellKernelTests.cpp', 'test/ColumnModel1D.cpp', 'test/ColumnModel2D.cpp', 'test/ColumnTests.cpp', 'test/ColumnTests.hpp', 'test/ConvectionDispersionOperatorFV.cpp', 'test/Crystallization.cpp', 'test/DenseMatrix.cpp', 'test/Dummies.hpp', 'test/FrustumGeneralRateModel.cpp', 'test/GeneralRateModel.cpp', 'test/GeneralRateModel2D.cpp', 'test/Graph.cpp', 'test/H5FileOutput.cpp', 'test/Histogram.cpp', 'test/JacobianHelper.hpp', 'test/JsonTestModels.cpp', 'test/JsonTestModels.hpp', 'test/LogUtils.cpp', 'test/LumpedRateModelWithPores.cpp', 'test/LumpedRateModelWithoutPores.cpp', 'test/LumpedRateModelWithoutPoresDG.cpp', 'test/MatrixHelper.hpp', 'test/ModelSystem.cpp', 'test/MultiChannelTransportModel.cpp', 'test/NonlinearSolvers.cpp', 'test/ParamDepTests.cpp', 'test/ParamDepTests.hpp', 'test/ParameterDependencies.cpp', 'test/ParameterDependencies.hpp', 'test/ParticleHelper.cpp', 'test/ParticleHelper.hpp', 'test/Paths.cpp.in', 'test/RadialGeneralRateModel.cpp', 'test/RadialLumpedRateModelWithPores.cpp', 'test/RadialLumpedRateModelWithoutPores.cpp', 'test/ReactionModelTests.cpp', 'test/ReactionModelTests.hpp', 'test/ReactionModels.cpp', 'test/ReferenceSimulations.cpp', 'test/SimHelper.cpp', 'test/SimHelper.hpp', 'test/SparseFactorizableMatrix.cpp', 'test/SparseMatrix.cpp', 'test/StringHashing.cpp', 'test/Subset.cpp', 'test/TimeIntegrator.cpp', 'test/TimeIntegrator.hpp', 'test/TwoDimConvectionDispersionOperatorFV.cpp', 'test/UnitOperationTests.cpp', 'test/UnitOperationTests.hpp', 'test/Utils.hpp', 'test/data/config_2DGRM_KOREN_eq_Z128.json', 'test/data/config_2DGRM_KOREN_nonEq_Z128.json', 'test/data/config_2DGRM_WENO3_nonEq_Z128.json', 'test/data/config_COL1D_GRM_GPR_Shallow_MLP_7.json', 'test/data/config_COL1D_GRM_GPR_Shallow_RBF_15.json', 'test/data/config_COL1D_GRM_spline_knots_shallow_7.json', 'test/data/config_CSTR_MichaelisMenten_twoSubs_benchmark1.json', 'test/data/config_CSTR_MichaelisMenten_twoSubs_twoInhib_benchmark1.json', 'test/data/config_CSTR_MicroKineticsMAL_twoSubs_benchmark1.json', 'test/data/config_CSTR_MicroKineticsMAL_twoSubs_twoInhib_benchmark1.json', 'test/data/config_Col1D_GRM_langANN_1comp_benchmark1.json', 'test/data/config_Col1D_LRM_langANN_2comp_benchmark1.json', 'test/data/config_Col1D_LRM_langSPLINE_2comp_benchmark1.json', 'test/data/config_Col1D_LRM_langmuirGPR_2comp_benchmark1.json', 'test/data/config_MCT_KOREN_eq_Z128.json', 'test/data/config_MCT_KOREN_nonEq_Z128.json', 'test/data/config_MCT_WENO3_nonEq_Z128.json', 'test/data/config_acyclicSystem1_LRMP_linBnd_1comp.json', 'test/data/config_axCOL1D_axOp_transport_1comp_test.json', 'test/data/config_axCOL1D_frustOp_transport_1comp_test.json', 'test/data/config_axKOREN_eq_Z128.json', 'test/data/config_axKOREN_nonEq_Z128.json', 'test/data/config_axWENO2_eq_Z128.json', 'test/data/config_axWENO2_nonEq_Z128.json', 'test/data/config_axWENO3_eq_Z128.json', 'test/data/config_axWENO3_nonEq_Z128.json', 'test/data/config_cyclicSystem1_LRMP_linBnd_1comp.json', 'test/data/config_frustCOL1D_transport_1comp_test.json', 'test/data/config_frustumCOL1D_transport_1comp_WENO3nonEq_benchmark1_FV_Z512.json', 'test/data/config_frustumKOREN_eq_Z128.json', 'test/data/config_frustumKOREN_nonEq_Z128.json', 'test/data/config_frustumLRMP_reqSMA_4comp_benchmark1.json', 'test/data/config_frustumWENO2_eq_Z128.json', 'test/data/config_frustumWENO2_nonEq_Z128.json', 'test/data/config_frustumWENO3_eq_Z128.json', 'test/data/config_frustumWENO3_nonEq_Z128.json', 'test/data/config_radCOL1D_frustOp_transport_1comp_test.json', 'test/data/config_radCOL1D_radOp_transport_1comp_test.json', 'test/data/config_radCOL1D_transport_1comp_DGP3_benchmark1_DG_P3Z16.json', 'test/data/config_radKOREN_eq_Z128.json', 'test/data/config_radKOREN_nonEq_Z128.json', 'test/data/config_radWENO2_eq_Z128.json', 'test/data/config_radWENO2_nonEq_Z128.json', 'test/data/config_radWENO3_eq_Z128.json', 'test/data/config_radWENO3_nonEq_Z128.json', 'test/data/config_radialLRMP_reqSMA_4comp_benchmark1.json', 'test/data/config_smoothlyVaryingCOL1D_transport_1comp_benchmark1.json', 'test/data/grm-nonBinding.data', 'test/data/grm-pulseBenchmark.data', 'test/data/lrm-nonBinding.data', 'test/data/lrm-pulseBenchmark.data', 'test/data/lrmp-nonBinding.data', 'test/data/lrmp-pulseBenchmark.data', 'test/data/model_2DGRMsd3Zone_dynLin_1Comp_benchmark1.json', 'test/data/model_COL1D_2parTypeMixed_2comp_benchmark1.json', 'test/data/model_COL1D_DPFR_1comp_benchmark1.json', 'test/data/model_COL1D_GRM_dynLin_1comp_benchmark1.json', 'test/data/model_COL1D_GRM_dynLin_1comp_benchmark2.json', 'test/data/model_COL1D_GRM_reqSMA_4comp_benchmark1.json', 'test/data/model_COL1D_GRMsd_dynLin_1comp_benchmark1.json', 'test/data/model_COL1D_LRMP_dynLin_1comp_benchmark1.json', 'test/data/model_COL1D_LRMP_reqSMA_4comp_benchmark1.json', 'test/data/model_COL1D_pseudoGRM_dynLin_1comp_benchmark1.json', 'test/data/model_COL1DparType2_GRM_dynLin_2comp_sensbenchmark1.json', 'test/data/model_COL2D_DPF3Zone_noFilmDiff_1Comp_benchmark1.json', 'test/data/model_COL2D_DPF_1comp.json', 'test/data/model_COL2D_GRM2Zone_noRadVar_SMA_LWE.json', 'test/data/model_COL2D_GRM3Zone_dynLin_1Comp_benchmark1.json', 'test/data/model_COL2D_GRM3Zone_dynSMA_4Comp_benchmark1.json', 'test/data/model_COL2D_GRM_2parType_1comp.json', 'test/data/model_COL2D_GRM_dynLin_1comp_benchmark1.json', 'test/data/model_COL2D_GRM_dynLin_2comp.json', 'test/data/model_COL2D_GRM_linBnd_1comp.json', 'test/data/model_COL2D_GRMsd3Zone2ParType_dynLin_1Comp_benchmark1.json', 'test/data/model_COL2D_GRMsd3Zone_dynLin_1Comp_benchmark1.json', 'test/data/model_COL2D_GRMsd3Zone_dynLin_1Comp_benchmark2.json', 'test/data/model_COL2D_LRMP3Zone_dynLin_1Comp_benchmark1.json', 'test/data/model_COL2D_LRMP_2parType_1comp.json', 'test/data/model_COL2D_LRMP_dynLin_2comp.json', 'test/data/model_COL2D_LRMP_linBnd_1comp.json', 'test/data/model_CSTR_MichaelisMenten_benchmark1.json', 'test/data/model_CSTR_MichaelisMenten_benchmark2.json', 'test/data/model_CSTR_MichaelisMenten_twoInhib_benchmark1.json', 'test/data/model_CSTR_MicroKineticsMAL_benchmark1.json', 'test/data/model_CSTR_MicroKineticsMAL_twoInhib_benchmark1.json', 'test/data/model_CSTR_reacMAL_2comp_sensbenchmark1.json', 'test/data/model_CSTR_reacMAL_3comp_nreac_2.json', 'test/data/model_LRM_dynLin_1comp_benchmark1.json', 'test/data/model_LRM_noBnd_1comp_MCTbenchmark.json', 'test/data/model_LRM_reqSMA_4comp_benchmark1.json', 'test/data/model_MCT1ch_noEx_noReac_benchmark1.json', 'test/data/model_MCT1ch_noEx_reac_benchmark1.json', 'test/data/model_MCT2ch_1comp_benchmark1.json', 'test/data/model_MCT2ch_dynLgmr_1comp_benchmark1.json', 'test/data/model_MCT2ch_oneWayEx_reac_benchmark1.json', 'test/data/model_MCT3ch_twoWayExc_reac_benchmark1.json', 'test/data/model_cry_CSTR_PBM_Agg_Frag_benchmark1.json', 'test/data/model_cry_CSTR_PBM_growthSizeDep_benchmark1.json', 'test/data/model_cry_CSTR_PBM_growth_benchmark1.json', 'test/data/model_cry_CSTR_PBM_primaryNucleationAndGrowth_benchmark1.json', 'test/data/model_cry_CSTR_PBM_primaryNucleationGrowthGrowthRateDispersion_benchmark1.json', 'test/data/model_cry_CSTR_PBM_primarySecondaryNucleationAndGrowth_benchmark1.json', 'test/data/model_cry_CSTR_aggFrag_benchmark1.json', 'test/data/model_cry_CSTR_aggregation_benchmark1.json', 'test/data/model_cry_CSTR_fragmentation_benchmark1.json', 'test/data/model_cry_DPFR_PBM_aggregation_benchmark1.json', 'test/data/model_cry_DPFR_PBM_primarySecondaryNucleationGrowth_benchmark1.json', 'test/data/model_pseudoFrustGRM_dynLin_1comp_benchmark1.json', 'test/data/model_radGRM_dynLin_1comp_sensbenchmark1.json', 'test/data/model_radLRMP_dynLin_1comp_sensbenchmark1.json', 'test/data/model_radLRM_dynLin_1comp_benchmark1.json', 'test/data/model_radLRM_dynLin_1comp_sensbenchmark1.json', 'test/data/newOp_GRM_dynLin_1comp_benchmark1_cDG_P3Z32_DGexInt_parP3parZ4.h5', 'test/data/refAna_2DGRMsd3Zone_dynLin_1Comp_radZ3_benchmark1.h5', 'test/data/refAna_2DLRMP3Zone_dynLin_1Comp_radZ3_benchmark1.h5', 'test/data/ref_2DGRM_KOREN_eq_Z128.h5', 'test/data/ref_2DGRM_KOREN_nonEq_Z128.h5', 'test/data/ref_2DGRM_WENO3_nonEq_Z128.h5', 'test/data/ref_2DGRMsd3Zone_dynLin_1Comp_benchmark1_FV_axZ16radZ12parZ12.h5', 'test/data/ref_2DLRMP3Zone_noFilmDiff_1Comp_benchmark1.h5', 'test/data/ref_COL1D_2parTypeMixed_2comp_benchmark1.h5', 'test/data/ref_COL1D_DPFR_1comp_benchmark1_DG_P3Z8.h5', 'test/data/ref_COL1D_GRM_GPR_Shallow_MLP_7.h5', 'test/data/ref_COL1D_GRM_GPR_Shallow_RBF_15.h5', 'test/data/ref_COL1D_GRM_spline_knots_shallow_7.h5', 'test/data/ref_COL1D_GRMsd_dynLin_1comp_benchmark1_cDG_P3Z8_GSM_parP3parZ1.h5', 'test/data/ref_COL2D_GRMsd3Zone2ParType_dynLin_1Comp_benchmark1_DG_axP3Z8_radP3Z3_parP3Z1.h5', 'test/data/ref_COL2D_GRMsd3Zone_dynLin_1Comp_benchmark1_DG_axP3Z8_radP3Z3_parP3Z1.h5', 'test/data/ref_CSTR_MichaelisMenten_benchmark2.h5', 'test/data/ref_CSTR_reacMAL_2comp_sensbenchmark1.h5', 'test/data/ref_CSTR_reacMAL_3comp_nreac_1.h5', 'test/data/ref_CSTR_reacMAL_3comp_one_type_old_interface.h5', 'test/data/ref_Col1D_GRM_langANN_1comp_benchmark1.h5', 'test/data/ref_Col1D_LRM_langANN_2comp_benchmark1.h5', 'test/data/ref_Col1D_LRM_langSPLINE_2comp_benchmark1.h5', 'test/data/ref_Col1D_LRM_langmuirGPR_2comp_benchmark1.h5', 'test/data/ref_GRM_dynLin_1comp_benchmark1_cDG_P3Z8_GSM_parP10parZ1.h5', 'test/data/ref_GRM_dynLin_1comp_benchmark1_cDG_P3Z8_GSM_parP3parZ1.h5', 'test/data/ref_GRM_dynLin_1comp_benchmarkFrustum_FV_Z32parZ4.h5', 'test/data/ref_GRM_dynLin_1comp_sensbenchmark1_FV_Z1024parZ128.h5', 'test/data/ref_GRM_dynLin_1comp_sensbenchmark1_FV_Z32parZ4.h5', 'test/data/ref_GRM_dynLin_1comp_sensbenchmark1_cDG_P3Z8_GSM_parP3parZ1.h5', 'test/data/ref_GRM_dynLin_1comp_sensbenchmark2_FV_Z32parZ4.h5', 'test/data/ref_GRM_dynLin_1comp_sensbenchmark2_cDG_P3Z8_GSM_parP3parZ1.h5', 'test/data/ref_GRM_reqSMA_4comp_sensbenchmark1_FV_Z16parZ2.h5', 'test/data/ref_GRM_reqSMA_4comp_sensbenchmark1_FV_Z512parZ64.h5', 'test/data/ref_GRM_reqSMA_4comp_sensbenchmark1_cDG_P3Z8_GSM_parP3parZ1.h5', 'test/data/ref_GRM_reqSMA_4comp_sensbenchmark1_exIntDG_P3Z8_GSM_parP3parZ1.h5', 'test/data/ref_GRMparType2_dynLin_2comp_sensbenchmark1_FV_Z16parZ8.h5', 'test/data/ref_GRMparType2_dynLin_2comp_sensbenchmark1_cDG_P3Z4_DGexInt_parP3parZ2.h5', 'test/data/ref_LRMP_dynLin_1comp_sensbenchmark1_DG_P3Z8.h5', 'test/data/ref_LRMP_dynLin_1comp_sensbenchmark1_FV_Z32.h5', 'test/data/ref_LRMP_dynLin_1comp_sensbenchmark1_FV_Z32768.h5', 'test/data/ref_LRMP_reqSMA_4comp_sensbenchmark1_DG_P3Z8.h5', 'test/data/ref_LRMP_reqSMA_4comp_sensbenchmark1_FV_Z2048.h5', 'test/data/ref_LRMP_reqSMA_4comp_sensbenchmark1_FV_Z32.h5', 'test/data/ref_LRM_dynLin_1comp_benchmark2_FV_Z357.h5', 'test/data/ref_LRM_dynLin_1comp_sensbenchmark1_DG_P3Z8.h5', 'test/data/ref_LRM_dynLin_1comp_sensbenchmark1_FV_Z131072.h5', 'test/data/ref_LRM_dynLin_1comp_sensbenchmark1_FV_Z32.h5', 'test/data/ref_LRM_dynLngmr_1comp_benchmark2_FV_Z100.h5', 'test/data/ref_LRM_noBnd_1comp_MCTbenchmark_FV_Z256.h5', 'test/data/ref_LRM_reqSMA_4comp_sensbenchmark1_DG_P3Z8.h5', 'test/data/ref_LRM_reqSMA_4comp_sensbenchmark1_FV_Z32.h5', 'test/data/ref_LRM_reqSMA_4comp_sensbenchmark1_FV_Z4096.h5', 'test/data/ref_MCT1ch_noEx_noReac_benchmark1_FV_Z256.h5', 'test/data/ref_MCT1ch_noEx_reac_benchmark1_FV_Z256.h5', 'test/data/ref_MCT2ch_oneWayEx_reac_benchmark1_FV_Z256.h5', 'test/data/ref_MCT3ch_twoWayExc_reac_benchmark1_FV_Z256.h5', 'test/data/ref_MCT_KOREN_eq_Z128.h5', 'test/data/ref_MCT_KOREN_nonEq_Z128.h5', 'test/data/ref_MCT_WENO3_nonEq_Z128.h5', 'test/data/ref_acyclicSystem1_LRMP_linBnd_1comp.h5', 'test/data/ref_axKOREN_eq_Z128.h5', 'test/data/ref_axKOREN_nonEq_Z128.h5', 'test/data/ref_axWENO2_eq_Z128.h5', 'test/data/ref_axWENO2_nonEq_Z128.h5', 'test/data/ref_axWENO3_eq_Z128.h5', 'test/data/ref_axWENO3_nonEq_Z128.h5', 'test/data/ref_cry_CSTR_PBM_Agg_Frag_benchmark1.h5', 'test/data/ref_cry_CSTR_PBM_growthSizeDep_benchmark1.h5', 'test/data/ref_cry_CSTR_PBM_growth_benchmark1.h5', 'test/data/ref_cry_CSTR_PBM_primaryNucleationAndGrowth_benchmark1.h5', 'test/data/ref_cry_CSTR_PBM_primaryNucleationGrowthGrowthRateDispersion_benchmark1.h5', 'test/data/ref_cry_CSTR_PBM_primarySecondaryNucleationAndGrowth_benchmark1.h5', 'test/data/ref_cry_CSTR_PBM_primarySecondaryNucleationGrowth_benchmark1.h5', 'test/data/ref_cry_CSTR_aggFrag_benchmark1.h5', 'test/data/ref_cry_CSTR_aggregation_benchmark1.h5', 'test/data/ref_cry_CSTR_fragmentation_benchmark1.h5', 'test/data/ref_cry_DPFR_PBM_aggregation_benchmark1.h5', 'test/data/ref_cry_DPFR_PBM_primarySecondaryNucleationGrowth_benchmark1.h5', 'test/data/ref_cyclicSystem1_LRMP_linBnd_1comp.h5', 'test/data/ref_frustumKOREN_eq_Z128.h5', 'test/data/ref_frustumKOREN_nonEq_Z128.h5', 'test/data/ref_frustumLRMP_reqSMA_4comp_benchmark1_DG_P3Z8.h5', 'test/data/ref_frustumWENO2_eq_Z128.h5', 'test/data/ref_frustumWENO2_nonEq_Z128.h5', 'test/data/ref_frustumWENO3_eq_Z128.h5', 'test/data/ref_frustumWENO3_nonEq_Z128.h5', 'test/data/ref_radCOL1D_transport_1comp_DGP3_benchmark1_DG_P3Z16.h5', 'test/data/ref_radGRM_dynLin_1comp_benchmark1_DG_P3Z16.h5', 'test/data/ref_radGRM_dynLin_1comp_sensbenchmark1_FV_Z32parZ4.h5', 'test/data/ref_radKOREN_eq_Z128.h5', 'test/data/ref_radKOREN_nonEq_Z128.h5', 'test/data/ref_radLRMP_dynLin_1comp_sensbenchmark1_FV_Z32.h5', 'test/data/ref_radLRM_dynLin_1comp_benchmark1_DG_P3Z16.h5', 'test/data/ref_radLRM_dynLin_1comp_sensbenchmark1_FV_Z32.h5', 'test/data/ref_radWENO2_eq_Z128.h5', 'test/data/ref_radWENO2_nonEq_Z128.h5', 'test/data/ref_radWENO3_eq_Z128.h5', 'test/data/ref_radWENO3_nonEq_Z128.h5', 'test/data/ref_radialLRMP_reqSMA_4comp_benchmark1_DG_P3Z8.h5', 'test/data/ref_smoothlyVaryingCOL1D_transport_1comp_benchmark1_DG_P3Z8.h5', 'test/data/tmp_idasMeta.h5', 'test/smaNonlinearProblem.m', 'test/testAdaptiveTRNewton.cpp', 'test/testCAPIv1.cpp', 'test/testCompileTimeMurmur.cpp', 'test/testLogging.cpp', 'test/testRadialKernel.cpp', 'test/testRunner.cpp', 'test/testSMANonlinearSolve.cpp']
+WEIGHTS [{'path': 'test/data/newOp_GRM_dynLin_1comp_benchmark1_cDG_P3Z32_DGexInt_parP3parZ4.h5', 'size': 238376}, {'path': 'test/data/refAna_2DGRMsd3Zone_dynLin_1Comp_radZ3_benchmark1.h5', 'size': 391410}, {'path': 'test/data/refAna_2DLRMP3Zone_dynLin_1Comp_radZ3_benchmark1.h5', 'size': 578802}, {'path': 'test/data/ref_2DGRM_KOREN_eq_Z128.h5', 'size': 74349}, {'path': 'test/data/ref_2DGRM_KOREN_nonEq_Z128.h5', 'size': 74945}, {'path': 'test/data/ref_2DGRM_WENO3_nonEq_Z128.h5', 'size': 73314}, {'path': 'test/data/ref_2DGRMsd3Zone_dynLin_1Comp_benchmark1_FV_axZ16radZ12parZ12.h5', 'size': 327517}, {'path': 'test/data/ref_2DLRMP3Zone_noFilmDiff_1Comp_benchmark1.h5', 'size': 527710}, {'path': 'test/data/ref_COL1D_2parTypeMixed_2comp_benchmark1.h5', 'size': 161119}, {'path': 'test/data/ref_COL1D_DPFR_1comp_benchmark1_DG_P3Z8.h5', 'size': 285187}, {'path': 'test/data/ref_COL1D_GRM_GPR_Shallow_MLP_7.h5', 'size': 188570}, {'path': 'test/data/ref_COL1D_GRM_GPR_Shallow_RBF_15.h5', 'size': 159250}, {'path': 'test/data/ref_COL1D_GRM_spline_knots_shallow_7.h5', 'size': 74044}, {'path': 'test/data/ref_COL1D_GRMsd_dynLin_1comp_benchmark1_cDG_P3Z8_GSM_parP3parZ1.h5', 'size': 168095}, {'path': 'test/data/ref_COL2D_GRMsd3Zone2ParType_dynLin_1Comp_benchmark1_DG_axP3Z8_radP3Z3_parP3Z1.h5', 'size': 361793}, {'path': 'test/data/ref_COL2D_GRMsd3Zone_dynLin_1Comp_benchmark1_DG_axP3Z8_radP3Z3_parP3Z1.h5', 'size': 597466}, {'path': 'test/data/ref_CSTR_MichaelisMenten_benchmark2.h5', 'size': 30184}, {'path': 'test/data/ref_CSTR_reacMAL_2comp_sensbenchmark1.h5', 'size': 107294}, {'path': 'test/data/ref_CSTR_reacMAL_3comp_nreac_1.h5', 'size': 112653}, {'path': 'test/data/ref_CSTR_reacMAL_3comp_one_type_old_interface.h5', 'size': 111253}, {'path': 'test/data/ref_Col1D_GRM_langANN_1comp_benchmark1.h5', 'size': 1512564}, {'path': 'test/data/ref_Col1D_LRM_langANN_2comp_benchmark1.h5', 'size': 242120}, {'path': 'test/data/ref_Col1D_LRM_langSPLINE_2comp_benchmark1.h5', 'size': 237760}, {'path': 'test/data/ref_Col1D_LRM_langmuirGPR_2comp_benchmark1.h5', 'size': 236624}, {'path': 'test/data/ref_GRM_dynLin_1comp_benchmark1_cDG_P3Z8_GSM_parP10parZ1.h5', 'size': 628862}, {'path': 'test/data/ref_GRM_dynLin_1comp_benchmark1_cDG_P3Z8_GSM_parP3parZ1.h5', 'size': 699354}, {'path': 'test/data/ref_GRM_dynLin_1comp_benchmarkFrustum_FV_Z32parZ4.h5', 'size': 359448}, {'path': 'test/data/ref_GRM_dynLin_1comp_sensbenchmark1_FV_Z1024parZ128.h5', 'size': 334364}, {'path': 'test/data/ref_GRM_dynLin_1comp_sensbenchmark1_FV_Z32parZ4.h5', 'size': 334390}, {'path': 'test/data/ref_GRM_dynLin_1comp_sensbenchmark1_cDG_P3Z8_GSM_parP3parZ1.h5', 'size': 558336}]
+FILE pyproject.toml [build-system]
+requires = ["scikit-build-core>=0.10"]
+build-backend = "scikit_build_core.build"
+
+[project]
+name = "CADET-Core"
+dynamic = ["version"]
+description = "CADET-Core: The heart of CADET. A modular, fast, and accurate modeling and simulation framework for biotechnology processes."
+readme = "README.rst"
+requires-python = ">=3.9"
+license = { file = "LICENSE.txt" }
+authors = [{ name = "CADET Developers" }]
+keywords = ["CADET", "chromatography", "simulation", "bioprocess"]
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: C++",
+  "Topic :: Scientific/Engineering",
+]
+
+[project.urls]
+Homepage = "https://cadet.github.io/"
+Source = "https://github.com/cadet/CADET-Core"
+Documentation = "https://cadet.github.io/"
+
+[project.scripts]
+cadet-core = "cadet_core._paths:run_cadet"
+cadet-cli = "cadet_core._paths:run_cadet"
+createLWE = "cadet_core._paths:run_createLWE"
+
+[tool.scikit-build]
+minimum-version = "0.10"
+wheel.packages = ["python/cadet_core"]
+
+[tool.scikit-build.metadata]
+version.provider = "scikit_build_core.metadata.regex"
+version.input = "version.txt"
+version.regex = "^(?P<value>[^\\s]+)\\s*$"
+
+
+REPO cadet/CADET-Process SHA 878cf16625632d173f8498f2566c546ae99187c2 DATE 2024-11-13T08:31:26Z LICENSE None ISSUES 1 ARCHIVED False ERROR None
+TEST/CI []
+WEIGHTS []
+
+REPO CompOmics/DeepLC SHA e24a5822bdb5304fcb1beb9ee5b307e1ab643221 DATE 2026-10-11T09:36:23Z LICENSE {'key': 'apache-2.0', 'name': 'Apache License 2.0', 'spdx_id': 'Apache-2.0', 'url': 'https://api.github.com/licenses/apache-2.0', 'node_id': 'MDc6TGljZW5zZTI='} ISSUES 1 ARCHIVED False ERROR None
+TEST/CI ['.github/workflows/publish.yml', '.github/workflows/test.yml', 'tests/test_batch_features.py', 'tests/test_calibration.py', 'tests/test_core.py', 'tests/test_deduplication.py', 'tests/test_factored.py', 'tests/test_features.py', 'tests/test_flexcnn.py', 'tests/test_model_ops.py', 'tests/test_multihead_calibration.py', 'tests/test_reference_selection.py', 'tests/test_report.py']
+WEIGHTS [{'path': 'deeplc/package_data/models/full_hc_PXD005573_pub_1fd8363d9af9dcad3be7553c39396960.pt', 'size': 5712181}, {'path': 'deeplc/package_data/models/full_hc_PXD005573_pub_8c22d89667368f2f02ad996469ba157e.pt', 'size': 2626933}, {'path': 'deeplc/package_data/models/full_hc_PXD005573_pub_cb975cfdd4105f97efa0b3afffe075cc.pt', 'size': 3655989}, {'path': 'deeplc/package_data/models/multitask_flexcnn_model.pt', 'size': 10702779}, {'path': 'deeplc/package_data/models/multitask_model.pt', 'size': 23166531}]
+FILE LICENSE Apache License
+                           Version 2.0, January 2004
+                        http://www.apache.org/licenses/
+
+   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
+
+   1. Definitions.
+
+      "License" shall mean the terms and conditions for use, reproduction,
+      and distribution as defined by Sections 1 through 9 of this document.
+
+      "Licensor" shall mean the copyright owner or entity authorized by
+      the copyright owner that is granting the License.
+
+      "Legal Entity" shall mean the union of the acting entity and all
+      other entities that control, are controlled by, or are under common
+      control with that entity. For the purposes of this definition,
+      "control" means (i) the power, direct or indirect, to cause the
+      direction or management of such entity, whether by contract or
+      otherwise, or (ii) ownership of fifty percent (50%
+FILE pyproject.toml [project]
+name = "deeplc"
+version = "4.5.0"
+description = "DeepLC: Retention time prediction for (modified) peptides using Deep Learning."
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [
+    { name = "Robbin Bouwmeester", email = "robbin.bouwmeester@ugent.be" },
+    { name = "Ralf Gabriels" },
+    { name = "Kevin Velghe" },
+    { name = "Robbe Devreese" },
+    { name = "Arthur Declercq" },
+    { name = "Alireza Nameni" },
+    { name = "Ralf Gabriels" },
+    { name = "Niels Hulstaert" },
+    { name = "Sven Degroeve" },
+    { name = "Lennart Martens" },
+]
+classifiers = [
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+    "Development Status :: 5 - Production/Stable",
+]
+requires-python = ">=3.11"
+keywords = [
+    "DeepLC",
+    "Proteomics",
+    "deep learning",
+    "peptides",
+    "retention time",
+    "prediction",
+]
+dependencies = [
+    "torch>=2.6.0,<3",
+    "numpy>=1.17,<3",
+    "pandas>=0.25,<3",
+    "scikit-learn>=1.2.0,<2",
+    "psm-utils>=1.5,<2",
+    "rapidfuzz>=3,<4",
+    "click>=8,<9",
+    "rich>=13,<15",
+]
+
+[project.optional-dependencies]
+gui = ["nicegui>=3,<4", "plotly>=5,<6", "pywebview>=5,<6"]
+web = ["nicegui>=3,<4", "plotly>=5,<6"]
+
+[project.scripts]
+deeplc = "deeplc.__main__:main"
+
+[project.urls]
+GitHub = "https://github.com/compomics/deeplc"
+PyPi = "https://pypi.org/project/deeplc/"
+CompOmics = "https://www.compomics.com"
+
+[dependency-groups]
+dev = ["ruff", "pytest", "pyinstaller>=6.21.0"]
+docs = [
+    "numpydoc>=1,<2",
+    "sphinx_rtd_theme",
+    "sphinx-autobuild",
+    "sphinx_mdinclude",
+    "sphinx-click",
+    "sphinx",
+]
+notebooks = ["ipykernel", "ipywidgets", "matplotlib", "seaborn"]
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["deeplc*"]
+
+[tool.ruff]
+line-length = 99
+target-version = 'py311'
+
+[tool.ruff.lint]
+select = ["E", "W", "F", "UP", "B", "SIM", "I", "D"]
+ignore = ["D203", "D212"]
+
+[tool.ruff.format]
+docstring-code-format = true
+
+
+REPO DLUT-datas/MDL-TL SHA 3ae22dd1966aaf916a17db76cef87fa28d28f0b2 DATE 2025-06-13T14:11:07Z LICENSE None ISSUES 0 ARCHIVED False ERROR None
+TEST/CI []
+WEIGHTS []
+FILE requirements.txt absl-py==0.13.0
+aiohttp==3.7.4.post0
+astor==0.8.1
+astunparse==1.6.3
+async-timeout==3.0.1
+attrs==21.2.0
+blinker==1.4
+boto3==1.18.21
+botocore==1.21.41
+Bottleneck==1.3.2
+brotlipy==0.7.0
+cachetools==4.2.2
+certifi==2022.12.7
+cffi==1.15.0
+chardet==4.0.0
+charset-normalizer==2.0.4
+click==8.0.3
+coverage==5.5
+cryptography==35.0.0
+cycler==0.11.0
+Cython==0.29.23
+flatbuffers==2.0
+gast==0.3.3
+gensim==4.0.1
+google-api-core==1.25.1
+google-auth==1.33.0
+google-auth-oauthlib==0.4.4
+google-cloud-core==1.7.1
+google-cloud-storage==1.41.0
+google-crc32c==1.1.2
+google-pasta==0.2.0
+google-resumable-media==1.3.1
+googleapis-common-protos==1.53.0
+grpcio==1.36.1
+h5py==2.10.0
+idna==3.2
+importlib-metadata==4.8.1
+jmespath==0.10.0
+joblib==1.1.0
+Keras==2.4.3
+Keras-Applications==1.0.8
+Keras-Preprocessing==1.1.2
+kiwisolver==1.3.2
+libclang==12.0.0
+Markdown==3.3.4
+matplotlib==3.4.3
+mkl-fft==1.3.1
+mkl-random==1.2.2
+mkl-service==2.4.0
+mordred==1.2.0
+multidict==5.1.0
+networkx==2.6.3
+numexpr==2.7.3
+numpy==1.21.2
+oauthlib==3.1.0
+olefile==0.46
+opt-einsum==3.3.0
+pandas==1.3.3
+Pillow==8.4.0
+pip==21.2.4
+protobuf==3.17.2
+pyasn1==0.4.8
+pyasn1-modules==0.2.8
+pycparser==2.21
+PyJWT==1.7.1
+pyOpenSSL==21.0.0
+pyparsing==3.0.4
+pyreadline==2.1
+PySocks==1.7.1
+python-dateutil==2.8.2
+pytz==2021.3
+PyYAML==6.0
+requests==2.26.0
+requests-oauthlib==1.3.0
+rsa==4.7.2
+s3transfer==0.5.0
+scikit-learn==1.0.1
+scipy==1.7.3
+setuptools==58.0.4
+six==1.16.0
+smart-open==5.1.0
+tb-nightly==2.8.0a20211110
+tensorboard==2.4.0
+tensorboard-data-server==0.6.1
+tensorboard-plugin-wit==1.6.0
+tensorflow==2.3.0
+tensorflow-estimator==2.6.0
+tensorflow-io-gcs-filesystem==0.22.0
+termcolor==1.1.0
+tf-estimator-nightly==2.8.0.dev2021111109
+threadpoolctl==2.2.0
+torch==1.8.2
+torchaudio==0.8.2
+torchvision==0.9.2
+tqdm==4.62.3
+typing-extensions==3.10.0.2
+urllib3==1.26.7
+Werkzeug==2.0.2
+wheel==0.37.0
+win-inet-pton==1.1.0
+wincertstore==0.2
+wrapt==1.12.1
+yarl==1.5.1
+zipp==3.6.0
+
+FILE environment.yml name: MDL_TL
+channels:
+  - rdkit
+  - pytorch-lts
+  - conda-forge
+  - defaults
+dependencies:
+  - _py-xgboost-mutex=2.0=cpu_0
+  - _tflow_select=2.3.0=eigen
+  - absl-py=0.13.0=py37haa95532_0
+  - aiohttp=3.7.4.post0=py37h2bbff1b_2
+  - astor=0.8.1=py37haa95532_0
+  - astunparse=1.6.3=py_0
+  - async-timeout=3.0.1=py37haa95532_0
+  - attrs=21.2.0=pyhd3eb1b0_0
+  - blas=1.0=mkl
+  - blinker=1.4=py37haa95532_0
+  - boto3=1.18.21=pyhd3eb1b0_0
+  - botocore=1.21.41=pyhd3eb1b0_1
+  - bottleneck=1.3.2=py37h2a96729_1
+  - brotlipy=0.7.0=py37h2bbff1b_1003
+  - ca-certificates=2024.9.24=haa95532_0
+  - cachetools=4.2.2=pyhd3eb1b0_0
+  - cairo=1.14.12=hf171d8a_3
+  - certifi=2022.12.7=py37haa95532_0
+  - cffi=1.15.0=py37h2bbff1b_0
+  - chardet=4.0.0=py37haa95532_1003
+  - charset-normalizer=2.0.4=pyhd3eb1b0_0
+  - click=8.0.3=pyhd3eb1b0_0
+  - coverage=5.5=py37h2bbff1b_2
+  - cryptography=35.0.0=py37h71e12ea_0
+  - cudatoolkit=11.1.1=heb2d755_9
+  - cython=0.29.23=py37hd77b12b_0
+  - dataclasses=0.8=pyh6d0b6a4_7
+  - fftw=3.3.9=h2bbff1b_2
+  - freetype=2.10.4=h546665d_1
+  - gast=0.3.3=py_0
+  - gensim=4.0.1=py37hd77b12b_0
+  - google-api-core=1.25.1=pyhd3eb1b0_0
+  - google-auth=1.33.0=pyhd3eb1b0_0
+  - google-auth-oauthlib=0.4.4=pyhd3eb1b0_0
+  - google-cloud-core=1.7.1=pyhd3eb1b0_0
+  - google-cloud-storage=1.41.0=pyhd3eb1b0_0
+  - google-crc32c=1.1.2=py37h2bbff1b_0
+  - google-pasta=0.2.0=pyhd3eb1b0_0
+  - google-resumable-media=1.3.1=pyhd3eb1b0_1
+  - googleapis-common-protos=1.53.0=py37h2eaa2aa_0
+  - grpcio=1.36.1=py37hc60d5dd_1
+  - h5py=2.10.0=py37h5e291fa_0
+  - hdf5=1.10.4=h7ebc959_0
+  - icc_rt=2019.0.0=h0cc432a_1
+  - icu=58.2=ha925a31_3
+  - idna=3.2=pyhd3eb1b0_0
+  - importlib-metadata=4.8.1=py37haa95532_0
+  - intel-openmp=2021.4.0=haa95532_3556
+  - jmespath=0.10.0=pyhd3eb1b0_0
+  - joblib=1.1.0=pyhd3eb1b0_0
+  - jpeg=9b=hb83a4c4_2
+  - keras=2.4.3=hd3eb1b0_0
+  - keras-applications=1.0.8=py_1
+  - keras-base=2.4.3=pyhd3eb1b0_0
+  - keras-preprocessing=1.1.2=pyhd3eb1b0_0
+  - libboost=1.67.0=hd9e427e_4
+  - libcrc32c=1.1.1=ha925a31_2
+  - libpng=1.6.37=h2a8f88b_0
+  - libprotobuf=3.17.2=h23ce68f_1
+  - libtiff=4.2.0=hd0e1b90_0
+  - libuv=1.40.0=he774522_0
+  - libwebp=1.2.0=h2bbff1b_0
+  - libxgboost=1.3.3=hd77b12b_0
+  - lz4-c=1.9.3=h2bbff1b_1
+  - markdown=3.3.4=py37haa95532_0
+  - mkl=2021.4.0=haa95532_640
+  - mkl-service=2.4.0=py37h2bbff1b_0
+  - mkl_fft=1.3.1=py37h277e83a_0
+  - mkl_random=1.2.2=py37hf11a4ad_0
+  - multidict=5.1.0=py37h2bbff1b_2
+  - ninja=1.10.2=h6d14046_1
+  - numexpr=2.7.3=py37hb80d3ca_1
+  - numpy-base=1.21.2=py37h0829f74_0
+  - oauthlib=3.1.0=py_0
+  - olefile=0.46=py37_0
+  - openssl=1.1.1w=h2bbff1b_0
+  - opt_einsum=3.3.0=pyhd3eb1b0_1
+  - pandas=1.3.3=py37h6214cd6_0
+  - pillow=8.4.0=py37hd45dc43_0
+  - pip=21.2.4=py37haa95532_0
+  - pixman=0.40.0=h2bbff1b_1
+  - protobuf=3.17.2=py37hd77b12b_0
+  - py-boost=1.67.0=py37h8300f20_4
+  - py-xgboost=1.3.3=py37haa95532_0
+  - pyasn1=0.4.8=pyhd3eb1b0_0
+  - pyasn1-modules=0.2.8=py_0
+  - pycparser=2.21=pyhd3eb1b0_0
+  - pyjwt=1.7.1=py37_0
+  - pyopenssl=21.0.0=pyhd3eb1b0_1
+  - pyreadline=2.1=py37_1
+  - pysocks=1.7.1=py37_1
+  - python=3.7.10=h6244533_0
+  - python-dateutil=2.8.2=pyhd3eb1b0_0
+  - pytorch=1.8.2=py3.7_cuda11.1_cudnn8_0
+  - pytz=2021.3=pyhd3eb1b0_0
+  - pyyaml=6.0=py37h2bbff1b_1
+  - rdkit=2020.09.1.0=py37h3d1ada6_1
+  - requests=2.26.0=pyhd3eb1b0_0
+  - requests-oauthlib=1.3.0=py_0
+  - rsa=4.7.2=pyhd3eb1b0_1
+  - s3transfer=0.5.0=pyhd3eb1b0_0
+  - scikit-learn=1.0.1=py37hf11a4ad_0
+  - setuptools=58.0.4=py37haa95532_0
+  - six=1.16.0=pyhd3eb1b0_0
+  - smart_open=5.1.0=pyhd3eb1b0_0
+  - sqlite=3.36.0=h2bbff1b_0
+  - tensorboard=2.4.0=pyhc547734_0
+  - tensorboard-plugin-wit=1.6.0=py_0
+  - tensorflow=2.3.0=mkl_py37h04bc1aa_0
+  - tensorflow-base=2.3.0=eigen_py37h17acbac_0
+  - termcolor=1.1.0=py37haa95532_1
+  - threadpoolctl=2.2.0=pyh0d69192_0
+  - tk=8.6.11=h2bbff1b_0
+  - torchaudio=0.8.2=py37
+  - torchvision=0.9.2=py37_cu111
+  - tqdm=4.62.3=pyhd3eb1b0_1
+  - typing-extensions=3.10.0.2=hd3eb1b0_0
+  - typing_extensions=3.10.0.2=pyh06a4308_0
+  - urllib3=1.26.7=pyhd3eb1b0_0
+  - vc=14.2=h21ff451_1
+  - vs2015_runtime=14.27.29016=h5e58377_2
+  - werkzeug=2.0.2=pyhd3eb1b0_0
+  - wheel=0.37.0=pyhd3eb1b0_1
+  - win_inet_pton=1.1.0=py37haa95532_0
+  - wincertstore=0.2=py37haa95532_2
+  - wrapt=1.12.1=py37he774522_1
+  - xgboost=1.3.3=py37haa95532_0
+  - xz=5.2.5=h62dcd97_0
+  - yaml=0.2.5=he774522_0
+  - yarl=1.5.1=py37he774522_0
+  - zipp=3.6.0=pyhd3eb1b0_0
+  - zlib=1.2.11=h62dcd97_4
+  - zstd=1.4.9=h19a0ad4_0
+  - pip:
+      - cycler==0.11.0
+      - flatbuffers==2.0
+      - kiwisolver==1.3.2
+      - libclang==12.0.0
+      - matplotlib==3.4.3
+      - mordred==1.2.0
+      - networkx==2.6.3
+      - numpy==1.18.5
+      - pyparsing==3.0.4
+      - scipy==1.4.1
+      - tb-nightly==2.8.0a20211110
+      - tensorboard-data-server==0.6.1
+      - tensorflow-estimator==2.3.0
+      - tensorflow-io-gcs-filesystem==0.22.0
+      - tf-estimator-nightly==2.8.0.dev2021111109
+prefix: D:\Anaconda\envs\MDL_TL
+
+
+REPO fau-advanced-separations/CADET-Process SHA None DATE None LICENSE None ISSUES None ARCHIVED None ERROR None
+TEST/CI []
+WEIGHTS []
+FILE LICENSE.md                     GNU GENERAL PUBLIC LICENSE
+                       Version 3, 29 June 2007
+
+ Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>
+ Everyone is permitted to copy and distribute verbatim copies
+ of this license document, but changing it is not allowed.
+
+                            Preamble
+
+  The GNU General Public License is a free, copyleft license for
+software and other kinds of works.
+
+  The licenses for most software and other practical works are designed
+to take away your freedom to share and change the works.  By contrast,
+the GNU General Public License is intended to guarantee your freedom to
+share and change all versions of a program--to make sure it remains free
+software for all its users.  We, the Free Software Foundation, use the
+GNU General Public License for most of our software; it applies also to
+any other work released this way by its aut
+FILE pyproject.toml [build-system]
+requires = [
+    "setuptools>=69",
+    "wheel",
+    "build"
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "CADET-Process"
+dynamic = ["version"]
+authors = [
+    { name = "Johannes Schmölder", email = "j.schmoelder@fz-juelich.de" },
+]
+description = "A Framework for Modelling and Optimizing Advanced Chromatographic Processes"
+readme = "README.md"
+requires-python = ">=3.10"
+keywords = ["process modeling", "process optimization", "chromatography"]
+license = { text = "GPLv3" }
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "Intended Audience :: Science/Research",
+]
+dependencies = [
+    "addict==2.3",
+    "cadet-python>=1.0.4",
+    "corner>=2.2.1",
+    "hopsy>=1.5.3",
+    "joblib>=1.3.0",
+    "numpy>=1.21",
+    "matplotlib>=3.4",
+    "numba>=0.55.1",
+    "packaging>=26.0",
+    "pathos>=0.2.8",
+    "pipefunc>=0.93.1",
+    "psutil>=5.9.8",
+    "pymoo>=0.6",
+    "scipy>=1.14,<1.18",
+    "typing_extensions>=4.12.2",
+]
+
+[dependency-groups]
+testing = [
+    "coverage",
+    "pytest",
+    "pytest-cov"
+]
+docs = [
+    "myst-nb>=0.17.1",
+    "numpydoc>=1.5.0",
+    "sphinx>=5.3.0",
+    "sphinxcontrib-bibtex>=2.5.0",
+    "sphinx_book_theme>=1.0.0",
+    "sphinx_copybutton>=0.5.1",
+    "sphinx-sitemap>=2.5.0",
+]
+dev = [
+    {include-group = "docs"},
+    {include-group = "testing"},
+    "certifi", # tries to prevent certificate problems on windows
+    "pre-commit",
+    "ruff<=0.16.10",
+]
+
+[project.optional-dependencies]
+ax = [
+    "ax-platform >=0.3.5,<0.5.0"
+]
+ipopt = [
+    "cyipopt",
+]
+bofire = [
+    "bofire[optimization] >=0.4",
+]
+# bofire is kept out of `all`: its botorch floor (>=0.18) conflicts with the ax
+# version cap, so ax and bofire cannot be resolved into the same environment.
+all = [
+   "CADET-Process[ax,ipopt]",
+]
+
+[project.urls]
+homepage = "https://github.com/fau-advanced-separations/CADET-Process"
+documentation = "https://cadet-process.readthedocs.io"
+"Bug Tracker" = "https://github.com/fau-advanced-separations/CADET-Process/issues"
+
+[tool.setuptools.packages.find]
+include = [
+  "CADETProcess*",
+  "examples*",
+  "tests*"
+]
+
+[tool.setuptools.dynamic]
+version = { attr = "CADETProcess.__version__" }
+
+[tool.ruff]
+src = ["CADETProcess", "tests"]
+exclude = ["examples", "docs", "__init__.py"]
+line-length = 88
+fix = true
+
+[tool.ruff.lint]
+preview = true
+select = [
+  "ANN",  # type annotations
+  "ARG",  # unused arguments
+  "D",    # docstrings
+  "E",    # pycodestyle errors
+  "F",    # pyflakes
+  "W",    # pycodestyle warnings
+  "I",    # isort
+]
+ignore = [
+  "ANN401",  # Allow dynamically typed expressions like `Any`
+  "D100",    # Allow missing docstring in public module
+]
+
+[tool.ruff.format]
+docstring-code-format = true
+
+[tool.ruff.lint.pycodestyle]
+max-line-length = 100
+
+[tool.ruff.lint.pydocstyle]
+convention = "numpy"
+
+[tool.ruff.lint.per-file-ignores]
+# Pre-existing files — ARG violations to be addressed separately
+"CADETProcess/optimization/population.py" = ["ARG"]
+"CADETProcess/optimization/individual.py" = ["ARG"]
+"CADETProcess/optimization/results.py" = ["ARG"]
+"CADETProcess/optimization/pymooAdapter.py" = ["ARG"]
+"CADETProcess/optimization/axAdapter.py" = ["ARG"]
+"CADETProcess/optimization/scipyAdapter.py" = ["ARG"]
+"CADETProcess/modelBuilder/*.py" = ["ARG"]
+"CADETProcess/smoothing.py" = ["ARG"]
+"CADETProcess/dataStructure/dataStructure.py" = ["ARG"]
+"CADETProcess/dataStructure/parameter.py" = ["ARG"]
+"CADETProcess/equilibria/*.py" = ["ARG"]
+"CADETProcess/dynamicEvents/section.py" = ["ARG"]
+"CADETProcess/dynamicEvents/event.py" = ["ARG"]
+"CADETProcess/comparison/difference.py" = ["ARG"]
+"CADETProcess/processModel/reaction.py" = ["ARG"]
+"CADETProcess/reference.py" = ["ARG"]
+"CADETProcess/log.py" = ["ARG"]
+"CADETProcess/binding.py" = ["ARG"]
+"CADETProcess/processModel/binding.py" = ["ARG"]
+"CADETProcess/solution.py" = ["ARG"]
+"CADETProcess/stationarity.py" = ["ARG"]
+"tests/**/*.py" = [
+  "ANN",   # type annotations
+  "ARG",   # pytest fixtures look like unused args
+  "D",     # docstrings
+  "E402",  # imports not at top of module
+  "E731",  # lambda assignments
+  "F841",  # unused variables
+]
+
+
+[tool.pytest.ini_options]
+testpaths = [
+    "tests",
+]
+pythonpath = [
+    "tests",
+]
+markers = [
+    "slow: marks tests as slow (deselect with '-m \"not slow\"')",
+]
+
+[tool.coverage.run]
+source = ["CADETProcess"]
+
+FILE environment.yml name: cadet-process
+channels:
+  - conda-forge
+dependencies:
+  - python>=3.12.*
+  - cadet>=5.1.0
+  - cyipopt
+  - pip
+
+
+REPO Jimbo994/AutoLC-BO SHA None DATE None LICENSE None ISSUES None ARCHIVED None ERROR None
+TEST/CI []
+WEIGHTS []
+FILE LICENSE.md Attribution-NonCommercial-ShareAlike 4.0 International
+
+=======================================================================
+
+Creative Commons Corporation ("Creative Commons") is not a law firm and
+does not provide legal services or legal advice. Distribution of
+Creative Commons public licenses does not create a lawyer-client or
+other relationship. Creative Commons makes its licenses and related
+information available on an "as-is" basis. Creative Commons gives no
+warranties regarding its licenses, any material licensed under their
+terms and conditions, or any related information. Creative Commons
+disclaims all liability for damages resulting from their use to the
+fullest extent possible.
+
+Using Creative Commons Public Licenses
+
+Creative Commons public licenses provide a standard set of terms and
+conditions that creators and other rights holders may use to share
+original works of autho
+
+REPO jraysajulga/High-Performance-Liquid-Chromatography-Research-Programs SHA None DATE None LICENSE None ISSUES None ARCHIVED None ERROR None
+TEST/CI []
+WEIGHTS []
+
+REPO julianealdag/hplc-retention-prediction SHA None DATE None LICENSE None ISSUES None ARCHIVED None ERROR None
+TEST/CI []
+WEIGHTS []
+FILE LICENSE MIT License
+
+Copyright (c) 2025-2026 Juliane Aldag
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES 
+FILE pyproject.toml [build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hplc-rt"
+version = "1.1.0"
+description = "Machine-learning prediction of HPLC retention time across variable chromatographic conditions"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Juliane Aldag" }]
+keywords = ["chromatography", "HPLC", "retention time", "cheminformatics", "QSRR"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Topic :: Scientific/Engineering :: Chemistry",
+    "Intended Audience :: Science/Research",
+]
+
+dependencies = [
+    "numpy>=1.24",
+    "pandas>=2.0",
+    "scipy>=1.10",
+    "scikit-learn>=1.3",
+    "matplotlib>=3.7",
+    "seaborn>=0.13",
+    "rdkit>=2023.3",
+    "openpyxl>=3.1",
+    "joblib>=1.3",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.4", "ruff>=0.4"]
+wandb = ["wandb>=0.17"]
+
+[project.scripts]
+hplc-rt = "hplc_rt.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+filterwarnings = ["ignore::DeprecationWarning"]
+
+[tool.ruff]
+line-length = 95
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+FILE requirements.txt # Runtime dependencies. For development also: pip install -e ".[dev]"
+numpy>=1.24
+pandas>=2.0
+scipy>=1.10
+scikit-learn>=1.3
+matplotlib>=3.7
+seaborn>=0.13
+rdkit>=2023.3
+openpyxl>=3.1
+joblib>=1.3
+
+
+REPO Qiong-Yang/GNN-TL SHA None DATE None LICENSE None ISSUES None ARCHIVED None ERROR None
+TEST/CI []
+WEIGHTS []
+
+REPO yufree/mzrtsim SHA None DATE None LICENSE None ISSUES None ARCHIVED None ERROR None
+TEST/CI []
+WEIGHTS []
+
+REPO gmrandazzo/PyLSS SHA d2cda850fa0b0881fc3cf1cd68c4d93b59dac04f DATE 2026-05-01T08:46:56Z LICENSE {'key': 'agpl-3.0', 'name': 'GNU Affero General Public License v3.0', 'spdx_id': 'AGPL-3.0', 'url': 'https://api.github.com/licenses/agpl-3.0', 'node_id': 'MDc6TGljZW5zZTE='} ISSUES 0 ARCHIVED False ERROR None
+TEST/CI ['.github/workflows/python-ci.yml', 'tests/__init__.py', 'tests/test_chromanalysis.py', 'tests/test_optimizer.py', 'tests/test_ssengine.py']
+WEIGHTS []
+FILE LICENSE                     GNU AFFERO GENERAL PUBLIC LICENSE
+                       Version 3, 19 November 2007
+
+ Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>
+ Everyone is permitted to copy and distribute verbatim copies
+ of this license document, but changing it is not allowed.
+
+                            Preamble
+
+  The GNU Affero General Public License is a free, copyleft license for
+software and other kinds of works, specifically designed to ensure
+cooperation with the community in the case of network server software.
+
+  The licenses for most software and other practical works are designed
+to take away your freedom to share and change the works.  By contrast,
+our General Public Licenses are intended to guarantee your freedom to
+share and change all versions of a program--to make sure it remains free
+software for all its users.
+
+  When we speak of free software, we a
+FILE pyproject.toml [build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pylss"
+version = "0.1.0"
+description = "Python package for linear solvent strength calculations"
+readme = "README.md"
+authors = [
+  { name = "Giuseppe Marco Randazzo", email = "gmrandazzo@gmail.com" }
+]
+license = { text = "AGPL" }
+dependencies = [
+  "numpy",
+  "matplotlib",
+  "scipy",
+  "PyQt6",
+  "PyYAML",
+]
+
+[project.optional-dependencies]
+test = ["pytest"]
+dev = [
+    "mypy",
+    "types-PyYAML",
+]
+
+[project.gui-scripts]
+pylss-gui = "pylss.gui.pylss_gui:main"
+pylss-chromanalyzer = "pylss.gui.chromanalyzer:main"
+
+[project.scripts]
+pylss-lssgen = "pylss.lssgen:main"
+pylss-lssopt = "pylss.lssoptseparation:main"
+pylss-logssgen = "pylss.logssgen:main"
+pylss-logssopt = "pylss.logssoptseparation:main"
+pylss-makechrom = "pylss.MakeChromatogram:main"
+
+[project.urls]
+Homepage = "https://github.com/gmrandazzo/PyLSS"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+packages = ["pylss", "pylss.gui"]
+
+
+REPO gurevichlab/grip SHA 4247e26580d6ad050125741833dedae8e9ba5370 DATE 2026-06-10T09:38:48Z LICENSE None ISSUES 0 ARCHIVED False ERROR None
+TEST/CI []
+WEIGHTS [{'path': 'model/model-i6kwrq9u.ckpt', 'size': 12355159}]
+FILE pyproject.toml [build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "grip"
+version = "0.1.0"
+description = "GRIP: physics-informed neural network for gradient retention time prediction in liquid chromatography"
+authors = []
+readme = "README.md"
+requires-python = ">=3.10"
+
+dependencies = []
+
+[tool.setuptools]
+packages = ["grip"]
+FILE environment.yml name: grip
+channels:
+  - pytorch
+  - conda-forge
+dependencies:
+  - python>=3.11
+  - pytorch::pytorch>=2.1
+  - pytorch::torchvision
+  - pytorch::cpuonly
+  - astartes
+  - aimsim
+  - configargparse
+  - descriptastorus
+  - lightning>=2.0
+  - numpy<2.0
+  - pandas<3.0
+  - rdkit=2024.03.5
+  - scikit-learn
+  - scipy
+  - ipykernel
+  - ipywidgets
+  - tqdm
+  - rich
+  - matplotlib
+  - pip
+  - pip:
+    - chemprop==2.0.4
+
+REPO HopkinsLaboratory/Graphormer-RT SHA e258cb149bc47646d9701fd66240cf6f13ae5b32 DATE 2025-04-29T23:12:27Z LICENSE None ISSUES 0 ARCHIVED False ERROR None
+TEST/CI []
+WEIGHTS []
+FILE requirements.txt absl-py==2.0.0
+aiosignal==1.3.1
+antlr4-python3-runtime==4.8
+anyio==4.0.0
+appdirs==1.4.4
+argon2-cffi==23.1.0
+argon2-cffi-bindings==21.2.0
+arrow==1.3.0
+asttokens==2.4.1
+async-lru==2.0.4
+attrs==23.1.0
+Babel==2.13.1
+beautifulsoup4==4.12.2
+bitarray==2.8.2
+bleach==6.1.0
+bokeh==3.4.1
+Brotli @ file:///tmp/abs_ecyw11_7ze/croots/recipe/brotli-split_1659616059936/work
+cachetools==5.3.2
+certifi @ file:///croot/certifi_1690232220950/work/certifi
+cffi @ file:///croot/cffi_1670423208954/work
+charset-normalizer @ file:///tmp/build/80754af9/charset-normalizer_1630003229654/work
+click==8.1.7
+cloudpickle==3.0.0
+cmake==3.27.7
+colorama==0.4.6
+colorcet==3.1.0
+comm==0.1.4
+contourpy==1.2.1
+cramjam==2.8.3
+cryptography @ file:///croot/cryptography_1694444244250/work
+cycler==0.12.1
+Cython==3.0.4
+dask==2024.5.1
+datashader==0.16.1
+debugpy==1.8.0
+decorator==5.1.1
+defusedxml==0.7.1
+dgl==1.1.2+cu118
+dgllife==0.3.2
+docker-pycreds==0.4.0
+exceptiongroup==1.1.3
+executing==2.0.1
+fairseq @ file:///home/cmkstien/Graphormer/fairseq
+fastjsonschema==2.18.1
+fastparquet==2024.2.0
+filelock @ file:///croot/filelock_1672387128942/work
+fonttools==4.43.1
+fqdn==1.5.1
+frozenlist==1.4.0
+fsspec==2023.10.0
+future==0.18.3
+gc-python-utils==0.0.1
+gitdb==4.0.11
+GitPython==3.1.40
+gmpy2 @ file:///tmp/build/80754af9/gmpy2_1645438755360/work
+google-auth==2.23.4
+google-auth-oauthlib==1.1.0
+grpcio==1.59.2
+holoviews==1.18.3
+hydra-core==1.0.7
+hyperopt==0.2.7
+idna @ file:///croot/idna_1666125576474/work
+imageio==2.34.1
+importlib-metadata==6.8.0
+importlib-resources==6.1.0
+ipykernel==6.26.0
+ipython==8.17.2
+isoduration==20.11.0
+jedi==0.19.1
+Jinja2 @ file:///croot/jinja2_1666908132255/work
+joblib @ file:///croot/joblib_1685113087166/work
+json5==0.9.14
+jsonpointer==2.4
+jsonschema==4.19.2
+jsonschema-specifications==2023.7.1
+jupyter-events==0.8.0
+jupyter-lsp==2.2.0
+jupyter_client==8.5.0
+jupyter_core==5.5.0
+jupyter_server==2.9.1
+jupyter_server_terminals==0.4.4
+jupyterlab==4.0.7
+jupyterlab-pygments==0.2.2
+jupyterlab_server==2.25.0
+kiwisolver==1.4.5
+lazy_loader==0.4
+lightning-utilities==0.10.0
+linkify-it-py==2.0.3
+lit==17.0.4
+littleutils==0.2.2
+llvmlite==0.42.0
+lmdb==1.4.1
+locket==1.0.0
+lxml==4.9.3
+Markdown==3.5.1
+markdown-it-py==3.0.0
+MarkupSafe @ file:///opt/conda/conda-bld/markupsafe_1654597864307/work
+matplotlib==3.8.1
+matplotlib-inline==0.1.6
+mdit-py-plugins==0.4.1
+mdurl==0.1.2
+memory-profiler==0.61.0
+mistune==3.0.2
+mkl-fft @ file:///croot/mkl_fft_1695058164594/work
+mkl-random @ file:///croot/mkl_random_1695059800811/work
+mkl-service==2.4.0
+modred==2.1.0
+mordred==1.2.0
+mpmath @ file:///croot/mpmath_1690848262763/work
+msgpack==1.0.7
+multipledispatch==1.0.0
+nbclient==0.8.0
+nbconvert==7.10.0
+nbformat==5.9.2
+nest-asyncio==1.5.8
+networkx==2.8.8
+notebook==7.0.6
+notebook_shim==0.2.3
+numba==0.59.1
+numpy==1.26.2
+nvidia-cublas-cu11==11.10.3.66
+nvidia-cublas-cu12==12.1.3.1
+nvidia-cuda-cupti-cu11==11.7.101
+nvidia-cuda-cupti-cu12==12.1.105
+nvidia-cuda-nvrtc-cu11==11.7.99
+nvidia-cuda-nvrtc-cu12==12.1.105
+nvidia-cuda-runtime-cu11==11.7.99
+nvidia-cuda-runtime-cu12==12.1.105
+nvidia-cudnn-cu11==8.5.0.96
+nvidia-cufft-cu11==10.9.0.58
+nvidia-cufft-cu12==11.0.2.54
+nvidia-curand-cu11==10.2.10.91
+nvidia-curand-cu12==10.3.2.106
+nvidia-cusolver-cu11==11.4.0.1
+nvidia-cusparse-cu11==11.7.4.91
+nvidia-cusparse-cu12==12.1.0.106
+nvidia-nccl-cu11==2.14.3
+nvidia-nccl-cu12==2.18.1
+nvidia-nvjitlink-cu12==12.3.101
+nvidia-nvtx-cu11==11.7.91
+nvidia-nvtx-cu12==12.1.105
+oauthlib==3.2.2
+ogb==1.3.6
+omegaconf==2.0.6
+outdated==0.2.2
+overrides==7.4.0
+packaging==23.2
+pandas==2.1.1
+pandocfilters==1.5.0
+panel==1.4.3
+param==2.1.0
+parquet==1.3.1
+parso==0.8.3
+partd==1.4.2
+pexpect==4.8.0
+Pillow @ file:///croot/pillow_1696580024257/work
+platformdirs==3.11.0
+ply==3.11
+portalocker==2.8.2
+prometheus-client==0.18.0
+prompt-toolkit==3.0.39
+protobuf==4.23.4
+psutil @ file:///opt/conda/conda-bld/psutil_1656431268089/work
+ptyprocess==0.7.0
+pure-eval==0.2.2
+py4j==0.10.9.7
+pyarrow==15.0.2
+pyasn1==0.5.0
+pyasn1-modules==0.3.0
+pycparser @ file:///tmp/build/80754af9/pycparser_1636541352034/work
+pyct==0.5.0
+Pygments==2.16.1
+pynndescent==0.5.12
+pyOpenSSL @ file:///croot/pyopenssl_1690223430423/work
+pyparsing @ file:///opt/conda/conda-bld/pyparsing_1661452539315/work
+PySocks @ file:///tmp/build/80754af9/pysocks_1605305812635/work
+python-dateutil==2.8.2
+python-json-logger==2.0.7
+pytz==2023.3.post1
+pyviz_comms==3.0.2
+PyYAML @ file:///croot/pyyaml_1698096049011/work
+pyzmq==25.1.1
+ray==2.8.0
+rdkit==2023.9.1
+rdkit-pypi==2022.9.5
+referencing==0.30.2
+regex==2023.10.3
+requests @ file:///croot/requests_1690400202158/work
+requests-oauthlib==1.3.1
+rfc3339-validator==0.1.4
+rfc3986-validator==0.1.1
+rpds-py==0.10.6
+rsa==4.9
+sacrebleu==2.3.1
+scikit-image==0.22.0
+scikit-learn @ file:///croot/scikit-learn_1690978916802/work
+scipy==1.11.3
+Send2Trash==1.8.2
+sentry-sdk==1.36.0
+setproctitle==1.3.3
+shap==0.46.0
+six==1.16.0
+slicer==0.0.8
+smmap==5.0.1
+sniffio==1.3.0
+soupsieve==2.5
+stack-data==0.6.3
+sympy @ file:///croot/sympy_1668202399572/work
+tabulate==0.9.0
+tensorboard==2.15.0
+tensorboard-data-server==0.7.2
+tensorboardX==2.6.2.2
+terminado==0.17.1
+threadpoolctl @ file:///Users/ktietz/demo/mc3/conda-bld/threadpoolctl_1629802263681/work
+thriftpy2==0.4.20
+tifffile==2024.5.22
+tinycss2==1.2.1
+tomli==2.0.1
+toolz==0.12.1
+torch==2.0.0
+torch_geometric @ file:///usr/share/miniconda/envs/test/conda-bld/pyg_1697446937113/work
+torchaudio==2.1.0
+torchmetrics==1.2.1
+torchvision==0.16.0
+tornado==6.3.3
+tqdm @ file:///croot/tqdm_1679561862951/work
+traitlets==5.13.0
+triton==2.1.0
+types-python-dateutil==2.8.19.14
+typing_extensions @ file:///croot/typing_extensions_1690297465030/work
+tzdata==2023.3
+uc-micro-py==1.0.3
+umap-learn==0.5.7
+uri-template==1.3.0
+urllib3 @ file:///croot/urllib3_1698257533958/work
+wandb==0.16.0
+wcwidth==0.2.9
+webcolors==1.13
+webencodings==0.5.1
+websocket-client==1.6.4
+Werkzeug==3.0.1
+xarray==2024.5.0
+xyzservices==2024.4.0
+zipp==3.17.0
+
+
+REPO jonkeeley/openiex SHA ecf795e93eb44bfe7330bda219d87890299978ef DATE 2025-05-28T17:14:40Z LICENSE {'key': 'mit', 'name': 'MIT License', 'spdx_id': 'MIT', 'url': 'https://api.github.com/licenses/mit', 'node_id': 'MDc6TGljZW5zZTEz'} ISSUES 0 ARCHIVED False ERROR None
+TEST/CI []
+WEIGHTS []
+FILE LICENSE MIT License
+
+Copyright (c) 2025 Jon Keeley
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+FILE setup.py from setuptools import setup, find_packages
+
+setup(
+    name="openiex",
+    version="0.1.0",
+    package_dir={"": "src"},
+    packages=find_packages(where="src"),
+    install_requires=[
+        "numpy",
+        "scipy",
+        "matplotlib",
+        "tqdm",
+        "pandas",
+    ],
+)
+
+REPO josiehong/TIMPANI SHA 6db95fa96129b27d7a8fb999f27ff4451553a92d DATE 2026-07-27T02:53:59Z LICENSE {'key': 'apache-2.0', 'name': 'Apache License 2.0', 'spdx_id': 'Apache-2.0', 'url': 'https://api.github.com/licenses/apache-2.0', 'node_id': 'MDc6TGljZW5zZTI='} ISSUES 0 ARCHIVED False ERROR None
+TEST/CI ['tests/conftest.py', 'tests/test_base_trainer.py', 'tests/test_chrom_encoder.py']
+WEIGHTS []
+FILE LICENSE                                  Apache License
+                           Version 2.0, January 2004
+                        http://www.apache.org/licenses/
+
+   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
+
+   1. Definitions.
+
+      "License" shall mean the terms and conditions for use, reproduction,
+      and distribution as defined by Sections 1 through 9 of this document.
+
+      "Licensor" shall mean the copyright owner or entity authorized by
+      the copyright owner that is granting the License.
+
+      "Legal Entity" shall mean the union of the acting entity and all
+      other entities that control, are controlled by, or are under common
+      control with that entity. For the purposes of this definition,
+      "control" means (i) the power, direct or indirect, to cause the
+      direction or management of such entity, whether by contract or
+      otherwise, or (ii
+FILE pyproject.toml [build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "timp"
+version = "0.0.0"
+description = "TIMPANI: Target-Informed Pretraining for retention-time prediction across chromatographic conditions"
+requires-python = ">=3.9"
+dependencies = [
+    "torch>=2.0.0",
+    "numpy",
+    "scikit-learn",
+    "pyyaml",
+]
+
+[tool.setuptools.packages.find]
+include = ["timp*"]
+
+FILE requirements.txt # Core runtime dependencies for TIMPANI
+# Note: some packages (RDKit, DGL) have special installation instructions (conda or GPU/CPU-specific wheels).
+
+numpy
+pandas
+scikit-learn
+networkx
+matplotlib
+seaborn
+PyYAML
+
+# Optional / heavy dependencies (install separately as needed):
+# RDKit: prefer conda install -c conda-forge rdkit
+# or pip: rdkit-pypi (may be less reliable)
+# rdkit-pypi
+# DGL: install the appropriate package for your CUDA/PyTorch version, see https://www.dgl.ai/
+# dgl
+
+
+REPO jraysajulga/High-Performance-Liquid-Chromatography-Research-Programs SHA 4165fe30cd067c1545c13142d03562c1d258ab31 DATE 2017-10-11T17:20:26Z LICENSE None ISSUES 1 ARCHIVED False ERROR HTTP Error 403: rate limit exceeded
+TEST/CI []
+WEIGHTS []
+
+REPO michaelwitting/RepoRT SHA 9de8d603377bbb6cc0f74e250eb7533fd8874df1 DATE 2026-07-09T12:17:46Z LICENSE {'key': 'cc-by-sa-4.0', 'name': 'Creative Commons Attribution Share Alike 4.0 International', 'spdx_id': 'CC-BY-SA-4.0', 'url': 'https://api.github.com/licenses/cc-by-sa-4.0', 'node_id': 'MDc6TGljZW5zZTI2'} ISSUES 15 ARCHIVED False ERROR None
+TEST/CI ['.github/workflows/assign_dataset_ids.yaml', '.github/workflows/build_container.yaml', '.github/workflows/make_stats.yaml', '.github/workflows/preprocess.yaml', '.github/workflows/preprocess_manual.yaml', '.github/workflows/update_dependencies.yaml']
+WEIGHTS []
+FILE LICENSE Attribution-ShareAlike 4.0 International
+
+=======================================================================
+
+Creative Commons Corporation ("Creative Commons") is not a law firm and
+does not provide legal services or legal advice. Distribution of
+Creative Commons public licenses does not create a lawyer-client or
+other relationship. Creative Commons makes its licenses and related
+information available on an "as-is" basis. Creative Commons gives no
+warranties regarding its licenses, any material licensed under their
+terms and conditions, or any related information. Creative Commons
+disclaims all liability for damages resulting from their use to the
+fullest extent possible.
+
+Using Creative Commons Public Licenses
+
+Creative Commons public licenses provide a standard set of terms and
+conditions that creators and other rights holders may use to share
+original works of authorship and othe
+
+REPO sartorius-research/STLC SHA e482802bdd311a615c963c2adc65694e8f488cf3 DATE 2023-03-13T21:22:57Z LICENSE {'key': 'gpl-3.0', 'name': 'GNU General Public License v3.0', 'spdx_id': 'GPL-3.0', 'url': 'https://api.github.com/licenses/gpl-3.0', 'node_id': 'MDc6TGljZW5zZTk='} ISSUES 0 ARCHIVED False ERROR None
+TEST/CI []
+WEIGHTS []
+FILE LICENSE                     GNU GENERAL PUBLIC LICENSE
+                       Version 3, 29 June 2007
+
+ Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>
+ Everyone is permitted to copy and distribute verbatim copies
+ of this license document, but changing it is not allowed.
+
+                            Preamble
+
+  The GNU General Public License is a free, copyleft license for
+software and other kinds of works.
+
+  The licenses for most software and other practical works are designed
+to take away your freedom to share and change the works.  By contrast,
+the GNU General Public License is intended to guarantee your freedom to
+share and change all versions of a program--to make sure it remains free
+software for all its users.  We, the Free Software Foundation, use the
+GNU General Public License for most of our software; it applies also to
+any other work released this way by its aut
+FILE requirements.txt scipy
+numpy
+
+
+FILE setup.py from setuptools import setup
+
+setup(
+    name='stlc',
+    version='0.1.0',    
+    description='The Simulation Testbed for Liquid Chromatography (STLC) package implements variations of the general rate model. The aim is to provide a basis for the development of an easy to use package for chromatography modeling in python.',
+    url='https://github.com/shuds13/pyexample',
+    author='David Andersson',
+    author_email='david.andersson@sartorius.com',
+    license='GPLv3',
+    packages=['stlc'],
+    install_requires=['scipy',
+                      'numpy',
+                      ],
+
+    classifiers=[
+        'Development Status :: 1 - Planning',
+        'Intended Audience :: Science/Research',
+        'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
+        'Programming Language :: Python'
+    ],
+)
+
+Traceback (most recent call last):
+  File "C:\Users\T22016\Desktop\程式\LC Gradient Studio\scripts\research\probe.py", line 2, in <module>
+    import sys, pathlib, json, os, traceback, importlib.metadata, time
+  File "C:\Users\T22016\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\importlib\metadata\__init__.py", line 17, in <module>
+    import inspect
+  File "C:\Users\T22016\Desktop\程式\LC Gradient Studio\scripts\research\inspect.py", line 5, in <module>
+    print('\nREPO',d['repo'],'SHA',c.get('sha'),'DATE',c.get('commit',{}).get('committer',{}).get('date'),'LICENSE',m.get('license'),'ISSUES',m.get('open_issues_count'),'ARCHIVED',m.get('archived'),'ERROR',d.get('error'))
+                   ~^^^^^^^^
+KeyError: 'repo'

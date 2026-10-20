@@ -1,0 +1,81 @@
+COMMAND C:\Users\T22016\AppData\Local\Temp\lc-gradient-research-20261013\venv-openiex\Scripts\python.exe -m pip install numpy scipy matplotlib pandas tqdm ipywidgets
+Requirement already satisfied: numpy in c:\users\t22016\appdata\local\temp\lc-gradient-research-20261013\venv-openiex\lib\site-packages (2.5.4)
+Requirement already satisfied: scipy in c:\users\t22016\appdata\local\temp\lc-gradient-research-20261013\venv-openiex\lib\site-packages (1.18.1)
+Collecting matplotlib
+  Using cached matplotlib-3.11.2-cp312-cp312-win_amd64.whl.metadata (80 kB)
+Collecting pandas
+  Using cached pandas-3.0.6-cp312-cp312-win_amd64.whl.metadata (19 kB)
+Requirement already satisfied: tqdm in c:\users\t22016\appdata\local\temp\lc-gradient-research-20261013\venv-openiex\lib\site-packages (4.70.1)
+Collecting ipywidgets
+  Using cached ipywidgets-8.1.9-py3-none-any.whl.metadata (2.4 kB)
+Collecting contourpy>=1.0.1 (from matplotlib)
+  Using cached contourpy-1.4.0-cp312-cp312-win_amd64.whl.metadata (3.8 kB)
+Requirement already satisfied: cycler>=0.10 in c:\users\t22016\appdata\local\temp\lc-gradient-research-20261013\venv-openiex\lib\site-packages (from matplotlib) (0.12.1)
+Requirement already satisfied: fonttools>=4.28.2 in c:\users\t22016\appdata\local\temp\lc-gradient-research-20261013\venv-openiex\lib\site-packages (from matplotlib) (4.66.1)
+Requirement already satisfied: kiwisolver>=1.3.1 in c:\users\t22016\appdata\local\temp\lc-gradient-research-20261013\venv-openiex\lib\site-packages (from matplotlib) (1.5.1)
+Requirement already satisfied: packaging>=20.0 in c:\users\t22016\appdata\local\temp\lc-gradient-research-20261013\venv-openiex\lib\site-packages (from matplotlib) (26.3)
+Requirement already satisfied: pillow>=9 in c:\users\t22016\appdata\local\temp\lc-gradient-research-20261013\venv-openiex\lib\site-packages (from matplotlib) (12.3.0)
+Requirement already satisfied: pyparsing>=3 in c:\users\t22016\appdata\local\temp\lc-gradient-research-20261013\venv-openiex\lib\site-packages (from matplotlib) (3.3.3)
+Requirement already satisfied: python-dateutil>=2.7 in c:\users\t22016\appdata\local\temp\lc-gradient-research-20261013\venv-openiex\lib\site-packages (from matplotlib) (2.9.0.post0)
+Requirement already satisfied: tzdata in c:\users\t22016\appdata\local\temp\lc-gradient-research-20261013\venv-openiex\lib\site-packages (from pandas) (2026.5)
+Requirement already satisfied: colorama in c:\users\t22016\appdata\local\temp\lc-gradient-research-20261013\venv-openiex\lib\site-packages (from tqdm) (0.4.6)
+Requirement already satisfied: comm>=0.1.3 in c:\users\t22016\appdata\local\temp\lc-gradient-research-20261013\venv-openiex\lib\site-packages (from ipywidgets) (0.2.3)
+Collecting ipython>=6.1.0 (from ipywidgets)
+  Using cached ipython-9.17.1-py3-none-any.whl.metadata (4.6 kB)
+Requirement already satisfied: traitlets>=4.3.1 in c:\users\t22016\appdata\local\temp\lc-gradient-research-20261013\venv-openiex\lib\site-packages (from ipywidgets) (5.16.1)
+Requirement already satisfied: widgetsnbextension~=4.0.16 in c:\users\t22016\appdata\local\temp\lc-gradient-research-20261013\venv-openiex\lib\site-packages (from ipywidgets) (4.0.16)
+Requirement already satisfied: jupyterlab_widgets~=3.0.17 in c:\users\t22016\appdata\local\temp\lc-gradient-research-20261013\venv-openiex\lib\site-packages (from ipywidgets) (3.0.17)
+Collecting ipython-pygments-lexers>=1.0.0 (from ipython>=6.1.0->ipywidgets)
+  Using cached ipython_pygments_lexers-1.1.1-py3-none-any.whl.metadata (1.1 kB)
+Collecting jedi>=0.18.2 (from ipython>=6.1.0->ipywidgets)
+  Using cached jedi-0.20.1-py2.py3-none-any.whl.metadata (23 kB)
+Requirement already satisfied: matplotlib-inline>=0.1.6 in c:\users\t22016\appdata\local\temp\lc-gradient-research-20261013\venv-openiex\lib\site-packages (from ipython>=6.1.0->ipywidgets) (0.2.2)
+Requirement already satisfied: prompt_toolkit<3.1.0,>=3.0.41 in c:\users\t22016\appdata\local\temp\lc-gradient-research-20261013\venv-openiex\lib\site-packages (from ipython>=6.1.0->ipywidgets) (3.0.53)
+Requirement already satisfied: psutil>=7 in c:\users\t22016\appdata\local\temp\lc-gradient-research-20261013\venv-openiex\lib\site-packages (from ipython>=6.1.0->ipywidgets) (7.2.2)
+Requirement already satisfied: pygments>=2.14.0 in c:\users\t22016\appdata\local\temp\lc-gradient-research-20261013\venv-openiex\lib\site-packages (from ipython>=6.1.0->ipywidgets) (2.21.0)
+Requirement already satisfied: stack_data>=0.6.0 in c:\users\t22016\appdata\local\temp\lc-gradient-research-20261013\venv-openiex\lib\site-packages (from ipython>=6.1.0->ipywidgets) (0.6.3)
+Requirement already satisfied: six>=1.5 in c:\users\t22016\appdata\local\temp\lc-gradient-research-20261013\venv-openiex\lib\site-packages (from python-dateutil>=2.7->matplotlib) (1.17.0)
+Requirement already satisfied: parso<0.9.0,>=0.8.7 in c:\users\t22016\appdata\local\temp\lc-gradient-research-20261013\venv-openiex\lib\site-packages (from jedi>=0.18.2->ipython>=6.1.0->ipywidgets) (0.8.7)
+Requirement already satisfied: wcwidth>=0.1.4 in c:\users\t22016\appdata\local\temp\lc-gradient-research-20261013\venv-openiex\lib\site-packages (from prompt_toolkit<3.1.0,>=3.0.41->ipython>=6.1.0->ipywidgets) (0.9.2)
+Requirement already satisfied: executing>=1.2.0 in c:\users\t22016\appdata\local\temp\lc-gradient-research-20261013\venv-openiex\lib\site-packages (from stack_data>=0.6.0->ipython>=6.1.0->ipywidgets) (2.3.0)
+Requirement already satisfied: asttokens>=2.1.0 in c:\users\t22016\appdata\local\temp\lc-gradient-research-20261013\venv-openiex\lib\site-packages (from stack_data>=0.6.0->ipython>=6.1.0->ipywidgets) (3.0.2)
+Requirement already satisfied: pure-eval in c:\users\t22016\appdata\local\temp\lc-gradient-research-20261013\venv-openiex\lib\site-packages (from stack_data>=0.6.0->ipython>=6.1.0->ipywidgets) (0.2.4)
+Using cached matplotlib-3.11.2-cp312-cp312-win_amd64.whl (9.3 MB)
+Using cached pandas-3.0.6-cp312-cp312-win_amd64.whl (9.7 MB)
+Using cached ipywidgets-8.1.9-py3-none-any.whl (140 kB)
+Using cached contourpy-1.4.0-cp312-cp312-win_amd64.whl (234 kB)
+Using cached ipython-9.17.1-py3-none-any.whl (639 kB)
+Using cached ipython_pygments_lexers-1.1.1-py3-none-any.whl (8.1 kB)
+Using cached jedi-0.20.1-py2.py3-none-any.whl (4.9 MB)
+Installing collected packages: jedi, ipython-pygments-lexers, contourpy, pandas, matplotlib, ipython, ipywidgets
+Successfully installed contourpy-1.4.0 ipython-9.17.1 ipython-pygments-lexers-1.1.1 ipywidgets-8.1.9 jedi-0.20.1 matplotlib-3.11.2 pandas-3.0.6
+
+[notice] A new release of pip is available: 25.0.1 -> 26.2.1
+[notice] To update, run: C:\Users\T22016\AppData\Local\Temp\lc-gradient-research-20261013\venv-openiex\Scripts\python.exe -m pip install --upgrade pip
+EXIT 0
+COMMAND C:\Users\T22016\AppData\Local\Temp\lc-gradient-research-20261013\venv-openiex\Scripts\python.exe -m pip install setuptools wheel
+Collecting setuptools
+  Using cached setuptools-84.0.0-py3-none-any.whl.metadata (6.6 kB)
+Collecting wheel
+  Using cached wheel-0.48.0-py3-none-any.whl.metadata (2.3 kB)
+Requirement already satisfied: packaging>=24.0 in c:\users\t22016\appdata\local\temp\lc-gradient-research-20261013\venv-openiex\lib\site-packages (from wheel) (26.3)
+Using cached setuptools-84.0.0-py3-none-any.whl (818 kB)
+Using cached wheel-0.48.0-py3-none-any.whl (33 kB)
+Installing collected packages: wheel, setuptools
+Successfully installed setuptools-84.0.0 wheel-0.48.0
+
+[notice] A new release of pip is available: 25.0.1 -> 26.2.1
+[notice] To update, run: C:\Users\T22016\AppData\Local\Temp\lc-gradient-research-20261013\venv-openiex\Scripts\python.exe -m pip install --upgrade pip
+EXIT 0
+COMMAND C:\Users\T22016\AppData\Local\Temp\lc-gradient-research-20261013\venv-openiex\Scripts\python.exe -m pip install --no-deps --no-build-isolation -e C:\Users\T22016\AppData\Local\Temp\lc-gradient-research-20261013\jonkeeley__openiex
+Obtaining file:///C:/Users/T22016/AppData/Local/Temp/lc-gradient-research-20261013/jonkeeley__openiex
+  Preparing metadata (setup.py): started
+  Preparing metadata (setup.py): finished with status 'done'
+Installing collected packages: openiex
+  DEPRECATION: Legacy editable install of openiex==0.1.0 from file:///C:/Users/T22016/AppData/Local/Temp/lc-gradient-research-20261013/jonkeeley__openiex (setup.py develop) is deprecated. pip 25.1 will enforce this behaviour change. A possible replacement is to add a pyproject.toml or enable --use-pep517, and use setuptools >= 64. If the resulting installation is not behaving as expected, try using --config-settings editable_mode=compat. Please consult the setuptools documentation for more information. Discussion can be found at https://github.com/pypa/pip/issues/11457
+  Running setup.py develop for openiex
+Successfully installed openiex-0.1.0
+
+[notice] A new release of pip is available: 25.0.1 -> 26.2.1
+[notice] To update, run: C:\Users\T22016\AppData\Local\Temp\lc-gradient-research-20261013\venv-openiex\Scripts\python.exe -m pip install --upgrade pip
+EXIT 0

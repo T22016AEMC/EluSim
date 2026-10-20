@@ -1,0 +1,4 @@
+$ tsc --noEmit && vite build
+src/main.tsx(1221,46): error TS2304: Cannot find name 't'.
+src/main.tsx(1610,19): error TS2304: Cannot find name 't'.
+[ELIFECYCLE] Command failed with exit code 2.
