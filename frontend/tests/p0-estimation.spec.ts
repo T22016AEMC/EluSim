@@ -60,6 +60,7 @@ test("default method: caffeine and a non-database SMILES auto-fill, edit, simula
   page,
 }) => {
   test.setTimeout(180000);
+  await page.clock.install({ time: new Date("2026-10-20T00:00:00Z") });
   await page.goto("/");
   const first = await addStructure(page, "Auto caffeine", caffeine);
   expect(first.tier).toBe("A");
@@ -80,12 +81,18 @@ test("default method: caffeine and a non-database SMILES auto-fill, edit, simula
       response.url().endsWith("/api/retention/estimate") &&
       response.request().postDataJSON().smiles === "COCCOC",
   );
+  // Keep both edits inside the debounce window regardless of host scheduling.
+  await page.clock.pauseAt(new Date("2026-10-20T01:00:00Z"));
   await page
     .getByLabel("Stored SMILES Auto ether", { exact: true })
     .fill("COCOCC");
   await page
     .getByLabel("Stored SMILES Auto ether", { exact: true })
     .fill("COCCOC");
+  await page.clock.runFor(599);
+  expect(requested).toEqual([]);
+  await page.clock.runFor(1);
+  await page.clock.resume();
   expect((await updated).ok()).toBeTruthy();
   expect(requested).not.toContain("COCOCC");
   await expect(
