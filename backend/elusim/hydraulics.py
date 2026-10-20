@@ -47,20 +47,49 @@ def organic_viscosity(solvent, temperature_c):
     return float(table_at_temperature(solvent, temperature_c)[-1])
 
 
-def viscosity(phi, solvent, temperature_c):
-    """Piecewise empirical mixture relation retaining the nonideal table hump.
+def correlation_log10_cp(phi, solvent, temperature_c):
+    """Guillarme et al. (2004), equations 26/27, log10(eta in cP).
 
-    Log-linear T interpolation followed by linear volume-fraction interpolation
-    of Guillarme et al. Table 2 (25-90 C, phi 0-1, near ambient pressure).
-    Explicit endpoint adaptation: add (1-phi)*(Vogel_water-table_water).
-    This keeps the requested water formula and tabulated organic endpoint.
-    It is an interpolation/adaptation, not the paper's polynomial eq. 26/27.
+    Coefficients of 1/T are expressed here with T in kelvin (the displayed
+    paper coefficients use 10^-3 K temperature). phi is organic volume fraction.
+    Published application covers 25-180 C; this implementation restricts its
+    shared organic-endpoint table scope to 25-90 C.
+    """
+    fraction = np.asarray(phi, dtype=float)
+    inverse_temperature = 1000 / (temperature_c + 273.15)
+    if solvent == "MeOH":
+        return (
+            -2.429 + .714*inverse_temperature - 1.859*fraction
+            + .9117*fraction*inverse_temperature + 1.8586*fraction**2
+            - .9681*fraction**2*inverse_temperature
+        )
+    return (
+        -2.063 + .6019*inverse_temperature + .0709*fraction
+        + .062*fraction*inverse_temperature + .5043*fraction**2
+        - .3458*fraction**2*inverse_temperature
+    )
+
+
+def viscosity(phi, solvent, temperature_c):
+    """Use the cited empirical curvature with explicit endpoint normalization.
+
+    log10(eta)=log10(eta_G(phi))-(1-phi)*log10(eta_G(0))
+      -phi*log10(eta_G(1))+(1-phi)*log10(eta_water)+phi*log10(eta_organic).
+    Guillarme et al. equations 26/27 supply the nonideal composition curvature;
+    normalization enforces the requested Vogel water and tabulated organic
+    endpoints. This adaptation is explicit, not the unmodified published fit.
+    Effective scope: 25-90 C, phi 0-1, ambient-pressure aqueous ACN/MeOH.
     No pressure dependence, buffer/salt correction or axial integration.
     """
     fraction = np.asarray(phi, dtype=float)
-    row = table_at_temperature(solvent, temperature_c)
-    mixture = np.interp(fraction, FRACTIONS, row)
-    return mixture + (1 - fraction) * (water_viscosity(temperature_c) - row[0])
+    water = water_viscosity(temperature_c)
+    organic = organic_viscosity(solvent, temperature_c)
+    excess = (
+        correlation_log10_cp(fraction, solvent, temperature_c)
+        - (1-fraction)*correlation_log10_cp(0, solvent, temperature_c)
+        - fraction*correlation_log10_cp(1, solvent, temperature_c)
+    )
+    return 10 ** ((1-fraction)*np.log10(water)+fraction*np.log10(organic)+excess)
 
 
 def column_pressure_bar(column, flow_ml_min, viscosity_pa_s):
