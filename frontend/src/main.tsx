@@ -1218,7 +1218,7 @@ function App() {
         )}
         {tab === 3 && (
           <>
-            {!config.compounds.length && <p>{t(tr("empty_compounds"))}</p>}
+            {!config.compounds.length && <p>{tr("empty_compounds")}</p>}
             {result && resultKey === configKey ? (
               <>
                 <section>
@@ -1607,7 +1607,7 @@ function App() {
                 <code>d2cda850fa0b0881fc3cf1cd68c4d93b59dac04f</code>{tr(". NLSS disabled. CADET license unresolved; not shipped.")}</p>
               <p>
                 {tr("Scoped experimental Rt and UV models are available in Retention Prediction and UV-Vis / DAD. TIMPANI / DeepLC pretrained weights are not loaded.")}</p>
-              <p>{t(tr("report0259_info"))}</p>
+              <p>{tr("report0259_info")}</p>
               <h3>{tr("Mode-specific parameter requirements")}</h3>
               <p>{tr("NP: adsorption, competition, water activity.")}</p>
               <p>{tr("HILIC: partition, adsorption and ionic contributions.")}</p>
