@@ -178,8 +178,6 @@ def eligibility(req, compound):
         return 'insufficient_data', 'logKw outside [-3, 12]'
     if not math.isfinite(compound.s) or not 0 <= compound.s <= 30:
         return 'insufficient_data', 'S outside [0, 30]'
-    if req.workflow == 'calibrated' and compound.source != 'calibrated':
-        return 'insufficient_data', 'No calibrated parameters for this component'
     return compound.source, None
 
 

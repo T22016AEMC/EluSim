@@ -49,8 +49,8 @@ def predict_retention(smiles,method,model_id='report0259-rt'):
  return r
 
 def prepare_structure(req):
-    """Acquire tiered LSS estimates for the structure workflow without scope gates."""
-    if req.workflow != 'structure' or req.mode != 'RP':
+    """Acquire automatic sources independently of the legacy workflow value."""
+    if req.mode != 'RP':
         return req, []
     from .retention_registry import resolve_compounds
 

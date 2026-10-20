@@ -1,3 +1,4 @@
+import { t as tr } from "./i18n/zh-TW";
 import { useEffect, useRef } from "react";
 import * as echarts from "echarts";
 import type { Result } from "./types";
@@ -50,7 +51,7 @@ export function Chart({
     });
     series.push({
       id: "total-signal",
-      name: "Total simulated signal",
+      name: tr("Total simulated signal"),
       type: "line",
       showSymbol: false,
       itemStyle: { color: "#253e45" },
@@ -63,7 +64,7 @@ export function Chart({
     previous?.traces.forEach((t) =>
       series.push({
         id: "before-" + t.id,
-        name: "Before · " + t.name,
+        name: (tr("Before ·") + " ") + t.name,
         type: "line",
         showSymbol: false,
         lineStyle: { type: "dashed", opacity: 0.5 },
@@ -78,13 +79,13 @@ export function Chart({
       grid: { left: 65, right: 25, top: 65, bottom: 85 },
       xAxis: {
         type: "value",
-        name: "Retention Time (min)",
+        name: tr("Retention Time (min)"),
         nameLocation: "middle",
         nameGap: 35,
       },
       yAxis: {
         type: "value",
-        name: "Relative Response (a.u.)",
+        name: tr("Relative Response (a.u.)"),
         nameLocation: "middle",
         nameGap: 45,
       },
@@ -110,7 +111,7 @@ export function Chart({
         data-testid="chromatogram"
         role="img"
         aria-label={
-          "Simulated Chromatogram: Retention Time (min), Relative Response (a.u.); " +
+          (tr("Simulated Chromatogram: Retention Time (min), Relative Response (a.u.);") + " ") +
           result.peaks
             .map(
               (peak) =>
@@ -131,15 +132,13 @@ export function Chart({
             pixelRatio: 2,
             backgroundColor: "#fff",
           });
-          a.download = "EluSim-chromatogram.png";
+          a.download = tr("EluSim-chromatogram.png");
           a.click();
         }}
       >
-        Export PNG
-      </button>
+        {tr("Export PNG")}</button>
       <span className="muted">
-        Pinch / scroll to zoom · Tap legend to hide peaks
-      </span>
+        {tr("Pinch / scroll to zoom · Tap legend to hide peaks")}</span>
     </div>
   );
 }
@@ -157,14 +156,14 @@ export function GradientProfile({ result }: { result: Result }) {
       grid: { left: 55, right: 25, top: 45, bottom: 55 },
       xAxis: {
         type: "value",
-        name: "Time (min)",
+        name: tr("Time (min)"),
         nameLocation: "middle",
         nameGap: 30,
       },
-      yAxis: { type: "value", name: "%B", min: 0, max: 100 },
+      yAxis: { type: "value", name: tr("%B"), min: 0, max: 100 },
       series: [
         {
-          name: "Programmed %B",
+          name: tr("Programmed %B"),
           type: "line",
           showSymbol: false,
           lineStyle: { type: "dashed" },
@@ -174,7 +173,7 @@ export function GradientProfile({ result }: { result: Result }) {
           ]),
         },
         {
-          name: "Column Inlet %B",
+          name: tr("Column Inlet %B"),
           type: "line",
           showSymbol: false,
           data: result.time_min.map((x, i) => [
@@ -199,21 +198,19 @@ export function GradientProfile({ result }: { result: Result }) {
           requestAnimationFrame(() => instance.current?.resize());
       }}
     >
-      <summary>Gradient Profile — programmed / column inlet</summary>
+      <summary>{tr("Gradient Profile — programmed / column inlet")}</summary>
       <p className="muted">
-        Dwell volume {result.input.mobile.dwell_ml} mL; initial delay{" "}
+        {tr("Dwell volume")}{result.input.mobile.dwell_ml} {tr("mL; initial delay")}{" "}
         {(
           result.input.mobile.dwell_ml / result.input.gradient[0].flow_ml_min
         ).toFixed(3)}{" "}
-        min. Variable-flow delay follows transported volume. This profile is an
-        input check, not evidence of successful separation.
-      </p>
+        {tr("min. Variable-flow delay follows transported volume. This profile is an input check, not evidence of successful separation.")}</p>
       <div
         className="chart"
         ref={ref}
         data-testid="gradient-profile"
         role="img"
-        aria-label="Gradient Profile: Programmed and Column Inlet percent B"
+        aria-label={tr("Gradient Profile: Programmed and Column Inlet percent B")}
       />
     </details>
   );

@@ -71,6 +71,7 @@ export type Config = {
   solver?: "auto" | "ode" | "analytic";
   band_compression?: "poppe" | "none";
   project_schema_version?: number;
+  next_compound_number?: number;
   mixture_basis?: "parts" | "concentration";
   mode: string;
   workflow: "known" | "calibrated" | "structure";
@@ -154,7 +155,7 @@ export const demo: Config = {
   compounds: [
     {
       id: "a",
-      name: "Synthetic A",
+      name: "示範化合物 1",
       kind: "parameterized",
       smiles: null,
       logkw: 2,
@@ -164,7 +165,7 @@ export const demo: Config = {
     },
     {
       id: "b",
-      name: "Synthetic B",
+      name: "示範化合物 2",
       kind: "parameterized",
       smiles: null,
       logkw: 2.5,
@@ -174,7 +175,7 @@ export const demo: Config = {
     },
     {
       id: "c",
-      name: "Synthetic C",
+      name: "示範化合物 3",
       kind: "parameterized",
       smiles: null,
       logkw: 3,
@@ -231,12 +232,49 @@ export const demo: Config = {
 };
 /** Remove browser-only descriptor/project fields from the shared API payload. */
 export function payload(config: Config) {
-  const { project_schema_version, ...method } = config;
+  const { project_schema_version, next_compound_number, ...method } = config;
   return {
     ...method,
     compounds: config.compounds.map(({ descriptors, ...c }) => ({
       ...c,
       source: sourceCode(c.source),
     })),
+  };
+}
+
+/** Start without scientific example values; legacy browser projects are retained. */
+export function emptyProject(): Config {
+  return { ...structuredClone(demo), compounds: [], next_compound_number: 1 };
+}
+
+/** Reserve a monotonically increasing fallback name within the browser project. */
+export function nextCompoundName(config: Config): { name: string; next: number } {
+  const used = new Set(config.compounds.map((compound) => compound.name));
+  const existingNumbers = config.compounds.map((compound) =>
+    Number(/^化合物 (\d+)$/.exec(compound.name)?.[1] ?? 0),
+  );
+  let number = Math.max(config.next_compound_number ?? 1, ...existingNumbers.map((value) => value + 1));
+  while (used.has("化合物 " + number)) number++;
+  return { name: "化合物 " + number, next: number + 1 };
+}
+
+/** Names are presentation data; changes do not invalidate numerical results. */
+export function calculationKey(config: Config): string {
+  const method = payload(config);
+  return JSON.stringify({
+    ...method,
+    compounds: method.compounds.map(({ name, ...compound }) => compound),
+  });
+}
+
+/** Join current names by stable ID while preserving all calculated numbers. */
+export function namedResult(result: Result, compounds: Compound[]): Result {
+  const names = new Map(compounds.map((compound) => [compound.id, compound.name]));
+  return {
+    ...result,
+    peaks: result.peaks.map((peak) => ({ ...peak, name: names.get(peak.id) ?? peak.name })),
+    traces: result.traces.map((trace) => ({ ...trace, name: names.get(trace.id) ?? trace.name })),
+    pairs: result.pairs.map((pair) => ({ ...pair, names: pair.ids.map((id, index) => names.get(id) ?? pair.names[index]) })),
+    input: { ...result.input, compounds: result.input.compounds.map((compound) => ({ ...compound, name: names.get(compound.id) ?? compound.name })) },
   };
 }

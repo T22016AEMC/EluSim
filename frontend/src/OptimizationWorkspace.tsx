@@ -1,3 +1,4 @@
+import { t as tr } from "./i18n/zh-TW";
 import { useEffect, useRef, useState } from "react";
 import * as echarts from "echarts";
 import { api } from "./api";
@@ -226,8 +227,8 @@ export function OptimizationWorkspace({
     const token = ++sequence.current;
     setBusy(
       kind === "map"
-        ? "Computing resolution map"
-        : "Searching multi-segment gradient",
+        ? tr("Computing resolution map")
+        : tr("Searching multi-segment gradient"),
     );
     setElapsed(0);
     setError("");
@@ -289,12 +290,12 @@ export function OptimizationWorkspace({
     sequence.current++;
     controller.current?.abort();
     setBusy("");
-    setError("Search cancelled");
+    setError(tr("Search cancelled"));
   }
 
   /** Require explicit permission before replacing the current method. */
   function confirmApply(nodes: Node[]) {
-    if (window.confirm("Replace the current gradient and run simulation?"))
+    if (window.confirm(tr("Replace the current gradient and run simulation?")))
       apply(nodes);
   }
 
@@ -362,14 +363,14 @@ export function OptimizationWorkspace({
         ),
       ),
     );
-    save("resolution-map.csv", csv(rows));
+    save(tr("resolution-map.csv"), csv(rows));
   }
 
   /** Export ranked candidate metrics and programmed nodes. */
   function exportCandidates() {
     if (!map) return;
     save(
-      "gradient-candidates.csv",
+      tr("gradient-candidates.csv"),
       csv([
         [
           "rank",
@@ -433,14 +434,14 @@ export function OptimizationWorkspace({
     grid: { left: 80, right: 30, bottom: 100, top: 25 },
     xAxis: {
       type: "category",
-      name: "Gradient time (min)",
+      name: tr("Gradient time (min)"),
       nameLocation: "middle",
       nameGap: 30,
       data: map?.axes.gradient_time_min.map((value) => value.toFixed(2)),
     },
     yAxis: {
       type: "category",
-      name: "End %B",
+      name: tr("End %B"),
       data: map?.axes.end_percent.map((value) => value.toFixed(1)),
     },
     visualMap: {
@@ -449,8 +450,8 @@ export function OptimizationWorkspace({
       left: "center",
       bottom: 0,
       pieces: [
-        { lte: target - 1e-8, color: "#e9b3a3", label: "< target Rs" },
-        { gte: target, color: "#4ba59b", label: "≥ target Rs" },
+        { lte: target - 1e-8, color: "#e9b3a3", label: tr("< target Rs") },
+        { gte: target, color: "#4ba59b", label: tr("≥ target Rs") },
       ],
     },
     series: [{ type: "heatmap", data: heatCells }],
@@ -461,11 +462,11 @@ export function OptimizationWorkspace({
     grid: { left: 75, right: 30, bottom: 70, top: 30 },
     xAxis: {
       type: "value",
-      name: "Run time (min)",
+      name: tr("Run time (min)"),
       nameLocation: "middle",
       nameGap: 35,
     },
-    yAxis: { type: "value", name: "Minimum Rs" },
+    yAxis: { type: "value", name: tr("Minimum Rs") },
     series: [
       {
         type: "scatter",
@@ -480,11 +481,9 @@ export function OptimizationWorkspace({
 
   return (
     <section className="optimizer-workspace">
-      <h2>Gradient Optimization</h2>
+      <h2>{tr("Gradient Optimization")}</h2>
       <p>
-        Constant-flow LSS calculations · user experimental checks pending ·
-        search ranges are independent of parameter tier.
-      </p>
+        {tr("Constant-flow LSS calculations · user experimental checks pending · search ranges are independent of parameter tier.")}</p>
       <p>
         {config.compounds
           .map(
@@ -494,40 +493,37 @@ export function OptimizationWorkspace({
       </p>
       <div className="field-grid">
         <Range
-          label="Gradient time (min)"
+          label={tr("Gradient time (min)")}
           value={duration}
           change={setDuration}
         />
-        <Range label="Start %B" value={start} change={setStart} />
-        <Range label="End %B" value={end} change={setEnd} />
+        <Range label={tr("Start %B")} value={start} change={setStart} />
+        <Range label={tr("End %B")} value={end} change={setEnd} />
         <Numeric
-          label="Initial hold (min)"
+          label={tr("Initial hold (min)")}
           value={initialHold}
           change={setInitialHold}
         />
         <Numeric
-          label="Final hold (min)"
+          label={tr("Final hold (min)")}
           value={finalHold}
           change={setFinalHold}
         />
-        <Numeric label="Target minimum Rs" value={target} change={setTarget} />
+        <Numeric label={tr("Target minimum Rs")} value={target} change={setTarget} />
         <label>
-          Maximum analysis time (min)
-          <input
+          {tr("Maximum analysis time (min)")}<input
             type="number"
-            aria-label="Maximum analysis time (min)"
+            aria-label={tr("Maximum analysis time (min)")}
             value={maximum}
             onChange={(event) => setMaximum(event.target.value)}
           />
         </label>
       </div>
       <button disabled={!!busy} onClick={() => void search("map")}>
-        Generate resolution map
-      </button>
+        {tr("Generate resolution map")}</button>
       <label>
-        Segments
-        <select
-          aria-label="Segments"
+        {tr("Segments")}<select
+          aria-label={tr("Segments")}
           value={segments}
           onChange={(event) => setSegments(Number(event.target.value))}
         >
@@ -536,36 +532,33 @@ export function OptimizationWorkspace({
         </select>
       </label>
       <Numeric
-        label="Search time budget (s)"
+        label={tr("Search time budget (s)")}
         value={budget}
         change={setBudget}
       />
       <Numeric
-        label="Minimum segment duration (min)"
+        label={tr("Minimum segment duration (min)")}
         value={minSegment}
         change={setMinSegment}
       />
       <button disabled={!!busy} onClick={() => void search("multisegment")}>
-        Optimize multi-segment gradient
-      </button>
+        {tr("Optimize multi-segment gradient")}</button>
       {busy && (
         <div role="status">
           {busy} · {elapsed.toFixed(1)} s
-          <button onClick={cancel}>Cancel search</button>
+          <button onClick={cancel}>{tr("Cancel search")}</button>
         </div>
       )}
       {error && <p role="alert">{error}</p>}
       {map && (
         <>
-          <h3>Resolution map</h3>
+          <h3>{tr("Resolution map")}</h3>
           <p>
-            {map.evaluated} candidates · {map.elapsed_s.toFixed(3)} s · outlined
-            cells meet the displayed target and time limit
-          </p>
+            {map.evaluated} {tr("candidates ·")}{map.elapsed_s.toFixed(3)} {tr("s · outlined cells meet the displayed target and time limit")}</p>
           <label>
-            Start %B slice: {map.axes.start_percent[slice]}
+            {tr("Start %B slice:")}{map.axes.start_percent[slice]}
             <input
-              aria-label="Start %B slice"
+              aria-label={tr("Start %B slice")}
               type="range"
               min={0}
               max={map.axes.start_percent.length - 1}
@@ -579,7 +572,7 @@ export function OptimizationWorkspace({
             onPoint={(index) => applyCell(...heatIndices[index])}
           />
           <details>
-            <summary>Keyboard cell selection</summary>
+            <summary>{tr("Keyboard cell selection")}</summary>
             <div className="search-table-scroll">
               <table>
                 <tbody>
@@ -594,7 +587,7 @@ export function OptimizationWorkspace({
                                 null
                               }
                               aria-label={
-                                "Apply map cell " + endIndex + " " + timeIndex
+                                (tr("Apply map cell") + " ") + endIndex + " " + timeIndex
                               }
                               onClick={() => applyCell(endIndex, timeIndex)}
                             >
@@ -609,18 +602,18 @@ export function OptimizationWorkspace({
               </table>
             </div>
           </details>
-          <button onClick={exportMap}>Export map CSV</button>
-          <button onClick={exportCandidates}>Export candidates CSV</button>
-          <h3>Top candidates</h3>
+          <button onClick={exportMap}>{tr("Export map CSV")}</button>
+          <button onClick={exportCandidates}>{tr("Export candidates CSV")}</button>
+          <h3>{tr("Top candidates")}</h3>
           <div className="search-table-scroll">
             <table data-testid="optimizer-candidates">
               <thead>
                 <tr>
-                  <th>Rank / nodes (%B @ min)</th>
-                  <th>Minimum Rs</th>
-                  <th>Run (min)</th>
-                  <th>Critical pair</th>
-                  <th>ODE relative differences (Rt / σ)</th>
+                  <th>{tr("Rank / nodes (%B @ min)")}</th>
+                  <th>{tr("Minimum Rs")}</th>
+                  <th>{tr("Run (min)")}</th>
+                  <th>{tr("Critical pair")}</th>
+                  <th>{tr("ODE relative differences (Rt / σ)")}</th>
                   <th>Apply</th>
                 </tr>
               </thead>
@@ -647,7 +640,7 @@ export function OptimizationWorkspace({
                     </td>
                     <td>
                       <button onClick={() => confirmApply(candidate.gradient)}>
-                        Apply candidate {index + 1}
+                        {tr("Apply candidate")}{index + 1}
                       </button>
                     </td>
                   </tr>
@@ -655,20 +648,20 @@ export function OptimizationWorkspace({
               </tbody>
             </table>
           </div>
-          <h3>Pareto frontier</h3>
+          <h3>{tr("Pareto frontier")}</h3>
           <SearchPlot
             option={paretoOption}
             label="pareto-map"
             onPoint={(index) => confirmApply(map.pareto[index].gradient)}
           />
           <details>
-            <summary>Keyboard Pareto selection</summary>
+            <summary>{tr("Keyboard Pareto selection")}</summary>
             {map.pareto.map((candidate, index) => (
               <button
                 key={index}
                 onClick={() => confirmApply(candidate.gradient)}
               >
-                Apply Pareto {index + 1}
+                {tr("Apply Pareto")}{index + 1}
               </button>
             ))}
           </details>
@@ -681,12 +674,12 @@ export function OptimizationWorkspace({
       )}
       {multi && (
         <section data-testid="multisegment-result">
-          <h3>Multi-segment search result</h3>
+          <h3>{tr("Multi-segment search result")}</h3>
           <p>{multi.search_note}</p>
           <p>
-            Minimum Rs {number(multi.min_rs)} · run {number(multi.run_time_min)}{" "}
-            min · {multi.iterations} iterations · {multi.evaluations}{" "}
-            evaluations · budget stop {String(multi.time_budget_stopped)}
+            {tr("Minimum Rs")}{number(multi.min_rs)} {tr("· run")}{number(multi.run_time_min)}{" "}
+            min · {multi.iterations} {tr("iterations ·")}{multi.evaluations}{" "}
+            {tr("evaluations · budget stop")}{String(multi.time_budget_stopped)}
           </p>
           <p>
             {multi.gradient
@@ -700,7 +693,7 @@ export function OptimizationWorkspace({
               .join(" → ")}
           </p>
           <p>
-            {pairLabel(multi.critical_pair)} · ODE differences{" "}
+            {pairLabel(multi.critical_pair)} {tr("· ODE differences")}{" "}
             {number(multi.ode_check?.max_rel_rt)} /{" "}
             {number(multi.ode_check?.max_rel_sigma)}
           </p>
@@ -708,28 +701,23 @@ export function OptimizationWorkspace({
             <p key={warning}>{warning}</p>
           ))}
           <button onClick={() => confirmApply(multi.gradient)}>
-            Apply multi-segment result
-          </button>
+            {tr("Apply multi-segment result")}</button>
           <button
             onClick={() =>
               save(
-                "multisegment-result.json",
+                tr("multisegment-result.json"),
                 JSON.stringify(multi, null, 2),
                 "application/json",
               )
             }
           >
-            Export multi-segment JSON
-          </button>
+            {tr("Export multi-segment JSON")}</button>
         </section>
       )}
       <section>
-        <h3>Across-mode screening</h3>
+        <h3>{tr("Across-mode screening")}</h3>
         <p>
-          RP search uses supplied or estimated LSS parameters. NP, HILIC, IEX
-          and SEC require independent parameters and experiments; no
-          quantitative cross-mode ranking is generated.
-        </p>
+          {tr("RP search uses supplied or estimated LSS parameters. NP, HILIC, IEX and SEC require independent parameters and experiments; no quantitative cross-mode ranking is generated.")}</p>
       </section>
     </section>
   );

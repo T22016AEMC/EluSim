@@ -35,8 +35,7 @@ export type Estimate = {
 /** Infer legacy tiers without upgrading any parameter's provenance. */
 export function compoundTier(compound: Compound): ParameterTier {
   if (
-    compound.parameter_origin === "calibration" ||
-    compound.source === "calibrated"
+    compound.parameter_origin === "calibration"
   )
     return "D";
   if (compound.parameter_tier) return compound.parameter_tier;

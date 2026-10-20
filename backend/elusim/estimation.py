@@ -103,7 +103,7 @@ def estimate_retention(smiles, method):
 
 def parameter_tier(compound):
     """Keep calibration and explicit manual values ahead of estimated tiers."""
-    if compound.parameter_origin == 'calibration' or compound.source == 'calibrated':
+    if compound.parameter_origin == 'calibration':
         return 'D'
     if compound.parameter_tier is not None:
         return compound.parameter_tier

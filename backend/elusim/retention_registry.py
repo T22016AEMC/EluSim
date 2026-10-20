@@ -86,6 +86,11 @@ def resolve_compounds(req, overwrite_manual=False):
     records = []
     for compound in req.compounds:
         tier = parameter_tier(compound)
+        source = {
+            'A': 'literature_derived', 'B': 'experimental_model_prediction',
+            'C': 'screening_only', 'D': 'calibrated', 'M': 'model_based',
+        }[tier]
+        compound = compound.model_copy(update={'source': source})
         manual_locked = compound.parameter_tier == 'M' or (
             compound.parameter_origin == 'manual'
             and (compound.logkw is not None or compound.s is not None)
