@@ -7,7 +7,7 @@
 - 固定約化流速 ν 時，N 與粒徑反比；固定流速時粒徑同時改變 ν，不能單獨宣稱反比。
 - 黏度採 Guillarme、Heinisch、Rocca (2004), J. Chromatogr. A 1052, 39–51, Table 2：
   https://doi.org/10.1016/j.chroma.2004.08.052 。使用 25、60、90 °C 與 φ=0、0.2、0.4、0.6、0.8、1 表格。
-- 溫度採 log 黏度線性插值，組成採線性插值，另加 (1−φ)×(Vogel 純水−表格純水) 的明示端點調整。這是表格插值與端點調整，不是原文式 26/27。範圍外明示外推。
+- 純有機黏度採表格溫度的 log 線性插值；混合物採原文式 26/27 的非理想組成曲率，將 log10 黏度扣除兩端線性基線，再加上 Vogel 水與純有機表格端點的 log10 基線。此為明示的端點正規化，並非原文未調整擬合式；共同適用範圍 25–90 °C、φ 0–1，範圍外明示外推。
 - 純水依指定 Vogel 式；純有機採相同文獻表格端點。未計入壓力、鹽、緩衝液對黏度的影響。
 - Darcy 壓力式 ΔP=ΦηLu_s/dp²：Snyder、Kirkland、Dolan，Introduction to Modern Liquid Chromatography，3rd ed. (2010)。
 - 壓力以入口組成至少 201 點加節點取樣，未沿管柱軸向積分。單次模擬超限只警告；最佳化標為不可行。未設定上限時，最佳化跳過壓力取樣。
@@ -40,3 +40,14 @@
 - backend/tests/test_estimation.py 的 test_generic_equation_and_clipping：改依模型 metadata 的特徵名稱組向量，保留原推論及裁切斷言。
 - 同檔 test_fit_groups_and_standardization_use_training_rows_only：從原訓練記錄的 SMILES 計算模型記載特徵，保留原分組隔離、平均值與資料筆數斷言；新模型新增兩個登記特徵，不能繼續固定五維。
 - workflow-repair.spec.ts 不需修改：壓力設定使用一般設定容器，第一個結果 section 仍為層析圖。
+
+## 本機執行記錄
+- 修改前 pytest（依常設規則排除原合理性測試檔）：91 通過。
+- 本次完整 pytest -q：118 通過，0 失敗；含第 6 節例外所允許的原門檻。原 Starlette 提醒仍存在。
+- pnpm --dir frontend build：完成；保留既有單一大型 bundle 提醒。
+- 桌面 Playwright：17 通過，0 失敗；九個分頁殘留英文清單為空（保留產品名稱）。
+- 最後黏度式調整後，新物理設定桌面流程另重跑：1 通過。
+- 舊 JSON 測試另移除新欄位後重跑：1 通過。
+- 混合器地圖，1 候選 × 3 成分、含 ODE 重算，本機 1.984000 s；候選上限 2,000，多段評估上限 2,000，既有 jobs 30 s 限制保持。
+- 完整輸出保存在本機 artifacts/phase3a-pytest-output.txt、phase3a-playwright-output.txt、phase3a-physics-playwright-output.txt；artifacts 維持既有忽略設定。
+- 數據判讀、儀器參數及條件使用方式由使用者確認，本文不作實驗結論。

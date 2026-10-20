@@ -19,7 +19,13 @@ from test_engine import method
 def test_old_json_defaults_strict_and_fixed_path():
     """New defaults preserve existing fields and reject unknown keys."""
     old = method()
-    request = Simulation.model_validate(old.model_dump())
+    legacy = old.model_dump()
+    for key in ("efficiency_model", "vd_a", "vd_b", "vd_c", "diffusion_m2_s", "flow_resistance"):
+        del legacy["column"][key]
+    for key in ("mixer_ml", "system_pressure_bar"):
+        del legacy["mobile"][key]
+    del legacy["max_pressure_bar"]
+    request = Simulation.model_validate(legacy)
     assert request.mobile.mixer_ml == 0
     assert request.column.efficiency_model == "fixed"
     assert request.max_pressure_bar is None
