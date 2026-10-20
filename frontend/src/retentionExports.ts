@@ -1,4 +1,5 @@
 import type { Compound, Result } from "./types";
+import { tierLabel } from "./i18n/zh-TW";
 import { compoundTier } from "./retentionEstimates";
 
 /** Quote CSV fields without changing the stored project values. */
@@ -22,6 +23,7 @@ export function parameterCsv(compounds: Compound[]): string {
       "logkw",
       "s",
       "tier",
+      "tier_label",
       "parameter_source",
       "model_version",
       "warnings",
@@ -44,6 +46,7 @@ export function parameterCsv(compounds: Compound[]): string {
         compound.logkw,
         compound.s,
         compoundTier(compound),
+        tierLabel(compoundTier(compound)),
         provenance.parameter_source ?? provenance.source,
         provenance.model_version,
         JSON.stringify(provenance.warnings ?? []),
@@ -64,6 +67,7 @@ export function peakTableCsv(result: Result): string {
       "id",
       "name",
       "tier",
+      "tier_label",
       "rt_min",
       "k_e",
       "phi_outlet",
@@ -76,6 +80,7 @@ export function peakTableCsv(result: Result): string {
       peak.id,
       peak.name,
       peak.parameter_tier,
+      tierLabel(peak.parameter_tier),
       peak.rt_min,
       peak.k_e,
       peak.phi_outlet,

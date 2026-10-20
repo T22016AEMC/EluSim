@@ -1,4 +1,4 @@
-import { t as tr } from "./i18n/zh-TW";
+import { tierLabel, t as tr } from "./i18n/zh-TW";
 import { useEffect, useRef } from "react";
 import * as echarts from "echarts";
 import type { Result } from "./types";
@@ -21,14 +21,7 @@ export function Chart({
       const peak = result.peaks.find((p) => p.id === t.id);
       return {
         id: t.id,
-        name:
-          t.name +
-          (peak?.parameter_tier
-            ? " [" +
-              peak.parameter_tier +
-              (peak.parameter_tier === "C" ? " 估算" : "") +
-              "]"
-            : ""),
+        name: t.name,
         type: "line",
         showSymbol: false,
         data: result.time_min.map((x, i) => [x, t.y[i]]),
@@ -38,7 +31,7 @@ export function Chart({
                 silent: true,
                 symbol: "none",
                 label: {
-                  formatter: peak.rt_min.toFixed(3) + " min",
+                  formatter: t.name,
                   position: "insideEndTop",
                   rotate: 90,
                   fontSize: 10,
@@ -74,7 +67,10 @@ export function Chart({
     c.setOption({
       color: ["#008b8b", "#df8a32", "#666acd"],
       animation: false,
-      legend: { type: "scroll", top: 0 },
+      legend: { type: "scroll", top: 0, formatter: (name: string) => {
+        const peak = result.peaks.find((item) => item.name === name);
+        return peak ? name + "（" + tierLabel(peak.parameter_tier) + "）" : name;
+      } },
       tooltip: { trigger: "axis" },
       grid: { left: 65, right: 25, top: 65, bottom: 85 },
       xAxis: {
@@ -115,11 +111,7 @@ export function Chart({
           result.peaks
             .map(
               (peak) =>
-                peak.name +
-                " [" +
-                (peak.parameter_tier || "M") +
-                (peak.parameter_tier === "C" ? " 估算" : "") +
-                "]",
+                peak.name + "（" + tierLabel(peak.parameter_tier) + "）",
             )
             .join(", ")
         }
@@ -160,10 +152,10 @@ export function GradientProfile({ result }: { result: Result }) {
         nameLocation: "middle",
         nameGap: 30,
       },
-      yAxis: { type: "value", name: tr("%B"), min: 0, max: 100 },
+      yAxis: { type: "value", name: tr("%B", result.input.mobile.b), min: 0, max: 100 },
       series: [
         {
-          name: tr("Programmed %B"),
+          name: tr("Programmed %B", result.input.mobile.b),
           type: "line",
           showSymbol: false,
           lineStyle: { type: "dashed" },
@@ -173,7 +165,7 @@ export function GradientProfile({ result }: { result: Result }) {
           ]),
         },
         {
-          name: tr("Column Inlet %B"),
+          name: tr("Column Inlet %B", result.input.mobile.b),
           type: "line",
           showSymbol: false,
           data: result.time_min.map((x, i) => [
@@ -210,7 +202,7 @@ export function GradientProfile({ result }: { result: Result }) {
         ref={ref}
         data-testid="gradient-profile"
         role="img"
-        aria-label={tr("Gradient Profile: Programmed and Column Inlet percent B")}
+        aria-label={tr("Gradient Profile: Programmed and Column Inlet percent B", result.input.mobile.b)}
       />
     </details>
   );

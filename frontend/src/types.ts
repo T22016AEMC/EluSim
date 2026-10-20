@@ -1,3 +1,4 @@
+import { t } from "./i18n/zh-TW";
 export type ParameterTier = "A" | "B" | "C" | "D" | "M";
 import { sourceCode, type ParameterSource } from "./sources";
 export type Node = {
@@ -155,7 +156,7 @@ export const demo: Config = {
   compounds: [
     {
       id: "a",
-      name: "示範化合物 1",
+      name: t("demo_name").replace("{number}", "1"),
       kind: "parameterized",
       smiles: null,
       logkw: 2,
@@ -165,7 +166,7 @@ export const demo: Config = {
     },
     {
       id: "b",
-      name: "示範化合物 2",
+      name: t("demo_name").replace("{number}", "2"),
       kind: "parameterized",
       smiles: null,
       logkw: 2.5,
@@ -175,7 +176,7 @@ export const demo: Config = {
     },
     {
       id: "c",
-      name: "示範化合物 3",
+      name: t("demo_name").replace("{number}", "3"),
       kind: "parameterized",
       smiles: null,
       logkw: 3,
@@ -254,8 +255,8 @@ export function nextCompoundName(config: Config): { name: string; next: number }
     Number(/^化合物 (\d+)$/.exec(compound.name)?.[1] ?? 0),
   );
   let number = Math.max(config.next_compound_number ?? 1, ...existingNumbers.map((value) => value + 1));
-  while (used.has("化合物 " + number)) number++;
-  return { name: "化合物 " + number, next: number + 1 };
+  while (used.has(t("compound_name").replace("{number}", String(number)))) number++;
+  return { name: t("compound_name").replace("{number}", String(number)), next: number + 1 };
 }
 
 /** Names are presentation data; changes do not invalidate numerical results. */

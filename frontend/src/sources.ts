@@ -1,3 +1,5 @@
+import { t } from "./i18n/zh-TW";
+
 export const sourceLabels = {
   measured: "Measured",
   calibrated: "Calibrated",
@@ -48,5 +50,5 @@ export function sourceCode(value: unknown): ParameterSource {
 
 /** Display a label independently of the stored API code. */
 export function sourceLabel(value: unknown) {
-  return sourceLabels[sourceCode(value)];
+  return t(sourceLabels[sourceCode(value)]);
 }

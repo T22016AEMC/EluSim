@@ -14,3 +14,5 @@
   .optimizer-workspace .field-grid { grid-template-columns: minmax(0, 1fr); }
   .optimizer-workspace { padding: 12px; }
 }
+
+.source-badge { background: #edf3f4; color: #45616a; font-weight: 400; border: 1px solid #dce8ea; }

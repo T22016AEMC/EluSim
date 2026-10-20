@@ -20,7 +20,8 @@ def test_source_codes_keep_parameters_and_true_solver_results(legacy,code):
  if legacy!=code:assert parsed.compounds[0].source_legacy==legacy
  result=simulate(parsed)
  assert len(result['traces'])==3 and len(set(p['rt_min'] for p in result['peaks']))==3
- assert result['peaks'][0]['source']==code
+ assert result['peaks'][0]['source']=='model_based'
+ assert result['peaks'][0]['parameter_tier']=='M'
 
 
 def test_legacy_api_not_just_200_and_field_error_is_specific():

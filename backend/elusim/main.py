@@ -37,6 +37,24 @@ async def limits(request:Request,call_next):
  response.headers['Content-Security-Policy']="default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; connect-src 'self'; worker-src 'self' blob:; frame-ancestors 'none'"
  return response
 
+@app.middleware("http")
+async def localized_messages(request: Request, call_next):
+    """Translate API display fields without changing scientific payloads."""
+    import json
+    from .zh_tw import present
+
+    response = await call_next(request)
+    if not request.url.path.startswith("/api/"):
+        return response
+    if "application/json" not in response.headers.get("content-type", ""):
+        return response
+    content = b"".join([chunk async for chunk in response.body_iterator])
+    body = present(json.loads(content))
+    headers = dict(response.headers)
+    headers.pop("content-length", None)
+    return JSONResponse(body, status_code=response.status_code, headers=headers)
+
+
 @app.exception_handler(ValueError)
 async def bad_value(request,exc):return JSONResponse({'detail':str(exc)},422)
 @app.exception_handler(TimeoutError)

@@ -1,5 +1,6 @@
 import { t as tr } from "./i18n/zh-TW";
 import { tierLabel } from "./i18n/zh-TW";
+import { Metadata } from "./Metadata";
 import { SourceBadge } from "./SourceBadge";
 import { OptimizationWorkspace } from "./OptimizationWorkspace";
 import { compoundTier, useRetentionEstimates } from "./retentionEstimates";
@@ -603,7 +604,7 @@ function App() {
                 <p className={r.logkw == null ? "warn" : "muted"} key={i}>
                   {config.compounds.find((c) => c.id === r.compound_id)?.name ||
                     r.compound_id}
-                  : {r.status}
+                  : {tr(r.status)}
                   {r.reason ? " — " + r.reason : ""}
                   {r.condition_mismatches?.length
                     ? " — " + r.condition_mismatches.join("; ")
@@ -613,7 +614,7 @@ function App() {
               {retentionRecords.length > 0 && (
                 <details>
                   <summary>{tr("Retention resolution results")}</summary>
-                  <pre>{JSON.stringify(retentionRecords, null, 2)}</pre>
+                  <Metadata value={retentionRecords} />
                 </details>
               )}
               <label>
@@ -775,7 +776,7 @@ function App() {
                             "peptide",
                             "protein",
                           ].map((x) => (
-                            <option key={x}>{x}</option>
+                            <option key={x} value={x}>{tr(x)}</option>
                           ))}
                         </select>
                       </label>
@@ -790,7 +791,7 @@ function App() {
                       }
                       onClick={() => void estimates.estimateOne(c.id, true)}
                     >
-                      重新估算
+                      {tr("Re-estimate")}
                     </button>
                     <label>
                       {tr("Stored SMILES")}<input
@@ -802,15 +803,13 @@ function App() {
                       />
                     </label>
                     {c.source_legacy && (
-                      <p className="muted">{tr("Legacy source:")}{c.source_legacy}</p>
+                      <p className="muted">{tr("Legacy source:")}{tr(c.source_legacy)}</p>
                     )}
                     {c.retention_provenance &&
                       Object.keys(c.retention_provenance).length > 0 && (
                         <details>
                           <summary>{tr("Retention model provenance")}</summary>
-                          <pre>
-                            {JSON.stringify(c.retention_provenance, null, 2)}
-                          </pre>
+                          <Metadata value={c.retention_provenance} />
                         </details>
                       )}
                     {c.scope &&
@@ -1095,7 +1094,7 @@ function App() {
                       })
                     }
                   >
-                    Isocratic
+                    {tr("Isocratic")}
                   </button>
                   <button
                     className="secondary"
@@ -1130,7 +1129,7 @@ function App() {
                       });
                     }}
                   >
-                    Re-equilibrate
+                    {tr("Re-equilibrate")}
                   </button>
                 </div>
               </div>
@@ -1141,14 +1140,14 @@ function App() {
                     {(
                       [
                         ["time_min", tr("Time (min)")],
-                        ["b_percent", tr("B (%)")],
+                        ["b_percent", tr("B (%)", config.mobile.b)],
                         ["flow_ml_min", tr("Flow (mL/min)")],
                         ["temperature_c", tr("Temperature (°C)")],
                       ] as const
                     ).map(([key, label]) => (
                       <Num
                         key={key}
-                        label={label + " node " + (i + 1)}
+                        label={label + " " + tr("node") + " " + (i + 1)}
                         value={n[key]}
                         onChange={(v) =>
                           change({
@@ -1160,9 +1159,9 @@ function App() {
                       />
                     ))}
                     <label>
-                      Segment
+                      {tr("Segment")}
                       <select
-                        aria-label={"Segment " + (i + 1)}
+                        aria-label={tr("Segment") + " " + (i + 1)}
                         value={n.interpolation}
                         onChange={(e) =>
                           change({
@@ -1246,8 +1245,8 @@ function App() {
                         result.peaks.every(
                           (p) => p.simulation_status === "non_eluted",
                         )
-                          ? "本時間窗內未洗脫"
-                          : "LC 分離模擬未完成"}
+                          ? tr("non_eluted_window")
+                          : tr("incomplete_simulation")}
                       </h3>
                       <p>
                         {result.peaks.some((p) => p.rt_min != null)
@@ -1406,7 +1405,7 @@ function App() {
                               <td>{fmt(p.width_base_min)}</td>
                               <td>
                                 {fmt(p.peak_area)} / {fmt(p.peak_height)}
-                                <small> · {p.amount_unit}</small>
+                                <small> · {tr(p.amount_unit)}</small>
                               </td>
                               <td>
                                 {sourceLabel(p.source)}
@@ -1447,13 +1446,13 @@ function App() {
               <section className="empty">
                 <h2>
                   {simulationAttempted
-                    ? "LC 分離模擬未完成"
+                    ? tr("incomplete_simulation")
                     : tr("Ready to simulate")}
                 </h2>
                 <p>
                   {error ||
                     (result
-                      ? "LC 條件已變更；先前結果已隱藏，請重新模擬。"
+                      ? tr("stale_results")
                       : busy
                         ? tr("Scientific calculation in progress.")
                         : tr("Supply logKw / S, column geometry and a gradient. Calculations run in the Python backend."))}
@@ -1549,7 +1548,7 @@ function App() {
                 {tr("Fit logKw and S")}</button>
               {calibrationResult && (
                 <>
-                  <pre>{JSON.stringify(calibrationResult, null, 2)}</pre>
+                  <Metadata value={calibrationResult} />
                   <button
                     onClick={() => {
                       const r = calibrationResult;

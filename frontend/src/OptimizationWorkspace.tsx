@@ -1,4 +1,4 @@
-import { t as tr } from "./i18n/zh-TW";
+import { fieldHelp, tierLabel, t as tr } from "./i18n/zh-TW";
 import { useEffect, useRef, useState } from "react";
 import * as echarts from "echarts";
 import { api } from "./api";
@@ -89,6 +89,7 @@ function Numeric({
         value={value}
         onChange={(event) => change(Number(event.target.value))}
       />
+      {fieldHelp(label) && <small className="muted">{fieldHelp(label)}</small>}
     </label>
   );
 }
@@ -110,7 +111,7 @@ function Range({
         {(["min", "max", "steps"] as const).map((key) => (
           <Numeric
             key={key}
-            label={label + " " + key}
+            label={label + "：" + tr(key)}
             value={value[key]}
             integer={key === "steps"}
             change={(next) => change({ ...value, [key]: next })}
@@ -148,7 +149,7 @@ function SearchPlot({
       <div
         ref={element}
         role="img"
-        aria-label={label}
+        aria-label={tr(label)}
         data-testid={label}
         style={{ minWidth: 620, height: 380 }}
       />
@@ -308,7 +309,7 @@ export function OptimizationWorkspace({
     return (
       compounds.map((compound) => compound?.name ?? "?").join(" / ") +
       (compounds.some((compound) => compound && compoundTier(compound) === "C")
-        ? " · 含估算參數"
+        ? " · " + tr("includes_estimates")
         : "")
     );
   }
@@ -424,7 +425,7 @@ export function OptimizationWorkspace({
         return (
           "Rs " +
           number(map!.min_rs[slice][endIndex][timeIndex]) +
-          "\nRun " +
+           "\n" + tr("Run") + " " +
           number(map!.run_time[slice][endIndex][timeIndex]) +
           " min\n" +
           pairLabel(map!.critical_pair[slice][endIndex][timeIndex])
@@ -441,7 +442,7 @@ export function OptimizationWorkspace({
     },
     yAxis: {
       type: "category",
-      name: tr("End %B"),
+      name: tr("End %B", config.mobile.b),
       data: map?.axes.end_percent.map((value) => value.toFixed(1)),
     },
     visualMap: {
@@ -479,6 +480,12 @@ export function OptimizationWorkspace({
     ],
   };
 
+  const combinations = Array.from({ length: start.steps }, (_, i) =>
+    start.min + (start.max - start.min) * i / Math.max(1, start.steps - 1),
+  ).reduce((count, first) => count + Array.from({ length: end.steps }, (_, i) =>
+    end.min + (end.max - end.min) * i / Math.max(1, end.steps - 1),
+  ).filter((last) => last > first + 1).length * duration.steps, 0);
+  if (!config.compounds.length) return <section><h2>{tr("Gradient Optimization")}</h2><p>{tr("empty_compounds")}</p></section>;
   return (
     <section className="optimizer-workspace">
       <h2>{tr("Gradient Optimization")}</h2>
@@ -487,7 +494,7 @@ export function OptimizationWorkspace({
       <p>
         {config.compounds
           .map(
-            (compound) => compound.name + " [" + compoundTier(compound) + "]",
+            (compound) => compound.name + "（" + tierLabel(compoundTier(compound)) + "）",
           )
           .join(" · ")}
       </p>
@@ -497,8 +504,8 @@ export function OptimizationWorkspace({
           value={duration}
           change={setDuration}
         />
-        <Range label={tr("Start %B")} value={start} change={setStart} />
-        <Range label={tr("End %B")} value={end} change={setEnd} />
+        <Range label={tr("Start %B", config.mobile.b)} value={start} change={setStart} />
+        <Range label={tr("End %B", config.mobile.b)} value={end} change={setEnd} />
         <Numeric
           label={tr("Initial hold (min)")}
           value={initialHold}
@@ -517,10 +524,12 @@ export function OptimizationWorkspace({
             value={maximum}
             onChange={(event) => setMaximum(event.target.value)}
           />
+          <small className="muted">{tr("help_maximum")}</small>
         </label>
       </div>
       <button disabled={!!busy} onClick={() => void search("map")}>
         {tr("Generate resolution map")}</button>
+      <span data-testid="combination-count">{tr("combinations").replace("{count}", combinations.toLocaleString("zh-TW"))}</span>
       <label>
         {tr("Segments")}<select
           aria-label={tr("Segments")}
@@ -530,6 +539,7 @@ export function OptimizationWorkspace({
           <option value={2}>2</option>
           <option value={3}>3</option>
         </select>
+        <small className="muted">{tr("help_segments")}</small>
       </label>
       <Numeric
         label={tr("Search time budget (s)")}
@@ -556,9 +566,9 @@ export function OptimizationWorkspace({
           <p>
             {map.evaluated} {tr("candidates ·")}{map.elapsed_s.toFixed(3)} {tr("s · outlined cells meet the displayed target and time limit")}</p>
           <label>
-            {tr("Start %B slice:")}{map.axes.start_percent[slice]}
+            {tr("Start %B slice:", config.mobile.b)}{map.axes.start_percent[slice]}
             <input
-              aria-label={tr("Start %B slice")}
+              aria-label={tr("Start %B slice", config.mobile.b)}
               type="range"
               min={0}
               max={map.axes.start_percent.length - 1}
@@ -609,12 +619,12 @@ export function OptimizationWorkspace({
             <table data-testid="optimizer-candidates">
               <thead>
                 <tr>
-                  <th>{tr("Rank / nodes (%B @ min)")}</th>
+                  <th>{tr("Rank / nodes (%B @ min)", config.mobile.b)}</th>
                   <th>{tr("Minimum Rs")}</th>
                   <th>{tr("Run (min)")}</th>
                   <th>{tr("Critical pair")}</th>
                   <th>{tr("ODE relative differences (Rt / σ)")}</th>
-                  <th>Apply</th>
+                  <th>{tr("Apply")}</th>
                 </tr>
               </thead>
               <tbody>
@@ -679,7 +689,7 @@ export function OptimizationWorkspace({
           <p>
             {tr("Minimum Rs")}{number(multi.min_rs)} {tr("· run")}{number(multi.run_time_min)}{" "}
             min · {multi.iterations} {tr("iterations ·")}{multi.evaluations}{" "}
-            {tr("evaluations · budget stop")}{String(multi.time_budget_stopped)}
+            {tr("evaluations · budget stop")}{tr(String(multi.time_budget_stopped))}
           </p>
           <p>
             {multi.gradient
