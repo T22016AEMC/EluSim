@@ -8,7 +8,7 @@ async function structures(page: Page) {
     ["Map ether", "COCOC"],
     ["Map caffeine", "Cn1cnc2c1c(=O)n(C)c(=O)n2C"],
   ]) {
-    await page.getByLabel("Compound name", { exact: true }).fill(name);
+    await page.getByLabel("化合物名稱", { exact: true }).fill(name);
     await page.getByLabel("SMILES", { exact: true }).fill(smiles);
     const response = page.waitForResponse(
       (response) =>
@@ -18,9 +18,7 @@ async function structures(page: Page) {
           .postDataJSON()
           .method.compounds.some((compound: any) => compound.name === name),
     );
-    await page
-      .getByRole("button", { name: "Add compound", exact: true })
-      .click();
+    await page.getByRole("button", { name: "新增化合物", exact: true }).click();
     expect((await response).ok()).toBeTruthy();
     await expect(
       page.getByLabel("logKw " + name, { exact: true }),
@@ -32,13 +30,13 @@ async function structures(page: Page) {
 async function map(page: Page) {
   await page
     .getByRole("navigation")
-    .getByRole("button", { name: "Gradient Optimization", exact: false })
+    .getByRole("button", { name: "梯度最佳化", exact: false })
     .click();
   const response = page.waitForResponse((response) =>
     response.url().endsWith("/api/optimize/map"),
   );
   await page
-    .getByRole("button", { name: "Generate resolution map", exact: true })
+    .getByRole("button", { name: "產生分離度地圖", exact: true })
     .click();
   const http = await response;
   expect(http.ok()).toBeTruthy();
@@ -82,10 +80,8 @@ test("three SMILES, resolution cell, candidate/Pareto apply, and CSV exports", a
   expect(result.axes.start_percent[0]).toBe(0);
   expect(result.axes.end_percent.at(-1)).toBe(100);
   expect(result.top_candidates.length).toBe(10);
-  expect(await exported(page, "Export map CSV")).toContain('"critical_pair"');
-  expect(await exported(page, "Export candidates CSV")).toContain(
-    '"max_rel_sigma"',
-  );
+  expect(await exported(page, "匯出地圖 CSV")).toContain('"critical_pair"');
+  expect(await exported(page, "匯出候選 CSV")).toContain('"max_rel_sigma"');
   expect(
     await page.evaluate(
       () => document.documentElement.scrollWidth <= innerWidth + 1,
@@ -109,14 +105,12 @@ test("three SMILES, resolution cell, candidate/Pareto apply, and CSV exports", a
   expect(first.input.gradient[0].b_percent).toBe(0);
   await map(page);
   await apply(page, () =>
-    page
-      .getByRole("button", { name: "Apply candidate 1", exact: true })
-      .click(),
+    page.getByRole("button", { name: "套用候選梯度 1", exact: true }).click(),
   );
   await map(page);
-  await page.getByText("Keyboard Pareto selection", { exact: true }).click();
+  await page.getByText("鍵盤選取非支配候選", { exact: true }).click();
   await apply(page, () =>
-    page.getByRole("button", { name: "Apply Pareto 1", exact: true }).click(),
+    page.getByRole("button", { name: "套用非支配候選 1", exact: true }).click(),
   );
   expect(
     await page.evaluate(
@@ -131,19 +125,20 @@ test("multi-segment search, JSON export, apply and cancellation", async ({
   test.setTimeout(150000);
   await page.goto("/");
   await page
-    .getByRole("navigation")
-    .getByRole("button", { name: "Gradient Optimization", exact: false })
+    .getByRole("button", { name: "載入示範混合物", exact: true })
     .click();
-  await page.getByLabel("Search time budget (s)", { exact: true }).fill("0.1");
+  await page
+    .getByRole("navigation")
+    .getByRole("button", { name: "梯度最佳化", exact: false })
+    .click();
+  await page.getByLabel("搜尋時間上限（秒）", { exact: true }).fill("0.1");
   const pending = page.waitForResponse((response) =>
     response.url().endsWith("/api/optimize/multisegment"),
   );
-  await page
-    .getByLabel("Minimum segment duration (min)", { exact: true })
-    .fill("0.75");
+  await page.getByLabel("最短段落時間（min）", { exact: true }).fill("0.75");
   await page
     .getByRole("button", {
-      name: "Optimize multi-segment gradient",
+      name: "多段梯度最佳化",
       exact: true,
     })
     .click();
@@ -152,10 +147,12 @@ test("multi-segment search, JSON export, apply and cancellation", async ({
   const result = await response.json();
   const ramps = result.gradient.slice(0, 3);
   expect(
-    ramps.slice(1).every(
-      (node: any, index: number) =>
-        node.time_min - ramps[index].time_min >= 0.75 - 1e-9,
-    ),
+    ramps
+      .slice(1)
+      .every(
+        (node: any, index: number) =>
+          node.time_min - ramps[index].time_min >= 0.75 - 1e-9,
+      ),
   ).toBeTruthy();
   expect(
     result.gradient.every(
@@ -164,29 +161,25 @@ test("multi-segment search, JSON export, apply and cancellation", async ({
     ),
   ).toBeTruthy();
   await expect(page.getByTestId("multisegment-result")).toBeVisible();
-  const file = JSON.parse(await exported(page, "Export multi-segment JSON"));
+  const file = JSON.parse(await exported(page, "匯出多段梯度 JSON"));
   expect(file.gradient).toEqual(result.gradient);
   await apply(page, () =>
-    page
-      .getByRole("button", { name: "Apply multi-segment result", exact: true })
-      .click(),
+    page.getByRole("button", { name: "套用多段梯度結果", exact: true }).click(),
   );
   await page
     .getByRole("navigation")
-    .getByRole("button", { name: "Gradient Optimization", exact: false })
+    .getByRole("button", { name: "梯度最佳化", exact: false })
     .click();
   await page
     .getByRole("button", {
-      name: "Optimize multi-segment gradient",
+      name: "多段梯度最佳化",
       exact: true,
     })
     .click();
   await expect(
-    page.getByRole("button", { name: "Cancel search", exact: true }),
+    page.getByRole("button", { name: "取消搜尋", exact: true }),
   ).toBeVisible();
-  await page
-    .getByRole("button", { name: "Cancel search", exact: true })
-    .click();
-  await expect(page.getByRole("alert")).toContainText("Search cancelled");
+  await page.getByRole("button", { name: "取消搜尋", exact: true }).click();
+  await expect(page.getByRole("alert")).toContainText("搜尋已取消");
   await expect(page.getByTestId("multisegment-result")).toHaveCount(0);
 });

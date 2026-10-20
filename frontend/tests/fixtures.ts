@@ -2,6 +2,8 @@ import { test as base, expect, type Page } from "@playwright/test";
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 
+import { compatibleMethod } from "../src/ModelConditions";
+
 export { expect, type Page };
 
 const budgetFile = resolve(
@@ -51,3 +53,35 @@ export const test = base.extend({
     await use(page);
   },
 });
+
+/** Load the existing curve examples as browser-local test input, not a source picker. */
+export async function curveExamples(page: Page) {
+  const response = await page.request.get("/api/retention/database");
+  const database = await response.json();
+  const conditions = await (
+    await page.request.get("/api/retention/conditions")
+  ).json();
+  const stored = await page.evaluate(() =>
+    JSON.parse(localStorage.getItem("elusim-project")!),
+  );
+  const fixture = { ...stored, ...compatibleMethod(stored, conditions) };
+  await page.evaluate(
+    async ({ examples, stored }) => {
+      stored.compounds = examples.map((example: any, index: number) => ({
+        id: "curve-" + index,
+        name: ["Anthranilic acid", "Caffeine", "Diethyl malonate"][index],
+        smiles: example.smiles,
+        kind: "small_molecule",
+        logkw: null,
+        s: null,
+        source: "insufficient_data",
+        parameter_origin: "prediction",
+        mixture_parts: [5, 3, 2][index],
+        response_factor: 1,
+      }));
+      localStorage.setItem("elusim-project", JSON.stringify(stored));
+    },
+    { examples: database.examples, stored: fixture },
+  );
+  await page.reload();
+}

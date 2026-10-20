@@ -104,6 +104,10 @@ export function loadProject(storage: Storage): {
     }
     return { config, error: "" };
   } catch (error) {
-    return { config: emptyProject(), error: String(error) };
+    return {
+      config: emptyProject(),
+      error:
+        error instanceof SyntaxError ? t("Invalid saved JSON") : String(error),
+    };
   }
 }

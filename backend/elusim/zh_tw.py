@@ -20,7 +20,7 @@ def message(value):
         return labels[value]
     translated = value
     for original, replacement in sorted(labels.items(), key=lambda item: -len(item[0])):
-        if len(original) > 18 and re.search(r"[A-Za-z]", original):
+        if len(original) > 12 and re.search(r"[A-Za-z]", original):
             translated = translated.replace(original, replacement)
     translated = re.sub(
         r"([a-z_]+): current (.*?); (required|source) ",
@@ -32,6 +32,12 @@ def message(value):
         lambda match: f"梯度節點 {int(match[1]) + 1} 有機溶劑比例：目前 {match[2]}%；來源區間 ",
         translated,
     )
+    translated = re.sub(r"Input should be greater than or equal to (.+)", r"輸入值必須大於或等於 \1", translated)
+    translated = re.sub(r"Input should be less than or equal to (.+)", r"輸入值必須小於或等於 \1", translated)
+    translated = re.sub(r"Input should be greater than (.+)", r"輸入值必須大於 \1", translated)
+    translated = re.sub(r"Input should be less than (.+)", r"輸入值必須小於 \1", translated)
+    translated = re.sub(r"Input should be (.+)", r"輸入值必須符合：\1", translated)
+    translated = re.sub(r"String should have at most (\d+) characters", r"文字最多可有 \1 個字元", translated)
     translated = translated.replace("Value error, ", "")
     return translated
 
@@ -40,7 +46,7 @@ DISPLAY_KEYS = {
     "warning", "warnings", "detail", "msg", "assumptions", "reason", "notice",
     "limitations", "description", "search_note", "prediction_status",
     "parameter_source", "rule", "application_notes", "condition_differences",
-    "condition_mismatches", "lss_warning",
+    "condition_mismatches", "lss_warning", "role", "uv_levels",
 }
 OPAQUE_KEYS = {
     "input", "input_conditions", "method", "simulation", "scope", "parameter_scope",

@@ -1,3 +1,4 @@
+import { api } from "./api";
 import { Metadata } from "./Metadata";
 import { t as tr } from "./i18n/zh-TW";
 import { useEffect, useRef, useState } from "react";
@@ -12,6 +13,7 @@ type Spectrum = {
   original_csv?: string;
   raw?: unknown;
 };
+/** Export the displayed spectra without changing the stored originals. */
 function save(name: string, text: string, type: string) {
   const a = document.createElement("a");
   a.href = URL.createObjectURL(new Blob([text], { type }));
@@ -19,6 +21,7 @@ function save(name: string, text: string, type: string) {
   a.click();
   setTimeout(() => URL.revokeObjectURL(a.href), 1000);
 }
+/** Keep UV/DAD operations independent of LC parameter acquisition. */
 export function UVWorkspace({ compounds }: { compounds: Compound[] }) {
   const [smiles, setSmiles] = useState("c1ccccc1"),
     [name, setName] = useState(tr("Spectrum")),
@@ -116,25 +119,20 @@ export function UVWorkspace({ compounds }: { compounds: Compound[] }) {
       c.dispose();
     };
   }, [spectra, start, end]);
+  /** Submit unchanged UV inputs through the shared error translator. */
   async function predict() {
     const token = ++sequence.current;
     setBusy(true);
     setError("");
     try {
-      const response = await fetch("/api/uv/predict", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          smiles,
-          solvent: solvent || null,
-          ph: ph === "" ? null : Number(ph),
-          start_nm: start,
-          end_nm: end,
-          resolution_nm: resolution,
-        }),
+      const r = await api<any>("uv/predict", {
+        smiles,
+        solvent: solvent || null,
+        ph: ph === "" ? null : Number(ph),
+        start_nm: start,
+        end_nm: end,
+        resolution_nm: resolution,
       });
-      const r = await response.json();
-      if (!response.ok) throw Error(JSON.stringify(r.detail));
       if (token === sequence.current) {
         setResult(r);
         if (r.spectrum)
@@ -157,6 +155,7 @@ export function UVWorkspace({ compounds }: { compounds: Compound[] }) {
       if (token === sequence.current) setBusy(false);
     }
   }
+  /** Append an experimental spectrum while retaining its original content. */
   async function imported(file: File) {
     if (file.size > 180000) {
       setError(tr("Spectrum CSV limit: 180 kB"));
@@ -164,13 +163,11 @@ export function UVWorkspace({ compounds }: { compounds: Compound[] }) {
     }
     try {
       const content = await file.text();
-      const response = await fetch("/api/uv/import", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ content, name: file.name, unit }),
+      const r = await api<Spectrum>("uv/import", {
+        content,
+        name: file.name,
+        unit,
       });
-      const r = await response.json();
-      if (!response.ok) throw Error(JSON.stringify(r.detail));
       setSpectra((old) => [...old, r].slice(-20));
     } catch (e) {
       setError(String(e));

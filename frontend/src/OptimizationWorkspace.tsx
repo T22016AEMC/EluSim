@@ -461,7 +461,24 @@ export function OptimizationWorkspace({
   };
   const paretoOption: echarts.EChartsOption = {
     animation: false,
-    tooltip: { trigger: "item", renderMode: "richText" },
+    tooltip: {
+      trigger: "item",
+      renderMode: "richText",
+      formatter: (event: any) => {
+        const candidate = map?.pareto[event.dataIndex];
+        return candidate
+          ? tr("Run time (min)") +
+              ": " +
+              number(candidate.run_time_min) +
+              "\n" +
+              tr("Minimum Rs") +
+              ": " +
+              number(candidate.min_rs) +
+              "\n" +
+              pairLabel(candidate.critical_pair)
+          : "";
+      },
+    },
     grid: { left: 75, right: 30, bottom: 70, top: 30 },
     xAxis: {
       type: "value",
@@ -482,21 +499,28 @@ export function OptimizationWorkspace({
     ],
   };
 
-  const combinations = Array.from(
-    { length: start.steps },
-    (_, i) =>
-      start.min + ((start.max - start.min) * i) / Math.max(1, start.steps - 1),
-  ).reduce(
-    (count, first) =>
-      count +
-      Array.from(
-        { length: end.steps },
-        (_, i) =>
-          end.min + ((end.max - end.min) * i) / Math.max(1, end.steps - 1),
-      ).filter((last) => last > first + 1).length *
-        duration.steps,
-    0,
+  const validAxes = [duration, start, end].every(
+    (axis) =>
+      Number.isInteger(axis.steps) && axis.steps >= 1 && axis.steps <= 100,
   );
+  const combinations = !validAxes
+    ? 0
+    : Array.from(
+        { length: start.steps },
+        (_, i) =>
+          start.min +
+          ((start.max - start.min) * i) / Math.max(1, start.steps - 1),
+      ).reduce(
+        (count, first) =>
+          count +
+          Array.from(
+            { length: end.steps },
+            (_, i) =>
+              end.min + ((end.max - end.min) * i) / Math.max(1, end.steps - 1),
+          ).filter((last) => last > first + 1).length *
+            duration.steps,
+        0,
+      );
   if (!config.compounds.length)
     return (
       <section>

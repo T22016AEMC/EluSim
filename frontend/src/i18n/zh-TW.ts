@@ -660,7 +660,80 @@ export const zhTW: Record<string, string> = {
   "not performed; other methods rejected": "尚未執行跨方法轉移，不提供其他方法的結果。",
   "not performed; other solvents rejected": "尚未執行跨溶劑轉移，不提供其他溶劑的結果。",
   "scaffold-heldout experimental records only; no independent laboratory dataset": "僅含依骨架分組保留的實驗紀錄，未包含獨立實驗室資料集。",
-  "validation RMSE; test never used for model choice": "模型登錄的選擇指標為分組保留資料 RMSE；測試資料未用於選擇模型。"
+  "validation RMSE; test never used for model choice": "模型登錄的選擇指標為分組保留資料 RMSE；測試資料未用於選擇模型。",
+  "logKw clipped from ": "logKw 已從原值截限：",
+  "S clipped from ": "S 已從原值截限：",
+  " within [-3, 12].": "，限制於 [-3, 12]。",
+  " within [0, 30].": "，限制於 [0, 30]。",
+  "S outside [0, 30]": "S 超出 [0, 30]。",
+  "logKw outside [-3, 12]": "logKw 超出 [-3, 12]。",
+  "integer_required": "請輸入整數。",
+  "Invalid saved JSON": "已儲存專案不是有效 JSON；原始資料仍保留。",
+  "LSS with supplied / calibrated parameters": "使用已提供或經校正的 LSS 參數。",
+  "Competitive adsorption model not validated": "競爭吸附模型待使用者確認。",
+  "Mixed retention mechanisms not validated": "混合滯留機制模型待使用者確認。",
+  "SMA binding validation pending; OpenIEX excluded": "SMA 結合模型待使用者確認；未納入 OpenIEX。",
+  "Pore accessibility / size relation not validated": "孔隙可及性與尺寸關係待使用者確認。",
+  "Bounded enumerated linear-gradient grid; global optimality not claimed": "在指定範圍內逐一搜尋線性梯度網格，僅提供本次搜尋候選。",
+  "Pressure limit not evaluated: physical properties missing": "缺少物性資料，未計算壓力限制。",
+  "Generic LSS feature version mismatch": "通用 LSS 的特徵版本不符。",
+  "Nonfinite RDKit descriptor replaced by its training mean.": "非有限數值的 RDKit 描述子已改用訓練資料平均值。",
+  "Pinned optional scientific reference; independent migration solver is production engine": "固定版本的選用參考程式；正式引擎使用獨立遷移求解器。",
+  "RepoRT0259 raw metadata and gradient; full-method descriptor, not generic C18": "RepoRT0259 原始中繼資料及梯度，描述完整方法，並非通用 C18。",
+  "pH/dwell/hold-up time were not documented in this source; numerical pH/dwell inputs cannot be validated": "來源未記錄 pH、延遲體積及空隙時間；數值設定仍需使用者另行確認。",
+  "Experimental scoped LSS model: Eclipse Plus C18, 35°C, formic-acid ACN/water, 20–50% ACN; non-commercial only; independent gradient accuracy unavailable": "條件限定的實驗性 LSS 模型：Eclipse Plus C18、35°C、含甲酸的 ACN／水、20–50% ACN；僅限非商業用途，未提供獨立梯度實驗誤差。",
+  "Unknown / unavailable model ID": "模型識別碼不存在或目前無法使用。",
+  "No deployed LSS parameter model; direct Rt model only": "此模型只提供方法專屬滯留時間，不提供 LSS 參數。",
+  "Method mismatch: phase, solvents, geometry, temperature, flow or gradient changed": "方法不同：固定相、溶劑、幾何尺寸、溫度、流速或梯度已變更。",
+  "Window maximum derived from experimental full-spectrum model; not separate λmax model": "區間最大值取自實驗性全光譜模型，未使用獨立 λmax 模型。",
+  "Experimental 220–400nm normalized shape model; no molar absorptivity or solvent adjustment": "實驗性 220–400 nm 正規化光譜形狀模型，未提供莫耳吸光係數或溶劑修正。",
+  "Single/method-specific Rt only; no unique logKw/S": "只有單一或方法專屬滯留時間，無法唯一取得 logKw／S。",
+  "ok": "正常",
+  "output": "輸出",
+  "dataset": "資料集",
+  "dataset_source": "資料集來源",
+  "selected": "登錄模型",
+  "selection": "模型選擇方式",
+  "split": "資料分組方式",
+  "counts": "紀錄數",
+  "benchmark": "來源登錄的比較數值",
+  "heldout_mean_baseline": "來源登錄的平均值基準",
+  "beats_mean_baseline": "來源登錄的啟用旗標",
+  "domain_threshold": "適用範圍門檻",
+  "domain_rule": "適用範圍規則",
+  "external_study_validation": "獨立研究資料狀態",
+  "external_validation": "外部資料狀態",
+  "cross_column_validation": "跨管柱資料狀態",
+  "cross_solvent_validation": "跨溶劑資料狀態",
+  "retention_order_accuracy": "來源登錄的洗脫順序比較",
+  "curve_validation": "來源登錄的曲線比較",
+  "lambda_max_mae_nm": "來源登錄的 λmax MAE（nm）",
+  "carboxylic_acid": "羧酸基",
+  "sulfonic_acid": "磺酸基",
+  "phosphate": "磷酸基",
+  "ridge": "Ridge 回歸",
+  "forest": "隨機森林",
+  "boosting": "梯度提升",
+  "train": "訓練",
+  "test": "保留測試",
+  "validation": "模型選擇用資料",
+  "n_train": "訓練筆數",
+  "n_test": "保留測試筆數",
+  "n_validation": "模型選擇用筆數",
+  "test_mae": "保留測試 MAE",
+  "test_rmse": "保留測試 RMSE",
+  "test_r2": "保留測試 R²",
+  "validation_mae": "模型選擇用 MAE",
+  "validation_rmse": "模型選擇用 RMSE",
+  "0.1% formic acid in A and B": "A 液與 B 液均含 0.1% 甲酸",
+  "Water + 0.1% formic acid": "水＋0.1% 甲酸",
+  "Only this stationary phase, acidified ACN/water and 35°C": "來源限定此固定相、酸化 ACN／水及 35°C。",
+  "No fixed numeric pH; exact formic-acid formulation required": "來源未提供固定 pH 數值；需使用指定甲酸配方。",
+  "No pKa/logD or overload model": "未建立 pKa、logD 或過載模型。",
+  "logKw extrapolated to pure water: do not simulate beyond 20–50% ACN": "logKw 為純水外推值；來源區間為 20–50% ACN，區間外屬外推。",
+  "Non-commercial only": "僅限非商業用途。",
+  "Heldout order agreement at 35% ACN is about 0.57 (0.54 in-domain); predictions are experimental screening estimates, not validated method recommendations": "來源將此模型列為實驗性篩選估算；方法選擇仍需使用者以實驗確認，原始數值保留於模型中繼資料。",
+  "Geometry scaling assumes equivalent packing phase ratio; column batch/pore selectivity and gradient Rt accuracy remain unverified": "幾何尺寸換算假設填料相比例相當；管柱批次、孔隙選擇性及梯度滯留時間仍待使用者以實驗確認。"
 };
 
 /** Translate display text without changing API identifiers or user names. */
@@ -669,7 +742,7 @@ export function t(key: string, solvent = "ACN"): string {
   if (value === undefined) {
     value = key;
     for (const [original, translated] of Object.entries(zhTW)) {
-      if (original.length > 18 && /[A-Za-z]/.test(original)) {
+      if (original.length > 12 && /[A-Za-z]/.test(original)) {
         value = value.replaceAll(original, translated);
       }
     }
@@ -677,6 +750,13 @@ export function t(key: string, solvent = "ACN"): string {
       (_, field, current, requirement) => (zhTW[field] ?? field) + "：目前 " +
         (zhTW[current] ?? current) + "；" + (zhTW[requirement] ?? requirement) + " ");
   }
+  value = value.replace(/Input should be greater than or equal to (.+)/g, "輸入值必須大於或等於 $1")
+    .replace(/Input should be less than or equal to (.+)/g, "輸入值必須小於或等於 $1")
+    .replace(/Input should be greater than (.+)/g, "輸入值必須大於 $1")
+    .replace(/Input should be less than (.+)/g, "輸入值必須小於 $1")
+    .replace(/Input should be (.+)/g, "輸入值必須符合：$1")
+    .replace(/String should have at most (\d+) characters/g, "文字最多可有 $1 個字元")
+    .replace(/Value error, /g, "");
   return value.replaceAll("{solvent}", solvent);
 }
 

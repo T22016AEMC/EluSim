@@ -969,7 +969,7 @@ function App() {
                     key={m}
                     onClick={() => change({ mode: m })}
                   >
-                    <strong>{m}</strong>
+                    <strong>{tr(m)}</strong>
                     <small>
                       {m === "RP"
                         ? tr("Parameter-based LSS")
@@ -1044,12 +1044,19 @@ function App() {
                 <label>
                   {tr("Column manufacturer")}
                   <input
-                    value={config.column.manufacturer}
+                    value={
+                      config.column.manufacturer === "Generic"
+                        ? tr("Generic")
+                        : config.column.manufacturer
+                    }
                     onChange={(e) =>
                       change({
                         column: {
                           ...config.column,
-                          manufacturer: e.target.value,
+                          manufacturer:
+                            e.target.value === tr("Generic")
+                              ? "Generic"
+                              : e.target.value,
                         },
                       })
                     }
@@ -1058,12 +1065,19 @@ function App() {
                 <label>
                   {tr("Stationary phase")}
                   <input
-                    value={config.column.stationary_phase}
+                    value={
+                      config.column.stationary_phase === "Generic C18"
+                        ? tr("Generic C18")
+                        : config.column.stationary_phase
+                    }
                     onChange={(e) =>
                       change({
                         column: {
                           ...config.column,
-                          stationary_phase: e.target.value,
+                          stationary_phase:
+                            e.target.value === tr("Generic C18")
+                              ? "Generic C18"
+                              : e.target.value,
                         },
                       })
                     }
@@ -1111,10 +1125,20 @@ function App() {
                 <label>
                   {tr("Mobile phase A")}
                   <input
-                    value={config.mobile.a}
+                    value={
+                      config.mobile.a === "Water"
+                        ? tr("Water")
+                        : config.mobile.a
+                    }
                     onChange={(e) =>
                       change({
-                        mobile: { ...config.mobile, a: e.target.value },
+                        mobile: {
+                          ...config.mobile,
+                          a:
+                            e.target.value === tr("Water")
+                              ? "Water"
+                              : e.target.value,
+                        },
                       })
                     }
                   />
@@ -1159,10 +1183,20 @@ function App() {
                 <label>
                   {tr("Buffer")}
                   <input
-                    value={config.mobile.buffer}
+                    value={
+                      config.mobile.buffer === "None"
+                        ? tr("None")
+                        : config.mobile.buffer
+                    }
                     onChange={(e) =>
                       change({
-                        mobile: { ...config.mobile, buffer: e.target.value },
+                        mobile: {
+                          ...config.mobile,
+                          buffer:
+                            e.target.value === tr("None")
+                              ? "None"
+                              : e.target.value,
+                        },
                       })
                     }
                   />

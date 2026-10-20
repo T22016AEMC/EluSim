@@ -10,6 +10,7 @@ export type CurveConditions = {
   particle_um: number;
   notice: string;
 };
+/** Build a method update only for the explicit apply action. */
 export function compatibleMethod(
   config: Config,
   m: CurveConditions,
@@ -58,6 +59,7 @@ export function compatibleMethod(
     ],
   };
 }
+/** Describe source differences without modifying the current method. */
 export function conditionDifferences(c: Config, m: CurveConditions) {
   const actual = {
     mode: c.mode,
@@ -114,6 +116,7 @@ export function conditionDifferences(c: Config, m: CurveConditions) {
   });
   return differences;
 }
+/** Show source conditions and require a button click before applying them. */
 export function ModelConditions({
   config,
   change,
@@ -143,8 +146,7 @@ export function ModelConditions({
           <p>
             {model.model_id} / {model.model_version} ·{" "}
             {model.scope.stationary_phase} · {model.scope.temperature_c}°C ·{" "}
-            {model.phi_range.map((x) => x * 100).join("–")}
-            {tr("% B", config.mobile.b)}
+            {model.scope.mobile_b} · φ {model.phi_range.join("–")}
           </p>
           <ul>
             {conditionDifferences(config, model).map((x) => (

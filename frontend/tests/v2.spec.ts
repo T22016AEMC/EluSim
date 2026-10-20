@@ -3,51 +3,32 @@ import { readFileSync } from "node:fs";
 const inputs = JSON.parse(
   readFileSync(new URL("./v2-inputs.json", import.meta.url), "utf8"),
 );
-test("V2 method-specific Rt keeps its explicit model and exact-method gate", async ({
+test("V2 method-specific model remains in the read-only library", async ({
   page,
 }) => {
-  const errors: string[] = [];
-  page.on("pageerror", (e) => errors.push(e.message));
   await page.goto("/");
   await page
-    .getByRole("button", { name: "Retention Prediction", exact: false })
+    .getByRole("navigation")
+    .getByRole("button", { name: "滯留參數來源", exact: false })
     .click();
-  await page.getByLabel("Retention SMILES").fill(inputs["report0259-rt"]);
-  await page
-    .getByRole("button", { name: "Load exact RepoRT0259 method" })
-    .click();
-  await page
-    .getByRole("button", { name: "Predict retention", exact: true })
-    .click();
-  await expect(page.getByTestId("retention-result")).toContainText("min", {
-    timeout: 30000,
-  });
+  await expect(page.getByLabel("Retention model")).toHaveCount(0);
   await expect(
-    page.getByText("Experimental model prediction", { exact: true }),
-  ).toBeVisible();
+    page.getByRole("button", { name: "Predict retention", exact: true }),
+  ).toHaveCount(0);
   await page
-    .getByRole("button", { name: "LC Mode & Column", exact: false })
+    .getByRole("navigation")
+    .getByRole("button", { name: "模型與管柱資料庫", exact: false })
     .click();
-  await page.getByLabel("Column length (mm)", { exact: true }).fill("150");
-  await page
-    .getByRole("button", { name: "Retention Prediction", exact: false })
-    .click();
-  await page.getByLabel("Retention model").selectOption("report0259-rt");
-  await page.getByLabel("Retention SMILES").fill(inputs["report0259-rt"]);
-  await page
-    .getByRole("button", { name: "Predict retention", exact: true })
-    .click();
-  await expect(page.getByTestId("retention-result")).toContainText("Withheld", {
-    timeout: 30000,
-  });
-  expect(errors).toEqual([]);
+  await expect(page.getByText(/RepoRT0259/).last()).toBeVisible();
+  const response = await page.request.get("/api/models");
+  expect(response.ok()).toBeTruthy();
   expect(
-    await page.evaluate(
-      (width) => document.documentElement.scrollWidth <= width + 1,
-      page.viewportSize()!.width,
+    (await response.json()).models.some(
+      (model: any) => model.model_id === "report0259-rt",
     ),
   ).toBeTruthy();
 });
+
 test("V2 experimental full UV spectrum, imports, exports and qualitative abstention", async ({
   page,
 }, info) => {
@@ -55,37 +36,32 @@ test("V2 experimental full UV spectrum, imports, exports and qualitative abstent
   page.on("pageerror", (e) => errors.push(e.message));
   await page.goto("/");
   await page
-    .getByRole("button", { name: "UV-Vis / DAD", exact: false })
+    .getByRole("button", { name: "UV-Vis／DAD 光譜", exact: false })
     .click();
   await page
     .getByLabel("UV SMILES", { exact: true })
     .fill(inputs["pnnl-uv-shape"]);
-  await page
-    .getByRole("button", { name: "Analyze UV structure", exact: true })
-    .click();
-  await expect(page.getByTestId("uv-status")).toHaveText(
-    "Experimental model prediction",
-    { timeout: 30000 },
-  );
+  await page.getByRole("button", { name: "分析 UV 結構", exact: true }).click();
+  await expect(page.getByTestId("uv-status")).toHaveText("實驗性模型預測", {
+    timeout: 30000,
+  });
   await expect(page.getByTestId("uv-chart").locator("canvas")).toBeVisible();
-  await expect(page.getByAltText("UV molecular structure")).toBeVisible();
-  await page
-    .getByLabel("Import UV CSV")
-    .setInputFiles({
-      name: "observed.csv",
-      mimeType: "text/csv",
-      buffer: Buffer.from(
-        "wavelength_nm,intensity\n220,0.1\n250,0.8\n400,0.02\n",
-      ),
-    });
+  await expect(page.getByAltText("UV 分子結構")).toBeVisible();
+  await page.getByLabel("匯入 UV CSV").setInputFiles({
+    name: "observed.csv",
+    mimeType: "text/csv",
+    buffer: Buffer.from(
+      "wavelength_nm,intensity\n220,0.1\n250,0.8\n400,0.02\n",
+    ),
+  });
   await expect(
-    page.getByText("observed.csv · Experimental · 3 points · absorbance"),
+    page.getByText("observed.csv · 實驗資料 · 3 個資料點 ·吸光度"),
   ).toBeVisible();
   for (const name of [
-    "Export UV CSV",
-    "Export UV PNG",
-    "Export UV SVG",
-    "Export original data JSON",
+    "匯出 UV CSV",
+    "匯出 UV PNG",
+    "匯出 UV SVG",
+    "匯出原始資料 JSON",
   ]) {
     const event = page.waitForEvent("download");
     await page.getByRole("button", { name, exact: true }).click();
@@ -96,13 +72,10 @@ test("V2 experimental full UV spectrum, imports, exports and qualitative abstent
     fullPage: true,
   });
   await page.getByLabel("UV SMILES", { exact: true }).fill("CCCC");
-  await page
-    .getByRole("button", { name: "Analyze UV structure", exact: true })
-    .click();
-  await expect(page.getByTestId("uv-status")).toHaveText(
-    "Qualitative screening",
-    { timeout: 30000 },
-  );
+  await page.getByRole("button", { name: "分析 UV 結構", exact: true }).click();
+  await expect(page.getByTestId("uv-status")).toHaveText("定性篩選", {
+    timeout: 30000,
+  });
   expect(
     await page.evaluate(
       (width) => document.documentElement.scrollWidth <= width + 1,

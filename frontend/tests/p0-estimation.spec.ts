@@ -27,7 +27,7 @@ async function addStructure(
   name: string,
   smiles: string,
 ) {
-  await page.getByLabel("Compound name", { exact: true }).fill(name);
+  await page.getByLabel("化合物名稱", { exact: true }).fill(name);
   await page.getByLabel("SMILES", { exact: true }).fill(smiles);
   const response = page.waitForResponse(
     (result) =>
@@ -37,7 +37,7 @@ async function addStructure(
         .postDataJSON()
         .method.compounds.some((compound: any) => compound.name === name),
   );
-  await page.getByRole("button", { name: "Add compound", exact: true }).click();
+  await page.getByRole("button", { name: "新增化合物", exact: true }).click();
   const estimate = await (await response).json();
   await expect(
     page.getByLabel("logKw " + name, { exact: true }),
@@ -84,10 +84,10 @@ test("default method: caffeine and a non-database SMILES auto-fill, edit, simula
   // Keep both edits inside the debounce window regardless of host scheduling.
   await page.clock.pauseAt(new Date("2026-10-20T01:00:00Z"));
   await page
-    .getByLabel("Stored SMILES Auto ether", { exact: true })
+    .getByLabel("已存 SMILES Auto ether", { exact: true })
     .fill("COCOCC");
   await page
-    .getByLabel("Stored SMILES Auto ether", { exact: true })
+    .getByLabel("已存 SMILES Auto ether", { exact: true })
     .fill("COCCOC");
   await page.clock.runFor(599);
   expect(requested).toEqual([]);
@@ -96,7 +96,7 @@ test("default method: caffeine and a non-database SMILES auto-fill, edit, simula
   expect((await updated).ok()).toBeTruthy();
   expect(requested).not.toContain("COCOCC");
   await expect(
-    page.getByRole("button", { name: "Run simulation", exact: false }).first(),
+    page.getByRole("button", { name: "執行模擬", exact: false }).first(),
   ).toBeEnabled();
   const stored = await page.evaluate(() =>
     JSON.parse(localStorage.getItem("elusim-project")!),
@@ -104,16 +104,16 @@ test("default method: caffeine and a non-database SMILES auto-fill, edit, simula
   expect(stored.column).toEqual(demo.column);
   expect(stored.mobile).toEqual(demo.mobile);
   expect(stored.gradient).toEqual(demo.gradient);
-  const parameters = await downloadCsv(page, "Export parameter CSV");
+  const parameters = await downloadCsv(page, "匯出參數 CSV");
   expect(parameters.split("\r\n")[0]).toBe(
-    "id,name,smiles,canonical_smiles,logkw,s,tier,parameter_source,model_version,warnings,crippen_logp,tpsa,hbd,aromatic_rings,mw",
+    "id,name,smiles,canonical_smiles,logkw,s,tier,tier_label,parameter_source,model_version,warnings,crippen_logp,tpsa,hbd,aromatic_rings,mw",
   );
   expect(parameters).toContain("Auto caffeine");
   const response = page.waitForResponse((result) =>
     result.url().endsWith("/api/simulate"),
   );
   await page
-    .getByRole("button", { name: "Run simulation", exact: false })
+    .getByRole("button", { name: "執行模擬", exact: false })
     .first()
     .click();
   const result = await (await response).json();
@@ -129,9 +129,9 @@ test("default method: caffeine and a non-database SMILES auto-fill, edit, simula
   await expect(
     page.getByTestId("chromatogram").locator("canvas"),
   ).toBeVisible();
-  const peaks = await downloadCsv(page, "Export peak table CSV");
+  const peaks = await downloadCsv(page, "匯出峰表 CSV");
   expect(peaks.split("\r\n")[0]).toBe(
-    "id,name,tier,rt_min,k_e,phi_outlet,sigma_min,compression_factor,fwhm_min,rs_to_next",
+    "id,name,tier,tier_label,rt_min,k_e,phi_outlet,sigma_min,compression_factor,fwhm_min,rs_to_next",
   );
   expect(peaks).toContain("Auto caffeine");
   expect(
@@ -174,14 +174,14 @@ test("generic tier, method refresh and re-estimate all preserve M and D", async 
   await expect(
     page
       .locator("article")
-      .filter({ has: page.getByLabel("Stored SMILES Generic ion") })
+      .filter({ has: page.getByLabel("已存 SMILES Generic ion") })
       .getByTestId(/^tier-/),
-  ).toContainText("C 估算");
+  ).toContainText("通用估算");
   const response = page.waitForResponse((result) =>
     result.url().endsWith("/api/simulate"),
   );
   await page
-    .getByRole("button", { name: "Run simulation", exact: false })
+    .getByRole("button", { name: "執行模擬", exact: false })
     .first()
     .click();
   const simulated = await (await response).json();
@@ -191,20 +191,18 @@ test("generic tier, method refresh and re-estimate all preserve M and D", async 
   ).toBe("C");
   await expect(page.getByTestId("chromatogram")).toHaveAttribute(
     "aria-label",
-    /Generic ion.*C 估算/,
+    /Generic ion.*通用估算/,
   );
   await page
     .getByRole("navigation")
-    .getByRole("button", { name: "Compounds", exact: false })
+    .getByRole("button", { name: "化合物", exact: false })
     .click();
   await page.getByLabel("logKw Generic ion", { exact: true }).fill("1.234");
   await page.getByLabel("S Generic ion", { exact: true }).fill("3.2");
-  await page
-    .getByLabel("Stored SMILES Generic ion", { exact: true })
-    .fill("CCO");
+  await page.getByLabel("已存 SMILES Generic ion", { exact: true }).fill("CCO");
   await addStructure(page, "Refresh", "COCOC");
   await page
-    .getByRole("button", { name: "Mobile Phase & Gradient", exact: false })
+    .getByRole("button", { name: "流動相與梯度", exact: false })
     .click();
   const refreshed = page.waitForResponse(
     (result) =>
@@ -212,27 +210,27 @@ test("generic tier, method refresh and re-estimate all preserve M and D", async 
       result.request().postDataJSON().method.mobile.b === "MeOH",
   );
   await page
-    .getByRole("combobox", { name: "Mobile phase B", exact: true })
+    .getByRole("combobox", { name: "B 液（有機溶劑）", exact: true })
     .selectOption("MeOH");
   expect(
     (await (await refreshed).json()).condition_differences.some(
-      (difference: string) => difference.includes("mobile_b"),
+      (difference: string) => difference.includes("B 液"),
     ),
   ).toBeTruthy();
   await page
     .getByRole("navigation")
-    .getByRole("button", { name: "Compounds", exact: false })
+    .getByRole("button", { name: "化合物", exact: false })
     .click();
   await expect(
-    page.getByRole("button", { name: "Re-estimate all A/B/C" }),
+    page.getByRole("button", { name: "重新估算所有自動來源" }),
   ).toBeEnabled();
   const recomputed = page.waitForResponse((result) =>
     result.url().endsWith("/api/retention/estimate"),
   );
-  await page.getByRole("button", { name: "Re-estimate all A/B/C" }).click();
+  await page.getByRole("button", { name: "重新估算所有自動來源" }).click();
   expect((await recomputed).ok()).toBeTruthy();
   await expect(
-    page.getByRole("button", { name: "Run simulation", exact: false }).first(),
+    page.getByRole("button", { name: "執行模擬", exact: false }).first(),
   ).toBeEnabled();
   await expect(page.getByLabel("logKw Manual", { exact: true })).toHaveValue(
     "2",
@@ -245,7 +243,7 @@ test("generic tier, method refresh and re-estimate all preserve M and D", async 
   ).toHaveValue("1.234");
   const manual = page
     .locator("article")
-    .filter({ has: page.getByLabel("Stored SMILES Manual", { exact: true }) });
+    .filter({ has: page.getByLabel("已存 SMILES Manual", { exact: true }) });
   const explicit = page.waitForResponse(
     (result) =>
       result.url().endsWith("/api/retention/estimate") &&
@@ -253,8 +251,8 @@ test("generic tier, method refresh and re-estimate all preserve M and D", async 
   );
   await manual.getByRole("button", { name: "重新估算", exact: true }).click();
   expect((await (await explicit).json()).tier).toBe("A");
-  await expect(page.getByTestId("tier-manual")).toHaveText("A");
-  await expect(page.getByTestId("tier-calibration")).toContainText("D");
+  await expect(page.getByTestId("tier-manual")).toHaveText("實測曲線");
+  await expect(page.getByTestId("tier-calibration")).toContainText("實驗校正");
 });
 
 test("a delayed real estimate cannot overwrite parameters manually edited while it was running", async ({
@@ -276,17 +274,15 @@ test("a delayed real estimate cannot overwrite parameters manually edited while 
     await route.fulfill({ response });
   });
   await page.goto("/");
-  await page
-    .getByLabel("Compound name", { exact: true })
-    .fill("Concurrent edit");
+  await page.getByLabel("化合物名稱", { exact: true }).fill("Concurrent edit");
   await page.getByLabel("SMILES", { exact: true }).fill("CCO");
-  await page.getByRole("button", { name: "Add compound", exact: true }).click();
+  await page.getByRole("button", { name: "新增化合物", exact: true }).click();
   await fetched;
   await page.getByLabel("logKw Concurrent edit", { exact: true }).fill("1.7");
   await page.getByLabel("S Concurrent edit", { exact: true }).fill("3.2");
   release();
   await expect(
-    page.getByRole("button", { name: "Run simulation", exact: false }).first(),
+    page.getByRole("button", { name: "執行模擬", exact: false }).first(),
   ).toBeEnabled();
   await expect(
     page.getByLabel("logKw Concurrent edit", { exact: true }),
