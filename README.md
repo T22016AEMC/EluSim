@@ -14,7 +14,7 @@ Train offline with backend requirements plus scripts/training-requirements.txt; 
 
 **EluSim_V1 — LC Separation Simulation & Gradient Optimization**
 
-Server-side FastAPI / RDKit / SciPy and a responsive React / ECharts workbench. RP local-equilibrium LSS uses supplied or calibrated parameters; NP/HILIC/IEX/SEC have explicit, separate capability boundaries and do not run the RP equation. Original research is preserved in `docs/`.
+Server-side FastAPI / RDKit / SciPy and a React / ECharts workbench focused on desktop browsers. RP local-equilibrium LSS uses supplied or calibrated parameters; NP/HILIC/IEX/SEC have explicit, separate capability boundaries and do not run the RP equation. Original research is preserved in `docs/`.
 
 ## Run
 
@@ -50,3 +50,7 @@ Production: `docker compose up --build`. Same container serves `/` and `/api`; s
 ## License
 
 AGPL-3.0-or-later, full text in LICENSE. Pinning, upstream notices, provenance and modifications are in [NOTICE](NOTICE.md). Deployed corresponding-source download is available in Model & Column Library and `/api/source`.
+
+### 瀏覽器支援範圍
+
+自階段 2.2 起，以桌面瀏覽器為主，程式流程測試僅執行桌面 Chromium。既有響應式樣式保留，但不再維護手機排版、觸控或窄螢幕操作。
