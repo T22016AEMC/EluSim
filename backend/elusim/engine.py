@@ -170,7 +170,7 @@ def eligibility(req, compound):
     """Block missing/unsupported parameters; chemistry differences are warnings."""
     if req.mode != 'RP':
         return 'unsupported', f'{req.mode}: independent quantitative model not enabled'
-    if compound.kind in ['polymer', 'peptide', 'protein', 'oligomer']:
+    if compound.kind in ['polymer', 'peptide', 'protein']:
         return 'unsupported', 'No LSS parameter workflow for this entity kind'
     if compound.logkw is None or compound.s is None:
         return 'insufficient_data', 'Missing logKw / S'

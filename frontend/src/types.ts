@@ -249,14 +249,24 @@ export function emptyProject(): Config {
 }
 
 /** Reserve a monotonically increasing fallback name within the browser project. */
-export function nextCompoundName(config: Config): { name: string; next: number } {
+export function nextCompoundName(config: Config): {
+  name: string;
+  next: number;
+} {
   const used = new Set(config.compounds.map((compound) => compound.name));
   const existingNumbers = config.compounds.map((compound) =>
     Number(/^化合物 (\d+)$/.exec(compound.name)?.[1] ?? 0),
   );
-  let number = Math.max(config.next_compound_number ?? 1, ...existingNumbers.map((value) => value + 1));
-  while (used.has(t("compound_name").replace("{number}", String(number)))) number++;
-  return { name: t("compound_name").replace("{number}", String(number)), next: number + 1 };
+  let number = Math.max(
+    config.next_compound_number ?? 1,
+    ...existingNumbers.map((value) => value + 1),
+  );
+  while (used.has(t("compound_name").replace("{number}", String(number))))
+    number++;
+  return {
+    name: t("compound_name").replace("{number}", String(number)),
+    next: number + 1,
+  };
 }
 
 /** Names are presentation data; changes do not invalidate numerical results. */
@@ -270,12 +280,29 @@ export function calculationKey(config: Config): string {
 
 /** Join current names by stable ID while preserving all calculated numbers. */
 export function namedResult(result: Result, compounds: Compound[]): Result {
-  const names = new Map(compounds.map((compound) => [compound.id, compound.name]));
+  const names = new Map(
+    compounds.map((compound) => [compound.id, compound.name]),
+  );
   return {
     ...result,
-    peaks: result.peaks.map((peak) => ({ ...peak, name: names.get(peak.id) ?? peak.name })),
-    traces: result.traces.map((trace) => ({ ...trace, name: names.get(trace.id) ?? trace.name })),
-    pairs: result.pairs.map((pair) => ({ ...pair, names: pair.ids.map((id, index) => names.get(id) ?? pair.names[index]) })),
-    input: { ...result.input, compounds: result.input.compounds.map((compound) => ({ ...compound, name: names.get(compound.id) ?? compound.name })) },
+    peaks: result.peaks.map((peak) => ({
+      ...peak,
+      name: names.get(peak.id) ?? peak.name,
+    })),
+    traces: result.traces.map((trace) => ({
+      ...trace,
+      name: names.get(trace.id) ?? trace.name,
+    })),
+    pairs: result.pairs.map((pair) => ({
+      ...pair,
+      names: pair.ids.map((id, index) => names.get(id) ?? pair.names[index]),
+    })),
+    input: {
+      ...result.input,
+      compounds: result.input.compounds.map((compound) => ({
+        ...compound,
+        name: names.get(compound.id) ?? compound.name,
+      })),
+    },
   };
 }

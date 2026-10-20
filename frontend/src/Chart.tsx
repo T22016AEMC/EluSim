@@ -57,7 +57,7 @@ export function Chart({
     previous?.traces.forEach((t) =>
       series.push({
         id: "before-" + t.id,
-        name: (tr("Before ·") + " ") + t.name,
+        name: tr("Before ·") + " " + t.name,
         type: "line",
         showSymbol: false,
         lineStyle: { type: "dashed", opacity: 0.5 },
@@ -67,10 +67,16 @@ export function Chart({
     c.setOption({
       color: ["#008b8b", "#df8a32", "#666acd"],
       animation: false,
-      legend: { type: "scroll", top: 0, formatter: (name: string) => {
-        const peak = result.peaks.find((item) => item.name === name);
-        return peak ? name + "（" + tierLabel(peak.parameter_tier) + "）" : name;
-      } },
+      legend: {
+        type: "scroll",
+        top: 0,
+        formatter: (name: string) => {
+          const peak = result.peaks.find((item) => item.name === name);
+          return peak
+            ? name + "（" + tierLabel(peak.parameter_tier) + "）"
+            : name;
+        },
+      },
       tooltip: { trigger: "axis" },
       grid: { left: 65, right: 25, top: 65, bottom: 85 },
       xAxis: {
@@ -107,7 +113,10 @@ export function Chart({
         data-testid="chromatogram"
         role="img"
         aria-label={
-          (tr("Simulated Chromatogram: Retention Time (min), Relative Response (a.u.);") + " ") +
+          tr(
+            "Simulated Chromatogram: Retention Time (min), Relative Response (a.u.);",
+          ) +
+          " " +
           result.peaks
             .map(
               (peak) =>
@@ -128,9 +137,11 @@ export function Chart({
           a.click();
         }}
       >
-        {tr("Export PNG")}</button>
+        {tr("Export PNG")}
+      </button>
       <span className="muted">
-        {tr("Pinch / scroll to zoom · Tap legend to hide peaks")}</span>
+        {tr("Pinch / scroll to zoom · Tap legend to hide peaks")}
+      </span>
     </div>
   );
 }
@@ -152,7 +163,12 @@ export function GradientProfile({ result }: { result: Result }) {
         nameLocation: "middle",
         nameGap: 30,
       },
-      yAxis: { type: "value", name: tr("%B", result.input.mobile.b), min: 0, max: 100 },
+      yAxis: {
+        type: "value",
+        name: tr("%B", result.input.mobile.b),
+        min: 0,
+        max: 100,
+      },
       series: [
         {
           name: tr("Programmed %B", result.input.mobile.b),
@@ -192,17 +208,24 @@ export function GradientProfile({ result }: { result: Result }) {
     >
       <summary>{tr("Gradient Profile — programmed / column inlet")}</summary>
       <p className="muted">
-        {tr("Dwell volume")}{result.input.mobile.dwell_ml} {tr("mL; initial delay")}{" "}
+        {tr("Dwell volume")}
+        {result.input.mobile.dwell_ml} {tr("mL; initial delay")}{" "}
         {(
           result.input.mobile.dwell_ml / result.input.gradient[0].flow_ml_min
         ).toFixed(3)}{" "}
-        {tr("min. Variable-flow delay follows transported volume. This profile is an input check, not evidence of successful separation.")}</p>
+        {tr(
+          "min. Variable-flow delay follows transported volume. This profile is an input check, not evidence of successful separation.",
+        )}
+      </p>
       <div
         className="chart"
         ref={ref}
         data-testid="gradient-profile"
         role="img"
-        aria-label={tr("Gradient Profile: Programmed and Column Inlet percent B", result.input.mobile.b)}
+        aria-label={tr(
+          "Gradient Profile: Programmed and Column Inlet percent B",
+          result.input.mobile.b,
+        )}
       />
     </details>
   );

@@ -425,7 +425,9 @@ export function OptimizationWorkspace({
         return (
           "Rs " +
           number(map!.min_rs[slice][endIndex][timeIndex]) +
-           "\n" + tr("Run") + " " +
+          "\n" +
+          tr("Run") +
+          " " +
           number(map!.run_time[slice][endIndex][timeIndex]) +
           " min\n" +
           pairLabel(map!.critical_pair[slice][endIndex][timeIndex])
@@ -480,21 +482,41 @@ export function OptimizationWorkspace({
     ],
   };
 
-  const combinations = Array.from({ length: start.steps }, (_, i) =>
-    start.min + (start.max - start.min) * i / Math.max(1, start.steps - 1),
-  ).reduce((count, first) => count + Array.from({ length: end.steps }, (_, i) =>
-    end.min + (end.max - end.min) * i / Math.max(1, end.steps - 1),
-  ).filter((last) => last > first + 1).length * duration.steps, 0);
-  if (!config.compounds.length) return <section><h2>{tr("Gradient Optimization")}</h2><p>{tr("empty_compounds")}</p></section>;
+  const combinations = Array.from(
+    { length: start.steps },
+    (_, i) =>
+      start.min + ((start.max - start.min) * i) / Math.max(1, start.steps - 1),
+  ).reduce(
+    (count, first) =>
+      count +
+      Array.from(
+        { length: end.steps },
+        (_, i) =>
+          end.min + ((end.max - end.min) * i) / Math.max(1, end.steps - 1),
+      ).filter((last) => last > first + 1).length *
+        duration.steps,
+    0,
+  );
+  if (!config.compounds.length)
+    return (
+      <section>
+        <h2>{tr("Gradient Optimization")}</h2>
+        <p>{tr("empty_compounds")}</p>
+      </section>
+    );
   return (
     <section className="optimizer-workspace">
       <h2>{tr("Gradient Optimization")}</h2>
       <p>
-        {tr("Constant-flow LSS calculations · user experimental checks pending · search ranges are independent of parameter tier.")}</p>
+        {tr(
+          "Constant-flow LSS calculations · user experimental checks pending · search ranges are independent of parameter tier.",
+        )}
+      </p>
       <p>
         {config.compounds
           .map(
-            (compound) => compound.name + "（" + tierLabel(compoundTier(compound)) + "）",
+            (compound) =>
+              compound.name + "（" + tierLabel(compoundTier(compound)) + "）",
           )
           .join(" · ")}
       </p>
@@ -504,8 +526,16 @@ export function OptimizationWorkspace({
           value={duration}
           change={setDuration}
         />
-        <Range label={tr("Start %B", config.mobile.b)} value={start} change={setStart} />
-        <Range label={tr("End %B", config.mobile.b)} value={end} change={setEnd} />
+        <Range
+          label={tr("Start %B", config.mobile.b)}
+          value={start}
+          change={setStart}
+        />
+        <Range
+          label={tr("End %B", config.mobile.b)}
+          value={end}
+          change={setEnd}
+        />
         <Numeric
           label={tr("Initial hold (min)")}
           value={initialHold}
@@ -516,9 +546,14 @@ export function OptimizationWorkspace({
           value={finalHold}
           change={setFinalHold}
         />
-        <Numeric label={tr("Target minimum Rs")} value={target} change={setTarget} />
+        <Numeric
+          label={tr("Target minimum Rs")}
+          value={target}
+          change={setTarget}
+        />
         <label>
-          {tr("Maximum analysis time (min)")}<input
+          {tr("Maximum analysis time (min)")}
+          <input
             type="number"
             aria-label={tr("Maximum analysis time (min)")}
             value={maximum}
@@ -528,10 +563,17 @@ export function OptimizationWorkspace({
         </label>
       </div>
       <button disabled={!!busy} onClick={() => void search("map")}>
-        {tr("Generate resolution map")}</button>
-      <span data-testid="combination-count">{tr("combinations").replace("{count}", combinations.toLocaleString("zh-TW"))}</span>
+        {tr("Generate resolution map")}
+      </button>
+      <span data-testid="combination-count">
+        {tr("combinations").replace(
+          "{count}",
+          combinations.toLocaleString("zh-TW"),
+        )}
+      </span>
       <label>
-        {tr("Segments")}<select
+        {tr("Segments")}
+        <select
           aria-label={tr("Segments")}
           value={segments}
           onChange={(event) => setSegments(Number(event.target.value))}
@@ -552,7 +594,8 @@ export function OptimizationWorkspace({
         change={setMinSegment}
       />
       <button disabled={!!busy} onClick={() => void search("multisegment")}>
-        {tr("Optimize multi-segment gradient")}</button>
+        {tr("Optimize multi-segment gradient")}
+      </button>
       {busy && (
         <div role="status">
           {busy} · {elapsed.toFixed(1)} s
@@ -564,9 +607,13 @@ export function OptimizationWorkspace({
         <>
           <h3>{tr("Resolution map")}</h3>
           <p>
-            {map.evaluated} {tr("candidates ·")}{map.elapsed_s.toFixed(3)} {tr("s · outlined cells meet the displayed target and time limit")}</p>
+            {map.evaluated} {tr("candidates ·")}
+            {map.elapsed_s.toFixed(3)}{" "}
+            {tr("s · outlined cells meet the displayed target and time limit")}
+          </p>
           <label>
-            {tr("Start %B slice:", config.mobile.b)}{map.axes.start_percent[slice]}
+            {tr("Start %B slice:", config.mobile.b)}
+            {map.axes.start_percent[slice]}
             <input
               aria-label={tr("Start %B slice", config.mobile.b)}
               type="range"
@@ -597,7 +644,11 @@ export function OptimizationWorkspace({
                                 null
                               }
                               aria-label={
-                                (tr("Apply map cell") + " ") + endIndex + " " + timeIndex
+                                tr("Apply map cell") +
+                                " " +
+                                endIndex +
+                                " " +
+                                timeIndex
                               }
                               onClick={() => applyCell(endIndex, timeIndex)}
                             >
@@ -613,7 +664,9 @@ export function OptimizationWorkspace({
             </div>
           </details>
           <button onClick={exportMap}>{tr("Export map CSV")}</button>
-          <button onClick={exportCandidates}>{tr("Export candidates CSV")}</button>
+          <button onClick={exportCandidates}>
+            {tr("Export candidates CSV")}
+          </button>
           <h3>{tr("Top candidates")}</h3>
           <div className="search-table-scroll">
             <table data-testid="optimizer-candidates">
@@ -650,7 +703,7 @@ export function OptimizationWorkspace({
                     </td>
                     <td>
                       <button onClick={() => confirmApply(candidate.gradient)}>
-                        {tr("Apply candidate")}{index + 1}
+                        {tr("Apply candidate")} {index + 1}
                       </button>
                     </td>
                   </tr>
@@ -671,7 +724,7 @@ export function OptimizationWorkspace({
                 key={index}
                 onClick={() => confirmApply(candidate.gradient)}
               >
-                {tr("Apply Pareto")}{index + 1}
+                {tr("Apply Pareto")} {index + 1}
               </button>
             ))}
           </details>
@@ -687,9 +740,12 @@ export function OptimizationWorkspace({
           <h3>{tr("Multi-segment search result")}</h3>
           <p>{multi.search_note}</p>
           <p>
-            {tr("Minimum Rs")}{number(multi.min_rs)} {tr("· run")}{number(multi.run_time_min)}{" "}
-            min · {multi.iterations} {tr("iterations ·")}{multi.evaluations}{" "}
-            {tr("evaluations · budget stop")}{tr(String(multi.time_budget_stopped))}
+            {tr("Minimum Rs")}
+            {number(multi.min_rs)} {tr("· run")}
+            {number(multi.run_time_min)} min · {multi.iterations}{" "}
+            {tr("iterations ·")}
+            {multi.evaluations} {tr("evaluations · budget stop")}
+            {tr(String(multi.time_budget_stopped))}
           </p>
           <p>
             {multi.gradient
@@ -711,7 +767,8 @@ export function OptimizationWorkspace({
             <p key={warning}>{warning}</p>
           ))}
           <button onClick={() => confirmApply(multi.gradient)}>
-            {tr("Apply multi-segment result")}</button>
+            {tr("Apply multi-segment result")}
+          </button>
           <button
             onClick={() =>
               save(
@@ -721,13 +778,17 @@ export function OptimizationWorkspace({
               )
             }
           >
-            {tr("Export multi-segment JSON")}</button>
+            {tr("Export multi-segment JSON")}
+          </button>
         </section>
       )}
       <section>
         <h3>{tr("Across-mode screening")}</h3>
         <p>
-          {tr("RP search uses supplied or estimated LSS parameters. NP, HILIC, IEX and SEC require independent parameters and experiments; no quantitative cross-mode ranking is generated.")}</p>
+          {tr(
+            "RP search uses supplied or estimated LSS parameters. NP, HILIC, IEX and SEC require independent parameters and experiments; no quantitative cross-mode ranking is generated.",
+          )}
+        </p>
       </section>
     </section>
   );

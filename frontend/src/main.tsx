@@ -1,7 +1,7 @@
 import { t as tr } from "./i18n/zh-TW";
 import { tierLabel } from "./i18n/zh-TW";
 import { Metadata } from "./Metadata";
-import { SourceBadge } from "./SourceBadge";
+import { CompoundIssue, SourceBadge } from "./SourceBadge";
 import { OptimizationWorkspace } from "./OptimizationWorkspace";
 import { compoundTier, useRetentionEstimates } from "./retentionEstimates";
 import { parameterCsv, peakTableCsv } from "./retentionExports";
@@ -117,8 +117,12 @@ function App() {
       [],
     ),
     [batchParts, setBatchParts] = useState("");
-  const result = rawResult ? namedResult(rawResult, config.compounds) : undefined;
-  const previous = rawPrevious ? namedResult(rawPrevious, config.compounds) : undefined;
+  const result = rawResult
+    ? namedResult(rawResult, config.compounds)
+    : undefined;
+  const previous = rawPrevious
+    ? namedResult(rawPrevious, config.compounds)
+    : undefined;
   const estimates = useRetentionEstimates(config, setConfig, setError);
   const queuedSimulation = useRef<boolean | null>(null);
   const seq = useRef(0);
@@ -127,7 +131,7 @@ function App() {
   current.current = config;
   useEffect(() => {
     api<{ rdkit: string }>("health")
-      .then((h) => setHealth((tr("Python / RDKit") + " ") + h.rdkit))
+      .then((h) => setHealth(tr("Python / RDKit") + " " + h.rdkit))
       .catch(() => setHealth(tr("Backend unavailable")));
   }, []);
   useEffect(() => {
@@ -154,7 +158,10 @@ function App() {
   };
   /** Wait for parameter estimation, then submit the current method to the solver. */
   const simulate = async (jump = true) => {
-    if (!current.current.compounds.length) { setTab(0); return; }
+    if (!current.current.compounds.length) {
+      setTab(0);
+      return;
+    }
     if (estimates.isPending()) {
       if (jump) queuedSimulation.current = jump;
       return;
@@ -270,7 +277,9 @@ function App() {
     }
     const generated = nextCompoundName(current.current);
     change({
-      next_compound_number: name.trim() ? current.current.next_compound_number : generated.next,
+      next_compound_number: name.trim()
+        ? current.current.next_compound_number
+        : generated.next,
       compounds: [
         ...current.current.compounds,
         {
@@ -318,7 +327,9 @@ function App() {
                       parameter_source: tr("User manual parameters"),
                       source: tr("User manual parameters"),
                       warnings: [
-                        tr("Manual parameters; pending user experimental checks"),
+                        tr(
+                          "Manual parameters; pending user experimental checks",
+                        ),
                       ],
                     },
                   }
@@ -333,7 +344,9 @@ function App() {
                             features: undefined,
                             canonical_smiles: undefined,
                             warnings: [
-                              tr("Structure edited; manual/calibrated parameters retained; molecular descriptors need recalculation."),
+                              tr(
+                                "Structure edited; manual/calibrated parameters retained; molecular descriptors need recalculation.",
+                              ),
                             ],
                           },
                         }
@@ -351,7 +364,7 @@ function App() {
   async function imported(file: File) {
     const data = new FormData();
     data.set("file", file);
-    const rows = await run("Importing", async () => {
+    const rows = await run(tr("Importing"), async () => {
       const response = await fetch("/api/compounds/import", {
         method: "POST",
         body: data,
@@ -361,7 +374,23 @@ function App() {
       return d.compounds as Compound[];
     });
     if (rows) {
-      change({ compounds: [...config.compounds, ...rows].slice(0, 20) });
+      const next = {
+        ...current.current,
+        compounds: [...current.current.compounds],
+      };
+      for (const row of rows) {
+        if (next.compounds.length >= 20) break;
+        const generated = nextCompoundName(next);
+        next.compounds.push({
+          ...row,
+          name: row.name?.trim() || generated.name,
+        });
+        if (!row.name?.trim()) next.next_compound_number = generated.next;
+      }
+      change({
+        compounds: next.compounds,
+        next_compound_number: next.next_compound_number,
+      });
       if (config.compounds.length + rows.length > 20)
         setError(tr("Import truncated to 20 components"));
     }
@@ -389,7 +418,8 @@ function App() {
       <div className="eyebrow">{tr("LIQUID CHROMATOGRAPHY WORKBENCH")}</div>
       <h1>{tabs[tab]}</h1>
       <p className="subtitle">
-        {tr("EluSim_V2 — LC Separation Simulation & Gradient Optimization")}</p>
+        {tr("EluSim_V2 — LC Separation Simulation & Gradient Optimization")}
+      </p>
     </>
   );
   return (
@@ -400,8 +430,10 @@ function App() {
           <span className="version">V2</span>
         </div>
         <p className="aside-caption">
-          {tr("From parameters")}<br />
-          {tr("to separation.")}</p>
+          {tr("From parameters")}
+          <br />
+          {tr("to separation.")}
+        </p>
         <nav aria-label={tr("Workspaces")}>
           {tabs.map((t, i) => (
             <button
@@ -415,8 +447,10 @@ function App() {
           ))}
         </nav>
         <div className="aside-foot">
-          {tr("LSS migration engine")}<br />
-          {tr("Server-side scientific computing")}</div>
+          {tr("LSS migration engine")}
+          <br />
+          {tr("Server-side scientific computing")}
+        </div>
       </aside>
       <main>
         <div className="topbar">
@@ -428,26 +462,35 @@ function App() {
           {header}
           <div className="toolbar">
             <button
-              disabled={!!busy || estimates.estimating || !config.compounds.length}
+              disabled={
+                !!busy || estimates.estimating || !config.compounds.length
+              }
               onClick={() => void simulate()}
             >
-              {tr("▶ Run simulation")}</button>
+              {tr("▶ Run simulation")}
+            </button>
             <label className="check">
               <input
                 type="checkbox"
                 checked={auto}
                 onChange={(e) => setAuto(e.target.checked)}
               />
-              {tr("Auto recalculate")}</label>
+              {tr("Auto recalculate")}
+            </label>
             <button
               className="secondary"
               onClick={() =>
-                download(tr("elusim-project.json"), JSON.stringify(config, null, 2))
+                download(
+                  tr("elusim-project.json"),
+                  JSON.stringify(config, null, 2),
+                )
               }
             >
-              {tr("Save project")}</button>
+              {tr("Save project")}
+            </button>
             <label className="file-button">
-              {tr("Load project")}<input
+              {tr("Load project")}
+              <input
                 type="file"
                 accept=".json"
                 onChange={async (e) => {
@@ -468,15 +511,22 @@ function App() {
         </header>
         {storageError && (
           <div role="alert" className="error">
-            {storageError} {tr("Saved data was not overwritten. Load a valid project or explicitly reset the demonstration to continue saving.")}</div>
+            {storageError}{" "}
+            {tr(
+              "Saved data was not overwritten. Load a valid project or explicitly reset the demonstration to continue saving.",
+            )}
+          </div>
         )}
         {estimates.estimating && (
           <div role="status" className="notice">
-            {tr("Estimating retention parameters…")}</div>
+            {tr("Estimating retention parameters…")}
+          </div>
         )}
         {busy && (
           <div role="status" className="notice">
-            {busy}{tr("… bounded server computation in progress")}</div>
+            {busy}
+            {tr("… bounded server computation in progress")}
+          </div>
         )}
         {error && (
           <div role="alert" className="error">
@@ -484,22 +534,36 @@ function App() {
           </div>
         )}
         <div className="notice soft">
-          {tr("RP parameter tiers: A measured curve, B scoped QSRR, C generic C18 estimate, D calibration, M manual. Condition differences are warnings; user experimental checks are pending.")}</div>
+          {tr(
+            "RP parameter tiers: A measured curve, B scoped QSRR, C generic C18 estimate, D calibration, M manual. Condition differences are warnings; user experimental checks are pending.",
+          )}
+        </div>
         {tab === 0 && (
           <>
             <section>
               <div className="section-head">
                 <h2>{tr("Build your mixture")}</h2>
-                <button className="secondary" onClick={() => {
-                  change({ ...structuredClone(demo), next_compound_number: 1 });
-                  setResult(undefined);
-                  setSimulationAttempted(false);
-                }}>{tr("Load demo mixture")}</button>
-                <span>{config.compounds.length} {tr("/ 20 compounds")}</span>
+                <button
+                  className="secondary"
+                  onClick={() => {
+                    change({
+                      ...structuredClone(demo),
+                      next_compound_number: 1,
+                    });
+                    setResult(undefined);
+                    setSimulationAttempted(false);
+                  }}
+                >
+                  {tr("Load demo mixture")}
+                </button>
+                <span>
+                  {config.compounds.length} {tr("/ 20 compounds")}
+                </span>
               </div>
               <div className="field-grid">
                 <label>
-                  {tr("Compound name")}<input
+                  {tr("Compound name")}
+                  <input
                     aria-label={tr("Compound name")}
                     value={name}
                     onChange={(e) => setName(e.target.value)}
@@ -524,11 +588,14 @@ function App() {
                   className="secondary"
                   onClick={() => void parseStructure()}
                 >
-                  {tr("Calculate RDKit descriptors")}</button>
+                  {tr("Calculate RDKit descriptors")}
+                </button>
                 <button disabled={!!busy} onClick={() => void add()}>
-                  {tr("Add compound")}</button>
+                  {tr("Add compound")}
+                </button>
                 <label className="file-button">
-                  {tr("Import CSV / SDF / MOL")}<input
+                  {tr("Import CSV / SDF / MOL")}
+                  <input
                     type="file"
                     accept=".csv,.sdf,.mol"
                     onChange={(e) => {
@@ -572,7 +639,8 @@ function App() {
                   disabled={estimates.estimating}
                   onClick={() => void estimates.estimateAll()}
                 >
-                  {tr("Re-estimate all A/B/C")}</button>
+                  {tr("Re-estimate all A/B/C")}
+                </button>
                 <button
                   disabled={estimates.estimating}
                   className="secondary"
@@ -584,22 +652,28 @@ function App() {
                     )
                   }
                 >
-                  {tr("Export parameter CSV")}</button>
+                  {tr("Export parameter CSV")}
+                </button>
                 <button
                   disabled={!!busy}
                   onClick={() => void resolveRetention()}
                 >
-                  {tr("Resolve retention from structures")}</button>
+                  {tr("Resolve retention from structures")}
+                </button>
                 <label className="check">
                   <input
                     type="checkbox"
                     checked={replaceManual}
                     onChange={(e) => setReplaceManual(e.target.checked)}
                   />
-                  {tr("Allow replacing manual parameters")}</label>
+                  {tr("Allow replacing manual parameters")}
+                </label>
               </div>
               <p className="muted">
-                {tr("Estimates A measured curve → B scoped QSRR → C generic C18 regression. M manual and D calibration values are protected from background changes; method differences remain warnings.")}</p>
+                {tr(
+                  "Estimates A measured curve → B scoped QSRR → C generic C18 regression. M manual and D calibration values are protected from background changes; method differences remain warnings.",
+                )}
+              </p>
               {retentionRecords.map((r, i) => (
                 <p className={r.logkw == null ? "warn" : "muted"} key={i}>
                   {config.compounds.find((c) => c.id === r.compound_id)?.name ||
@@ -618,7 +692,8 @@ function App() {
                 </details>
               )}
               <label>
-                {tr("Batch relative parts (current displayed order)")}<input
+                {tr("Batch relative parts (current displayed order)")}
+                <input
                   aria-label={tr("Batch relative parts")}
                   value={batchParts}
                   onChange={(e) => setBatchParts(e.target.value)}
@@ -635,7 +710,9 @@ function App() {
                     values.reduce((s, v) => s + v, 0) <= 0
                   ) {
                     setError(
-                      tr("Provide one nonnegative part per current compound and a positive total."),
+                      tr(
+                        "Provide one nonnegative part per current compound and a positive total.",
+                      ),
                     );
                     return;
                   }
@@ -648,7 +725,8 @@ function App() {
                   });
                 }}
               >
-                {tr("Apply batch composition")}</button>
+                {tr("Apply batch composition")}
+              </button>
               <p>
                 {tr("Total parts:")}{" "}
                 {config.compounds.reduce(
@@ -657,7 +735,8 @@ function App() {
                 )}
               </p>
               <label>
-                {tr("Mixture basis")}<select
+                {tr("Mixture basis")}
+                <select
                   aria-label={tr("Mixture basis")}
                   value={config.mixture_basis || "parts"}
                   onChange={(e) =>
@@ -673,13 +752,16 @@ function App() {
                 </select>
               </label>
               <p className="muted">
-                {tr("Up to 20 components · area from injected amount × relative detector response; no calibrated UV absorbance. Legacy amplitude is ignored. All concentrations must use the same unit.")}</p>
+                {tr(
+                  "Up to 20 components · area from injected amount × relative detector response; no calibrated UV absorbance. Legacy amplitude is ignored. All concentrations must use the same unit.",
+                )}
+              </p>
               <div className="compound-grid">
                 {config.compounds.map((c) => (
                   <article key={c.id}>
                     <div className="section-head">
                       <input
-                        aria-label={(tr("Name") + " ") + c.id}
+                        aria-label={tr("Name") + " " + c.id}
                         value={c.name}
                         onChange={(e) =>
                           editCompound(c.id, "name", e.target.value)
@@ -688,7 +770,7 @@ function App() {
                       <SourceBadge compound={c} />
                       <button
                         className="icon"
-                        aria-label={(tr("Remove") + " ") + c.name}
+                        aria-label={tr("Remove") + " " + c.name}
                         onClick={() =>
                           change({
                             compounds: config.compounds.filter(
@@ -700,6 +782,7 @@ function App() {
                         ×
                       </button>
                     </div>
+                    <CompoundIssue compound={c} config={config} />
                     <div className="field-grid">
                       <Num
                         label={"logKw " + c.name}
@@ -714,7 +797,7 @@ function App() {
                         onChange={(v) => editCompound(c.id, "s", v)}
                       />
                       <Num
-                        label={(tr("Mixture parts") + " ") + c.name}
+                        label={tr("Mixture parts") + " " + c.name}
                         value={c.mixture_parts ?? 1}
                         onChange={(v) =>
                           editCompound(c.id, "mixture_parts", v ?? 0)
@@ -728,15 +811,17 @@ function App() {
                             0,
                           ) || 1)
                         ).toFixed(1)}
-                        {tr("% relative parts")}</span>
+                        {tr("% relative parts")}
+                      </span>
                       <Num
-                        label={(tr("Concentration") + " ") + c.name}
+                        label={tr("Concentration") + " " + c.name}
                         value={c.concentration ?? null}
                         nullable
                         onChange={(v) => editCompound(c.id, "concentration", v)}
                       />
                       <label>
-                        {tr("Concentration unit")}<select
+                        {tr("Concentration unit")}
+                        <select
                           value={c.concentration_unit || "mM"}
                           onChange={(e) =>
                             editCompound(
@@ -751,14 +836,15 @@ function App() {
                         </select>
                       </label>
                       <Num
-                        label={(tr("Response factor") + " ") + c.name}
+                        label={tr("Response factor") + " " + c.name}
                         value={c.response_factor ?? 1}
                         onChange={(v) =>
                           editCompound(c.id, "response_factor", v ?? 0)
                         }
                       />
                       <label>
-                        {tr("Entity type")}<select
+                        {tr("Entity type")}
+                        <select
                           value={c.kind}
                           onChange={(e) =>
                             editCompound(
@@ -776,7 +862,9 @@ function App() {
                             "peptide",
                             "protein",
                           ].map((x) => (
-                            <option key={x} value={x}>{tr(x)}</option>
+                            <option key={x} value={x}>
+                              {tr(x)}
+                            </option>
                           ))}
                         </select>
                       </label>
@@ -794,8 +882,9 @@ function App() {
                       {tr("Re-estimate")}
                     </button>
                     <label>
-                      {tr("Stored SMILES")}<input
-                        aria-label={(tr("Stored SMILES") + " ") + c.name}
+                      {tr("Stored SMILES")}
+                      <input
+                        aria-label={tr("Stored SMILES") + " " + c.name}
                         value={c.smiles || ""}
                         onChange={(e) =>
                           editCompound(c.id, "smiles", e.target.value || null)
@@ -803,7 +892,10 @@ function App() {
                       />
                     </label>
                     {c.source_legacy && (
-                      <p className="muted">{tr("Legacy source:")}{tr(c.source_legacy)}</p>
+                      <p className="muted">
+                        {tr("Legacy source:")}
+                        {sourceLabel(c.source_legacy)}
+                      </p>
                     )}
                     {c.retention_provenance &&
                       Object.keys(c.retention_provenance).length > 0 && (
@@ -823,15 +915,21 @@ function App() {
                         (c.scope.ph_control || "fixed") !==
                           (config.mobile.ph_control || "fixed")) && (
                         <p className="warn">
-                          {tr("Retention condition differences: simulation uses the supplied parameters with warnings; review or re-estimate for the current method.")}</p>
+                          {tr(
+                            "Retention condition differences: simulation uses the supplied parameters with warnings; review or re-estimate for the current method.",
+                          )}
+                        </p>
                       )}
                     <p className="muted">
                       {c.scope
-                        ? (tr("Scoped to") + " ") +
+                        ? tr("Scoped to") +
+                          " " +
                           c.scope.stationary_phase +
                           " / " +
                           c.scope.mobile_b
-                        : tr("Parameter scope undeclared; geometry changes retain assumed selectivity.")}
+                        : tr(
+                            "Parameter scope undeclared; geometry changes retain assumed selectivity.",
+                          )}
                     </p>
                     <button
                       className="secondary"
@@ -851,7 +949,8 @@ function App() {
                         })
                       }
                     >
-                      {tr("Bind parameters to current method scope")}</button>
+                      {tr("Bind parameters to current method scope")}
+                    </button>
                   </article>
                 ))}
               </div>
@@ -882,9 +981,14 @@ function App() {
               {config.mode !== "RP" && (
                 <>
                   <div className="notice">
-                    {config.mode} {tr("is Unsupported for quantitative simulation. No RP equation is used. Mode-specific parameters may be recorded for future validation.")}</div>
+                    {config.mode}{" "}
+                    {tr(
+                      "is Unsupported for quantitative simulation. No RP equation is used. Mode-specific parameters may be recorded for future validation.",
+                    )}
+                  </div>
                   <label>
-                    {config.mode} {tr("dedicated parameters (JSON)")}<textarea
+                    {config.mode} {tr("dedicated parameters (JSON)")}
+                    <textarea
                       value={modeParams}
                       onChange={(e) => setModeParams(e.target.value)}
                     />
@@ -908,7 +1012,8 @@ function App() {
                       }
                     }}
                   >
-                    {tr("Save mode parameters")}</button>
+                    {tr("Save mode parameters")}
+                  </button>
                 </>
               )}
             </section>
@@ -927,13 +1032,18 @@ function App() {
                     })
                   }
                 >
-                  {tr("Generic C18 template")}</button>
+                  {tr("Generic C18 template")}
+                </button>
               </div>
               <p className="muted">
-                {tr("Generic geometry only. No commercial stationary-phase selectivity database.")}</p>
+                {tr(
+                  "Generic geometry only. No commercial stationary-phase selectivity database.",
+                )}
+              </p>
               <div className="field-grid">
                 <label>
-                  {tr("Column manufacturer")}<input
+                  {tr("Column manufacturer")}
+                  <input
                     value={config.column.manufacturer}
                     onChange={(e) =>
                       change({
@@ -946,7 +1056,8 @@ function App() {
                   />
                 </label>
                 <label>
-                  {tr("Stationary phase")}<input
+                  {tr("Stationary phase")}
+                  <input
                     value={config.column.stationary_phase}
                     onChange={(e) =>
                       change({
@@ -998,7 +1109,8 @@ function App() {
               <h2>{tr("Mobile phase & instrument")}</h2>
               <div className="field-grid">
                 <label>
-                  {tr("Mobile phase A")}<input
+                  {tr("Mobile phase A")}
+                  <input
                     value={config.mobile.a}
                     onChange={(e) =>
                       change({
@@ -1008,7 +1120,8 @@ function App() {
                   />
                 </label>
                 <label>
-                  {tr("Mobile phase B")}<select
+                  {tr("Mobile phase B")}
+                  <select
                     value={config.mobile.b}
                     onChange={(e) =>
                       change({
@@ -1024,7 +1137,8 @@ function App() {
                   </select>
                 </label>
                 <label>
-                  {tr("pH condition")}<select
+                  {tr("pH condition")}
+                  <select
                     value={config.mobile.ph_control || "fixed"}
                     onChange={(e) =>
                       change({
@@ -1038,11 +1152,13 @@ function App() {
                   >
                     <option value="fixed">{tr("Fixed numeric pH")}</option>
                     <option value="formulation">
-                      {tr("Formulation-defined, no fixed pH")}</option>
+                      {tr("Formulation-defined, no fixed pH")}
+                    </option>
                   </select>
                 </label>
                 <label>
-                  {tr("Buffer")}<input
+                  {tr("Buffer")}
+                  <input
                     value={config.mobile.buffer}
                     onChange={(e) =>
                       change({
@@ -1073,7 +1189,10 @@ function App() {
                 ))}
               </div>
               <p className="muted">
-                {tr("pH, temperature and solvent changes refresh A/B/C estimates and warnings. No pKa, ionization or solvent correction is applied.")}</p>
+                {tr(
+                  "pH, temperature and solvent changes refresh A/B/C estimates and warnings. No pKa, ionization or solvent correction is applied.",
+                )}
+              </p>
             </section>
             <section>
               <div className="section-head">
@@ -1107,7 +1226,8 @@ function App() {
                       })
                     }
                   >
-                    {tr("Linear + hold")}</button>
+                    {tr("Linear + hold")}
+                  </button>
                   <button
                     className="secondary"
                     onClick={() => {
@@ -1185,7 +1305,7 @@ function App() {
                     <button
                       className="icon"
                       disabled={i === 0 || config.gradient.length <= 2}
-                      aria-label={(tr("Delete node") + " ") + (i + 1)}
+                      aria-label={tr("Delete node") + " " + (i + 1)}
                       onClick={() =>
                         change({
                           gradient: config.gradient.filter((_, j) => j !== i),
@@ -1209,9 +1329,13 @@ function App() {
                   });
                 }}
               >
-                {tr("+ Add gradient node")}</button>
+                {tr("+ Add gradient node")}
+              </button>
               <p className="muted">
-                {tr("Flow interpolates between nodes. Temperature-dependent retention is not enabled; node temperatures must equal the column temperature. Initial composition fills the column before injection.")}</p>
+                {tr(
+                  "Flow interpolates between nodes. Temperature-dependent retention is not enabled; node temperatures must equal the column temperature. Initial composition fills the column before injection.",
+                )}
+              </p>
             </section>
           </>
         )}
@@ -1229,7 +1353,8 @@ function App() {
                         checked={overlay}
                         onChange={(e) => setOverlay(e.target.checked)}
                       />
-                      {tr("Overlay previous run")}</label>
+                      {tr("Overlay previous run")}
+                    </label>
                   </div>
                   {result.traces.some((t) => t.y.some((y) => y > 0)) &&
                   result.peaks.some((p) => p.rt_min != null) ? (
@@ -1250,8 +1375,12 @@ function App() {
                       </h3>
                       <p>
                         {result.peaks.some((p) => p.rt_min != null)
-                          ? tr("Rt 已計算；缺少有效效率或訊號參數，無法產生色譜峰。")
-                          : tr("未顯示任何虛構峰。未洗脫表示已完成遷移計算但尚未到達柱出口，並非程式故障。")}
+                          ? tr(
+                              "Rt 已計算；缺少有效效率或訊號參數，無法產生色譜峰。",
+                            )
+                          : tr(
+                              "未顯示任何虛構峰。未洗脫表示已完成遷移計算但尚未到達柱出口，並非程式故障。",
+                            )}
                       </p>
                       {result.peaks.map((p) => (
                         <p key={p.id}>
@@ -1261,7 +1390,10 @@ function App() {
                     </div>
                   )}
                   <p className="muted">
-                    {tr("Gaussian efficiency approximation · Select a peak for details ·")}{result.model}
+                    {tr(
+                      "Gaussian efficiency approximation · Select a peak for details ·",
+                    )}
+                    {result.model}
                   </p>
                   <div className="toolbar">
                     <button
@@ -1277,7 +1409,8 @@ function App() {
                         )
                       }
                     >
-                      {tr("Export JSON")}</button>
+                      {tr("Export JSON")}
+                    </button>
                     <button
                       className="secondary"
                       onClick={() =>
@@ -1288,13 +1421,14 @@ function App() {
                         )
                       }
                     >
-                      {tr("Export peak table CSV")}</button>
+                      {tr("Export peak table CSV")}
+                    </button>
                     <button
                       className="secondary"
                       onClick={() =>
                         download(
                           tr("elusim-peaks.csv"),
-                          "name,rt_min,fwhm_min,width_base_min,source,mixture_fraction,injected_amount,amount_unit,relative_peak_area,relative_peak_height\n" +
+                          "name,rt_min,fwhm_min,width_base_min,source,tier,tier_label,mixture_fraction,injected_amount,amount_unit,relative_peak_area,relative_peak_height\n" +
                             result.peaks
                               .map((p) =>
                                 [
@@ -1303,6 +1437,8 @@ function App() {
                                   p.fwhm_min ?? "",
                                   p.width_base_min ?? "",
                                   p.source,
+                                  p.parameter_tier,
+                                  tierLabel(p.parameter_tier),
                                   p.mixture_fraction,
                                   p.injected_amount,
                                   p.amount_unit,
@@ -1315,7 +1451,8 @@ function App() {
                         )
                       }
                     >
-                      {tr("Export peaks CSV")}</button>
+                      {tr("Export peaks CSV")}
+                    </button>
                     <button
                       className="secondary"
                       onClick={() =>
@@ -1337,7 +1474,8 @@ function App() {
                         )
                       }
                     >
-                      {tr("Export traces CSV")}</button>
+                      {tr("Export traces CSV")}
+                    </button>
                   </div>
                 </section>
                 <div className="metrics">
@@ -1408,7 +1546,7 @@ function App() {
                                 <small> · {tr(p.amount_unit)}</small>
                               </td>
                               <td>
-                                {sourceLabel(p.source)}
+                                {tierLabel(p.parameter_tier)}
                                 {p.warning && (
                                   <p className="warn">{p.warning}</p>
                                 )}
@@ -1455,15 +1593,23 @@ function App() {
                       ? tr("stale_results")
                       : busy
                         ? tr("Scientific calculation in progress.")
-                        : tr("Supply logKw / S, column geometry and a gradient. Calculations run in the Python backend."))}
+                        : tr(
+                            "Supply logKw / S, column geometry and a gradient. Calculations run in the Python backend.",
+                          ))}
                 </p>
                 {config.compounds
                   .filter((c) => c.logkw == null || c.s == null)
                   .map((c) => (
                     <p className="warn" key={c.id}>
-                      {c.name}{tr(": Missing logKw / S. Resolve compatible retention data or calibrate.")}</p>
+                      {c.name}
+                      {tr(
+                        ": Missing logKw / S. Resolve compatible retention data or calibrate.",
+                      )}
+                    </p>
                   ))}
-                <button onClick={() => void simulate()}>{tr("Run simulation")}</button>
+                <button onClick={() => void simulate()}>
+                  {tr("Run simulation")}
+                </button>
               </section>
             )}
           </>
@@ -1485,9 +1631,13 @@ function App() {
             <section>
               <h2>{tr("Calibrate from experimental methods")}</h2>
               <p className="muted">
-                {tr("At least two independent methods for two parameters. Same phase / solvent / pH / temperature. Fit RMSE is not external accuracy.")}</p>
+                {tr(
+                  "At least two independent methods for two parameters. Same phase / solvent / pH / temperature. Fit RMSE is not external accuracy.",
+                )}
+              </p>
               <label>
-                {tr("Calibration compound")}<select
+                {tr("Calibration compound")}
+                <select
                   aria-label={tr("Calibration compound")}
                   value={selected || config.compounds[0]?.id}
                   onChange={(e) => setSelected(e.target.value)}
@@ -1513,8 +1663,11 @@ function App() {
                       ]);
                   }}
                 >
-                  {tr("Add measured Rt for current method")}</button>
-                <span>{observations.length} {tr("recorded methods")}</span>
+                  {tr("Add measured Rt for current method")}
+                </button>
+                <span>
+                  {observations.length} {tr("recorded methods")}
+                </span>
                 <button
                   className="secondary"
                   onClick={() =>
@@ -1524,9 +1677,11 @@ function App() {
                     )
                   }
                 >
-                  {tr("Export observations")}</button>
+                  {tr("Export observations")}
+                </button>
                 <label className="file-button">
-                  {tr("Import observation JSON")}<input
+                  {tr("Import observation JSON")}
+                  <input
                     type="file"
                     accept=".json"
                     onChange={async (e) => {
@@ -1537,7 +1692,8 @@ function App() {
                 </label>
               </div>
               <label>
-                {tr("Observation JSON (optional override)")}<textarea
+                {tr("Observation JSON (optional override)")}
+                <textarea
                   aria-label={tr("Calibration observation JSON")}
                   value={calibrationText}
                   onChange={(e) => setCalibrationText(e.target.value)}
@@ -1545,7 +1701,8 @@ function App() {
                 />
               </label>
               <button disabled={!!busy} onClick={() => void calibrate()}>
-                {tr("Fit logKw and S")}</button>
+                {tr("Fit logKw and S")}
+              </button>
               {calibrationResult && (
                 <>
                   <Metadata value={calibrationResult} />
@@ -1566,8 +1723,9 @@ function App() {
                                 retention_provenance: {
                                   model: r.model,
                                   source: tr("User experimental calibration"),
-                                  parameter_source:
-                                    tr("User experimental calibration"),
+                                  parameter_source: tr(
+                                    "User experimental calibration",
+                                  ),
                                   model_version: r.model,
                                   features: c.retention_provenance?.features,
                                   canonical_smiles:
@@ -1582,7 +1740,8 @@ function App() {
                       });
                     }}
                   >
-                    {tr("Apply calibrated parameters")}</button>
+                    {tr("Apply calibrated parameters")}
+                  </button>
                 </>
               )}
             </section>
@@ -1597,31 +1756,50 @@ function App() {
                   <h3>{tr("RP · LSS local migration")}</h3>
                   <p>log₁₀ k = logKw − Sφ</p>
                   <p className="muted">
-                    {tr("Independent SciPy ODE; plug-flow composition with column and dwell transport. External experimental accuracy is not quantified.")}</p>
+                    {tr(
+                      "Independent SciPy ODE; plug-flow composition with column and dwell transport. External experimental accuracy is not quantified.",
+                    )}
+                  </p>
                 </div>
                 <span className="pill ok">{tr("Parameter-based")}</span>
               </div>
               <p>
                 {tr("PyLSS fixed reference:")}{" "}
-                <code>d2cda850fa0b0881fc3cf1cd68c4d93b59dac04f</code>{tr(". NLSS disabled. CADET license unresolved; not shipped.")}</p>
+                <code>d2cda850fa0b0881fc3cf1cd68c4d93b59dac04f</code>
+                {tr(". NLSS disabled. CADET license unresolved; not shipped.")}
+              </p>
               <p>
-                {tr("Scoped experimental Rt and UV models are available in Retention Prediction and UV-Vis / DAD. TIMPANI / DeepLC pretrained weights are not loaded.")}</p>
+                {tr(
+                  "Scoped experimental Rt and UV models are available in Retention Prediction and UV-Vis / DAD. TIMPANI / DeepLC pretrained weights are not loaded.",
+                )}
+              </p>
               <p>{tr("report0259_info")}</p>
               <h3>{tr("Mode-specific parameter requirements")}</h3>
               <p>{tr("NP: adsorption, competition, water activity.")}</p>
-              <p>{tr("HILIC: partition, adsorption and ionic contributions.")}</p>
+              <p>
+                {tr("HILIC: partition, adsorption and ionic contributions.")}
+              </p>
               <p>{tr("IEX: capacity, ν, σ, rates and salt.")}</p>
-              <p>{tr("SEC: pore accessibility, hydrodynamic size and partition.")}</p>
+              <p>
+                {tr(
+                  "SEC: pore accessibility, hydrodynamic size and partition.",
+                )}
+              </p>
             </section>
             <section>
               <h2>{tr("Licensing & corresponding source")}</h2>
               <p>
-                {tr("EluSim_V2 application: AGPL-3.0-or-later. Retention curve data and derived weights: CC BY-NC-SA 3.0 US; non-commercial service only, credited to Boswell and the Wiczling curation team. Scientific parameters supplied by users; browser-local projects are not shared with other visitors.")}</p>
+                {tr(
+                  "EluSim_V2 application: AGPL-3.0-or-later. Retention curve data and derived weights: CC BY-NC-SA 3.0 US; non-commercial service only, credited to Boswell and the Wiczling curation team. Scientific parameters supplied by users; browser-local projects are not shared with other visitors.",
+                )}
+              </p>
               <div className="toolbar">
                 <a className="file-button" href="/api/source">
-                  {tr("Download deployed corresponding source")}</a>
+                  {tr("Download deployed corresponding source")}
+                </a>
                 <a className="file-button" href="/api/license">
-                  {tr("License")}</a>
+                  {tr("License")}
+                </a>
               </div>
             </section>
           </>
@@ -1629,7 +1807,10 @@ function App() {
         {tab === 7 && <RetentionWorkspace config={config} change={change} />}
         {tab === 8 && <UVWorkspace compounds={config.compounds} />}
         <footer>
-          {tr("EluSim · Model-based simulation requires scoped parameters. No model is a substitute for experimental method validation.")}<button
+          {tr(
+            "EluSim · Model-based simulation requires scoped parameters. No model is a substitute for experimental method validation.",
+          )}
+          <button
             className="text-button"
             onClick={() => {
               setConfig(emptyProject());
@@ -1639,7 +1820,8 @@ function App() {
               setSimulationAttempted(false);
             }}
           >
-            {tr("Reset synthetic demonstration")}</button>
+            {tr("Reset synthetic demonstration")}
+          </button>
         </footer>
       </main>
     </div>

@@ -10,9 +10,33 @@ export function Metadata({ value }: { value: unknown }) {
     if (value.every((item) => typeof item === "number")) {
       return <span>{value.join(", ")}</span>;
     }
-    return <ul>{value.map((item, index) => <li key={index}><Metadata value={item} /></li>)}</ul>;
+    return (
+      <ul>
+        {value.map((item, index) => (
+          <li key={index}>
+            <Metadata value={item} />
+          </li>
+        ))}
+      </ul>
+    );
   }
-  return <dl className="metadata">{Object.entries(value as Record<string, unknown>)
-    .filter(([key]) => !["svg", "structure_svg", "fingerprint", "train_smiles"].includes(key))
-    .map(([key, item]) => <div key={key}><dt>{t(key)}</dt><dd><Metadata value={item} /></dd></div>)}</dl>;
+  return (
+    <dl className="metadata">
+      {Object.entries(value as Record<string, unknown>)
+        .filter(
+          ([key]) =>
+            !["svg", "structure_svg", "fingerprint", "train_smiles"].includes(
+              key,
+            ),
+        )
+        .map(([key, item]) => (
+          <div key={key}>
+            <dt>{t(key)}</dt>
+            <dd>
+              <Metadata value={item} />
+            </dd>
+          </div>
+        ))}
+    </dl>
+  );
 }
