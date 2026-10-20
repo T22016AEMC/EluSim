@@ -139,6 +139,9 @@ test("multi-segment search, JSON export, apply and cancellation", async ({
     response.url().endsWith("/api/optimize/multisegment"),
   );
   await page
+    .getByLabel("Minimum segment duration (min)", { exact: true })
+    .fill("0.75");
+  await page
     .getByRole("button", {
       name: "Optimize multi-segment gradient",
       exact: true,
@@ -147,6 +150,13 @@ test("multi-segment search, JSON export, apply and cancellation", async ({
   const response = await pending;
   expect(response.ok()).toBeTruthy();
   const result = await response.json();
+  const ramps = result.gradient.slice(0, 3);
+  expect(
+    ramps.slice(1).every(
+      (node: any, index: number) =>
+        node.time_min - ramps[index].time_min >= 0.75 - 1e-9,
+    ),
+  ).toBeTruthy();
   expect(
     result.gradient.every(
       (node: any, index: number) =>

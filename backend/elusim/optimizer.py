@@ -365,6 +365,29 @@ def optimize_map(request):
     return response
 
 
+def decode_multisegment(request, base, parameters):
+    """Allocate minimum durations first, then distribute the remaining time."""
+    segments = request.segments
+    start = float(parameters[0])
+    end_min, end_max = request.end_percent_bounds
+    end_lower = max(end_min, start + 1.000001)
+    end = end_lower + float(parameters[1]) * (end_max - end_lower)
+    fractions = np.r_[np.sort(parameters[2 : segments + 1]), 1.0]
+    ends = start + (end - start) * fractions
+    weights = np.asarray(parameters[segments + 1 : 2 * segments + 1])
+    total = max(float(parameters[-1]), segments * request.min_segment_min)
+    remaining = total - segments * request.min_segment_min
+    durations = request.min_segment_min + weights / weights.sum() * remaining
+    return nodes_for(
+        base,
+        start,
+        ends,
+        durations,
+        request.initial_hold_min,
+        request.final_hold_min,
+    )
+
+
 def optimize_multisegment(request):
     """Search monotone ramps with differential evolution and a wall-clock budget."""
     started = time.monotonic()
@@ -385,31 +408,13 @@ def optimize_multisegment(request):
     best_nodes = None
     evaluations = 0
 
-    def decode(parameters):
-        """Map sorted fractional knots and positive durations to monotone ramps."""
-        start = float(parameters[0])
-        end_lower = max(end_min, start + 1.000001)
-        end = end_lower + float(parameters[1]) * (end_max - end_lower)
-        fractions = np.r_[np.sort(parameters[2 : segments + 1]), 1.0]
-        ends = start + (end - start) * fractions
-        weights = np.asarray(parameters[segments + 1 : 2 * segments + 1])
-        durations = weights / weights.sum() * parameters[-1]
-        return nodes_for(
-            base,
-            start,
-            ends,
-            durations,
-            request.initial_hold_min,
-            request.final_hold_min,
-        )
-
     def objective(parameters):
         """Score model calculations; stop extra evaluations after the deadline."""
         nonlocal evaluations, best_score, best_nodes, stopped
         if time.monotonic() >= deadline and best_nodes is not None:
             stopped = True
             return 1e12
-        nodes = decode(parameters)
+        nodes = decode_multisegment(request, base, parameters)
         values = evaluate(base, [nodes])
         evaluations += 1
         score = 1000 * max(0, request.target_rs - float(values["min_rs"][0])) + float(

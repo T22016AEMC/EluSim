@@ -172,6 +172,7 @@ class OptimizeMultiSegment(Strict):
 
     simulation: Simulation
     segments: Literal[2, 3] = 2
+    min_segment_min: float = Field(default=0.5, ge=0.1, le=10)
     start_percent_bounds: tuple[float, float] = (0, 50)
     end_percent_bounds: tuple[float, float] = (30, 100)
     total_gradient_time_bounds: tuple[float, float] = (2, 60)
@@ -194,6 +195,8 @@ class OptimizeMultiSegment(Strict):
         if self.start_percent_bounds[0] + 1 >= self.end_percent_bounds[1]:
             raise ValueError("No increasing gradient exists within the bounds")
         lower, upper = self.total_gradient_time_bounds
+        lower = max(lower, self.segments * self.min_segment_min)
+        self.total_gradient_time_bounds = (lower, upper)
         if lower <= 0 or lower > upper or upper + self.initial_hold_min + self.final_hold_min > 240:
             raise ValueError("Gradient time bounds exceed programmed run limits")
         return self

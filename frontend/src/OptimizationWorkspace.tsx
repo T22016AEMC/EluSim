@@ -176,6 +176,7 @@ export function OptimizationWorkspace({
   const [maximum, setMaximum] = useState("");
   const [segments, setSegments] = useState(2);
   const [budget, setBudget] = useState(20);
+  const [minSegment, setMinSegment] = useState(0.5);
   const [map, setMap] = useState<ResolutionMap>();
   const [multi, setMulti] = useState<MultiResult>();
   const [slice, setSlice] = useState(0);
@@ -192,6 +193,9 @@ export function OptimizationWorkspace({
     initialHold,
     finalHold,
     target,
+    segments,
+    budget,
+    minSegment,
     maximum,
   });
 
@@ -265,6 +269,7 @@ export function OptimizationWorkspace({
             total_gradient_time_bounds: [duration.min, duration.max],
             seed: 42,
             time_budget_s: budget,
+            min_segment_min: minSegment,
             initial_candidate: map?.top_candidates[0]?.gradient ?? null,
           },
           request.signal,
@@ -534,6 +539,11 @@ export function OptimizationWorkspace({
         label="Search time budget (s)"
         value={budget}
         change={setBudget}
+      />
+      <Numeric
+        label="Minimum segment duration (min)"
+        value={minSegment}
+        change={setMinSegment}
       />
       <button disabled={!!busy} onClick={() => void search("multisegment")}>
         Optimize multi-segment gradient

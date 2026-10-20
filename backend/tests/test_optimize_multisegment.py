@@ -61,3 +61,51 @@ def test_cancelled_process_releases_slot():
         )
     result = compute("simulation", method().model_dump())
     assert len(result["order"]) == 3
+
+
+@pytest.mark.parametrize("segments", [2, 3])
+def test_minimum_duration_parameterization(segments):
+    """Decode 200 seeded vectors without violating duration or monotonicity."""
+    import numpy as np
+    from elusim.optimizer import decode_multisegment
+
+    generator = np.random.default_rng(42)
+    for _ in range(200):
+        minimum = float(generator.uniform(0.1, 10))
+        request = OptimizeMultiSegment(
+            simulation=method(),
+            segments=segments,
+            min_segment_min=minimum,
+            total_gradient_time_bounds=(0.1, 60),
+        )
+        assert request.total_gradient_time_bounds[0] == segments * minimum
+        parameters = [
+            generator.uniform(0, 50),
+            generator.uniform(),
+            *generator.uniform(size=segments - 1),
+            *generator.uniform(0.001, 1, size=segments),
+            generator.uniform(segments * minimum, 60),
+        ]
+        nodes = decode_multisegment(request, request.simulation, parameters)
+        durations = np.diff([node.time_min for node in nodes[: segments + 1]])
+        assert np.all(durations >= minimum - 1e-9)
+        assert durations.sum() == pytest.approx(parameters[-1], abs=1e-9)
+        assert all(
+            left.b_percent <= right.b_percent for left, right in zip(nodes, nodes[1:])
+        )
+
+
+def test_minimum_duration_bounds_rejected():
+    """Reject impossible totals and out-of-range minimum segment values."""
+    from pydantic import ValidationError
+
+    for minimum in [0.09, 10.01]:
+        with pytest.raises(ValidationError):
+            OptimizeMultiSegment(simulation=method(), min_segment_min=minimum)
+    with pytest.raises(ValidationError):
+        OptimizeMultiSegment(
+            simulation=method(),
+            segments=3,
+            min_segment_min=1,
+            total_gradient_time_bounds=(0.1, 2),
+        )
