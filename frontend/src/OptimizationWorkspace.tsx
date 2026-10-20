@@ -7,6 +7,8 @@ import { compoundTier } from "./retentionEstimates";
 
 type Axis = { min: number; max: number; steps: number };
 type Candidate = {
+  max_pressure_bar?: number | null;
+  pressure_feasible?: boolean;
   gradient: Node[];
   min_rs: number | null;
   run_time_min: number | null;
@@ -26,6 +28,7 @@ type ResolutionMap = {
   min_rs: Cube<number>;
   run_time: Cube<number>;
   all_eluted: Cube<boolean>;
+  feasible?: Cube<boolean>;
   critical_pair: Cube<string[]>;
   top_candidates: Candidate[];
   pareto: Candidate[];
@@ -388,6 +391,7 @@ export function OptimizationWorkspace({
           candidate.min_rs,
           candidate.run_time_min,
           candidate.critical_pair?.join("|"),
+          candidate.max_pressure_bar,
           candidate.ode_check?.max_rel_rt,
           candidate.ode_check?.max_rel_sigma,
         ]),
@@ -699,6 +703,7 @@ export function OptimizationWorkspace({
                   <th>{tr("Rank / nodes (%B @ min)", config.mobile.b)}</th>
                   <th>{tr("Minimum Rs")}</th>
                   <th>{tr("Run (min)")}</th>
+                  <th>{tr("max_pressure")}</th>
                   <th>{tr("Critical pair")}</th>
                   <th>{tr("ODE relative differences (Rt / σ)")}</th>
                   <th>{tr("Apply")}</th>
@@ -720,6 +725,7 @@ export function OptimizationWorkspace({
                     </td>
                     <td>{number(candidate.min_rs)}</td>
                     <td>{number(candidate.run_time_min)}</td>
+                    <td>{number(candidate.max_pressure_bar)}</td>
                     <td>{pairLabel(candidate.critical_pair)}</td>
                     <td>
                       {number(candidate.ode_check?.max_rel_rt)} /{" "}
@@ -763,6 +769,7 @@ export function OptimizationWorkspace({
         <section data-testid="multisegment-result">
           <h3>{tr("Multi-segment search result")}</h3>
           <p>{multi.search_note}</p>
+            <p>{tr("max_pressure")}：{number(multi.max_pressure_bar)} bar</p>
           <p>
             {tr("Minimum Rs")}
             {number(multi.min_rs)} {tr("· run")}

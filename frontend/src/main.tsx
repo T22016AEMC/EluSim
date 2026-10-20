@@ -1,5 +1,6 @@
 import { t as tr } from "./i18n/zh-TW";
 import { tierLabel } from "./i18n/zh-TW";
+import { ColumnPhysics, InstrumentPhysics, PressureLimit } from "./PhysicalSettings";
 import { Metadata } from "./Metadata";
 import { CompoundIssue, SourceBadge } from "./SourceBadge";
 import { OptimizationWorkspace } from "./OptimizationWorkspace";
@@ -962,6 +963,7 @@ function App() {
         {tab === 1 && (
           <>
             <ModelConditions config={config} change={change} />
+            <ColumnPhysics config={config} change={change} />
             <section>
               <h2>{tr("Independent LC modes")}</h2>
               <div className="mode-grid">
@@ -1099,9 +1101,10 @@ function App() {
                 ).map(([key, label]) => (
                   <Num
                     key={key}
-                    label={label}
+                    label={key === "plates" && config.column.efficiency_model === "van_deemter" ? tr("computed_plates") : label}
                     value={config.column[key]}
                     nullable={key === "void_ml" || key === "plates"}
+                    disabled={key === "plates" && config.column.efficiency_model === "van_deemter"}
                     onChange={(v) => {
                       if (key === "temperature_c")
                         change({
@@ -1121,6 +1124,7 @@ function App() {
         )}
         {tab === 2 && (
           <>
+            <InstrumentPhysics config={config} change={change} />
             <section>
               <h2>{tr("Mobile phase & instrument")}</h2>
               <div className="field-grid">
@@ -1377,6 +1381,7 @@ function App() {
         )}
         {tab === 3 && (
           <>
+            <PressureLimit config={config} change={change} />
             {!config.compounds.length && <p>{tr("empty_compounds")}</p>}
             {result && resultKey === configKey ? (
               <>
@@ -1464,7 +1469,7 @@ function App() {
                       onClick={() =>
                         download(
                           tr("elusim-peaks.csv"),
-                          "name,rt_min,fwhm_min,width_base_min,source,tier,tier_label,mixture_fraction,injected_amount,amount_unit,relative_peak_area,relative_peak_height\n" +
+                          "name,rt_min,fwhm_min,width_base_min,source,tier,tier_label,mixture_fraction,injected_amount,amount_unit,relative_peak_area,relative_peak_height,plates_used,max_pressure_bar,time_at_max_pressure_min\n" +
                             result.peaks
                               .map((p) =>
                                 [
@@ -1480,6 +1485,9 @@ function App() {
                                   p.amount_unit,
                                   p.peak_area,
                                   p.peak_height ?? "",
+                                    p.plates_used ?? "",
+                                    result.pressure.max_pressure_bar ?? "",
+                                    result.pressure.time_at_max_min ?? "",
                                 ].join(","),
                               )
                               .join("\n"),
@@ -1515,6 +1523,11 @@ function App() {
                   </div>
                 </section>
                 <div className="metrics">
+                  <div>
+                    <span>{tr("max_pressure")}</span>
+                    <strong>{fmt(result.pressure.max_pressure_bar)} <small>bar</small></strong>
+                    <small>{tr("pressure_time")} {fmt(result.pressure.time_at_max_min)} min</small>
+                  </div>
                   <div>
                     <span>{tr("Minimum Rs")}</span>
                     <strong>{fmt(result.min_rs)}</strong>
@@ -1552,6 +1565,7 @@ function App() {
                           <th>{tr("Rt min")}</th>
                           <th>{tr("FWHM min")}</th>
                           <th>{tr("Base width min")}</th>
+                          <th>{tr("plates_used")}</th>
                           <th>{tr("Relative area / height")}</th>
                           <th>{tr("Source / status")}</th>
                         </tr>
@@ -1577,6 +1591,7 @@ function App() {
                               <td>{fmt(p.rt_min)}</td>
                               <td>{fmt(p.fwhm_min)}</td>
                               <td>{fmt(p.width_base_min)}</td>
+                              <td>{fmt(p.plates_used)}</td>
                               <td>
                                 {fmt(p.peak_area)} / {fmt(p.peak_height)}
                                 <small> · {tr(p.amount_unit)}</small>

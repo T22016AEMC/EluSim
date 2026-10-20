@@ -131,7 +131,7 @@ test("default method: caffeine and a non-database SMILES auto-fill, edit, simula
   ).toBeVisible();
   const peaks = await downloadCsv(page, "匯出峰表 CSV");
   expect(peaks.split("\r\n")[0]).toBe(
-    "id,name,tier,tier_label,rt_min,k_e,phi_outlet,sigma_min,compression_factor,fwhm_min,rs_to_next",
+    "id,name,tier,tier_label,rt_min,k_e,phi_outlet,sigma_min,compression_factor,fwhm_min,rs_to_next,plates_used,max_pressure_bar,time_at_max_pressure_min",
   );
   expect(peaks).toContain("Auto caffeine");
   expect(

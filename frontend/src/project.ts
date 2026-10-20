@@ -72,6 +72,7 @@ export function migrateProject(input: unknown): Config {
   });
   return {
     ...raw,
+    max_pressure_bar: raw.max_pressure_bar ?? null,
     project_schema_version: PROJECT_VERSION,
     next_compound_number: next,
     compounds,

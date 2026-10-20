@@ -75,6 +75,9 @@ export function peakTableCsv(result: Result): string {
       "compression_factor",
       "fwhm_min",
       "rs_to_next",
+      "plates_used",
+      "max_pressure_bar",
+      "time_at_max_pressure_min",
     ],
     result.peaks.map((peak) => [
       peak.id,
@@ -88,6 +91,9 @@ export function peakTableCsv(result: Result): string {
       peak.compression_factor,
       peak.fwhm_min,
       peak.rs_to_next,
+      peak.plates_used,
+      result.pressure.max_pressure_bar,
+      result.pressure.time_at_max_min,
     ]),
   );
 }

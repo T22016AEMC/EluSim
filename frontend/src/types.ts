@@ -57,6 +57,12 @@ export type Descriptor = {
   prediction_status: string;
 };
 export type Column = {
+  efficiency_model?: "fixed" | "van_deemter";
+  vd_a?: number;
+  vd_b?: number;
+  vd_c?: number;
+  diffusion_m2_s?: number;
+  flow_resistance?: number;
   manufacturer: string;
   stationary_phase: string;
   length_mm: number;
@@ -69,6 +75,7 @@ export type Column = {
   temperature_c: number;
 };
 export type Config = {
+  max_pressure_bar?: number | null;
   solver?: "auto" | "ode" | "analytic";
   band_compression?: "poppe" | "none";
   project_schema_version?: number;
@@ -79,6 +86,8 @@ export type Config = {
   compounds: Compound[];
   column: Column;
   mobile: {
+    mixer_ml?: number;
+    system_pressure_bar?: number;
     a: string;
     b: "ACN" | "MeOH";
     ph: number | null;
@@ -92,6 +101,7 @@ export type Config = {
   points: number;
 };
 export type Peak = {
+  plates_used?: number | null;
   parameter_tier?: ParameterTier;
   k_e?: number | null;
   phi_outlet?: number | null;
@@ -138,7 +148,12 @@ export type Result = {
   warnings: string[];
   assumptions: string[];
   uncertainty: { quantified: boolean; reason: string };
-  pressure: { available: boolean; reason: string };
+  pressure: {
+    available: boolean;
+    reason: string;
+    max_pressure_bar?: number;
+    time_at_max_min?: number;
+  };
 };
 export type Candidate = {
   gradient: Node[];
@@ -185,7 +200,14 @@ export const demo: Config = {
       source: "screening_only",
     },
   ],
+  max_pressure_bar: null,
   column: {
+    efficiency_model: "fixed",
+    vd_a: 1,
+    vd_b: 2,
+    vd_c: 0.05,
+    diffusion_m2_s: 1e-9,
+    flow_resistance: 500,
     manufacturer: "Generic",
     stationary_phase: "Generic C18",
     length_mm: 100,
@@ -198,6 +220,8 @@ export const demo: Config = {
     temperature_c: 25,
   },
   mobile: {
+    mixer_ml: 0,
+    system_pressure_bar: 0,
     a: "Water",
     b: "ACN",
     ph: 7,
