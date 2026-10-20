@@ -1,7 +1,7 @@
 {
   "model_id": "generic-lss",
-  "model_version": "1.0.0",
-  "feature_version": "generic-c18-rdkit-five/1",
+  "model_version": "2.0.0",
+  "feature_version": "generic-c18-rdkit-five/2",
   "feature_names": [
     "crippen_logp",
     "tpsa",
@@ -27,19 +27,18 @@
     ]
   },
   "logkw": {
-    "intercept": 2.0660789769312164,
+    "intercept": 2.066078976931215,
     "coefficients": [
-      0.46626924460517455,
-      0.22725703345540668,
-      -0.14743239906678646,
-      -0.06999844674466191,
-      0.1855803039861528
-    ],
-    "ridge_alpha": 1.0
+      0.22656035401706248,
+      -4.87623645517601e-24,
+      -0.18844080165080512,
+      -0.07599958073058831,
+      0.08572727637558077
+    ]
   },
   "s": {
-    "intercept": 0.7432480409952644,
-    "logkw_coefficient": 1.876114591662407
+    "intercept": 1.777682548864498,
+    "logkw_coefficient": 1.3754393902692352
   },
   "bounds": {
     "logkw": [
@@ -113,9 +112,38 @@
   ],
   "particle_um": 3.5,
   "application_notes": [
-    "Generic RP-C18 regression; non-commercial use under the data license.",
+    "Constrained C18 regression; non-commercial use under the data license.",
     "Training input: ACN / Eclipse Plus C18 / 35 C / 0.1% formic acid / phi 0.2-0.5.",
     "Other conditions are extrapolation; no pKa or ionization correction.",
-    "S uses fitted logKw; sqrt(MW) alternative numbers are in the summary only."
-  ]
+    "Candidate selection uses the preregistered gates followed by outer-test logk35 MAE.",
+    "Outer-test results have participated in selection and are not untouched evidence."
+  ],
+  "fit_target": "log10(k) at phi=0.35",
+  "target_equation": {
+    "mean": [
+      2.3003317989417993,
+      59.35634920634921,
+      1.2645502645502646,
+      1.566137566137566,
+      16.04859995911488
+    ],
+    "scale": [
+      1.3728937588960817,
+      35.94491053751576,
+      1.1836015496888521,
+      0.8619630616795,
+      2.185276655550258
+    ],
+    "coefficients": [
+      0.44927184193121655,
+      0.11749334170111883,
+      -2.5287977613254425e-24,
+      -0.0977246861872549,
+      -0.039413094787309054,
+      0.044457840913965915
+    ],
+    "alpha": 0.0
+  },
+  "selected_candidate": "C2",
+  "conversion": "logKw=(logk35+0.35*b)/(1-0.35*a); S=a*logKw+b"
 }

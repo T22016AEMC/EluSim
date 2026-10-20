@@ -78,7 +78,7 @@ def estimate_retention(smiles, method):
             generic = load_generic_model()
             result.update(
                 logkw=logkw, s=strength, tier='C', tier_label='Generic C18 estimate',
-                parameter_source='Generic C18 Ridge logKw and linear S regression from repository curves',
+                parameter_source='Generic C18 constrained logk(0.35) and linear S regression from repository curves',
                 model_version=generic['model_version'], model_id='generic-lss', status='Screening only',
             )
             result['warnings'].extend(notices + [

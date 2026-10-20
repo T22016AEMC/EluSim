@@ -8,7 +8,7 @@ import numpy as np
 from rdkit import Chem
 from rdkit.Chem import Crippen, Descriptors, rdMolDescriptors
 
-FEATURE_VERSION = 'generic-c18-rdkit-five/1'
+FEATURE_VERSION = 'generic-c18-rdkit-five/2'
 FEATURE_NAMES = ['crippen_logp', 'tpsa', 'hbd', 'aromatic_rings', 'sqrt_mw']
 PENDING_STATUS = 'unvalidated — pending user validation'
 IONIZABLE_SMARTS = {
@@ -50,7 +50,7 @@ def load_generic_model():
     """Load only the existing local JSON artifact, never executable weights."""
     path = Path(__file__).resolve().parents[1] / 'models/generic-lss.json'
     model = json.loads(path.read_text(encoding='utf8'))
-    if model['feature_version'] != FEATURE_VERSION:
+    if model['feature_version'] not in ['generic-c18-rdkit-five/1', FEATURE_VERSION]:
         raise ValueError('Generic LSS feature version mismatch')
     return model
 
