@@ -7,6 +7,12 @@ class Strict(BaseModel):
     model_config = ConfigDict(extra='forbid', allow_inf_nan=False)
 
 class Column(Strict):
+    efficiency_model: Literal['fixed', 'van_deemter'] = 'fixed'
+    vd_a: float = Field(default=1.0, ge=0, le=100)
+    vd_b: float = Field(default=2.0, gt=0, le=100)
+    vd_c: float = Field(default=0.05, gt=0, le=100)
+    diffusion_m2_s: float = Field(default=1.0e-9, gt=0, le=1.0e-6)
+    flow_resistance: float = Field(default=500, gt=0, le=100000)
     manufacturer: str = Field(default='Generic', max_length=120)
     stationary_phase: str = Field(default='Generic C18', max_length=120)
     length_mm: float = Field(default=100, ge=5, le=1000)
@@ -26,6 +32,8 @@ class Node(Strict):
     interpolation: Literal['linear', 'step'] = 'linear'
 
 class Mobile(Strict):
+    mixer_ml: float = Field(default=0, ge=0, le=5)
+    system_pressure_bar: float = Field(default=0, ge=0, le=500)
     a: str = Field(default='Water', max_length=120)
     b: Literal['ACN', 'MeOH'] = 'ACN'
     ph: float | None = Field(default=7, ge=0, le=14)
@@ -75,6 +83,7 @@ class Compound(Strict):
     mode_parameters: dict = Field(default_factory=dict)
 
 class Simulation(Strict):
+    max_pressure_bar: float | None = Field(default=None, gt=0, le=10000)
     solver: Literal['auto', 'ode', 'analytic'] = 'auto'
     band_compression: Literal['poppe', 'none'] = 'poppe'
     mode: Literal['RP','NP','HILIC','IEX','SEC'] = 'RP'
@@ -162,6 +171,8 @@ class OptimizeMap(Strict):
         ends = np.linspace(self.end_percent.min, self.end_percent.max, self.end_percent.steps)
         count = int(np.sum(ends[None, :] > starts[:, None] + 1)) * self.gradient_time_min.steps
         cells = self.start_percent.steps * self.end_percent.steps * self.gradient_time_min.steps
+        if self.simulation.mobile.mixer_ml > 0 and count > 2000:
+            raise ValueError("混合器延遲啟用時，候選組合上限為 2,000")
         if count > 20000 or count * len(self.simulation.compounds) > 400000 or cells > 40000:
             raise ValueError("Grid limit: 20 000 candidates, 400 000 candidate-compound pairs, 40 000 stored cells")
         return self

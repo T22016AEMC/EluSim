@@ -22,29 +22,69 @@ def volume(column):
  return column.void_ml if column.void_ml is not None else math.pi*column.diameter_mm**2/4*column.length_mm*column.porosity/1000
 
 class Program:
- def __init__(self, req):
-  self.t=np.array([n.time_min for n in req.gradient]); self.f=np.array([n.flow_ml_min for n in req.gradient]); self.phi=np.array([n.b_percent/100 for n in req.gradient]); self.step=[n.interpolation=='step' for n in req.gradient]
-  self.slopes=np.diff(self.f)/np.diff(self.t)
-  self.v=np.r_[0,np.cumsum(np.diff(self.t)*(self.f[:-1]+self.f[1:])/2)]
- def interval(self,t): return min(max(int(np.searchsorted(self.t,t,side='right')-1),0),len(self.t)-2)
- def flow(self,t): return float(np.interp(t,self.t,self.f))
- def pumped(self,t):
-  if t<=0:return 0.
-  if t>=self.t[-1]:return float(self.v[-1]+(t-self.t[-1])*self.f[-1])
-  j=self.interval(t);dt=t-self.t[j];return float(self.v[j]+self.f[j]*dt+.5*self.slopes[j]*dt*dt)
- def time_at_volume(self,v):
-  if v<=0:return 0.
-  if v>=self.v[-1]:return float(self.t[-1]+(v-self.v[-1])/self.f[-1])
-  j=min(int(np.searchsorted(self.v,v,side='right')-1),len(self.slopes)-1);dv=v-self.v[j];a=self.slopes[j];f=self.f[j]
-  dt=dv/f if abs(a)<1e-12 else 2*dv/(f+math.sqrt(max(0,f*f+2*a*dv)))
-  return float(self.t[j]+dt)
- def composition(self,t):
-  if t<=0:return float(self.phi[0])
-  if t>=self.t[-1]:return float(self.phi[-1])
-  j=self.interval(t)
-  return float(self.phi[j] if self.step[j] else np.interp(t,self.t,self.phi))
- def local_phi(self,t,x,vm,dwell):
-  return self.composition(self.time_at_volume(self.pumped(t)-dwell-max(0,x)*vm))
+    """Flow-volume transport with an optional upstream ideal mixing tank."""
+
+    def __init__(self, req):
+        """Keep the original arrays and pure-delay path when mixer is zero."""
+        self.t = np.array([node.time_min for node in req.gradient])
+        self.f = np.array([node.flow_ml_min for node in req.gradient])
+        self.phi = np.array([node.b_percent / 100 for node in req.gradient])
+        self.step = [node.interpolation == "step" for node in req.gradient]
+        self.slopes = np.diff(self.f) / np.diff(self.t)
+        self.v = np.r_[0, np.cumsum(np.diff(self.t)*(self.f[:-1]+self.f[1:])/2)]
+        self.mixed = None
+        if req.mobile.mixer_ml > 0:
+            from .mixer import mixed_profile
+
+            self.mixed = mixed_profile(self, req.mobile.mixer_ml)
+
+    def interval(self, time_min):
+        """Locate the right-continuous program interval."""
+        return min(max(int(np.searchsorted(self.t, time_min, side="right")-1), 0), len(self.t)-2)
+
+    def flow(self, time_min):
+        """Return linearly interpolated pump flow in mL/min."""
+        return float(np.interp(time_min, self.t, self.f))
+
+    def pumped(self, time_min):
+        """Integrate piecewise-linear flow, preserving the existing arithmetic."""
+        if time_min <= 0:
+            return 0.
+        if time_min >= self.t[-1]:
+            return float(self.v[-1]+(time_min-self.t[-1])*self.f[-1])
+        index = self.interval(time_min)
+        elapsed = time_min-self.t[index]
+        return float(self.v[index]+self.f[index]*elapsed+.5*self.slopes[index]*elapsed*elapsed)
+
+    def time_at_volume(self, volume_ml):
+        """Invert cumulative pump volume without subtractive cancellation."""
+        if volume_ml <= 0:
+            return 0.
+        if volume_ml >= self.v[-1]:
+            return float(self.t[-1]+(volume_ml-self.v[-1])/self.f[-1])
+        index = min(int(np.searchsorted(self.v, volume_ml, side="right")-1), len(self.slopes)-1)
+        delta_volume = volume_ml-self.v[index]
+        slope = self.slopes[index]
+        flow = self.f[index]
+        elapsed = (delta_volume/flow if abs(slope) < 1e-12
+                   else 2*delta_volume/(flow+math.sqrt(max(0, flow*flow+2*slope*delta_volume))))
+        return float(self.t[index]+elapsed)
+
+    def composition(self, time_min):
+        """Return programmed pump composition with the existing step semantics."""
+        if time_min <= 0:
+            return float(self.phi[0])
+        if time_min >= self.t[-1]:
+            return float(self.phi[-1])
+        index = self.interval(time_min)
+        return float(self.phi[index] if self.step[index] else np.interp(time_min, self.t, self.phi))
+
+    def local_phi(self, time_min, position, void_ml, dwell_ml):
+        """Transport the inlet profile; mixer mean delay is additional to dwell."""
+        transport_time = self.time_at_volume(self.pumped(time_min)-dwell_ml-max(0, position)*void_ml)
+        if self.mixed is not None:
+            return float(np.interp(transport_time, self.mixed[0], self.mixed[1]))
+        return self.composition(transport_time)
 
 @dataclass(frozen=True)
 class RetentionState:
@@ -80,12 +120,12 @@ def outlet_slope(program, time_min, void_ml, dwell_ml):
     return 0.0 if abs(central) < 1e-10 else central
 
 
-def retention_state(req, compound, rtol=1e-7, max_step=None):
+def retention_state(req, compound, rtol=1e-7, max_step=None, program=None):
     """Solve the existing plug-flow migration ODE and return the outlet event."""
     from .retention_models import retention_model
 
     model = retention_model(compound)
-    program = Program(req)
+    program = program or Program(req)
     void_ml = volume(req.column)
     end_min = program.t[-1]
 
@@ -154,10 +194,14 @@ def band_width(req, compound, state, program):
             warning = 'Local Poppe expression is singular; G=1 used for this peak.'
         else:
             compression = math.sqrt(1 + poppe_p + poppe_p**2 / 3) / abs(1 + poppe_p)
-    sigma_col = compression * t0_e * (1 + state.k_e) / math.sqrt(req.column.plates)
+    from .efficiency import effective_plates
+
+    plates = effective_plates(req.column, state.flow_at_elution)
+    sigma_col = compression * t0_e * (1 + state.k_e) / math.sqrt(plates)
     sigma_inj = req.mobile.injection_ul / 1000 / program.flow(0) / math.sqrt(12)
     sigma = math.sqrt(sigma_col**2 + sigma_inj**2 + req.mobile.extra_sigma_min**2)
     return {
+        'plates_used': plates,
         'sigma_col_min': sigma_col,
         'sigma_min': sigma,
         'compression_factor': compression,
@@ -219,7 +263,7 @@ def simulate(req: Simulation, deadline=None):
     program = Program(req)
     void_ml = volume(req.column)
     grid = np.linspace(0, program.t[-1], req.points)
-    use_analytic = req.solver != 'ode' and np.all(program.f == program.f[0])
+    use_analytic = req.mobile.mixer_ml == 0 and req.solver != 'ode' and np.all(program.f == program.f[0])
     actual_solver = 'analytic' if use_analytic else 'ode'
     peaks = []
     curves = []
@@ -242,6 +286,7 @@ def simulate(req: Simulation, deadline=None):
             'warning': error,
             'sigma_min': None,
             'sigma_col_min': None,
+            'plates_used': None,
             'fwhm_min': None,
             'width_base_min': None,
             'k_e': None,
@@ -271,7 +316,7 @@ def simulate(req: Simulation, deadline=None):
                 if state is not None and state.rt_min > program.t[-1]:
                     state = None
             else:
-                state = retention_state(req, compound)
+                state = retention_state(req, compound, program=program)
             row['eluted'] = state is not None
             row['simulation_status'] = 'eluted' if state is not None else 'non_eluted'
             if state is None:
@@ -284,7 +329,7 @@ def simulate(req: Simulation, deadline=None):
                     flow_at_elution=state.flow_at_elution,
                     dphi_dt_outlet=state.dphi_dt_outlet,
                 )
-                if req.column.plates:
+                if req.column.efficiency_model == 'van_deemter' or req.column.plates:
                     widths = band_width(req, compound, state, program)
                     sigma = widths['sigma_min']
                     row.update({key: value for key, value in widths.items() if key != 'width_warning'})
@@ -308,6 +353,14 @@ def simulate(req: Simulation, deadline=None):
             if compound.scope is None:
                 warnings.append(compound.name + ': parameter scope undeclared; supplied parameters used')
         peaks.append(row)
+    from .hydraulics import pressure_profile
+
+    pressure = pressure_profile(req, program)
+    warnings.extend(pressure["warnings"])
+    if req.max_pressure_bar is not None and pressure["max_pressure_bar"] > req.max_pressure_bar:
+        warnings.append(
+            f'最高壓力 {pressure["max_pressure_bar"]:.3f} bar 超過上限 {req.max_pressure_bar:.3f} bar'
+        )
     ordered = sorted([row for row in peaks if row['eluted']], key=lambda row: row['rt_min'])
     pairs = []
     for first, second in zip(ordered, ordered[1:]):
@@ -354,7 +407,7 @@ def simulate(req: Simulation, deadline=None):
             'Specified pH / temperature / solvent do not independently modify LSS parameters',
         ],
         'uncertainty': {'quantified': False, 'reason': 'Pending user experimental checks'},
-        'pressure': {'available': False, 'reason': 'Missing viscosity, permeability and instrument pressure model'},
+        'pressure': pressure,
     }
 
 

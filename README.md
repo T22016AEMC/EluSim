@@ -63,3 +63,11 @@ AGPL-3.0-or-later, full text in LICENSE. Pinning, upstream notices, provenance a
 舊專案內容保留，參數來源頁改為唯讀資訊。
 本機與 CI 的程式回歸略過使用者保留自行檢查的合理性門檻檔案。
 詳見 [階段 2.2 實作紀錄](docs/v3-phase2.2-implementation-notes.md)。
+
+
+### 階段 3A 選用物理設定
+混合器體積預設 0，柱效預設固定理論板數，壓力上限預設不限。
+混合槽會抹平梯度，並在既有延遲體積外額外增加平均延遲；啟用時改用 ODE。
+Knox 柱效的 A/B/C、Dm 與流阻因子是典型參考值，未經驗證。
+壓力以入口組成及文獻黏度表取樣估算；未積分管柱內黏度分布。
+公式、範圍與待使用者確認事項見 docs/v3-phase3a-implementation-notes.md。

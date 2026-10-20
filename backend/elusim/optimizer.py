@@ -17,6 +17,8 @@ from .engine import (
     volume,
 )
 from .schemas import Node
+from .efficiency import effective_plates
+from .hydraulics import batch_max_pressure, pressure_profile, pressure_warnings
 from .estimation import parameter_tier
 
 
@@ -32,7 +34,7 @@ def prepare(simulation):
     ]
     if failures:
         raise ValueError("; ".join(failures))
-    if len(base.compounds) < 2 or not base.column.plates:
+    if len(base.compounds) < 2 or (base.column.efficiency_model == 'fixed' and not base.column.plates):
         raise ValueError(
             "Search requires at least two components and column efficiency"
         )
@@ -75,6 +77,8 @@ def evaluate(base, node_sets):
     Poppe et al., J. Chromatogr. 204 (1981) 77–84. Local outlet
     approximation for multiple ramps; no empirical conclusion is inferred.
     """
+    if base.mobile.mixer_ml > 0:
+        return evaluate_ode(base, node_sets)
     times = np.array([[node.time_min for node in nodes] for nodes in node_sets])
     phis = np.array([[node.b_percent / 100 for node in nodes] for nodes in node_sets])
     steps = np.array(
@@ -107,7 +111,7 @@ def evaluate(base, node_sets):
             out=np.ones_like(rt),
             where=denominator > 1e-12,
         )
-    sigma_col = compression * t0 * (1 + states["k_e"]) / math.sqrt(base.column.plates)
+    sigma_col = compression * t0 * (1 + states["k_e"]) / math.sqrt(effective_plates(base.column, flow))
     sigma = np.sqrt(
         sigma_col**2
         + (base.mobile.injection_ul / 1000 / flow) ** 2 / 12
@@ -124,7 +128,12 @@ def evaluate(base, node_sets):
     minimum = np.min(resolutions, axis=1)
     critical = np.argmin(resolutions, axis=1)
     runtime = np.max(rt + 3 * sigma, axis=1)
+    pressures = (
+        batch_max_pressure(base, node_sets)
+        if base.max_pressure_bar is not None else None
+    )
     return {
+        "max_pressure_bar": pressures,
         **states,
         "sigma_min": sigma,
         "sigma_col_min": sigma_col,
@@ -138,6 +147,59 @@ def evaluate(base, node_sets):
         "critical": critical,
     }
 
+
+
+def evaluate_ode(base, node_sets):
+    """Use the shared mixer/ODE and bandwidth definitions within a 25 s budget.
+
+    A single candidate shares its preintegrated inlet table between compounds.
+    Missing outlets use finite internal sentinels, never serialized as peaks.
+    """
+    if len(node_sets) > 2000:
+        raise ValueError("混合器延遲啟用時，候選組合上限為 2,000")
+    deadline = time.monotonic() + 25
+    fields = {key: [] for key in (
+        "rt_min", "sigma_min", "sigma_col_min", "k_e", "phi_outlet",
+        "compression_factor", "dphi_dt_outlet", "eluted",
+    )}
+    pressures = []
+    for nodes in node_sets:
+        if time.monotonic() >= deadline:
+            raise TimeoutError("混合器候選計算超過時間上限；請減少候選組合")
+        method = base.model_copy(update={"gradient": nodes})
+        program = Program(method)
+        row = {key: [] for key in fields}
+        for compound in method.compounds:
+            if time.monotonic() >= deadline:
+                raise TimeoutError("混合器候選計算超過時間上限；請減少候選組合")
+            state = retention_state(method, compound, program=program)
+            width = band_width(method, compound, state, program) if state else None
+            row["rt_min"].append(state.rt_min if state else program.t[-1]*2)
+            row["sigma_min"].append(width["sigma_min"] if width else 1.0)
+            row["sigma_col_min"].append(width["sigma_col_min"] if width else 1.0)
+            row["compression_factor"].append(width["compression_factor"] if width else 1.0)
+            for key in ("k_e", "phi_outlet", "dphi_dt_outlet"):
+                row[key].append(getattr(state, key) if state else 0.0)
+            row["eluted"].append(state is not None)
+        for key in fields:
+            fields[key].append(row[key])
+        if base.max_pressure_bar is not None:
+            pressures.append(pressure_profile(method, program)["max_pressure_bar"])
+    values = {key: np.asarray(value) for key, value in fields.items()}
+    order = np.argsort(values["rt_min"], axis=1, kind="stable")
+    sorted_rt = np.take_along_axis(values["rt_min"], order, axis=1)
+    sorted_sigma = np.take_along_axis(values["sigma_min"], order, axis=1)
+    resolutions = np.diff(sorted_rt) / (2*(sorted_sigma[:, :-1]+sorted_sigma[:, 1:]))
+    return {
+        **values,
+        "max_pressure_bar": np.asarray(pressures) if pressures else None,
+        "order": order,
+        "resolutions": resolutions,
+        "critical": np.argmin(resolutions, axis=1),
+        "min_rs": resolutions.min(axis=1),
+        "all_eluted": np.all(values["eluted"], axis=1),
+        "run_time_min": np.max(values["rt_min"]+3*values["sigma_min"], axis=1),
+    }
 
 def candidate(base, nodes, values, index, target, maximum):
     """Serialize one candidate without chromatogram grids or model weights."""
@@ -160,6 +222,7 @@ def candidate(base, nodes, values, index, target, maximum):
                 "id": compound.id,
                 "name": compound.name,
                 "parameter_tier": parameter_tier(compound),
+                "plates_used": effective_plates(base.column, base.gradient[0].flow_ml_min),
                 "rt_min": (
                     float(values["rt_min"][index, compound_index]) if eluted else None
                 ),
@@ -176,13 +239,21 @@ def candidate(base, nodes, values, index, target, maximum):
                 ),
             }
         )
+    pressure = (
+        float(values["max_pressure_bar"][index])
+        if values.get("max_pressure_bar") is not None else None
+    )
+    pressure_ok = base.max_pressure_bar is None or pressure <= base.max_pressure_bar
     return {
+        "max_pressure_bar": pressure,
+        "pressure_feasible": pressure_ok,
         "gradient": [node.model_dump() for node in nodes],
         "min_rs": minimum,
         "run_time_min": runtime,
         "critical_pair": pair,
         "all_eluted": all_eluted,
         "feasible": all_eluted
+        and pressure_ok
         and minimum >= target
         and (maximum is None or runtime <= maximum),
         "peaks": peaks,
@@ -222,7 +293,7 @@ def ode_check(base, row):
 def search_warnings(base, nodes):
     """Aggregate source-condition warnings once using the search extent."""
     method = base.model_copy(update={"gradient": nodes})
-    return list(
+    return (pressure_warnings(base) if base.max_pressure_bar is not None else []) + list(
         dict.fromkeys(
             f"{compound.name}: {notice}"
             for compound in base.compounds
@@ -270,6 +341,8 @@ def optimize_map(request):
         raise ValueError("No end > start + 1 combination in the grid")
     values = evaluate(base, programs)
     feasible = values["all_eluted"] & (values["min_rs"] >= request.target_rs)
+    if base.max_pressure_bar is not None:
+        feasible &= values["max_pressure_bar"] <= base.max_pressure_bar
     if request.max_run_time_min is not None:
         feasible &= values["run_time_min"] <= request.max_run_time_min
     runtimes = np.where(values["all_eluted"], values["run_time_min"], np.inf)
@@ -283,11 +356,12 @@ def optimize_map(request):
     )
     cubes = {
         key: np.full(shape, None, dtype=object)
-        for key in ("min_rs", "run_time", "all_eluted", "critical_pair")
+        for key in ("min_rs", "run_time", "all_eluted", "critical_pair", "feasible")
     }
     for index, grid_index in enumerate(indices):
         all_eluted = bool(values["all_eluted"][index])
         cubes["all_eluted"][grid_index] = all_eluted
+        cubes["feasible"][grid_index] = bool(feasible[index])
         if all_eluted:
             cubes["min_rs"][grid_index] = float(format(values["min_rs"][index], ".4g"))
             cubes["run_time"][grid_index] = float(f"{runtimes[index]:.4g}")
@@ -312,7 +386,12 @@ def optimize_map(request):
     frontier = []
     highest_rs = -math.inf
     for index in sorted(
-        np.flatnonzero(values["all_eluted"]),
+        np.flatnonzero(
+            values["all_eluted"] & (
+                values["max_pressure_bar"] <= base.max_pressure_bar
+                if base.max_pressure_bar is not None else True
+            )
+        ),
         key=lambda index: (runtimes[index], -values["min_rs"][index]),
     ):
         if values["min_rs"][index] > highest_rs:
@@ -347,7 +426,7 @@ def optimize_map(request):
             for index in frontier
         ],
         "evaluated": len(programs),
-        "solver": "analytic",
+        "solver": "ode" if base.mobile.mixer_ml > 0 else "analytic",
         "elapsed_s": time.monotonic() - started,
         "warnings": search_warnings(base, extent),
     }
@@ -411,7 +490,9 @@ def optimize_multisegment(request):
     def objective(parameters):
         """Score model calculations; stop extra evaluations after the deadline."""
         nonlocal evaluations, best_score, best_nodes, stopped
-        if time.monotonic() >= deadline and best_nodes is not None:
+        if (time.monotonic() >= deadline or (
+            base.mobile.mixer_ml > 0 and evaluations >= 2000
+        )) and best_nodes is not None:
             stopped = True
             return 1e12
         nodes = decode_multisegment(request, base, parameters)
@@ -426,6 +507,10 @@ def optimize_multisegment(request):
             score += 1000 * max(
                 0, float(values["run_time_min"][0]) - request.max_run_time_min
             )
+        if base.max_pressure_bar is not None:
+            score += 1e6 * max(
+                0, float(values["max_pressure_bar"][0])-base.max_pressure_bar
+            )
         if score < best_score:
             best_score = score
             best_nodes = nodes
@@ -434,7 +519,7 @@ def optimize_multisegment(request):
     def callback(parameters, convergence):
         """Stop between generations when the wall-clock budget is exhausted."""
         nonlocal stopped
-        stopped = stopped or time.monotonic() >= deadline
+        stopped = stopped or time.monotonic() >= deadline or (base.mobile.mixer_ml > 0 and evaluations >= 2000)
         return stopped
 
     generator = np.random.default_rng(request.seed)
@@ -487,7 +572,7 @@ def optimize_multisegment(request):
         "evaluations": evaluations,
         "time_budget_stopped": stopped,
         "elapsed_s": time.monotonic() - started,
-        "solver": "analytic",
+        "solver": "ode" if base.mobile.mixer_ml > 0 else "analytic",
         "warnings": search_warnings(base, best_nodes),
         "search_note": "Stochastic search within time budget; global optimality not claimed",
     }
