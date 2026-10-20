@@ -136,11 +136,11 @@ test("conditions require explicit selection; incomplete retention and nonelution
   );
   await page.getByRole("button", { name: "重設", exact: true }).click();
   await page
-    .getByRole("button", { name: "載入示範混合物", exact: true })
-    .click();
-  await page
     .getByRole("navigation")
     .getByRole("button", { name: "化合物", exact: false })
+    .click();
+  await page
+    .getByRole("button", { name: "載入示範混合物", exact: true })
     .click();
   for (const name of ["示範化合物 1", "示範化合物 2", "示範化合物 3"])
     await page.getByLabel("S " + name, { exact: true }).fill("");
